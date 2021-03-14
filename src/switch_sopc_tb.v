@@ -14,8 +14,8 @@ module switch_sopc_tb (
 
     initial begin
         rst = 1'b1;
-        #25 rst = 1'b0;
-        #100 $stop;
+        #65 rst = 1'b0;
+        #200 $stop;
     end
 
     switch_sopc switch_sopc0(

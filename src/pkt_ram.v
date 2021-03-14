@@ -9,9 +9,10 @@ module pkt_ram (
     output reg [`DATA_WIDTH - 1:0] data_o
 );
 
-    reg [`DATA_WIDTH-1:0] memory [63:0];    // 32 x 64
+    reg [`DATA_WIDTH - 1:0] memory [63:0];    // 64 x 32 bytes
 
     initial begin
+        $display("Loading packet");
         $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\packet.data", memory);
     end
 
