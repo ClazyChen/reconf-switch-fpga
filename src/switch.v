@@ -19,10 +19,8 @@ module switch(
 
     // outputs
     reg [`DATA_WIDTH - 1:0] parsed_hdrs [`NUM_HEADERS - 1:0];   // header offsets in the packet
-    reg [`ADDR_WIDTH - 1:0] tag_addr;
 
     reg [`DATA_WIDTH - 1:0] hdr_id;
-    reg [`ADDR_WIDTH - 1:0] hdr_offset;
 
     always @(posedge clk) begin
         if (rst == `RST_ENABLED) begin
@@ -43,8 +41,7 @@ module switch(
             parsed_hdrs[1] <= `NO_HEADER;
 
             hdr_id <= `NO_HEADER;
-            hdr_offset <= `ZERO_WORD;
-            tag_addr <= next_tag_starts[0];
+            tag_addr_o <= next_tag_starts[0];
         end else begin
             if (hdr_id == 0) begin
                 // parse current header offset
@@ -57,7 +54,7 @@ module switch(
                 end else begin
                     hdr_id <= `NUM_HEADERS;
                 end
-                tag_addr <= hdr_lens[0] + next_tag_starts[1];
+                tag_addr_o <= hdr_lens[0] + next_tag_starts[1];
             end else if (hdr_id == 1) begin
                 parsed_hdrs[1] <= parsed_hdrs[0] + hdr_lens[0];
                 hdr_id <= `NUM_HEADERS;
@@ -65,10 +62,6 @@ module switch(
                 hdr_id <= 0;
             end
         end
-    end
-
-    always @(*) begin
-        tag_addr_o <= tag_addr;
     end
 
 endmodule

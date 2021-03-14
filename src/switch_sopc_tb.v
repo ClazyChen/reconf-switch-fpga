@@ -2,13 +2,13 @@
 
 module switch_sopc_tb (
 );
-    reg CLOCK_50;
+    reg clk;
     reg rst;
 
     initial begin
-        CLOCK_50 = 1'b0;
+        clk = 1'b0;
         forever begin
-            #10 CLOCK_50 = ~CLOCK_50;
+            #10 clk = ~clk;
         end
     end
 
@@ -19,7 +19,7 @@ module switch_sopc_tb (
     end
 
     switch_sopc switch_sopc0(
-        .clk(CLOCK_50),
+        .clk(clk),
         .rst(rst)
     );
 

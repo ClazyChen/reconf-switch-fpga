@@ -14,6 +14,8 @@ module pkt_ram (
     initial begin
         $display("Loading packet");
         $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\packet.data", memory);
+        // reset checksum
+        memory[6][31:16] = `ZERO_HALF;
     end
 
     always @(posedge clk) begin
