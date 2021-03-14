@@ -12,3 +12,5 @@
 `define READ_ENABLED `TRUE
 
 `define ZERO_WORD 32'h0000_0000
+`define NUM_HEADERS 4
+`define NO_HEADER 32'hffff_ffff

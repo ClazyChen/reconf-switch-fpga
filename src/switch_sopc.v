@@ -5,21 +5,21 @@ module switch_sopc (
     input wire rst
 );
 
-    wire [`DATA_WIDTH-1:0] pkt_data;
-    wire [`ADDR_WIDTH-1:0] pkt_addr;
+    wire [`DATA_WIDTH-1:0] hdr_data;
+    wire [`ADDR_WIDTH-1:0] hdr_addr;
 
     switch switch0(
         .clk(clk),
         .rst(rst),
-        .pkt_data(pkt_data),
-        .pkt_addr(pkt_addr)
+        .hdr_data(hdr_data),
+        .hdr_addr_o(hdr_addr)
     );
 
     pkt_ram pkt_ram0(
         .clk(clk),
         .rst(rst),
-        .addr_i(pkt_addr),
-        .data_o(pkt_data)
+        .addr_i(hdr_addr),
+        .data_o(hdr_data)
     );
 
 endmodule
