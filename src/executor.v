@@ -48,8 +48,8 @@ module executor (
     reg cksum_start_o;
     reg [`ADDR_BUS] cksum_field_start_o;
     reg [`DATA_BUS] cksum_field_len_o;
+    reg [`ADDR_BUS] cksum_dst_field_start_o;
     wire cksum_ready_i;
-    wire [15:0] cksum_val_i;
     // checksum sram signals
     wire cksum_sram_ce_o;
     wire cksum_sram_we_o;
@@ -115,16 +115,13 @@ module executor (
                     state <= `STATE_DONE;
                 end
                 `OPCODE_CKSUM: begin
-                    // cksum field: inst[31:16]
-                    // dst field: inst[15:0]
                     cksum_start_o <= `TRUE;
                     // TODO parse from inst
                     cksum_field_start_o <= 14;
                     cksum_field_len_o <= 20;
+                    cksum_dst_field_start_o <= 24;
                     sram_mux <= `SRAM_MUX_CKSUM;
                     if (cksum_ready_i == `TRUE) begin
-                        // copy cksum value to dst field
-                        
                         cksum_start_o <= `FALSE;
                         sram_mux <= `SRAM_MUX_EXEC;
                         state <= `STATE_FETCH_INST1;
@@ -194,6 +191,7 @@ module executor (
         .start_i(cksum_start_o),
         .field_start_i(cksum_field_start_o),
         .field_len_i(cksum_field_len_o),
+        .dst_field_start_i(cksum_dst_field_start_o),
         // sram
         .sram_ce_o(cksum_sram_ce_o),
         .sram_we_o(cksum_sram_we_o),
@@ -202,7 +200,6 @@ module executor (
         .sram_data_o(cksum_sram_data_o),
         .sram_data_i(cksum_sram_data_i),
         // output
-        .cksum_ready_o(cksum_ready_i),
-        .cksum_val_o(cksum_val_i)
+        .cksum_ready_o(cksum_ready_i)
     );
 endmodule

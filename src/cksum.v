@@ -1,11 +1,13 @@
 `include "def.v"
 
-`define STATE_FREE  3'h0
-`define STATE_LOAD  3'h1
-`define STATE_SUM   3'h2
-`define STATE_COMPLEMENT1   3'h3
-`define STATE_COMPLEMENT2   3'h4
-`define STATE_DONE  3'h5
+`define STATE_FREE          3'h0
+`define STATE_CLEAR         3'h1
+`define STATE_LOAD          3'h2
+`define STATE_SUM           3'h3
+`define STATE_COMPLEMENT1   3'h4
+`define STATE_COMPLEMENT2   3'h5
+`define STATE_STORE         3'h6
+`define STATE_DONE          3'h7
 
 module cksum (
     input wire clk,
@@ -15,6 +17,7 @@ module cksum (
 
     input wire [`ADDR_BUS] field_start_i,
     input wire [`DATA_BUS] field_len_i,
+    input wire [`ADDR_BUS] dst_field_start_i,
 
     // sram
     output reg sram_ce_o,
@@ -24,12 +27,14 @@ module cksum (
     output reg [`DATA_BUS] sram_data_o,
     input wire [`DATA_BUS] sram_data_i,
 
-    output reg cksum_ready_o,
-    output reg [15:0] cksum_val_o
+    output reg cksum_ready_o
 );
 
     reg [`DATA_BUS] sram_addr;
     reg [`DATA_BUS] cksum_val;
+
+    wire [3:0] dst_sel;
+    assign dst_sel = (dst_field_start_i[1:0] == 2'h0) ? 4'b1100 : 4'b0011;
 
     reg [`DATA_BUS] field_end_addr;
     reg [3:0] data_sel;
@@ -54,11 +59,11 @@ module cksum (
             case (state)
             `STATE_FREE: begin
                 if (start_i == `TRUE) begin
-                    // sram
+                    // sram: clear dst field
                     sram_ce_o <= `TRUE;
-                    sram_we_o <= `FALSE;
-                    sram_addr <= field_start_i;
-                    sram_sel_o <= 4'b1111;
+                    sram_we_o <= `TRUE;
+                    sram_addr <= dst_field_start_i;
+                    sram_sel_o <= dst_sel;
                     sram_data_o <= `ZERO_WORD;
                     // checksum
                     cksum_ready_o <= `FALSE;
@@ -66,8 +71,18 @@ module cksum (
                     // state
                     field_end_addr <= field_start_i + field_len_i;
                     data_sel <= 4'b0000;
-                    state <= `STATE_LOAD;
+                    state <= `STATE_CLEAR;
                 end
+            end
+            `STATE_CLEAR: begin
+                // sram: load cksum field data
+                sram_ce_o <= `TRUE;
+                sram_we_o <= `FALSE;
+                sram_addr <= field_start_i;
+                sram_sel_o <= 4'b0000;
+                sram_data_o <= `ZERO_WORD;
+                // state
+                state <= `STATE_LOAD;
             end
             `STATE_LOAD: begin
                 if (sram_addr[1:0] == 2'h2) begin
@@ -107,7 +122,22 @@ module cksum (
                 state <= `STATE_COMPLEMENT2;
             end
             `STATE_COMPLEMENT2: begin
-                cksum_val <= ~(cksum_val[31:16] + cksum_val[15:0]);
+                // store checksum result to dst field
+                sram_ce_o <= `TRUE;
+                sram_we_o <= `TRUE;
+                sram_addr <= dst_field_start_i;
+                sram_sel_o <= dst_sel;
+                sram_data_o <= {2{~(cksum_val[31:16] + cksum_val[15:0])}};
+
+                state <= `STATE_STORE;
+            end
+            `STATE_STORE: begin
+                sram_ce_o <= `FALSE;
+                sram_we_o <= `FALSE;
+                sram_addr <= `ZERO_WORD;
+                sram_sel_o <= 4'b0000;
+                sram_data_o <= `ZERO_WORD;
+
                 cksum_ready_o <= `TRUE;
                 state <= `STATE_DONE;
             end
@@ -125,7 +155,6 @@ module cksum (
 
     always @(*) begin
         sram_addr_o <= sram_addr;
-        cksum_val_o <= cksum_val[15:0];
     end
 
 endmodule

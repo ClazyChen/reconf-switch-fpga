@@ -63,8 +63,6 @@ module executor_tb (
     initial begin
         $display("Loading packet");
         $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\packet.data", sram0.data_mem);
-        // reset checksum
-        sram0.data_mem[6][31:16] = `ZERO_HALF;
     end
 
 endmodule
