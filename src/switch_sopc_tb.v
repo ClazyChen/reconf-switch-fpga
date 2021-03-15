@@ -23,4 +23,11 @@ module switch_sopc_tb (
         .rst(rst)
     );
 
+    initial begin
+        $display("Loading packet");
+        $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\packet.data", switch_sopc0.sram0.data_mem);
+        // reset checksum
+        switch_sopc0.sram0.data_mem[6][31:16] = `ZERO_HALF;
+    end
+
 endmodule

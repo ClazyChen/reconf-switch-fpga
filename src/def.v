@@ -5,11 +5,8 @@
 
 `define HDR_VEC_SIZE 32
 
-`define DATA_WIDTH 32
-`define ADDR_WIDTH 32
-
-`define RST_ENABLED `TRUE
-`define READ_ENABLED `TRUE
+`define DATA_BUS 31:0
+`define ADDR_BUS 31:0
 
 `define ZERO_WORD 32'h0000_0000
 `define ZERO_HALF 16'h0000
