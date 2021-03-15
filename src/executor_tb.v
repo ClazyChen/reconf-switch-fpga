@@ -2,16 +2,14 @@
 
 `include "def.v"
 
-module cksum_tb (
+module executor_tb (
 );
 
     reg clk;
     reg rst;
-    reg start;
-    reg [`ADDR_BUS] field_start_i;
-    reg [`DATA_BUS] field_len_i;
-    wire cksum_ready_o;
-    wire [15:0] cksum_val_o;
+    reg start_i;
+    wire [`ADDR_BUS] start_addr_i;
+    wire exec_done_o;
 
     wire sram_ce_o;
     wire sram_we_o;
@@ -29,19 +27,18 @@ module cksum_tb (
 
     initial begin
         rst = `TRUE;
-        start <= `FALSE;
-        field_start_i <= 14;
-        field_len_i <= 20;
+        start_i <= `FALSE;
         #45 rst = `FALSE;
-        #20 start <= `TRUE;
+        #20 start_i <= `TRUE;
     end
 
-    cksum cksum0(
+    assign start_addr_i = 64;
+
+    executor executor0(
         .clk(clk),
         .rst(rst),
-        .start_i(start),
-        .field_start_i(field_start_i),
-        .field_len_i(field_len_i),
+        .start_i(start_i),
+        .start_addr_i(start_addr_i),
         // sram
         .sram_ce_o(sram_ce_o),
         .sram_we_o(sram_we_o),
@@ -50,8 +47,7 @@ module cksum_tb (
         .sram_data_o(sram_data_o),
         .sram_data_i(sram_data_i),
         // result
-        .cksum_ready_o(cksum_ready_o),
-        .cksum_val_o(cksum_val_o)
+        .exec_done_o(exec_done_o)
     );
 
     sram sram0(

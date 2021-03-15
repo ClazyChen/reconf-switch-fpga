@@ -13,7 +13,7 @@ module cksum (
 
     input wire start_i,
 
-    input wire [`ADDR_BUS] field_start_addr_i,
+    input wire [`ADDR_BUS] field_start_i,
     input wire [`DATA_BUS] field_len_i,
 
     // sram
@@ -57,14 +57,14 @@ module cksum (
                     // sram
                     sram_ce_o <= `TRUE;
                     sram_we_o <= `FALSE;
-                    sram_addr <= field_start_addr_i;
+                    sram_addr <= field_start_i;
                     sram_sel_o <= 4'b1111;
                     sram_data_o <= `ZERO_WORD;
                     // checksum
                     cksum_ready_o <= `FALSE;
                     cksum_val <= `ZERO_WORD;
                     // state
-                    field_end_addr <= field_start_addr_i + field_len_i;
+                    field_end_addr <= field_start_i + field_len_i;
                     data_sel <= 4'b0000;
                     state <= `STATE_LOAD;
                 end
