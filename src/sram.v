@@ -30,11 +30,21 @@ module sram (
                 if (sel_i[0] == `TRUE) begin
                     data_mem[addr_i[9:2]][7:0] <= data_i[7:0];
                 end
-            end else begin
-                // read from sram
-                data_o <= data_mem[addr_i[9:2]];
             end
         end
     end
 
+    // read is combinational
+    always @(*) begin
+        if (ce == `FALSE) begin
+            data_o <= `ZERO_WORD;
+        end else begin
+            if (we == `FALSE) begin
+                // read from sram
+                data_o <= data_mem[addr_i[9:2]];
+            end else begin
+                data_o <= `ZERO_WORD;
+            end
+        end
+    end
 endmodule

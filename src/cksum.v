@@ -25,7 +25,6 @@ module cksum (
     reg [`DATA_BUS] cksum_val;
 
     reg [`DATA_BUS] field_end_addr;
-    reg [3:0] data_sel;
     reg [2:0] state;
 
     always @(posedge clk) begin
@@ -41,7 +40,6 @@ module cksum (
             cksum_val <= `ZERO_WORD;
             // state
             field_end_addr <= `ZERO_WORD;
-            data_sel <= 4'h0;
             state <= `CKSUM_STATE_FREE;
         end else begin
             case (state)
@@ -58,7 +56,6 @@ module cksum (
                     cksum_val <= `ZERO_WORD;
                     // state
                     field_end_addr <= field_start_i + field_len_i;
-                    data_sel <= 4'b0000;
                     state <= `CKSUM_STATE_CLEAR;
                 end
             end
@@ -67,49 +64,22 @@ module cksum (
                 mem_ce_o <= `TRUE;
                 mem_we_o <= `FALSE;
                 mem_addr <= field_start_i;
-                mem_width_o <= 4;
+                mem_width_o <= 2;
                 mem_data_o <= `ZERO_WORD;
                 // state
-                state <= `CKSUM_STATE_LOAD;
-            end
-            `CKSUM_STATE_LOAD: begin
-                if (mem_addr[1:0] == 2'h2) begin
-                    // align by 4 bytes
-                    mem_addr <= mem_addr + 2;
-                    data_sel <= 4'b0011;
-                end else begin
-                    mem_addr <= mem_addr + 4;
-                    data_sel <= 4'b1111;
-                end
                 state <= `CKSUM_STATE_SUM;
             end
             `CKSUM_STATE_SUM: begin
-                // mem_data is at previous clock's addr
-                if (data_sel == 4'b1100) begin
-                    cksum_val <= cksum_val + mem_data_i[31:16];
-                end else if (data_sel == 4'b0011) begin
-                    cksum_val <= cksum_val + mem_data_i[15:0];
-                end else begin
-                    cksum_val <= cksum_val + mem_data_i[31:16] + mem_data_i[15:0];
-                end
-
                 if (mem_addr < field_end_addr) begin
-                    if (mem_addr + 2 == field_end_addr) begin
-                        data_sel <= 4'b1100;
-                    end else begin
-                        data_sel <= 4'b1111;
-                    end
-                    mem_addr <= mem_addr + 4;
+                    cksum_val <= cksum_val + {`ZERO_HALF, mem_data_i[15:0]};
+                    mem_addr <= mem_addr + 2;
                 end else begin
                     mem_ce_o <= `FALSE;
-                    state <= `CKSUM_STATE_COMPLEMENT1;
+                    cksum_val <= cksum_val[31:16] + cksum_val[15:0];
+                    state <= `CKSUM_STATE_COMPLEMENT;
                 end
             end
-            `CKSUM_STATE_COMPLEMENT1: begin
-                cksum_val <= cksum_val[31:16] + cksum_val[15:0];
-                state <= `CKSUM_STATE_COMPLEMENT2;
-            end
-            `CKSUM_STATE_COMPLEMENT2: begin
+            `CKSUM_STATE_COMPLEMENT: begin
                 // store checksum result to dst field
                 mem_ce_o <= `TRUE;
                 mem_we_o <= `TRUE;

@@ -32,8 +32,12 @@
 `define EX_ADD_STATE_BUS        1:0
 `define EX_ADD_STATE_FREE       2'h0
 `define EX_ADD_STATE_LOAD       2'h1
-`define EX_ADD_STATE_ADD        2'h2
-`define EX_ADD_STATE_STORE      2'h3
+`define EX_ADD_STATE_STORE      2'h2
+
+`define EX_COPY_STATE_BUS       1:0
+`define EX_COPY_STATE_FREE      2'h0
+`define EX_COPY_STATE_LOAD      2'h1
+`define EX_COPY_STATE_STORE     2'h2
 
 `define OPCODE_NOP              6'b000000
 `define OPCODE_CKSUM            6'b000001
@@ -50,11 +54,10 @@
 `define EX_MEM_MUX_ADD      2'h2
 
 // checksum
-`define CKSUM_STATE_FREE          3'h0
-`define CKSUM_STATE_CLEAR         3'h1
-`define CKSUM_STATE_LOAD          3'h2
-`define CKSUM_STATE_SUM           3'h3
-`define CKSUM_STATE_COMPLEMENT1   3'h4
-`define CKSUM_STATE_COMPLEMENT2   3'h5
-`define CKSUM_STATE_STORE         3'h6
-`define CKSUM_STATE_DONE          3'h7
+`define CKSUM_STATE_FREE            3'h0
+`define CKSUM_STATE_CLEAR           3'h1
+`define CKSUM_STATE_LOAD            3'h2
+`define CKSUM_STATE_SUM             3'h3
+`define CKSUM_STATE_COMPLEMENT      3'h4
+`define CKSUM_STATE_STORE           3'h5
+`define CKSUM_STATE_DONE            3'h6
