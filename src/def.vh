@@ -4,8 +4,15 @@
 `define DATA_BUS 31:0
 `define ADDR_BUS 31:0
 
-`define ZERO_WORD 32'h0000_0000
-`define ZERO_HALF 16'h0000
+`define BYTE_BUS    7:0
+`define HALF_BUS    15:0
+`define WORD_BUS    31:0
+`define QUAD_BUS    63:0
+
+`define ZERO_BYTE   8'h00
+`define ZERO_HALF   16'h0000
+`define ZERO_WORD   32'h0000_0000
+`define ZERO_QUAD   64'h0000_0000_0000_0000
 
 `define NUM_HEADERS 2
 `define NO_HEADER 32'hffff_ffff
@@ -62,3 +69,9 @@
 `define CKSUM_STATE_COMPLEMENT      3'h4
 `define CKSUM_STATE_STORE           3'h5
 `define CKSUM_STATE_DONE            3'h6
+
+// hash
+`define HASH_STATE_BUS      1:0
+`define HASH_STATE_FREE     2'h0
+`define HASH_STATE_SUM      2'h1
+`define HASH_STATE_DONE     2'h2
