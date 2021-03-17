@@ -161,7 +161,7 @@ module executor (
                     case (copy_state)
                     `EX_COPY_STATE_FREE: begin
                         mem_mux <= `EX_MEM_MUX_ADD;
-                        // load src field
+                        // load src field, TODO: add header
                         add_mem_we_o <= `FALSE;
                         add_mem_addr_o <= inst[27:22];
                         add_mem_width_o <= inst[19:16];
