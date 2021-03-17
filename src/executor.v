@@ -15,6 +15,9 @@ module executor (
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
 
+    // action args
+    input wire [`ADDR_BUS] args_start_i,
+
     // done signal
     output reg exec_done_o
 );
@@ -42,19 +45,22 @@ module executor (
     wire [3:0] cksum_mem_width_o;
     wire [`DATA_BUS] cksum_mem_data_o;
 
-    // op add mem signals
-    wire add_mem_ce_o;
-    reg add_mem_we_o;
-    reg [`ADDR_BUS] add_mem_addr_o;
-    reg [3:0] add_mem_width_o;
-    reg [`DATA_BUS] add_mem_data_o;
-    assign add_mem_ce_o = `TRUE;
+    // op mem signals
+    wire op_mem_ce_o;
+    reg op_mem_we_o;
+    reg [`ADDR_BUS] op_mem_addr_o;
+    reg [3:0] op_mem_width_o;
+    reg [`DATA_BUS] op_mem_data_o;
+    assign op_mem_ce_o = `TRUE;
 
     // op add state
     reg [`EX_ADD_STATE_BUS] add_state;
 
     // op copy field state
     reg [`EX_COPY_STATE_BUS] copy_state;
+    reg [`ADDR_BUS] copy_src_addr;
+    reg [`ADDR_BUS] copy_src_end_addr;
+    reg [`ADDR_BUS] copy_dst_addr;
 
     // mem selector
     reg [`EX_MEM_MUX_BUS] mem_mux;
@@ -76,10 +82,10 @@ module executor (
             cksum_field_len_o <= `ZERO_WORD;
             cksum_dst_field_start_o <= `ZERO_WORD;
             // op add
-            add_mem_we_o <= `FALSE;
-            add_mem_addr_o <= `ZERO_WORD;
-            add_mem_width_o <= 0;
-            add_mem_data_o <= `ZERO_WORD;
+            op_mem_we_o <= `FALSE;
+            op_mem_addr_o <= `ZERO_WORD;
+            op_mem_width_o <= 0;
+            op_mem_data_o <= `ZERO_WORD;
             add_state <= `EX_ADD_STATE_FREE;
             // op copy field
             copy_state <= `EX_COPY_STATE_FREE;
@@ -132,19 +138,19 @@ module executor (
                 `OPCODE_ADD: begin
                     case (add_state)
                     `EX_ADD_STATE_FREE: begin
-                        mem_mux <= `EX_MEM_MUX_ADD;
+                        mem_mux <= `EX_MEM_MUX_OP;
                         // load field, TODO
-                        add_mem_we_o <= `FALSE;
-                        add_mem_addr_o <= 14 + inst[27:22];
-                        add_mem_width_o <= inst[19:16];
-                        add_mem_data_o <= `ZERO_WORD;
+                        op_mem_we_o <= `FALSE;
+                        op_mem_addr_o <= 14 + inst[27:22];
+                        op_mem_width_o <= inst[19:16];
+                        op_mem_data_o <= `ZERO_WORD;
 
                         add_state <= `EX_ADD_STATE_LOAD;
                     end
                     `EX_ADD_STATE_LOAD: begin
                         // data is ready, store result to memory
-                        add_mem_we_o <= `TRUE;
-                        add_mem_data_o <= mem_data_i + {{6{inst[57]}}, inst[57:32]};
+                        op_mem_we_o <= `TRUE;
+                        op_mem_data_o <= mem_data_i + {{6{inst[57]}}, inst[57:32]};
                         add_state <= `EX_ADD_STATE_STORE;
                     end
                     `EX_ADD_STATE_STORE: begin
@@ -160,36 +166,56 @@ module executor (
                 `OPCODE_COPY_FIELD: begin
                     case (copy_state)
                     `EX_COPY_STATE_FREE: begin
-                        mem_mux <= `EX_MEM_MUX_ADD;
+                        mem_mux <= `EX_MEM_MUX_OP;
+
+                        if (inst[31:28] == `HDR_PARAM) begin
+                            // src is from param
+                            copy_src_addr <= args_start_i + inst[27:22];
+                            copy_src_end_addr <= args_start_i + inst[27:22] + inst[21:16];
+                        end else begin
+                            // src is from header. TODO
+                            copy_src_addr <= inst[27:22];
+                            copy_src_end_addr <= inst[27:22] + inst[21:16];
+                        end
+                        copy_dst_addr <= inst[11:6];
                         // load src field, TODO: add header
-                        add_mem_we_o <= `FALSE;
-                        add_mem_addr_o <= inst[27:22];
-                        add_mem_width_o <= inst[19:16];
-                        add_mem_data_o <= `ZERO_WORD;
+                        op_mem_we_o <= `FALSE;
+                        op_mem_addr_o <= inst[27:22];
+                        op_mem_width_o <= 1;
+                        op_mem_data_o <= `ZERO_WORD;
 
                         copy_state <= `EX_COPY_STATE_LOAD;
                     end
                     `EX_COPY_STATE_LOAD: begin
                         // data is ready, store it to dst field
-                        add_mem_we_o <= `TRUE;
-                        add_mem_addr_o <= inst[11:6];
-                        add_mem_width_o <= inst[5:0];
-                        add_mem_data_o <= mem_data_i;
+                        copy_src_addr <= copy_src_addr + 1;
+                        copy_dst_addr <= copy_dst_addr + 1;
+
+                        op_mem_we_o <= `TRUE;
+                        op_mem_addr_o <= copy_dst_addr;
+                        op_mem_width_o <= 1;
+                        op_mem_data_o <= mem_data_i;
 
                         copy_state <= `EX_COPY_STATE_STORE;
                     end
                     `EX_COPY_STATE_STORE: begin
-                        mem_mux <= `EX_MEM_MUX_INST;
-                        copy_state <= `EX_COPY_STATE_FREE;
-                        state <= `EX_STATE_FETCH_INST1;
+                        if (copy_src_addr == copy_src_end_addr) begin
+                            mem_mux <= `EX_MEM_MUX_INST;
+                            copy_state <= `EX_COPY_STATE_FREE;
+                            state <= `EX_STATE_FETCH_INST1;
+                        end else begin
+                            op_mem_we_o <= `FALSE;
+                            op_mem_addr_o <= copy_src_addr;
+                            op_mem_width_o <= 1;
+                            op_mem_data_o <= `ZERO_WORD;
+
+                            copy_state <= `EX_COPY_STATE_LOAD;
+                        end
                     end
                     default: begin
                         copy_state <= `EX_COPY_STATE_FREE;
                     end
                     endcase
-                end
-                `OPCODE_SET_FIELD: begin
-                    
                 end
                 `OPCODE_SET_PORT: begin
                     
@@ -236,13 +262,13 @@ module executor (
                 mem_width_o <= cksum_mem_width_o;
                 mem_data_o <= cksum_mem_data_o;
             end
-            `EX_MEM_MUX_ADD: begin
-                // add
-                mem_ce_o <= add_mem_ce_o;
-                mem_we_o <= add_mem_we_o;
-                mem_addr_o <= add_mem_addr_o;
-                mem_width_o <= add_mem_width_o;
-                mem_data_o <= add_mem_data_o;
+            `EX_MEM_MUX_OP: begin
+                // op running
+                mem_ce_o <= op_mem_ce_o;
+                mem_we_o <= op_mem_we_o;
+                mem_addr_o <= op_mem_addr_o;
+                mem_width_o <= op_mem_width_o;
+                mem_data_o <= op_mem_data_o;
             end
             default: begin
                 // instruction

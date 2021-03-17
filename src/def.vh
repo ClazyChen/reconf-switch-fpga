@@ -12,6 +12,8 @@
 `define NEXT_TABLE_SIZE 2
 `define NO_NEXT_HEADER 32'hffff_ffff
 
+`define HDR_PARAM       4'hf
+
 // parser
 `define NEXT_TAG_VAL    31:16
 `define NEXT_HDR_ID     15:0
@@ -43,15 +45,14 @@
 `define OPCODE_CKSUM            6'b000001
 `define OPCODE_ADD              6'b000010
 `define OPCODE_COPY_FIELD       6'b000011
-`define OPCODE_SET_FIELD        6'b000100
-`define OPCODE_SET_PORT         6'b000101
-`define OPCODE_SET_MULTICAST    6'b000110
-`define OPCODE_RECIRCULATE      6'b000111
+`define OPCODE_SET_PORT         6'b000100
+`define OPCODE_SET_MULTICAST    6'b000101
+`define OPCODE_RECIRCULATE      6'b000110
 
 `define EX_MEM_MUX_BUS      1:0
 `define EX_MEM_MUX_INST     2'h0
 `define EX_MEM_MUX_CKSUM    2'h1
-`define EX_MEM_MUX_ADD      2'h2
+`define EX_MEM_MUX_OP       2'h2
 
 // checksum
 `define CKSUM_STATE_FREE            3'h0

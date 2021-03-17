@@ -23,9 +23,7 @@ f4c60000
 00000000
 
 // instructions
-0c000000 01820002   // copy dst mac[0:2] to src mac[0:2]
-0c000000 02020082   // copy dst mac[2:4] to src mac[2:4]
-0c000000 02820102   // copy dst mac[4:6] to src mac[4:6]
+0c000000 01860006   // copy dst mac to src mac
 04000000 10141282   // ip cksum
 0bffffff 12010000   // ttl - 1
 00000000 00000000   // nop

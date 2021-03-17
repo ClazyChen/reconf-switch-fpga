@@ -9,6 +9,7 @@ module executor_tb (
     reg rst;
     reg start_i;
     wire [`ADDR_BUS] start_addr_i;
+    wire [`ADDR_BUS] args_start_i;
     wire exec_done_o;
 
     wire mem_ce_o;
@@ -33,6 +34,7 @@ module executor_tb (
     end
 
     assign start_addr_i = 64;
+    assign args_start_i = 128;
 
     executor executor0(
         .clk(clk),
@@ -46,6 +48,8 @@ module executor_tb (
         .mem_width_o(mem_width_o),
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
+        // arg
+        .args_start_i(args_start_i),
         // result
         .exec_done_o(exec_done_o)
     );
