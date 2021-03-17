@@ -1,4 +1,4 @@
-`include "def.v"
+`include "def.vh"
 
 // handle load & store
 module mem (

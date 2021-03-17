@@ -1,23 +1,4 @@
-`include "def.v"
-
-`define STATE_FREE          3'h0
-`define STATE_LOAD          3'h1
-`define STATE_FETCH_INST1   3'h2
-`define STATE_FETCH_INST2   3'h3
-`define STATE_EXEC          3'h4
-`define STATE_DONE          3'h5
-
-`define OPCODE_NOP              6'b000000
-`define OPCODE_CKSUM            6'b000001
-`define OPCODE_ADD              6'b000010
-`define OPCODE_COPY_FIELD       6'b000011
-`define OPCODE_SET_FIELD        6'b000100
-`define OPCODE_SET_PORT         6'b000101
-`define OPCODE_SET_MULTICAST    6'b000110
-`define OPCODE_RECIRCULATE      6'b000111
-
-`define MEM_MUX_EXEC    1'h0
-`define MEM_MUX_CKSUM   1'h1
+`include "def.vh"
 
 module executor (
     input wire clk,
@@ -26,7 +7,7 @@ module executor (
     input wire start_i,
     input wire [`ADDR_BUS] start_addr_i,
 
-    // sram
+    // mem
     output reg mem_ce_o,
     output reg mem_we_o,
     output reg [`ADDR_BUS] mem_addr_o,
@@ -37,6 +18,7 @@ module executor (
     // done signal
     output reg exec_done_o
 );
+
     // executor sram signals
     reg ex_mem_ce_o;
     reg ex_mem_we_o;
@@ -81,57 +63,57 @@ module executor (
             cksum_field_start_o <= `ZERO_WORD;
             cksum_field_len_o <= `ZERO_WORD;
             // sram mux
-            mem_mux <= `MEM_MUX_EXEC;
+            mem_mux <= `EX_MEM_MUX_EXEC;
             // state
-            state <= `STATE_FREE;
+            state <= `EX_STATE_FREE;
             inst <= {`ZERO_WORD, `ZERO_WORD};
         end else begin
             case (state)
-            `STATE_FREE: begin
+            `EX_STATE_FREE: begin
                 if (start_i == `TRUE) begin
                     ex_mem_ce_o <= `TRUE;
                     ex_mem_addr_o <= start_addr_i;
                     ex_mem_width_o <= 4;
-                    state <= `STATE_LOAD;
+                    state <= `EX_STATE_LOAD;
                 end
             end
-            `STATE_LOAD: begin
+            `EX_STATE_LOAD: begin
                 ex_mem_addr_o <= ex_mem_addr_o + 4;
-                state <= `STATE_FETCH_INST1;
+                state <= `EX_STATE_FETCH_INST1;
             end
-            `STATE_FETCH_INST1: begin
+            `EX_STATE_FETCH_INST1: begin
                 inst[63:32] <= mem_data_i;
                 ex_mem_addr_o <= ex_mem_addr_o + 4;
-                state <= `STATE_FETCH_INST2;
+                state <= `EX_STATE_FETCH_INST2;
             end
-            `STATE_FETCH_INST2: begin
+            `EX_STATE_FETCH_INST2: begin
                 inst[31:0] <= mem_data_i;
                 ex_mem_addr_o <= ex_mem_addr_o + 4;
-                state <= `STATE_EXEC;
+                state <= `EX_STATE_EXEC;
             end
-            `STATE_EXEC: begin
+            `EX_STATE_EXEC: begin
                 case (inst[63:58])
                 `OPCODE_NOP: begin
                     // done
                     ex_mem_width_o <= 0;
                     exec_done_o <= `TRUE;
-                    state <= `STATE_DONE;
+                    state <= `EX_STATE_DONE;
                 end
                 `OPCODE_CKSUM: begin
                     cksum_start_o <= `TRUE;
                     // TODO parse from inst
-                    cksum_field_start_o <= 14;
-                    cksum_field_len_o <= 20;
-                    cksum_dst_field_start_o <= 24;
-                    mem_mux <= `MEM_MUX_CKSUM;
+                    cksum_field_start_o <= {26'h0, inst[27:22]} + 14;
+                    cksum_field_len_o <= {26'h0, inst[21:16]};
+                    cksum_dst_field_start_o <= {26'h0, inst[11:6]} + 14;
+                    mem_mux <= `EX_MEM_MUX_CKSUM;
                     if (cksum_ready_i == `TRUE) begin
                         cksum_start_o <= `FALSE;
-                        mem_mux <= `MEM_MUX_EXEC;
-                        state <= `STATE_FETCH_INST1;
+                        mem_mux <= `EX_MEM_MUX_EXEC;
+                        state <= `EX_STATE_FETCH_INST1;
                     end
                 end
                 `OPCODE_ADD: begin
-                    
+
                 end
                 `OPCODE_COPY_FIELD: begin
                     
@@ -150,17 +132,17 @@ module executor (
                 end
                 default: begin
                     // unknown op code, exit
-                    state <= `STATE_DONE;
+                    state <= `EX_STATE_DONE;
                 end
                 endcase
             end
-            `STATE_DONE: begin
+            `EX_STATE_DONE: begin
                 if (start_i == `FALSE) begin
-                    state <= `STATE_FREE;
+                    state <= `EX_STATE_FREE;
                 end
             end
             default: begin
-                state <= `STATE_FREE;
+                state <= `EX_STATE_FREE;
             end
             endcase
         end
@@ -168,7 +150,7 @@ module executor (
 
     always @(*) begin
         case (mem_mux)
-        `MEM_MUX_CKSUM: begin
+        `EX_MEM_MUX_CKSUM: begin
             // checksum
             mem_ce_o <= cksum_mem_ce_o;
             mem_we_o <= cksum_mem_we_o;

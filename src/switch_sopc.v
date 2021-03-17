@@ -1,4 +1,4 @@
-`include "def.v"
+`include "def.vh"
 
 module switch_sopc (
     input wire clk,

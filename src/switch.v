@@ -1,12 +1,4 @@
-`include "def.v"
-
-`define NEXT_TAG_VAL    31:16
-`define NEXT_HDR_ID     15:0
-
-`define STATE_FREE      2'h0
-`define STATE_LOAD      2'h1
-`define STATE_PARSING   2'h2
-`define STATE_DONE      2'h3
+`include "def.vh"
 
 module switch(
     input wire clk,
@@ -60,24 +52,24 @@ module switch(
             sram_data_o <= `ZERO_WORD;
 
             // parse state
-            state <= `STATE_FREE;
+            state <= `PS_STATE_FREE;
             hdr_id <= `NO_HEADER;
         end else begin
             case (state)
-            `STATE_FREE: begin
+            `PS_STATE_FREE: begin
                 sram_ce_o <= `TRUE;
                 sram_we_o <= `FALSE;
                 sram_addr_o <= next_tag_starts[0];  // tag addr
                 sram_sel_o <= 4'b1111;
 
-                state <= `STATE_LOAD;
+                state <= `PS_STATE_LOAD;
                 hdr_id <= 0;
                 hdr_addr <= `ZERO_WORD;
             end
-            `STATE_LOAD: begin
-                state <= `STATE_PARSING;
+            `PS_STATE_LOAD: begin
+                state <= `PS_STATE_PARSING;
             end
-            `STATE_PARSING: begin
+            `PS_STATE_PARSING: begin
                 case (hdr_id)
                 0: begin
                     // parse current header offset
@@ -87,15 +79,15 @@ module switch(
                     if (sram_data_i[`NEXT_TAG_VAL] == next_table[0][0][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[0][0][`NEXT_HDR_ID];
                         sram_addr_o <= hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][0][`NEXT_HDR_ID]];
-                        state <= `STATE_LOAD;
+                        state <= `PS_STATE_LOAD;
                     end else if (sram_data_i[`NEXT_TAG_VAL] == next_table[0][1][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[0][1][`NEXT_HDR_ID];
                         sram_addr_o <= hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][1][`NEXT_HDR_ID]];
-                        state <= `STATE_LOAD;
+                        state <= `PS_STATE_LOAD;
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         sram_ce_o <= `FALSE;
-                        state <= `STATE_DONE;
+                        state <= `PS_STATE_DONE;
                     end
                 end
                 1: begin
@@ -104,15 +96,15 @@ module switch(
                     if (sram_data_i[`NEXT_TAG_VAL] == next_table[1][0][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[1][0][`NEXT_HDR_ID];
                         sram_addr_o <= hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][0][`NEXT_HDR_ID]];
-                        state <= `STATE_LOAD;
+                        state <= `PS_STATE_LOAD;
                     end else if (sram_data_i[`NEXT_TAG_VAL] == next_table[1][1][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[1][1][`NEXT_HDR_ID];
                         sram_addr_o <= hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][1][`NEXT_HDR_ID]];
-                        state <= `STATE_LOAD;
+                        state <= `PS_STATE_LOAD;
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         sram_addr_o <= `ZERO_WORD;
-                        state <= `STATE_DONE;
+                        state <= `PS_STATE_DONE;
                     end
                 end
                 default: begin
@@ -120,11 +112,11 @@ module switch(
                 end
                 endcase
             end
-            `STATE_DONE: begin
+            `PS_STATE_DONE: begin
                 sram_ce_o <= `FALSE;
             end
             default: begin
-                state <= `STATE_FREE;
+                state <= `PS_STATE_FREE;
             end
             endcase
             

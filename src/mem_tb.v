@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`include "def.v"
+`include "def.vh"
 
 module mem_tb (
 );
