@@ -24,4 +24,5 @@ f4c60000
 
 // instructions
 04000000 10141282   // ip cksum
+0bffffff 12010000   // ttl - 1
 00000000 00000000   // nop

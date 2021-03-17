@@ -30,7 +30,7 @@ module cksum (
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
-            // sram
+            // mem
             mem_ce_o <= `FALSE;
             mem_we_o <= `FALSE;
             mem_addr <= `ZERO_WORD;
@@ -47,7 +47,7 @@ module cksum (
             case (state)
             `CKSUM_STATE_FREE: begin
                 if (start_i == `TRUE) begin
-                    // sram: clear dst field
+                    // mem: clear dst field
                     mem_ce_o <= `TRUE;
                     mem_we_o <= `TRUE;
                     mem_addr <= dst_field_start_i;
@@ -63,7 +63,7 @@ module cksum (
                 end
             end
             `CKSUM_STATE_CLEAR: begin
-                // sram: load cksum field data
+                // mem: load cksum field data
                 mem_ce_o <= `TRUE;
                 mem_we_o <= `FALSE;
                 mem_addr <= field_start_i;

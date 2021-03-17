@@ -19,12 +19,15 @@ module executor (
     output reg exec_done_o
 );
 
-    // executor sram signals
-    reg ex_mem_ce_o;
-    reg ex_mem_we_o;
-    reg [`ADDR_BUS] ex_mem_addr_o;
-    reg [3:0] ex_mem_width_o;
-    reg [`DATA_BUS] ex_mem_data_o;
+    // instruction mem signals
+    reg inst_mem_ce_o;
+    wire inst_mem_we_o;
+    reg [`ADDR_BUS] inst_mem_addr_o;
+    wire [3:0] inst_mem_width_o;
+    wire [`DATA_BUS] inst_mem_data_o;
+    assign inst_mem_we_o = `FALSE;
+    assign inst_mem_width_o = 4;
+    assign inst_mem_data_o = `ZERO_WORD;
 
     // checksum module
     reg cksum_start_o;
@@ -32,17 +35,25 @@ module executor (
     reg [`DATA_BUS] cksum_field_len_o;
     reg [`ADDR_BUS] cksum_dst_field_start_o;
     wire cksum_ready_i;
-    // checksum sram signals
+    // checksum mem signals
     wire cksum_mem_ce_o;
     wire cksum_mem_we_o;
     wire [`ADDR_BUS] cksum_mem_addr_o;
     wire [3:0] cksum_mem_width_o;
     wire [`DATA_BUS] cksum_mem_data_o;
-    wire [`DATA_BUS] cksum_mem_data_i;
-    assign cksum_mem_data_i = mem_data_i;
 
-    // sram selector
-    reg mem_mux;
+    // op add mem signals
+    wire add_mem_ce_o;
+    reg add_mem_we_o;
+    reg [`ADDR_BUS] add_mem_addr_o;
+    reg [3:0] add_mem_width_o;
+    reg [`DATA_BUS] add_mem_data_o;
+    assign add_mem_ce_o = `TRUE;
+    // op add state
+    reg [`EX_ADD_STATE_BUS] add_state;
+
+    // mem selector
+    reg [`EX_MEM_MUX_BUS] mem_mux;
 
     // state
     reg [2:0] state;
@@ -50,20 +61,24 @@ module executor (
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
-            // exec sram
-            ex_mem_ce_o <= `FALSE;
-            ex_mem_we_o <= `FALSE;
-            ex_mem_addr_o <= `ZERO_WORD;
-            ex_mem_width_o <= 0;
-            ex_mem_data_o <= `ZERO_WORD;
             // output
             exec_done_o <= `FALSE;
+            // instruction
+            inst_mem_ce_o <= `FALSE;
+            inst_mem_addr_o <= `ZERO_WORD;
             // checksum
             cksum_start_o <= `FALSE;
             cksum_field_start_o <= `ZERO_WORD;
             cksum_field_len_o <= `ZERO_WORD;
-            // sram mux
-            mem_mux <= `EX_MEM_MUX_EXEC;
+            cksum_dst_field_start_o <= `ZERO_WORD;
+            // op add
+            add_mem_we_o <= `FALSE;
+            add_mem_addr_o <= `ZERO_WORD;
+            add_mem_width_o <= 0;
+            add_mem_data_o <= `ZERO_WORD;
+            add_state <= `EX_ADD_STATE_FREE;
+            // mem mux
+            mem_mux <= `EX_MEM_MUX_INST;
             // state
             state <= `EX_STATE_FREE;
             inst <= {`ZERO_WORD, `ZERO_WORD};
@@ -71,31 +86,30 @@ module executor (
             case (state)
             `EX_STATE_FREE: begin
                 if (start_i == `TRUE) begin
-                    ex_mem_ce_o <= `TRUE;
-                    ex_mem_addr_o <= start_addr_i;
-                    ex_mem_width_o <= 4;
+                    inst_mem_addr_o <= start_addr_i;
+                    inst_mem_ce_o <= `TRUE;
                     state <= `EX_STATE_LOAD;
                 end
             end
             `EX_STATE_LOAD: begin
-                ex_mem_addr_o <= ex_mem_addr_o + 4;
+                inst_mem_addr_o <= inst_mem_addr_o + 4;
                 state <= `EX_STATE_FETCH_INST1;
             end
             `EX_STATE_FETCH_INST1: begin
                 inst[63:32] <= mem_data_i;
-                ex_mem_addr_o <= ex_mem_addr_o + 4;
+                inst_mem_addr_o <= inst_mem_addr_o + 4;
                 state <= `EX_STATE_FETCH_INST2;
             end
             `EX_STATE_FETCH_INST2: begin
                 inst[31:0] <= mem_data_i;
-                ex_mem_addr_o <= ex_mem_addr_o + 4;
                 state <= `EX_STATE_EXEC;
             end
             `EX_STATE_EXEC: begin
                 case (inst[63:58])
                 `OPCODE_NOP: begin
                     // done
-                    ex_mem_width_o <= 0;
+                    inst_mem_ce_o <= `FALSE;
+                    inst_mem_addr_o <= `ZERO_WORD;
                     exec_done_o <= `TRUE;
                     state <= `EX_STATE_DONE;
                 end
@@ -108,12 +122,41 @@ module executor (
                     mem_mux <= `EX_MEM_MUX_CKSUM;
                     if (cksum_ready_i == `TRUE) begin
                         cksum_start_o <= `FALSE;
-                        mem_mux <= `EX_MEM_MUX_EXEC;
-                        state <= `EX_STATE_FETCH_INST1;
+                        mem_mux <= `EX_MEM_MUX_INST;
+                        state <= `EX_STATE_LOAD;
                     end
                 end
                 `OPCODE_ADD: begin
+                    case (add_state)
+                    `EX_ADD_STATE_FREE: begin
+                        mem_mux <= `EX_MEM_MUX_ADD;
+                        // load field
+                        add_mem_we_o <= `FALSE;
+                        add_mem_addr_o <= 14 + inst[27:22];
+                        add_mem_width_o <= inst[19:16];
+                        add_mem_data_o <= `ZERO_WORD;
 
+                        add_state <= `EX_ADD_STATE_LOAD;
+                    end
+                    `EX_ADD_STATE_LOAD: begin
+                        // now addr is ready, data is not
+                        add_state <= `EX_ADD_STATE_ADD;
+                    end
+                    `EX_ADD_STATE_ADD: begin
+                        // data is ready, store result to memory
+                        add_mem_we_o <= `TRUE;
+                        add_mem_data_o <= mem_data_i + {{6{inst[57]}}, inst[57:32]};
+                        add_state <= `EX_ADD_STATE_STORE;
+                    end
+                    `EX_ADD_STATE_STORE: begin
+                        mem_mux <= `EX_MEM_MUX_INST; 
+                        add_state <= `EX_ADD_STATE_FREE;
+                        state <= `EX_STATE_LOAD;
+                    end
+                    default: begin
+                        add_state <= `EX_ADD_STATE_FREE;
+                    end
+                    endcase
                 end
                 `OPCODE_COPY_FIELD: begin
                     
@@ -148,25 +191,42 @@ module executor (
         end
     end
 
+    // mem mux
     always @(*) begin
-        case (mem_mux)
-        `EX_MEM_MUX_CKSUM: begin
-            // checksum
-            mem_ce_o <= cksum_mem_ce_o;
-            mem_we_o <= cksum_mem_we_o;
-            mem_addr_o <= cksum_mem_addr_o;
-            mem_width_o <= cksum_mem_width_o;
-            mem_data_o <= cksum_mem_data_o;
+        if (rst == `TRUE) begin
+            mem_ce_o <= `FALSE;
+            mem_we_o <= `FALSE;
+            mem_addr_o <= `ZERO_WORD;
+            mem_width_o <= 0;
+            mem_data_o <= `ZERO_WORD;
+        end else begin
+            case (mem_mux)
+            `EX_MEM_MUX_CKSUM: begin
+                // checksum
+                mem_ce_o <= cksum_mem_ce_o;
+                mem_we_o <= cksum_mem_we_o;
+                mem_addr_o <= cksum_mem_addr_o;
+                mem_width_o <= cksum_mem_width_o;
+                mem_data_o <= cksum_mem_data_o;
+            end
+            `EX_MEM_MUX_ADD: begin
+                // add
+                mem_ce_o <= add_mem_ce_o;
+                mem_we_o <= add_mem_we_o;
+                mem_addr_o <= add_mem_addr_o;
+                mem_width_o <= add_mem_width_o;
+                mem_data_o <= add_mem_data_o;
+            end
+            default: begin
+                // instruction
+                mem_ce_o <= inst_mem_ce_o;
+                mem_we_o <= inst_mem_we_o;
+                mem_addr_o <= inst_mem_addr_o;
+                mem_width_o <= inst_mem_width_o;
+                mem_data_o <= inst_mem_data_o;
+            end
+            endcase
         end
-        default: begin
-            // executor
-            mem_ce_o <= ex_mem_ce_o;
-            mem_we_o <= ex_mem_we_o;
-            mem_addr_o <= ex_mem_addr_o;
-            mem_width_o <= ex_mem_width_o;
-            mem_data_o <= ex_mem_data_o;
-        end
-        endcase
     end
 
     cksum cksum0(
@@ -176,13 +236,13 @@ module executor (
         .field_start_i(cksum_field_start_o),
         .field_len_i(cksum_field_len_o),
         .dst_field_start_i(cksum_dst_field_start_o),
-        // sram
+        // mem
         .mem_ce_o(cksum_mem_ce_o),
         .mem_we_o(cksum_mem_we_o),
         .mem_addr_o(cksum_mem_addr_o),
         .mem_width_o(cksum_mem_width_o),
         .mem_data_o(cksum_mem_data_o),
-        .mem_data_i(cksum_mem_data_i),
+        .mem_data_i(mem_data_i),
         // output
         .cksum_ready_o(cksum_ready_i)
     );

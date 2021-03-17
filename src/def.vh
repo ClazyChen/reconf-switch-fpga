@@ -16,22 +16,24 @@
 `define NEXT_TAG_VAL    31:16
 `define NEXT_HDR_ID     15:0
 
-`define PS_STATE_FREE      2'h0
-`define PS_STATE_LOAD      2'h1
-`define PS_STATE_PARSING   2'h2
-`define PS_STATE_DONE      2'h3
+`define PS_STATE_FREE       2'h0
+`define PS_STATE_LOAD       2'h1
+`define PS_STATE_PARSING    2'h2
+`define PS_STATE_DONE       2'h3
 
 // executor
-`define EX_STATE_FREE          3'h0
-`define EX_STATE_LOAD          3'h1
-`define EX_STATE_FETCH_INST1   3'h2
-`define EX_STATE_FETCH_INST2   3'h3
-`define EX_STATE_EXEC          3'h4
-`define EX_STATE_DONE          3'h5
+`define EX_STATE_FREE           3'h0
+`define EX_STATE_LOAD           3'h1
+`define EX_STATE_FETCH_INST1    3'h2
+`define EX_STATE_FETCH_INST2    3'h3
+`define EX_STATE_EXEC           3'h4
+`define EX_STATE_DONE           3'h5
 
-`define EX_ADD_STATE_START    2'h0
-`define EX_ADD_STATE_LOAD     2'h1
-`define EX_ADD_STATE_STORE    2'h2
+`define EX_ADD_STATE_BUS        1:0
+`define EX_ADD_STATE_FREE       2'h0
+`define EX_ADD_STATE_LOAD       2'h1
+`define EX_ADD_STATE_ADD        2'h2
+`define EX_ADD_STATE_STORE      2'h3
 
 `define OPCODE_NOP              6'b000000
 `define OPCODE_CKSUM            6'b000001
@@ -42,8 +44,10 @@
 `define OPCODE_SET_MULTICAST    6'b000110
 `define OPCODE_RECIRCULATE      6'b000111
 
-`define EX_MEM_MUX_EXEC    1'h0
-`define EX_MEM_MUX_CKSUM   1'h1
+`define EX_MEM_MUX_BUS      1:0
+`define EX_MEM_MUX_INST     2'h0
+`define EX_MEM_MUX_CKSUM    2'h1
+`define EX_MEM_MUX_ADD      2'h2
 
 // checksum
 `define CKSUM_STATE_FREE          3'h0
