@@ -10,7 +10,7 @@ module sram (
     output reg [`DATA_BUS] data_o   // data to read
 );
 
-    reg [`DATA_BUS] data_mem[255:0];    // 256 x 32 bytes
+    reg [`DATA_BUS] data_mem[32:0];    // 256 x 32 bits
 
     always @(posedge clk) begin
         if (ce == `FALSE) begin

@@ -23,7 +23,7 @@ module cksum (
     output reg sram_ce_o,
     output reg sram_we_o,
     output reg [`ADDR_BUS] sram_addr_o,
-    output reg [3:0] sram_sel_o,
+    output reg [3:0] sram_width_o,
     output reg [`DATA_BUS] sram_data_o,
     input wire [`DATA_BUS] sram_data_i,
 
@@ -32,9 +32,6 @@ module cksum (
 
     reg [`DATA_BUS] sram_addr;
     reg [`DATA_BUS] cksum_val;
-
-    wire [3:0] dst_sel;
-    assign dst_sel = (dst_field_start_i[1:0] == 2'h0) ? 4'b1100 : 4'b0011;
 
     reg [`DATA_BUS] field_end_addr;
     reg [3:0] data_sel;
@@ -46,7 +43,7 @@ module cksum (
             sram_ce_o <= `FALSE;
             sram_we_o <= `FALSE;
             sram_addr <= `ZERO_WORD;
-            sram_sel_o <= 4'b0000;
+            sram_width_o <= 0;
             sram_data_o <= `ZERO_WORD;
             // checksum
             cksum_ready_o <= `FALSE;
@@ -63,7 +60,7 @@ module cksum (
                     sram_ce_o <= `TRUE;
                     sram_we_o <= `TRUE;
                     sram_addr <= dst_field_start_i;
-                    sram_sel_o <= dst_sel;
+                    sram_width_o <= 2;
                     sram_data_o <= `ZERO_WORD;
                     // checksum
                     cksum_ready_o <= `FALSE;
@@ -79,7 +76,7 @@ module cksum (
                 sram_ce_o <= `TRUE;
                 sram_we_o <= `FALSE;
                 sram_addr <= field_start_i;
-                sram_sel_o <= 4'b0000;
+                sram_width_o <= 4;
                 sram_data_o <= `ZERO_WORD;
                 // state
                 state <= `STATE_LOAD;
@@ -126,8 +123,8 @@ module cksum (
                 sram_ce_o <= `TRUE;
                 sram_we_o <= `TRUE;
                 sram_addr <= dst_field_start_i;
-                sram_sel_o <= dst_sel;
-                sram_data_o <= {2{~(cksum_val[31:16] + cksum_val[15:0])}};
+                sram_width_o <= 2;
+                sram_data_o <= {`ZERO_HALF, ~(cksum_val[31:16] + cksum_val[15:0])};
 
                 state <= `STATE_STORE;
             end
@@ -135,7 +132,7 @@ module cksum (
                 sram_ce_o <= `FALSE;
                 sram_we_o <= `FALSE;
                 sram_addr <= `ZERO_WORD;
-                sram_sel_o <= 4'b0000;
+                sram_width_o <= 0;
                 sram_data_o <= `ZERO_WORD;
 
                 cksum_ready_o <= `TRUE;

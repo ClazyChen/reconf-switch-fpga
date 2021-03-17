@@ -1,10 +1,6 @@
 `define TRUE 1'b1
 `define FALSE 1'b0
 
-`define SIZE_WIDTH 12
-
-`define HDR_VEC_SIZE 32
-
 `define DATA_BUS 31:0
 `define ADDR_BUS 31:0
 
