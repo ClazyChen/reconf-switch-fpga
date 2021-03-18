@@ -51,11 +51,6 @@ module matcher (
     integer i;
 
     always @(posedge clk) begin
-
-        assign mem_data_o = `ZERO_WORD;
-        assign mem_we_o = `FALSE;
-        assign mem_width_o = 1;
-
         if (rst == `TRUE) begin
             // mem
             mem_ce_o <= `FALSE;
@@ -149,7 +144,10 @@ module matcher (
     end
 
     always @(*) begin
+        assign mem_we_o = `FALSE;
         assign mem_addr_o = mem_addr;
+        assign mem_width_o = 1;
+        assign mem_data_o = `ZERO_WORD;
     end
 
     hash hash0(
