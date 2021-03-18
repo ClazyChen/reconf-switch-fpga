@@ -1,6 +1,11 @@
 `define TRUE 1'b1
 `define FALSE 1'b0
 
+`define BYTE_WIDTH  8
+`define HALF_WIDTH  16
+`define WORD_WIDTH  32
+`define QUAD_WIDTH  64
+
 `define BYTE_BUS    7:0
 `define HALF_BUS    15:0
 `define WORD_BUS    31:0
@@ -26,10 +31,10 @@
 `define NEXT_TAG_VAL    31:16
 `define NEXT_HDR_ID     15:0
 
+`define PS_STATE_BUS        1:0
 `define PS_STATE_FREE       2'h0
-`define PS_STATE_LOAD       2'h1
-`define PS_STATE_PARSING    2'h2
-`define PS_STATE_DONE       2'h3
+`define PS_STATE_PARSING    2'h1
+`define PS_STATE_DONE       2'h2
 
 // matcher
 `define MT_STATE_BUS        2:0
