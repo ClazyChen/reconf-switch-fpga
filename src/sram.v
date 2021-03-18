@@ -10,7 +10,7 @@ module sram (
     output reg [`DATA_BUS] data_o   // data to read
 );
 
-    reg [`DATA_BUS] data_mem[32:0];    // 256 x 32 bits
+    reg [`DATA_BUS] data_mem[1024 + 32 - 1:0];    // 256 x 32 bits
 
     always @(posedge clk) begin
         if (ce == `FALSE) begin
@@ -19,16 +19,16 @@ module sram (
             if (we == `TRUE) begin
                 // write to sram
                 if (sel_i[3] == `TRUE) begin
-                    data_mem[addr_i[9:2]][31:24] <= data_i[31:24];
+                    data_mem[addr_i[31:2]][31:24] <= data_i[31:24];
                 end
                 if (sel_i[2] == `TRUE) begin
-                    data_mem[addr_i[9:2]][23:16] <= data_i[23:16];
+                    data_mem[addr_i[31:2]][23:16] <= data_i[23:16];
                 end
                 if (sel_i[1] == `TRUE) begin
-                    data_mem[addr_i[9:2]][15:8] <= data_i[15:8];
+                    data_mem[addr_i[31:2]][15:8] <= data_i[15:8];
                 end
                 if (sel_i[0] == `TRUE) begin
-                    data_mem[addr_i[9:2]][7:0] <= data_i[7:0];
+                    data_mem[addr_i[31:2]][7:0] <= data_i[7:0];
                 end
             end
         end
@@ -41,7 +41,7 @@ module sram (
         end else begin
             if (we == `FALSE) begin
                 // read from sram
-                data_o <= data_mem[addr_i[9:2]];
+                data_o <= data_mem[addr_i[31:2]];
             end else begin
                 data_o <= `ZERO_WORD;
             end

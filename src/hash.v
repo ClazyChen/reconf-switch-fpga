@@ -22,15 +22,15 @@ module hash (
             `HASH_STATE_FREE: begin
                 if (start_i) begin
                     hash_ready_o <= `FALSE;
-                    hash_val <= key_i[9:0] + key_i[19:10] + key_i[29:20] +
-                                key_i[39:30] + key_i[49:40] + key_i[59:50] +
-                                key_i[63:60];
+                    hash_val <= key_i[7:0] + key_i[15:8] + key_i[23:16] +
+                                key_i[31:24] + key_i[39:32] + key_i[47:40] +
+                                key_i[55:48] + key_i[63:56];
                     state <= `HASH_STATE_SUM;
                 end
             end
             `HASH_STATE_SUM: begin
                 hash_ready_o <= `TRUE;
-                hash_val <= hash_val[19:10] + hash_val[9:0];
+                hash_val <= hash_val[15:8] + hash_val[7:0];
                 state <= `HASH_STATE_DONE;
             end
             `HASH_STATE_DONE: begin

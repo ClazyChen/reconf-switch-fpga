@@ -31,6 +31,15 @@
 `define PS_STATE_PARSING    2'h2
 `define PS_STATE_DONE       2'h3
 
+// matcher
+`define MT_STATE_BUS        2:0
+`define MT_STATE_FREE       3'h0
+`define MT_STATE_LOAD_KEY   3'h1
+`define MT_STATE_HASH       3'h2
+`define MT_STATE_LOAD_ENTRY 3'h3
+`define MT_STATE_CMP        3'h4
+`define MT_STATE_DONE       3'h5
+
 // executor
 `define EX_STATE_FREE           3'h0
 `define EX_STATE_LOAD           3'h1
