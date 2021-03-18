@@ -30,7 +30,7 @@ module mem_tb (
     initial begin
         sram_ce_o <= `FALSE;
         sram_we_o <= `FALSE;
-        sram_addr_o <= `ZERO_WORD;
+        sram_addr_o <= `ZERO_ADDR;
         sram_width_o <= 0;
         sram_data_o <= `ZERO_WORD;
         #65 // load word at 0x04
@@ -92,7 +92,7 @@ module mem_tb (
     wire [`ADDR_BUS] mem_addr_o;
     wire [3:0] mem_sel_o;
     wire [`DATA_BUS] mem_data_o;
-    wire [`ADDR_BUS] mem_data_i;
+    wire [`DATA_BUS] mem_data_i;
 
     mem mem0(
         .ce(sram_ce_o),

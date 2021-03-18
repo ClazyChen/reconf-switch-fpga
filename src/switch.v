@@ -47,7 +47,7 @@ module switch(
             // sram
             sram_ce_o <= `FALSE;
             sram_we_o <= `FALSE;
-            sram_addr_o <= `ZERO_WORD;
+            sram_addr_o <= `ZERO_ADDR;
             sram_sel_o <= 4'b0000;
             sram_data_o <= `ZERO_WORD;
 
@@ -64,7 +64,7 @@ module switch(
 
                 state <= `PS_STATE_LOAD;
                 hdr_id <= 0;
-                hdr_addr <= `ZERO_WORD;
+                hdr_addr <= `ZERO_ADDR;
             end
             `PS_STATE_LOAD: begin
                 state <= `PS_STATE_PARSING;
@@ -103,7 +103,7 @@ module switch(
                         state <= `PS_STATE_LOAD;
                     end else begin
                         hdr_id <= `NUM_HEADERS;
-                        sram_addr_o <= `ZERO_WORD;
+                        sram_addr_o <= `ZERO_ADDR;
                         state <= `PS_STATE_DONE;
                     end
                 end

@@ -1,9 +1,6 @@
 `define TRUE 1'b1
 `define FALSE 1'b0
 
-`define DATA_BUS 31:0
-`define ADDR_BUS 31:0
-
 `define BYTE_BUS    7:0
 `define HALF_BUS    15:0
 `define WORD_BUS    31:0
@@ -13,6 +10,10 @@
 `define ZERO_HALF   16'h0000
 `define ZERO_WORD   32'h0000_0000
 `define ZERO_QUAD   64'h0000_0000_0000_0000
+
+`define DATA_BUS    `WORD_BUS
+`define ADDR_BUS    `WORD_BUS
+`define ZERO_ADDR   `ZERO_WORD
 
 `define NUM_HEADERS 2
 `define NO_HEADER 32'hffff_ffff
