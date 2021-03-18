@@ -9,8 +9,24 @@
 `define I_DONE          2'b11
 
 `define D_FREE          3'b000
+`define D_TRANS1        3'b001
+`define D_READ          3'b010
+`define D_TRANS2        3'b011
+`define D_DELELE        3'b100
+`define D_DONE          3'b101 
 
-`define D_DONE          3'b111
+`define S_FREE          3'b000
+`define S_TRANS1        3'b001
+`define S_READ          3'b010
+`define S_TRANS2        3'b011
+`define S_DONE          3'b100
+
+`define M_FREE          3'b000
+`define M_TRANS1        3'b001
+`define M_READ          3'b010
+`define M_TRANS2        3'b011
+`define M_DELELE        3'b100
+`define M_DONE          3'b101 
 
 module hash_table(
         input                   clk,
@@ -18,8 +34,9 @@ module hash_table(
         input                   hash_setup_i,
         input   wire    [`KEY_LENGTH-1:0]   key,
         input   wire    [1:0]   op_type,
-        inout   wire    [`VALUE_LENGTH-1:0]   value,
-        output  wire    [2:0]   search_res
+        input   wire    [`VALUE_LENGTH-1:0]   value_i,
+        output   reg    [`VALUE_LENGTH-1:0]   value_o,
+        output  reg    [2:0]   search_res
     );
     
     reg     [`ADDR_WIDTH-1:0]    h_addr_i;
@@ -33,8 +50,8 @@ module hash_table(
     reg                 ck_setup;
     
     reg     [1:0]       i_state;
-    reg     [1:0]       s_state;
-    reg     [1:0]       m_state;
+    reg     [2:0]       s_state;
+    reg     [2:0]       m_state;
     reg     [2:0]       d_state;
     
     always @(posedge clk) begin
@@ -62,7 +79,7 @@ module hash_table(
                         end
                         `I_LOADDATA: begin
                             i_state <= `I_WRITE;
-                            data_in <= {key, value};
+                            data_in <= {key, value_i};
                         end
                         `I_WRITE: begin
                             we <= 1'b1;
@@ -83,32 +100,32 @@ module hash_table(
                             if(hash_setup_i == 1'b1) begin
                                 ck_setup <= 1'b1;
                                 ce <= 1'b1;
-                                d_state <= 3'b001;
+                                d_state <= `D_TRANS1;
                             end
                         end
-                        3'b001: begin
-                            d_state <= 3'b010;
+                        `D_TRANS1: begin
+                            d_state <= `D_READ;
                         end
-                        3'b010: begin
-                            d_state <= 3'b011;
+                        `D_READ: begin
+                            d_state <= `D_TRANS2;
                             ck_setup <= 1'b0;
                             oe <= 1'b1;
                         end
-                        3'b011: begin
-                            d_state <= 3'b100;
+                        `D_TRANS2: begin
+                            d_state <= `D_DELELE;
                         end
-                        3'b100: begin
+                        `D_DELELE: begin
                             if(data_out[31:10] == key) begin
                                 we <= 1'b1;
                                 oe <= 1'b0;
                                 data_in <= 32'd0;
-                                d_state <= 3'b101;
+                                d_state <= `D_DONE;
                             end
                             else begin
-                                d_state <= 3'b101;
+                                d_state <= `D_DONE;
                             end
                         end
-                        3'b101: begin
+                        `D_DONE: begin
                             we <= 1'b0;
                             if(hash_setup_i == 1'b0) begin
                                 d_state <= `D_FREE;
@@ -117,10 +134,78 @@ module hash_table(
                     endcase
                 end
                 `HASH_SEARCH: begin
-                
+                    case(s_state)
+                        `S_FREE: begin
+                            if(hash_setup_i == 1'b1) begin
+                                ck_setup <= 1'b1;
+                                ce <= 1'b1;
+                                s_state <= `S_TRANS1;
+                            end
+                        end
+                        `S_TRANS1: begin
+                            s_state <= `S_READ;
+                        end
+                        `S_READ: begin
+                            oe <= 1'b1;
+                            ck_setup <= 1'b0;
+                            s_state <= `S_TRANS2;
+                        end
+                        `S_TRANS2: begin
+                            oe <= 1'b0;
+                            s_state <= `S_DONE;
+                        end
+                        `S_DONE: begin
+                            if(hash_setup_i == 1'b0) begin
+                                if(data_out[31:10] == key) begin
+                                    value_o <= data_out[9:0];
+                                    search_res <= 2'b00;
+                                end
+                                else begin
+                                    search_res <= 2'b01;
+                                end
+                                s_state <= 3'b000;
+                            end
+                        end
+                    endcase
                 end
                 `HASH_MODIFY: begin
-                
+                    case(d_state)
+                        `M_FREE: begin
+                            if(hash_setup_i == 1'b1) begin
+                                ck_setup <= 1'b1;
+                                ce <= 1'b1;
+                                d_state <= `M_TRANS1;
+                            end
+                        end
+                        `M_TRANS1: begin
+                            d_state <= `M_READ;
+                        end
+                        `M_READ: begin
+                            d_state <= `M_TRANS2;
+                            ck_setup <= 1'b0;
+                            oe <= 1'b1;
+                        end
+                        `M_TRANS2: begin
+                            d_state <= `M_DELELE;
+                        end
+                        `M_DELELE: begin
+                            if(data_out[31:10] == key) begin
+                                we <= 1'b1;
+                                oe <= 1'b0;
+                                data_in <= 32'd0;
+                                d_state <= `M_DONE;
+                            end
+                            else begin
+                                d_state <= `M_DONE;
+                            end
+                        end
+                        `M_DONE: begin
+                            we <= 1'b0;
+                            if(hash_setup_i == 1'b0) begin
+                                d_state <= `M_FREE;
+                            end
+                        end
+                    endcase
                 end
                 default:;
             endcase
