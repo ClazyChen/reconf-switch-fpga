@@ -59,7 +59,7 @@ module executor_tb (
     wire [`ADDR_BUS] sram_addr_o;
     wire [3:0] sram_sel_o;
     wire [`DATA_BUS] sram_data_o;
-    wire [`ADDR_BUS] sram_data_i;
+    wire [`DATA_BUS] sram_data_i;
 
     mem mem0(
         .ce(mem_ce_o),
