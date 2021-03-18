@@ -10,6 +10,7 @@ module hash_table_tb();
     reg     [1:0]       op_type;
     wire    [21:0] tb_value_w;
     wire    [2:0]   tb_search_res;
+    wire    [1:0]   tb_value_o;
     
     initial begin
         clk = 1'b0;
@@ -35,25 +36,46 @@ module hash_table_tb();
         hash_setup <= 1'b0;
         #10
         hash_setup <= 1'b1;
-        op_type <= `HASH_DELETE;
-        tb_key <= 22'b00_0000000010_0000000001;    
-        #40
+        op_type <= `HASH_SEARCH;
+        tb_key <= 22'b00_0000000010_0000000001;
+        #30
         hash_setup <= 1'b0;
         #15
         hash_setup <= 1'b1;
-        op_type <= `HASH_DELETE;
+        op_type <= `HASH_SEARCH;
         tb_key <= 22'b00_0000000100_0000000001;
-        #40
+        #30
         hash_setup <= 1'b0;
         #20
         hash_setup <= 1'b1;
-        op_type <= `HASH_INSERT;
-        tb_key <= 22'b00_0000000100_0000000001;
-        tb_value <= 10'b10010_01001;
+        op_type <= 2'b00;
+        tb_key <= 22'b00_0000000000_0000000001;
+        tb_value <= 10'b10000_00001;
         #30
         hash_setup <= 1'b0;
         
+        /* delete tb */
+//        #10
+//        hash_setup <= 1'b1;
+//        op_type <= `HASH_DELETE;
+//        tb_key <= 22'b00_0000000010_0000000001;    
+//        #40
+//        hash_setup <= 1'b0;
+//        #15
+//        hash_setup <= 1'b1;
+//        op_type <= `HASH_DELETE;
+//        tb_key <= 22'b00_0000000100_0000000001;
+//        #40
+//        hash_setup <= 1'b0;
+//        #20
+//        hash_setup <= 1'b1;
+//        op_type <= `HASH_INSERT;
+//        tb_key <= 22'b00_0000000100_0000000001;
+//        tb_value <= 10'b10010_01001;
+//        #30
+//        hash_setup <= 1'b0;
         
+        /* insert tb */
 //        rst <= 1;
 //        hash_setup <= 1'b1;
 //        op_type <= 2'b00;
@@ -92,7 +114,8 @@ module hash_table_tb();
         .hash_setup_i(hash_setup),
         .key(tb_key),
         .op_type(op_type),
-        .value(tb_value_w),
+        .value_i(tb_value_w),
+        .value_o(tb_value_o),
         .search_res(tb_search_res)
     );
 
