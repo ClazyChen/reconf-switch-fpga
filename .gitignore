@@ -3,3 +3,15 @@ vivado/ReconfSwitch.ip_user_files
 vivado/ReconfSwitch.cache
 vivado/ReconfSwitch.hw
 vivado/ReconfSwitch.runs
+vivado/.Xil
+
+*.jou
+*.log
+*.str
+
+hash_table/hash_table.sim
+hash_table/hash_table.ip_user_files
+hash_table/hash_table.cache
+hash_table/hash_table.hw
+hash_table/hash_table.runs
+hash_table/.Xil
