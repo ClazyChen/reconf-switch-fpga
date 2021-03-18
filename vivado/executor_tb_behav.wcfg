@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="matcher_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="matcher_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1000000001fs"></ZoomEndTime>
+      <Cursor1Time time="348387000fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="281"></NameColumnWidth>
+      <ValueColumnWidth column_width="157"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="4" />
+   <wvobject fp_name="group201" type="group">
+      <obj_property name="label">matcher</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/matcher_tb/matcher0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/start_i" type="logic">
+         <obj_property name="ElementShortName">start_i</obj_property>
+         <obj_property name="ObjectShortName">start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_ce_o" type="logic">
+         <obj_property name="ElementShortName">mem_ce_o</obj_property>
+         <obj_property name="ObjectShortName">mem_ce_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_we_o" type="logic">
+         <obj_property name="ElementShortName">mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_addr_o" type="array">
+         <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_width_o" type="array">
+         <obj_property name="ElementShortName">mem_width_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_width_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_data_o" type="array">
+         <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_data_i" type="array">
+         <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/match_ready_o" type="logic">
+         <obj_property name="ElementShortName">match_ready_o</obj_property>
+         <obj_property name="ObjectShortName">match_ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/val_addr_o" type="array">
+         <obj_property name="ElementShortName">val_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">val_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/tab0_hdr_id" type="array">
+         <obj_property name="ElementShortName">tab0_hdr_id[3:0]</obj_property>
+         <obj_property name="ObjectShortName">tab0_hdr_id[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/tab0_key_off" type="array">
+         <obj_property name="ElementShortName">tab0_key_off[5:0]</obj_property>
+         <obj_property name="ObjectShortName">tab0_key_off[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/tab0_key_len" type="array">
+         <obj_property name="ElementShortName">tab0_key_len[5:0]</obj_property>
+         <obj_property name="ObjectShortName">tab0_key_len[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/tab0_start_addr" type="array">
+         <obj_property name="ElementShortName">tab0_start_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">tab0_start_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash_start" type="logic">
+         <obj_property name="ElementShortName">hash_start</obj_property>
+         <obj_property name="ObjectShortName">hash_start</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash_ready" type="logic">
+         <obj_property name="ElementShortName">hash_ready</obj_property>
+         <obj_property name="ObjectShortName">hash_ready</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash_val" type="array">
+         <obj_property name="ElementShortName">hash_val[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_val[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_addr" type="array">
+         <obj_property name="ElementShortName">mem_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/mem_cnt" type="array">
+         <obj_property name="ElementShortName">mem_cnt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_cnt[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/key_data" type="array">
+         <obj_property name="ElementShortName">key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/entry_key_data" type="array">
+         <obj_property name="ElementShortName">entry_key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">entry_key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/state" type="array">
+         <obj_property name="ElementShortName">state[2:0]</obj_property>
+         <obj_property name="ObjectShortName">state[2:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group214" type="group">
+      <obj_property name="label">mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/matcher_tb/mem0/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/we" type="logic">
+         <obj_property name="ElementShortName">we</obj_property>
+         <obj_property name="ObjectShortName">we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/width_i" type="array">
+         <obj_property name="ElementShortName">width_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">width_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/data_i" type="array">
+         <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/data_o" type="array">
+         <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_ce" type="logic">
+         <obj_property name="ElementShortName">sram_ce</obj_property>
+         <obj_property name="ObjectShortName">sram_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_we" type="logic">
+         <obj_property name="ElementShortName">sram_we</obj_property>
+         <obj_property name="ObjectShortName">sram_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_addr_o" type="array">
+         <obj_property name="ElementShortName">sram_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_sel_o" type="array">
+         <obj_property name="ElementShortName">sram_sel_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_sel_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_data_o" type="array">
+         <obj_property name="ElementShortName">sram_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/mem0/sram_data_i" type="array">
+         <obj_property name="ElementShortName">sram_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_data_i[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group223" type="group">
+      <obj_property name="label">sram</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/matcher_tb/sram0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/we" type="logic">
+         <obj_property name="ElementShortName">we</obj_property>
+         <obj_property name="ObjectShortName">we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/sel_i" type="array">
+         <obj_property name="ElementShortName">sel_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sel_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/data_i" type="array">
+         <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/data_o" type="array">
+         <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/sram0/data_mem" type="array">
+         <obj_property name="ElementShortName">data_mem[1055:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_mem[1055:0][31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group377" type="group">
+      <obj_property name="label">hash</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/start_i" type="logic">
+         <obj_property name="ElementShortName">start_i</obj_property>
+         <obj_property name="ObjectShortName">start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/key_i" type="array">
+         <obj_property name="ElementShortName">key_i[63:0]</obj_property>
+         <obj_property name="ObjectShortName">key_i[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/hash_ready_o" type="logic">
+         <obj_property name="ElementShortName">hash_ready_o</obj_property>
+         <obj_property name="ObjectShortName">hash_ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/hash_val_o" type="array">
+         <obj_property name="ElementShortName">hash_val_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_val_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/state" type="array">
+         <obj_property name="ElementShortName">state[1:0]</obj_property>
+         <obj_property name="ObjectShortName">state[1:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/matcher_tb/matcher0/hash0/hash_val" type="array">
+         <obj_property name="ElementShortName">hash_val[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_val[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+</wave_config>
