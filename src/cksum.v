@@ -32,14 +32,14 @@ module cksum (
             // mem
             mem_ce_o <= `FALSE;
             mem_we_o <= `FALSE;
-            mem_addr <= `ZERO_WORD;
+            mem_addr <= `ZERO_ADDR;
             mem_width_o <= 0;
             mem_data_o <= `ZERO_WORD;
             // checksum
             cksum_ready_o <= `FALSE;
             cksum_val <= `ZERO_WORD;
             // state
-            field_end_addr <= `ZERO_WORD;
+            field_end_addr <= `ZERO_ADDR;
             state <= `CKSUM_STATE_FREE;
         end else begin
             case (state)
@@ -92,7 +92,7 @@ module cksum (
             `CKSUM_STATE_STORE: begin
                 mem_ce_o <= `FALSE;
                 mem_we_o <= `FALSE;
-                mem_addr <= `ZERO_WORD;
+                mem_addr <= `ZERO_ADDR;
                 mem_width_o <= 0;
                 mem_data_o <= `ZERO_WORD;
 

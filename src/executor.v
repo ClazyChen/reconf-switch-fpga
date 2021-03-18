@@ -67,7 +67,7 @@ module executor (
 
     // state
     reg [2:0] state;
-    reg [63:0] inst;    // instruction (primitive)
+    reg [`QUAD_BUS] inst;    // instruction (primitive)
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
@@ -75,25 +75,29 @@ module executor (
             exec_done_o <= `FALSE;
             // instruction
             inst_mem_ce_o <= `FALSE;
-            inst_mem_addr_o <= `ZERO_WORD;
+            inst_mem_addr_o <= `ZERO_ADDR;
             // checksum
             cksum_start_o <= `FALSE;
-            cksum_field_start_o <= `ZERO_WORD;
+            cksum_field_start_o <= `ZERO_ADDR;
             cksum_field_len_o <= `ZERO_WORD;
-            cksum_dst_field_start_o <= `ZERO_WORD;
-            // op add
+            cksum_dst_field_start_o <= `ZERO_ADDR;
+            // op
             op_mem_we_o <= `FALSE;
-            op_mem_addr_o <= `ZERO_WORD;
+            op_mem_addr_o <= `ZERO_ADDR;
             op_mem_width_o <= 0;
             op_mem_data_o <= `ZERO_WORD;
+            // op add
             add_state <= `EX_ADD_STATE_FREE;
             // op copy field
             copy_state <= `EX_COPY_STATE_FREE;
+            copy_src_addr <= `ZERO_ADDR;
+            copy_src_end_addr <= `ZERO_ADDR;
+            copy_dst_addr <= `ZERO_ADDR;
             // mem mux
             mem_mux <= `EX_MEM_MUX_INST;
             // state
             state <= `EX_STATE_FREE;
-            inst <= {`ZERO_WORD, `ZERO_WORD};
+            inst <= `ZERO_QUAD;
         end else begin
             case (state)
             `EX_STATE_FREE: begin
@@ -118,7 +122,7 @@ module executor (
                 `OPCODE_NOP: begin
                     // done
                     inst_mem_ce_o <= `FALSE;
-                    inst_mem_addr_o <= `ZERO_WORD;
+                    inst_mem_addr_o <= `ZERO_ADDR;
                     exec_done_o <= `TRUE;
                     state <= `EX_STATE_DONE;
                 end
@@ -249,7 +253,7 @@ module executor (
         if (rst == `TRUE) begin
             mem_ce_o <= `FALSE;
             mem_we_o <= `FALSE;
-            mem_addr_o <= `ZERO_WORD;
+            mem_addr_o <= `ZERO_ADDR;
             mem_width_o <= 0;
             mem_data_o <= `ZERO_WORD;
         end else begin
