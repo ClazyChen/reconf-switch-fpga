@@ -2,14 +2,13 @@
 
 `include "def.vh"
 
-module matcher_tb (
+module proc_tb (
 );
 
     reg clk;
     reg rst;
     reg start_i;
     wire ready_o;
-    wire [`DATA_BUS] val_addr_o;
 
     wire mem_ce_o;
     wire mem_we_o;
@@ -32,7 +31,7 @@ module matcher_tb (
         #20 start_i <= `TRUE;
     end
 
-    matcher matcher0(
+    proc proc0(
         .clk(clk),
         .rst(rst),
         .start_i(start_i),
@@ -44,8 +43,7 @@ module matcher_tb (
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         // output
-        .ready_o(ready_o),
-        .val_addr_o(val_addr_o)
+        .ready_o(ready_o)
     );
 
     wire sram_ce;

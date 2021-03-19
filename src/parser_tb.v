@@ -8,7 +8,7 @@ module parser_tb (
     reg clk;
     reg rst;
     reg start_i;
-    wire parse_ready_o;
+    wire ready_o;
     wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_o;
 
     wire mem_ce_o;
@@ -44,7 +44,7 @@ module parser_tb (
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         // output
-        .parse_ready_o(parse_ready_o),
+        .ready_o(ready_o),
         .parsed_hdrs_o(parsed_hdrs_o)
     );
 
