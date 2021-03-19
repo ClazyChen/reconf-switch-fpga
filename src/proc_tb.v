@@ -9,6 +9,8 @@ module proc_tb (
     reg rst;
     reg start_i;
     wire ready_o;
+    wire [`ADDR_BUS] pkt_addr_i;
+    assign pkt_addr_i = 4;
 
     wire mem_ce_o;
     wire mem_we_o;
@@ -35,6 +37,7 @@ module proc_tb (
         .clk(clk),
         .rst(rst),
         .start_i(start_i),
+        .pkt_addr_i(pkt_addr_i),
         // mem
         .mem_ce_o(mem_ce_o),
         .mem_we_o(mem_we_o),

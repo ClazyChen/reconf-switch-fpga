@@ -4,6 +4,7 @@ module matcher (
     input wire clk,
     input wire rst,
     input wire start_i,
+    input wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_i,
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -15,6 +16,12 @@ module matcher (
     output reg ready_o,
     output reg [`ADDR_BUS] val_addr_o
 );
+
+    // headers
+    wire [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
+    assign parsed_hdrs[0] = parsed_hdrs_i[63:32];
+    assign parsed_hdrs[1] = parsed_hdrs_i[31:0];
+
     // table
     wire [3:0] tab0_hdr_id;
     wire [5:0] tab0_key_off;
@@ -77,9 +84,8 @@ module matcher (
                     ready_o <= `FALSE;
                     val_addr_o <= `ZERO_WORD;
                     // reg
-                    // TODO: load field
                     hash_start <= `FALSE;
-                    mem_addr <= tab0_key_off + 14;
+                    mem_addr <= parsed_hdrs[tab0_hdr_id] + tab0_key_off;
                     mem_cnt <= 0;
                     for (i = 0; i < 8; i = i + 1) begin
                         key_data[i] <= `ZERO_BYTE;
