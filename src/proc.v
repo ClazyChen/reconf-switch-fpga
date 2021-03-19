@@ -23,6 +23,8 @@ module proc(
     wire [`DATA_BUS] ps_mem_data_i;
     // parser
     reg ps_start_o;
+    wire [`ADDR_BUS] ps_pkt_addr_o;
+    assign ps_pkt_addr_o = 4;   // TODO: hard code
     wire ps_ready_i;
     wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] ps_hdrs_i;
 
@@ -155,6 +157,7 @@ module proc(
         .clk(clk),
         .rst(rst),
         .start_i(ps_start_o),
+        .pkt_addr_i(ps_pkt_addr_o),
         // mem
         .mem_ce_o(ps_mem_ce_i),
         .mem_we_o(ps_mem_we_i),
@@ -189,6 +192,7 @@ module proc(
         .start_i(ex_start_o),
         .start_addr_i(ex_start_addr_o),
         .args_start_i(ex_args_start_o),
+        .parsed_hdrs_i(ps_hdrs_i),
         // mem
         .mem_ce_o(ex_mem_ce_i),
         .mem_we_o(ex_mem_we_i),

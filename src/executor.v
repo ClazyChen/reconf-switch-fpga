@@ -7,6 +7,7 @@ module executor (
     input wire start_i,
     input wire [`ADDR_BUS] start_addr_i,
     input wire [`ADDR_BUS] args_start_i,
+    input wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_i,
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -17,6 +18,11 @@ module executor (
     // output
     output reg ready_o
 );
+
+    // headers
+    wire [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
+    assign parsed_hdrs[0] = parsed_hdrs_i[63:32];
+    assign parsed_hdrs[1] = parsed_hdrs_i[31:0];
 
     // instruction mem signals
     reg inst_mem_ce_o;
@@ -124,10 +130,9 @@ module executor (
                 end
                 `OPCODE_CKSUM: begin
                     cksum_start_o <= `TRUE;
-                    // TODO parse from inst
-                    cksum_field_start_o <= {26'h0, inst[27:22]} + 14;
-                    cksum_field_len_o <= {26'h0, inst[21:16]};
-                    cksum_dst_field_start_o <= {26'h0, inst[11:6]} + 14;
+                    cksum_field_start_o <= parsed_hdrs[inst[31:28]] + inst[27:22];
+                    cksum_field_len_o <= inst[21:16];
+                    cksum_dst_field_start_o <= parsed_hdrs[inst[15:12]] + inst[11:6];
                     mem_mux <= `EX_MEM_MUX_CKSUM;
                     if (cksum_ready_i == `TRUE) begin
                         cksum_start_o <= `FALSE;
@@ -139,9 +144,9 @@ module executor (
                     case (add_state)
                     `EX_ADD_STATE_FREE: begin
                         mem_mux <= `EX_MEM_MUX_OP;
-                        // load field, TODO
+
                         op_mem_we_o <= `FALSE;
-                        op_mem_addr_o <= 14 + inst[27:22];
+                        op_mem_addr_o <= parsed_hdrs[inst[31:28]] + inst[27:22];
                         op_mem_width_o <= inst[19:16];
                         op_mem_data_o <= `ZERO_WORD;
 
@@ -172,15 +177,16 @@ module executor (
                             // src is from param
                             copy_src_addr <= args_start_i + inst[27:22];
                             copy_src_end_addr <= args_start_i + inst[27:22] + inst[21:16];
+                            op_mem_addr_o <= args_start_i + inst[27:22];
                         end else begin
-                            // src is from header. TODO
-                            copy_src_addr <= inst[27:22];
-                            copy_src_end_addr <= inst[27:22] + inst[21:16];
+                            // src is from header
+                            copy_src_addr <= parsed_hdrs[inst[31:28]] + inst[27:22];
+                            copy_src_end_addr <= parsed_hdrs[inst[31:28]] + inst[27:22] + inst[21:16];
+                            op_mem_addr_o <= parsed_hdrs[inst[31:28]] + inst[27:22];
                         end
-                        copy_dst_addr <= inst[11:6];
-                        // load src field, TODO: add header
+                        copy_dst_addr <= parsed_hdrs[inst[15:12]] + inst[11:6];
+                        // load src field
                         op_mem_we_o <= `FALSE;
-                        op_mem_addr_o <= inst[27:22];
                         op_mem_width_o <= 1;
                         op_mem_data_o <= `ZERO_WORD;
 

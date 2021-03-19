@@ -4,6 +4,7 @@ module parser(
     input wire clk,
     input wire rst,
     input wire start_i,
+    input wire [`ADDR_BUS] pkt_addr_i,
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -63,16 +64,16 @@ module parser(
                     // mem
                     mem_ce_o <= `TRUE;
                     mem_we_o <= `FALSE;
-                    mem_addr_o <= next_tag_starts[0];  // tag addr
+                    mem_addr_o <= pkt_addr_i + next_tag_starts[0];  // tag addr
                     mem_width_o <= 4;
                     mem_data_o <= `ZERO_WORD;
                     // output
                     ready_o <= `FALSE;
                     // reg
-                    parsed_hdrs[0] <= `NO_HEADER;
+                    parsed_hdrs[0] <= pkt_addr_i;
                     parsed_hdrs[1] <= `NO_HEADER;
                     hdr_id <= 0;
-                    hdr_addr <= `ZERO_ADDR;
+                    hdr_addr <= pkt_addr_i;
                     state <= `PS_STATE_PARSING;
                 end
             end
