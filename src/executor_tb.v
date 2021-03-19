@@ -10,7 +10,7 @@ module executor_tb (
     reg start_i;
     wire [`ADDR_BUS] start_addr_i;
     wire [`ADDR_BUS] args_start_i;
-    wire exec_done_o;
+    wire ready_o;
 
     wire mem_ce_o;
     wire mem_we_o;
@@ -51,7 +51,7 @@ module executor_tb (
         // arg
         .args_start_i(args_start_i),
         // result
-        .exec_done_o(exec_done_o)
+        .ready_o(ready_o)
     );
 
     wire sram_ce;

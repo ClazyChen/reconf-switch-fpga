@@ -27,6 +27,19 @@
 
 `define HDR_PARAM       4'hf
 
+// processor
+`define PROC_STATE_BUS      2:0
+`define PROC_STATE_FREE     3'h0
+`define PROC_STATE_PARSER   3'h1
+`define PROC_STATE_MATCHER  3'h2
+`define PROC_STATE_EXEC     3'h3
+`define PROC_STATE_DONE     3'h4
+
+`define PROC_MEM_MUX_BUS        1:0
+`define PROC_MEM_MUX_PARSER     2'h0
+`define PROC_MEM_MUX_MATCHER    2'h1
+`define PROC_MEM_MUX_EXEC       2'h2
+
 // parser
 `define NEXT_TAG_VAL    31:16
 `define NEXT_HDR_ID     15:0

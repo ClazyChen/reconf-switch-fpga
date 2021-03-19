@@ -12,7 +12,7 @@ module matcher (
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
     // output
-    output reg match_ready_o,
+    output reg ready_o,
     output reg [`ADDR_BUS] val_addr_o
 );
     // table
@@ -55,7 +55,7 @@ module matcher (
             // mem
             mem_ce_o <= `FALSE;
             // output
-            match_ready_o <= `FALSE; 
+            ready_o <= `FALSE; 
             val_addr_o <= `ZERO_ADDR;
             // reg
             hash_start <= `FALSE;
@@ -74,7 +74,7 @@ module matcher (
                     // mem
                     mem_ce_o <= `TRUE;
                     // output
-                    match_ready_o <= `FALSE;
+                    ready_o <= `FALSE;
                     val_addr_o <= `ZERO_WORD;
                     // reg
                     // TODO: load field
@@ -111,7 +111,7 @@ module matcher (
             `MT_STATE_LOAD_ENTRY: begin
                 if (mem_cnt == tab0_key_len) begin
                     mem_ce_o <= `FALSE;
-                    match_ready_o <= `TRUE;
+                    ready_o <= `TRUE;
                     if (entry_key_data[0] == key_data[0] &&
                         entry_key_data[1] == key_data[1] &&
                         entry_key_data[2] == key_data[2] &&

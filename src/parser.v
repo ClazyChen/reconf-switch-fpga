@@ -12,7 +12,7 @@ module parser(
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
     // output
-    output reg parse_ready_o,
+    output reg ready_o,
     output reg [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_o
 );
 
@@ -49,7 +49,7 @@ module parser(
             mem_width_o <= 0;
             mem_data_o <= `ZERO_WORD;
             // output
-            parse_ready_o <= `FALSE;
+            ready_o <= `FALSE;
             // reg
             parsed_hdrs[0] <= `NO_HEADER;
             parsed_hdrs[1] <= `NO_HEADER;
@@ -67,7 +67,7 @@ module parser(
                     mem_width_o <= 4;
                     mem_data_o <= `ZERO_WORD;
                     // output
-                    parse_ready_o <= `FALSE;
+                    ready_o <= `FALSE;
                     // reg
                     parsed_hdrs[0] <= `NO_HEADER;
                     parsed_hdrs[1] <= `NO_HEADER;
@@ -92,6 +92,7 @@ module parser(
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         mem_ce_o <= `FALSE;
+                        ready_o <= `TRUE;
                         state <= `PS_STATE_DONE;
                     end
                 end
@@ -107,6 +108,7 @@ module parser(
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         mem_ce_o <= `FALSE;
+                        ready_o <= `TRUE;
                         state <= `PS_STATE_DONE;
                     end
                 end

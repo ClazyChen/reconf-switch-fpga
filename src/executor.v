@@ -3,10 +3,10 @@
 module executor (
     input wire clk,
     input wire rst,
-
+    // input
     input wire start_i,
     input wire [`ADDR_BUS] start_addr_i,
-
+    input wire [`ADDR_BUS] args_start_i,
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -14,12 +14,8 @@ module executor (
     output reg [3:0] mem_width_o,
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
-
-    // action args
-    input wire [`ADDR_BUS] args_start_i,
-
-    // done signal
-    output reg exec_done_o
+    // output
+    output reg ready_o
 );
 
     // instruction mem signals
@@ -72,7 +68,7 @@ module executor (
     always @(posedge clk) begin
         if (rst == `TRUE) begin
             // output
-            exec_done_o <= `FALSE;
+            ready_o <= `FALSE;
             // instruction
             inst_mem_ce_o <= `FALSE;
             inst_mem_addr_o <= `ZERO_ADDR;
@@ -123,7 +119,7 @@ module executor (
                     // done
                     inst_mem_ce_o <= `FALSE;
                     inst_mem_addr_o <= `ZERO_ADDR;
-                    exec_done_o <= `TRUE;
+                    ready_o <= `TRUE;
                     state <= `EX_STATE_DONE;
                 end
                 `OPCODE_CKSUM: begin
