@@ -173,18 +173,18 @@ module executor (
                     `EX_COPY_STATE_FREE: begin
                         mem_mux <= `EX_MEM_MUX_OP;
 
-                        if (inst[31:28] == `HDR_PARAM) begin
+                        if (inst[15:12] == `HDR_PARAM) begin
                             // src is from param
-                            copy_src_addr <= args_start_i + inst[27:22];
-                            copy_src_end_addr <= args_start_i + inst[27:22] + inst[21:16];
-                            op_mem_addr_o <= args_start_i + inst[27:22];
+                            copy_src_addr <= args_start_i + inst[11:6];
+                            copy_src_end_addr <= args_start_i + inst[11:6] + inst[5:0];
+                            op_mem_addr_o <= args_start_i + inst[11:6];
                         end else begin
                             // src is from header
-                            copy_src_addr <= parsed_hdrs[inst[31:28]] + inst[27:22];
-                            copy_src_end_addr <= parsed_hdrs[inst[31:28]] + inst[27:22] + inst[21:16];
-                            op_mem_addr_o <= parsed_hdrs[inst[31:28]] + inst[27:22];
+                            copy_src_addr <= parsed_hdrs[inst[15:12]] + inst[11:6];
+                            copy_src_end_addr <= parsed_hdrs[inst[15:12]] + inst[11:6] + inst[5:0];
+                            op_mem_addr_o <= parsed_hdrs[inst[15:12]] + inst[11:6];
                         end
-                        copy_dst_addr <= parsed_hdrs[inst[15:12]] + inst[11:6];
+                        copy_dst_addr <= parsed_hdrs[inst[31:28]] + inst[27:22];
                         // load src field
                         op_mem_we_o <= `FALSE;
                         op_mem_width_o <= 1;
