@@ -14,7 +14,14 @@ module proc(
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
     // output
-    output reg ready_o
+    output reg ready_o,
+    // parser modify
+    input wire ps_mod_start_i,
+    input wire [`DATA_BUS] ps_mod_hdr_id_i,
+    input wire [`DATA_BUS] ps_mod_hdr_len_i,
+    input wire [`DATA_BUS] ps_mod_next_tag_start_i,
+    input wire [`DATA_BUS] ps_mod_next_tag_len_i,
+    input wire [`WORD_WIDTH * `NEXT_TABLE_SIZE - 1:0] ps_mod_next_table_i
 );
     // parser mem
     wire ps_mem_ce_i;
@@ -162,7 +169,14 @@ module proc(
         .mem_data_i(mem_data_i),
         // output
         .ready_o(ps_ready_i),
-        .parsed_hdrs_o(ps_hdrs_i)
+        .parsed_hdrs_o(ps_hdrs_i),
+        // mod
+        .mod_start_i(ps_mod_start_i),
+        .mod_hdr_id_i(ps_mod_hdr_id_i),
+        .mod_hdr_len_i(ps_mod_hdr_len_i),
+        .mod_next_tag_start_i(ps_mod_next_tag_start_i),
+        .mod_next_tag_len_i(ps_mod_next_tag_len_i),
+        .mod_next_table_i(ps_mod_next_table_i)
     );
 
     matcher matcher0(
