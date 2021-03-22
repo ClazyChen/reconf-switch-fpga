@@ -14,32 +14,30 @@ module parser(
     input wire [`DATA_BUS] mem_data_i,
     // output
     output reg ready_o,
-    output reg [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_o
+    output reg [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_o,
+    // modify
+    input wire mod_start_i,
+    input wire [`DATA_BUS] mod_hdr_id_i,
+    input wire [`DATA_BUS] mod_hdr_len_i,
+    input wire [`DATA_BUS] mod_next_tag_start_i,
+    input wire [`DATA_BUS] mod_next_tag_len_i,
+    input wire [`WORD_WIDTH * `NEXT_TABLE_SIZE - 1:0] mod_next_table_i
 );
 
     // parser information
-    wire [`DATA_BUS] hdr_lens [`NUM_HEADERS - 1:0];
-    wire [`DATA_BUS] next_tag_starts[`NUM_HEADERS - 1:0];
-    wire [`DATA_BUS] next_tag_lens[`NUM_HEADERS - 1:0];
-    wire [`DATA_BUS] next_table[`NUM_HEADERS - 1:0][`NEXT_TABLE_SIZE - 1:0];
-    // ethernet header
-    assign hdr_lens[0] = 14;
-    assign next_tag_starts[0] = 12;
-    assign next_tag_lens[0] = 2;
-    assign next_table[0][0] = {16'h0800, 16'h0001};
-    assign next_table[0][1] = `NO_NEXT_HEADER;
-    // ip header
-    assign hdr_lens[1] = 20;
-    assign next_tag_starts[1] = 9;
-    assign next_tag_lens[1] = 1;
-    assign next_table[1][0] = `NO_NEXT_HEADER;
-    assign next_table[1][1] = `NO_NEXT_HEADER;
+    reg [`DATA_BUS] hdr_lens [`NUM_HEADERS - 1:0];
+    reg [`DATA_BUS] next_tag_starts[`NUM_HEADERS - 1:0];
+    reg [`DATA_BUS] next_tag_lens[`NUM_HEADERS - 1:0];
+    reg [`DATA_BUS] next_table[`NUM_HEADERS - 1:0][`NEXT_TABLE_SIZE - 1:0];
 
     // reg
     reg [`WORD_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] hdr_id;
     reg [`ADDR_BUS] hdr_addr;
     reg [`PS_STATE_BUS] state;
+
+    integer i;
+    integer j;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
@@ -51,6 +49,15 @@ module parser(
             mem_data_o <= `ZERO_WORD;
             // output
             ready_o <= `FALSE;
+            // parser
+            for (i = 0; i < `NUM_HEADERS; i = i + 1) begin
+                hdr_lens[i] <= `ZERO_WORD;
+                next_tag_starts[i] <= `ZERO_WORD;
+                next_tag_lens[i] <= `ZERO_WORD;
+                for (j = 0; j < `NEXT_TABLE_SIZE; j = j + 1) begin
+                    next_table[i][j] <= `ZERO_WORD;
+                end
+            end
             // reg
             parsed_hdrs[0] <= `NO_HEADER;
             parsed_hdrs[1] <= `NO_HEADER;
@@ -60,7 +67,13 @@ module parser(
         end else begin
             case (state)
             `PS_STATE_FREE: begin
-                if (start_i == `TRUE) begin
+                if (mod_start_i == `TRUE) begin
+                    hdr_lens[mod_hdr_id_i] <= mod_hdr_len_i;
+                    next_tag_starts[mod_hdr_id_i] <= mod_next_tag_start_i;
+                    next_tag_lens[mod_hdr_id_i] <= mod_next_tag_len_i;
+                    next_table[mod_hdr_id_i][0] <= mod_next_table_i[63:32];
+                    next_table[mod_hdr_id_i][1] <= mod_next_table_i[31:0];
+                end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `TRUE;
                     mem_we_o <= `FALSE;

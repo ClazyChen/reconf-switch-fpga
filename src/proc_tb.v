@@ -19,6 +19,14 @@ module proc_tb (
     wire [`DATA_BUS] mem_data_o;
     wire [`DATA_BUS] mem_data_i;
 
+    // parser
+    reg ps_mod_start_i;
+    reg [`DATA_BUS] ps_mod_hdr_id_i;
+    reg [`DATA_BUS] ps_mod_hdr_len_i;
+    reg [`DATA_BUS] ps_mod_next_tag_start_i;
+    reg [`DATA_BUS] ps_mod_next_tag_len_i;
+    reg [`WORD_WIDTH * 2 - 1:0] ps_mod_next_table_i;
+
     initial begin
         clk = 1'b0;
         forever begin
@@ -30,7 +38,31 @@ module proc_tb (
         rst = `TRUE;
         start_i <= `FALSE;
         #45 rst = `FALSE;
-        #20 start_i <= `TRUE;
+        #20
+        // ethernet header
+        ps_mod_start_i <= `TRUE;
+        ps_mod_hdr_id_i <= 0;
+        ps_mod_hdr_len_i <= 14;
+        ps_mod_next_tag_start_i <= 12;
+        ps_mod_next_tag_len_i <= 2;
+        ps_mod_next_table_i <= {
+            16'h0800, 16'h0001,
+            `NO_NEXT_HEADER
+        };
+        #20
+        // ip header
+        ps_mod_start_i <= `TRUE;
+        ps_mod_hdr_id_i <= 1;
+        ps_mod_hdr_len_i <= 20;
+        ps_mod_next_tag_start_i <= 9;
+        ps_mod_next_tag_len_i <= 1;
+        ps_mod_next_table_i <= {
+            `NO_NEXT_HEADER,
+            `NO_NEXT_HEADER
+        };
+        #20
+        ps_mod_start_i <= `FALSE;
+        start_i <= `TRUE;
     end
 
     proc proc0(
@@ -46,7 +78,14 @@ module proc_tb (
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         // output
-        .ready_o(ready_o)
+        .ready_o(ready_o),
+        // parser
+        .ps_mod_start_i(ps_mod_start_i),
+        .ps_mod_hdr_id_i(ps_mod_hdr_id_i),
+        .ps_mod_hdr_len_i(ps_mod_hdr_len_i),
+        .ps_mod_next_tag_start_i(ps_mod_next_tag_start_i),
+        .ps_mod_next_tag_len_i(ps_mod_next_tag_len_i),
+        .ps_mod_next_table_i(ps_mod_next_table_i)
     );
 
     wire sram_ce;
