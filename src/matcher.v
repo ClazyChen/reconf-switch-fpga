@@ -90,7 +90,7 @@ module matcher (
                     mem_ce_o <= `TRUE;
                     // output
                     ready_o <= `FALSE;
-                    val_addr_o <= `ZERO_WORD;
+                    val_addr_o <= `ZERO_ADDR;
                     // reg
                     hash_start <= `FALSE;
                     mem_addr <= parsed_hdrs[match_hdr_id] + match_key_off;
