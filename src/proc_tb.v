@@ -19,6 +19,11 @@ module proc_tb (
     wire [`DATA_BUS] mem_data_o;
     wire [`DATA_BUS] mem_data_i;
 
+    // proc
+    reg proc_mod_start_i;
+    reg [`ADDR_BUS] proc_mod_hit_action_addr_i;
+    reg [`ADDR_BUS] proc_mod_miss_action_addr_i;
+
     // parser
     reg ps_mod_start_i;
     reg [`DATA_BUS] ps_mod_hdr_id_i;
@@ -42,9 +47,25 @@ module proc_tb (
 
     initial begin
         rst = `TRUE;
-        start_i <= `FALSE;
         #45 rst = `FALSE;
+    end
+
+    initial begin
+        start_i <= `FALSE;
+        #105 start_i <= `TRUE;
+    end
+
+    initial begin
+        #65
+        proc_mod_start_i <= `TRUE;
+        proc_mod_hit_action_addr_i <= 64;
+        proc_mod_miss_action_addr_i <= 0;
         #20
+        proc_mod_start_i <= `FALSE;
+    end
+
+    initial begin
+        #65
         // ethernet header
         ps_mod_start_i <= `TRUE;
         ps_mod_hdr_id_i <= 0;
@@ -68,7 +89,6 @@ module proc_tb (
         };
         #20
         ps_mod_start_i <= `FALSE;
-        start_i <= `TRUE;
     end
 
     initial begin
@@ -95,6 +115,10 @@ module proc_tb (
         .mem_data_i(mem_data_i),
         // output
         .ready_o(ready_o),
+        // proc
+        .proc_mod_start_i(proc_mod_start_i),
+        .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
+        .proc_mod_miss_action_addr_i(proc_mod_miss_action_addr_i),
         // parser
         .ps_mod_start_i(ps_mod_start_i),
         .ps_mod_hdr_id_i(ps_mod_hdr_id_i),

@@ -15,6 +15,10 @@ module proc(
     input wire [`DATA_BUS] mem_data_i,
     // output
     output reg ready_o,
+    // proc modify
+    input wire proc_mod_start_i,
+    input wire [`ADDR_BUS] proc_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] proc_mod_miss_action_addr_i,
     // parser modify
     input wire ps_mod_start_i,
     input wire [`DATA_BUS] ps_mod_hdr_id_i,
@@ -62,6 +66,9 @@ module proc(
     wire ex_ready_i;
 
     // processor
+    reg [`ADDR_BUS] hit_action_addr;
+    reg [`ADDR_BUS] miss_action_addr;
+
     reg [`PROC_MEM_MUX_BUS] mem_mux;
     reg [`PROC_STATE_BUS] state;
 
@@ -82,7 +89,10 @@ module proc(
         end else begin
             case (state)
             `PROC_STATE_FREE: begin
-                if (start_i == `TRUE) begin
+                if (proc_mod_start_i == `TRUE) begin
+                    hit_action_addr <= proc_mod_hit_action_addr_i;
+                    miss_action_addr <= proc_mod_miss_action_addr_i;
+                end else if (start_i == `TRUE) begin
                     // output
                     ready_o <= `FALSE;
                     // parser
@@ -109,7 +119,11 @@ module proc(
                 if (mt_ready_i == `TRUE) begin
                     mt_start_o <= `FALSE;
                     ex_start_o <= `TRUE;
-                    ex_start_addr_o <= 64;
+                    if (mt_val_addr_i == `ZERO_ADDR) begin
+                        ex_start_addr_o <= miss_action_addr;
+                    end else begin
+                        ex_start_addr_o <= hit_action_addr;
+                    end
                     mem_mux <= `PROC_MEM_MUX_EXEC;
                     state <= `PROC_STATE_EXEC;
                 end
