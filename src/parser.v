@@ -31,7 +31,7 @@ module parser(
     reg [`DATA_BUS] next_table[`NUM_HEADERS - 1:0][`NEXT_TABLE_SIZE - 1:0];
 
     // reg
-    reg [`WORD_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
+    reg [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] hdr_id;
     reg [`ADDR_BUS] hdr_addr;
     reg [`PS_STATE_BUS] state;

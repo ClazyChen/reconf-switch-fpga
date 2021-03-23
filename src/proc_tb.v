@@ -27,6 +27,12 @@ module proc_tb (
     reg [`DATA_BUS] ps_mod_next_tag_len_i;
     reg [`WORD_WIDTH * 2 - 1:0] ps_mod_next_table_i;
 
+    // matcher
+    reg mt_mod_start_i;
+    reg [3:0] mt_mod_match_hdr_id_i;
+    reg [5:0] mt_mod_match_key_off_i;
+    reg [5:0] mt_mod_match_key_len_i;
+
     initial begin
         clk = 1'b0;
         forever begin
@@ -65,6 +71,16 @@ module proc_tb (
         start_i <= `TRUE;
     end
 
+    initial begin
+        #65
+        mt_mod_start_i <= `TRUE;
+        mt_mod_match_hdr_id_i <= 1;
+        mt_mod_match_key_off_i <= 16;
+        mt_mod_match_key_len_i <= 4;
+        #20
+        mt_mod_start_i <= `FALSE;
+    end
+
     proc proc0(
         .clk(clk),
         .rst(rst),
@@ -85,7 +101,12 @@ module proc_tb (
         .ps_mod_hdr_len_i(ps_mod_hdr_len_i),
         .ps_mod_next_tag_start_i(ps_mod_next_tag_start_i),
         .ps_mod_next_tag_len_i(ps_mod_next_tag_len_i),
-        .ps_mod_next_table_i(ps_mod_next_table_i)
+        .ps_mod_next_table_i(ps_mod_next_table_i),
+        // matcher
+        .mt_mod_start_i(mt_mod_start_i),
+        .mt_mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
+        .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
+        .mt_mod_match_key_len_i(mt_mod_match_key_len_i)
     );
 
     wire sram_ce;

@@ -14,8 +14,16 @@ module matcher (
     input wire [`DATA_BUS] mem_data_i,
     // output
     output reg ready_o,
-    output reg [`ADDR_BUS] val_addr_o
+    output reg [`ADDR_BUS] val_addr_o,
+    // modify
+    input wire mod_start_i,
+    input wire [3:0] mod_match_hdr_id_i,
+    input wire [5:0] mod_match_key_off_i,
+    input wire [5:0] mod_match_key_len_i
 );
+
+    parameter LOGIC_ENTRY_LEN = 16;
+    parameter LOGIC_START_ADDR = 128;
 
     // headers
     wire [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
@@ -23,17 +31,9 @@ module matcher (
     assign parsed_hdrs[1] = parsed_hdrs_i[31:0];
 
     // table
-    wire [3:0] tab0_hdr_id;
-    wire [5:0] tab0_key_off;
-    wire [5:0] tab0_key_len;
-    wire [`DATA_BUS] tab0_entry_len;
-    wire [`ADDR_BUS] tab0_start_addr;
-
-    assign tab0_hdr_id = 1;
-    assign tab0_key_off = 16;
-    assign tab0_key_len = 4;        // should not larger than 8
-    assign tab0_entry_len = 16;
-    assign tab0_start_addr = 128;   // entry start address
+    reg [3:0] match_hdr_id;
+    reg [5:0] match_key_off;
+    reg [5:0] match_key_len;
 
     // load
     reg [`ADDR_BUS] mem_addr;
@@ -64,6 +64,10 @@ module matcher (
             // output
             ready_o <= `FALSE; 
             val_addr_o <= `ZERO_ADDR;
+            // table
+            match_hdr_id <= 0;
+            match_key_off <= 0;
+            match_key_len <= 0;
             // reg
             hash_start <= `FALSE;
             mem_addr <= `ZERO_ADDR;
@@ -77,7 +81,11 @@ module matcher (
             // load key
             case (state)
             `MT_STATE_FREE: begin
-                if (start_i == `TRUE) begin
+                if (mod_start_i == `TRUE) begin
+                    match_hdr_id <= mod_match_hdr_id_i;
+                    match_key_off <= mod_match_key_off_i;
+                    match_key_len <= mod_match_key_len_i;
+                end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `TRUE;
                     // output
@@ -85,7 +93,7 @@ module matcher (
                     val_addr_o <= `ZERO_WORD;
                     // reg
                     hash_start <= `FALSE;
-                    mem_addr <= parsed_hdrs[tab0_hdr_id] + tab0_key_off;
+                    mem_addr <= parsed_hdrs[match_hdr_id] + match_key_off;
                     mem_cnt <= 0;
                     for (i = 0; i < 8; i = i + 1) begin
                         key_data[i] <= `ZERO_BYTE;
@@ -95,7 +103,7 @@ module matcher (
                 end
             end
             `MT_STATE_LOAD_KEY: begin
-                if (mem_cnt == tab0_key_len) begin
+                if (mem_cnt == match_key_len) begin
                     mem_ce_o <= `FALSE;
                     hash_start <= `TRUE;
                     state <= `MT_STATE_HASH;
@@ -109,13 +117,13 @@ module matcher (
                 if (hash_ready == `TRUE) begin
                     hash_start <= `FALSE;
                     mem_ce_o <= `TRUE;
-                    mem_addr <= tab0_start_addr + hash_val * tab0_entry_len;
+                    mem_addr <= LOGIC_START_ADDR + hash_val * LOGIC_ENTRY_LEN;
                     mem_cnt <= 0;
                     state <= `MT_STATE_LOAD_ENTRY;
                 end
             end
             `MT_STATE_LOAD_ENTRY: begin
-                if (mem_cnt == tab0_key_len) begin
+                if (mem_cnt == match_key_len) begin
                     mem_ce_o <= `FALSE;
                     ready_o <= `TRUE;
                     if (entry_key_data[0] == key_data[0] &&
