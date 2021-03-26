@@ -9,8 +9,15 @@ module proc_tb (
     reg rst;
     reg start_i;
     wire ready_o;
-    wire [`ADDR_BUS] pkt_addr_i;
-    assign pkt_addr_i = 4;
+    wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    assign pkt_hdr_i = {
+        8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+        8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+        8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+        8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+        // padding
+        8'h00, 8'h00, 8'h00, 8'h00
+    };
 
     wire mem_ce_o;
     wire mem_we_o;
@@ -105,7 +112,7 @@ module proc_tb (
         .clk(clk),
         .rst(rst),
         .start_i(start_i),
-        .pkt_addr_i(pkt_addr_i),
+        .pkt_hdr_i(pkt_hdr_i),
         // mem
         .mem_ce_o(mem_ce_o),
         .mem_we_o(mem_we_o),

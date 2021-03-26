@@ -4,7 +4,7 @@ module proc(
     input wire clk,
     input wire rst,
     input wire start_i,
-    input wire [`ADDR_BUS] pkt_addr_i,
+    input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
 
     // mem
     output reg mem_ce_o,
@@ -183,14 +183,7 @@ module proc(
         .clk(clk),
         .rst(rst),
         .start_i(ps_start_o),
-        .pkt_addr_i(pkt_addr_i),
-        // mem
-        .mem_ce_o(ps_mem_ce_i),
-        .mem_we_o(ps_mem_we_i),
-        .mem_addr_o(ps_mem_addr_i),
-        .mem_width_o(ps_mem_width_i),
-        .mem_data_o(ps_mem_data_i),
-        .mem_data_i(mem_data_i),
+        .pkt_hdr_i(pkt_hdr_i),
         // output
         .ready_o(ps_ready_i),
         .parsed_hdrs_o(ps_hdrs_i),
