@@ -30,7 +30,7 @@ module proc_tb (
     reg [`DATA_BUS] ps_mod_hdr_len_i;
     reg [`DATA_BUS] ps_mod_next_tag_start_i;
     reg [`DATA_BUS] ps_mod_next_tag_len_i;
-    reg [`WORD_WIDTH * 2 - 1:0] ps_mod_next_table_i;
+    reg [`DATA_BUS] ps_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0];
 
     // matcher
     reg mt_mod_start_i;
@@ -73,7 +73,7 @@ module proc_tb (
         ps_mod_next_tag_start_i <= 12;
         ps_mod_next_tag_len_i <= 2;
         ps_mod_next_table_i <= {
-            16'h0800, 16'h0001,
+            {16'h0800, 16'h0001},
             `NO_NEXT_HEADER
         };
         #20

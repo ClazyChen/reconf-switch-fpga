@@ -25,7 +25,10 @@ module cksum (
     reg [`DATA_BUS] cksum_val;
 
     reg [`DATA_BUS] field_end_addr;
-    reg [2:0] state;
+
+    enum {
+        STATE_FREE, STATE_CLEAR, STATE_LOAD, STATE_SUM, STATE_COMPLEMENT, STATE_STORE, STATE_DONE
+    } state;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
@@ -40,10 +43,10 @@ module cksum (
             cksum_val <= `ZERO_WORD;
             // state
             field_end_addr <= `ZERO_ADDR;
-            state <= `CKSUM_STATE_FREE;
+            state <= STATE_FREE;
         end else begin
             case (state)
-            `CKSUM_STATE_FREE: begin
+            STATE_FREE: begin
                 if (start_i == `TRUE) begin
                     // mem: clear dst field
                     mem_ce_o <= `TRUE;
@@ -56,10 +59,10 @@ module cksum (
                     cksum_val <= `ZERO_WORD;
                     // state
                     field_end_addr <= field_start_i + field_len_i;
-                    state <= `CKSUM_STATE_CLEAR;
+                    state <= STATE_CLEAR;
                 end
             end
-            `CKSUM_STATE_CLEAR: begin
+            STATE_CLEAR: begin
                 // mem: load cksum field data
                 mem_ce_o <= `TRUE;
                 mem_we_o <= `FALSE;
@@ -67,19 +70,19 @@ module cksum (
                 mem_width_o <= 2;
                 mem_data_o <= `ZERO_WORD;
                 // state
-                state <= `CKSUM_STATE_SUM;
+                state <= STATE_SUM;
             end
-            `CKSUM_STATE_SUM: begin
+            STATE_SUM: begin
                 if (mem_addr < field_end_addr) begin
                     cksum_val <= cksum_val + {`ZERO_HALF, mem_data_i[15:0]};
                     mem_addr <= mem_addr + 2;
                 end else begin
                     mem_ce_o <= `FALSE;
                     cksum_val <= cksum_val[31:16] + cksum_val[15:0];
-                    state <= `CKSUM_STATE_COMPLEMENT;
+                    state <= STATE_COMPLEMENT;
                 end
             end
-            `CKSUM_STATE_COMPLEMENT: begin
+            STATE_COMPLEMENT: begin
                 // store checksum result to dst field
                 mem_ce_o <= `TRUE;
                 mem_we_o <= `TRUE;
@@ -87,9 +90,9 @@ module cksum (
                 mem_width_o <= 2;
                 mem_data_o <= {`ZERO_HALF, ~(cksum_val[31:16] + cksum_val[15:0])};
 
-                state <= `CKSUM_STATE_STORE;
+                state <= STATE_STORE;
             end
-            `CKSUM_STATE_STORE: begin
+            STATE_STORE: begin
                 mem_ce_o <= `FALSE;
                 mem_we_o <= `FALSE;
                 mem_addr <= `ZERO_ADDR;
@@ -97,15 +100,15 @@ module cksum (
                 mem_data_o <= `ZERO_WORD;
 
                 cksum_ready_o <= `TRUE;
-                state <= `CKSUM_STATE_DONE;
+                state <= STATE_DONE;
             end
-            `CKSUM_STATE_DONE: begin
+            STATE_DONE: begin
                 if (start_i == `FALSE) begin
-                    state <= `CKSUM_STATE_FREE;
+                    state <= STATE_FREE;
                 end
             end
             default: begin
-                state <= `CKSUM_STATE_FREE;
+                state <= STATE_FREE;
             end
             endcase
         end

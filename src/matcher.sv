@@ -48,7 +48,9 @@ module matcher #(
         key_data[4], key_data[5], key_data[6], key_data[7]
     };
 
-    reg [`MT_STATE_BUS] state;
+    enum {
+        STATE_FREE, STATE_LOAD_KEY, STATE_HASH, STATE_LOAD_ENTRY, STATE_CMP, STATE_DONE
+    } state;
 
     integer i;
 
@@ -71,11 +73,11 @@ module matcher #(
                 key_data[i] <= `ZERO_BYTE;
                 entry_key_data[i] <= `ZERO_BYTE;
             end
-            state <= `MT_STATE_FREE;
+            state <= STATE_FREE;
         end else begin
             // load key
             case (state)
-            `MT_STATE_FREE: begin
+            STATE_FREE: begin
                 if (mod_start_i == `TRUE) begin
                     match_hdr_id <= mod_match_hdr_id_i;
                     match_key_off <= mod_match_key_off_i;
@@ -94,30 +96,30 @@ module matcher #(
                         key_data[i] <= `ZERO_BYTE;
                         entry_key_data[i] <= `ZERO_BYTE;
                     end
-                    state <= `MT_STATE_LOAD_KEY;
+                    state <= STATE_LOAD_KEY;
                 end
             end
-            `MT_STATE_LOAD_KEY: begin
+            STATE_LOAD_KEY: begin
                 if (mem_cnt == match_key_len) begin
                     mem_ce_o <= `FALSE;
                     hash_start <= `TRUE;
-                    state <= `MT_STATE_HASH;
+                    state <= STATE_HASH;
                 end else begin
                     mem_addr <= mem_addr + 1;
                     key_data[mem_cnt] <= mem_data_i[`BYTE_BUS];
                     mem_cnt <= mem_cnt + 1;
                 end
             end
-            `MT_STATE_HASH: begin
+            STATE_HASH: begin
                 if (hash_ready == `TRUE) begin
                     hash_start <= `FALSE;
                     mem_ce_o <= `TRUE;
                     mem_addr <= LOGIC_START_ADDR + hash_val * LOGIC_ENTRY_LEN;
                     mem_cnt <= 0;
-                    state <= `MT_STATE_LOAD_ENTRY;
+                    state <= STATE_LOAD_ENTRY;
                 end
             end
-            `MT_STATE_LOAD_ENTRY: begin
+            STATE_LOAD_ENTRY: begin
                 if (mem_cnt == match_key_len) begin
                     mem_ce_o <= `FALSE;
                     ready_o <= `TRUE;
@@ -133,20 +135,20 @@ module matcher #(
                     end else begin
                         val_addr_o <= `ZERO_ADDR;
                     end
-                    state <= `MT_STATE_DONE;
+                    state <= STATE_DONE;
                 end else begin
                     entry_key_data[mem_cnt] <= mem_data_i[`BYTE_BUS];
                     mem_addr <= mem_addr + 1;
                     mem_cnt <= mem_cnt + 1;
                 end
             end
-            `MT_STATE_DONE: begin
+            STATE_DONE: begin
                 if (start_i == `FALSE) begin
-                    state <= `MT_STATE_FREE;
+                    state <= STATE_FREE;
                 end
             end
             default: begin
-                state <= `MT_STATE_FREE;
+                state <= STATE_FREE;
             end
             endcase
         end
