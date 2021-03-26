@@ -1,4 +1,4 @@
-`include "def.vh"
+`include "def.svh"
 
 module cksum (
     input wire clk,

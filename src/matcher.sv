@@ -1,10 +1,13 @@
-`include "def.vh"
+`include "def.svh"
 
-module matcher (
+module matcher #(
+    parameter LOGIC_ENTRY_LEN = 16,
+    parameter LOGIC_START_ADDR = 128
+) (
     input wire clk,
     input wire rst,
     input wire start_i,
-    input wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_i,
+    input wire [`DATA_BUS] parsed_hdrs_i [`NUM_HEADERS - 1:0],
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -21,14 +24,6 @@ module matcher (
     input wire [5:0] mod_match_key_off_i,
     input wire [5:0] mod_match_key_len_i
 );
-
-    parameter LOGIC_ENTRY_LEN = 16;
-    parameter LOGIC_START_ADDR = 128;
-
-    // headers
-    wire [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
-    assign parsed_hdrs[0] = parsed_hdrs_i[63:32];
-    assign parsed_hdrs[1] = parsed_hdrs_i[31:0];
 
     // table
     reg [3:0] match_hdr_id;
@@ -93,7 +88,7 @@ module matcher (
                     val_addr_o <= `ZERO_ADDR;
                     // reg
                     hash_start <= `FALSE;
-                    mem_addr <= parsed_hdrs[match_hdr_id] + match_key_off;
+                    mem_addr <= parsed_hdrs_i[match_hdr_id] + match_key_off;
                     mem_cnt <= 0;
                     for (i = 0; i < 8; i = i + 1) begin
                         key_data[i] <= `ZERO_BYTE;

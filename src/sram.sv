@@ -1,4 +1,4 @@
-`include "def.vh"
+`include "def.svh"
 
 module sram (
     input wire clk,
