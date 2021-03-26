@@ -21,7 +21,7 @@ module parser(
     input wire [`DATA_BUS] mod_hdr_len_i,
     input wire [`DATA_BUS] mod_next_tag_start_i,
     input wire [`DATA_BUS] mod_next_tag_len_i,
-    input wire [`WORD_WIDTH * `NEXT_TABLE_SIZE - 1:0] mod_next_table_i
+    input wire [`DATA_BUS] mod_next_table_i [`NEXT_TABLE_SIZE - 1:0]
 );
 
     // parser information
@@ -33,7 +33,10 @@ module parser(
     // reg
     reg [`DATA_BUS] hdr_id;
     reg [`ADDR_BUS] hdr_addr;
-    reg [`PS_STATE_BUS] state;
+
+    enum {
+        STATE_BUS, STATE_FREE, STATE_PARSING, STATE_DONE
+    } state;
 
     integer i;
     integer j;
@@ -62,16 +65,15 @@ module parser(
             parsed_hdrs_o[1] <= `NO_HEADER;
             hdr_id <= `NO_HEADER;
             hdr_addr <= `ZERO_ADDR;
-            state <= `PS_STATE_FREE;
+            state <= STATE_FREE;
         end else begin
             case (state)
-            `PS_STATE_FREE: begin
+            STATE_FREE: begin
                 if (mod_start_i == `TRUE) begin
                     hdr_lens[mod_hdr_id_i] <= mod_hdr_len_i;
                     next_tag_starts[mod_hdr_id_i] <= mod_next_tag_start_i;
                     next_tag_lens[mod_hdr_id_i] <= mod_next_tag_len_i;
-                    next_table[mod_hdr_id_i][0] <= mod_next_table_i[63:32];
-                    next_table[mod_hdr_id_i][1] <= mod_next_table_i[31:0];
+                    next_table[mod_hdr_id_i] <= mod_next_table_i;
                 end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `TRUE;
@@ -86,10 +88,10 @@ module parser(
                     parsed_hdrs_o[1] <= `NO_HEADER;
                     hdr_id <= 0;
                     hdr_addr <= pkt_addr_i;
-                    state <= `PS_STATE_PARSING;
+                    state <= STATE_PARSING;
                 end
             end
-            `PS_STATE_PARSING: begin
+            STATE_PARSING: begin
                 case (hdr_id)
                 0: begin
                     // parse current header offset
@@ -106,7 +108,7 @@ module parser(
                         hdr_id <= `NUM_HEADERS;
                         mem_ce_o <= `FALSE;
                         ready_o <= `TRUE;
-                        state <= `PS_STATE_DONE;
+                        state <= STATE_DONE;
                     end
                 end
                 1: begin
@@ -122,7 +124,7 @@ module parser(
                         hdr_id <= `NUM_HEADERS;
                         mem_ce_o <= `FALSE;
                         ready_o <= `TRUE;
-                        state <= `PS_STATE_DONE;
+                        state <= STATE_DONE;
                     end
                 end
                 default: begin
@@ -130,13 +132,13 @@ module parser(
                 end
                 endcase
             end
-            `PS_STATE_DONE: begin
+            STATE_DONE: begin
                 if (start_i == `FALSE) begin
-                    state <= `PS_STATE_FREE;
+                    state <= STATE_FREE;
                 end
             end
             default: begin
-                state <= `PS_STATE_FREE;
+                state <= STATE_FREE;
             end
             endcase
         end

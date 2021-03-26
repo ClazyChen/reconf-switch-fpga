@@ -25,7 +25,7 @@ module proc(
     input wire [`DATA_BUS] ps_mod_hdr_len_i,
     input wire [`DATA_BUS] ps_mod_next_tag_start_i,
     input wire [`DATA_BUS] ps_mod_next_tag_len_i,
-    input wire [`WORD_WIDTH * `NEXT_TABLE_SIZE - 1:0] ps_mod_next_table_i,
+    input wire [`DATA_BUS] ps_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0],
     // matcher mod
     input wire mt_mod_start_i,
     input wire [3:0] mt_mod_match_hdr_id_i,
@@ -69,8 +69,13 @@ module proc(
     reg [`ADDR_BUS] hit_action_addr;
     reg [`ADDR_BUS] miss_action_addr;
 
-    reg [`PROC_MEM_MUX_BUS] mem_mux;
-    reg [`PROC_STATE_BUS] state;
+    enum {
+        MUX_PARSER, MUX_MATCHER, MUX_EXEC
+    } mem_mux;
+
+    enum {
+        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_DONE
+    } state;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
@@ -84,11 +89,11 @@ module proc(
             ex_start_o <= `FALSE;
             ex_start_addr_o <= `ZERO_ADDR;
             // proc
-            mem_mux <= `PROC_MEM_MUX_PARSER;
-            state <= `PROC_STATE_FREE;
+            mem_mux <= MUX_PARSER;
+            state <= STATE_FREE;
         end else begin
             case (state)
-            `PROC_STATE_FREE: begin
+            STATE_FREE: begin
                 if (proc_mod_start_i == `TRUE) begin
                     hit_action_addr <= proc_mod_hit_action_addr_i;
                     miss_action_addr <= proc_mod_miss_action_addr_i;
@@ -103,19 +108,19 @@ module proc(
                     ex_start_o <= `FALSE;
                     ex_start_addr_o <= `ZERO_ADDR;
                     // proc
-                    mem_mux <= `PROC_MEM_MUX_PARSER;
-                    state <= `PROC_STATE_PARSER;
+                    mem_mux <= MUX_PARSER;
+                    state <= STATE_PARSER;
                 end
             end
-            `PROC_STATE_PARSER: begin
+            STATE_PARSER: begin
                 if (ps_ready_i == `TRUE) begin
                     ps_start_o <= `FALSE;
                     mt_start_o <= `TRUE;
-                    mem_mux <= `PROC_MEM_MUX_MATCHER;
-                    state <= `PROC_STATE_MATCHER;
+                    mem_mux <= MUX_MATCHER;
+                    state <= STATE_MATCHER;
                 end
             end
-            `PROC_STATE_MATCHER: begin
+            STATE_MATCHER: begin
                 if (mt_ready_i == `TRUE) begin
                     mt_start_o <= `FALSE;
                     ex_start_o <= `TRUE;
@@ -124,40 +129,40 @@ module proc(
                     end else begin
                         ex_start_addr_o <= hit_action_addr;
                     end
-                    mem_mux <= `PROC_MEM_MUX_EXEC;
-                    state <= `PROC_STATE_EXEC;
+                    mem_mux <= MUX_EXEC;
+                    state <= STATE_EXEC;
                 end
             end
-            `PROC_STATE_EXEC: begin
+            STATE_EXEC: begin
                 if (ex_ready_i == `TRUE) begin
                     ex_start_o <= `FALSE;
-                    mem_mux <= `PROC_MEM_MUX_PARSER;
+                    mem_mux <= MUX_PARSER;
                     ready_o <= `TRUE;
-                    state <= `PROC_STATE_DONE;
+                    state <= STATE_DONE;
                 end
             end
-            `PROC_STATE_DONE: begin
+            STATE_DONE: begin
                 if (start_i == `FALSE) begin
-                    state <= `PROC_STATE_FREE;
+                    state <= STATE_FREE;
                 end
             end
             default: begin
-                state <= `PROC_STATE_FREE;
+                state <= STATE_FREE;
             end
             endcase
         end
     end
 
-    always @(*) begin
+    always_comb begin
         case (mem_mux)
-        `PROC_MEM_MUX_PARSER: begin
+        MUX_PARSER: begin
             mem_ce_o <= ps_mem_ce_i;
             mem_we_o <= ps_mem_we_i;
             mem_addr_o <= ps_mem_addr_i;
             mem_width_o <= ps_mem_width_i;
             mem_data_o <= ps_mem_data_i;
         end
-        `PROC_MEM_MUX_MATCHER: begin
+        MUX_MATCHER: begin
             mem_ce_o <= mt_mem_ce_i;
             mem_we_o <= mt_mem_we_i;
             mem_addr_o <= mt_mem_addr_i;
