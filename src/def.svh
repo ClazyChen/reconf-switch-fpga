@@ -30,6 +30,7 @@
 // parser
 `define NEXT_TAG_VAL    31:16
 `define NEXT_HDR_ID     15:0
+`define HDR_MAX_LEN     64
 
 // executor
 `define OPCODE_NOP              6'b000000

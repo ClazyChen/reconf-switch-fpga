@@ -4,14 +4,7 @@ module parser(
     input wire clk,
     input wire rst,
     input wire start_i,
-    input wire [`ADDR_BUS] pkt_addr_i,
-    // mem
-    output reg mem_ce_o,
-    output reg mem_we_o,
-    output reg [`ADDR_BUS] mem_addr_o,
-    output reg [3:0] mem_width_o,
-    output reg [`DATA_BUS] mem_data_o,
-    input wire [`DATA_BUS] mem_data_i,
+    input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
     // output
     output reg ready_o,
     output reg [`DATA_BUS] parsed_hdrs_o [`NUM_HEADERS - 1:0],
@@ -33,38 +26,30 @@ module parser(
     // reg
     reg [`DATA_BUS] hdr_id;
     reg [`ADDR_BUS] hdr_addr;
+    reg [`HALF_BUS] next_tag;
 
     enum {
         STATE_BUS, STATE_FREE, STATE_PARSING, STATE_DONE
     } state;
 
-    integer i;
-    integer j;
-
     always @(posedge clk) begin
         if (rst == `TRUE) begin
-            // mem
-            mem_ce_o <= `FALSE;
-            mem_we_o <= `FALSE;
-            mem_addr_o <= `ZERO_ADDR;
-            mem_width_o <= 0;
-            mem_data_o <= `ZERO_WORD;
             // output
             ready_o <= `FALSE;
+            parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER};
             // parser
-            for (i = 0; i < `NUM_HEADERS; i = i + 1) begin
+            for (int i = 0; i < `NUM_HEADERS; i++) begin
                 hdr_lens[i] <= `ZERO_WORD;
                 next_tag_starts[i] <= `ZERO_WORD;
                 next_tag_lens[i] <= `ZERO_WORD;
-                for (j = 0; j < `NEXT_TABLE_SIZE; j = j + 1) begin
+                for (int j = 0; j < `NEXT_TABLE_SIZE; j++) begin
                     next_table[i][j] <= `ZERO_WORD;
                 end
             end
             // reg
-            parsed_hdrs_o[0] <= `NO_HEADER;
-            parsed_hdrs_o[1] <= `NO_HEADER;
             hdr_id <= `NO_HEADER;
             hdr_addr <= `ZERO_ADDR;
+            next_tag <= 0;
             state <= STATE_FREE;
         end else begin
             case (state)
@@ -75,19 +60,13 @@ module parser(
                     next_tag_lens[mod_hdr_id_i] <= mod_next_tag_len_i;
                     next_table[mod_hdr_id_i] <= mod_next_table_i;
                 end else if (start_i == `TRUE) begin
-                    // mem
-                    mem_ce_o <= `TRUE;
-                    mem_we_o <= `FALSE;
-                    mem_addr_o <= pkt_addr_i + next_tag_starts[0];  // tag addr
-                    mem_width_o <= 4;
-                    mem_data_o <= `ZERO_WORD;
                     // output
                     ready_o <= `FALSE;
+                    parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER};
                     // reg
-                    parsed_hdrs_o[0] <= pkt_addr_i;
-                    parsed_hdrs_o[1] <= `NO_HEADER;
                     hdr_id <= 0;
-                    hdr_addr <= pkt_addr_i;
+                    hdr_addr <= 0;
+                    next_tag <= {pkt_hdr_i[next_tag_starts[0]], pkt_hdr_i[next_tag_starts[0] + 1]};
                     state <= STATE_PARSING;
                 end
             end
@@ -98,32 +77,32 @@ module parser(
                     parsed_hdrs_o[0] <= hdr_addr;
                     hdr_addr <= hdr_addr + hdr_lens[0];
                     // match next table
-                    if (mem_data_i[`NEXT_TAG_VAL] == next_table[0][0][`NEXT_TAG_VAL]) begin
+                    if (next_tag == next_table[0][0][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[0][0][`NEXT_HDR_ID];
-                        mem_addr_o <= hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][0][`NEXT_HDR_ID]];
-                    end else if (mem_data_i[`NEXT_TAG_VAL] == next_table[0][1][`NEXT_TAG_VAL]) begin
+                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][0][`NEXT_HDR_ID]]];
+                    end else if (next_tag == next_table[0][1][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[0][1][`NEXT_HDR_ID];
-                        mem_addr_o <= hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][1][`NEXT_HDR_ID]];
+                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][1][`NEXT_HDR_ID]]];
                     end else begin
                         hdr_id <= `NUM_HEADERS;
-                        mem_ce_o <= `FALSE;
                         ready_o <= `TRUE;
+                        next_tag <= 0;
                         state <= STATE_DONE;
                     end
                 end
                 1: begin
                     parsed_hdrs_o[1] <= hdr_addr;
                     hdr_addr <= hdr_addr + hdr_lens[1];
-                    if (mem_data_i[`NEXT_TAG_VAL] == next_table[1][0][`NEXT_TAG_VAL]) begin
+                    if (next_tag == next_table[1][0][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[1][0][`NEXT_HDR_ID];
-                        mem_addr_o <= hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][0][`NEXT_HDR_ID]];
-                    end else if (mem_data_i[`NEXT_TAG_VAL] == next_table[1][1][`NEXT_TAG_VAL]) begin
+                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][0][`NEXT_HDR_ID]]];
+                    end else if (next_tag == next_table[1][1][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[1][1][`NEXT_HDR_ID];
-                        mem_addr_o <= hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][1][`NEXT_HDR_ID]];
+                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][1][`NEXT_HDR_ID]]];
                     end else begin
                         hdr_id <= `NUM_HEADERS;
-                        mem_ce_o <= `FALSE;
                         ready_o <= `TRUE;
+                        next_tag <= 0;
                         state <= STATE_DONE;
                     end
                 end
