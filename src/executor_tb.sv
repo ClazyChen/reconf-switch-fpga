@@ -1,6 +1,6 @@
 `timescale 1ns/1ps
 
-`include "def.vh"
+`include "def.svh"
 
 module executor_tb (
 );

@@ -1,4 +1,4 @@
-`include "def.vh"
+`include "def.svh"
 
 module proc(
     input wire clk,
@@ -41,7 +41,7 @@ module proc(
     // parser
     reg ps_start_o;
     wire ps_ready_i;
-    wire [`WORD_WIDTH * `NUM_HEADERS - 1:0] ps_hdrs_i;
+    wire [`DATA_BUS] ps_hdrs_i [`NUM_HEADERS - 1:0];
 
     // matcher mem
     wire mt_mem_ce_i;

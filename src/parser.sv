@@ -1,4 +1,4 @@
-`include "def.vh"
+`include "def.svh"
 
 module parser(
     input wire clk,
@@ -14,7 +14,7 @@ module parser(
     input wire [`DATA_BUS] mem_data_i,
     // output
     output reg ready_o,
-    output reg [`WORD_WIDTH * `NUM_HEADERS - 1:0] parsed_hdrs_o,
+    output reg [`DATA_BUS] parsed_hdrs_o [`NUM_HEADERS - 1:0],
     // modify
     input wire mod_start_i,
     input wire [`DATA_BUS] mod_hdr_id_i,
@@ -31,7 +31,6 @@ module parser(
     reg [`DATA_BUS] next_table[`NUM_HEADERS - 1:0][`NEXT_TABLE_SIZE - 1:0];
 
     // reg
-    reg [`DATA_BUS] parsed_hdrs [`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] hdr_id;
     reg [`ADDR_BUS] hdr_addr;
     reg [`PS_STATE_BUS] state;
@@ -59,8 +58,8 @@ module parser(
                 end
             end
             // reg
-            parsed_hdrs[0] <= `NO_HEADER;
-            parsed_hdrs[1] <= `NO_HEADER;
+            parsed_hdrs_o[0] <= `NO_HEADER;
+            parsed_hdrs_o[1] <= `NO_HEADER;
             hdr_id <= `NO_HEADER;
             hdr_addr <= `ZERO_ADDR;
             state <= `PS_STATE_FREE;
@@ -83,8 +82,8 @@ module parser(
                     // output
                     ready_o <= `FALSE;
                     // reg
-                    parsed_hdrs[0] <= pkt_addr_i;
-                    parsed_hdrs[1] <= `NO_HEADER;
+                    parsed_hdrs_o[0] <= pkt_addr_i;
+                    parsed_hdrs_o[1] <= `NO_HEADER;
                     hdr_id <= 0;
                     hdr_addr <= pkt_addr_i;
                     state <= `PS_STATE_PARSING;
@@ -94,7 +93,7 @@ module parser(
                 case (hdr_id)
                 0: begin
                     // parse current header offset
-                    parsed_hdrs[0] <= hdr_addr;
+                    parsed_hdrs_o[0] <= hdr_addr;
                     hdr_addr <= hdr_addr + hdr_lens[0];
                     // match next table
                     if (mem_data_i[`NEXT_TAG_VAL] == next_table[0][0][`NEXT_TAG_VAL]) begin
@@ -111,7 +110,7 @@ module parser(
                     end
                 end
                 1: begin
-                    parsed_hdrs[1] <= hdr_addr;
+                    parsed_hdrs_o[1] <= hdr_addr;
                     hdr_addr <= hdr_addr + hdr_lens[1];
                     if (mem_data_i[`NEXT_TAG_VAL] == next_table[1][0][`NEXT_TAG_VAL]) begin
                         hdr_id <= next_table[1][0][`NEXT_HDR_ID];
@@ -141,10 +140,6 @@ module parser(
             end
             endcase
         end
-    end
-
-    always @(*) begin
-        assign parsed_hdrs_o = {parsed_hdrs[0], parsed_hdrs[1]};
     end
 
 endmodule
