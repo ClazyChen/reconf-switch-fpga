@@ -40,3 +40,9 @@
 `define OPCODE_SET_PORT         6'b000100
 `define OPCODE_SET_MULTICAST    6'b000101
 `define OPCODE_RECIRCULATE      6'b000110
+
+`define MAX_OP_NUM      16
+`define MAX_VAL_LEN     16
+
+// hash
+`define MAX_HASH_LEN    8

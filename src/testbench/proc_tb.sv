@@ -44,6 +44,11 @@ module proc_tb (
     reg [3:0] mt_mod_match_hdr_id_i;
     reg [5:0] mt_mod_match_key_off_i;
     reg [5:0] mt_mod_match_key_len_i;
+    reg [5:0] mt_mod_match_val_len_i;
+
+    // executor
+    reg ex_mod_start_i;
+    reg [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1];
 
     initial begin
         clk = 1'b0;
@@ -63,15 +68,24 @@ module proc_tb (
     end
 
     initial begin
+        proc_mod_start_i <= `FALSE;
+        proc_mod_hit_action_addr_i <= 0;
+        proc_mod_miss_action_addr_i <= 0;
         #65
         proc_mod_start_i <= `TRUE;
-        proc_mod_hit_action_addr_i <= 64;
+        proc_mod_hit_action_addr_i <= 1;
         proc_mod_miss_action_addr_i <= 0;
         #20
         proc_mod_start_i <= `FALSE;
     end
 
     initial begin
+        ps_mod_start_i <= `FALSE;
+        ps_mod_hdr_id_i <= 0;
+        ps_mod_hdr_len_i <= 0;
+        ps_mod_next_tag_start_i <= 0;
+        ps_mod_next_tag_len_i <= 0;
+        ps_mod_next_table_i <= {`NO_NEXT_HEADER, `NO_NEXT_HEADER};
         #65
         // ethernet header
         ps_mod_start_i <= `TRUE;
@@ -99,13 +113,38 @@ module proc_tb (
     end
 
     initial begin
+        mt_mod_start_i <= `FALSE;
+        mt_mod_match_hdr_id_i <= 0;
+        mt_mod_match_key_off_i <= 0;
+        mt_mod_match_key_len_i <= 0;
+        mt_mod_match_val_len_i <= 0;
         #65
         mt_mod_start_i <= `TRUE;
         mt_mod_match_hdr_id_i <= 1;
         mt_mod_match_key_off_i <= 16;
         mt_mod_match_key_len_i <= 4;
+        mt_mod_match_val_len_i <= 6 + 2;
         #20
         mt_mod_start_i <= `FALSE;
+    end
+
+    initial begin
+        ex_mod_start_i <= `FALSE;
+        for (int i = 0; i < `MAX_OP_NUM; i++) begin
+            ex_mod_ops_i[i] = 0;
+        end
+        #65
+        ex_mod_start_i <= `TRUE;
+        ex_mod_ops_i[0:5] <= {
+            `ZERO_QUAD,
+            'h0c000000_01860006,    // copy dst mac to src mac
+            'h0c000000_0006f006,    // copy next hop mac to dst mac
+            'h0bffffff_12010000,    // ttl - 1
+            'h04000000_10141282,    // ip cksum
+            `ZERO_QUAD
+        };
+        #20
+        ex_mod_start_i <= `FALSE;
     end
 
     proc proc0(
@@ -137,7 +176,11 @@ module proc_tb (
         .mt_mod_start_i(mt_mod_start_i),
         .mt_mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
         .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
-        .mt_mod_match_key_len_i(mt_mod_match_key_len_i)
+        .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
+        .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
+        // executor
+        .ex_mod_start_i(ex_mod_start_i),
+        .ex_mod_ops_i(ex_mod_ops_i)
     );
 
     wire sram_ce;

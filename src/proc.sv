@@ -30,48 +30,32 @@ module proc(
     input wire mt_mod_start_i,
     input wire [3:0] mt_mod_match_hdr_id_i,
     input wire [5:0] mt_mod_match_key_off_i,
-    input wire [5:0] mt_mod_match_key_len_i
+    input wire [5:0] mt_mod_match_key_len_i,
+    input wire [5:0] mt_mod_match_val_len_i,
+    // executor mod
+    input wire ex_mod_start_i,
+    input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1]
 );
-    // parser mem
-    wire ps_mem_ce_i;
-    wire ps_mem_we_i;
-    wire [`ADDR_BUS] ps_mem_addr_i;
-    wire [3:0] ps_mem_width_i;
-    wire [`DATA_BUS] ps_mem_data_i;
+
     // parser
     reg ps_start_o;
     wire ps_ready_i;
     wire [`DATA_BUS] ps_hdrs_i [`NUM_HEADERS - 1:0];
 
-    // matcher mem
-    wire mt_mem_ce_i;
-    wire mt_mem_we_i;
-    wire [`ADDR_BUS] mt_mem_addr_i;
-    wire [3:0] mt_mem_width_i;
-    wire [`DATA_BUS] mt_mem_data_i;
     // matcher
     reg mt_start_o;
     wire mt_ready_i;
-    wire [`ADDR_BUS] mt_val_addr_i;
+    wire mt_is_match_i;
+    wire [`BYTE_BUS] mt_flow_val_i [`MAX_VAL_LEN - 1:0];
 
-    // executor mem
-    wire ex_mem_ce_i;
-    wire ex_mem_we_i;
-    wire [`ADDR_BUS] ex_mem_addr_i;
-    wire [3:0] ex_mem_width_i;
-    wire [`DATA_BUS] ex_mem_data_i;
     // executor
     reg ex_start_o;
-    reg [`ADDR_BUS] ex_start_addr_o;
+    reg [`DATA_BUS] ex_op_start_cnt_o;
     wire ex_ready_i;
 
-    // processor
+    // proc config
     reg [`ADDR_BUS] hit_action_addr;
     reg [`ADDR_BUS] miss_action_addr;
-
-    enum {
-        MUX_PARSER, MUX_MATCHER, MUX_EXEC
-    } mem_mux;
 
     enum {
         STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_DONE
@@ -87,9 +71,11 @@ module proc(
             mt_start_o <= `FALSE;
             // executor
             ex_start_o <= `FALSE;
-            ex_start_addr_o <= `ZERO_ADDR;
+            ex_op_start_cnt_o <= 0;
             // proc
-            mem_mux <= MUX_PARSER;
+            hit_action_addr <= 0;
+            miss_action_addr <= 0;
+            // reg
             state <= STATE_FREE;
         end else begin
             case (state)
@@ -106,9 +92,8 @@ module proc(
                     mt_start_o <= `FALSE;
                     // executor
                     ex_start_o <= `FALSE;
-                    ex_start_addr_o <= `ZERO_ADDR;
+                    ex_op_start_cnt_o <= 0;
                     // proc
-                    mem_mux <= MUX_PARSER;
                     state <= STATE_PARSER;
                 end
             end
@@ -116,7 +101,6 @@ module proc(
                 if (ps_ready_i == `TRUE) begin
                     ps_start_o <= `FALSE;
                     mt_start_o <= `TRUE;
-                    mem_mux <= MUX_MATCHER;
                     state <= STATE_MATCHER;
                 end
             end
@@ -124,19 +108,17 @@ module proc(
                 if (mt_ready_i == `TRUE) begin
                     mt_start_o <= `FALSE;
                     ex_start_o <= `TRUE;
-                    if (mt_val_addr_i == `ZERO_ADDR) begin
-                        ex_start_addr_o <= miss_action_addr;
+                    if (mt_is_match_i == `TRUE) begin
+                        ex_op_start_cnt_o <= hit_action_addr;
                     end else begin
-                        ex_start_addr_o <= hit_action_addr;
+                        ex_op_start_cnt_o <= miss_action_addr;
                     end
-                    mem_mux <= MUX_EXEC;
                     state <= STATE_EXEC;
                 end
             end
             STATE_EXEC: begin
                 if (ex_ready_i == `TRUE) begin
                     ex_start_o <= `FALSE;
-                    mem_mux <= MUX_PARSER;
                     ready_o <= `TRUE;
                     state <= STATE_DONE;
                 end
@@ -151,32 +133,6 @@ module proc(
             end
             endcase
         end
-    end
-
-    always_comb begin
-        case (mem_mux)
-        MUX_PARSER: begin
-            mem_ce_o <= ps_mem_ce_i;
-            mem_we_o <= ps_mem_we_i;
-            mem_addr_o <= ps_mem_addr_i;
-            mem_width_o <= ps_mem_width_i;
-            mem_data_o <= ps_mem_data_i;
-        end
-        MUX_MATCHER: begin
-            mem_ce_o <= mt_mem_ce_i;
-            mem_we_o <= mt_mem_we_i;
-            mem_addr_o <= mt_mem_addr_i;
-            mem_width_o <= mt_mem_width_i;
-            mem_data_o <= mt_mem_data_i;
-        end
-        default: begin
-            mem_ce_o <= ex_mem_ce_i;
-            mem_we_o <= ex_mem_we_i;
-            mem_addr_o <= ex_mem_addr_i;
-            mem_width_o <= ex_mem_width_i;
-            mem_data_o <= ex_mem_data_i;
-        end
-        endcase
     end
 
     parser parser0(
@@ -200,40 +156,41 @@ module proc(
         .clk(clk),
         .rst(rst),
         .start_i(mt_start_o),
+        .pkt_hdr_i(pkt_hdr_i),
         .parsed_hdrs_i(ps_hdrs_i),
         // mem
-        .mem_ce_o(mt_mem_ce_i),
-        .mem_we_o(mt_mem_we_i),
-        .mem_addr_o(mt_mem_addr_i),
-        .mem_width_o(mt_mem_width_i),
-        .mem_data_o(mt_mem_data_i),
+        .mem_ce_o(mem_ce_o),
+        .mem_we_o(mem_we_o),
+        .mem_addr_o(mem_addr_o),
+        .mem_width_o(mem_width_o),
+        .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         // output
         .ready_o(mt_ready_i),
-        .val_addr_o(mt_val_addr_i),
+        .is_match_o(mt_is_match_i),
+        .flow_val_o(mt_flow_val_i),
         // mod
         .mod_start_i(mt_mod_start_i),
         .mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
         .mod_match_key_off_i(mt_mod_match_key_off_i),
-        .mod_match_key_len_i(mt_mod_match_key_len_i)
+        .mod_match_key_len_i(mt_mod_match_key_len_i),
+        .mod_match_val_len_i(mt_mod_match_val_len_i)
     );
 
     executor executor0(
         .clk(clk),
         .rst(rst),
+        // input
         .start_i(ex_start_o),
-        .start_addr_i(ex_start_addr_o),
-        .args_start_i(mt_val_addr_i),
+        .pkt_hdr_i(pkt_hdr_i),
+        .op_start_cnt_i(ex_op_start_cnt_o),
+        .args_i(mt_flow_val_i),
         .parsed_hdrs_i(ps_hdrs_i),
-        // mem
-        .mem_ce_o(ex_mem_ce_i),
-        .mem_we_o(ex_mem_we_i),
-        .mem_addr_o(ex_mem_addr_i),
-        .mem_width_o(ex_mem_width_i),
-        .mem_data_o(ex_mem_data_i),
-        .mem_data_i(mem_data_i),
         // output
-        .ready_o(ex_ready_i)
+        .ready_o(ex_ready_i),
+        // mod
+        .mod_start_i(ex_mod_start_i),
+        .mod_ops_i(ex_mod_ops_i)
     );
 
 endmodule
