@@ -10,12 +10,12 @@ module hash (
 );
 
     enum {
-        STATE_FREE, STATE_SUM, STATE_DONE
+        STATE_FREE, STATE_SUM1, STATE_SUM2, STATE_DONE
     } state;
 
     reg [`DATA_BUS] hash_val;
 
-    always @(posedge clk) begin
+    always @(*) begin
         if (rst == `TRUE) begin
             hash_ready_o <= `FALSE;
             hash_val <= `ZERO_WORD;
@@ -28,10 +28,14 @@ module hash (
                     hash_val <= key_i[7:0] + key_i[15:8] + key_i[23:16] +
                                 key_i[31:24] + key_i[39:32] + key_i[47:40] +
                                 key_i[55:48] + key_i[63:56];
-                    state <= STATE_SUM;
+                    state <= STATE_SUM1;
                 end
             end
-            STATE_SUM: begin
+            STATE_SUM1: begin
+                hash_val <= hash_val[15:8] + hash_val[7:0];
+                state <= STATE_SUM2;
+            end
+            STATE_SUM2: begin
                 hash_ready_o <= `TRUE;
                 hash_val <= hash_val[15:8] + hash_val[7:0];
                 state <= STATE_DONE;
