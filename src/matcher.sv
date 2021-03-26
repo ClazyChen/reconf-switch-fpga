@@ -7,6 +7,7 @@ module matcher #(
     input wire clk,
     input wire rst,
     input wire start_i,
+    input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
     input wire [`DATA_BUS] parsed_hdrs_i [`NUM_HEADERS - 1:0],
     // mem
     output reg mem_ce_o,
@@ -17,26 +18,29 @@ module matcher #(
     input wire [`DATA_BUS] mem_data_i,
     // output
     output reg ready_o,
-    output reg [`ADDR_BUS] val_addr_o,
+    output reg is_match_o,
+    output reg [`BYTE_BUS] flow_val_o [`MAX_VAL_LEN - 1:0],
     // modify
     input wire mod_start_i,
     input wire [3:0] mod_match_hdr_id_i,
     input wire [5:0] mod_match_key_off_i,
-    input wire [5:0] mod_match_key_len_i
+    input wire [5:0] mod_match_key_len_i,
+    input wire [5:0] mod_match_val_len_i
 );
 
     // table
     reg [3:0] match_hdr_id;
     reg [5:0] match_key_off;
     reg [5:0] match_key_len;
+    reg [5:0] match_val_len;
 
     // load
     reg [`ADDR_BUS] mem_addr;
-    integer mem_cnt;
+    int mem_cnt;
 
     // key
-    reg [`BYTE_BUS] key_data [7:0];
-    reg [`BYTE_BUS] entry_key_data [7:0];
+    reg [`BYTE_BUS] key_data [`MAX_HASH_LEN - 1:0];
+    reg [`BYTE_BUS] entry_key_data [`MAX_HASH_LEN - 1:0];
 
     // hash
     reg hash_start;
@@ -49,65 +53,61 @@ module matcher #(
     };
 
     enum {
-        STATE_FREE, STATE_LOAD_KEY, STATE_HASH, STATE_LOAD_ENTRY, STATE_CMP, STATE_DONE
+        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_DONE
     } state;
-
-    integer i;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
             // mem
             mem_ce_o <= `FALSE;
             // output
-            ready_o <= `FALSE; 
-            val_addr_o <= `ZERO_ADDR;
+            ready_o <= `FALSE;
+            is_match_o <= `FALSE;
+            for (int i = 0; i < `MAX_VAL_LEN; i++) begin
+                flow_val_o[i] = 0;
+            end
             // table
             match_hdr_id <= 0;
             match_key_off <= 0;
             match_key_len <= 0;
+            match_val_len <= 0;
             // reg
             hash_start <= `FALSE;
             mem_addr <= `ZERO_ADDR;
             mem_cnt <= 0;
-            for (i = 0; i < 8; i = i + 1) begin
+            for (int i = 0; i < 8; i = i + 1) begin
                 key_data[i] <= `ZERO_BYTE;
                 entry_key_data[i] <= `ZERO_BYTE;
             end
             state <= STATE_FREE;
         end else begin
-            // load key
             case (state)
             STATE_FREE: begin
                 if (mod_start_i == `TRUE) begin
                     match_hdr_id <= mod_match_hdr_id_i;
                     match_key_off <= mod_match_key_off_i;
                     match_key_len <= mod_match_key_len_i;
+                    match_val_len <= mod_match_val_len_i;
                 end else if (start_i == `TRUE) begin
                     // mem
-                    mem_ce_o <= `TRUE;
+                    mem_ce_o <= `FALSE;
                     // output
-                    ready_o <= `FALSE;
-                    val_addr_o <= `ZERO_ADDR;
+                    ready_o <= `FALSE; 
+                    is_match_o <= `FALSE;
+                    for (int i = 0; i < `MAX_VAL_LEN; i++) begin
+                        flow_val_o[i] = 0;
+                    end
                     // reg
-                    hash_start <= `FALSE;
-                    mem_addr <= parsed_hdrs_i[match_hdr_id] + match_key_off;
+                    hash_start <= `TRUE;
+                    mem_addr <= `ZERO_ADDR;
                     mem_cnt <= 0;
-                    for (i = 0; i < 8; i = i + 1) begin
-                        key_data[i] <= `ZERO_BYTE;
+                    for (int i = 0; i < match_key_len; i++) begin
+                        key_data[i] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
+                    end
+                    for (int i = 0; i < 8; i = i + 1) begin
                         entry_key_data[i] <= `ZERO_BYTE;
                     end
-                    state <= STATE_LOAD_KEY;
-                end
-            end
-            STATE_LOAD_KEY: begin
-                if (mem_cnt == match_key_len) begin
-                    mem_ce_o <= `FALSE;
-                    hash_start <= `TRUE;
                     state <= STATE_HASH;
-                end else begin
-                    mem_addr <= mem_addr + 1;
-                    key_data[mem_cnt] <= mem_data_i[`BYTE_BUS];
-                    mem_cnt <= mem_cnt + 1;
                 end
             end
             STATE_HASH: begin
@@ -116,28 +116,36 @@ module matcher #(
                     mem_ce_o <= `TRUE;
                     mem_addr <= LOGIC_START_ADDR + hash_val * LOGIC_ENTRY_LEN;
                     mem_cnt <= 0;
-                    state <= STATE_LOAD_ENTRY;
+                    state <= STATE_LOAD_KEY;
                 end
             end
-            STATE_LOAD_ENTRY: begin
+            STATE_LOAD_KEY: begin
                 if (mem_cnt == match_key_len) begin
-                    mem_ce_o <= `FALSE;
-                    ready_o <= `TRUE;
-                    if (entry_key_data[0] == key_data[0] &&
-                        entry_key_data[1] == key_data[1] &&
-                        entry_key_data[2] == key_data[2] &&
-                        entry_key_data[3] == key_data[3] &&
-                        entry_key_data[4] == key_data[4] &&
-                        entry_key_data[5] == key_data[5] &&
-                        entry_key_data[6] == key_data[6] &&
-                        entry_key_data[7] == key_data[7]) begin
-                        val_addr_o <= mem_addr;
+                    if (entry_key_data == key_data) begin
+                        // match, load value
+                        mem_cnt <= 0;
+                        state <= STATE_LOAD_VAL;
                     end else begin
-                        val_addr_o <= `ZERO_ADDR;
+                        // not match, return
+                        mem_ce_o <= `FALSE;
+                        ready_o <= `TRUE;
+                        is_match_o <= `FALSE;
+                        state <= STATE_DONE;
                     end
-                    state <= STATE_DONE;
                 end else begin
                     entry_key_data[mem_cnt] <= mem_data_i[`BYTE_BUS];
+                    mem_addr <= mem_addr + 1;
+                    mem_cnt <= mem_cnt + 1;
+                end
+            end
+            STATE_LOAD_VAL: begin
+                if (mem_cnt == match_val_len) begin
+                    mem_ce_o <= `FALSE;
+                    ready_o <= `TRUE;
+                    is_match_o <= `TRUE;
+                    state <= STATE_DONE;
+                end else begin
+                    flow_val_o[mem_cnt] <= mem_data_i[`BYTE_BUS];
                     mem_addr <= mem_addr + 1;
                     mem_cnt <= mem_cnt + 1;
                 end
