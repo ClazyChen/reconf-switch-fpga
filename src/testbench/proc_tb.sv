@@ -218,7 +218,7 @@ module proc_tb (
 
     initial begin
         $display("Loading packet");
-        $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\packet.data", sram0.data_mem);
+        $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\testbench\\packet.data", sram0.data_mem);
     end
 
 endmodule

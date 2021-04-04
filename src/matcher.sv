@@ -56,6 +56,11 @@ module matcher #(
         STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_DONE
     } state;
 
+    assign mem_we_o = `FALSE;
+    assign mem_addr_o = mem_addr;
+    assign mem_width_o = 1;
+    assign mem_data_o = `ZERO_WORD;
+
     always @(posedge clk) begin
         if (rst == `TRUE) begin
             // mem
@@ -160,13 +165,6 @@ module matcher #(
             end
             endcase
         end
-    end
-
-    always @(*) begin
-        assign mem_we_o = `FALSE;
-        assign mem_addr_o = mem_addr;
-        assign mem_width_o = 1;
-        assign mem_data_o = `ZERO_WORD;
     end
 
     hash hash0(

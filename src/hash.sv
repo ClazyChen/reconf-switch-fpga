@@ -15,6 +15,8 @@ module hash (
 
     reg [`DATA_BUS] hash_val;
 
+    assign hash_val_o = hash_val;
+
     always @(*) begin
         if (rst == `TRUE) begin
             hash_ready_o <= `FALSE;
@@ -50,10 +52,6 @@ module hash (
             end
             endcase
         end
-    end
-
-    always @(*) begin
-        assign hash_val_o = hash_val;
     end
 
 endmodule
