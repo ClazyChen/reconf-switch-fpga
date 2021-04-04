@@ -14,6 +14,7 @@ module cksum (
 );
 
     reg [`DATA_BUS] cksum_val;
+    reg [`DATA_BUS] field_addr;
     reg [`DATA_BUS] field_end_addr;
 
     enum {
@@ -26,22 +27,26 @@ module cksum (
             cksum_ready_o <= `FALSE;
             cksum_val <= `ZERO_WORD;
             // state
+            field_addr <= `ZERO_ADDR;
             field_end_addr <= `ZERO_ADDR;
             state <= STATE_FREE;
         end else begin
             case (state)
             STATE_FREE: begin
                 if (start_i == `TRUE) begin
+                    field_addr <= field_start_i;
                     field_end_addr <= field_start_i + field_len_i;
                     state <= STATE_SUM;
                 end
             end
             STATE_SUM: begin
-                for (int i = 0; i < field_len_i; i += 2) begin
-                    cksum_val += {pkt_hdr_i[field_start_i + i],
-                                  pkt_hdr_i[field_start_i + i + 1]};
+                if (field_addr < field_end_addr) begin
+                    cksum_val += {pkt_hdr_i[field_addr],
+                                  pkt_hdr_i[field_addr + 1]};
+                    field_addr <= field_addr + 2;
+                end else begin
+                    state <= STATE_COMPLEMENT;
                 end
-                state <= STATE_COMPLEMENT;
             end
             STATE_COMPLEMENT: begin
                 cksum_val <= cksum_val[31:16] + cksum_val[15:0];
