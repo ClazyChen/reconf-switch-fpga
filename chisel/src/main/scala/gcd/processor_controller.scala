@@ -7,9 +7,16 @@ class ProcessorController extends Module {
     val io = IO(new Bundle {
         val update = Input(Bool())
         val packet_header = Input(Vec(const.header_max_length, UInt(const.byte_width.W)))
+        val end = Input(Bool())
 
         val mem = Flipped(new MemInterface)
         val ready = Output(Bool())
+        
+        val mod = new ProcessorModify
+
+        val next_en = Output(Bool())
+        val next_header = Output(Vec(const.header_max_length, UInt(const.byte_width.W)))
+        val next_proc = Output(UInt(3.W))
     })
 
     val packet_header = Reg(Vec(const.header_max_length, UInt(const.byte_width.W)))
@@ -36,13 +43,14 @@ class ProcessorController extends Module {
     proc.io.start         := start
     proc.io.packet_header := packet_header
     proc.io.mem           <> io.mem
+    proc.io.mod           <> io.mod
 
-    when (proc.io.ready) {
+    when (proc.io.ready && io.end) {
         processing := false.B
     }
-}
 
-
-object PRC extends App {
-    Driver.execute(args, () => new Processor)
+    // only for test
+    io.next_en     := packet_header(1)(0) && io.mem.rdata(0)
+    io.next_proc := packet_header(0)(2,0)
+    io.next_header := packet_header
 }

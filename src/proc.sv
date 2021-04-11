@@ -1,6 +1,6 @@
 `include "def.svh"
 
-module proc(
+module proc_base(
     input wire clk,
     input wire rst,
     input wire start_i,
