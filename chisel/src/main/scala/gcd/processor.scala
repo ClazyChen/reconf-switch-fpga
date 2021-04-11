@@ -18,7 +18,7 @@ class Processor extends Module {
     val miss_action_addr = RegInit(0.U(const.addr_width.W))
 
     val state = RegInit(0.U(3.W))
-    val ready   = RegInit(false.B)
+    val ready = RegInit(false.B)
     io.ready := ready
 
     val parser = Module(new Parser)

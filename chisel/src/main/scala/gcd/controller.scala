@@ -11,7 +11,10 @@ class Controller extends Module {
         val mem = Flipped(new MemInterface)
     })
 
-    
-
-
+    val proc = for (j <- 0 until const.processor_number) {
+        val exe = Module(new ProcssorController)
+        exe.io.update := false.B
+        exe.io.packet_header := 
+        exe
+    }
 }
