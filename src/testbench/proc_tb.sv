@@ -121,6 +121,8 @@ module proc_tb (
         mt_mod_match_key_off_i <= 0;
         mt_mod_match_key_len_i <= 0;
         mt_mod_match_val_len_i <= 0;
+        mt_logic_entry_len_i <= 0;
+        mt_logic_start_addr_i <= 0;
         #65
         mt_mod_start_i <= `TRUE;
         mt_mod_match_hdr_id_i <= 1;

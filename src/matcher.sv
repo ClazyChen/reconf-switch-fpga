@@ -36,7 +36,6 @@ module matcher(
     reg [`DATA_BUS] logic_start_addr;
 
     // load
-    reg [`ADDR_BUS] mem_addr;
     int mem_cnt;
 
     // key

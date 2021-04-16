@@ -17,16 +17,56 @@ module parser(
     input wire [`DATA_BUS] mod_next_table_i [`NEXT_TABLE_SIZE - 1:0]
 );
 
+    // reg
+    reg [`DATA_BUS] hdr_id;
+    reg [`ADDR_BUS] hdr_addr;
+    reg [`HALF_BUS] next_tag;
+
     // parser information
     reg [`DATA_BUS] hdr_lens [`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] next_tag_starts[`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] next_tag_lens[`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] next_table[`NUM_HEADERS - 1:0][`NEXT_TABLE_SIZE - 1:0];
 
-    // reg
-    reg [`DATA_BUS] hdr_id;
-    reg [`ADDR_BUS] hdr_addr;
-    reg [`HALF_BUS] next_tag;
+    wire [`DATA_BUS] hdr0_len;
+    wire [`DATA_BUS] hdr0_tag_start;
+    wire [`DATA_BUS] hdr0_tag_len;
+    wire [`DATA_BUS] hdr0_next0_tag;
+    wire [`DATA_BUS] hdr0_next0_hdr;
+    wire [`DATA_BUS] hdr0_next1_tag;
+    wire [`DATA_BUS] hdr0_next1_hdr;
+    assign hdr0_len = hdr_lens[0];
+    assign hdr0_tag_start = next_tag_starts[0];
+    assign hdr0_tag_len = next_tag_lens[0];
+    assign hdr0_next0_tag = next_table[0][0][31:16];
+    assign hdr0_next0_hdr = next_table[0][0][15:0];
+    assign hdr0_next1_tag = next_table[0][1][31:16];
+    assign hdr0_next1_hdr = next_table[0][1][15:0];
+
+    wire [`DATA_BUS] hdr1_len;
+    wire [`DATA_BUS] hdr1_tag_start;
+    wire [`DATA_BUS] hdr1_tag_len;
+    wire [`DATA_BUS] hdr1_next0_tag;
+    wire [`DATA_BUS] hdr1_next0_hdr;
+    wire [`DATA_BUS] hdr1_next1_tag;
+    wire [`DATA_BUS] hdr1_next1_hdr;
+    assign hdr1_len = hdr_lens[1];
+    assign hdr1_tag_start = next_tag_starts[1];
+    assign hdr1_tag_len = next_tag_lens[1];
+    assign hdr1_next0_tag = next_table[1][0][31:16];
+    assign hdr1_next0_hdr = next_table[1][0][15:0];
+    assign hdr1_next1_tag = next_table[1][1][31:16];
+    assign hdr1_next1_hdr = next_table[1][1][15:0];
+
+    wire [`ADDR_BUS] hdr0_next0_start;
+    assign hdr0_next0_start = hdr_addr + hdr0_len + next_tag_starts[hdr0_next0_hdr];
+    wire [`ADDR_BUS] hdr0_next1_start;
+    assign hdr0_next1_start = hdr_addr + hdr0_len + next_tag_starts[hdr0_next1_hdr];
+
+    wire [`ADDR_BUS] hdr1_next0_start;
+    assign hdr1_next0_start = hdr_addr + hdr1_len + next_tag_starts[hdr1_next0_hdr];
+    wire [`ADDR_BUS] hdr1_next1_start;
+    assign hdr1_next1_start = hdr_addr + hdr1_len + next_tag_starts[hdr1_next1_hdr];
 
     enum {
         STATE_FREE, STATE_PARSING
@@ -49,7 +89,6 @@ module parser(
             // reg
             hdr_id <= `NO_HEADER;
             hdr_addr <= `ZERO_ADDR;
-            next_tag <= 0;
             state <= STATE_FREE;
         end else begin
             case (state)
@@ -66,7 +105,6 @@ module parser(
                     // reg
                     hdr_id <= 0;
                     hdr_addr <= 0;
-                    next_tag <= {pkt_hdr_i[next_tag_starts[0]], pkt_hdr_i[next_tag_starts[0] + 1]};
                     state <= STATE_PARSING;
                 end
             end
@@ -75,34 +113,28 @@ module parser(
                 0: begin
                     // parse current header offset
                     parsed_hdrs_o[0] <= hdr_addr;
-                    hdr_addr <= hdr_addr + hdr_lens[0];
+                    hdr_addr <= hdr_addr + hdr0_len;
                     // match next table
-                    if (next_tag == next_table[0][0][`NEXT_TAG_VAL]) begin
-                        hdr_id <= next_table[0][0][`NEXT_HDR_ID];
-                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][0][`NEXT_HDR_ID]]];
-                    end else if (next_tag == next_table[0][1][`NEXT_TAG_VAL]) begin
-                        hdr_id <= next_table[0][1][`NEXT_HDR_ID];
-                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[0] + next_tag_starts[next_table[0][1][`NEXT_HDR_ID]]];
+                    if (next_tag == hdr0_next0_tag) begin
+                        hdr_id <= hdr0_next0_hdr;
+                    end else if (next_tag == hdr0_next1_tag) begin
+                        hdr_id <= hdr0_next1_hdr;
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         ready_o <= `TRUE;
-                        next_tag <= 0;
                         state <= STATE_FREE;
                     end
                 end
                 1: begin
                     parsed_hdrs_o[1] <= hdr_addr;
-                    hdr_addr <= hdr_addr + hdr_lens[1];
-                    if (next_tag == next_table[1][0][`NEXT_TAG_VAL]) begin
-                        hdr_id <= next_table[1][0][`NEXT_HDR_ID];
-                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][0][`NEXT_HDR_ID]]];
-                    end else if (next_tag == next_table[1][1][`NEXT_TAG_VAL]) begin
-                        hdr_id <= next_table[1][1][`NEXT_HDR_ID];
-                        next_tag <= pkt_hdr_i[hdr_addr + hdr_lens[1] + next_tag_starts[next_table[1][1][`NEXT_HDR_ID]]];
+                    hdr_addr <= hdr_addr + hdr1_len;
+                    if (next_tag == hdr1_next0_tag) begin
+                        hdr_id <= hdr1_next0_hdr;
+                    end else if (next_tag == hdr1_next1_tag) begin
+                        hdr_id <= hdr1_next1_hdr;
                     end else begin
                         hdr_id <= `NUM_HEADERS;
                         ready_o <= `TRUE;
-                        next_tag <= 0;
                         state <= STATE_FREE;
                     end
                 end
@@ -118,4 +150,34 @@ module parser(
         end
     end
 
+    always @(*) begin
+        if (rst == `TRUE) begin
+            next_tag = `ZERO_HALF;
+        end else begin
+            if (hdr_id == 0) begin
+                if (hdr0_tag_len == 1) begin
+                    next_tag = {`ZERO_BYTE, pkt_hdr_i[hdr_addr + hdr0_tag_start]};
+                end else begin
+                    next_tag = {pkt_hdr_i[hdr_addr + hdr0_tag_start],
+                                pkt_hdr_i[hdr_addr + hdr0_tag_start + 1]};
+                end
+            end else begin
+                if (hdr1_tag_len == 1) begin
+                    next_tag = {`ZERO_BYTE, pkt_hdr_i[hdr_addr + hdr1_tag_start]};
+                end else begin
+                    next_tag = {pkt_hdr_i[hdr_addr + hdr1_tag_start],
+                                pkt_hdr_i[hdr_addr + hdr1_tag_start + 1]};
+                end
+            end
+        end
+    end
+
+endmodule
+
+module next_tag_calc(
+    input wire clk,
+    input wire rst,
+    output reg c
+);
+    assign c = 1;
 endmodule

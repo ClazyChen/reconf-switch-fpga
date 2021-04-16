@@ -28,8 +28,6 @@
 `define HDR_PARAM       4'hf
 
 // parser
-`define NEXT_TAG_VAL    31:16
-`define NEXT_HDR_ID     15:0
 `define HDR_MAX_LEN     64
 
 // executor
