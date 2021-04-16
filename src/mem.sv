@@ -19,11 +19,11 @@ module mem (
     input wire [`DATA_BUS] sram_data_i   // data read from sram
 );
 
-    always @(*) begin
-        assign sram_ce = ce;
-        assign sram_we = we;
-        assign sram_addr_o = addr_i[11:2];
+    assign sram_ce = ce;
+    assign sram_we = we;
+    assign sram_addr_o = addr_i[11:2];
 
+    always @(*) begin
         if (ce == `FALSE) begin
             sram_sel_o <= 4'b0000;
             sram_data_o <= `ZERO_WORD;

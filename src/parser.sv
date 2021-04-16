@@ -29,7 +29,7 @@ module parser(
     reg [`HALF_BUS] next_tag;
 
     enum {
-        STATE_BUS, STATE_FREE, STATE_PARSING, STATE_DONE
+        STATE_FREE, STATE_PARSING
     } state;
 
     always @(posedge clk) begin

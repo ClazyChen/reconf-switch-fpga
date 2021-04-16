@@ -44,9 +44,9 @@ module matcher(
     reg [`BYTE_BUS] entry_key_data [`MAX_HASH_LEN - 1:0];
 
     // hash
-    reg hash_start;
-    wire hash_ready;
-    wire [`DATA_BUS] hash_val;
+    reg hash_start_i;
+    wire hash_ready_i;
+    wire [`DATA_BUS] hash_val_i;
     wire [`QUAD_BUS] hash_key_o;
     assign hash_key_o = {
         key_data[0], key_data[1], key_data[2], key_data[3],
@@ -55,11 +55,11 @@ module matcher(
 
     enum {
         STATE_FREE, STATE_HASH,
-        STATE_LOAD_KEY_WAIT_ADDR, STATE_LOAD_KEY_WAIT_DATA, STATE_LOAD_KEY, STATE_LOAD_VAL
+        STATE_LOAD_WAIT_ADDR, STATE_LOAD_WAIT_DATA,
+        STATE_LOAD_KEY, STATE_LOAD_VAL
     } state;
 
     assign mem_we_o = `FALSE;
-    assign mem_addr_o = mem_addr;
     assign mem_width_o = 4;
     assign mem_data_o = `ZERO_WORD;
 
@@ -81,8 +81,8 @@ module matcher(
             logic_entry_len <= 0;
             logic_start_addr <= 0;
             // reg
-            hash_start <= `FALSE;
-            mem_addr <= `ZERO_ADDR;
+            hash_start_i <= `FALSE;
+            mem_addr_o <= `ZERO_ADDR;
             mem_cnt <= 0;
             for (int i = 0; i < 8; i++) begin
                 key_data[i] <= `ZERO_BYTE;
@@ -109,8 +109,8 @@ module matcher(
                         flow_val_o[i] = 0;
                     end
                     // reg
-                    hash_start <= `TRUE;
-                    mem_addr <= `ZERO_ADDR;
+                    hash_start_i <= `TRUE;
+                    mem_addr_o <= `ZERO_ADDR;
                     mem_cnt <= 0;
                     for (int i = 0; i < match_key_len; i++) begin
                         key_data[i] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
@@ -122,20 +122,20 @@ module matcher(
                 end
             end
             STATE_HASH: begin
-                hash_start <= `FALSE;
-                if (hash_ready == `TRUE) begin
+                hash_start_i <= `FALSE;
+                if (hash_ready_i == `TRUE) begin
                     mem_ce_o <= `TRUE;
-                    mem_addr <= logic_start_addr + hash_val * logic_entry_len;
+                    mem_addr_o <= logic_start_addr + hash_val_i * logic_entry_len;
                     mem_cnt <= 0;
-                    state <= STATE_LOAD_KEY_WAIT_ADDR;
+                    state <= STATE_LOAD_WAIT_ADDR;
                 end
             end
-            STATE_LOAD_KEY_WAIT_ADDR: begin
-                mem_addr <= mem_addr + 4;
-                state <= STATE_LOAD_KEY_WAIT_DATA;
+            STATE_LOAD_WAIT_ADDR: begin
+                mem_addr_o <= mem_addr_o + 4;
+                state <= STATE_LOAD_WAIT_DATA;
             end
-            STATE_LOAD_KEY_WAIT_DATA: begin
-                mem_addr <= mem_addr + 4;
+            STATE_LOAD_WAIT_DATA: begin
+                mem_addr_o <= mem_addr_o + 4;
                 state <= STATE_LOAD_KEY;
             end
             STATE_LOAD_KEY: begin
@@ -143,7 +143,7 @@ module matcher(
                     // loading key
                     {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
                     entry_key_data[mem_cnt + 2], entry_key_data[mem_cnt + 3]} <= mem_data_i;
-                    mem_addr <= mem_addr + 4;
+                    mem_addr_o <= mem_addr_o + 4;
                     mem_cnt <= mem_cnt + 4;
                 end else begin
                     // load key done
@@ -152,7 +152,7 @@ module matcher(
                         {flow_val_o[0], flow_val_o[1],
                         flow_val_o[2], flow_val_o[3]} <= mem_data_i;
                         mem_cnt <= 4;
-                        mem_addr <= mem_addr + 4;
+                        mem_addr_o <= mem_addr_o + 4;
                         state <= STATE_LOAD_VAL;
                     end else begin
                         // not match, return
@@ -168,7 +168,7 @@ module matcher(
                     // loading
                     {flow_val_o[mem_cnt], flow_val_o[mem_cnt + 1],
                     flow_val_o[mem_cnt + 2], flow_val_o[mem_cnt + 3]} <= mem_data_i;
-                    mem_addr <= mem_addr + 4;
+                    mem_addr_o <= mem_addr_o + 4;
                     mem_cnt <= mem_cnt + 4;
                 end else begin
                     // load done
@@ -188,10 +188,10 @@ module matcher(
     hash hash0(
         .clk(clk),
         .rst(rst),
-        .start_i(hash_start),
+        .start_i(hash_start_i),
         .key_i(hash_key_o),
-        .hash_ready_o(hash_ready),
-        .hash_val_o(hash_val)
+        .hash_ready_o(hash_ready_i),
+        .hash_val_o(hash_val_i)
     );
 
 endmodule
