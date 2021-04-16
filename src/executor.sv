@@ -134,6 +134,7 @@ module executor (
                             cksum_state <= CKSUM_STATE_FREE;
                         end
                     end
+                    endcase
                 end
                 `OPCODE_ADD: begin
                     pkt_hdr[f1_start] += add_delta;
