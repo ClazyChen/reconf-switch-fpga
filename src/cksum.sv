@@ -18,10 +18,12 @@ module cksum (
     reg [`DATA_BUS] field_end_addr;
 
     enum {
-        STATE_FREE, STATE_SUM, STATE_COMPLEMENT, STATE_STORE, STATE_DONE
+        STATE_FREE, STATE_SUM, STATE_COMPLEMENT, STATE_STORE
     } state;
 
-    always @(*) begin
+    assign cksum_val_o = cksum_val;
+
+    always @(posedge clk) begin
         if (rst == `TRUE) begin
             // checksum
             cksum_ready_o <= `FALSE;
@@ -34,6 +36,10 @@ module cksum (
             case (state)
             STATE_FREE: begin
                 if (start_i == `TRUE) begin
+                    // checksum
+                    cksum_ready_o <= `FALSE;
+                    cksum_val <= `ZERO_WORD;
+                    // state
                     field_addr <= field_start_i;
                     field_end_addr <= field_start_i + field_len_i;
                     state <= STATE_SUM;
@@ -55,27 +61,13 @@ module cksum (
             STATE_STORE: begin
                 cksum_val <= ~(cksum_val[31:16] + cksum_val[15:0]);
                 cksum_ready_o <= `TRUE;
-                state <= STATE_DONE;
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
-                    // checksum
-                    cksum_ready_o <= `FALSE;
-                    cksum_val <= `ZERO_WORD;
-                    // state
-                    field_end_addr <= `ZERO_ADDR;
-                    state <= STATE_FREE;
-                end
+                state <= STATE_FREE;
             end
             default: begin
                 state <= STATE_FREE;
             end
             endcase
         end
-    end
-
-    always @(*) begin
-        cksum_val_o <= cksum_val;
     end
 
 endmodule

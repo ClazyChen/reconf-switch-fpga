@@ -87,7 +87,7 @@ module parser(
                         hdr_id <= `NUM_HEADERS;
                         ready_o <= `TRUE;
                         next_tag <= 0;
-                        state <= STATE_DONE;
+                        state <= STATE_FREE;
                     end
                 end
                 1: begin
@@ -103,18 +103,13 @@ module parser(
                         hdr_id <= `NUM_HEADERS;
                         ready_o <= `TRUE;
                         next_tag <= 0;
-                        state <= STATE_DONE;
+                        state <= STATE_FREE;
                     end
                 end
                 default: begin
                     hdr_id <= 0;
                 end
                 endcase
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
-                    state <= STATE_FREE;
-                end
             end
             default: begin
                 state <= STATE_FREE;

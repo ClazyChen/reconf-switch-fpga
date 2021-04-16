@@ -55,7 +55,7 @@ module matcher(
 
     enum {
         STATE_FREE, STATE_HASH,
-        STATE_LOAD_KEY_WAIT_ADDR, STATE_LOAD_KEY_WAIT_DATA, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_DONE
+        STATE_LOAD_KEY_WAIT_ADDR, STATE_LOAD_KEY_WAIT_DATA, STATE_LOAD_KEY, STATE_LOAD_VAL
     } state;
 
     assign mem_we_o = `FALSE;
@@ -122,8 +122,8 @@ module matcher(
                 end
             end
             STATE_HASH: begin
+                hash_start <= `FALSE;
                 if (hash_ready == `TRUE) begin
-                    hash_start <= `FALSE;
                     mem_ce_o <= `TRUE;
                     mem_addr <= logic_start_addr + hash_val * logic_entry_len;
                     mem_cnt <= 0;
@@ -159,7 +159,7 @@ module matcher(
                         mem_ce_o <= `FALSE;
                         ready_o <= `TRUE;
                         is_match_o <= `FALSE;
-                        state <= STATE_DONE;
+                        state <= STATE_FREE;
                     end
                 end
             end
@@ -175,11 +175,6 @@ module matcher(
                     mem_ce_o <= `FALSE;
                     ready_o <= `TRUE;
                     is_match_o <= `TRUE;
-                    state <= STATE_DONE;
-                end
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
                     state <= STATE_FREE;
                 end
             end

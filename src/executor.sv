@@ -26,9 +26,14 @@ module executor (
     wire cksum_ready_i;
     wire [`HALF_BUS] cksum_val_i;
 
+    // op checksum state
+    enum {
+        CKSUM_STATE_FREE, CKSUM_STATE_ON
+    } cksum_state;
+
     // op add state
     enum {
-        ADD_STATE_BUS, ADD_STATE_FREE, ADD_STATE_LOAD, ADD_STATE_STORE
+        ADD_STATE_FREE, ADD_STATE_LOAD, ADD_STATE_STORE
     } add_state;
 
     // op copy field state
@@ -45,7 +50,7 @@ module executor (
     reg [`BYTE_BUS] pkt_hdr [0:`HDR_MAX_LEN - 1];
 
     enum {
-        STATE_FREE, STATE_EXEC, STATE_DONE
+        STATE_FREE, STATE_EXEC
     } state;
 
     // general op
@@ -109,20 +114,25 @@ module executor (
                 `OPCODE_NOP: begin
                     // done
                     ready_o <= `TRUE;
-                    state <= STATE_DONE;
+                    state <= STATE_FREE;
                 end
                 `OPCODE_CKSUM: begin
-                    if (cksum_ready_i == `FALSE) begin
+                    case (cksum_state)
+                    CKSUM_STATE_FREE: begin
                         cksum_start_o <= `TRUE;
                         cksum_field_start_o <= f1_start;
                         cksum_field_len_o <= f1_len;
                         {pkt_hdr[f2_start], pkt_hdr[f2_start + 1]} <= 0;
-                    end else begin
+                        cksum_state <= CKSUM_STATE_ON;
+                    end
+                    CKSUM_STATE_ON: begin
                         cksum_start_o <= `FALSE;
-                        {pkt_hdr[f2_start], pkt_hdr[f2_start + 1]} <= cksum_val_i;
-
-                        inst <= ops[inst_cnt];
-                        inst_cnt <= inst_cnt + 1;
+                        if (cksum_ready_i == `TRUE) begin
+                            {pkt_hdr[f2_start], pkt_hdr[f2_start + 1]} <= cksum_val_i;
+                            inst <= ops[inst_cnt];
+                            inst_cnt <= inst_cnt + 1;
+                            cksum_state <= CKSUM_STATE_FREE;
+                        end
                     end
                 end
                 `OPCODE_ADD: begin
@@ -155,14 +165,9 @@ module executor (
                 default: begin
                     // unknown op code, exit
                     ready_o <= `TRUE;
-                    state <= STATE_DONE;
-                end
-                endcase
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
                     state <= STATE_FREE;
                 end
+                endcase
             end
             default: begin
                 state <= STATE_FREE;

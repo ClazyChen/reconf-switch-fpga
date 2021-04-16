@@ -67,6 +67,7 @@ module proc_tb (
     initial begin
         start_i <= `FALSE;
         #105 start_i <= `TRUE;
+        #20 start_i <= `FALSE;
     end
 
     initial begin
@@ -287,11 +288,13 @@ module proc_tb (
 
     initial begin
         #1000
+        $display("===== BEGIN TEST =====");
         if (proc0.executor0.pkt_hdr == ans_pkt_hdr) begin
-            $display("Test PASSED!");
+            $display("TEST PASSED!");
         end else begin
-            $display("Test FAILED!");
+            $display("TEST FAILED!");
         end
+        $display("===== END TEST =====");
     end
 
     // initial begin

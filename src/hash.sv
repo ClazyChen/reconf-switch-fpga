@@ -10,7 +10,7 @@ module hash (
 );
 
     enum {
-        STATE_FREE, STATE_SUM1, STATE_SUM2, STATE_DONE
+        STATE_FREE, STATE_SUM1, STATE_SUM2
     } state;
 
     reg [`DATA_BUS] hash_val;
@@ -40,12 +40,7 @@ module hash (
             STATE_SUM2: begin
                 hash_ready_o <= `TRUE;
                 hash_val <= hash_val[15:8] + hash_val[7:0];
-                state <= STATE_DONE;
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
-                    state <= STATE_FREE;
-                end
+                state <= STATE_FREE;
             end
             default: begin
                 state <= STATE_FREE;

@@ -60,7 +60,7 @@ module proc(
     reg [`ADDR_BUS] miss_action_addr;
 
     enum {
-        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_DONE
+        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC
     } state;
 
     always @(posedge clk) begin
@@ -100,15 +100,15 @@ module proc(
                 end
             end
             STATE_PARSER: begin
+                ps_start_o <= `FALSE;
                 if (ps_ready_i == `TRUE) begin
-                    ps_start_o <= `FALSE;
                     mt_start_o <= `TRUE;
                     state <= STATE_MATCHER;
                 end
             end
             STATE_MATCHER: begin
+                mt_start_o <= `FALSE;
                 if (mt_ready_i == `TRUE) begin
-                    mt_start_o <= `FALSE;
                     ex_start_o <= `TRUE;
                     if (mt_is_match_i == `TRUE) begin
                         ex_op_start_cnt_o <= hit_action_addr;
@@ -119,14 +119,9 @@ module proc(
                 end
             end
             STATE_EXEC: begin
+                ex_start_o <= `FALSE;
                 if (ex_ready_i == `TRUE) begin
-                    ex_start_o <= `FALSE;
                     ready_o <= `TRUE;
-                    state <= STATE_DONE;
-                end
-            end
-            STATE_DONE: begin
-                if (start_i == `FALSE) begin
                     state <= STATE_FREE;
                 end
             end
