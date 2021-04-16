@@ -45,6 +45,8 @@ module proc_tb (
     reg [5:0] mt_mod_match_key_off_i;
     reg [5:0] mt_mod_match_key_len_i;
     reg [5:0] mt_mod_match_val_len_i;
+    reg [`DATA_BUS] mt_logic_entry_len_i;
+    reg [`DATA_BUS] mt_logic_start_addr_i;
 
     // executor
     reg ex_mod_start_i;
@@ -124,6 +126,8 @@ module proc_tb (
         mt_mod_match_key_off_i <= 16;
         mt_mod_match_key_len_i <= 4;
         mt_mod_match_val_len_i <= 6 + 2;
+        mt_logic_entry_len_i <= 16;
+        mt_logic_start_addr_i <= 0;
         #20
         mt_mod_start_i <= `FALSE;
     end
@@ -178,6 +182,8 @@ module proc_tb (
         .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
         .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
         .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
+        .mt_logic_entry_len_i(mt_logic_entry_len_i),
+        .mt_logic_start_addr_i(mt_logic_start_addr_i),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
         .ex_mod_ops_i(ex_mod_ops_i)
@@ -206,19 +212,72 @@ module proc_tb (
         .sram_data_i(sram_data_i)
     );
 
-    sram sram0(
-        .clk(clk),
-        .ce(sram_ce),
-        .we(sram_we),
-        .addr_i(sram_addr_o),
-        .sel_i(sram_sel_o),
-        .data_i(sram_data_o),
-        .data_o(sram_data_i)
-    );
+    // sram sram0(
+    //     .clk(clk),
+    //     .ce(sram_ce),
+    //     .we(sram_we),
+    //     .addr_i(sram_addr_o),
+    //     .sel_i(sram_sel_o),
+    //     .data_i(sram_data_o),
+    //     .data_o(sram_data_i)
+    // );
+
+    reg bram_web_o;
+    reg bram_ceb_o;
+    reg [9:0] bram_addrb_o;
+    reg [31:0] bram_datab_o;
+    wire [31:0] bram_datab_i;
+    reg [127:0] init_data;
+    assign bram_datab_o = init_data[127:127-31];
 
     initial begin
-        $display("Loading packet");
-        $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\testbench\\packet.data", sram0.data_mem);
+        init_data <= 128'hb7acf62c_deadbeef_face0001_00000000;
+        bram_addrb_o <= 10'h21c;
+        bram_ceb_o <= `TRUE;
+        bram_web_o <= `TRUE;
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        init_data <= {init_data[95:0], `ZERO_WORD};
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        init_data <= {init_data[95:0], `ZERO_WORD};
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        init_data <= {init_data[95:0], `ZERO_WORD};
+        #20
+        bram_web_o <= `FALSE;
+        #60
+        bram_addrb_o <= 10'h21c;
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        #20
+        bram_addrb_o <= bram_addrb_o + 1;
+        #60
+        bram_ceb_o <= `FALSE;
     end
+
+    blk_mem_gen_0 bram0(
+        // port a
+        .addra(sram_addr_o),
+        .clka(clk),
+        .dina(sram_data_o),
+        .douta(sram_data_i),
+        .ena(sram_ce),
+        .wea(sram_we),
+        // port b
+        .addrb(bram_addrb_o),
+        .clkb(clk),
+        .dinb(bram_datab_o),
+        .doutb(bram_datab_i),
+        .enb(bram_ceb_o),
+        .web(bram_web_o)
+    );
+
+    // initial begin
+    //     $display("Loading packet");
+    //     $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\testbench\\packet.data", bram0.inst.\native_mem_module.);
+    // end
 
 endmodule

@@ -22,7 +22,7 @@ module mem (
     always @(*) begin
         assign sram_ce = ce;
         assign sram_we = we;
-        assign sram_addr_o = addr_i;
+        assign sram_addr_o = addr_i[11:2];
 
         if (ce == `FALSE) begin
             sram_sel_o <= 4'b0000;

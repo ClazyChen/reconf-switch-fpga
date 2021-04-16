@@ -1,9 +1,6 @@
 `include "def.svh"
 
-module matcher #(
-    parameter LOGIC_ENTRY_LEN = 16,
-    parameter LOGIC_START_ADDR = 128
-) (
+module matcher(
     input wire clk,
     input wire rst,
     input wire start_i,
@@ -25,7 +22,9 @@ module matcher #(
     input wire [3:0] mod_match_hdr_id_i,
     input wire [5:0] mod_match_key_off_i,
     input wire [5:0] mod_match_key_len_i,
-    input wire [5:0] mod_match_val_len_i
+    input wire [5:0] mod_match_val_len_i,
+    input wire [`DATA_BUS] mod_logic_entry_len_i,
+    input wire [`DATA_BUS] mod_logic_start_addr_i
 );
 
     // table
@@ -33,6 +32,8 @@ module matcher #(
     reg [5:0] match_key_off;
     reg [5:0] match_key_len;
     reg [5:0] match_val_len;
+    reg [`DATA_BUS] logic_entry_len;
+    reg [`DATA_BUS] logic_start_addr;
 
     // load
     reg [`ADDR_BUS] mem_addr;
@@ -53,12 +54,13 @@ module matcher #(
     };
 
     enum {
-        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_DONE
+        STATE_FREE, STATE_HASH,
+        STATE_LOAD_KEY_WAIT_ADDR, STATE_LOAD_KEY_WAIT_DATA, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_DONE
     } state;
 
     assign mem_we_o = `FALSE;
     assign mem_addr_o = mem_addr;
-    assign mem_width_o = 1;
+    assign mem_width_o = 4;
     assign mem_data_o = `ZERO_WORD;
 
     always @(posedge clk) begin
@@ -76,11 +78,13 @@ module matcher #(
             match_key_off <= 0;
             match_key_len <= 0;
             match_val_len <= 0;
+            logic_entry_len <= 0;
+            logic_start_addr <= 0;
             // reg
             hash_start <= `FALSE;
             mem_addr <= `ZERO_ADDR;
             mem_cnt <= 0;
-            for (int i = 0; i < 8; i = i + 1) begin
+            for (int i = 0; i < 8; i++) begin
                 key_data[i] <= `ZERO_BYTE;
                 entry_key_data[i] <= `ZERO_BYTE;
             end
@@ -93,6 +97,8 @@ module matcher #(
                     match_key_off <= mod_match_key_off_i;
                     match_key_len <= mod_match_key_len_i;
                     match_val_len <= mod_match_val_len_i;
+                    logic_entry_len <= mod_logic_entry_len_i;
+                    logic_start_addr <= mod_logic_start_addr_i;
                 end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `FALSE;
@@ -109,7 +115,7 @@ module matcher #(
                     for (int i = 0; i < match_key_len; i++) begin
                         key_data[i] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
                     end
-                    for (int i = 0; i < 8; i = i + 1) begin
+                    for (int i = 0; i < 8; i++) begin
                         entry_key_data[i] <= `ZERO_BYTE;
                     end
                     state <= STATE_HASH;
@@ -119,16 +125,34 @@ module matcher #(
                 if (hash_ready == `TRUE) begin
                     hash_start <= `FALSE;
                     mem_ce_o <= `TRUE;
-                    mem_addr <= LOGIC_START_ADDR + hash_val * LOGIC_ENTRY_LEN;
+                    mem_addr <= logic_start_addr + hash_val * logic_entry_len;
                     mem_cnt <= 0;
-                    state <= STATE_LOAD_KEY;
+                    state <= STATE_LOAD_KEY_WAIT_ADDR;
                 end
             end
+            STATE_LOAD_KEY_WAIT_ADDR: begin
+                mem_addr <= mem_addr + 4;
+                state <= STATE_LOAD_KEY_WAIT_DATA;
+            end
+            STATE_LOAD_KEY_WAIT_DATA: begin
+                mem_addr <= mem_addr + 4;
+                state <= STATE_LOAD_KEY;
+            end
             STATE_LOAD_KEY: begin
-                if (mem_cnt == match_key_len) begin
+                if (mem_cnt != match_key_len) begin
+                    // loading key
+                    {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
+                    entry_key_data[mem_cnt + 2], entry_key_data[mem_cnt + 3]} <= mem_data_i;
+                    mem_addr <= mem_addr + 4;
+                    mem_cnt <= mem_cnt + 4;
+                end else begin
+                    // load key done
                     if (entry_key_data == key_data) begin
                         // match, load value
-                        mem_cnt <= 0;
+                        {flow_val_o[0], flow_val_o[1],
+                        flow_val_o[2], flow_val_o[3]} <= mem_data_i;
+                        mem_cnt <= 4;
+                        mem_addr <= mem_addr + 4;
                         state <= STATE_LOAD_VAL;
                     end else begin
                         // not match, return
@@ -137,22 +161,21 @@ module matcher #(
                         is_match_o <= `FALSE;
                         state <= STATE_DONE;
                     end
-                end else begin
-                    entry_key_data[mem_cnt] <= mem_data_i[`BYTE_BUS];
-                    mem_addr <= mem_addr + 1;
-                    mem_cnt <= mem_cnt + 1;
                 end
             end
             STATE_LOAD_VAL: begin
-                if (mem_cnt == match_val_len) begin
+                if (mem_cnt != match_val_len) begin
+                    // loading
+                    {flow_val_o[mem_cnt], flow_val_o[mem_cnt + 1],
+                    flow_val_o[mem_cnt + 2], flow_val_o[mem_cnt + 3]} <= mem_data_i;
+                    mem_addr <= mem_addr + 4;
+                    mem_cnt <= mem_cnt + 4;
+                end else begin
+                    // load done
                     mem_ce_o <= `FALSE;
                     ready_o <= `TRUE;
                     is_match_o <= `TRUE;
                     state <= STATE_DONE;
-                end else begin
-                    flow_val_o[mem_cnt] <= mem_data_i[`BYTE_BUS];
-                    mem_addr <= mem_addr + 1;
-                    mem_cnt <= mem_cnt + 1;
                 end
             end
             STATE_DONE: begin

@@ -17,7 +17,7 @@ module hash (
 
     assign hash_val_o = hash_val;
 
-    always @(*) begin
+    always @(posedge clk) begin
         if (rst == `TRUE) begin
             hash_ready_o <= `FALSE;
             hash_val <= `ZERO_WORD;

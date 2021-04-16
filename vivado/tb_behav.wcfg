@@ -12,15 +12,15 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0fs"></ZoomStartTime>
-      <ZoomEndTime time="651939fs"></ZoomEndTime>
-      <Cursor1Time time="1000000fs"></Cursor1Time>
+      <ZoomEndTime time="1000001fs"></ZoomEndTime>
+      <Cursor1Time time="103632fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="281"></NameColumnWidth>
-      <ValueColumnWidth column_width="142"></ValueColumnWidth>
+      <ValueColumnWidth column_width="122"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="4" />
-   <wvobject fp_name="group275" type="group">
+   <WVObjectSize size="6" />
+   <wvobject fp_name="group307" type="group">
       <obj_property name="label">proc</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/proc_tb/proc0/clk" type="logic">
@@ -184,7 +184,7 @@
          <obj_property name="ObjectShortName">state[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group296" type="group">
+   <wvobject fp_name="group328" type="group">
       <obj_property name="label">parser</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/proc_tb/proc0/parser0/clk" type="logic">
@@ -268,7 +268,7 @@
          <obj_property name="ObjectShortName">state[31:0]</obj_property>
       </wvobject>
    </wvobject>
-   <wvobject fp_name="group331" type="group">
+   <wvobject fp_name="group363" type="group">
       <obj_property name="label">matcher</obj_property>
       <obj_property name="DisplayName">label</obj_property>
       <wvobject fp_name="/proc_tb/proc0/matcher0/clk" type="logic">
@@ -399,18 +399,11 @@
          <obj_property name="ElementShortName">state[31:0]</obj_property>
          <obj_property name="ObjectShortName">state[31:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/proc_tb/proc0/matcher0/LOGIC_ENTRY_LEN" type="array">
-         <obj_property name="ElementShortName">LOGIC_ENTRY_LEN[31:0]</obj_property>
-         <obj_property name="ObjectShortName">LOGIC_ENTRY_LEN[31:0]</obj_property>
-      </wvobject>
-      <wvobject fp_name="/proc_tb/proc0/matcher0/LOGIC_START_ADDR" type="array">
-         <obj_property name="ElementShortName">LOGIC_START_ADDR[31:0]</obj_property>
-         <obj_property name="ObjectShortName">LOGIC_START_ADDR[31:0]</obj_property>
-      </wvobject>
    </wvobject>
-   <wvobject fp_name="group367" type="group">
+   <wvobject fp_name="group399" type="group">
       <obj_property name="label">executor</obj_property>
       <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
       <wvobject fp_name="/proc_tb/proc0/executor0/clk" type="logic">
          <obj_property name="ElementShortName">clk</obj_property>
          <obj_property name="ObjectShortName">clk</obj_property>
@@ -506,6 +499,7 @@
       <wvobject fp_name="/proc_tb/proc0/executor0/pkt_hdr" type="array">
          <obj_property name="ElementShortName">pkt_hdr[0:63][7:0]</obj_property>
          <obj_property name="ObjectShortName">pkt_hdr[0:63][7:0]</obj_property>
+         <obj_property name="isExpanded"></obj_property>
       </wvobject>
       <wvobject fp_name="/proc_tb/proc0/executor0/state" type="array">
          <obj_property name="ElementShortName">state[31:0]</obj_property>
@@ -550,6 +544,110 @@
       <wvobject fp_name="/proc_tb/proc0/executor0/add_delta" type="array">
          <obj_property name="ElementShortName">add_delta[31:0]</obj_property>
          <obj_property name="ObjectShortName">add_delta[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group868" type="group">
+      <obj_property name="label">bram</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_tb/bram0/clka" type="logic">
+         <obj_property name="ElementShortName">clka</obj_property>
+         <obj_property name="ObjectShortName">clka</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/ena" type="logic">
+         <obj_property name="ElementShortName">ena</obj_property>
+         <obj_property name="ObjectShortName">ena</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/wea" type="array">
+         <obj_property name="ElementShortName">wea[0:0]</obj_property>
+         <obj_property name="ObjectShortName">wea[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/addra" type="array">
+         <obj_property name="ElementShortName">addra[9:0]</obj_property>
+         <obj_property name="ObjectShortName">addra[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/dina" type="array">
+         <obj_property name="ElementShortName">dina[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dina[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/douta" type="array">
+         <obj_property name="ElementShortName">douta[31:0]</obj_property>
+         <obj_property name="ObjectShortName">douta[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/clkb" type="logic">
+         <obj_property name="ElementShortName">clkb</obj_property>
+         <obj_property name="ObjectShortName">clkb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/enb" type="logic">
+         <obj_property name="ElementShortName">enb</obj_property>
+         <obj_property name="ObjectShortName">enb</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/web" type="array">
+         <obj_property name="ElementShortName">web[0:0]</obj_property>
+         <obj_property name="ObjectShortName">web[0:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/addrb" type="array">
+         <obj_property name="ElementShortName">addrb[9:0]</obj_property>
+         <obj_property name="ObjectShortName">addrb[9:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/dinb" type="array">
+         <obj_property name="ElementShortName">dinb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">dinb[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/bram0/doutb" type="array">
+         <obj_property name="ElementShortName">doutb[31:0]</obj_property>
+         <obj_property name="ObjectShortName">doutb[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group1333" type="group">
+      <obj_property name="label">mem</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/proc_tb/mem0/ce" type="logic">
+         <obj_property name="ElementShortName">ce</obj_property>
+         <obj_property name="ObjectShortName">ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/we" type="logic">
+         <obj_property name="ElementShortName">we</obj_property>
+         <obj_property name="ObjectShortName">we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/addr_i" type="array">
+         <obj_property name="ElementShortName">addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/width_i" type="array">
+         <obj_property name="ElementShortName">width_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">width_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/data_i" type="array">
+         <obj_property name="ElementShortName">data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/data_o" type="array">
+         <obj_property name="ElementShortName">data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_ce" type="logic">
+         <obj_property name="ElementShortName">sram_ce</obj_property>
+         <obj_property name="ObjectShortName">sram_ce</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_we" type="logic">
+         <obj_property name="ElementShortName">sram_we</obj_property>
+         <obj_property name="ObjectShortName">sram_we</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_addr_o" type="array">
+         <obj_property name="ElementShortName">sram_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_sel_o" type="array">
+         <obj_property name="ElementShortName">sram_sel_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_sel_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_data_o" type="array">
+         <obj_property name="ElementShortName">sram_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/proc_tb/mem0/sram_data_i" type="array">
+         <obj_property name="ElementShortName">sram_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">sram_data_i[31:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
