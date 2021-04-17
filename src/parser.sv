@@ -173,11 +173,3 @@ module parser(
     end
 
 endmodule
-
-module next_tag_calc(
-    input wire clk,
-    input wire rst,
-    output reg c
-);
-    assign c = 1;
-endmodule
