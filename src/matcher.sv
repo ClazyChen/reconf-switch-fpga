@@ -13,6 +13,7 @@ module matcher(
     output reg [3:0] mem_width_o,
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
+    input wire mem_ready_i,
     // output
     output reg ready_o,
     output reg is_match_o,
@@ -53,9 +54,7 @@ module matcher(
     };
 
     enum {
-        STATE_FREE, STATE_HASH,
-        STATE_LOAD_WAIT_ADDR, STATE_LOAD_WAIT_DATA,
-        STATE_LOAD_KEY, STATE_LOAD_VAL
+        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL
     } state;
 
     assign mem_we_o = `FALSE;
@@ -126,33 +125,29 @@ module matcher(
                     mem_ce_o <= `TRUE;
                     mem_addr_o <= logic_start_addr + hash_val_i * logic_entry_len;
                     mem_cnt <= 0;
-                    state <= STATE_LOAD_WAIT_ADDR;
+                    state <= STATE_LOAD_KEY;
                 end
-            end
-            STATE_LOAD_WAIT_ADDR: begin
-                mem_addr_o <= mem_addr_o + 4;
-                state <= STATE_LOAD_WAIT_DATA;
-            end
-            STATE_LOAD_WAIT_DATA: begin
-                mem_addr_o <= mem_addr_o + 4;
-                state <= STATE_LOAD_KEY;
             end
             STATE_LOAD_KEY: begin
                 if (mem_cnt != match_key_len) begin
                     // loading key
-                    {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
-                    entry_key_data[mem_cnt + 2], entry_key_data[mem_cnt + 3]} <= mem_data_i;
-                    mem_addr_o <= mem_addr_o + 4;
-                    mem_cnt <= mem_cnt + 4;
+                    if (mem_ready_i == `TRUE) begin
+                        {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
+                        entry_key_data[mem_cnt + 2], entry_key_data[mem_cnt + 3]} <= mem_data_i;
+                        mem_addr_o <= mem_addr_o + 4;
+                        mem_cnt <= mem_cnt + 4;
+                    end
                 end else begin
                     // load key done
                     if (entry_key_data == key_data) begin
                         // match, load value
-                        {flow_val_o[0], flow_val_o[1],
-                        flow_val_o[2], flow_val_o[3]} <= mem_data_i;
-                        mem_cnt <= 4;
-                        mem_addr_o <= mem_addr_o + 4;
-                        state <= STATE_LOAD_VAL;
+                        if (mem_ready_i == `TRUE) begin
+                            {flow_val_o[0], flow_val_o[0 + 1],
+                            flow_val_o[0 + 2], flow_val_o[0 + 3]} <= mem_data_i;
+                            mem_addr_o <= mem_addr_o + 4;
+                            mem_cnt <= 4;
+                            state <= STATE_LOAD_VAL;
+                        end
                     end else begin
                         // not match, return
                         mem_ce_o <= `FALSE;
@@ -165,10 +160,12 @@ module matcher(
             STATE_LOAD_VAL: begin
                 if (mem_cnt != match_val_len) begin
                     // loading
-                    {flow_val_o[mem_cnt], flow_val_o[mem_cnt + 1],
-                    flow_val_o[mem_cnt + 2], flow_val_o[mem_cnt + 3]} <= mem_data_i;
-                    mem_addr_o <= mem_addr_o + 4;
-                    mem_cnt <= mem_cnt + 4;
+                    if (mem_ready_i == `TRUE) begin
+                        {flow_val_o[mem_cnt], flow_val_o[mem_cnt + 1],
+                        flow_val_o[mem_cnt + 2], flow_val_o[mem_cnt + 3]} <= mem_data_i;
+                        mem_addr_o <= mem_addr_o + 4;
+                        mem_cnt <= mem_cnt + 4;
+                    end
                 end else begin
                     // load done
                     mem_ce_o <= `FALSE;

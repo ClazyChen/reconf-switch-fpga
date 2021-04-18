@@ -13,6 +13,7 @@ module proc(
     output reg [3:0] mem_width_o,
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
+    input wire mem_ready_i,
     // output
     output reg ready_o,
     // proc modify
@@ -162,6 +163,7 @@ module proc(
         .mem_width_o(mem_width_o),
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
+        .mem_ready_i(mem_ready_i),
         // output
         .ready_o(mt_ready_i),
         .is_match_o(mt_is_match_i),
