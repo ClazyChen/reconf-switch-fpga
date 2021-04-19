@@ -11,6 +11,7 @@ module executor (
     input wire [`DATA_BUS] parsed_hdrs_i [`NUM_HEADERS - 1:0],
     // output
     output reg ready_o,
+    output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // mod
     input wire mod_start_i,
     input wire [`QUAD_BUS] mod_ops_i [0:`MAX_OP_NUM - 1]
@@ -47,7 +48,6 @@ module executor (
     // reg
     int inst_cnt = 0;
     reg [`QUAD_BUS] inst;    // instruction (primitive)
-    reg [`BYTE_BUS] pkt_hdr [0:`HDR_MAX_LEN - 1];
 
     enum {
         STATE_FREE, STATE_EXEC
@@ -94,7 +94,7 @@ module executor (
             inst_cnt <= 0;
             inst <= `ZERO_QUAD;
             for (int i = 0; i < `HDR_MAX_LEN; i++) begin
-                pkt_hdr[i] = 0;
+                pkt_hdr_o[i] <= 0;
             end
             state <= STATE_FREE;
         end else begin
@@ -105,7 +105,7 @@ module executor (
                 end else if (start_i == `TRUE) begin
                     inst <= ops[op_start_cnt_i];
                     inst_cnt <= op_start_cnt_i + 1;
-                    pkt_hdr <= pkt_hdr_i;
+                    pkt_hdr_o <= pkt_hdr_i;
                     state <= STATE_EXEC;
                 end
             end
@@ -122,13 +122,13 @@ module executor (
                         cksum_start_o <= `TRUE;
                         cksum_field_start_o <= f1_start;
                         cksum_field_len_o <= f1_len;
-                        {pkt_hdr[f2_start], pkt_hdr[f2_start + 1]} <= 0;
+                        {pkt_hdr_o[f2_start], pkt_hdr_o[f2_start + 1]} <= 0;
                         cksum_state <= CKSUM_STATE_ON;
                     end
                     CKSUM_STATE_ON: begin
                         cksum_start_o <= `FALSE;
                         if (cksum_ready_i == `TRUE) begin
-                            {pkt_hdr[f2_start], pkt_hdr[f2_start + 1]} <= cksum_val_i;
+                            {pkt_hdr_o[f2_start], pkt_hdr_o[f2_start + 1]} <= cksum_val_i;
                             inst <= ops[inst_cnt];
                             inst_cnt <= inst_cnt + 1;
                             cksum_state <= CKSUM_STATE_FREE;
@@ -137,18 +137,18 @@ module executor (
                     endcase
                 end
                 `OPCODE_ADD: begin
-                    pkt_hdr[f1_start] += add_delta;
+                    pkt_hdr_o[f1_start] += add_delta;
                     inst <= ops[inst_cnt];
                     inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_COPY_FIELD: begin
                     if (f2_hdr == `HDR_PARAM) begin
                         for (int i = 0; i < f1_len; i++) begin
-                            pkt_hdr[f1_start + i] <= args_i[f2_off + i];
+                            pkt_hdr_o[f1_start + i] <= args_i[f2_off + i];
                         end
                     end else begin
                         for (int i = 0; i < f1_len; i++) begin
-                            pkt_hdr[f1_start + i] <= pkt_hdr[f2_start + i];
+                            pkt_hdr_o[f1_start + i] <= pkt_hdr_o[f2_start + i];
                         end
                     end
                     inst <= ops[inst_cnt];
@@ -182,7 +182,7 @@ module executor (
         .rst(rst),
         // input
         .start_i(cksum_start_o),
-        .pkt_hdr_i(pkt_hdr),
+        .pkt_hdr_i(pkt_hdr_o),
         .field_start_i(cksum_field_start_o),
         .field_len_i(cksum_field_len_o),
         .cksum_val_o(cksum_val_i),

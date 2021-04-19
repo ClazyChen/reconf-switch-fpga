@@ -16,6 +16,7 @@ module proc(
     input wire mem_ready_i,
     // output
     output reg ready_o,
+    output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // proc modify
     input wire proc_mod_start_i,
     input wire [`ADDR_BUS] proc_mod_hit_action_addr_i,
@@ -189,6 +190,7 @@ module proc(
         .parsed_hdrs_i(ps_hdrs_i),
         // output
         .ready_o(ex_ready_i),
+        .pkt_hdr_o(pkt_hdr_o),
         // mod
         .mod_start_i(ex_mod_start_i),
         .mod_ops_i(ex_mod_ops_i)

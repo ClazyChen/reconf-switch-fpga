@@ -7,8 +7,7 @@ module proc_tb (
 
     reg clk;
     reg rst;
-    reg start_i;
-    wire ready_o;
+
     wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1];
     assign pkt_hdr_i = {
         8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
@@ -19,13 +18,13 @@ module proc_tb (
         8'h00, 8'h00, 8'h00, 8'h00
     };
 
-    wire mem_ce_o;
-    wire mem_we_o;
-    wire [`ADDR_BUS] mem_addr_o;
-    wire [3:0] mem_width_o;
-    wire [`DATA_BUS] mem_data_o;
-    wire [`DATA_BUS] mem_data_i;
-    wire mem_ready_i;
+    // proc
+    reg start_i;
+    wire proc0_ready_o;
+    wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+
+    wire proc1_ready_o;
+    wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
 
     // proc
     reg proc_mod_start_i;
@@ -48,6 +47,8 @@ module proc_tb (
     reg [5:0] mt_mod_match_val_len_i;
     reg [`DATA_BUS] mt_logic_entry_len_i;
     reg [`DATA_BUS] mt_logic_start_addr_i;
+
+    reg [`DATA_BUS] mt1_logic_start_addr_i;
 
     // executor
     reg ex_mod_start_i;
@@ -124,6 +125,8 @@ module proc_tb (
         mt_mod_match_val_len_i <= 0;
         mt_logic_entry_len_i <= 0;
         mt_logic_start_addr_i <= 0;
+
+        mt1_logic_start_addr_i <= 0;
         #65
         mt_mod_start_i <= `TRUE;
         mt_mod_match_hdr_id_i <= 1;
@@ -132,6 +135,8 @@ module proc_tb (
         mt_mod_match_val_len_i <= 6 + 2;
         mt_logic_entry_len_i <= 16;
         mt_logic_start_addr_i <= 0;
+
+        mt1_logic_start_addr_i <= 32'h00100000;
         #20
         mt_mod_start_i <= `FALSE;
     end
@@ -471,21 +476,15 @@ module proc_tb (
     );
 
     // processor
-    proc proc0(
+    proc_axi #(.PROC_ID(0)) proc_axi0(
         .clk(clk),
         .rst(rst),
+        // input
         .start_i(start_i),
         .pkt_hdr_i(pkt_hdr_i),
-        // mem
-        .mem_ce_o(mem_ce_o),
-        .mem_we_o(mem_we_o),
-        .mem_addr_o(mem_addr_o),
-        .mem_width_o(mem_width_o),
-        .mem_data_o(mem_data_o),
-        .mem_data_i(mem_data_i),
-        .mem_ready_i(mem_ready_i),
         // output
-        .ready_o(ready_o),
+        .ready_o(proc0_ready_o),
+        .pkt_hdr_o(proc0_pkt_hdr_o),
         // proc
         .proc_mod_start_i(proc_mod_start_i),
         .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
@@ -507,21 +506,7 @@ module proc_tb (
         .mt_logic_start_addr_i(mt_logic_start_addr_i),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
-        .ex_mod_ops_i(ex_mod_ops_i)
-    );
-
-    mem_axi #(
-        .AXI_ID(0)
-    ) mem_axi0 (
-        .clk(clk),
-        .rst(rst),
-        // mem
-        .mem_ce_i(mem_ce_o),
-        .mem_we_i(mem_we_o),
-        .mem_addr_i(mem_addr_o),
-        .mem_data_i(mem_data_o),
-        .mem_data_o(mem_data_i),
-        .mem_ready_o(mem_ready_i),
+        .ex_mod_ops_i(ex_mod_ops_i),
         // axi
         .axi_awid(m0_axi_awid),
         .axi_awaddr(m0_axi_awaddr),
@@ -562,18 +547,37 @@ module proc_tb (
         .axi_rready(m0_axi_rready)
     );
 
-    mem_axi #(
-        .AXI_ID(1)
-    ) mem_axi1 (
+    proc_axi #(.PROC_ID(1)) proc_axi1(
         .clk(clk),
-        .rst(`TRUE),
-        // mem
-        .mem_ce_i(`FALSE),
-        .mem_we_i(`FALSE),
-        .mem_addr_i(`ZERO_ADDR),
-        .mem_data_i(`ZERO_WORD),
-        // .mem_data_o(mem_data_i),
-        // .mem_ready_o(mem_ready_i),
+        .rst(rst),
+        // input
+        .start_i(start_i),
+        .pkt_hdr_i(pkt_hdr_i),
+        // output
+        .ready_o(proc1_ready_o),
+        .pkt_hdr_o(proc1_pkt_hdr_o),
+        // proc
+        .proc_mod_start_i(proc_mod_start_i),
+        .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
+        .proc_mod_miss_action_addr_i(proc_mod_miss_action_addr_i),
+        // parser
+        .ps_mod_start_i(ps_mod_start_i),
+        .ps_mod_hdr_id_i(ps_mod_hdr_id_i),
+        .ps_mod_hdr_len_i(ps_mod_hdr_len_i),
+        .ps_mod_next_tag_start_i(ps_mod_next_tag_start_i),
+        .ps_mod_next_tag_len_i(ps_mod_next_tag_len_i),
+        .ps_mod_next_table_i(ps_mod_next_table_i),
+        // matcher
+        .mt_mod_start_i(mt_mod_start_i),
+        .mt_mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
+        .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
+        .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
+        .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
+        .mt_logic_entry_len_i(mt_logic_entry_len_i),
+        .mt_logic_start_addr_i(mt1_logic_start_addr_i),
+        // executor
+        .ex_mod_start_i(ex_mod_start_i),
+        .ex_mod_ops_i(ex_mod_ops_i),
         // axi
         .axi_awid(m1_axi_awid),
         .axi_awaddr(m1_axi_awaddr),
@@ -625,313 +629,20 @@ module proc_tb (
     };
 
     initial begin
-        #1500
         $display("===== BEGIN TEST =====");
-        if (proc0.executor0.pkt_hdr == ans_pkt_hdr) begin
-            $display("TEST PASSED!");
+        wait(proc0_ready_o);
+        if (proc0_pkt_hdr_o == ans_pkt_hdr) begin
+            $display("PROC0 PASSED!");
         end else begin
-            $display("TEST FAILED!");
+            $display("PROC0 FAILED!");
+        end
+        wait(proc1_ready_o);
+        if (proc1_pkt_hdr_o == ans_pkt_hdr) begin
+            $display("PROC1 PASSED!");
+        end else begin
+            $display("PROC1 FAILED!");
         end
         $display("===== END TEST =====");
     end
-
-    // always @(posedge clk) begin
-    //     if (m0_axi_awready) begin
-    //         m0_axi_awvalid <= 0;
-    //     end
-    // end
-
-    // always @(posedge clk) begin
-    //     if (m1_axi_awready == `TRUE) begin
-    //         m1_axi_awvalid <= 0;
-    //     end
-    // end
-
-    // always @(posedge clk) begin
-    //     if (m0_axi_bvalid == `TRUE) begin
-    //         m0_axi_wvalid <= 0;
-    //     end
-    // end
-
-    // always @(posedge clk) begin
-    //     if (m1_axi_bvalid == `TRUE) begin
-    //         m1_axi_wvalid <= 0;
-    //     end
-    // end
-
-    // initial begin
-    //     #20
-    //     /*reg [0 : 0] */m0_axi_awid = 0;
-    //     /*reg [31 : 0] */m0_axi_awaddr = 32'h00000520;
-    //     /*reg [7 : 0] */m0_axi_awlen = 0;
-    //     /*reg [2 : 0] */m0_axi_awsize = 0;
-    //     /*reg [1 : 0] */m0_axi_awburst = 0;
-    //     /*reg [0 : 0] */m0_axi_awlock = 0;
-    //     /*reg [3 : 0] */m0_axi_awcache = 0;
-    //     /*reg [2 : 0] */m0_axi_awprot = 0;
-    //     /*reg [3 : 0] */m0_axi_awqos = 0;
-    //     /*reg [0 : 0] */m0_axi_awvalid = 1;
-    //     // wire [0 : 0] */m0_axi_awready;
-    //     /*reg [31 : 0] */m0_axi_wdata = 32'hdead_face;
-    //     /*reg [3 : 0] */m0_axi_wstrb = 4'b1111;
-    //     /*reg [0 : 0] */m0_axi_wlast = 1;
-    //     /*reg [0 : 0] */m0_axi_wvalid = 1;
-    //     // wire [0 : 0] */m0_axi_wready;
-    //     // wire [0 : 0] */m0_axi_bid;
-    //     // wire [1 : 0] */m0_axi_bresp;
-    //     // wire [0 : 0] */m0_axi_bvalid;
-    //     /*reg [0 : 0] */m0_axi_bready = 1;
-    //     /*reg [0 : 0] */m0_axi_arid = 0;
-    //     /*reg [31 : 0] */m0_axi_araddr = 0;
-    //     /*reg [7 : 0] */m0_axi_arlen = 0;
-    //     /*reg [2 : 0] */m0_axi_arsize = 0;
-    //     /*reg [1 : 0] */m0_axi_arburst = 0;
-    //     /*reg [0 : 0] */m0_axi_arlock = 0;
-    //     /*reg [3 : 0] */m0_axi_arcache = 0;
-    //     /*reg [2 : 0] */m0_axi_arprot = 0;
-    //     /*reg [3 : 0] */m0_axi_arqos = 0;
-    //     /*reg [0 : 0] */m0_axi_arvalid = 0;
-    //     // wire [0 : 0] */m0_axi_arready;
-    //     // wire [0 : 0] */m0_axi_rid;
-    //     // wire [31 : 0] */m0_axi_rdata;
-    //     // wire [1 : 0] */m0_axi_rresp;
-    //     // wire [0 : 0] */m0_axi_rlast;
-    //     // wire [0 : 0] */m0_axi_rvalid;
-    //     /*reg [0 : 0] */m0_axi_rready = 1;
-
-    //     /*reg [0 : 0] */m1_axi_awid = 1;
-    //     /*reg [31 : 0] */m1_axi_awaddr = 32'h00100124;
-    //     /*reg [7 : 0] */m1_axi_awlen = 0;
-    //     /*reg [2 : 0] */m1_axi_awsize = 0;
-    //     /*reg [1 : 0] */m1_axi_awburst = 0;
-    //     /*reg [0 : 0] */m1_axi_awlock = 0;
-    //     /*reg [3 : 0] */m1_axi_awcache = 0;
-    //     /*reg [2 : 0] */m1_axi_awprot = 0;
-    //     /*reg [3 : 0] */m1_axi_awqos = 0;
-    //     /*reg [0 : 0] */m1_axi_awvalid = 1;
-    //     // wire [0 : 0] */m1_axi_awready;
-    //     /*reg [31 : 0] */m1_axi_wdata = 32'hface_beef;
-    //     /*reg [3 : 0] */m1_axi_wstrb = 4'b1111;
-    //     /*reg [0 : 0] */m1_axi_wlast = 1;
-    //     /*reg [0 : 0] */m1_axi_wvalid = 1;
-    //     // wire [0 : 0] */m1_axi_wready;
-    //     // wire [0 : 0] */m1_axi_bid;
-    //     // wire [1 : 0] */m1_axi_bresp;
-    //     // wire [0 : 0] */m1_axi_bvalid;
-    //     /*reg [0 : 0] */m1_axi_bready = 1;
-    //     /*reg [0 : 0] */m1_axi_arid = 1;
-    //     /*reg [31 : 0] */m1_axi_araddr = 32'h00100000;
-    //     /*reg [7 : 0] */m1_axi_arlen = 0;
-    //     /*reg [2 : 0] */m1_axi_arsize = 0;
-    //     /*reg [1 : 0] */m1_axi_arburst = 0;
-    //     /*reg [0 : 0] */m1_axi_arlock = 0;
-    //     /*reg [3 : 0] */m1_axi_arcache = 0;
-    //     /*reg [2 : 0] */m1_axi_arprot = 0;
-    //     /*reg [3 : 0] */m1_axi_arqos = 0;
-    //     /*reg [0 : 0] */m1_axi_arvalid = 0;
-    //     // wire [0 : 0] */m1_axi_arready;
-    //     // wire [0 : 0] */m1_axi_rid;
-    //     // wire [31 : 0] */m1_axi_rdata;
-    //     // wire [1 : 0] */m1_axi_rresp;
-    //     // wire [0 : 0] */m1_axi_rlast;
-    //     // wire [0 : 0] */m1_axi_rvalid;
-    //     /*reg [0 : 0] */m1_axi_rready = 1;
-
-    //     // wait(m0_axi_awready == `TRUE);
-    //     // wait(m0_axi_awready == `FALSE);
-    //     // m0_axi_awvalid = 0;
-
-    //     // wait(m1_axi_bvalid == `TRUE);
-    //     // #20 m1_axi_wvalid = 0;
-
-    //     #500
-    //     /*reg [0 : 0] */m0_axi_awid = 0;
-    //     /*reg [31 : 0] */m0_axi_awaddr = `ZERO_WORD;
-    //     /*reg [7 : 0] */m0_axi_awlen = 0;
-    //     /*reg [2 : 0] */m0_axi_awsize = 0;
-    //     /*reg [1 : 0] */m0_axi_awburst = 0;
-    //     /*reg [0 : 0] */m0_axi_awlock = 0;
-    //     /*reg [3 : 0] */m0_axi_awcache = 0;
-    //     /*reg [2 : 0] */m0_axi_awprot = 0;
-    //     /*reg [3 : 0] */m0_axi_awqos = 0;
-    //     /*reg [0 : 0] */m0_axi_awvalid = 0;
-    //     // wire [0 : 0] */m0_axi_awready;
-    //     /*reg [31 : 0] */m0_axi_wdata = `ZERO_WORD;
-    //     /*reg [3 : 0] */m0_axi_wstrb = 4'b0000;
-    //     /*reg [0 : 0] */m0_axi_wlast = 0;
-    //     /*reg [0 : 0] */m0_axi_wvalid = 0;
-    //     // wire [0 : 0] */m0_axi_wready;
-    //     // wire [0 : 0] */m0_axi_bid;
-    //     // wire [1 : 0] */m0_axi_bresp;
-    //     // wire [0 : 0] */m0_axi_bvalid;
-    //     /*reg [0 : 0] */m0_axi_bready = 1;
-    //     /*reg [0 : 0] */m0_axi_arid = 0;
-    //     /*reg [31 : 0] */m0_axi_araddr = 32'h00000870;
-    //     /*reg [7 : 0] */m0_axi_arlen = 0;
-    //     /*reg [2 : 0] */m0_axi_arsize = 0;
-    //     /*reg [1 : 0] */m0_axi_arburst = 0;
-    //     /*reg [0 : 0] */m0_axi_arlock = 0;
-    //     /*reg [3 : 0] */m0_axi_arcache = 0;
-    //     /*reg [2 : 0] */m0_axi_arprot = 0;
-    //     /*reg [3 : 0] */m0_axi_arqos = 0;
-    //     /*reg [0 : 0] */m0_axi_arvalid = 1;
-    //     // wire [0 : 0] */m0_axi_arready;
-    //     // wire [0 : 0] */m0_axi_rid;
-    //     // wire [31 : 0] */m0_axi_rdata;
-    //     // wire [1 : 0] */m0_axi_rresp;
-    //     // wire [0 : 0] */m0_axi_rlast;
-    //     // wire [0 : 0] */m0_axi_rvalid;
-    //     /*reg [0 : 0] */m0_axi_rready = 1;
-
-    //     /*reg [0 : 0] */m1_axi_awid = 1;
-    //     /*reg [31 : 0] */m1_axi_awaddr = 32'h00100124;
-    //     /*reg [7 : 0] */m1_axi_awlen = 0;
-    //     /*reg [2 : 0] */m1_axi_awsize = 0;
-    //     /*reg [1 : 0] */m1_axi_awburst = 0;
-    //     /*reg [0 : 0] */m1_axi_awlock = 0;
-    //     /*reg [3 : 0] */m1_axi_awcache = 0;
-    //     /*reg [2 : 0] */m1_axi_awprot = 0;
-    //     /*reg [3 : 0] */m1_axi_awqos = 0;
-    //     /*reg [0 : 0] */m1_axi_awvalid = 0;
-    //     // wire [0 : 0] */m1_axi_awready;
-    //     /*reg [31 : 0] */m1_axi_wdata = `ZERO_WORD;
-    //     /*reg [3 : 0] */m1_axi_wstrb = 4'b0000;
-    //     /*reg [0 : 0] */m1_axi_wlast = 0;
-    //     /*reg [0 : 0] */m1_axi_wvalid = 0;
-    //     // wire [0 : 0] */m1_axi_wready;
-    //     // wire [0 : 0] */m1_axi_bid;
-    //     // wire [1 : 0] */m1_axi_bresp;
-    //     // wire [0 : 0] */m1_axi_bvalid;
-    //     /*reg [0 : 0] */m1_axi_bready = 1;
-    //     /*reg [0 : 0] */m1_axi_arid = 1;
-    //     /*reg [31 : 0] */m1_axi_araddr = 32'h00100124;
-    //     /*reg [7 : 0] */m1_axi_arlen = 0;
-    //     /*reg [2 : 0] */m1_axi_arsize = 0;
-    //     /*reg [1 : 0] */m1_axi_arburst = 0;
-    //     /*reg [0 : 0] */m1_axi_arlock = 0;
-    //     /*reg [3 : 0] */m1_axi_arcache = 0;
-    //     /*reg [2 : 0] */m1_axi_arprot = 0;
-    //     /*reg [3 : 0] */m1_axi_arqos = 0;
-    //     /*reg [0 : 0] */m1_axi_arvalid = 1;
-    //     // wire [0 : 0] */m1_axi_arready;
-    //     // wire [0 : 0] */m1_axi_rid;
-    //     // wire [31 : 0] */m1_axi_rdata;
-    //     // wire [1 : 0] */m1_axi_rresp;
-    //     // wire [0 : 0] */m1_axi_rlast;
-    //     // wire [0 : 0] */m1_axi_rvalid;
-    //     /*reg [0 : 0] */m1_axi_rready = 1;
-
-    //     wait(m0_axi_arready)
-    //     m0_axi_arvalid = 0;
-
-    //     wait(m1_axi_arready)
-    //     m1_axi_arvalid = 0;
-
-    //     wait(m0_axi_rvalid)
-    //     m0_axi_rready = 0;
-
-    //     wait(m1_axi_rvalid)
-    //     m1_axi_rready = 0;
-
-    //     #200
-    //     /*reg [0 : 0] */m0_axi_awid = 0;
-    //     /*reg [31 : 0] */m0_axi_awaddr = `ZERO_WORD;
-    //     /*reg [7 : 0] */m0_axi_awlen = 0;
-    //     /*reg [2 : 0] */m0_axi_awsize = 0;
-    //     /*reg [1 : 0] */m0_axi_awburst = 0;
-    //     /*reg [0 : 0] */m0_axi_awlock = 0;
-    //     /*reg [3 : 0] */m0_axi_awcache = 0;
-    //     /*reg [2 : 0] */m0_axi_awprot = 0;
-    //     /*reg [3 : 0] */m0_axi_awqos = 0;
-    //     /*reg [0 : 0] */m0_axi_awvalid = 0;
-    //     // wire [0 : 0] */m0_axi_awready;
-    //     /*reg [31 : 0] */m0_axi_wdata = `ZERO_WORD;
-    //     /*reg [3 : 0] */m0_axi_wstrb = 4'b0000;
-    //     /*reg [0 : 0] */m0_axi_wlast = 0;
-    //     /*reg [0 : 0] */m0_axi_wvalid = 0;
-    //     // wire [0 : 0] */m0_axi_wready;
-    //     // wire [0 : 0] */m0_axi_bid;
-    //     // wire [1 : 0] */m0_axi_bresp;
-    //     // wire [0 : 0] */m0_axi_bvalid;
-    //     /*reg [0 : 0] */m0_axi_bready = 1;
-    //     /*reg [0 : 0] */m0_axi_arid = 0;
-    //     /*reg [31 : 0] */m0_axi_araddr = `ZERO_ADDR;
-    //     /*reg [7 : 0] */m0_axi_arlen = 0;
-    //     /*reg [2 : 0] */m0_axi_arsize = 0;
-    //     /*reg [1 : 0] */m0_axi_arburst = 0;
-    //     /*reg [0 : 0] */m0_axi_arlock = 0;
-    //     /*reg [3 : 0] */m0_axi_arcache = 0;
-    //     /*reg [2 : 0] */m0_axi_arprot = 0;
-    //     /*reg [3 : 0] */m0_axi_arqos = 0;
-    //     /*reg [0 : 0] */m0_axi_arvalid = 0;
-    //     // wire [0 : 0] */m0_axi_arready;
-    //     // wire [0 : 0] */m0_axi_rid;
-    //     // wire [31 : 0] */m0_axi_rdata;
-    //     // wire [1 : 0] */m0_axi_rresp;
-    //     // wire [0 : 0] */m0_axi_rlast;
-    //     // wire [0 : 0] */m0_axi_rvalid;
-    //     /*reg [0 : 0] */m0_axi_rready = 1;
-
-    //     /*reg [0 : 0] */m1_axi_awid = 1;
-    //     /*reg [31 : 0] */m1_axi_awaddr = 32'h00100000;
-    //     /*reg [7 : 0] */m1_axi_awlen = 0;
-    //     /*reg [2 : 0] */m1_axi_awsize = 0;
-    //     /*reg [1 : 0] */m1_axi_awburst = 0;
-    //     /*reg [0 : 0] */m1_axi_awlock = 0;
-    //     /*reg [3 : 0] */m1_axi_awcache = 0;
-    //     /*reg [2 : 0] */m1_axi_awprot = 0;
-    //     /*reg [3 : 0] */m1_axi_awqos = 0;
-    //     /*reg [0 : 0] */m1_axi_awvalid = 0;
-    //     // wire [0 : 0] */m1_axi_awready;
-    //     /*reg [31 : 0] */m1_axi_wdata = `ZERO_WORD;
-    //     /*reg [3 : 0] */m1_axi_wstrb = 4'b0000;
-    //     /*reg [0 : 0] */m1_axi_wlast = 0;
-    //     /*reg [0 : 0] */m1_axi_wvalid = 0;
-    //     // wire [0 : 0] */m1_axi_wready;
-    //     // wire [0 : 0] */m1_axi_bid;
-    //     // wire [1 : 0] */m1_axi_bresp;
-    //     // wire [0 : 0] */m1_axi_bvalid;
-    //     /*reg [0 : 0] */m1_axi_bready = 1;
-    //     /*reg [0 : 0] */m1_axi_arid = 1;
-    //     /*reg [31 : 0] */m1_axi_araddr = 32'h00100000;
-    //     /*reg [7 : 0] */m1_axi_arlen = 0;
-    //     /*reg [2 : 0] */m1_axi_arsize = 0;
-    //     /*reg [1 : 0] */m1_axi_arburst = 0;
-    //     /*reg [0 : 0] */m1_axi_arlock = 0;
-    //     /*reg [3 : 0] */m1_axi_arcache = 0;
-    //     /*reg [2 : 0] */m1_axi_arprot = 0;
-    //     /*reg [3 : 0] */m1_axi_arqos = 0;
-    //     /*reg [0 : 0] */m1_axi_arvalid = 0;
-    //     // wire [0 : 0] */m1_axi_arready;
-    //     // wire [0 : 0] */m1_axi_rid;
-    //     // wire [31 : 0] */m1_axi_rdata;
-    //     // wire [1 : 0] */m1_axi_rresp;
-    //     // wire [0 : 0] */m1_axi_rlast;
-    //     // wire [0 : 0] */m1_axi_rvalid;
-    //     /*reg [0 : 0] */m1_axi_rready = 1;
-    //     #20
-    //     m0_axi_rready = 0;
-    //     m1_axi_rready = 0;
-    //     #20
-    //     m0_axi_rready = 1;
-    //     m1_axi_rready = 1;
-    //     #20
-    //     m0_axi_rready = 0;
-    //     m1_axi_rready = 0;
-    //     #20
-    //     m0_axi_rready = 1;
-    //     m1_axi_rready = 1;
-    //     #20
-    //     m0_axi_rready = 0;
-    //     m1_axi_rready = 0;
-    //     #20
-    //     m0_axi_rready = 1;
-    //     m1_axi_rready = 1;
-    // end
-
-    // initial begin
-    //     $display("Loading packet");
-    //     $readmemh("D:\\year4\\final_paper\\ReconfSwitch\\src\\testbench\\packet.data", bram0.inst.\native_mem_module.);
-    // end
 
 endmodule
