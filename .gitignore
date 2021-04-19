@@ -16,3 +16,6 @@ hash_table/hash_table.cache
 hash_table/hash_table.hw
 hash_table/hash_table.runs
 hash_table/.Xil
+memory/tcam_ip_core/tcam_ip_core.cache
+memory/tcam_ip_core/tcam_ip_core.ip_user_files
+memory/tcam_ip_core/tcam_ip_core.sim
