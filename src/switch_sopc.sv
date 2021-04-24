@@ -1,67 +1,65 @@
-`timescale 1ns/1ps
-
 `include "def.svh"
 
-module proc_tb (
-);
-
-    reg clk;
-    reg rst;
-
+module switch_sopc (
+    input wire clk,
+    input wire rst,
     // switch input
-    reg sw_wr_o;
-    wire [`BYTE_BUS] sw_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
-
+    input wire sw_wr_i,
+    input wire [`BYTE_BUS] sw_pkt_hdr_i [0:`HDR_MAX_LEN - 1],
+    output reg sw_in_empty_o,
     // switch output
-    wire sw_rd_o;
-    wire [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
-
-    // proc io
-    wire proc0_in_empty_i;
-    wire proc0_in_rd_o;
-    wire [`BYTE_BUS] proc0_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
-    wire proc0_out_empty_i;
-    wire proc0_out_wr_o;
-    wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+    input wire sw_rd_i,
+    output reg [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1],
+    output reg sw_out_empty_o,
 
     // proc 0 mod
-    reg proc_mod_start_i;
-    reg [`ADDR_BUS] proc_mod_hit_action_addr_i;
-    reg [`ADDR_BUS] proc_mod_miss_action_addr_i;
+    input wire proc0_mod_start_i,
+    input wire [`ADDR_BUS] proc0_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] proc0_mod_miss_action_addr_i,
+    // parser mod
+    input wire ps0_mod_start_i,
+    input wire [`DATA_BUS] ps0_mod_hdr_id_i,
+    input wire [`DATA_BUS] ps0_mod_hdr_len_i,
+    input wire [`DATA_BUS] ps0_mod_next_tag_start_i,
+    input wire [`DATA_BUS] ps0_mod_next_tag_len_i,
+    input wire [`DATA_BUS] ps0_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0],
+    // matcher mod
+    input wire mt0_mod_start_i,
+    input wire [3:0] mt0_mod_match_hdr_id_i,
+    input wire [5:0] mt0_mod_match_key_off_i,
+    input wire [5:0] mt0_mod_match_key_len_i,
+    input wire [5:0] mt0_mod_match_val_len_i,
+    input wire [`DATA_BUS] mt0_mod_logic_entry_len_i,
+    input wire [`DATA_BUS] mt0_mod_logic_start_addr_i,
+    input wire [`BYTE_BUS] mt0_mod_logic_tag,
+    // executor mod
+    input wire ex0_mod_start_i,
+    input wire [`QUAD_BUS] ex0_mod_ops_i [0:`MAX_OP_NUM - 1],
 
-    // parser 0 mod
-    reg ps_mod_start_i;
-    reg [`DATA_BUS] ps_mod_hdr_id_i;
-    reg [`DATA_BUS] ps_mod_hdr_len_i;
-    reg [`DATA_BUS] ps_mod_next_tag_start_i;
-    reg [`DATA_BUS] ps_mod_next_tag_len_i;
-    reg [`DATA_BUS] ps_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0];
-
-    // matcher 0 mod
-    reg mt_mod_start_i;
-    reg [3:0] mt_mod_match_hdr_id_i;
-    reg [5:0] mt_mod_match_key_off_i;
-    reg [5:0] mt_mod_match_key_len_i;
-    reg [5:0] mt_mod_match_val_len_i;
-    reg [`DATA_BUS] mt_mod_logic_entry_len_i;
-    reg [`DATA_BUS] mt_mod_logic_start_addr_i;
-    reg [`BYTE_BUS] mt_mod_logic_tag;
-
-    // executor 0 mod
-    reg ex_mod_start_i;
-    reg [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1];
-
-    // proc 1 mod
-    wire proc1_in_empty_i;
-    wire proc1_in_rd_o;
-    wire [`BYTE_BUS] proc1_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
-    wire proc1_out_empty_i;
-    wire proc1_out_wr_o;
-    wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
-
-    // matcher 1 mod
-    reg [`DATA_BUS] mt1_mod_logic_start_addr_i;
-    reg [`BYTE_BUS] mt1_mod_logic_tag;
+    // proc 0 mod
+    input wire proc1_mod_start_i,
+    input wire [`ADDR_BUS] proc1_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] proc1_mod_miss_action_addr_i,
+    // parser mod
+    input wire ps1_mod_start_i,
+    input wire [`DATA_BUS] ps1_mod_hdr_id_i,
+    input wire [`DATA_BUS] ps1_mod_hdr_len_i,
+    input wire [`DATA_BUS] ps1_mod_next_tag_start_i,
+    input wire [`DATA_BUS] ps1_mod_next_tag_len_i,
+    input wire [`DATA_BUS] ps1_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0],
+    // matcher mod
+    input wire mt1_mod_start_i,
+    input wire [3:0] mt1_mod_match_hdr_id_i,
+    input wire [5:0] mt1_mod_match_key_off_i,
+    input wire [5:0] mt1_mod_match_key_len_i,
+    input wire [5:0] mt1_mod_match_val_len_i,
+    input wire [`DATA_BUS] mt1_mod_logic_entry_len_i,
+    input wire [`DATA_BUS] mt1_mod_logic_start_addr_i,
+    input wire [`BYTE_BUS] mt1_mod_logic_tag,
+    // executor mod
+    input wire ex1_mod_start_i,
+    input wire [`QUAD_BUS] ex1_mod_ops_i [0:`MAX_OP_NUM - 1]
+);
 
     // axi crossbar
 
@@ -300,7 +298,21 @@ module proc_tb (
         .s_axi_rready(s_axi_rready[1])
     );
 
-    // processor
+    // proc 0 io
+    wire proc0_in_empty_i;
+    wire proc0_in_rd_o;
+    wire [`BYTE_BUS] proc0_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    wire proc0_out_empty_i;
+    wire proc0_out_wr_o;
+    wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+    // proc 1 io
+    wire proc1_in_empty_i;
+    wire proc1_in_rd_o;
+    wire [`BYTE_BUS] proc1_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    wire proc1_out_empty_i;
+    wire proc1_out_wr_o;
+    wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+
     proc_axi #(
         .AXI_ID(0)
     ) proc_axi0(
@@ -315,28 +327,28 @@ module proc_tb (
         .out_wr_o(proc0_out_wr_o),
         .pkt_hdr_o(proc0_pkt_hdr_o),
         // proc
-        .proc_mod_start_i(proc_mod_start_i),
-        .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
-        .proc_mod_miss_action_addr_i(proc_mod_miss_action_addr_i),
+        .proc_mod_start_i(proc0_mod_start_i),
+        .proc_mod_hit_action_addr_i(proc0_mod_hit_action_addr_i),
+        .proc_mod_miss_action_addr_i(proc0_mod_miss_action_addr_i),
         // parser
-        .ps_mod_start_i(ps_mod_start_i),
-        .ps_mod_hdr_id_i(ps_mod_hdr_id_i),
-        .ps_mod_hdr_len_i(ps_mod_hdr_len_i),
-        .ps_mod_next_tag_start_i(ps_mod_next_tag_start_i),
-        .ps_mod_next_tag_len_i(ps_mod_next_tag_len_i),
-        .ps_mod_next_table_i(ps_mod_next_table_i),
+        .ps_mod_start_i(ps0_mod_start_i),
+        .ps_mod_hdr_id_i(ps0_mod_hdr_id_i),
+        .ps_mod_hdr_len_i(ps0_mod_hdr_len_i),
+        .ps_mod_next_tag_start_i(ps0_mod_next_tag_start_i),
+        .ps_mod_next_tag_len_i(ps0_mod_next_tag_len_i),
+        .ps_mod_next_table_i(ps0_mod_next_table_i),
         // matcher
-        .mt_mod_start_i(mt_mod_start_i),
-        .mt_mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
-        .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
-        .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
-        .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mt_logic_entry_len_i(mt_mod_logic_entry_len_i),
-        .mt_logic_start_addr_i(mt_mod_logic_start_addr_i),
-        .mt_mod_logic_tag(mt_mod_logic_tag),
+        .mt_mod_start_i(mt0_mod_start_i),
+        .mt_mod_match_hdr_id_i(mt0_mod_match_hdr_id_i),
+        .mt_mod_match_key_off_i(mt0_mod_match_key_off_i),
+        .mt_mod_match_key_len_i(mt0_mod_match_key_len_i),
+        .mt_mod_match_val_len_i(mt0_mod_match_val_len_i),
+        .mt_logic_entry_len_i(mt0_mod_logic_entry_len_i),
+        .mt_logic_start_addr_i(mt0_mod_logic_start_addr_i),
+        .mt_mod_logic_tag(mt0_mod_logic_tag),
         // executor
-        .ex_mod_start_i(ex_mod_start_i),
-        .ex_mod_ops_i(ex_mod_ops_i),
+        .ex_mod_start_i(ex0_mod_start_i),
+        .ex_mod_ops_i(ex0_mod_ops_i),
         // axi
         .axi_awid(m_axi_awid[0]),
         .axi_awaddr(m_axi_awaddr[0]),
@@ -391,28 +403,28 @@ module proc_tb (
         .out_wr_o(proc1_out_wr_o),
         .pkt_hdr_o(proc1_pkt_hdr_o),
         // proc
-        .proc_mod_start_i(proc_mod_start_i),
-        .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
-        .proc_mod_miss_action_addr_i(proc_mod_miss_action_addr_i),
+        .proc_mod_start_i(proc1_mod_start_i),
+        .proc_mod_hit_action_addr_i(proc1_mod_hit_action_addr_i),
+        .proc_mod_miss_action_addr_i(proc1_mod_miss_action_addr_i),
         // parser
-        .ps_mod_start_i(ps_mod_start_i),
-        .ps_mod_hdr_id_i(ps_mod_hdr_id_i),
-        .ps_mod_hdr_len_i(ps_mod_hdr_len_i),
-        .ps_mod_next_tag_start_i(ps_mod_next_tag_start_i),
-        .ps_mod_next_tag_len_i(ps_mod_next_tag_len_i),
-        .ps_mod_next_table_i(ps_mod_next_table_i),
+        .ps_mod_start_i(ps1_mod_start_i),
+        .ps_mod_hdr_id_i(ps1_mod_hdr_id_i),
+        .ps_mod_hdr_len_i(ps1_mod_hdr_len_i),
+        .ps_mod_next_tag_start_i(ps1_mod_next_tag_start_i),
+        .ps_mod_next_tag_len_i(ps1_mod_next_tag_len_i),
+        .ps_mod_next_table_i(ps1_mod_next_table_i),
         // matcher
-        .mt_mod_start_i(mt_mod_start_i),
-        .mt_mod_match_hdr_id_i(mt_mod_match_hdr_id_i),
-        .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
-        .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
-        .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mt_logic_entry_len_i(mt_mod_logic_entry_len_i),
+        .mt_mod_start_i(mt1_mod_start_i),
+        .mt_mod_match_hdr_id_i(mt1_mod_match_hdr_id_i),
+        .mt_mod_match_key_off_i(mt1_mod_match_key_off_i),
+        .mt_mod_match_key_len_i(mt1_mod_match_key_len_i),
+        .mt_mod_match_val_len_i(mt1_mod_match_val_len_i),
+        .mt_logic_entry_len_i(mt1_mod_logic_entry_len_i),
         .mt_logic_start_addr_i(mt1_mod_logic_start_addr_i),
         .mt_mod_logic_tag(mt1_mod_logic_tag),
         // executor
-        .ex_mod_start_i(ex_mod_start_i),
-        .ex_mod_ops_i(ex_mod_ops_i),
+        .ex_mod_start_i(ex1_mod_start_i),
+        .ex_mod_ops_i(ex1_mod_ops_i),
         // axi
         .axi_awid(m_axi_awid[1]),
         .axi_awaddr(m_axi_awaddr[1]),
@@ -453,13 +465,17 @@ module proc_tb (
         .axi_rready(m_axi_rready[1])
     );
 
-    // latch: input <-> proc 0
+    // latches
     wire latch0_empty_i;
+    wire latch1_empty_i;
+    wire latch2_empty_i;
+
+    // latch0: input <-> proc 0
     proc_latch proc_latch0 (
         .clk(clk),
         .rst(rst),
         // switch in
-        .wr_i(sw_wr_o),
+        .wr_i(sw_wr_i),
         .pkt_hdr_i(sw_pkt_hdr_i),
         // proc 0 in
         .rd_i(proc0_in_rd_o),
@@ -467,9 +483,9 @@ module proc_tb (
         .empty_o(latch0_empty_i)
     );
     assign proc0_in_empty_i = latch0_empty_i;
+    assign sw_in_empty_o = latch0_empty_i;
 
-    // latch: proc 0 <-> proc 1
-    wire latch1_empty_i;
+    // latch1: proc 0 <-> proc 1
     proc_latch proc_latch1 (
         .clk(clk),
         .rst(rst),
@@ -484,8 +500,7 @@ module proc_tb (
     assign proc1_in_empty_i = latch1_empty_i;
     assign proc0_out_empty_i = latch1_empty_i;
 
-    // latch: proc1 <-> output
-    wire latch2_empty_i;
+    // latch2: proc1 <-> output
     proc_latch proc_latch2 (
         .clk(clk),
         .rst(rst),
@@ -493,164 +508,11 @@ module proc_tb (
         .wr_i(proc1_out_wr_o),
         .pkt_hdr_i(proc1_pkt_hdr_o),
         // switch out
-        .rd_i(sw_rd_o),
+        .rd_i(sw_rd_i),
         .pkt_hdr_o(sw_pkt_hdr_o),
         .empty_o(latch2_empty_i)
     );
     assign proc1_out_empty_i = latch2_empty_i;
-
-    // BEGIN TEST
-    initial begin
-        clk = 1'b0;
-        forever begin
-            #10 clk = ~clk;
-        end
-    end
-
-    initial begin
-        rst = `TRUE;
-        #45 rst = `FALSE;
-    end
-
-    // switch input
-    assign sw_pkt_hdr_i = {
-        8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
-        8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-        8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-        8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-        // padding
-        8'h00, 8'h00, 8'h00, 8'h00
-    };
-    initial begin
-        sw_wr_o = `FALSE;
-        #65 sw_wr_o = `TRUE;
-        #20 sw_wr_o = `FALSE;
-    end
-    // switch output
-    assign sw_rd_o = `FALSE;
-
-    // proc mod
-    initial begin
-        proc_mod_start_i <= `FALSE;
-        proc_mod_hit_action_addr_i <= 0;
-        proc_mod_miss_action_addr_i <= 0;
-        #65
-        proc_mod_start_i <= `TRUE;
-        proc_mod_hit_action_addr_i <= 1;
-        proc_mod_miss_action_addr_i <= 0;
-        #20
-        proc_mod_start_i <= `FALSE;
-    end
-    // parser mod
-    initial begin
-        ps_mod_start_i <= `FALSE;
-        ps_mod_hdr_id_i <= 0;
-        ps_mod_hdr_len_i <= 0;
-        ps_mod_next_tag_start_i <= 0;
-        ps_mod_next_tag_len_i <= 0;
-        ps_mod_next_table_i <= {`NO_NEXT_HEADER, `NO_NEXT_HEADER};
-        #65
-        // ethernet header
-        ps_mod_start_i <= `TRUE;
-        ps_mod_hdr_id_i <= 0;
-        ps_mod_hdr_len_i <= 14;
-        ps_mod_next_tag_start_i <= 12;
-        ps_mod_next_tag_len_i <= 2;
-        ps_mod_next_table_i <= {
-            {16'h0800, 16'h0001},
-            `NO_NEXT_HEADER
-        };
-        #20
-        // ip header
-        ps_mod_start_i <= `TRUE;
-        ps_mod_hdr_id_i <= 1;
-        ps_mod_hdr_len_i <= 20;
-        ps_mod_next_tag_start_i <= 9;
-        ps_mod_next_tag_len_i <= 1;
-        ps_mod_next_table_i <= {
-            `NO_NEXT_HEADER,
-            `NO_NEXT_HEADER
-        };
-        #20
-        ps_mod_start_i <= `FALSE;
-    end
-    // matcher mod
-    initial begin
-        mt_mod_start_i <= `FALSE;
-        mt_mod_match_hdr_id_i <= 0;
-        mt_mod_match_key_off_i <= 0;
-        mt_mod_match_key_len_i <= 0;
-        mt_mod_match_val_len_i <= 0;
-        mt_mod_logic_entry_len_i <= 0;
-        mt_mod_logic_start_addr_i <= 0;
-        mt_mod_logic_tag <= 0;
-
-        mt1_mod_logic_start_addr_i <= 0;
-        mt1_mod_logic_tag <= 1;
-        #65
-        mt_mod_start_i <= `TRUE;
-        mt_mod_match_hdr_id_i <= 1;
-        mt_mod_match_key_off_i <= 16;
-        mt_mod_match_key_len_i <= 4;
-        mt_mod_match_val_len_i <= 6 + 2;
-        mt_mod_logic_entry_len_i <= 16;
-        mt_mod_logic_start_addr_i <= 0;
-
-        mt1_mod_logic_start_addr_i <= 32'h00100000;
-        #20
-        mt_mod_start_i <= `FALSE;
-    end
-    // executor mod
-    initial begin
-        ex_mod_start_i <= `FALSE;
-        for (int i = 0; i < `MAX_OP_NUM; i++) begin
-            ex_mod_ops_i[i] = `ZERO_QUAD;
-        end
-        #65
-        ex_mod_start_i <= `TRUE;
-        ex_mod_ops_i[0:5] <= {
-            `ZERO_QUAD,
-            'h0c000000_01860006,    // copy dst mac to src mac
-            'h0c000000_0006f006,    // copy next hop mac to dst mac
-            'h0bffffff_12010000,    // ttl - 1
-            'h04000000_10141282,    // ip cksum
-            `ZERO_QUAD              // nop
-        };
-        #20
-        ex_mod_start_i <= `FALSE;
-    end
-
-    // expected output pkt header
-    wire [`BYTE_BUS] ans_pkt_hdr [0:`HDR_MAX_LEN - 1];
-    // assign ans_pkt_hdr = {
-    //     8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
-    //     8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-    //     8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-    //     8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-    //     // padding
-    //     8'h00, 8'h00, 8'h00, 8'h00
-    // };
-    assign ans_pkt_hdr = {
-        8'hab, 8'hcd, 8'hef, 8'h01, 8'h23, 8'h45,
-        8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce,
-        8'h08, 8'h00,
-        8'h45, 8'h00, 8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'he9, 8'h06, 8'hd7, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-        8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-        8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-        // padding
-        8'h00, 8'h00, 8'h00, 8'h00
-    };
-
-    // check answer
-    initial begin
-        $display("===== BEGIN TEST =====");
-        wait(proc1_out_empty_i == `FALSE);
-        if (sw_pkt_hdr_o == ans_pkt_hdr) begin
-            $display("PASSED!");
-        end else begin
-            $display("FAILED!");
-        end
-        $display("===== END TEST =====");
-    end
+    assign sw_out_empty_o = latch2_empty_i;
 
 endmodule
