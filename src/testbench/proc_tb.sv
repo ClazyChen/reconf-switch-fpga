@@ -144,7 +144,7 @@ module proc_tb (
     initial begin
         ex_mod_start_i <= `FALSE;
         for (int i = 0; i < `MAX_OP_NUM; i++) begin
-            ex_mod_ops_i[i] = 0;
+            ex_mod_ops_i[i] = `ZERO_QUAD;
         end
         #65
         ex_mod_start_i <= `TRUE;
@@ -154,7 +154,7 @@ module proc_tb (
             'h0c000000_0006f006,    // copy next hop mac to dst mac
             'h0bffffff_12010000,    // ttl - 1
             'h04000000_10141282,    // ip cksum
-            `ZERO_QUAD
+            `ZERO_QUAD              // nop
         };
         #20
         ex_mod_start_i <= `FALSE;
