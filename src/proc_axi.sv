@@ -82,7 +82,9 @@ module proc_axi #(
     wire mem_ready_i;
 
     // processor
-    proc proc0(
+    proc #(
+        .PROC_ID(PROC_ID)
+    ) proc0(
         .clk(clk),
         .rst(rst),
         .start_i(start_i),

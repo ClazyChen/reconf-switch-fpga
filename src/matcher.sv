@@ -1,6 +1,8 @@
 `include "def.svh"
 
-module matcher(
+module matcher #(
+    parameter PROC_ID = 0
+) (
     input wire clk,
     input wire rst,
     input wire start_i,
@@ -40,8 +42,9 @@ module matcher(
     int mem_cnt;
 
     // key
-    reg [`BYTE_BUS] key_data [`MAX_HASH_LEN - 1:0];
-    reg [`BYTE_BUS] entry_key_data [`MAX_HASH_LEN - 1:0];
+    reg [`BYTE_BUS] key_data [7:0];     // format: [tag(2) | match_key(6)]
+    reg [`BYTE_BUS] entry_key_data [7:0];
+    assign {key_data[1], key_data[0]} = PROC_ID;
 
     // hash
     reg hash_start_i;
@@ -111,7 +114,7 @@ module matcher(
                     mem_addr_o <= `ZERO_ADDR;
                     mem_cnt <= 0;
                     for (int i = 0; i < match_key_len; i++) begin
-                        key_data[i] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
+                        key_data[i + `FLOW_TAG_LEN] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
                     end
                     for (int i = 0; i < 8; i++) begin
                         entry_key_data[i] <= `ZERO_BYTE;
@@ -129,7 +132,7 @@ module matcher(
                 end
             end
             STATE_LOAD_KEY: begin
-                if (mem_cnt != match_key_len) begin
+                if (mem_cnt < match_key_len + `FLOW_TAG_LEN) begin
                     // loading key
                     if (mem_ready_i == `TRUE) begin
                         {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
@@ -142,8 +145,7 @@ module matcher(
                     if (entry_key_data == key_data) begin
                         // match, load value
                         if (mem_ready_i == `TRUE) begin
-                            {flow_val_o[0], flow_val_o[0 + 1],
-                            flow_val_o[0 + 2], flow_val_o[0 + 3]} <= mem_data_i;
+                            {flow_val_o[0], flow_val_o[1], flow_val_o[2], flow_val_o[3]} <= mem_data_i;
                             mem_addr_o <= mem_addr_o + 4;
                             mem_cnt <= 4;
                             state <= STATE_LOAD_VAL;

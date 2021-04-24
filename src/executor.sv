@@ -185,8 +185,8 @@ module executor (
         .pkt_hdr_i(pkt_hdr_o),
         .field_start_i(cksum_field_start_o),
         .field_len_i(cksum_field_len_o),
-        .cksum_val_o(cksum_val_i),
         // output
-        .cksum_ready_o(cksum_ready_i)
+        .cksum_ready_o(cksum_ready_i),
+        .cksum_val_o(cksum_val_i)
     );
 endmodule

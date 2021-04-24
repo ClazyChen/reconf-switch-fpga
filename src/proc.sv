@@ -1,6 +1,8 @@
 `include "def.svh"
 
-module proc(
+module proc #(
+    parameter PROC_ID = 0
+) (
     input wire clk,
     input wire rst,
     input wire start_i,
@@ -151,7 +153,9 @@ module proc(
         .mod_next_table_i(ps_mod_next_table_i)
     );
 
-    matcher matcher0(
+    matcher #(
+        .PROC_ID(PROC_ID)
+    ) matcher0(
         .clk(clk),
         .rst(rst),
         .start_i(mt_start_o),

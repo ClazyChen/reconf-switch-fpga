@@ -8,9 +8,9 @@ module cksum (
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
     input wire [`ADDR_BUS] field_start_i,
     input wire [`DATA_BUS] field_len_i,
-    output reg [`HALF_BUS] cksum_val_o,
     // output
-    output reg cksum_ready_o
+    output reg cksum_ready_o,
+    output reg [`HALF_BUS] cksum_val_o
 );
 
     reg [`DATA_BUS] cksum_val;
@@ -46,7 +46,7 @@ module cksum (
                 end
             end
             STATE_SUM: begin
-                if (field_addr < field_end_addr) begin
+                if (field_addr != field_end_addr) begin
                     cksum_val += {pkt_hdr_i[field_addr],
                                   pkt_hdr_i[field_addr + 1]};
                     field_addr <= field_addr + 2;

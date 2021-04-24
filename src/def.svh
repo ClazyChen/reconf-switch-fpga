@@ -44,3 +44,4 @@
 
 // hash
 `define MAX_HASH_LEN    8
+`define FLOW_TAG_LEN    2
