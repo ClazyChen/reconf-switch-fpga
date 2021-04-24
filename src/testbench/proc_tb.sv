@@ -16,7 +16,7 @@ module proc_tb (
     wire sw_rd_o;
     wire [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
 
-    // proc 0
+    // proc io
     wire proc0_in_empty_i;
     wire proc0_in_rd_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
@@ -24,12 +24,12 @@ module proc_tb (
     wire proc0_out_wr_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
 
-    // proc mod
+    // proc 0 mod
     reg proc_mod_start_i;
     reg [`ADDR_BUS] proc_mod_hit_action_addr_i;
     reg [`ADDR_BUS] proc_mod_miss_action_addr_i;
 
-    // parser mod
+    // parser 0 mod
     reg ps_mod_start_i;
     reg [`DATA_BUS] ps_mod_hdr_id_i;
     reg [`DATA_BUS] ps_mod_hdr_len_i;
@@ -37,28 +37,31 @@ module proc_tb (
     reg [`DATA_BUS] ps_mod_next_tag_len_i;
     reg [`DATA_BUS] ps_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0];
 
-    // matcher mod
+    // matcher 0 mod
     reg mt_mod_start_i;
     reg [3:0] mt_mod_match_hdr_id_i;
     reg [5:0] mt_mod_match_key_off_i;
     reg [5:0] mt_mod_match_key_len_i;
     reg [5:0] mt_mod_match_val_len_i;
-    reg [`DATA_BUS] mt_logic_entry_len_i;
-    reg [`DATA_BUS] mt_logic_start_addr_i;
+    reg [`DATA_BUS] mt_mod_logic_entry_len_i;
+    reg [`DATA_BUS] mt_mod_logic_start_addr_i;
+    reg [`BYTE_BUS] mt_mod_logic_tag;
 
-    reg [`DATA_BUS] mt1_logic_start_addr_i;
-
-    // executor mod
+    // executor 0 mod
     reg ex_mod_start_i;
     reg [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1];
 
-    // proc 1
+    // proc 1 mod
     wire proc1_in_empty_i;
     wire proc1_in_rd_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
     wire proc1_out_empty_i;
     wire proc1_out_wr_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+
+    // matcher 1 mod
+    reg [`DATA_BUS] mt1_mod_logic_start_addr_i;
+    reg [`BYTE_BUS] mt1_mod_logic_tag;
 
     // axi crossbar
 
@@ -298,7 +301,9 @@ module proc_tb (
     );
 
     // processor
-    proc_axi #(.PROC_ID(0)) proc_axi0(
+    proc_axi #(
+        .AXI_ID(0)
+    ) proc_axi0(
         .clk(clk),
         .rst(rst),
         // input
@@ -326,8 +331,9 @@ module proc_tb (
         .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
         .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
         .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mt_logic_entry_len_i(mt_logic_entry_len_i),
-        .mt_logic_start_addr_i(mt_logic_start_addr_i),
+        .mt_logic_entry_len_i(mt_mod_logic_entry_len_i),
+        .mt_logic_start_addr_i(mt_mod_logic_start_addr_i),
+        .mt_mod_logic_tag(mt_mod_logic_tag),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
         .ex_mod_ops_i(ex_mod_ops_i),
@@ -371,7 +377,9 @@ module proc_tb (
         .axi_rready(m_axi_rready[0])
     );
 
-    proc_axi #(.PROC_ID(1)) proc_axi1(
+    proc_axi #(
+        .AXI_ID(1)
+    ) proc_axi1(
         .clk(clk),
         .rst(rst),
         // input
@@ -399,8 +407,9 @@ module proc_tb (
         .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
         .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
         .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mt_logic_entry_len_i(mt_logic_entry_len_i),
-        .mt_logic_start_addr_i(mt1_logic_start_addr_i),
+        .mt_logic_entry_len_i(mt_mod_logic_entry_len_i),
+        .mt_logic_start_addr_i(mt1_mod_logic_start_addr_i),
+        .mt_mod_logic_tag(mt1_mod_logic_tag),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
         .ex_mod_ops_i(ex_mod_ops_i),
@@ -572,20 +581,22 @@ module proc_tb (
         mt_mod_match_key_off_i <= 0;
         mt_mod_match_key_len_i <= 0;
         mt_mod_match_val_len_i <= 0;
-        mt_logic_entry_len_i <= 0;
-        mt_logic_start_addr_i <= 0;
+        mt_mod_logic_entry_len_i <= 0;
+        mt_mod_logic_start_addr_i <= 0;
+        mt_mod_logic_tag <= 0;
 
-        mt1_logic_start_addr_i <= 0;
+        mt1_mod_logic_start_addr_i <= 0;
+        mt1_mod_logic_tag <= 1;
         #65
         mt_mod_start_i <= `TRUE;
         mt_mod_match_hdr_id_i <= 1;
         mt_mod_match_key_off_i <= 16;
         mt_mod_match_key_len_i <= 4;
         mt_mod_match_val_len_i <= 6 + 2;
-        mt_logic_entry_len_i <= 16;
-        mt_logic_start_addr_i <= 0;
+        mt_mod_logic_entry_len_i <= 16;
+        mt_mod_logic_start_addr_i <= 0;
 
-        mt1_logic_start_addr_i <= 32'h00100000;
+        mt1_mod_logic_start_addr_i <= 32'h00100000;
         #20
         mt_mod_start_i <= `FALSE;
     end

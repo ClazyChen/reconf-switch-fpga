@@ -1,8 +1,6 @@
 `include "def.svh"
 
-module proc #(
-    parameter PROC_ID = 0
-) (
+module proc (
     input wire clk,
     input wire rst,
     // input
@@ -38,8 +36,9 @@ module proc #(
     input wire [5:0] mt_mod_match_key_off_i,
     input wire [5:0] mt_mod_match_key_len_i,
     input wire [5:0] mt_mod_match_val_len_i,
-    input wire [`DATA_BUS] mt_logic_entry_len_i,
-    input wire [`DATA_BUS] mt_logic_start_addr_i,
+    input wire [`DATA_BUS] mt_mod_logic_entry_len_i,
+    input wire [`DATA_BUS] mt_mod_logic_start_addr_i,
+    input wire [`BYTE_BUS] mt_mod_logic_tag,
     // executor mod
     input wire ex_mod_start_i,
     input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1]
@@ -162,9 +161,7 @@ module proc #(
         .mod_next_table_i(ps_mod_next_table_i)
     );
 
-    matcher #(
-        .PROC_ID(PROC_ID)
-    ) matcher0(
+    matcher matcher0(
         .clk(clk),
         .rst(rst),
         .start_i(mt_start_o),
@@ -188,8 +185,9 @@ module proc #(
         .mod_match_key_off_i(mt_mod_match_key_off_i),
         .mod_match_key_len_i(mt_mod_match_key_len_i),
         .mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mod_logic_entry_len_i(mt_logic_entry_len_i),
-        .mod_logic_start_addr_i(mt_logic_start_addr_i)
+        .mod_logic_entry_len_i(mt_mod_logic_entry_len_i),
+        .mod_logic_start_addr_i(mt_mod_logic_start_addr_i),
+        .mod_logic_tag(mt_mod_logic_tag)
     );
 
     executor executor0(

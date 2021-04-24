@@ -1,8 +1,6 @@
 `include "def.svh"
 
-module matcher #(
-    parameter PROC_ID = 0
-) (
+module matcher (
     input wire clk,
     input wire rst,
     input wire start_i,
@@ -27,7 +25,8 @@ module matcher #(
     input wire [5:0] mod_match_key_len_i,
     input wire [5:0] mod_match_val_len_i,
     input wire [`DATA_BUS] mod_logic_entry_len_i,
-    input wire [`DATA_BUS] mod_logic_start_addr_i
+    input wire [`DATA_BUS] mod_logic_start_addr_i,
+    input wire [`BYTE_BUS] mod_logic_tag
 );
 
     // table
@@ -37,14 +36,15 @@ module matcher #(
     reg [5:0] match_val_len;
     reg [`DATA_BUS] logic_entry_len;
     reg [`DATA_BUS] logic_start_addr;
+    reg [`BYTE_BUS] logic_tag;
 
     // load
     int mem_cnt;
 
     // key
-    reg [`BYTE_BUS] key_data [7:0];     // format: [tag(2) | match_key(6)]
+    reg [`BYTE_BUS] key_data [7:0];     // format: [ tag(1) | zero(1) | match_key(6) ]
     reg [`BYTE_BUS] entry_key_data [7:0];
-    assign key_data[0] = PROC_ID;
+    assign key_data[0] = logic_tag;
     assign key_data[1] = `ZERO_BYTE;
 
     // hash
@@ -82,6 +82,7 @@ module matcher #(
             match_val_len <= 0;
             logic_entry_len <= 0;
             logic_start_addr <= 0;
+            logic_tag <= 0;
             // reg
             hash_start_i <= `FALSE;
             mem_addr_o <= `ZERO_ADDR;
@@ -103,6 +104,7 @@ module matcher #(
                     match_val_len <= mod_match_val_len_i;
                     logic_entry_len <= mod_logic_entry_len_i;
                     logic_start_addr <= mod_logic_start_addr_i;
+                    logic_tag <= mod_logic_tag;
                 end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `FALSE;

@@ -1,7 +1,7 @@
 `include "def.svh"
 
 module proc_axi #(
-    parameter PROC_ID = 0
+    parameter AXI_ID = 0
 ) (
     input wire clk,
     input wire rst,
@@ -32,6 +32,7 @@ module proc_axi #(
     input wire [5:0] mt_mod_match_val_len_i,
     input wire [`DATA_BUS] mt_logic_entry_len_i,
     input wire [`DATA_BUS] mt_logic_start_addr_i,
+    input wire [`BYTE_BUS] mt_mod_logic_tag,
     // executor mod
     input wire ex_mod_start_i,
     input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1],
@@ -84,9 +85,7 @@ module proc_axi #(
     wire mem_ready_i;
 
     // processor
-    proc #(
-        .PROC_ID(PROC_ID)
-    ) proc0(
+    proc proc0(
         .clk(clk),
         .rst(rst),
         // input
@@ -122,15 +121,16 @@ module proc_axi #(
         .mt_mod_match_key_off_i(mt_mod_match_key_off_i),
         .mt_mod_match_key_len_i(mt_mod_match_key_len_i),
         .mt_mod_match_val_len_i(mt_mod_match_val_len_i),
-        .mt_logic_entry_len_i(mt_logic_entry_len_i),
-        .mt_logic_start_addr_i(mt_logic_start_addr_i),
+        .mt_mod_logic_entry_len_i(mt_logic_entry_len_i),
+        .mt_mod_logic_start_addr_i(mt_logic_start_addr_i),
+        .mt_mod_logic_tag(mt_mod_logic_tag),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
         .ex_mod_ops_i(ex_mod_ops_i)
     );
 
     mem_axi #(
-        .AXI_ID(PROC_ID)
+        .AXI_ID(AXI_ID)
     ) mem_axi0 (
         .clk(clk),
         .rst(rst),
