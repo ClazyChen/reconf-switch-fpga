@@ -12,6 +12,14 @@ module switch_sopc (
     output reg [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     output reg sw_out_empty_o,
 
+    // flow table manip by controller
+    input wire ctrl_mem_ce_i,
+    input wire ctrl_mem_we_i,
+    input wire [`ADDR_BUS] ctrl_mem_addr_i,
+    input wire [`DATA_BUS] ctrl_mem_data_i,
+    output reg [`DATA_BUS] ctrl_mem_data_o,
+    output reg ctrl_mem_ready_o,
+
     // proc 0 mod
     input wire proc0_mod_start_i,
     input wire [`ADDR_BUS] proc0_mod_hit_action_addr_i,
@@ -64,46 +72,46 @@ module switch_sopc (
     // axi crossbar
 
     // axi master interfaces
-    wire [0 : 0] m_axi_awid [1:0];
-    wire [31 : 0] m_axi_awaddr [1:0];
-    wire [7 : 0] m_axi_awlen [1:0];
-    wire [2 : 0] m_axi_awsize [1:0];
-    wire [1 : 0] m_axi_awburst [1:0];
-    wire [0 : 0] m_axi_awlock [1:0];
-    wire [3 : 0] m_axi_awcache [1:0];
-    wire [2 : 0] m_axi_awprot [1:0];
-    wire [3 : 0] m_axi_awqos [1:0];
-    wire [0 : 0] m_axi_awvalid [1:0];
-    wire [0 : 0] m_axi_awready [1:0];
-    wire [31 : 0] m_axi_wdata [1:0];
-    wire [3 : 0] m_axi_wstrb [1:0];
-    wire [0 : 0] m_axi_wlast [1:0];
-    wire [0 : 0] m_axi_wvalid [1:0];
-    wire [0 : 0] m_axi_wready [1:0];
-    wire [0 : 0] m_axi_bid [1:0];
-    wire [1 : 0] m_axi_bresp [1:0];
-    wire [0 : 0] m_axi_bvalid [1:0];
-    wire [0 : 0] m_axi_bready [1:0];
-    wire [0 : 0] m_axi_arid [1:0];
-    wire [31 : 0] m_axi_araddr [1:0];
-    wire [7 : 0] m_axi_arlen [1:0];
-    wire [2 : 0] m_axi_arsize [1:0];
-    wire [1 : 0] m_axi_arburst [1:0];
-    wire [0 : 0] m_axi_arlock [1:0];
-    wire [3 : 0] m_axi_arcache [1:0];
-    wire [2 : 0] m_axi_arprot [1:0];
-    wire [3 : 0] m_axi_arqos [1:0];
-    wire [0 : 0] m_axi_arvalid [1:0];
-    wire [0 : 0] m_axi_arready [1:0];
-    wire [0 : 0] m_axi_rid [1:0];
-    wire [31 : 0] m_axi_rdata [1:0];
-    wire [1 : 0] m_axi_rresp [1:0];
-    wire [0 : 0] m_axi_rlast [1:0];
-    wire [0 : 0] m_axi_rvalid [1:0];
-    wire [0 : 0] m_axi_rready [1:0];
+    wire [1 : 0] m_axi_awid [2:0];
+    wire [31 : 0] m_axi_awaddr [2:0];
+    wire [7 : 0] m_axi_awlen [2:0];
+    wire [2 : 0] m_axi_awsize [2:0];
+    wire [1 : 0] m_axi_awburst [2:0];
+    wire [0 : 0] m_axi_awlock [2:0];
+    wire [3 : 0] m_axi_awcache [2:0];
+    wire [2 : 0] m_axi_awprot [2:0];
+    wire [3 : 0] m_axi_awqos [2:0];
+    wire [0 : 0] m_axi_awvalid [2:0];
+    wire [0 : 0] m_axi_awready [2:0];
+    wire [31 : 0] m_axi_wdata [2:0];
+    wire [3 : 0] m_axi_wstrb [2:0];
+    wire [0 : 0] m_axi_wlast [2:0];
+    wire [0 : 0] m_axi_wvalid [2:0];
+    wire [0 : 0] m_axi_wready [2:0];
+    wire [1 : 0] m_axi_bid [2:0];
+    wire [1 : 0] m_axi_bresp [2:0];
+    wire [0 : 0] m_axi_bvalid [2:0];
+    wire [0 : 0] m_axi_bready [2:0];
+    wire [1 : 0] m_axi_arid [2:0];
+    wire [31 : 0] m_axi_araddr [2:0];
+    wire [7 : 0] m_axi_arlen [2:0];
+    wire [2 : 0] m_axi_arsize [2:0];
+    wire [1 : 0] m_axi_arburst [2:0];
+    wire [0 : 0] m_axi_arlock [2:0];
+    wire [3 : 0] m_axi_arcache [2:0];
+    wire [2 : 0] m_axi_arprot [2:0];
+    wire [3 : 0] m_axi_arqos [2:0];
+    wire [0 : 0] m_axi_arvalid [2:0];
+    wire [0 : 0] m_axi_arready [2:0];
+    wire [1 : 0] m_axi_rid [2:0];
+    wire [31 : 0] m_axi_rdata [2:0];
+    wire [1 : 0] m_axi_rresp [2:0];
+    wire [0 : 0] m_axi_rlast [2:0];
+    wire [0 : 0] m_axi_rvalid [2:0];
+    wire [0 : 0] m_axi_rready [2:0];
 
     // axi slave interfaces
-    wire [0 : 0] s_axi_awid [1:0];
+    wire [1 : 0] s_axi_awid [1:0];
     wire [31 : 0] s_axi_awaddr [1:0];
     wire [7 : 0] s_axi_awlen [1:0];
     wire [2 : 0] s_axi_awsize [1:0];
@@ -119,11 +127,11 @@ module switch_sopc (
     wire s_axi_wlast [1:0];
     wire s_axi_wvalid [1:0];
     wire s_axi_wready [1:0];
-    wire [0 : 0] s_axi_bid [1:0];
+    wire [1 : 0] s_axi_bid [1:0];
     wire [1 : 0] s_axi_bresp [1:0];
     wire s_axi_bvalid [1:0];
     wire s_axi_bready [1:0];
-    wire [0 : 0] s_axi_arid [1:0];
+    wire [1 : 0] s_axi_arid [1:0];
     wire [31 : 0] s_axi_araddr [1:0];
     wire [7 : 0] s_axi_arlen [1:0];
     wire [2 : 0] s_axi_arsize [1:0];
@@ -134,7 +142,7 @@ module switch_sopc (
     wire [3 : 0] s_axi_arregion [1:0];
     wire s_axi_arvalid [1:0];
     wire s_axi_arready [1:0];
-    wire [0 : 0] s_axi_rid [1:0];
+    wire [1 : 0] s_axi_rid [1:0];
     wire [31 : 0] s_axi_rdata [1:0];
     wire [1 : 0] s_axi_rresp [1:0];
     wire s_axi_rlast [1:0];
@@ -145,43 +153,43 @@ module switch_sopc (
         .aclk(clk),
         .aresetn(~rst),
         // connected to master devices
-        .s_axi_awid({m_axi_awid[1], m_axi_awid[0]}),
-        .s_axi_awaddr({m_axi_awaddr[1], m_axi_awaddr[0]}),
-        .s_axi_awlen({m_axi_awlen[1], m_axi_awlen[0]}),
-        .s_axi_awsize({m_axi_awsize[1], m_axi_awsize[0]}),
-        .s_axi_awburst({m_axi_awburst[1], m_axi_awburst[0]}),
-        .s_axi_awlock({m_axi_awlock[1], m_axi_awlock[0]}),
-        .s_axi_awcache({m_axi_awcache[1], m_axi_awcache[0]}),
-        .s_axi_awprot({m_axi_awprot[1], m_axi_awprot[0]}),
-        .s_axi_awqos({m_axi_awqos[1], m_axi_awqos[0]}),
-        .s_axi_awvalid({m_axi_awvalid[1], m_axi_awvalid[0]}),
-        .s_axi_awready({m_axi_awready[1], m_axi_awready[0]}),
-        .s_axi_wdata({m_axi_wdata[1], m_axi_wdata[0]}),
-        .s_axi_wstrb({m_axi_wstrb[1], m_axi_wstrb[0]}),
-        .s_axi_wlast({m_axi_wlast[1], m_axi_wlast[0]}),
-        .s_axi_wvalid({m_axi_wvalid[1], m_axi_wvalid[0]}),
-        .s_axi_wready({m_axi_wready[1], m_axi_wready[0]}),
-        .s_axi_bid({m_axi_bid[1], m_axi_bid[0]}),
-        .s_axi_bresp({m_axi_bresp[1], m_axi_bresp[0]}),
-        .s_axi_bvalid({m_axi_bvalid[1], m_axi_bvalid[0]}),
-        .s_axi_bready({m_axi_bready[1], m_axi_bready[0]}),
-        .s_axi_arid({m_axi_arid[1], m_axi_arid[0]}),
-        .s_axi_araddr({m_axi_araddr[1], m_axi_araddr[0]}),
-        .s_axi_arlen({m_axi_arlen[1], m_axi_arlen[0]}),
-        .s_axi_arsize({m_axi_arsize[1], m_axi_arsize[0]}),
-        .s_axi_arburst({m_axi_arburst[1], m_axi_arburst[0]}),
-        .s_axi_arlock({m_axi_arlock[1], m_axi_arlock[0]}),
-        .s_axi_arcache({m_axi_arcache[1], m_axi_arcache[0]}),
-        .s_axi_arprot({m_axi_arprot[1], m_axi_arprot[0]}),
-        .s_axi_arqos({m_axi_arqos[1], m_axi_arqos[0]}),
-        .s_axi_arvalid({m_axi_arvalid[1], m_axi_arvalid[0]}),
-        .s_axi_arready({m_axi_arready[1], m_axi_arready[0]}),
-        .s_axi_rid({m_axi_rid[1], m_axi_rid[0]}),
-        .s_axi_rdata({m_axi_rdata[1], m_axi_rdata[0]}),
-        .s_axi_rresp({m_axi_rresp[1], m_axi_rresp[0]}),
-        .s_axi_rlast({m_axi_rlast[1], m_axi_rlast[0]}),
-        .s_axi_rvalid({m_axi_rvalid[1], m_axi_rvalid[0]}),
-        .s_axi_rready({m_axi_rready[1], m_axi_rready[0]}),
+        .s_axi_awid({m_axi_awid[2], m_axi_awid[1], m_axi_awid[0]}),
+        .s_axi_awaddr({m_axi_awaddr[2], m_axi_awaddr[1], m_axi_awaddr[0]}),
+        .s_axi_awlen({m_axi_awlen[2], m_axi_awlen[1], m_axi_awlen[0]}),
+        .s_axi_awsize({m_axi_awsize[2], m_axi_awsize[1], m_axi_awsize[0]}),
+        .s_axi_awburst({m_axi_awburst[2], m_axi_awburst[1], m_axi_awburst[0]}),
+        .s_axi_awlock({m_axi_awlock[2], m_axi_awlock[1], m_axi_awlock[0]}),
+        .s_axi_awcache({m_axi_awcache[2], m_axi_awcache[1], m_axi_awcache[0]}),
+        .s_axi_awprot({m_axi_awprot[2], m_axi_awprot[1], m_axi_awprot[0]}),
+        .s_axi_awqos({m_axi_awqos[2], m_axi_awqos[1], m_axi_awqos[0]}),
+        .s_axi_awvalid({m_axi_awvalid[2], m_axi_awvalid[1], m_axi_awvalid[0]}),
+        .s_axi_awready({m_axi_awready[2], m_axi_awready[1], m_axi_awready[0]}),
+        .s_axi_wdata({m_axi_wdata[2], m_axi_wdata[1], m_axi_wdata[0]}),
+        .s_axi_wstrb({m_axi_wstrb[2], m_axi_wstrb[1], m_axi_wstrb[0]}),
+        .s_axi_wlast({m_axi_wlast[2], m_axi_wlast[1], m_axi_wlast[0]}),
+        .s_axi_wvalid({m_axi_wvalid[2], m_axi_wvalid[1], m_axi_wvalid[0]}),
+        .s_axi_wready({m_axi_wready[2], m_axi_wready[1], m_axi_wready[0]}),
+        .s_axi_bid({m_axi_bid[2], m_axi_bid[1], m_axi_bid[0]}),
+        .s_axi_bresp({m_axi_bresp[2], m_axi_bresp[1], m_axi_bresp[0]}),
+        .s_axi_bvalid({m_axi_bvalid[2], m_axi_bvalid[1], m_axi_bvalid[0]}),
+        .s_axi_bready({m_axi_bready[2], m_axi_bready[1], m_axi_bready[0]}),
+        .s_axi_arid({m_axi_arid[2], m_axi_arid[1], m_axi_arid[0]}),
+        .s_axi_araddr({m_axi_araddr[2], m_axi_araddr[1], m_axi_araddr[0]}),
+        .s_axi_arlen({m_axi_arlen[2], m_axi_arlen[1], m_axi_arlen[0]}),
+        .s_axi_arsize({m_axi_arsize[2], m_axi_arsize[1], m_axi_arsize[0]}),
+        .s_axi_arburst({m_axi_arburst[2], m_axi_arburst[1], m_axi_arburst[0]}),
+        .s_axi_arlock({m_axi_arlock[2], m_axi_arlock[1], m_axi_arlock[0]}),
+        .s_axi_arcache({m_axi_arcache[2], m_axi_arcache[1], m_axi_arcache[0]}),
+        .s_axi_arprot({m_axi_arprot[2], m_axi_arprot[1], m_axi_arprot[0]}),
+        .s_axi_arqos({m_axi_arqos[2], m_axi_arqos[1], m_axi_arqos[0]}),
+        .s_axi_arvalid({m_axi_arvalid[2], m_axi_arvalid[1], m_axi_arvalid[0]}),
+        .s_axi_arready({m_axi_arready[2], m_axi_arready[1], m_axi_arready[0]}),
+        .s_axi_rid({m_axi_rid[2], m_axi_rid[1], m_axi_rid[0]}),
+        .s_axi_rdata({m_axi_rdata[2], m_axi_rdata[1], m_axi_rdata[0]}),
+        .s_axi_rresp({m_axi_rresp[2], m_axi_rresp[1], m_axi_rresp[0]}),
+        .s_axi_rlast({m_axi_rlast[2], m_axi_rlast[1], m_axi_rlast[0]}),
+        .s_axi_rvalid({m_axi_rvalid[2], m_axi_rvalid[1], m_axi_rvalid[0]}),
+        .s_axi_rready({m_axi_rready[2], m_axi_rready[1], m_axi_rready[0]}),
         // connected to slave devices
         .m_axi_awid({s_axi_awid[1], s_axi_awid[0]}),
         .m_axi_awaddr({s_axi_awaddr[1], s_axi_awaddr[0]}),
@@ -463,6 +471,59 @@ module switch_sopc (
         .axi_rlast(m_axi_rlast[1]),
         .axi_rvalid(m_axi_rvalid[1]),
         .axi_rready(m_axi_rready[1])
+    );
+
+    // for controller
+    mem_axi #(
+        .AXI_ID(2)
+    ) mem_axi_ctrl (
+        .clk(clk),
+        .rst(rst),
+        // mem
+        .mem_ce_i(ctrl_mem_ce_i),
+        .mem_we_i(ctrl_mem_we_i),
+        .mem_addr_i(ctrl_mem_addr_i),
+        .mem_data_i(ctrl_mem_data_i),
+        .mem_data_o(ctrl_mem_data_o),
+        .mem_ready_o(ctrl_mem_ready_o),
+        // axi
+        .axi_awid(m_axi_awid[2]),
+        .axi_awaddr(m_axi_awaddr[2]),
+        .axi_awlen(m_axi_awlen[2]),
+        .axi_awsize(m_axi_awsize[2]),
+        .axi_awburst(m_axi_awburst[2]),
+        .axi_awlock(m_axi_awlock[2]),
+        .axi_awcache(m_axi_awcache[2]),
+        .axi_awprot(m_axi_awprot[2]),
+        .axi_awqos(m_axi_awqos[2]),
+        .axi_awvalid(m_axi_awvalid[2]),
+        .axi_awready(m_axi_awready[2]),
+        .axi_wdata(m_axi_wdata[2]),
+        .axi_wstrb(m_axi_wstrb[2]),
+        .axi_wlast(m_axi_wlast[2]),
+        .axi_wvalid(m_axi_wvalid[2]),
+        .axi_wready(m_axi_wready[2]),
+        .axi_bid(m_axi_bid[2]),
+        .axi_bresp(m_axi_bresp[2]),
+        .axi_bvalid(m_axi_bvalid[2]),
+        .axi_bready(m_axi_bready[2]),
+        .axi_arid(m_axi_arid[2]),
+        .axi_araddr(m_axi_araddr[2]),
+        .axi_arlen(m_axi_arlen[2]),
+        .axi_arsize(m_axi_arsize[2]),
+        .axi_arburst(m_axi_arburst[2]),
+        .axi_arlock(m_axi_arlock[2]),
+        .axi_arcache(m_axi_arcache[2]),
+        .axi_arprot(m_axi_arprot[2]),
+        .axi_arqos(m_axi_arqos[2]),
+        .axi_arvalid(m_axi_arvalid[2]),
+        .axi_arready(m_axi_arready[2]),
+        .axi_rid(m_axi_rid[2]),
+        .axi_rdata(m_axi_rdata[2]),
+        .axi_rresp(m_axi_rresp[2]),
+        .axi_rlast(m_axi_rlast[2]),
+        .axi_rvalid(m_axi_rvalid[2]),
+        .axi_rready(m_axi_rready[2])
     );
 
     // latches

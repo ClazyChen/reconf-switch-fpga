@@ -86,6 +86,14 @@ module tb (
     assign ex1_mod_start_i = ex0_mod_start_i;
     assign ex1_mod_ops_i = ex0_mod_ops_i;
 
+    // controller
+    reg ctrl_mem_ce_i;
+    reg ctrl_mem_we_i;
+    reg [`ADDR_BUS] ctrl_mem_addr_i;
+    reg [`DATA_BUS] ctrl_mem_data_i;
+    wire [`DATA_BUS] ctrl_mem_data_o;
+    wire ctrl_mem_ready_o;
+
     switch_sopc switch_sopc0(
         .clk(clk),
         .rst(rst),
@@ -97,7 +105,13 @@ module tb (
         .sw_rd_i(sw_rd_i),
         .sw_pkt_hdr_o(sw_pkt_hdr_o),
         .sw_out_empty_o(sw_out_empty_o),
-
+        // ctrl
+        .ctrl_mem_ce_i(ctrl_mem_ce_i),
+        .ctrl_mem_we_i(ctrl_mem_we_i),
+        .ctrl_mem_addr_i(ctrl_mem_addr_i),
+        .ctrl_mem_data_i(ctrl_mem_data_i),
+        .ctrl_mem_data_o(ctrl_mem_data_o),
+        .ctrl_mem_ready_o(ctrl_mem_ready_o),
         // proc 0 mod
         .proc0_mod_start_i(proc0_mod_start_i),
         .proc0_mod_hit_action_addr_i(proc0_mod_hit_action_addr_i),
@@ -156,6 +170,36 @@ module tb (
     initial begin
         rst = `TRUE;
         #45 rst = `FALSE;
+    end
+
+    // add flow entry
+    initial begin
+        ctrl_mem_ce_i <= `FALSE;
+        ctrl_mem_we_i <= `FALSE;
+        ctrl_mem_addr_i <= 32'h00100000;
+        ctrl_mem_data_i <= `ZERO_WORD;
+        #65
+        ctrl_mem_ce_i <= `TRUE;
+        ctrl_mem_we_i <= `TRUE;
+
+        ctrl_mem_addr_i <= 32'h00100000 + (136 * 16);
+        ctrl_mem_data_i <= 32'h0100b7ac;
+        wait(ctrl_mem_ready_o == `FALSE);
+        wait(ctrl_mem_ready_o == `TRUE);
+        ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
+        ctrl_mem_data_i <= 32'hf62c0000;
+        wait(ctrl_mem_ready_o == `FALSE);
+        wait(ctrl_mem_ready_o == `TRUE);
+        ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
+        ctrl_mem_data_i <= 32'habcdef01;
+        wait(ctrl_mem_ready_o == `FALSE);
+        wait(ctrl_mem_ready_o == `TRUE);
+        ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
+        ctrl_mem_data_i <= 32'h23450001;
+        wait(ctrl_mem_ready_o == `FALSE);
+        wait(ctrl_mem_ready_o == `TRUE);
+        #20
+        ctrl_mem_ce_i <= `FALSE;
     end
 
     // switch input
