@@ -44,7 +44,8 @@ module matcher #(
     // key
     reg [`BYTE_BUS] key_data [7:0];     // format: [tag(2) | match_key(6)]
     reg [`BYTE_BUS] entry_key_data [7:0];
-    assign {key_data[1], key_data[0]} = PROC_ID;
+    assign key_data[0] = PROC_ID;
+    assign key_data[1] = `ZERO_BYTE;
 
     // hash
     reg hash_start_i;
@@ -85,8 +86,10 @@ module matcher #(
             hash_start_i <= `FALSE;
             mem_addr_o <= `ZERO_ADDR;
             mem_cnt <= 0;
-            for (int i = 0; i < 8; i++) begin
+            for (int i = 2; i < 8; i++) begin
                 key_data[i] <= `ZERO_BYTE;
+            end
+            for (int i = 0; i < 8; i++) begin
                 entry_key_data[i] <= `ZERO_BYTE;
             end
             state <= STATE_FREE;

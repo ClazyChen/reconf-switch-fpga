@@ -6,10 +6,12 @@ module proc_axi #(
     input wire clk,
     input wire rst,
     // input
-    input wire start_i,
+    input wire in_empty_i,
+    output reg in_rd_o,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
     // output
-    output reg ready_o,
+    input wire out_empty_i,
+    output reg out_wr_o,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // proc mod
     input wire proc_mod_start_i,
@@ -87,8 +89,14 @@ module proc_axi #(
     ) proc0(
         .clk(clk),
         .rst(rst),
-        .start_i(start_i),
+        // input
+        .in_empty_i(in_empty_i),
+        .in_rd_o(in_rd_o),
         .pkt_hdr_i(pkt_hdr_i),
+        // output
+        .out_empty_i(out_empty_i),
+        .out_wr_o(out_wr_o),
+        .pkt_hdr_o(pkt_hdr_o),
         // mem
         .mem_ce_o(mem_ce_o),
         .mem_we_o(mem_we_o),
@@ -97,9 +105,6 @@ module proc_axi #(
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         .mem_ready_i(mem_ready_i),
-        // output
-        .ready_o(ready_o),
-        .pkt_hdr_o(pkt_hdr_o),
         // proc
         .proc_mod_start_i(proc_mod_start_i),
         .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),

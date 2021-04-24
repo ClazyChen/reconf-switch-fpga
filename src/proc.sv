@@ -5,9 +5,14 @@ module proc #(
 ) (
     input wire clk,
     input wire rst,
-    input wire start_i,
+    // input
+    input wire in_empty_i,
+    output reg in_rd_o,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
-
+    // output
+    input wire out_empty_i,
+    output reg out_wr_o,
+    output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -16,14 +21,11 @@ module proc #(
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
     input wire mem_ready_i,
-    // output
-    output reg ready_o,
-    output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
-    // proc modify
+    // proc mod
     input wire proc_mod_start_i,
     input wire [`ADDR_BUS] proc_mod_hit_action_addr_i,
     input wire [`ADDR_BUS] proc_mod_miss_action_addr_i,
-    // parser modify
+    // parser mod
     input wire ps_mod_start_i,
     input wire [`DATA_BUS] ps_mod_hdr_id_i,
     input wire [`DATA_BUS] ps_mod_hdr_len_i,
@@ -64,13 +66,14 @@ module proc #(
     reg [`ADDR_BUS] miss_action_addr;
 
     enum {
-        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC
+        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_LATCH
     } state;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
-            // output
-            ready_o <= `FALSE;
+            // latch
+            in_rd_o <= `FALSE;
+            out_wr_o <= `FALSE;
             // parser
             ps_start_o <= `FALSE;
             // matcher
@@ -89,9 +92,7 @@ module proc #(
                 if (proc_mod_start_i == `TRUE) begin
                     hit_action_addr <= proc_mod_hit_action_addr_i;
                     miss_action_addr <= proc_mod_miss_action_addr_i;
-                end else if (start_i == `TRUE) begin
-                    // output
-                    ready_o <= `FALSE;
+                end else if (in_empty_i == `FALSE) begin
                     // parser
                     ps_start_o <= `TRUE;
                     // matcher
@@ -125,9 +126,17 @@ module proc #(
             STATE_EXEC: begin
                 ex_start_o <= `FALSE;
                 if (ex_ready_i == `TRUE) begin
-                    ready_o <= `TRUE;
-                    state <= STATE_FREE;
+                    if (out_empty_i == `TRUE) begin
+                        in_rd_o <= `TRUE;
+                        out_wr_o <= `TRUE;
+                        state <= STATE_LATCH;
+                    end
                 end
+            end
+            STATE_LATCH: begin
+                in_rd_o <= `FALSE;
+                out_wr_o <= `FALSE;
+                state <= STATE_FREE;
             end
             default: begin
                 state <= STATE_FREE;
