@@ -11,11 +11,13 @@ module tb (
     // switch input
     reg sw_wr_i;
     reg [`BYTE_BUS] sw_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] sw_out_port_i;
     wire sw_in_empty_o;
 
     // switch output
     reg sw_rd_i;
     wire [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] sw_out_port_o;
     wire sw_out_empty_o;
 
     // proc 0
@@ -90,6 +92,7 @@ module tb (
         // switch output
         .sw_rd_i(sw_rd_i),
         .sw_pkt_hdr_o(sw_pkt_hdr_o),
+        .sw_out_port_o(sw_out_port_o),
         .sw_out_empty_o(sw_out_empty_o),
         // ctrl
         .ctrl_mem_ce_i(ctrl_mem_ce_i),
@@ -320,13 +323,14 @@ module tb (
         ex0_mod_start_i <= `TRUE;
         ex0_mod_hit_action_addr_i <= 1;
         ex0_mod_miss_action_addr_i <= 0;
-        ex0_mod_ops_i[0:5] <= {
+        ex0_mod_ops_i[0:6] <= {
             `ZERO_QUAD,
-            'h0c000000_01860006,    // copy dst mac to src mac
-            'h0c000000_0006f006,    // copy next hop mac to dst mac
-            'h0bffffff_12010000,    // ttl - 1
-            'h04000000_10141282,    // ip cksum
-            `ZERO_QUAD              // nop
+            64'h0c000000_01860006,      // copy dst mac to src mac
+            64'h0c000000_0006f006,      // copy next hop mac to dst mac
+            64'h0bffffff_12010000,      // ttl - 1
+            64'h04000000_10141282,      // ip cksum
+            64'h10000000_0000f184,      // set out port
+            `ZERO_QUAD                  // nop
         };
         #20
         ex0_mod_start_i <= `FALSE;
@@ -388,24 +392,33 @@ module tb (
     // check answer
     initial begin
         $display("===== BEGIN TEST =====");
+
         wait(sw_out_empty_o == `FALSE);
         // print packet
-        $write("Output Packet 1: ");
+        $write("Output Packet 1 via port %b: ", sw_out_port_o);
         foreach (sw_pkt_hdr_o[i]) begin
             $write("%h ", sw_pkt_hdr_o[i]);
         end
         $write("\n");
         // check answer
-        if (sw_pkt_hdr_o == ans_pkt_hdr) begin
+        if (sw_pkt_hdr_o == ans_pkt_hdr && sw_out_port_o == 4'b0001) begin
             $display("Packet 1 PASSED!");
         end else begin
             $display("Packet 1 FAILED!");
         end
-        $display("===== END TEST =====");
         #20
         sw_rd_i = `TRUE;
         #20
         sw_rd_i = `FALSE;
+        wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 2 via port %b: ", sw_out_port_o);
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+
+        $display("===== END TEST =====");
     end
 
 endmodule

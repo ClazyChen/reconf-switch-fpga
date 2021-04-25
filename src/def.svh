@@ -25,7 +25,8 @@
 `define NEXT_TABLE_SIZE 2
 `define NO_NEXT_HEADER 32'hffff_ffff
 
-`define HDR_PARAM       4'hf
+// proc
+`define NUM_PORTS       4
 
 // parser
 `define HDR_MAX_LEN     64
@@ -41,6 +42,8 @@
 
 `define MAX_OP_NUM      16
 `define MAX_VAL_LEN     16
+
+`define ARGS_FIELD_ID   4'hf
 
 // hash
 `define MAX_HASH_LEN    8

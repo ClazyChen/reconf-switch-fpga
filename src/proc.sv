@@ -7,10 +7,12 @@ module proc (
     input wire in_empty_i,
     output reg in_rd_o,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
+    input wire [`NUM_PORTS - 1:0] out_port_i,
     // output
     input wire out_empty_i,
     output reg out_wr_o,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
+    output reg [`NUM_PORTS - 1:0] out_port_o,
     // mem
     output reg mem_ce_o,
     output reg mem_we_o,
@@ -56,7 +58,6 @@ module proc (
 
     // executor
     reg ex_start_o;
-    reg [`DATA_BUS] ex_op_start_cnt_o;
     wire ex_ready_i;
 
     enum {
@@ -78,7 +79,6 @@ module proc (
             mt_start_o <= `FALSE;
             // executor
             ex_start_o <= `FALSE;
-            ex_op_start_cnt_o <= 0;
             // reg
             state <= STATE_FREE;
         end else begin
@@ -91,7 +91,6 @@ module proc (
                     mt_start_o <= `FALSE;
                     // executor
                     ex_start_o <= `FALSE;
-                    ex_op_start_cnt_o <= 0;
                     // proc
                     state <= STATE_PARSER;
                 end
@@ -197,9 +196,11 @@ module proc (
         .is_match_i(mt_is_match_i),
         .args_i(mt_flow_val_i),
         .parsed_hdrs_i(ps_hdrs_i),
+        .out_port_i(out_port_i),
         // output
         .ready_o(ex_ready_i),
         .pkt_hdr_o(pkt_hdr_o),
+        .out_port_o(out_port_o),
         // mod
         .mod_start_i(ex_mod_start_i),
         .mod_hit_action_addr_i(ex_mod_hit_action_addr_i),

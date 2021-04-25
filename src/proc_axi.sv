@@ -9,10 +9,12 @@ module proc_axi #(
     input wire in_empty_i,
     output reg in_rd_o,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
+    input wire [`NUM_PORTS - 1:0] out_port_i,
     // output
     input wire out_empty_i,
     output reg out_wr_o,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
+    output reg [`NUM_PORTS - 1:0] out_port_o,
     // parser mod
     input wire ps_mod_start_i,
     input wire [`DATA_BUS] ps_mod_hdr_id_i,
@@ -91,10 +93,12 @@ module proc_axi #(
         .in_empty_i(in_empty_i),
         .in_rd_o(in_rd_o),
         .pkt_hdr_i(pkt_hdr_i),
+        .out_port_i(out_port_i),
         // output
         .out_empty_i(out_empty_i),
         .out_wr_o(out_wr_o),
         .pkt_hdr_o(pkt_hdr_o),
+        .out_port_o(out_port_o),
         // mem
         .mem_ce_o(mem_ce_o),
         .mem_we_o(mem_we_o),

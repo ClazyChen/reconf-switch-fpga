@@ -10,6 +10,7 @@ module switch_sopc (
     // switch output
     input wire sw_rd_i,
     output reg [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1],
+    output reg [`NUM_PORTS - 1:0] sw_out_port_o,
     output reg sw_out_empty_o,
 
     // flow table manip by controller
@@ -310,16 +311,20 @@ module switch_sopc (
     wire proc0_in_empty_i;
     wire proc0_in_rd_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] proc0_out_port_i;
     wire proc0_out_empty_i;
     wire proc0_out_wr_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] proc0_out_port_o;
     // proc 1 io
     wire proc1_in_empty_i;
     wire proc1_in_rd_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] proc1_out_port_i;
     wire proc1_out_empty_i;
     wire proc1_out_wr_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
+    wire [`NUM_PORTS - 1:0] proc1_out_port_o;
 
     proc_axi #(
         .AXI_ID(0)
@@ -330,10 +335,12 @@ module switch_sopc (
         .in_empty_i(proc0_in_empty_i),
         .in_rd_o(proc0_in_rd_o),
         .pkt_hdr_i(proc0_pkt_hdr_i),
+        .out_port_i(proc0_out_port_i),
         // output
         .out_empty_i(proc0_out_empty_i),
         .out_wr_o(proc0_out_wr_o),
         .pkt_hdr_o(proc0_pkt_hdr_o),
+        .out_port_o(proc0_out_port_o),
         // parser
         .ps_mod_start_i(ps0_mod_start_i),
         .ps_mod_hdr_id_i(ps0_mod_hdr_id_i),
@@ -405,10 +412,12 @@ module switch_sopc (
         .in_empty_i(proc1_in_empty_i),
         .in_rd_o(proc1_in_rd_o),
         .pkt_hdr_i(proc1_pkt_hdr_i),
+        .out_port_i(proc1_out_port_i),
         // output
         .out_empty_i(proc1_out_empty_i),
         .out_wr_o(proc1_out_wr_o),
         .pkt_hdr_o(proc1_pkt_hdr_o),
+        .out_port_o(proc1_out_port_o),
         // parser
         .ps_mod_start_i(ps1_mod_start_i),
         .ps_mod_hdr_id_i(ps1_mod_hdr_id_i),
@@ -536,9 +545,11 @@ module switch_sopc (
         // switch in
         .wr_i(sw_wr_i),
         .pkt_hdr_i(sw_pkt_hdr_i),
+        .out_port_i(4'h0),
         // proc 0 in
         .rd_i(proc0_in_rd_o),
         .pkt_hdr_o(proc0_pkt_hdr_i),
+        .out_port_o(proc0_out_port_i),
         .empty_o(latch0_empty_i)
     );
     assign proc0_in_empty_i = latch0_empty_i;
@@ -551,9 +562,11 @@ module switch_sopc (
         // proc 0 out
         .wr_i(proc0_out_wr_o),
         .pkt_hdr_i(proc0_pkt_hdr_o),
+        .out_port_i(proc0_out_port_o),
         // proc 1 in
         .rd_i(proc1_in_rd_o),
         .pkt_hdr_o(proc1_pkt_hdr_i),
+        .out_port_o(proc1_out_port_i),
         .empty_o(latch1_empty_i)
     );
     assign proc1_in_empty_i = latch1_empty_i;
@@ -566,9 +579,11 @@ module switch_sopc (
         // proc 1 out
         .wr_i(proc1_out_wr_o),
         .pkt_hdr_i(proc1_pkt_hdr_o),
+        .out_port_i(proc1_out_port_o),
         // switch out
         .rd_i(sw_rd_i),
         .pkt_hdr_o(sw_pkt_hdr_o),
+        .out_port_o(sw_out_port_o),
         .empty_o(latch2_empty_i)
     );
     assign proc1_out_empty_i = latch2_empty_i;

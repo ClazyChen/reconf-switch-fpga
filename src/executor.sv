@@ -9,9 +9,11 @@ module executor (
     input wire is_match_i,
     input wire [`BYTE_BUS] args_i [`MAX_VAL_LEN - 1:0],
     input wire [`DATA_BUS] parsed_hdrs_i [`NUM_HEADERS - 1:0],
+    input wire [`NUM_PORTS - 1:0] out_port_i,
     // output
     output reg ready_o,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
+    output reg [`NUM_PORTS - 1:0] out_port_o,
     // mod
     input wire mod_start_i,
     input wire [`ADDR_BUS] mod_hit_action_addr_i,
@@ -100,6 +102,7 @@ module executor (
             for (int i = 0; i < `HDR_MAX_LEN; i++) begin
                 pkt_hdr_o[i] <= 0;
             end
+            out_port_o <= 0;
             state <= STATE_FREE;
         end else begin
             case (state)
@@ -117,6 +120,7 @@ module executor (
                         inst_cnt <= miss_action_addr + 1;
                     end
                     pkt_hdr_o <= pkt_hdr_i;
+                    out_port_o <= out_port_i;
                     state <= STATE_EXEC;
                 end
             end
@@ -153,7 +157,7 @@ module executor (
                     inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_COPY_FIELD: begin
-                    if (f2_hdr == `HDR_PARAM) begin
+                    if (f2_hdr == `ARGS_FIELD_ID) begin
                         for (int i = 0; i < f1_len; i++) begin
                             pkt_hdr_o[f1_start + i] <= args_i[f2_off + i];
                         end
@@ -166,7 +170,13 @@ module executor (
                     inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_SET_PORT: begin
-                    
+                    if (f2_hdr == `ARGS_FIELD_ID) begin
+                        out_port_o <= args_i[f2_off + 1][`NUM_PORTS - 1:0];
+                    end else begin
+                        $display("Expected port from args");
+                    end
+                    inst <= ops[inst_cnt];
+                    inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_SET_MULTICAST: begin
                     
