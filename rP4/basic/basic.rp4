@@ -1,0 +1,101 @@
+
+headers {
+	hdr ethernet_t {
+		bit<48> dstAddr;
+		bit<48> srcAddr;
+		next_hdr bit<16> etherType;
+		implicit ethernet_parser {
+			0x800{16}:	ipv4_t;
+			default:;
+		}
+	}
+
+	hdr ipv4_t {
+		bit<4>    version;
+		bit<4>    ihl;
+		bit<8>    diffserv;
+		bit<16>   totalLen;
+		bit<16>   identification;
+		bit<3>    flags;
+		bit<13>   fragOffset;
+		bit<8>    ttl;
+		next_hdr bit<8>    protocol;
+		bit<16>   hdrChecksum;
+		bit<32>   srcAddr;
+		bit<32>   dstAddr;
+		implicit ipv4_parser {
+			default: accept;
+		};
+		implicit verify_checksum {
+			algorithm: crc32;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		} # do when extract
+		
+		implicit update_checksum {
+			algorithm: crc32;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		}
+	}
+}
+
+structs {
+	struct metadata {
+
+	}
+}
+
+actions {
+	action ipv4_forward(para) {
+		copy_field(para.port, standard_metadata.egress_spec);
+		copy_field(header.ethernet_t.dstAddr, header.ethermet_t.srcAddr);
+		copy_field(para.dstAddr, header.ethernet.dstAddr);
+		decrement(header.ipv4_t.ttl);
+	}
+}
+
+control rP4_Ingress(header) {
+	stage ipv4_lpm_s {
+		ipv4 = header.ipv4_t;[verify_checksum] # if not valid, break this stage
+		action, para = ipv4_lpm.lpm(ipv4.dstAddr);
+		switch action:
+			1: ipv4_forward(para);
+			2: drop();
+			default: drop();
+	}
+}
+
+control rP4_Egress(header)[update_checksum] {
+	
+}
+
+pipelines {
+	pipeline p0 {
+		ipv4_lpm_s
+	}
+}
