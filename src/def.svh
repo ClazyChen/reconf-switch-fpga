@@ -25,6 +25,11 @@
 `define NEXT_TABLE_SIZE 2
 `define NO_NEXT_HEADER 32'hffff_ffff
 
+// axi
+`define ID_WIDTH        2
+`define NUM_MASTERS     3
+`define NUM_SLAVES      2
+
 // proc
 `define NUM_PORTS       4
 

@@ -552,7 +552,7 @@ module tb (
             8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
             8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00
         };
-        if (sw_pkt_hdr_o[0:31] == ans_pkt_hdr[0:31] && sw_out_port_o == 4'b0001) begin
+        if (sw_pkt_hdr_o == ans_pkt_hdr && sw_out_port_o == 4'b0001) begin
             $display("Packet 1 PASSED!");
         end else begin
             $display("Packet 1 FAILED!");
@@ -588,12 +588,146 @@ module tb (
         $display("===== END TEST =====");
     end
 
-    // add counter
+    // remove tunnel
     initial begin
         #105 wait(sw_out_empty_o == `FALSE);
         #40 wait(sw_out_empty_o == `FALSE);
         #40 wait(sw_out_empty_o == `FALSE);
         #40 wait(sw_out_empty_o == `FALSE);
 
+        // parser
+        // ethernet header
+        ps0_mod_start_i <= `TRUE;
+        ps0_mod_hdr_id_i <= 0;
+        ps0_mod_hdr_len_i <= 14;
+        ps0_mod_next_tag_start_i <= 12;
+        ps0_mod_next_tag_len_i <= 2;
+        ps0_mod_next_table_i <= {
+            {16'h0800, 16'h0001},
+            `NO_NEXT_HEADER
+        };
+        // matcher
+        mt0_mod_start_i <= `TRUE;
+        mt0_mod_match_hdr_id_i <= 0;
+        mt0_mod_match_key_off_i <= 0;
+        mt0_mod_match_key_len_i <= 0;
+        mt0_mod_match_val_len_i <= 0;
+        mt0_mod_logic_entry_len_i <= 0;
+        mt0_mod_logic_start_addr_i <= 0;
+        mt0_mod_logic_tag <= 0;
+        mt0_mod_is_counter_table <= `FALSE;
+        // executor
+        ex0_mod_start_i <= `TRUE;
+        ex0_mod_hit_action_addr_i <= 0;
+        ex0_mod_miss_action_addr_i <= 0;
+        for (int i = 0; i < `MAX_OP_NUM; i++) begin
+            ex0_mod_ops_i[i] = `ZERO_QUAD;
+        end
+
+        #20
+        ps0_mod_start_i <= `FALSE;
+        mt0_mod_start_i <= `FALSE;
     end
+
+    // tunnel packet after removing
+    initial begin
+        #105 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+
+        #45
+        $display("===== IPv4 & w/o Tunnel =====");
+        $display("===== BEGIN TEST =====");
+
+        // packet 1
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h12, 8'h12,
+            8'h08, 8'h00, 8'h00, 8'h02,
+            8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 1: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+        wait(sw_in_empty_o == `TRUE);
+        #20
+        // packet 2
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h12, 8'h12,
+            8'h08, 8'h00, 8'h00, 8'h02,
+            8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2d, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 2: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+
+        // wait packet 1
+        wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 1 via port %b: ", sw_out_port_o);
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+        // check answer
+        if (sw_pkt_hdr_o == sw_pkt_hdr_i && sw_out_port_o == 4'b0000) begin
+            $display("Packet 1 PASSED!");
+        end else begin
+            $display("Packet 1 FAILED!");
+        end
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
+
+        // wait packet 2
+        wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 2 via port %b: ", sw_out_port_o);
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+        // check answer
+        if (sw_pkt_hdr_o == sw_pkt_hdr_i && sw_out_port_o == 4'b0000) begin
+            $display("Packet 2 PASSED!");
+        end else begin
+            $display("Packet 2 FAILED!");
+        end
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
+
+        $display("===== END TEST =====");
+    end
+
+    // add counter table
+    initial begin
+        #105 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+
+
+    end
+
 endmodule
