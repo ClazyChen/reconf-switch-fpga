@@ -71,10 +71,6 @@ module tb (
     reg [`ADDR_BUS] ex1_mod_hit_action_addr_i;
     reg [`ADDR_BUS] ex1_mod_miss_action_addr_i;
     reg [`QUAD_BUS] ex1_mod_ops_i [0:`MAX_OP_NUM - 1];
-    assign ex1_mod_start_i = ex0_mod_start_i;
-    assign ex1_mod_hit_action_addr_i = ex0_mod_hit_action_addr_i;
-    assign ex1_mod_miss_action_addr_i = ex0_mod_miss_action_addr_i;
-    assign ex1_mod_ops_i = ex0_mod_ops_i;
 
     // controller
     reg ctrl_mem_ce_i;
@@ -181,11 +177,11 @@ module tb (
         wait(ctrl_mem_ready_o == `FALSE);
         wait(ctrl_mem_ready_o == `TRUE);
         ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
-        ctrl_mem_data_i <= 32'habcdef01;
+        ctrl_mem_data_i <= 32'h00000000;
         wait(ctrl_mem_ready_o == `FALSE);
         wait(ctrl_mem_ready_o == `TRUE);
         ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
-        ctrl_mem_data_i <= 32'h23450001;
+        ctrl_mem_data_i <= 32'h00000000;
         wait(ctrl_mem_ready_o == `FALSE);
         wait(ctrl_mem_ready_o == `TRUE);
         #20
@@ -296,8 +292,8 @@ module tb (
         ex0_mod_start_i <= `FALSE;
     end
 
-    // proc 1 mod
-    // matcher 1 mod
+    // proc 1
+    // matcher mod
     initial begin
         mt1_mod_start_i <= `FALSE;
         mt1_mod_match_hdr_id_i <= 0;
@@ -321,22 +317,28 @@ module tb (
         #20
         mt1_mod_start_i <= `FALSE;
     end
+    // executor mod
+    initial begin
+        ex1_mod_start_i <= `FALSE;
+        ex1_mod_hit_action_addr_i <= 0;
+        ex1_mod_miss_action_addr_i <= 0;
+        for (int i = 0; i < `MAX_OP_NUM; i++) begin
+            ex1_mod_ops_i[i] = `ZERO_QUAD;
+        end
+        #65
+        ex1_mod_start_i <= `TRUE;
+        ex1_mod_hit_action_addr_i <= 0;
+        ex1_mod_miss_action_addr_i <= 0;
+        ex1_mod_ops_i[0] <= `ZERO_QUAD;
+        #20
+        ex1_mod_start_i <= `FALSE;
+    end
 
     // expected output pkt header
     wire [`BYTE_BUS] ans_pkt_hdr [0:`HDR_MAX_LEN - 1];
-    // assign ans_pkt_hdr = {
-    //     8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
-    //     8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-    //     8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-    //     8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-    //     // padding
-    //     8'h00, 8'h00, 8'h00, 8'h00
-    // };
     assign ans_pkt_hdr = {
-        8'hab, 8'hcd, 8'hef, 8'h01, 8'h23, 8'h45,
-        8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce,
-        8'h08, 8'h00,
-        8'h45, 8'h00, 8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'he9, 8'h06, 8'hd7, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+        8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
+        8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
         8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
         8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
         // padding
