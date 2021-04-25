@@ -60,7 +60,7 @@ module matcher (
     };
 
     enum {
-        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_STORE_VAL
+        STATE_FREE, STATE_HASH, STATE_HASH_WAIT, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_STORE_VAL
     } state;
 
     assign mem_width_o = 4;
@@ -133,6 +133,9 @@ module matcher (
             end
             STATE_HASH: begin
                 hash_start_i <= `FALSE;
+                state <= STATE_HASH_WAIT;
+            end
+            STATE_HASH_WAIT: begin
                 if (hash_ready_i == `TRUE) begin
                     mem_ce_o <= `TRUE;
                     mem_we_o <= `FALSE;
@@ -161,11 +164,13 @@ module matcher (
                             state <= STATE_LOAD_VAL;
                         end
                     end else begin
-                        // not match, return
-                        mem_ce_o <= `FALSE;
-                        ready_o <= `TRUE;
-                        is_match_o <= `FALSE;
-                        state <= STATE_FREE;
+                        // not match, wait & return
+                        if (mem_ready_i == `TRUE) begin
+                            mem_ce_o <= `FALSE;
+                            ready_o <= `TRUE;
+                            is_match_o <= `FALSE;
+                            state <= STATE_FREE;
+                        end
                     end
                 end
             end

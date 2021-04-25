@@ -121,6 +121,7 @@ module executor (
                     end
                     pkt_hdr_o <= pkt_hdr_i;
                     out_port_o <= out_port_i;
+                    ready_o <= `FALSE;
                     state <= STATE_EXEC;
                 end
             end

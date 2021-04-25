@@ -161,7 +161,7 @@ module tb (
         #45 rst = `FALSE;
     end
 
-    // add flow entry
+    // add flow entry in counter table
     initial begin
         ctrl_mem_ce_i <= `FALSE;
         ctrl_mem_we_i <= `FALSE;
@@ -189,57 +189,6 @@ module tb (
         wait(ctrl_mem_ready_o == `TRUE);
         #20
         ctrl_mem_ce_i <= `FALSE;
-    end
-
-    // switch input
-    initial begin
-        sw_wr_i = `FALSE;
-        #105
-        // packet 1
-        sw_wr_i = `TRUE;
-        sw_pkt_hdr_i = {
-            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
-            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-            // padding
-            8'h00, 8'h00, 8'h00, 8'h00
-        };
-
-        $write("Input Packet 1: ");
-        foreach (sw_pkt_hdr_i[i]) begin
-            $write("%h ", sw_pkt_hdr_i[i]);
-        end
-        $write("\n");
-
-        #20
-        sw_wr_i = `FALSE;
-        wait(sw_in_empty_o == `TRUE);
-        #20
-        // packet 2
-        sw_wr_i = `TRUE;
-        sw_pkt_hdr_i = {
-            8'h01, 8'h23, 8'h45, 8'h67, 8'h89, 8'hab, 8'hcd, 8'hef, 8'hde, 8'had, 8'hde, 8'had, 8'h08, 8'h00, 8'h45, 8'h00,
-            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-            // padding
-            8'h00, 8'h00, 8'h00, 8'h00
-        };
-
-        $write("Input Packet 2: ");
-        foreach (sw_pkt_hdr_i[i]) begin
-            $write("%h ", sw_pkt_hdr_i[i]);
-        end
-        $write("\n");
-
-        #20
-        sw_wr_i = `FALSE;
-    end
-
-    // switch output
-    initial begin
-        sw_rd_i = `FALSE;
     end
 
     // proc 0
@@ -381,10 +330,58 @@ module tb (
     // expected output pkt header
     reg [`BYTE_BUS] ans_pkt_hdr [0:`HDR_MAX_LEN - 1];
 
-    // check answer
+    // switch input
+    initial begin
+        sw_wr_i = `FALSE;
+        #105
+        // packet 1
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 1: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+        wait(sw_in_empty_o == `TRUE);
+        #20
+        // packet 2
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2d, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 2: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+    end
+
+    // switch output
     initial begin
         $display("===== BEGIN TEST =====");
+        sw_rd_i = `FALSE;
 
+        // wait packet 1
         wait(sw_out_empty_o == `FALSE);
         // print packet
         $write("Output Packet 1 via port %b: ", sw_out_port_o);
@@ -406,10 +403,10 @@ module tb (
         end else begin
             $display("Packet 1 FAILED!");
         end
-        #20
-        sw_rd_i = `TRUE;
-        #20
-        sw_rd_i = `FALSE;
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
+
+        // wait packet 2
         wait(sw_out_empty_o == `FALSE);
         // print packet
         $write("Output Packet 2 via port %b: ", sw_out_port_o);
@@ -417,6 +414,22 @@ module tb (
             $write("%h ", sw_pkt_hdr_o[i]);
         end
         $write("\n");
+        // check answer
+        ans_pkt_hdr = {
+            8'hab, 8'hcd, 8'hef, 8'h12, 8'h34, 8'h56, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2d, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+        if (sw_pkt_hdr_o == ans_pkt_hdr) begin
+            $display("Packet 2 PASSED!");
+        end else begin
+            $display("Packet 2 FAILED!");
+        end
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
 
         $display("===== END TEST =====");
     end

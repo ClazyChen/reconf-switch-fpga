@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1333334fs"></ZoomStartTime>
-      <ZoomEndTime time="2694790fs"></ZoomEndTime>
-      <Cursor1Time time="3000000fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="1252884fs"></ZoomEndTime>
+      <Cursor1Time time="2577430fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="251"></NameColumnWidth>
+      <NameColumnWidth column_width="246"></NameColumnWidth>
       <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="8" />
+   <WVObjectSize size="12" />
    <wvobject fp_name="group3819" type="group">
       <obj_property name="label">bram0</obj_property>
       <obj_property name="DisplayName">label</obj_property>
@@ -1043,9 +1043,9 @@
          <obj_property name="ElementShortName">sw_pkt_hdr_o[0:63][7:0]</obj_property>
          <obj_property name="ObjectShortName">sw_pkt_hdr_o[0:63][7:0]</obj_property>
       </wvobject>
-      <wvobject fp_name="/tb/switch_sopc0/sw_out_port_o" type="logic">
-         <obj_property name="ElementShortName">sw_out_port_o</obj_property>
-         <obj_property name="ObjectShortName">sw_out_port_o</obj_property>
+      <wvobject fp_name="/tb/switch_sopc0/sw_out_port_o" type="array">
+         <obj_property name="ElementShortName">sw_out_port_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">sw_out_port_o[3:0]</obj_property>
       </wvobject>
       <wvobject fp_name="/tb/switch_sopc0/sw_out_empty_o" type="logic">
          <obj_property name="ElementShortName">sw_out_empty_o</obj_property>
@@ -1598,6 +1598,710 @@
       <wvobject fp_name="/tb/switch_sopc0/latch2_empty_i" type="logic">
          <obj_property name="ElementShortName">latch2_empty_i</obj_property>
          <obj_property name="ObjectShortName">latch2_empty_i</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group839" type="group">
+      <obj_property name="label">proc0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/in_empty_i" type="logic">
+         <obj_property name="ElementShortName">in_empty_i</obj_property>
+         <obj_property name="ObjectShortName">in_empty_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/in_rd_o" type="logic">
+         <obj_property name="ElementShortName">in_rd_o</obj_property>
+         <obj_property name="ObjectShortName">in_rd_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/pkt_hdr_i" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/out_port_i" type="array">
+         <obj_property name="ElementShortName">out_port_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">out_port_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/out_empty_i" type="logic">
+         <obj_property name="ElementShortName">out_empty_i</obj_property>
+         <obj_property name="ObjectShortName">out_empty_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/out_wr_o" type="logic">
+         <obj_property name="ElementShortName">out_wr_o</obj_property>
+         <obj_property name="ObjectShortName">out_wr_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/pkt_hdr_o" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_o[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_o[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/out_port_o" type="array">
+         <obj_property name="ElementShortName">out_port_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">out_port_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_ce_o" type="logic">
+         <obj_property name="ElementShortName">mem_ce_o</obj_property>
+         <obj_property name="ObjectShortName">mem_ce_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_we_o" type="logic">
+         <obj_property name="ElementShortName">mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_addr_o" type="array">
+         <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_width_o" type="array">
+         <obj_property name="ElementShortName">mem_width_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_width_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_data_o" type="array">
+         <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_data_i" type="array">
+         <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mem_ready_i" type="logic">
+         <obj_property name="ElementShortName">mem_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mem_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">ps_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_hdr_id_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_hdr_id_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_hdr_len_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_hdr_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_hdr_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_next_tag_start_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_tag_start_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_tag_start_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_next_tag_len_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_tag_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_tag_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_mod_next_table_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_table_i[1:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_table_i[1:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">mt_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_match_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_hdr_id_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_hdr_id_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_match_key_off_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_key_off_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_key_off_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_match_key_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_key_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_key_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_match_val_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_val_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_val_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_logic_entry_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_entry_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_entry_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_logic_start_addr_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_start_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_start_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_logic_tag" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_mod_is_counter_table" type="logic">
+         <obj_property name="ElementShortName">mt_mod_is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">ex_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_mod_hit_action_addr_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_hit_action_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_hit_action_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_mod_miss_action_addr_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_miss_action_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_miss_action_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_mod_ops_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_ops_i[0:15][63:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_ops_i[0:15][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_start_o" type="logic">
+         <obj_property name="ElementShortName">ps_start_o</obj_property>
+         <obj_property name="ObjectShortName">ps_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_ready_i" type="logic">
+         <obj_property name="ElementShortName">ps_ready_i</obj_property>
+         <obj_property name="ObjectShortName">ps_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ps_hdrs_i" type="array">
+         <obj_property name="ElementShortName">ps_hdrs_i[2:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_hdrs_i[2:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_start_o" type="logic">
+         <obj_property name="ElementShortName">mt_start_o</obj_property>
+         <obj_property name="ObjectShortName">mt_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_ready_i" type="logic">
+         <obj_property name="ElementShortName">mt_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mt_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_is_match_i" type="logic">
+         <obj_property name="ElementShortName">mt_is_match_i</obj_property>
+         <obj_property name="ObjectShortName">mt_is_match_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/mt_flow_val_i" type="array">
+         <obj_property name="ElementShortName">mt_flow_val_i[15:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_flow_val_i[15:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_start_o" type="logic">
+         <obj_property name="ElementShortName">ex_start_o</obj_property>
+         <obj_property name="ObjectShortName">ex_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/ex_ready_i" type="logic">
+         <obj_property name="ElementShortName">ex_ready_i</obj_property>
+         <obj_property name="ObjectShortName">ex_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/state" type="array">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group886" type="group">
+      <obj_property name="label">proc1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/in_empty_i" type="logic">
+         <obj_property name="ElementShortName">in_empty_i</obj_property>
+         <obj_property name="ObjectShortName">in_empty_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/in_rd_o" type="logic">
+         <obj_property name="ElementShortName">in_rd_o</obj_property>
+         <obj_property name="ObjectShortName">in_rd_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/pkt_hdr_i" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/out_port_i" type="array">
+         <obj_property name="ElementShortName">out_port_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">out_port_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/out_empty_i" type="logic">
+         <obj_property name="ElementShortName">out_empty_i</obj_property>
+         <obj_property name="ObjectShortName">out_empty_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/out_wr_o" type="logic">
+         <obj_property name="ElementShortName">out_wr_o</obj_property>
+         <obj_property name="ObjectShortName">out_wr_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/pkt_hdr_o" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_o[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_o[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/out_port_o" type="array">
+         <obj_property name="ElementShortName">out_port_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">out_port_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_ce_o" type="logic">
+         <obj_property name="ElementShortName">mem_ce_o</obj_property>
+         <obj_property name="ObjectShortName">mem_ce_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_we_o" type="logic">
+         <obj_property name="ElementShortName">mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_addr_o" type="array">
+         <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_width_o" type="array">
+         <obj_property name="ElementShortName">mem_width_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_width_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_data_o" type="array">
+         <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_data_i" type="array">
+         <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mem_ready_i" type="logic">
+         <obj_property name="ElementShortName">mem_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mem_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">ps_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_hdr_id_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_hdr_id_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_hdr_len_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_hdr_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_hdr_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_next_tag_start_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_tag_start_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_tag_start_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_next_tag_len_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_tag_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_tag_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_mod_next_table_i" type="array">
+         <obj_property name="ElementShortName">ps_mod_next_table_i[1:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_mod_next_table_i[1:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">mt_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_match_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_hdr_id_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_hdr_id_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_match_key_off_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_key_off_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_key_off_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_match_key_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_key_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_key_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_match_val_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_match_val_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_match_val_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_logic_entry_len_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_entry_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_entry_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_logic_start_addr_i" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_start_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_start_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_logic_tag" type="array">
+         <obj_property name="ElementShortName">mt_mod_logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_mod_is_counter_table" type="logic">
+         <obj_property name="ElementShortName">mt_mod_is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">mt_mod_is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_mod_start_i" type="logic">
+         <obj_property name="ElementShortName">ex_mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_mod_hit_action_addr_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_hit_action_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_hit_action_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_mod_miss_action_addr_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_miss_action_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_miss_action_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_mod_ops_i" type="array">
+         <obj_property name="ElementShortName">ex_mod_ops_i[0:15][63:0]</obj_property>
+         <obj_property name="ObjectShortName">ex_mod_ops_i[0:15][63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_start_o" type="logic">
+         <obj_property name="ElementShortName">ps_start_o</obj_property>
+         <obj_property name="ObjectShortName">ps_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_ready_i" type="logic">
+         <obj_property name="ElementShortName">ps_ready_i</obj_property>
+         <obj_property name="ObjectShortName">ps_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ps_hdrs_i" type="array">
+         <obj_property name="ElementShortName">ps_hdrs_i[2:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">ps_hdrs_i[2:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_start_o" type="logic">
+         <obj_property name="ElementShortName">mt_start_o</obj_property>
+         <obj_property name="ObjectShortName">mt_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_ready_i" type="logic">
+         <obj_property name="ElementShortName">mt_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mt_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_is_match_i" type="logic">
+         <obj_property name="ElementShortName">mt_is_match_i</obj_property>
+         <obj_property name="ObjectShortName">mt_is_match_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/mt_flow_val_i" type="array">
+         <obj_property name="ElementShortName">mt_flow_val_i[15:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">mt_flow_val_i[15:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_start_o" type="logic">
+         <obj_property name="ElementShortName">ex_start_o</obj_property>
+         <obj_property name="ObjectShortName">ex_start_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/ex_ready_i" type="logic">
+         <obj_property name="ElementShortName">ex_ready_i</obj_property>
+         <obj_property name="ObjectShortName">ex_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/state" type="array">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group969" type="group">
+      <obj_property name="label">mt0</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/start_i" type="logic">
+         <obj_property name="ElementShortName">start_i</obj_property>
+         <obj_property name="ObjectShortName">start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/pkt_hdr_i" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/parsed_hdrs_i" type="array">
+         <obj_property name="ElementShortName">parsed_hdrs_i[2:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">parsed_hdrs_i[2:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_ce_o" type="logic">
+         <obj_property name="ElementShortName">mem_ce_o</obj_property>
+         <obj_property name="ObjectShortName">mem_ce_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_we_o" type="logic">
+         <obj_property name="ElementShortName">mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_addr_o" type="array">
+         <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_width_o" type="array">
+         <obj_property name="ElementShortName">mem_width_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_width_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_data_o" type="array">
+         <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_data_i" type="array">
+         <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_ready_i" type="logic">
+         <obj_property name="ElementShortName">mem_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mem_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/ready_o" type="logic">
+         <obj_property name="ElementShortName">ready_o</obj_property>
+         <obj_property name="ObjectShortName">ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/is_match_o" type="logic">
+         <obj_property name="ElementShortName">is_match_o</obj_property>
+         <obj_property name="ObjectShortName">is_match_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/flow_val_o" type="array">
+         <obj_property name="ElementShortName">flow_val_o[15:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">flow_val_o[15:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_start_i" type="logic">
+         <obj_property name="ElementShortName">mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_match_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">mod_match_hdr_id_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_hdr_id_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_match_key_off_i" type="array">
+         <obj_property name="ElementShortName">mod_match_key_off_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_key_off_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_match_key_len_i" type="array">
+         <obj_property name="ElementShortName">mod_match_key_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_key_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_match_val_len_i" type="array">
+         <obj_property name="ElementShortName">mod_match_val_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_val_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_logic_entry_len_i" type="array">
+         <obj_property name="ElementShortName">mod_logic_entry_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_entry_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_logic_start_addr_i" type="array">
+         <obj_property name="ElementShortName">mod_logic_start_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_start_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_logic_tag" type="array">
+         <obj_property name="ElementShortName">mod_logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mod_is_counter_table" type="logic">
+         <obj_property name="ElementShortName">mod_is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">mod_is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/match_hdr_id" type="array">
+         <obj_property name="ElementShortName">match_hdr_id[3:0]</obj_property>
+         <obj_property name="ObjectShortName">match_hdr_id[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/match_key_off" type="array">
+         <obj_property name="ElementShortName">match_key_off[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_key_off[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/match_key_len" type="array">
+         <obj_property name="ElementShortName">match_key_len[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_key_len[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/match_val_len" type="array">
+         <obj_property name="ElementShortName">match_val_len[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_val_len[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/logic_entry_len" type="array">
+         <obj_property name="ElementShortName">logic_entry_len[31:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_entry_len[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/logic_start_addr" type="array">
+         <obj_property name="ElementShortName">logic_start_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_start_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/logic_tag" type="array">
+         <obj_property name="ElementShortName">logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/is_counter_table" type="logic">
+         <obj_property name="ElementShortName">is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/mem_cnt" type="array">
+         <obj_property name="ElementShortName">mem_cnt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_cnt[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/key_data" type="array">
+         <obj_property name="ElementShortName">key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/entry_key_data" type="array">
+         <obj_property name="ElementShortName">entry_key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">entry_key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/hash_start_i" type="logic">
+         <obj_property name="ElementShortName">hash_start_i</obj_property>
+         <obj_property name="ObjectShortName">hash_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/hash_ready_i" type="logic">
+         <obj_property name="ElementShortName">hash_ready_i</obj_property>
+         <obj_property name="ObjectShortName">hash_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/hash_val_i" type="array">
+         <obj_property name="ElementShortName">hash_val_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_val_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/hash_key_o" type="array">
+         <obj_property name="ElementShortName">hash_key_o[63:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_key_o[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi0/proc0/matcher0/state" type="array">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
+      </wvobject>
+   </wvobject>
+   <wvobject fp_name="group927" type="group">
+      <obj_property name="label">mt1</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/clk" type="logic">
+         <obj_property name="ElementShortName">clk</obj_property>
+         <obj_property name="ObjectShortName">clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/rst" type="logic">
+         <obj_property name="ElementShortName">rst</obj_property>
+         <obj_property name="ObjectShortName">rst</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/start_i" type="logic">
+         <obj_property name="ElementShortName">start_i</obj_property>
+         <obj_property name="ObjectShortName">start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/pkt_hdr_i" type="array">
+         <obj_property name="ElementShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+         <obj_property name="ObjectShortName">pkt_hdr_i[0:63][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/parsed_hdrs_i" type="array">
+         <obj_property name="ElementShortName">parsed_hdrs_i[2:0][31:0]</obj_property>
+         <obj_property name="ObjectShortName">parsed_hdrs_i[2:0][31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_ce_o" type="logic">
+         <obj_property name="ElementShortName">mem_ce_o</obj_property>
+         <obj_property name="ObjectShortName">mem_ce_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_we_o" type="logic">
+         <obj_property name="ElementShortName">mem_we_o</obj_property>
+         <obj_property name="ObjectShortName">mem_we_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_addr_o" type="array">
+         <obj_property name="ElementShortName">mem_addr_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_addr_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_width_o" type="array">
+         <obj_property name="ElementShortName">mem_width_o[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_width_o[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_data_o" type="array">
+         <obj_property name="ElementShortName">mem_data_o[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_o[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_data_i" type="array">
+         <obj_property name="ElementShortName">mem_data_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_data_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_ready_i" type="logic">
+         <obj_property name="ElementShortName">mem_ready_i</obj_property>
+         <obj_property name="ObjectShortName">mem_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/ready_o" type="logic">
+         <obj_property name="ElementShortName">ready_o</obj_property>
+         <obj_property name="ObjectShortName">ready_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/is_match_o" type="logic">
+         <obj_property name="ElementShortName">is_match_o</obj_property>
+         <obj_property name="ObjectShortName">is_match_o</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/flow_val_o" type="array">
+         <obj_property name="ElementShortName">flow_val_o[15:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">flow_val_o[15:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_start_i" type="logic">
+         <obj_property name="ElementShortName">mod_start_i</obj_property>
+         <obj_property name="ObjectShortName">mod_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_match_hdr_id_i" type="array">
+         <obj_property name="ElementShortName">mod_match_hdr_id_i[3:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_hdr_id_i[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_match_key_off_i" type="array">
+         <obj_property name="ElementShortName">mod_match_key_off_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_key_off_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_match_key_len_i" type="array">
+         <obj_property name="ElementShortName">mod_match_key_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_key_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_match_val_len_i" type="array">
+         <obj_property name="ElementShortName">mod_match_val_len_i[5:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_match_val_len_i[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_logic_entry_len_i" type="array">
+         <obj_property name="ElementShortName">mod_logic_entry_len_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_entry_len_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_logic_start_addr_i" type="array">
+         <obj_property name="ElementShortName">mod_logic_start_addr_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_start_addr_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_logic_tag" type="array">
+         <obj_property name="ElementShortName">mod_logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">mod_logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mod_is_counter_table" type="logic">
+         <obj_property name="ElementShortName">mod_is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">mod_is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/match_hdr_id" type="array">
+         <obj_property name="ElementShortName">match_hdr_id[3:0]</obj_property>
+         <obj_property name="ObjectShortName">match_hdr_id[3:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/match_key_off" type="array">
+         <obj_property name="ElementShortName">match_key_off[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_key_off[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/match_key_len" type="array">
+         <obj_property name="ElementShortName">match_key_len[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_key_len[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/match_val_len" type="array">
+         <obj_property name="ElementShortName">match_val_len[5:0]</obj_property>
+         <obj_property name="ObjectShortName">match_val_len[5:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/logic_entry_len" type="array">
+         <obj_property name="ElementShortName">logic_entry_len[31:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_entry_len[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/logic_start_addr" type="array">
+         <obj_property name="ElementShortName">logic_start_addr[31:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_start_addr[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/logic_tag" type="array">
+         <obj_property name="ElementShortName">logic_tag[7:0]</obj_property>
+         <obj_property name="ObjectShortName">logic_tag[7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/is_counter_table" type="logic">
+         <obj_property name="ElementShortName">is_counter_table</obj_property>
+         <obj_property name="ObjectShortName">is_counter_table</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/mem_cnt" type="array">
+         <obj_property name="ElementShortName">mem_cnt[31:0]</obj_property>
+         <obj_property name="ObjectShortName">mem_cnt[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/key_data" type="array">
+         <obj_property name="ElementShortName">key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/entry_key_data" type="array">
+         <obj_property name="ElementShortName">entry_key_data[7:0][7:0]</obj_property>
+         <obj_property name="ObjectShortName">entry_key_data[7:0][7:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/hash_start_i" type="logic">
+         <obj_property name="ElementShortName">hash_start_i</obj_property>
+         <obj_property name="ObjectShortName">hash_start_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/hash_ready_i" type="logic">
+         <obj_property name="ElementShortName">hash_ready_i</obj_property>
+         <obj_property name="ObjectShortName">hash_ready_i</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/hash_val_i" type="array">
+         <obj_property name="ElementShortName">hash_val_i[31:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_val_i[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/hash_key_o" type="array">
+         <obj_property name="ElementShortName">hash_key_o[63:0]</obj_property>
+         <obj_property name="ObjectShortName">hash_key_o[63:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/tb/switch_sopc0/proc_axi1/proc0/matcher0/state" type="array">
+         <obj_property name="ElementShortName">state[31:0]</obj_property>
+         <obj_property name="ObjectShortName">state[31:0]</obj_property>
       </wvobject>
    </wvobject>
 </wave_config>
