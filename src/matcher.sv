@@ -26,7 +26,8 @@ module matcher (
     input wire [5:0] mod_match_val_len_i,
     input wire [`DATA_BUS] mod_logic_entry_len_i,
     input wire [`DATA_BUS] mod_logic_start_addr_i,
-    input wire [`BYTE_BUS] mod_logic_tag
+    input wire [`BYTE_BUS] mod_logic_tag,
+    input wire mod_is_counter_table
 );
 
     // table
@@ -37,6 +38,7 @@ module matcher (
     reg [`DATA_BUS] logic_entry_len;
     reg [`DATA_BUS] logic_start_addr;
     reg [`BYTE_BUS] logic_tag;
+    reg is_counter_table;
 
     // load
     int mem_cnt;
@@ -58,17 +60,17 @@ module matcher (
     };
 
     enum {
-        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL
+        STATE_FREE, STATE_HASH, STATE_LOAD_KEY, STATE_LOAD_VAL, STATE_STORE_VAL
     } state;
 
-    assign mem_we_o = `FALSE;
     assign mem_width_o = 4;
-    assign mem_data_o = `ZERO_WORD;
 
     always @(posedge clk) begin
         if (rst == `TRUE) begin
             // mem
             mem_ce_o <= `FALSE;
+            mem_we_o <= `FALSE;
+            mem_data_o <= `ZERO_WORD;
             // output
             ready_o <= `FALSE;
             is_match_o <= `FALSE;
@@ -83,6 +85,7 @@ module matcher (
             logic_entry_len <= 0;
             logic_start_addr <= 0;
             logic_tag <= 0;
+            is_counter_table <= `FALSE;
             // reg
             hash_start_i <= `FALSE;
             mem_addr_o <= `ZERO_ADDR;
@@ -105,6 +108,7 @@ module matcher (
                     logic_entry_len <= mod_logic_entry_len_i;
                     logic_start_addr <= mod_logic_start_addr_i;
                     logic_tag <= mod_logic_tag;
+                    is_counter_table <= mod_is_counter_table;
                 end else if (start_i == `TRUE) begin
                     // mem
                     mem_ce_o <= `FALSE;
@@ -131,6 +135,7 @@ module matcher (
                 hash_start_i <= `FALSE;
                 if (hash_ready_i == `TRUE) begin
                     mem_ce_o <= `TRUE;
+                    mem_we_o <= `FALSE;
                     mem_addr_o <= logic_start_addr + hash_val_i * logic_entry_len;
                     mem_cnt <= 0;
                     state <= STATE_LOAD_KEY;
@@ -175,6 +180,23 @@ module matcher (
                     end
                 end else begin
                     // load done
+                    if (is_counter_table == `TRUE) begin
+                        $display("Counter: %d", flow_val_o[0] + 1);
+                        mem_we_o <= `TRUE;
+                        mem_addr_o <= mem_addr_o - match_val_len;
+                        mem_data_o <= {flow_val_o[0] + 1, flow_val_o[1],
+                                        flow_val_o[2], flow_val_o[3]};
+                        state <= STATE_STORE_VAL;
+                    end else begin
+                        mem_ce_o <= `FALSE;
+                        ready_o <= `TRUE;
+                        is_match_o <= `TRUE;
+                        state <= STATE_FREE;
+                    end
+                end
+            end
+            STATE_STORE_VAL: begin
+                if (mem_ready_i == `TRUE) begin
                     mem_ce_o <= `FALSE;
                     ready_o <= `TRUE;
                     is_match_o <= `TRUE;

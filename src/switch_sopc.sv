@@ -20,10 +20,7 @@ module switch_sopc (
     output reg [`DATA_BUS] ctrl_mem_data_o,
     output reg ctrl_mem_ready_o,
 
-    // proc 0 mod
-    input wire proc0_mod_start_i,
-    input wire [`ADDR_BUS] proc0_mod_hit_action_addr_i,
-    input wire [`ADDR_BUS] proc0_mod_miss_action_addr_i,
+    // proc 0
     // parser mod
     input wire ps0_mod_start_i,
     input wire [`DATA_BUS] ps0_mod_hdr_id_i,
@@ -40,14 +37,14 @@ module switch_sopc (
     input wire [`DATA_BUS] mt0_mod_logic_entry_len_i,
     input wire [`DATA_BUS] mt0_mod_logic_start_addr_i,
     input wire [`BYTE_BUS] mt0_mod_logic_tag,
+    input wire mt0_mod_is_counter_table,
     // executor mod
     input wire ex0_mod_start_i,
+    input wire [`ADDR_BUS] ex0_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] ex0_mod_miss_action_addr_i,
     input wire [`QUAD_BUS] ex0_mod_ops_i [0:`MAX_OP_NUM - 1],
 
-    // proc 0 mod
-    input wire proc1_mod_start_i,
-    input wire [`ADDR_BUS] proc1_mod_hit_action_addr_i,
-    input wire [`ADDR_BUS] proc1_mod_miss_action_addr_i,
+    // proc 1
     // parser mod
     input wire ps1_mod_start_i,
     input wire [`DATA_BUS] ps1_mod_hdr_id_i,
@@ -64,8 +61,11 @@ module switch_sopc (
     input wire [`DATA_BUS] mt1_mod_logic_entry_len_i,
     input wire [`DATA_BUS] mt1_mod_logic_start_addr_i,
     input wire [`BYTE_BUS] mt1_mod_logic_tag,
+    input wire mt1_mod_is_counter_table,
     // executor mod
     input wire ex1_mod_start_i,
+    input wire [`ADDR_BUS] ex1_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] ex1_mod_miss_action_addr_i,
     input wire [`QUAD_BUS] ex1_mod_ops_i [0:`MAX_OP_NUM - 1]
 );
 
@@ -334,10 +334,6 @@ module switch_sopc (
         .out_empty_i(proc0_out_empty_i),
         .out_wr_o(proc0_out_wr_o),
         .pkt_hdr_o(proc0_pkt_hdr_o),
-        // proc
-        .proc_mod_start_i(proc0_mod_start_i),
-        .proc_mod_hit_action_addr_i(proc0_mod_hit_action_addr_i),
-        .proc_mod_miss_action_addr_i(proc0_mod_miss_action_addr_i),
         // parser
         .ps_mod_start_i(ps0_mod_start_i),
         .ps_mod_hdr_id_i(ps0_mod_hdr_id_i),
@@ -354,8 +350,11 @@ module switch_sopc (
         .mt_logic_entry_len_i(mt0_mod_logic_entry_len_i),
         .mt_logic_start_addr_i(mt0_mod_logic_start_addr_i),
         .mt_mod_logic_tag(mt0_mod_logic_tag),
+        .mt_mod_is_counter_table(mt0_mod_is_counter_table),
         // executor
         .ex_mod_start_i(ex0_mod_start_i),
+        .ex_mod_hit_action_addr_i(ex0_mod_hit_action_addr_i),
+        .ex_mod_miss_action_addr_i(ex0_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex0_mod_ops_i),
         // axi
         .axi_awid(m_axi_awid[0]),
@@ -410,10 +409,6 @@ module switch_sopc (
         .out_empty_i(proc1_out_empty_i),
         .out_wr_o(proc1_out_wr_o),
         .pkt_hdr_o(proc1_pkt_hdr_o),
-        // proc
-        .proc_mod_start_i(proc1_mod_start_i),
-        .proc_mod_hit_action_addr_i(proc1_mod_hit_action_addr_i),
-        .proc_mod_miss_action_addr_i(proc1_mod_miss_action_addr_i),
         // parser
         .ps_mod_start_i(ps1_mod_start_i),
         .ps_mod_hdr_id_i(ps1_mod_hdr_id_i),
@@ -430,8 +425,11 @@ module switch_sopc (
         .mt_logic_entry_len_i(mt1_mod_logic_entry_len_i),
         .mt_logic_start_addr_i(mt1_mod_logic_start_addr_i),
         .mt_mod_logic_tag(mt1_mod_logic_tag),
+        .mt_mod_is_counter_table(mt1_mod_is_counter_table),
         // executor
         .ex_mod_start_i(ex1_mod_start_i),
+        .ex_mod_hit_action_addr_i(ex1_mod_hit_action_addr_i),
+        .ex_mod_miss_action_addr_i(ex1_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex1_mod_ops_i),
         // axi
         .axi_awid(m_axi_awid[1]),
@@ -473,7 +471,7 @@ module switch_sopc (
         .axi_rready(m_axi_rready[1])
     );
 
-    // for controller
+    // dataplane flow table api
     mem_axi #(
         .AXI_ID(2)
     ) mem_axi_ctrl (

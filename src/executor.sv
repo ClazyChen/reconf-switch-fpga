@@ -6,7 +6,7 @@ module executor (
     // input
     input wire start_i,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
-    input wire [`ADDR_BUS] op_start_cnt_i,
+    input wire is_match_i,
     input wire [`BYTE_BUS] args_i [`MAX_VAL_LEN - 1:0],
     input wire [`DATA_BUS] parsed_hdrs_i [`NUM_HEADERS - 1:0],
     // output
@@ -14,10 +14,14 @@ module executor (
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // mod
     input wire mod_start_i,
+    input wire [`ADDR_BUS] mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] mod_miss_action_addr_i,
     input wire [`QUAD_BUS] mod_ops_i [0:`MAX_OP_NUM - 1]
 );
 
     // exec config
+    reg [`ADDR_BUS] hit_action_addr;
+    reg [`ADDR_BUS] miss_action_addr;
     reg [`QUAD_BUS] ops [0:`MAX_OP_NUM - 1];
 
     // checksum module
@@ -101,10 +105,17 @@ module executor (
             case (state)
             STATE_FREE: begin
                 if (mod_start_i == `TRUE) begin
+                    hit_action_addr <= mod_hit_action_addr_i;
+                    miss_action_addr <= mod_miss_action_addr_i;
                     ops <= mod_ops_i;
                 end else if (start_i == `TRUE) begin
-                    inst <= ops[op_start_cnt_i];
-                    inst_cnt <= op_start_cnt_i + 1;
+                    if (is_match_i == `TRUE) begin
+                        inst <= ops[hit_action_addr];
+                        inst_cnt <= hit_action_addr + 1;
+                    end else begin
+                        inst <= ops[miss_action_addr];
+                        inst_cnt <= miss_action_addr + 1;
+                    end
                     pkt_hdr_o <= pkt_hdr_i;
                     state <= STATE_EXEC;
                 end

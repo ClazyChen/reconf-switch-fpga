@@ -13,10 +13,6 @@ module proc_axi #(
     input wire out_empty_i,
     output reg out_wr_o,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],
-    // proc mod
-    input wire proc_mod_start_i,
-    input wire [`ADDR_BUS] proc_mod_hit_action_addr_i,
-    input wire [`ADDR_BUS] proc_mod_miss_action_addr_i,
     // parser mod
     input wire ps_mod_start_i,
     input wire [`DATA_BUS] ps_mod_hdr_id_i,
@@ -33,8 +29,11 @@ module proc_axi #(
     input wire [`DATA_BUS] mt_logic_entry_len_i,
     input wire [`DATA_BUS] mt_logic_start_addr_i,
     input wire [`BYTE_BUS] mt_mod_logic_tag,
+    input wire mt_mod_is_counter_table,
     // executor mod
     input wire ex_mod_start_i,
+    input wire [`ADDR_BUS] ex_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] ex_mod_miss_action_addr_i,
     input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1],
     // axi
     output reg [1 : 0] axi_awid,
@@ -104,10 +103,6 @@ module proc_axi #(
         .mem_data_o(mem_data_o),
         .mem_data_i(mem_data_i),
         .mem_ready_i(mem_ready_i),
-        // proc
-        .proc_mod_start_i(proc_mod_start_i),
-        .proc_mod_hit_action_addr_i(proc_mod_hit_action_addr_i),
-        .proc_mod_miss_action_addr_i(proc_mod_miss_action_addr_i),
         // parser
         .ps_mod_start_i(ps_mod_start_i),
         .ps_mod_hdr_id_i(ps_mod_hdr_id_i),
@@ -124,8 +119,11 @@ module proc_axi #(
         .mt_mod_logic_entry_len_i(mt_logic_entry_len_i),
         .mt_mod_logic_start_addr_i(mt_logic_start_addr_i),
         .mt_mod_logic_tag(mt_mod_logic_tag),
+        .mt_mod_is_counter_table(mt_mod_is_counter_table),
         // executor
         .ex_mod_start_i(ex_mod_start_i),
+        .ex_mod_hit_action_addr_i(ex_mod_hit_action_addr_i),
+        .ex_mod_miss_action_addr_i(ex_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex_mod_ops_i)
     );
 

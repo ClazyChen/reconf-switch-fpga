@@ -11,26 +11,14 @@ module tb (
     // switch input
     reg sw_wr_i;
     reg [`BYTE_BUS] sw_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
-    assign sw_pkt_hdr_i = {
-        8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
-        8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-        8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-        8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-        // padding
-        8'h00, 8'h00, 8'h00, 8'h00
-    };
     wire sw_in_empty_o;
 
     // switch output
     reg sw_rd_i;
-    assign sw_rd_i = `FALSE;
     wire [`BYTE_BUS] sw_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
     wire sw_out_empty_o;
 
-    // proc 0 mod
-    reg proc0_mod_start_i;
-    reg [`ADDR_BUS] proc0_mod_hit_action_addr_i;
-    reg [`ADDR_BUS] proc0_mod_miss_action_addr_i;
+    // proc 0
     // parser mod
     reg ps0_mod_start_i;
     reg [`DATA_BUS] ps0_mod_hdr_id_i;
@@ -47,17 +35,14 @@ module tb (
     reg [`DATA_BUS] mt0_mod_logic_entry_len_i;
     reg [`DATA_BUS] mt0_mod_logic_start_addr_i;
     reg [`BYTE_BUS] mt0_mod_logic_tag;
+    reg mt0_mod_is_counter_table;
     // executor mod
     reg ex0_mod_start_i;
+    reg [`ADDR_BUS] ex0_mod_hit_action_addr_i;
+    reg [`ADDR_BUS] ex0_mod_miss_action_addr_i;
     reg [`QUAD_BUS] ex0_mod_ops_i [0:`MAX_OP_NUM - 1];
 
-    // proc 1 mod
-    reg proc1_mod_start_i;
-    reg [`ADDR_BUS] proc1_mod_hit_action_addr_i;
-    reg [`ADDR_BUS] proc1_mod_miss_action_addr_i;
-    assign proc1_mod_start_i = proc0_mod_start_i;
-    assign proc1_mod_hit_action_addr_i = proc0_mod_hit_action_addr_i;
-    assign proc1_mod_miss_action_addr_i = proc0_mod_miss_action_addr_i;
+    // proc 1
     // parser mod
     reg ps1_mod_start_i;
     reg [`DATA_BUS] ps1_mod_hdr_id_i;
@@ -80,10 +65,15 @@ module tb (
     reg [`DATA_BUS] mt1_mod_logic_entry_len_i;
     reg [`DATA_BUS] mt1_mod_logic_start_addr_i;
     reg [`BYTE_BUS] mt1_mod_logic_tag;
+    reg mt1_mod_is_counter_table;
     // executor mod
     reg ex1_mod_start_i;
+    reg [`ADDR_BUS] ex1_mod_hit_action_addr_i;
+    reg [`ADDR_BUS] ex1_mod_miss_action_addr_i;
     reg [`QUAD_BUS] ex1_mod_ops_i [0:`MAX_OP_NUM - 1];
     assign ex1_mod_start_i = ex0_mod_start_i;
+    assign ex1_mod_hit_action_addr_i = ex0_mod_hit_action_addr_i;
+    assign ex1_mod_miss_action_addr_i = ex0_mod_miss_action_addr_i;
     assign ex1_mod_ops_i = ex0_mod_ops_i;
 
     // controller
@@ -112,10 +102,7 @@ module tb (
         .ctrl_mem_data_i(ctrl_mem_data_i),
         .ctrl_mem_data_o(ctrl_mem_data_o),
         .ctrl_mem_ready_o(ctrl_mem_ready_o),
-        // proc 0 mod
-        .proc0_mod_start_i(proc0_mod_start_i),
-        .proc0_mod_hit_action_addr_i(proc0_mod_hit_action_addr_i),
-        .proc0_mod_miss_action_addr_i(proc0_mod_miss_action_addr_i),
+        // proc 0
         // parser mod
         .ps0_mod_start_i(ps0_mod_start_i),
         .ps0_mod_hdr_id_i(ps0_mod_hdr_id_i),
@@ -132,14 +119,14 @@ module tb (
         .mt0_mod_logic_entry_len_i(mt0_mod_logic_entry_len_i),
         .mt0_mod_logic_start_addr_i(mt0_mod_logic_start_addr_i),
         .mt0_mod_logic_tag(mt0_mod_logic_tag),
+        .mt0_mod_is_counter_table(mt0_mod_is_counter_table),
         // executor mod
         .ex0_mod_start_i(ex0_mod_start_i),
+        .ex0_mod_hit_action_addr_i(ex0_mod_hit_action_addr_i),
+        .ex0_mod_miss_action_addr_i(ex0_mod_miss_action_addr_i),
         .ex0_mod_ops_i(ex0_mod_ops_i),
 
-        // proc 0 mod
-        .proc1_mod_start_i(proc1_mod_start_i),
-        .proc1_mod_hit_action_addr_i(proc1_mod_hit_action_addr_i),
-        .proc1_mod_miss_action_addr_i(proc1_mod_miss_action_addr_i),
+        // proc 1
         // parser mod
         .ps1_mod_start_i(ps1_mod_start_i),
         .ps1_mod_hdr_id_i(ps1_mod_hdr_id_i),
@@ -156,8 +143,11 @@ module tb (
         .mt1_mod_logic_entry_len_i(mt1_mod_logic_entry_len_i),
         .mt1_mod_logic_start_addr_i(mt1_mod_logic_start_addr_i),
         .mt1_mod_logic_tag(mt1_mod_logic_tag),
+        .mt1_mod_is_counter_table(mt1_mod_is_counter_table),
         // executor mod
         .ex1_mod_start_i(ex1_mod_start_i),
+        .ex1_mod_hit_action_addr_i(ex1_mod_hit_action_addr_i),
+        .ex1_mod_miss_action_addr_i(ex1_mod_miss_action_addr_i),
         .ex1_mod_ops_i(ex1_mod_ops_i)
     );
 
@@ -205,22 +195,26 @@ module tb (
     // switch input
     initial begin
         sw_wr_i = `FALSE;
-        #65 sw_wr_i = `TRUE;
-        #20 sw_wr_i = `FALSE;
+        #65
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+        #20
+        sw_wr_i = `FALSE;
     end
 
-    // proc mod
+    // switch output
     initial begin
-        proc0_mod_start_i <= `FALSE;
-        proc0_mod_hit_action_addr_i <= 0;
-        proc0_mod_miss_action_addr_i <= 0;
-        #65
-        proc0_mod_start_i <= `TRUE;
-        proc0_mod_hit_action_addr_i <= 1;
-        proc0_mod_miss_action_addr_i <= 0;
-        #20
-        proc0_mod_start_i <= `FALSE;
+        sw_rd_i = `FALSE;
     end
+
+    // proc 0
     // parser mod
     initial begin
         ps0_mod_start_i <= `FALSE;
@@ -264,6 +258,7 @@ module tb (
         mt0_mod_logic_entry_len_i <= 0;
         mt0_mod_logic_start_addr_i <= 0;
         mt0_mod_logic_tag <= 0;
+        mt0_mod_is_counter_table <= `FALSE;
         #65
         mt0_mod_start_i <= `TRUE;
         mt0_mod_match_hdr_id_i <= 1;
@@ -273,17 +268,22 @@ module tb (
         mt0_mod_logic_entry_len_i <= 16;
         mt0_mod_logic_start_addr_i <= 0;
         mt0_mod_logic_tag <= 0;
+        mt0_mod_is_counter_table <= `FALSE;
         #20
         mt0_mod_start_i <= `FALSE;
     end
     // executor mod
     initial begin
         ex0_mod_start_i <= `FALSE;
+        ex0_mod_hit_action_addr_i <= 0;
+        ex0_mod_miss_action_addr_i <= 0;
         for (int i = 0; i < `MAX_OP_NUM; i++) begin
             ex0_mod_ops_i[i] = `ZERO_QUAD;
         end
         #65
         ex0_mod_start_i <= `TRUE;
+        ex0_mod_hit_action_addr_i <= 1;
+        ex0_mod_miss_action_addr_i <= 0;
         ex0_mod_ops_i[0:5] <= {
             `ZERO_QUAD,
             'h0c000000_01860006,    // copy dst mac to src mac
@@ -307,6 +307,7 @@ module tb (
         mt1_mod_logic_entry_len_i <= 0;
         mt1_mod_logic_start_addr_i <= 0;
         mt1_mod_logic_tag <= 0;
+        mt1_mod_is_counter_table <= `FALSE;
         #65
         mt1_mod_start_i <= `TRUE;
         mt1_mod_match_hdr_id_i <= 1;
@@ -316,6 +317,7 @@ module tb (
         mt1_mod_logic_entry_len_i <= 16;
         mt1_mod_logic_start_addr_i <= 32'h00100000;
         mt1_mod_logic_tag <= 1;
+        mt1_mod_is_counter_table <= `TRUE;
         #20
         mt1_mod_start_i <= `FALSE;
     end

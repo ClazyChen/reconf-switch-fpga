@@ -19,10 +19,6 @@ module proc (
     output reg [`DATA_BUS] mem_data_o,
     input wire [`DATA_BUS] mem_data_i,
     input wire mem_ready_i,
-    // proc mod
-    input wire proc_mod_start_i,
-    input wire [`ADDR_BUS] proc_mod_hit_action_addr_i,
-    input wire [`ADDR_BUS] proc_mod_miss_action_addr_i,
     // parser mod
     input wire ps_mod_start_i,
     input wire [`DATA_BUS] ps_mod_hdr_id_i,
@@ -39,8 +35,11 @@ module proc (
     input wire [`DATA_BUS] mt_mod_logic_entry_len_i,
     input wire [`DATA_BUS] mt_mod_logic_start_addr_i,
     input wire [`BYTE_BUS] mt_mod_logic_tag,
+    input wire mt_mod_is_counter_table,
     // executor mod
     input wire ex_mod_start_i,
+    input wire [`ADDR_BUS] ex_mod_hit_action_addr_i,
+    input wire [`ADDR_BUS] ex_mod_miss_action_addr_i,
     input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1]
 );
 
@@ -60,10 +59,6 @@ module proc (
     reg [`DATA_BUS] ex_op_start_cnt_o;
     wire ex_ready_i;
 
-    // proc config
-    reg [`ADDR_BUS] hit_action_addr;
-    reg [`ADDR_BUS] miss_action_addr;
-
     enum {
         STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_LATCH
     } state;
@@ -80,18 +75,12 @@ module proc (
             // executor
             ex_start_o <= `FALSE;
             ex_op_start_cnt_o <= 0;
-            // proc
-            hit_action_addr <= 0;
-            miss_action_addr <= 0;
             // reg
             state <= STATE_FREE;
         end else begin
             case (state)
             STATE_FREE: begin
-                if (proc_mod_start_i == `TRUE) begin
-                    hit_action_addr <= proc_mod_hit_action_addr_i;
-                    miss_action_addr <= proc_mod_miss_action_addr_i;
-                end else if (in_empty_i == `FALSE) begin
+                if (in_empty_i == `FALSE) begin
                     // parser
                     ps_start_o <= `TRUE;
                     // matcher
@@ -114,11 +103,6 @@ module proc (
                 mt_start_o <= `FALSE;
                 if (mt_ready_i == `TRUE) begin
                     ex_start_o <= `TRUE;
-                    if (mt_is_match_i == `TRUE) begin
-                        ex_op_start_cnt_o <= hit_action_addr;
-                    end else begin
-                        ex_op_start_cnt_o <= miss_action_addr;
-                    end
                     state <= STATE_EXEC;
                 end
             end
@@ -187,7 +171,8 @@ module proc (
         .mod_match_val_len_i(mt_mod_match_val_len_i),
         .mod_logic_entry_len_i(mt_mod_logic_entry_len_i),
         .mod_logic_start_addr_i(mt_mod_logic_start_addr_i),
-        .mod_logic_tag(mt_mod_logic_tag)
+        .mod_logic_tag(mt_mod_logic_tag),
+        .mod_is_counter_table(mt_mod_is_counter_table)
     );
 
     executor executor0(
@@ -196,7 +181,7 @@ module proc (
         // input
         .start_i(ex_start_o),
         .pkt_hdr_i(pkt_hdr_i),
-        .op_start_cnt_i(ex_op_start_cnt_o),
+        .is_match_i(mt_is_match_i),
         .args_i(mt_flow_val_i),
         .parsed_hdrs_i(ps_hdrs_i),
         // output
@@ -204,6 +189,8 @@ module proc (
         .pkt_hdr_o(pkt_hdr_o),
         // mod
         .mod_start_i(ex_mod_start_i),
+        .mod_hit_action_addr_i(ex_mod_hit_action_addr_i),
+        .mod_miss_action_addr_i(ex_mod_miss_action_addr_i),
         .mod_ops_i(ex_mod_ops_i)
     );
 
