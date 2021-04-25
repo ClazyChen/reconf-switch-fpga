@@ -60,7 +60,11 @@ module proc (
     wire ex_ready_i;
 
     enum {
-        STATE_FREE, STATE_PARSER, STATE_MATCHER, STATE_EXEC, STATE_LATCH
+        STATE_FREE,
+        STATE_PARSER, STATE_PARSER_WAIT,
+        STATE_MATCHER, STATE_MATCHER_WAIT,
+        STATE_EXEC, STATE_EXEC_WAIT,
+        STATE_LATCH
     } state;
 
     always @(posedge clk) begin
@@ -94,13 +98,19 @@ module proc (
             end
             STATE_PARSER: begin
                 ps_start_o <= `FALSE;
+                state <= STATE_PARSER_WAIT;
+            end
+            STATE_PARSER_WAIT: begin
                 if (ps_ready_i == `TRUE) begin
                     mt_start_o <= `TRUE;
                     state <= STATE_MATCHER;
-                end
+                end 
             end
             STATE_MATCHER: begin
                 mt_start_o <= `FALSE;
+                state <= STATE_MATCHER_WAIT;
+            end
+            STATE_MATCHER_WAIT: begin
                 if (mt_ready_i == `TRUE) begin
                     ex_start_o <= `TRUE;
                     state <= STATE_EXEC;
@@ -108,6 +118,9 @@ module proc (
             end
             STATE_EXEC: begin
                 ex_start_o <= `FALSE;
+                state <= STATE_EXEC_WAIT;
+            end
+            STATE_EXEC_WAIT: begin
                 if (ex_ready_i == `TRUE) begin
                     if (out_empty_i == `TRUE) begin
                         in_rd_o <= `TRUE;
