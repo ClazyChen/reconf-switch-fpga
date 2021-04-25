@@ -22,7 +22,7 @@ module parser(
     reg [`ADDR_BUS] hdr_addr;
     reg [`HALF_BUS] next_tag;
 
-    // parser information
+    // parse graph
     reg [`DATA_BUS] hdr_lens [`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] next_tag_starts[`NUM_HEADERS - 1:0];
     reg [`DATA_BUS] next_tag_lens[`NUM_HEADERS - 1:0];
@@ -58,6 +58,21 @@ module parser(
     assign hdr1_next1_tag = next_table[1][1][31:16];
     assign hdr1_next1_hdr = next_table[1][1][15:0];
 
+    wire [`DATA_BUS] hdr2_len;
+    wire [`DATA_BUS] hdr2_tag_start;
+    wire [`DATA_BUS] hdr2_tag_len;
+    wire [`DATA_BUS] hdr2_next0_tag;
+    wire [`DATA_BUS] hdr2_next0_hdr;
+    wire [`DATA_BUS] hdr2_next1_tag;
+    wire [`DATA_BUS] hdr2_next1_hdr;
+    assign hdr2_len = hdr_lens[2];
+    assign hdr2_tag_start = next_tag_starts[2];
+    assign hdr2_tag_len = next_tag_lens[2];
+    assign hdr2_next0_tag = next_table[2][0][31:16];
+    assign hdr2_next0_hdr = next_table[2][0][15:0];
+    assign hdr2_next1_tag = next_table[2][1][31:16];
+    assign hdr2_next1_hdr = next_table[2][1][15:0];
+
     wire [`ADDR_BUS] hdr0_next0_start;
     assign hdr0_next0_start = hdr_addr + hdr0_len + next_tag_starts[hdr0_next0_hdr];
     wire [`ADDR_BUS] hdr0_next1_start;
@@ -76,7 +91,7 @@ module parser(
         if (rst == `TRUE) begin
             // output
             ready_o <= `FALSE;
-            parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER};
+            parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER, `NO_HEADER};
             // parser
             for (int i = 0; i < `NUM_HEADERS; i++) begin
                 hdr_lens[i] <= `ZERO_WORD;
@@ -101,7 +116,7 @@ module parser(
                 end else if (start_i == `TRUE) begin
                     // output
                     ready_o <= `FALSE;
-                    parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER};
+                    parsed_hdrs_o <= {`NO_HEADER, `NO_HEADER, `NO_HEADER};
                     // reg
                     hdr_id <= 0;
                     hdr_addr <= 0;
@@ -138,6 +153,19 @@ module parser(
                         state <= STATE_FREE;
                     end
                 end
+                2: begin
+                    parsed_hdrs_o[2] <= hdr_addr;
+                    hdr_addr <= hdr_addr + hdr2_len;
+                    if (next_tag == hdr2_next0_tag) begin
+                        hdr_id <= hdr2_next0_hdr;
+                    end else if (next_tag == hdr2_next1_tag) begin
+                        hdr_id <= hdr2_next1_hdr;
+                    end else begin
+                        hdr_id <= `NUM_HEADERS;
+                        ready_o <= `TRUE;
+                        state <= STATE_FREE;
+                    end
+                end
                 default: begin
                     hdr_id <= 0;
                 end
@@ -154,14 +182,16 @@ module parser(
         if (rst == `TRUE) begin
             next_tag = `ZERO_HALF;
         end else begin
-            if (hdr_id == 0) begin
+            case (hdr_id)
+            0: begin
                 if (hdr0_tag_len == 1) begin
                     next_tag = {`ZERO_BYTE, pkt_hdr_i[hdr_addr + hdr0_tag_start]};
                 end else begin
                     next_tag = {pkt_hdr_i[hdr_addr + hdr0_tag_start],
                                 pkt_hdr_i[hdr_addr + hdr0_tag_start + 1]};
                 end
-            end else begin
+            end
+            1: begin
                 if (hdr1_tag_len == 1) begin
                     next_tag = {`ZERO_BYTE, pkt_hdr_i[hdr_addr + hdr1_tag_start]};
                 end else begin
@@ -169,6 +199,15 @@ module parser(
                                 pkt_hdr_i[hdr_addr + hdr1_tag_start + 1]};
                 end
             end
+            2: begin
+                if (hdr2_tag_len == 1) begin
+                    next_tag = {`ZERO_BYTE, pkt_hdr_i[hdr_addr + hdr2_tag_start]};
+                end else begin
+                    next_tag = {pkt_hdr_i[hdr_addr + hdr2_tag_start],
+                                pkt_hdr_i[hdr_addr + hdr2_tag_start + 1]};
+                end
+            end
+            endcase
         end
     end
 

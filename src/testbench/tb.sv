@@ -191,7 +191,7 @@ module tb (
     // switch input
     initial begin
         sw_wr_i = `FALSE;
-        #65
+        #105
         // packet 1
         sw_wr_i = `TRUE;
         sw_pkt_hdr_i = {
@@ -243,7 +243,7 @@ module tb (
         ps0_mod_next_tag_len_i <= 2;
         ps0_mod_next_table_i <= {
             {16'h0800, 16'h0001},
-            `NO_NEXT_HEADER
+            {16'h1212, 16'h0002}
         };
         #20
         // ip header
@@ -254,6 +254,17 @@ module tb (
         ps0_mod_next_tag_len_i <= 1;
         ps0_mod_next_table_i <= {
             `NO_NEXT_HEADER,
+            `NO_NEXT_HEADER
+        };
+        #20
+        // tunnel header
+        ps0_mod_start_i <= `TRUE;
+        ps0_mod_hdr_id_i <= 2;
+        ps0_mod_hdr_len_i <= 4;
+        ps0_mod_next_tag_start_i <= 0;
+        ps0_mod_next_tag_len_i <= 2;
+        ps0_mod_next_table_i <= {
+            {16'h0800, 16'h0001},
             `NO_NEXT_HEADER
         };
         #20

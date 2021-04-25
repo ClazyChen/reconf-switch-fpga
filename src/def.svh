@@ -20,7 +20,7 @@
 `define ADDR_BUS    `WORD_BUS
 `define ZERO_ADDR   `ZERO_WORD
 
-`define NUM_HEADERS 2
+`define NUM_HEADERS 3
 `define NO_HEADER 32'hffff_ffff
 `define NEXT_TABLE_SIZE 2
 `define NO_NEXT_HEADER 32'hffff_ffff
