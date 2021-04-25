@@ -186,7 +186,7 @@ module matcher (
                 end else begin
                     // load done
                     if (is_counter_table == `TRUE) begin
-                        $display("Counter: %h-%h-%h-%h = %d", key_data[2], key_data[3], key_data[4], key_data[5],
+                        $display("Counter: dst %d.%d.%d.%d = %d", key_data[2], key_data[3], key_data[4], key_data[5],
                             flow_val_o[0] + 1);
                         mem_we_o <= `TRUE;
                         mem_addr_o <= mem_addr_o - match_val_len;

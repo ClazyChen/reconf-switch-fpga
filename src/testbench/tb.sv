@@ -171,12 +171,12 @@ module tb (
         ctrl_mem_ce_i <= `TRUE;
         ctrl_mem_we_i <= `TRUE;
 
-        ctrl_mem_addr_i <= 32'h00100000 + (136 * 16);
-        ctrl_mem_data_i <= 32'h0100b7ac;
+        ctrl_mem_addr_i <= 32'h00000000 + (137 * 16);
+        ctrl_mem_data_i <= 32'h0000b7ac;
         wait(ctrl_mem_ready_o == `FALSE);
         wait(ctrl_mem_ready_o == `TRUE);
         ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
-        ctrl_mem_data_i <= 32'hf62c0000;
+        ctrl_mem_data_i <= 32'hf62e0000;
         wait(ctrl_mem_ready_o == `FALSE);
         wait(ctrl_mem_ready_o == `TRUE);
         ctrl_mem_addr_i <= ctrl_mem_addr_i + 4;
@@ -727,7 +727,128 @@ module tb (
         #40 wait(sw_out_empty_o == `FALSE);
         #40 wait(sw_out_empty_o == `FALSE);
 
+        // matcher
+        mt0_mod_start_i <= `TRUE;
+        mt0_mod_match_hdr_id_i <= 1;
+        mt0_mod_match_key_off_i <= 16;
+        mt0_mod_match_key_len_i <= 4;
+        mt0_mod_match_val_len_i <= 4;
+        mt0_mod_logic_entry_len_i <= 16;
+        mt0_mod_logic_start_addr_i <= 0;
+        mt0_mod_logic_tag <= 0;
+        mt0_mod_is_counter_table <= `TRUE;
 
+        #20
+        ps0_mod_start_i <= `FALSE;
+        mt0_mod_start_i <= `FALSE;
+    end
+    // test counter table
+    initial begin
+        #105 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+        #40 wait(sw_out_empty_o == `FALSE);
+
+        #45
+        $display("===== IPv4 & Counter =====");
+        $display("===== BEGIN TEST =====");
+
+        // packet 1
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2e, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 1: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+        wait(sw_in_empty_o == `TRUE);
+        #20
+        // packet 2
+        sw_wr_i = `TRUE;
+        sw_pkt_hdr_i = {
+            8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h90, 8'h03, 8'h25, 8'hb9, 8'h7f, 8'h06, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'heb, 8'h06, 8'hd5, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2e, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
+
+        $write("Input Packet 2: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
+        #20
+        sw_wr_i = `FALSE;
+
+
+        // wait packet 1
+        #40
+        wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 1 via port %b: ", sw_out_port_o);
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+        // check answer
+        // ans_pkt_hdr = {
+        //     8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
+        //     8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+        //     8'hf6, 8'h2e, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+        //     8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+        //     // padding
+        //     8'h00, 8'h00, 8'h00, 8'h00
+        // };
+        // if (sw_pkt_hdr_o == ans_pkt_hdr && sw_out_port_o == 4'b0001) begin
+        //     $display("Packet 1 PASSED!");
+        // end else begin
+        //     $display("Packet 1 FAILED!");
+        // end
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
+
+        // wait packet 2
+        wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 2 via port %b: ", sw_out_port_o);
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+        // check answer
+        // ans_pkt_hdr = {
+        //     8'hab, 8'hcd, 8'hef, 8'h12, 8'h34, 8'h56, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
+        //     8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+        //     8'hf6, 8'h2d, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+        //     8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+        //     // padding
+        //     8'h00, 8'h00, 8'h00, 8'h00
+        // };
+        // if (sw_pkt_hdr_o == ans_pkt_hdr && sw_out_port_o == 4'b0010) begin
+        //     $display("Packet 2 PASSED!");
+        // end else begin
+        //     $display("Packet 2 FAILED!");
+        // end
+        #20 sw_rd_i = `TRUE;
+        #20 sw_rd_i = `FALSE;
+
+        $display("===== END TEST =====");
     end
 
 endmodule
