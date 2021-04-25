@@ -1,0 +1,53 @@
+struct metadata {
+	bit<8>  egress_spec;
+	bit<8>  remaining;
+}
+
+hdr ethernet_t {
+	bit<48> dstAddr;
+	bit<48> srcAddr;
+	next_hdr bit<16> etherType;
+	implicit ethernet_parser {
+		0x0800:	ipv4_t;
+		0x0812:	probe_t;
+		default:;
+	}
+}
+
+hdr ipv4_t {
+	bit<4>    version;
+    bit<4>    ihl;
+    bit<8>    diffserv;
+    bit<16>   totalLen;
+    bit<16>   identification;
+    bit<3>    flags;
+    bit<13>   fragOffset;
+    bit<8>    ttl;
+    next_hdr bit<8>    protocol;
+    bit<16>   hdrChecksum;
+    bit<32>   srcAddr;
+    bit<32>   dstAddr;
+	implicit ipv4_parser {
+		default:;
+	};
+}
+
+hdr probe_t {
+	next_hdr bit<8> hop_cnt;
+	implicit probe_parser {
+		0: probe_fwd_t;
+		default: probe_data_t;
+	}
+	executable_commands {
+		metadata.remaining = hop_cnt + 1;
+	}
+}
+
+hdr probe_data_t {
+	bit<1>    bos;
+    bit<7>    swid;
+    bit<8>    port;
+    bit<32>   byte_cnt;
+    time_t    last_time;
+    time_t    cur_time;
+}
