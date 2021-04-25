@@ -6,7 +6,7 @@ module proc_latch(
     // input
     input wire wr_i,
     input wire [`BYTE_BUS] pkt_hdr_i [0:`HDR_MAX_LEN - 1],
-    input wire [`NUM_PORTS - 1:0] out_port_i, 
+    input wire [`NUM_PORTS - 1:0] out_port_i,
     // output
     input wire rd_i,
     output reg [`BYTE_BUS] pkt_hdr_o [0:`HDR_MAX_LEN - 1],

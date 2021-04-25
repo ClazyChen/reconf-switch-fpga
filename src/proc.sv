@@ -1,6 +1,8 @@
 `include "def.svh"
 
-module proc (
+module proc #(
+    parameter PROC_ID = 0
+) (
     input wire clk,
     input wire rst,
     // input

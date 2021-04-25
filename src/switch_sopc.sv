@@ -312,22 +312,25 @@ module switch_sopc (
     wire proc0_in_rd_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
     wire [`NUM_PORTS - 1:0] proc0_out_port_i;
+
     wire proc0_out_empty_i;
     wire proc0_out_wr_o;
     wire [`BYTE_BUS] proc0_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
     wire [`NUM_PORTS - 1:0] proc0_out_port_o;
+
     // proc 1 io
     wire proc1_in_empty_i;
     wire proc1_in_rd_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
     wire [`NUM_PORTS - 1:0] proc1_out_port_i;
+
     wire proc1_out_empty_i;
     wire proc1_out_wr_o;
     wire [`BYTE_BUS] proc1_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
     wire [`NUM_PORTS - 1:0] proc1_out_port_o;
 
     proc_axi #(
-        .AXI_ID(0)
+        .PROC_ID(0)
     ) proc_axi0(
         .clk(clk),
         .rst(rst),
@@ -404,7 +407,7 @@ module switch_sopc (
     );
 
     proc_axi #(
-        .AXI_ID(1)
+        .PROC_ID(1)
     ) proc_axi1(
         .clk(clk),
         .rst(rst),

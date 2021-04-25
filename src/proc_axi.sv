@@ -1,7 +1,7 @@
 `include "def.svh"
 
 module proc_axi #(
-    parameter AXI_ID = 0
+    parameter PROC_ID = 0
 ) (
     input wire clk,
     input wire rst,
@@ -86,7 +86,9 @@ module proc_axi #(
     wire mem_ready_i;
 
     // processor
-    proc proc0(
+    proc #(
+        .PROC_ID(PROC_ID)
+    ) proc0(
         .clk(clk),
         .rst(rst),
         // input
@@ -132,7 +134,7 @@ module proc_axi #(
     );
 
     mem_axi #(
-        .AXI_ID(AXI_ID)
+        .AXI_ID(PROC_ID)
     ) mem_axi0 (
         .clk(clk),
         .rst(rst),
