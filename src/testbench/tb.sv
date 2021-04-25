@@ -202,6 +202,13 @@ module tb (
             // padding
             8'h00, 8'h00, 8'h00, 8'h00
         };
+
+        $write("Input Packet 1: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
         #20
         sw_wr_i = `FALSE;
         wait(sw_in_empty_o == `TRUE);
@@ -216,6 +223,13 @@ module tb (
             // padding
             8'h00, 8'h00, 8'h00, 8'h00
         };
+
+        $write("Input Packet 2: ");
+        foreach (sw_pkt_hdr_i[i]) begin
+            $write("%h ", sw_pkt_hdr_i[i]);
+        end
+        $write("\n");
+
         #20
         sw_wr_i = `FALSE;
     end
@@ -375,10 +389,17 @@ module tb (
     initial begin
         $display("===== BEGIN TEST =====");
         wait(sw_out_empty_o == `FALSE);
+        // print packet
+        $write("Output Packet 1: ");
+        foreach (sw_pkt_hdr_o[i]) begin
+            $write("%h ", sw_pkt_hdr_o[i]);
+        end
+        $write("\n");
+        // check answer
         if (sw_pkt_hdr_o == ans_pkt_hdr) begin
-            $display("PASSED!");
+            $display("Packet 1 PASSED!");
         end else begin
-            $display("FAILED!");
+            $display("Packet 1 FAILED!");
         end
         $display("===== END TEST =====");
         #20
