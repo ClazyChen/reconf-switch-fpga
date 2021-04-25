@@ -379,15 +379,7 @@ module tb (
     end
 
     // expected output pkt header
-    wire [`BYTE_BUS] ans_pkt_hdr [0:`HDR_MAX_LEN - 1];
-    assign ans_pkt_hdr = {
-        8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
-        8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
-        8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
-        8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
-        // padding
-        8'h00, 8'h00, 8'h00, 8'h00
-    };
+    reg [`BYTE_BUS] ans_pkt_hdr [0:`HDR_MAX_LEN - 1];
 
     // check answer
     initial begin
@@ -401,6 +393,14 @@ module tb (
         end
         $write("\n");
         // check answer
+        ans_pkt_hdr = {
+            8'hde, 8'had, 8'hbe, 8'hef, 8'hfa, 8'hce, 8'hc8, 8'h58, 8'hc0, 8'hb5, 8'hfe, 8'h1e, 8'h08, 8'h00, 8'h45, 8'h00,
+            8'h00, 8'h28, 8'h4c, 8'hd6, 8'h00, 8'h00, 8'hea, 8'h06, 8'hd6, 8'hfb, 8'h59, 8'hf8, 8'ha5, 8'h2c, 8'hb7, 8'hac,
+            8'hf6, 8'h2c, 8'hc5, 8'h7f, 8'h4e, 8'h3c, 8'hba, 8'h38, 8'hf4, 8'hc6, 8'h00, 8'h00, 8'h00, 8'h00, 8'h50, 8'h02,
+            8'h04, 8'h00, 8'h3c, 8'h29, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00, 8'h00,
+            // padding
+            8'h00, 8'h00, 8'h00, 8'h00
+        };
         if (sw_pkt_hdr_o == ans_pkt_hdr && sw_out_port_o == 4'b0001) begin
             $display("Packet 1 PASSED!");
         end else begin
