@@ -1,53 +1,217 @@
-struct metadata {
-	bit<8>  egress_spec;
-	bit<8>  remaining;
-}
+global packet;
 
-hdr ethernet_t {
-	bit<48> dstAddr;
-	bit<48> srcAddr;
-	next_hdr bit<16> etherType;
-	implicit ethernet_parser {
-		0x0800:	ipv4_t;
-		0x0812:	probe_t;
-		default:;
+headers {
+	hdr ethernet_t {
+		bit<48> dstAddr;
+		bit<48> srcAddr;
+		bit<16> etherType;
+		implicit parser(etherType) {
+			0x0800:	ipv4_t;
+			0x0812:	probe_t;
+			default:;
+		}
+	}
+
+	hdr ipv4_t {
+		bit<4>    version;
+		bit<4>    ihl;
+		bit<8>    diffserv;
+		bit<16>   totalLen;
+		bit<16>   identification;
+		bit<3>    flags;
+		bit<13>   fragOffset;
+		bit<8>    ttl;
+		bit<8>    protocol;
+		bit<16>   hdrChecksum;
+		bit<32>   srcAddr;
+		bit<32>   dstAddr;
+		implicit parser (protocol) {
+			default:;
+		};
+		
+		implicit func verify_checksum {
+			algorithm: csum16;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		}
+		
+		implicit func update_checksum {
+			algorithm: csum16;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		}
+	}
+
+	hdr probe_t {
+		bit<8> hop_cnt;
+		implicit parser(hop_cnt) {
+			0: probe_fwd_t;
+			default: probe_data_t;
+		}
+		executable_commands {
+			metadata.remaining = hop_cnt + 1;
+		}
+	}
+
+	hdr probe_data_t {
+		bit<1>    bos;
+		bit<7>    swid;
+		bit<8>    port;
+		bit<32>   byte_cnt;
+		bit<48>    last_time;
+		bit<48>    cur_time;
+		implicit parser (bos) {
+			1: probe_fwd_t;
+			0: probe_data_t;
+			default:;
+		};
+	}
+	
+	hdr probe_fwd_t {
+		bit<8>   egress_spec;
+		implicit parser(metadata.remaining) {
+			0: accept;
+			default: probe_fwd_t;
+		};
+		excutable_commands {
+			metadata.remaining = metadata.remaining - 1;
+			metadata.egress_spec = egress_spec;
+		}
 	}
 }
 
-hdr ipv4_t {
-	bit<4>    version;
-    bit<4>    ihl;
-    bit<8>    diffserv;
-    bit<16>   totalLen;
-    bit<16>   identification;
-    bit<3>    flags;
-    bit<13>   fragOffset;
-    bit<8>    ttl;
-    next_hdr bit<8>    protocol;
-    bit<16>   hdrChecksum;
-    bit<32>   srcAddr;
-    bit<32>   dstAddr;
-	implicit ipv4_parser {
-		default:;
-	};
-}
-
-hdr probe_t {
-	next_hdr bit<8> hop_cnt;
-	implicit probe_parser {
-		0: probe_fwd_t;
-		default: probe_data_t;
+structs {
+	struct metadata {
+		bit<8> egress_spec;
+		bit<8>  remaining;
 	}
-	executable_commands {
-		metadata.remaining = hop_cnt + 1;
+	
+	struct ingress_variable {
+		
+	}
+	
+	struct egress_variable {
+		register<bit<32>>(8) byte_cnt_reg;
+		register<bit<48>>(8) last_time_reg;
+		bit<32> byte_cnt;
+		bit<32> new_byte_cnt;
+		bit<48> last_time;
+		bit<48> cur_time;
 	}
 }
 
-hdr probe_data_t {
-	bit<1>    bos;
-    bit<7>    swid;
-    bit<8>    port;
-    bit<32>   byte_cnt;
-    time_t    last_time;
-    time_t    cur_time;
+actions {
+	action ipv4_forward(para) {
+		copy_field(para.port, standard_metadata.egress_spec);
+		copy_field(packet.ethernet_t.dstAddr, packet.ethermet_t.srcAddr);
+		copy_field(para.dstAddr, packet.ethernet.dstAddr);
+		decrement(packet.ipv4_t.ttl);
+	}
+	
+	action do_probe() {
+		copy_field((bit<9>)meta.egress_spec, standard_metadata.egress_spec);
+		increment(packet.probe.hop_cnt);
+	}
+	
+	action reg_update() {
+		copy_field(standard_metadata.egress_global_timestamp, iv.cur_time);
+		iv.byte_cnt_reg.read(iv.byte_cnt, (bit<32>)standard_metadata.egress_port);
+		iv.byte_cnt = iv.byte_cnt + standard_metadata.packet_length;
+		iv.new_byte_cnt = (packet.probe.isValid()) ? 0 : iv.byte_cnt;
+		iv.byte_cnt_reg.write((bit<32>)standard_metadata.egress_port, iv.new_byte_cnt);
+	}
+	
+	action add_probe_data() {
+		set_field((bit<8>)standard_metadata.egress_port, packet.probe_data[0].port);
+		set_field(ev.byte_cnt, packet.probe_data[0].byte_cnt);
+        last_time_reg.read(ev.last_time, (bit<32>)standard_metadata.egress_port);
+        last_time_reg.write((bit<32>)standard_metadata.egress_port, ev.cur_time);
+        packet.probe_data[0].last_time = ev.last_time;
+        packet.probe_data[0].cur_time = ev.cur_time;
+	}
+	
+	action add_probe_data_1(para) {
+		packet.probe_data.push_front(1);
+        packet.probe_data[0].setValid();
+		packet.probe_data[0].bos = 1;
+		hdr.probe_data[0].swid = para.swid;
+		add_probe_data();
+	}
+	
+	action add_probe_data_0(para) {
+		packet.probe_data.push_front(1);
+        packet.probe_data[0].setValid();
+		packet.probe_data[0].bos = 0;
+		hdr.probe_data[0].swid = para.swid;
+		add_probe_data();
+	}
+}
+
+control rP4_Ingress {
+	stage ipv4_lpm_s {
+		ipv4 = packet.ipv4_t;[verify_checksum] # if not valid, break this stage
+		action, para = ipv4_lpm.lpm([ipv4.dstAddr]);
+		switch action:
+			1: ipv4_forward(para);
+			2: drop();
+			default: drop();
+	}
+	
+	stage probe_s {
+		probe = packet.probe_t;
+		action, para = ;
+		switch action:
+			default: do_probe();
+	}
+}
+
+control rP4_Egress[update_checksum] {
+	stage reg_update_s {
+		switch action: 
+			default: reg_update();
+	}
+	
+	stage probe_data_s {
+		probe = packet.probe_t;
+		action, para = swid.exact() << 1 + (packet.probe.hop_cnt==1);
+		switch action:
+			case 11: add_probe_data_1(para);
+			case 10: add_probe_data_0(para);
+	}
+}
+
+pipelines {
+	pipeline{
+		rP4_Ingress.ipv4_lpm_s
+	}
+	
+	pipeline{
+		rP4_Ingress.probe_s,
+		rP4_Egress.reg_update_s,
+		rP4_Egress.probe_data_s
+	}
 }
