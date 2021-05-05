@@ -355,6 +355,80 @@ module switch_sopc (
         .s_axi_rready(s_axi_rready[1])
     );
 
+    // block ram 2
+    blk_mem_gen_0 bram2(
+        // rsta_busy,
+        // rstb_busy,
+        .s_aclk(clk),
+        .s_aresetn(~rst),
+        .s_axi_awid(s_axi_awid[2]),
+        .s_axi_awaddr(s_axi_awaddr[2]),
+        .s_axi_awlen(s_axi_awlen[2]),
+        .s_axi_awsize(s_axi_awsize[2]),
+        .s_axi_awburst(s_axi_awburst[2]),
+        .s_axi_awvalid(s_axi_awvalid[2]),
+        .s_axi_awready(s_axi_awready[2]),
+        .s_axi_wdata(s_axi_wdata[2]),
+        .s_axi_wstrb(s_axi_wstrb[2]),
+        .s_axi_wlast(s_axi_wlast[2]),
+        .s_axi_wvalid(s_axi_wvalid[2]),
+        .s_axi_wready(s_axi_wready[2]),
+        .s_axi_bid(s_axi_bid[2]),
+        .s_axi_bresp(s_axi_bresp[2]),
+        .s_axi_bvalid(s_axi_bvalid[2]),
+        .s_axi_bready(s_axi_bready[2]),
+        .s_axi_arid(s_axi_arid[2]),
+        .s_axi_araddr(s_axi_araddr[2]),
+        .s_axi_arlen(s_axi_arlen[2]),
+        .s_axi_arsize(s_axi_arsize[2]),
+        .s_axi_arburst(s_axi_arburst[2]),
+        .s_axi_arvalid(s_axi_arvalid[2]),
+        .s_axi_arready(s_axi_arready[2]),
+        .s_axi_rid(s_axi_rid[2]),
+        .s_axi_rdata(s_axi_rdata[2]),
+        .s_axi_rresp(s_axi_rresp[2]),
+        .s_axi_rlast(s_axi_rlast[2]),
+        .s_axi_rvalid(s_axi_rvalid[2]),
+        .s_axi_rready(s_axi_rready[2])
+    );
+
+    // block ram 3
+    blk_mem_gen_0 bram3(
+        // rsta_busy,
+        // rstb_busy,
+        .s_aclk(clk),
+        .s_aresetn(~rst),
+        .s_axi_awid(s_axi_awid[3]),
+        .s_axi_awaddr(s_axi_awaddr[3]),
+        .s_axi_awlen(s_axi_awlen[3]),
+        .s_axi_awsize(s_axi_awsize[3]),
+        .s_axi_awburst(s_axi_awburst[3]),
+        .s_axi_awvalid(s_axi_awvalid[3]),
+        .s_axi_awready(s_axi_awready[3]),
+        .s_axi_wdata(s_axi_wdata[3]),
+        .s_axi_wstrb(s_axi_wstrb[3]),
+        .s_axi_wlast(s_axi_wlast[3]),
+        .s_axi_wvalid(s_axi_wvalid[3]),
+        .s_axi_wready(s_axi_wready[3]),
+        .s_axi_bid(s_axi_bid[3]),
+        .s_axi_bresp(s_axi_bresp[3]),
+        .s_axi_bvalid(s_axi_bvalid[3]),
+        .s_axi_bready(s_axi_bready[3]),
+        .s_axi_arid(s_axi_arid[3]),
+        .s_axi_araddr(s_axi_araddr[3]),
+        .s_axi_arlen(s_axi_arlen[3]),
+        .s_axi_arsize(s_axi_arsize[3]),
+        .s_axi_arburst(s_axi_arburst[3]),
+        .s_axi_arvalid(s_axi_arvalid[3]),
+        .s_axi_arready(s_axi_arready[3]),
+        .s_axi_rid(s_axi_rid[3]),
+        .s_axi_rdata(s_axi_rdata[3]),
+        .s_axi_rresp(s_axi_rresp[3]),
+        .s_axi_rlast(s_axi_rlast[3]),
+        .s_axi_rvalid(s_axi_rvalid[3]),
+        .s_axi_rready(s_axi_rready[3])
+    );
+
     // proc 0 io
     wire proc0_in_empty_i;
     wire proc0_in_rd_o;
@@ -764,6 +838,8 @@ module switch_sopc (
     wire latch0_empty_i;
     wire latch1_empty_i;
     wire latch2_empty_i;
+    wire latch3_empty_i;
+    wire latch4_empty_i;
 
     // latch0: input <-> proc 0
     proc_latch proc_latch0 (
@@ -796,10 +872,10 @@ module switch_sopc (
         .out_port_o(proc1_out_port_i),
         .empty_o(latch1_empty_i)
     );
-    assign proc1_in_empty_i = latch1_empty_i;
     assign proc0_out_empty_i = latch1_empty_i;
+    assign proc1_in_empty_i = latch1_empty_i;
 
-    // latch2: proc1 <-> output
+    // latch2: proc 1 <-> proc 2
     proc_latch proc_latch2 (
         .clk(clk),
         .rst(rst),
@@ -807,13 +883,47 @@ module switch_sopc (
         .wr_i(proc1_out_wr_o),
         .pkt_hdr_i(proc1_pkt_hdr_o),
         .out_port_i(proc1_out_port_o),
+        // proc 2 in
+        .rd_i(proc2_in_rd_o),
+        .pkt_hdr_o(proc2_pkt_hdr_i),
+        .out_port_o(proc2_out_port_i),
+        .empty_o(latch2_empty_i)
+    );
+    assign proc1_out_empty_i = latch2_empty_i;
+    assign proc2_in_empty_i = latch2_empty_i;
+
+    // latch3: proc 2 <-> proc 3
+    proc_latch proc_latch3 (
+        .clk(clk),
+        .rst(rst),
+        // proc 2 out
+        .wr_i(proc2_out_wr_o),
+        .pkt_hdr_i(proc2_pkt_hdr_o),
+        .out_port_i(proc2_out_port_o),
+        // proc 3 in
+        .rd_i(proc3_in_rd_o),
+        .pkt_hdr_o(proc3_pkt_hdr_i),
+        .out_port_o(proc3_out_port_i),
+        .empty_o(latch3_empty_i)
+    );
+    assign proc2_out_empty_i = latch3_empty_i;
+    assign proc3_in_empty_i = latch3_empty_i;
+
+    // latch4: proc3 <-> output
+    proc_latch proc_latch4 (
+        .clk(clk),
+        .rst(rst),
+        // proc 1 out
+        .wr_i(proc3_out_wr_o),
+        .pkt_hdr_i(proc3_pkt_hdr_o),
+        .out_port_i(proc3_out_port_o),
         // switch out
         .rd_i(sw_rd_i),
         .pkt_hdr_o(sw_pkt_hdr_o),
         .out_port_o(sw_out_port_o),
-        .empty_o(latch2_empty_i)
+        .empty_o(latch4_empty_i)
     );
-    assign proc1_out_empty_i = latch2_empty_i;
-    assign sw_out_empty_o = latch2_empty_i;
+    assign proc3_out_empty_i = latch4_empty_i;
+    assign sw_out_empty_o = latch4_empty_i;
 
 endmodule
