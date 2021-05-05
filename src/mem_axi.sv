@@ -14,7 +14,7 @@ module mem_axi #(
     output reg mem_ready_o,
     // axi
     // aw
-    output reg [1 : 0] axi_awid,
+    output reg [`ID_WIDTH - 1 : 0] axi_awid,
     output reg [31 : 0] axi_awaddr,
     output reg [7 : 0] axi_awlen,
     output reg [2 : 0] axi_awsize,
@@ -32,12 +32,12 @@ module mem_axi #(
     output reg [0 : 0] axi_wvalid,
     input wire [0 : 0] axi_wready,
     // b
-    input wire [1 : 0] axi_bid,
+    input wire [`ID_WIDTH - 1 : 0] axi_bid,
     input wire [1 : 0] axi_bresp,
     input wire [0 : 0] axi_bvalid,
     output reg [0 : 0] axi_bready,
     // ar
-    output reg [1 : 0] axi_arid,
+    output reg [`ID_WIDTH - 1 : 0] axi_arid,
     output reg [31 : 0] axi_araddr,
     output reg [7 : 0] axi_arlen,
     output reg [2 : 0] axi_arsize,
@@ -49,7 +49,7 @@ module mem_axi #(
     output reg [0 : 0] axi_arvalid,
     input wire [0 : 0] axi_arready,
     // r
-    input wire [1 : 0] axi_rid,
+    input wire [`ID_WIDTH - 1 : 0] axi_rid,
     input wire [31 : 0] axi_rdata,
     input wire [1 : 0] axi_rresp,
     input wire [0 : 0] axi_rlast,

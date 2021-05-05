@@ -26,9 +26,9 @@
 `define NO_NEXT_HEADER 32'hffff_ffff
 
 // axi
-`define ID_WIDTH        2
-`define NUM_MASTERS     3
-`define NUM_SLAVES      2
+`define ID_WIDTH        3
+`define NUM_MASTERS     5
+`define NUM_SLAVES      4
 
 // proc
 `define NUM_PORTS       4

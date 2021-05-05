@@ -74,6 +74,70 @@ module tb (
     reg [`ADDR_BUS] ex1_mod_miss_action_addr_i;
     reg [`QUAD_BUS] ex1_mod_ops_i [0:`MAX_OP_NUM - 1];
 
+    // proc 2
+    // parser mod
+    reg ps2_mod_start_i;
+    reg [`DATA_BUS] ps2_mod_hdr_id_i;
+    reg [`DATA_BUS] ps2_mod_hdr_len_i;
+    reg [`DATA_BUS] ps2_mod_next_tag_start_i;
+    reg [`DATA_BUS] ps2_mod_next_tag_len_i;
+    reg [`DATA_BUS] ps2_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0];
+    assign ps2_mod_start_i = ps0_mod_start_i;
+    assign ps2_mod_hdr_id_i = ps0_mod_hdr_id_i;
+    assign ps2_mod_hdr_len_i = ps0_mod_hdr_len_i;
+    assign ps2_mod_next_tag_start_i= ps0_mod_next_tag_start_i;
+    assign ps2_mod_next_tag_len_i = ps0_mod_next_tag_len_i;
+    assign ps2_mod_next_table_i = ps0_mod_next_table_i;
+    // matcher mod
+    reg mt2_mod_start_i;
+    assign mt2_mod_start_i = `FALSE;
+    reg [3:0] mt2_mod_match_hdr_id_i;
+    reg [5:0] mt2_mod_match_key_off_i;
+    reg [5:0] mt2_mod_match_key_len_i;
+    reg [5:0] mt2_mod_match_val_len_i;
+    reg [`DATA_BUS] mt2_mod_logic_entry_len_i;
+    reg [`DATA_BUS] mt2_mod_logic_start_addr_i;
+    reg [`BYTE_BUS] mt2_mod_logic_tag;
+    reg mt2_mod_is_counter_table;
+    // executor mod
+    wire ex2_mod_start_i;
+    assign ex2_mod_start_i = `FALSE;
+    reg [`ADDR_BUS] ex2_mod_hit_action_addr_i;
+    reg [`ADDR_BUS] ex2_mod_miss_action_addr_i;
+    reg [`QUAD_BUS] ex2_mod_ops_i [0:`MAX_OP_NUM - 1];
+
+    // proc 3
+    // parser mod
+    wire ps3_mod_start_i;
+    reg [`DATA_BUS] ps3_mod_hdr_id_i;
+    reg [`DATA_BUS] ps3_mod_hdr_len_i;
+    reg [`DATA_BUS] ps3_mod_next_tag_start_i;
+    reg [`DATA_BUS] ps3_mod_next_tag_len_i;
+    reg [`DATA_BUS] ps3_mod_next_table_i [`NEXT_TABLE_SIZE - 1:0];
+    assign ps3_mod_start_i = ps0_mod_start_i;
+    assign ps3_mod_hdr_id_i = ps0_mod_hdr_id_i;
+    assign ps3_mod_hdr_len_i = ps0_mod_hdr_len_i;
+    assign ps3_mod_next_tag_start_i= ps0_mod_next_tag_start_i;
+    assign ps3_mod_next_tag_len_i = ps0_mod_next_tag_len_i;
+    assign ps3_mod_next_table_i = ps0_mod_next_table_i;
+    // matcher mod
+    reg mt3_mod_start_i;
+    assign mt3_mod_start_i = `FALSE;
+    reg [3:0] mt3_mod_match_hdr_id_i;
+    reg [5:0] mt3_mod_match_key_off_i;
+    reg [5:0] mt3_mod_match_key_len_i;
+    reg [5:0] mt3_mod_match_val_len_i;
+    reg [`DATA_BUS] mt3_mod_logic_entry_len_i;
+    reg [`DATA_BUS] mt3_mod_logic_start_addr_i;
+    reg [`BYTE_BUS] mt3_mod_logic_tag;
+    reg mt3_mod_is_counter_table;
+    // executor mod
+    reg ex3_mod_start_i;
+    assign ex3_mod_start_i = `FALSE;
+    reg [`ADDR_BUS] ex3_mod_hit_action_addr_i;
+    reg [`ADDR_BUS] ex3_mod_miss_action_addr_i;
+    reg [`QUAD_BUS] ex3_mod_ops_i [0:`MAX_OP_NUM - 1];
+
     // controller
     reg ctrl_mem_ce_i;
     reg ctrl_mem_we_i;
@@ -147,7 +211,55 @@ module tb (
         .ex1_mod_start_i(ex1_mod_start_i),
         .ex1_mod_hit_action_addr_i(ex1_mod_hit_action_addr_i),
         .ex1_mod_miss_action_addr_i(ex1_mod_miss_action_addr_i),
-        .ex1_mod_ops_i(ex1_mod_ops_i)
+        .ex1_mod_ops_i(ex1_mod_ops_i),
+
+        // proc 2
+        // parser mod
+        .ps2_mod_start_i(ps2_mod_start_i),
+        .ps2_mod_hdr_id_i(ps2_mod_hdr_id_i),
+        .ps2_mod_hdr_len_i(ps2_mod_hdr_len_i),
+        .ps2_mod_next_tag_start_i(ps2_mod_next_tag_start_i),
+        .ps2_mod_next_tag_len_i(ps2_mod_next_tag_len_i),
+        .ps2_mod_next_table_i(ps2_mod_next_table_i),
+        // matcher mod
+        .mt2_mod_start_i(mt2_mod_start_i),
+        .mt2_mod_match_hdr_id_i(mt2_mod_match_hdr_id_i),
+        .mt2_mod_match_key_off_i(mt2_mod_match_key_off_i),
+        .mt2_mod_match_key_len_i(mt2_mod_match_key_len_i),
+        .mt2_mod_match_val_len_i(mt2_mod_match_val_len_i),
+        .mt2_mod_logic_entry_len_i(mt2_mod_logic_entry_len_i),
+        .mt2_mod_logic_start_addr_i(mt2_mod_logic_start_addr_i),
+        .mt2_mod_logic_tag(mt2_mod_logic_tag),
+        .mt2_mod_is_counter_table(mt2_mod_is_counter_table),
+        // executor mod
+        .ex2_mod_start_i(ex2_mod_start_i),
+        .ex2_mod_hit_action_addr_i(ex2_mod_hit_action_addr_i),
+        .ex2_mod_miss_action_addr_i(ex2_mod_miss_action_addr_i),
+        .ex2_mod_ops_i(ex2_mod_ops_i),
+
+        // proc 3
+        // parser mod
+        .ps3_mod_start_i(ps3_mod_start_i),
+        .ps3_mod_hdr_id_i(ps3_mod_hdr_id_i),
+        .ps3_mod_hdr_len_i(ps3_mod_hdr_len_i),
+        .ps3_mod_next_tag_start_i(ps3_mod_next_tag_start_i),
+        .ps3_mod_next_tag_len_i(ps3_mod_next_tag_len_i),
+        .ps3_mod_next_table_i(ps3_mod_next_table_i),
+        // matcher mod
+        .mt3_mod_start_i(mt3_mod_start_i),
+        .mt3_mod_match_hdr_id_i(mt3_mod_match_hdr_id_i),
+        .mt3_mod_match_key_off_i(mt3_mod_match_key_off_i),
+        .mt3_mod_match_key_len_i(mt3_mod_match_key_len_i),
+        .mt3_mod_match_val_len_i(mt3_mod_match_val_len_i),
+        .mt3_mod_logic_entry_len_i(mt3_mod_logic_entry_len_i),
+        .mt3_mod_logic_start_addr_i(mt3_mod_logic_start_addr_i),
+        .mt3_mod_logic_tag(mt3_mod_logic_tag),
+        .mt3_mod_is_counter_table(mt3_mod_is_counter_table),
+        // executor mod
+        .ex3_mod_start_i(ex3_mod_start_i),
+        .ex3_mod_hit_action_addr_i(ex3_mod_hit_action_addr_i),
+        .ex3_mod_miss_action_addr_i(ex3_mod_miss_action_addr_i),
+        .ex3_mod_ops_i(ex3_mod_ops_i)
     );
 
     // BEGIN TEST
