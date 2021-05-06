@@ -9,11 +9,21 @@ headers {
 		bit<48> srcAddr;
 		bit<16> etherType;
 		implicit parser(etherType) {
-			0x0800:	ipv4_t;
-			default:;
+			0x1212: myTunnel_t;
+			0x0800: ipv4_t;
+			default: accept;
 		}
 	}
-
+	
+	hdr myTunnel_t {
+		bit<16> proto_id;
+		bit<16> dst_id;
+		implicit parser(proto_id) {
+			0x0800: ipv4_t;
+			default: accept;
+		}
+	}
+	
 	hdr ipv4_t {
 		bit<4>    version;
 		bit<4>    ihl;
@@ -25,11 +35,12 @@ headers {
 		bit<8>    ttl;
 		bit<8>    protocol;
 		bit<16>   hdrChecksum;
-		bit<32>   srcAddr;
-		bit<32>   dstAddr;
+		bit<32> srcAddr;
+		bit<32> dstAddr;
 		implicit parser() {
 			default: accept;
-		};
+		}
+		
 		implicit func verify_checksum() {
 			return this.hdrChecksum == HashAlgorithm.csum16(this.version,
 												this.ihl,
@@ -61,17 +72,23 @@ headers {
 }
 
 structs {
-	struct metadata {
-
+	struct metadata{
+		
 	}meta;
 }
 
 actions {
 	action ipv4_forward(para) {
-		copy_field(standard_metadata.egress_spec, para.port);
-		copy_field(hs.ethermet.srcAddr, hs.ethernet.dstAddr);
-		copy_field(hs.ethernet.dstAddr, para.dstAddr);
+		modify_field(standard_metadata.egress_spec, para.port);
+		modify_field(hs.ethernet.srcAddr, hs.ethernet.dstAddr);
+		modify_field(hs.ethernet.dstAddr, para.dstAddr);
 		decrement(hs.ipv4.ttl);
+		goto rP4_Ingress.myTunnel_forward_s;
+	}
+	
+	action myTunnel_forward(para) {
+		modify_field(standard_metadata.egress_spec, para.port);
+		goto rP4_Egress;
 	}
 	
 	action drop() {
@@ -86,22 +103,45 @@ tables {
         }
         size = 1024;
     }
+	
+	table myTunnel_exact {
+        key = {
+            hs.myTunnel.dst_id: exact;
+        }
+        size = 1024;
+    }
 }
 
 header_sequence {
-	ethernet_t	ethernet;
-	ipv4_t		ipv4;
+	ethernet_t   ethernet;
+    myTunnel_t   myTunnel;
+    ipv4_t       ipv4;
 }hs;
 
 control rP4_Ingress {
-	stage ipv4_lpm_s {
-		hs.ethernet = packet_seg.ethernet_t => [drop()];
-		hs.ipv4 = packet_seg.ipv4_t ? [verify_checksum() => [drop()]] : [drop()]; # if not valid, break this stage
-		action, para = ipv4_lpm.lpm([hs.ipv4.dstAddr]);
-		switch action:
-			1: ipv4_forward(para);
-			2: drop();
-			default: drop();
+	stage ipv4_forward_s {
+		parser:
+			hs.ipv4 = packet_seg.extract(ipv4_t) ? 
+				[verify_checksum() => drop()] : [drop()];
+		matcher:
+			action, para = ipv4_lpm.lpm([hs.ipv4.dstAddr]);
+		executer:
+			switch action:
+				1: ipv4_forward(para);
+				2: drop();
+				default: drop();
+	}
+	
+	stage myTunnel_forward_s {
+		parser:
+			hs.myTunnel = packet_seg.extract(myTunnel_t) ? [] : [continue];
+		matcher:
+			action, para = myTunnel_exact.exact([hs.myTunnel.dst_id]);
+		executer:
+			switch action:
+				case 1: myTunnel_forward(para);
+				case 2: drop();
+				default: drop()
 	}
 }
 
@@ -110,8 +150,11 @@ control rP4_Egress -> [update_checksum()] {
 }
 
 pipelines {
-	pipeline p0 {
-		rP4_Ingress.ipv4_lpm_s,
-		rP4_Egress
+	pipeline p0{
+		rP4_Ingress.myTunnel_forward_s
+	}
+	
+	pipeline p1{
+		rP4_Ingress.ipv4_forward_s
 	}
 }

@@ -1,0 +1,357 @@
+{
+	"headers" : [
+	{
+		"name" : "ethernet_t",
+		"id" : 0,
+		"fields": [
+			["dstAddr", 0, 48, 0], 
+			["srcAddr", 1, 48, 48],
+			["etherType", 2, 16, 96]
+		],
+		"parser": {
+			"fields":[
+				["ethernet_t.etherType", 2]
+			],
+			"transition": [
+				{
+					"tag": "0x1212",
+					"type": "hex",
+					"next_state": "myTunnel_t",
+					"next_state_id": 1
+				},
+				{
+					"tag": "0x0800",
+					"type": "hex",
+					"next_state": "ipv4_t",
+					"next_state_id": 2
+				},
+				{
+					"tag": "default",
+					"next_state": "accept"
+				}
+			]
+		}
+	},
+	{
+		"name": "myTunnel_t",
+		"id": 1,
+		"fields": [
+			["proto_id", 3, 16, 0],
+			["dst_id", 4, 16, 16]
+		],
+		"parser": {
+			"fields":[
+				["myTunnel_t.proto_id", 3]
+			],
+			"transition": [
+				{
+					"tag": "0x0800",
+					"type": "hex",
+					"next_state": "ipv4_t",
+					"next_state_id": 2
+				},
+				{
+					"tag": "default",
+					"next_state": "accept"
+				}
+			]
+		}
+	},
+	{
+		"name": "ipv4_t",
+		"id": 2,
+		"fields": [
+			["version", 5, 4, 0],
+			["ihl", 6, 4, 4],
+			["diffserv", 7, 8, 8],
+			["totalLen", 8, 16, 16],
+			["identification", 9, 16, 32],
+			["flags", 10, 3, 48],
+			["fragOffset", 11, 13, 51],
+			["ttl", 12, 8, 64],
+			["protocol", 13, 8, 72],
+			["hdrChecksum", 14, 16, 80],
+			["srcAddr", 15, 32, 96],
+			["dstAddr", 16, 32, 128]
+		],
+		"parser": {
+			"fields":[],
+			"transition": [
+				{
+					"tag": "default",
+					"next_state": "accept"
+				}
+			]
+		},
+		"funcs" : [
+			{
+				"name" : "verify_checksum",
+				"id" : 0,
+				"ops": [
+					{
+						"op": "cmp",
+						"parameters": [
+							{
+								"type": "field",
+								"name": "ipv4_t.hdrChecksum",
+								"input": []
+							},
+							{
+								"type": "primitive",
+								"name": "HashAlgorithm.csum16",
+								"input": [
+									"ipv4_t.ihl",
+									"ipv4_t.diffserv",
+									"ipv4_t.totalLen",
+									"ipv4_t.identification",
+									"ipv4_t.flags",
+									"ipv4_t.fragOffset",
+									"ipv4_t.ttl",
+									"ipv4_t.protocol",
+									"ipv4_t.srcAddr",
+									"ipv4_t.dstAddr"
+								]
+							}
+						]
+					}
+				],
+				"return_type": "bool"
+			},
+			{
+				"name" : "update_checksum",
+				"id" : 1,
+				"ops": [
+					{
+						"op": "modify_field",
+						"parameters": [
+							{
+								"type": "field",
+								"name": "ipv4_t.hdrChecksum",
+								"input": []
+							},
+							{
+								"type": "primitive",
+								"name": "HashAlgorithm.csum16",
+								"input": [
+									"ipv4_t.ihl",
+									"ipv4_t.diffserv",
+									"ipv4_t.totalLen",
+									"ipv4_t.identification",
+									"ipv4_t.flags",
+									"ipv4_t.fragOffset",
+									"ipv4_t.ttl",
+									"ipv4_t.protocol",
+									"ipv4_t.srcAddr",
+									"ipv4_t.dstAddr"
+								]
+							}
+						]
+					}
+				],
+				"return_type": "void"
+			}
+		]
+	}],
+	"structs": [
+		{
+			"name": "standard_metadata",
+			"id" : 0,
+			"alias": "s",
+			"fields" : [
+				["ingress_port", 0, 9],
+				["egress_spec", 1, 9],
+				["egress_port", 2, 9],
+				["instance_type", 3, 32],
+				["packet_length", 4, 32],
+				["enq_timestamp", 5, 32],
+				["enq_qdepth", 6, 19],
+				["deq_timedelta", 7, 32],
+				["deq_depth", 8, 19],
+				["ingress_global_timestamp", 9, 48],
+				["egress_global_timestamp", 10, 48],
+				["mcast_grp", 11, 16],
+				["egress_rid", 12, 16],
+				["checksum_error", 13, 1],
+				["priority", 14, 3]
+			]
+		},
+		{
+			"name" : "ingress_variable",
+			"id" : 1,
+			"alias" : "iv",
+			"fields" : []
+		},
+		{
+			"name" : "egress_variable",
+			"id" : 2,
+			"alias" : "ev",
+			"fields" : []
+		},
+		{
+			"name" : "para",
+			"id" : 3,
+			"alias" : "p",
+			"fields" : []
+		},
+		{
+			"name" : "header_sequence",
+			"id" : 4,
+			"alias" : "hs",
+			"fields" : [
+				["ethernet_t", "ethernet"],
+				["myTunnel_t", "myTunnel"],
+				["ipv4_t", "ipv4"]
+			]
+		}
+	],
+	"actions": [
+		{
+			"name" : "ipv4_forward",
+			"id" : 0,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"parameters" : [
+						"standard_metadata.egress_spec",
+						"para.port"
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"parameters" : [
+						"hs.ethernet.srcAddr",
+						"hs.ethernet.dstAddr"
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"parameters" : [
+						"hs.ethernet.dstAddr",
+						"para.dstAddr"
+					]
+				},
+				{
+					"primitive_name" : "decrement",
+					"parameters" : [
+						"hs.ipv4.ttl"
+					]
+				},
+				{
+					"primitive_name" : "goto",
+					"parameters" : [
+						"rP4_Ingress.myTunnel_forward_s"
+					]
+				}
+			]
+		},
+		{
+			"name" : "myTunnel_forward",
+			"id" : 1,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"parameters" : [
+						"standard_metadata.egress_spec",
+						"para.port"
+					]
+				},
+				{
+					"primitive_name" : "goto",
+					"parameters" : [
+						"rP4_Egress"
+					]
+				}
+			]
+		},
+		{
+			"name" : "drop",
+			"id" : 2,
+			"primitives" : [
+				{
+					"primitive_name" : "mark_to_drop",
+					"parameters" : [
+						"standard_metadata"
+					]
+				}
+			]
+		}	
+	],
+	"tables": [
+		{
+			"name" : "ipv4_lpm",
+			"id" : 0,
+			"size" : 1024,
+			"fields" : [
+				["hs.ipv4.dstAddr", "lpm"]
+			]
+		},
+		{
+			"name" : "myTunnel_exact",
+			"id" : 1,
+			"size" : 1024,
+			"fields" : [
+				["hs.myTunnel.dst_id", "exact"]
+			]
+		}
+	],
+	"rP4_Ingress" : {
+		"before_pipeline" : null,
+		"after_pipeline" : "update_checksum",
+		"stages" : [{
+			"name" : "ipv4_forward_s",
+			"id": 0,
+			"parser":[
+				{
+					"pointer_name" : "hs.ipv4",
+					"extract_hdr" : "ipv4_t",
+					"parse_succeed" : "verify_checksum",
+					"parse_fail" : "continue"
+				}
+			],
+			"matcher":{
+				"table_name" : "ipv4_lpm",
+				"match_type" : "lpm",
+				"match_fields" : [
+					["hs.ipv4.dstAddr", 16]
+				],
+				"atoms" : {
+					
+				}
+			},
+			"executer": [
+				[1, "ipv4_forward", "para"],
+				[2, "drop", null],
+				["default", "drop", null]
+			]
+			
+		},
+		{
+			"name" : "myTunnel_forward_s",
+			"id": 1,
+			"parser":[
+				{
+					"pointer_name" : "hs.myTunnel",
+					"extract_hdr" : "myTunnel_t",
+					"parse_succeed" : null,
+					"parse_fail" : "continue"
+				}
+			],
+			"matcher":{
+				"table_name" : "myTunnel_exact",
+				"match_type" : "exact",
+				"match_fields" : [
+					["hs.myTunnel.dst_id", 4]
+				],
+				"atoms" : {
+					
+				}
+			},
+			"executer": [
+				[1, "myTunnel_forward", "para"],
+				[2, "drop", null],
+				["default", "drop", null]
+			]
+		}]
+	},
+	"rP4_Egress" : {}
+}

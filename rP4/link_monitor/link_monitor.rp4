@@ -1,4 +1,4 @@
-global packet;
+stream packet_seg = packet[100];
 
 headers {
 	hdr ethernet_t {
@@ -29,40 +29,32 @@ headers {
 			default:;
 		};
 		
-		implicit func verify_checksum {
-			algorithm: csum16;
-			fields: {
-				this.version,
-				this.ihl,
-				this.diffserv,
-				this.totalLen,
-				this.identification,
-				this.flags,
-				this.fragOffset,
-				this.ttl,
-				this.protocol,
-				this.srcAddr,
-				this.dstAddr
-			};
-			target: this.hdrChecksum
+		implicit func verify_checksum() {
+			return this.hdrChecksum == HashAlgorithm.csum16(this.version,
+												this.ihl,
+												this.diffserv,
+												this.totalLen,
+												this.identification,
+												this.flags,
+												this.fragOffset,
+												this.ttl,
+												this.protocol,
+												this.srcAddr,
+												this.dstAddr);
 		}
 		
-		implicit func update_checksum {
-			algorithm: csum16;
-			fields: {
-				this.version,
-				this.ihl,
-				this.diffserv,
-				this.totalLen,
-				this.identification,
-				this.flags,
-				this.fragOffset,
-				this.ttl,
-				this.protocol,
-				this.srcAddr,
-				this.dstAddr
-			};
-			target: this.hdrChecksum
+		implicit func update_checksum() {
+			this.hdrChecksum = HashAlgorithm.csum16(this.version,
+												this.ihl,
+												this.diffserv,
+												this.totalLen,
+												this.identification,
+												this.flags,
+												this.fragOffset,
+												this.ttl,
+												this.protocol,
+												this.srcAddr,
+												this.dstAddr);
 		}
 	}
 
@@ -72,7 +64,7 @@ headers {
 			0: probe_fwd_t;
 			default: probe_data_t;
 		}
-		executable_commands {
+		atom {
 			metadata.remaining = hop_cnt + 1;
 		}
 	}
@@ -124,24 +116,32 @@ structs {
 	}
 }
 
+header_sequence {
+	ethernet_t              ethernet;
+    ipv4_t                  ipv4;
+    probe_t                 probe;
+    probe_data_t[10]  probe_data;
+    probe_fwd_t[10]   probe_fwd;
+}hs;
+
 actions {
 	action ipv4_forward(para) {
 		copy_field(para.port, standard_metadata.egress_spec);
-		copy_field(packet.ethernet_t.dstAddr, packet.ethermet_t.srcAddr);
-		copy_field(para.dstAddr, packet.ethernet.dstAddr);
-		decrement(packet.ipv4_t.ttl);
+		copy_field(hs.ethernet.dstAddr, hs.ethernet.srcAddr);
+		copy_field(para.dstAddr, hs.ethernet.dstAddr);
+		decrement(hs.ipv4.ttl);
 	}
 	
 	action do_probe() {
 		copy_field((bit<9>)meta.egress_spec, standard_metadata.egress_spec);
-		increment(packet.probe.hop_cnt);
+		increment(packet_seg.probe.hop_cnt);
 	}
 	
 	action reg_update() {
 		copy_field(standard_metadata.egress_global_timestamp, iv.cur_time);
 		iv.byte_cnt_reg.read(iv.byte_cnt, (bit<32>)standard_metadata.egress_port);
 		iv.byte_cnt = iv.byte_cnt + standard_metadata.packet_length;
-		iv.new_byte_cnt = (packet.probe.isValid()) ? 0 : iv.byte_cnt;
+		iv.new_byte_cnt = (packet_seg.probe.isValid()) ? 0 : iv.byte_cnt;
 		iv.byte_cnt_reg.write((bit<32>)standard_metadata.egress_port, iv.new_byte_cnt);
 	}
 	
@@ -169,12 +169,25 @@ actions {
 		hdr.probe_data[0].swid = para.swid;
 		add_probe_data();
 	}
+	
+	action drop() {
+        mark_to_drop(standard_metadata);
+    }
+}
+
+tables {
+	ingress table ipv4_lpm {
+        key = {
+            hs.ipv4.dstAddr: lpm;
+        }
+        size = 1024;
+    }
 }
 
 control rP4_Ingress {
 	stage ipv4_lpm_s {
-		ipv4 = packet.ipv4_t;[verify_checksum] # if not valid, break this stage
-		action, para = ipv4_lpm.lpm([ipv4.dstAddr]);
+		hs.ipv4 = packet_seg.ipv4_t => [verify_checksum() => [drop()]]; # if not valid, break this stage
+		action, para = tables.ipv4_lpm.lpm([ipv4.dstAddr]);
 		switch action:
 			1: ipv4_forward(para);
 			2: drop();
@@ -182,22 +195,22 @@ control rP4_Ingress {
 	}
 	
 	stage probe_s {
-		probe = packet.probe_t;
+		hs.probe = packet_seg.probe_t;
 		action, para = ;
 		switch action:
 			default: do_probe();
 	}
 }
 
-control rP4_Egress[update_checksum] {
+control rP4_Egress -> [update_checksum()] {
 	stage reg_update_s {
 		switch action: 
 			default: reg_update();
 	}
 	
 	stage probe_data_s {
-		probe = packet.probe_t;
-		action, para = swid.exact() << 1 + (packet.probe.hop_cnt==1);
+		hs.probe = packet_seg.probe_t => [];
+		action, para = swid.exact() << 1 + (hs.probe.hop_cnt==1);
 		switch action:
 			case 11: add_probe_data_1(para);
 			case 10: add_probe_data_0(para);
