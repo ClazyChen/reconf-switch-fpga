@@ -1,0 +1,110 @@
+#include <core.rp4>
+#include <v1model.rp4>
+
+stream packet_seg = packet[100]; //global variable
+
+headers {
+	hdr ethernet_t { //hidden member variable: valid (isValid(), setValid(), setInvalid())
+		bit<48> dstAddr;
+		bit<48> srcAddr;
+		bit<16> etherType;
+		
+		implicit parser(etherType) {
+			0x1234: srcRoute_t;
+			default: accept;
+		}
+	}
+	
+	hdr srcRoute_t {
+		bit<1>    bos;
+		bit<15>   port;
+		
+		implicit parser(bos) {
+			1: ipv4_t;
+			default: srcRoute_t;
+		}
+	}
+	
+	hdr ipv4_t {
+		bit<4>    version;
+		bit<4>    ihl;
+		bit<8>    diffserv;
+		bit<16>   totalLen;
+		bit<16>   identification;
+		bit<3>    flags;
+		bit<13>   fragOffset;
+		bit<8>    ttl;
+		bit<8>    protocol;
+		bit<16>   hdrChecksum;
+		bit<32>   srcAddr;
+		bit<32>   dstAddr;
+		
+		implicit parser() {
+			default: accept;
+		}
+	}
+}
+
+header_sequence { //ordered, exist in original header, not extracted to new structs, just pointer
+	ethernet_t ethernet;
+	srcRoute_t srcRoutes[9];
+	ipv4_t ipv4;
+}hs;
+
+actions {
+	ingress action drop() {
+        mark_to_drop(standard_metadata);
+    }
+	
+	ingress action srcRoute_nhop() {
+		modify_field(standard_metadata.egress_spec, (bit<9>)hs.srcRoutes[0].port)
+        hs.srcRoutes.pop_front(1);
+    }
+
+    ingress action srcRoute_finish() {
+		modify_field(hs.ethernet.etherType, 0x0800);
+    }
+
+    ingress action update_ttl(){
+		decrement(hs.ipv4.ttl);
+    }
+	
+	ingress action src_route_1() {
+		srcRoute_finish();
+		srcRoute_nhop();
+		update_ttl();
+	}
+	
+	ingress action src_route_0() {
+		srcRoute_finish();
+		srcRoute_nhop();
+	}
+}
+
+structs {
+	struct metadata {
+		
+	}
+}
+
+control rP4_Ingress {
+	stage src_route_s {
+		hs.srcRoutes = packet.extract(srcRoute_t) => [drop()]; // => indicates if srcRoute doesn't exist, break
+		hs.ipv4 <= packet.ipv4_t; // <= indicates whether ipv4 exists or not, execute next
+		action, para = (hs.srcRoutes[0].bos == 1) << 1 + (hs.ipv4.isValid());
+		switch action:
+			11: src_route_1();
+			10: src_route_0();
+			default: drop();
+	}
+}
+
+control rP4_Egress {
+	
+}
+
+pipelines {
+	pipeline p0{
+		rP4_Ingress.src_route_s
+	}
+}

@@ -1,0 +1,110 @@
+global packet;
+
+headers {
+	hdr ethernet_t {
+		bit<48> dstAddr;
+		bit<48> srcAddr;
+		next_hdr bit<16> etherType;
+		implicit ethernet_parser {
+			0x800{16}:	ipv4_t;
+			default:;
+		}
+	}
+
+	hdr ipv4_t {
+		bit<4>    version;
+		bit<4>    ihl;
+		bit<8>    diffserv;
+		bit<16>   totalLen;
+		bit<16>   identification;
+		bit<3>    flags;
+		bit<13>   fragOffset;
+		bit<8>    ttl;
+		next_hdr bit<8>    protocol;
+		bit<16>   hdrChecksum;
+		bit<32>   srcAddr;
+		bit<32>   dstAddr;
+		implicit ipv4_parser {
+			default: accept;
+		};
+		implicit func verify_checksum {
+			algorithm: crc32;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		} # do when extract
+		
+		implicit func update_checksum {
+			algorithm: crc32;
+			fields: {
+				this.version,
+				this.ihl,
+				this.diffserv,
+				this.totalLen,
+				this.identification,
+				this.flags,
+				this.fragOffset,
+				this.ttl,
+				this.protocol,
+				this.srcAddr,
+				this.dstAddr
+			};
+			target: this.hdrChecksum
+		}
+	}
+}
+
+actions {
+	action ipv4_forward(para) {
+		copy_field(para.port, standard_metadata.egress_spec);
+		copy_field(packet.ethernet_t.dstAddr, packet.ethermet_t.srcAddr);
+		copy_field(para.dstAddr, packet.ethernet.dstAddr);
+		decrement(packet.ipv4_t.ttl);
+	}
+	
+	action drop() {
+        mark_to_drop(standard_metadata);
+    }
+	
+	action mark_ecn() {
+        packet.ipv4.ecn = 3;
+    }
+}
+
+control rP4_Ingress {
+	stage ipv4_lpm_s {
+		ipv4 = packet.ipv4_t;[verify_checksum] # if not valid, break this stage
+		action, para = ipv4_lpm.lpm(ipv4.dstAddr);
+		switch action:
+			1: ipv4_forward(para);
+			2: drop();
+			default: drop();
+	}
+}
+
+control rP4_Egress[update_checksum] {
+	stage ecn_s {
+		action, para = (hdr.ipv4.ecn == 1 || hdr.ipv4.ecn == 2) << 1 + (standard_metadata.enq_qdepth >= 10)
+		switch action:
+			11: mark_ecn();
+			default: accept;
+	}
+}
+
+pipelines {
+	pipeline {
+		rP4_Ingress.ipv4_lpm_s,
+		rP4_Egress.ecn_s
+	}
+}

@@ -1,0 +1,95 @@
+global packet;
+
+headers {
+	hdr ethernet_t {
+		bit<48> dstAddr;
+		bit<48> srcAddr;
+		bit<16> etherType;
+		implicit parser(etherType) {
+			0x1234: p4calc_t;
+			default: accept;
+		}
+	}
+	
+	hdr p4calc_check_t {
+		bit<8>  p;
+		bit<8>  four;
+		bit<8>  ver;
+		implicit parser(p, four, ver) {
+			(0x50, 0x34, 0x01): p4calc_t;
+			default: accept;
+		}
+	}
+	
+	hdr p4calc_t {
+		bit<8>  op;
+		bit<32> operand_a;
+		bit<32> operand_b;
+		bit<32> res;
+		implicit parser() {
+			default: accept
+		}
+	}
+}
+
+structs {
+	struct metadata {
+	
+	}
+	
+	struct ingress_variable {
+		
+	}
+}
+
+actions {
+	action operation_add() {
+        send_back(packet.p4calc.operand_a + packet.p4calc.operand_b);
+    }
+    
+    action operation_sub() {
+        send_back(packet.p4calc.operand_a - packet.p4calc.operand_b);
+    }
+    
+    action operation_and() {
+        send_back(packet.p4calc.operand_a & packet.p4calc.operand_b);
+    }
+    
+    action operation_or() {
+        send_back(packet.p4calc.operand_a | packet.p4calc.operand_b);
+    }
+
+    action operation_xor() {
+        send_back(packet.p4calc.operand_a ^ packet.p4calc.operand_b);
+    }
+	
+	action send_back(bit<32> result) {
+        packet.p4calc.res = result;
+		swap(packet.ethernet.dstAddr, packet.ethernet.srcAddr);
+        standard_metadata.egress_spec = standard_metadata.ingress_port;
+    }
+}
+
+control rP4_Ingress {
+	stage calculate_s {
+		p4calc = packet.p4calc_t;[drop]
+		action, para = calculate.exact(p4calc.op);
+		switch action:
+			0x2b: operation_add();
+			0x2d: operation_sub();
+			0x26: operation_and();
+			0x7c: operation_or();
+			0x5e: operation_xor();
+			default: operation_drop();
+	}
+}
+
+control rP4_Egress {
+	
+}
+
+pipelines {
+	pipeline {
+		rP4_Ingress.calculate_s
+	}
+}
