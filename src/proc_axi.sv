@@ -37,6 +37,12 @@ module proc_axi #(
     input wire [`ADDR_BUS] ex_mod_hit_action_addr_i,
     input wire [`ADDR_BUS] ex_mod_miss_action_addr_i,
     input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1],
+    // tm
+    input wire tm_valid_i,
+    input wire [`NUM_PORTS - 1:0] tm_out_port_i,
+    input wire [`BYTE_BUS] tm_pkt_hdr_i [0:`HDR_MAX_LEN - 1],
+    output reg [`NUM_PORTS - 1:0] tm_out_port_o,
+    output reg [`BYTE_BUS] tm_pkt_hdr_o [0:`HDR_MAX_LEN - 1],
     // axi
     output reg [`ID_WIDTH - 1 : 0] axi_awid,
     output reg [31 : 0] axi_awaddr,
@@ -130,7 +136,13 @@ module proc_axi #(
         .ex_mod_start_i(ex_mod_start_i),
         .ex_mod_hit_action_addr_i(ex_mod_hit_action_addr_i),
         .ex_mod_miss_action_addr_i(ex_mod_miss_action_addr_i),
-        .ex_mod_ops_i(ex_mod_ops_i)
+        .ex_mod_ops_i(ex_mod_ops_i),
+        // tm
+        .tm_valid_i(tm_valid_i),
+        .tm_out_port_i(tm_out_port_i),
+        .tm_pkt_hdr_i(tm_pkt_hdr_i),
+        .tm_out_port_o(tm_out_port_o),
+        .tm_pkt_hdr_o(tm_pkt_hdr_o)
     );
 
     mem_axi #(
