@@ -17,7 +17,7 @@ headers {
 
 	hdr ipv4_t {
 		bit<4>    version;
-		bit<4>    ihl;
+		bit<4>    ihl;0
 		bit<8>    diffserv;
 		bit<16>   totalLen;
 		bit<16>   identification;
@@ -124,26 +124,10 @@ actions {
 	
 	action set_direction(para) {
 		copy_field(para.dir, iv.direction);
-		goto compute_hash_s;
+		goto filter_s;
 	}
 	
-	action compute_hash_1() {
-		extern hash(iv.reg_pos_one, HashAlgorithm.crc16, (bit<32>)0, {hs.ipv4.srcAddr,
-																   hs.ipv4.dstAddr,
-																   hs.tcp.srcPort, 
-																   hs.tcp.dstPort,
-																   hs.ipv4.protocol},
-																   (bit<32>)4096);
-		extern hash(iv.reg_pos_one, HashAlgorithm.crc16, (bit<32>)0, {hs.ipv4.srcAddr,
-																   hs.ipv4.dstAddr,
-																   hs.tcp.srcPort, 
-																   hs.tcp.dstPort,
-																   hs.ipv4.protocol},
-																   (bit<32>)4096);
-		goto bloom_filter_set_s;
-	}
-	
-	action compute_hash_0() {
+	action block_3() {
 		extern hash(iv.reg_pos_one, HashAlgorithm.crc16, (bit<32>)0, {hs.ipv4.dstAddr,
 																   hs.ipv4.srcAddr,
 																   hs.tcp.dstPort, 
@@ -156,24 +140,37 @@ actions {
 																   hs.tcp.srcPort,
 																   hs.ipv4.protocol},
 																   (bit<32>)4096);
-		goto bloom_filter_set_s;
 	}
 	
-	action bloom_filter_write_0(){
+	action block_4() {
+		extern hash(iv.reg_pos_one, HashAlgorithm.crc16, (bit<32>)0, {hs.ipv4.srcAddr,
+																   hs.ipv4.dstAddr,
+																   hs.tcp.srcPort, 
+																   hs.tcp.dstPort,
+																   hs.ipv4.protocol},
+																   (bit<32>)4096);
+		extern hash(iv.reg_pos_one, HashAlgorithm.crc16, (bit<32>)0, {hs.ipv4.srcAddr,
+																   hs.ipv4.dstAddr,
+																   hs.tcp.srcPort, 
+																   hs.tcp.dstPort,
+																   hs.ipv4.protocol},
+																   (bit<32>)4096);
+	}
+	
+	action block_5() {
 		iv.bloom_filter_1.write(iv.reg_pos_one, 1);
 		iv.bloom_filter_2.write(iv.reg_pos_two, 1);
 	}
 	
-	action bloom_filter_write_1() {
+	action block_6() {
 		iv.bloom_filter_1.read(iv.reg_val_one, iv.reg_pos_one);
         iv.bloom_filter_2.read(iv.reg_val_two, iv.reg_pos_two);
-		extern mark_to_drop();
 	}
 	
-	action bloom_filter_write_2() {
-		iv.bloom_filter_1.read(iv.reg_val_one, iv.reg_pos_one);
-        iv.bloom_filter_2.read(iv.reg_val_two, iv.reg_pos_two);
+	action block_7() {
+		drop();
 	}
+	
 	
 	action drop() {
         extern mark_to_drop(standard_metadata);
@@ -198,6 +195,7 @@ tables {
 }
 
 control rP4_Ingress {
+	
 	stage ipv4_lpm_s {
 		parser:
 			hs.ipv4 = packet_seg.extract(ipv4_t);
@@ -231,30 +229,25 @@ control rP4_Ingress {
 				default: None;
 	}
 	
-	stage compute_hash_s {
+	stage filter_s {
 		parser:
 		matcher:
-			action, para = (iv.direction==0);
-		executer:
-			switch action:
-				1b0: compute_hash_1();
-				1b1: compute_hash_0();
-	}
-	
-	stage bloom_filter_set_s {
-		parser:
-			hs.tcp = packet.tcp_t;
-		matcher:
-			action, para = (iv.direction==0) << 2 + (hs.tcp.syn==1) << 1 
+			action, para = (iv.direction==0)<<3 + (iv.direction==1)<<2 + (hs.tcp.syn==1) << 1 
 									+ (iv.reg_val_one != 1 || iv.reg_val_two != 1);
 		executer:
 			switch action:
-				3b110: 
-				3b111: bloom_filter_write_0();
-				3b001: 
-				3b011: bloom_filter_write_1();
-				3b000: 
-				3b010: bloom_filter_write_2();
+				4b1000: 
+				4b1001: block_3(); goto rP4_Egress;
+				4b1010: 
+				4b1011: block_3(); block_5(); goto rP4_Egress;
+				4b0100: 
+				4b0110: block_4(); block_6(); goto rP4_Egress;
+				4b0101: 
+				4b0111: block_4(); block_6(); block_7(); goto rP4_Egress;
+				4b0000: 
+				4b0001: 
+				4b0010: 
+				4b0011: block_4(); goto rP4_Egress;
 				default:;
 	}
 }
@@ -265,14 +258,13 @@ control rP4_Egress -> [update_checksum()]{
 
 user_funcs {
 	func ipv4_forward {
-		rP4_Ingress.ipv4_lpm_s;
+		rP4_Ingress.ipv4_lpm_s
 	}
 	
 	func tcp_firewall {
 		rP4_Ingress.tcp_valid_s;
 		rP4_Ingress.check_ports_s;
-		rP4_Ingress.compute_hash_s;
-		rP4_Ingress.bloom_filter_set_s;
+		rP4_Ingress.filter_s;
 	}
 	ingress entry: rP4_Ingress.ipv4_lpm_s; // which stage the packet should pass first
 }
@@ -282,8 +274,8 @@ pipelines{
 	pipeline p0{
 		rP4_Ingress.ipv4_lpm_s,
 		rP4_Ingress.check_ports_s,
-		rP4_Ingress.compute_hash_s,
-		rP4_Ingress.bloom_filter_set_s,
+		rP4_Ingress.filter_s,
 		rP4_Egress
 	}
-}*/
+}
+*/
