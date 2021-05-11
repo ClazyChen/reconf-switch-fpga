@@ -1,0 +1,19 @@
+primitive:
+
+modify_field: 0
+cmp: 1
+decrement: 2
+register_write: 3
+register_read: 4
+mark_to_drop: 5
+eq: 6
+sum: 7
+neq: 8
+goto: 9
+HashAlgorithm.csum16: 10
+HashAlgorithm.crc16: 11
+HashAlgorithm.crc32: 12
+hash: 13
+break: 14
+left_shift: 15
+or: 16

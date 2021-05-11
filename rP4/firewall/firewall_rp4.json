@@ -1,0 +1,1478 @@
+
+{
+	"headers" : [
+		{
+			"name" : "ethernet_t",
+			"id" : 0,
+			"fields": [
+				["dstAddr", 0, 48, 0], 
+				["srcAddr", 1, 48, 48],
+				["etherType", 2, 16, 96]
+			],
+			"parser": {
+				"fields":[
+					{
+						"header_name" : "ethernet_t",
+						"header_id" : 0,
+						"field_name" : "etherType",
+						"field_id" : 2
+					}
+				],
+				"transition": [
+					{
+						"tag": "0x0800",
+						"type": "hex",
+						"next_header": "ipv4_t",
+						"next_header_id": 1
+					},
+					{
+						"tag": "default",
+						"next_header": "accept"
+					}
+				]
+			}
+		},
+		{
+			"name": "ipv4_t",
+			"id": 1,
+			"fields": [
+				["version", 3, 4, 0],
+				["ihl", 4, 4, 4],
+				["diffserv", 5, 8, 8],
+				["totalLen", 6, 16, 16],
+				["identification", 7, 16, 32],
+				["flags", 8, 3, 48],
+				["fragOffset", 9, 13, 51],
+				["ttl", 10, 8, 64],
+				["protocol", 11, 8, 72],
+				["hdrChecksum", 12, 16, 80],
+				["srcAddr", 13, 32, 96],
+				["dstAddr", 14, 32, 128]
+			],
+			"parser": {
+				"fields":[
+					{
+						"header_name" : "ipv4_t",
+						"header_id" : 1,
+						"field_name" : "protocol",
+						"field_id" : 11
+					}
+				],
+				"transition": [
+					{
+						"tag": "6",
+						"type": "decimal",
+						"next_header": "tcp_t",
+						"next_header_id": 2
+					},
+					{
+						"tag": "default",
+						"next_header": "accept"
+					}
+				]
+			},
+			"funcs" : [
+				{
+					"name" : "verify_checksum",
+					"id" : 0,
+					"ops": [
+						{
+							"op": "cmp",
+							"op_id" : 1,
+							"type" : "primitive",
+							"parameters": [
+								{
+									"type": "field",
+									"header": "ipv4_t",
+									"header_id": 1,
+									"field": "hdrChecksum",
+									"field_id" : 12,
+									"input": null
+								},
+								{
+									"type": "primitive",
+									"primitive": "HashAlgorithm.csum16",
+									"primitive_id" : 10,
+									"input": [
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "ihl",
+											"field_id" : 4
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "diffserv",
+											"field_id" : 5
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "totalLen",
+											"field_id" : 6
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "identification",
+											"field_id" : 7
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "flags",
+											"field_id" : 8
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "fragOffset",
+											"field_id" : 9
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "ttl",
+											"field_id" : 10
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "protocol",
+											"field_id" : 11
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "srcAddr",
+											"field_id" : 13
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "dstAddr",
+											"field_id" : 14
+										}
+									]
+								}
+							]
+						}
+					],
+					"return_type": "bool"
+				},
+				{
+					"name" : "update_checksum",
+					"id" : 1,
+					"ops": [
+						{
+							"op": "modify_field",
+							"op_id" : 0,
+							"type" : "primitive",
+							"parameters": [
+								{
+									"type": "field",
+									"header": "ipv4_t",
+									"header_id": 1,
+									"field": "hdrChecksum",
+									"field_id" : 12,
+									"input": null
+								},
+								{
+									"type": "primitive",
+									"primitive": "HashAlgorithm.csum16",
+									"primitive_id" : 10,
+									"input": [
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "ihl",
+											"field_id" : 4
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "diffserv",
+											"field_id" : 5
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "totalLen",
+											"field_id" : 6
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "identification",
+											"field_id" : 7
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "flags",
+											"field_id" : 8
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "fragOffset",
+											"field_id" : 9
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "ttl",
+											"field_id" : 10
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "protocol",
+											"field_id" : 11
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "srcAddr",
+											"field_id" : 13
+										},
+										{
+											"header" : "ipv4_t",
+											"header_id" : 1,
+											"field" : "dstAddr",
+											"field_id" : 14
+										}
+									]
+								}
+							]
+						}
+					],
+					"return_type": "void"
+				}
+			]
+		},
+		{
+			"name": "tcp_t",
+			"id": 2,
+			"fields": [
+				["srcPort", 15, 16, 0],
+				["dstPort", 16, 16, 16],
+				["seqNo", 17, 32, 32],
+				["ackNo", 18, 32, 64],
+				["dataOffset", 19, 4, 96],
+				["res", 20, 4, 100],
+				["cwr", 21, 1, 104],
+				["ece", 22, 1, 105],
+				["urg", 23, 1, 106],
+				["ack", 24, 1, 107],
+				["psh", 25, 1, 108],
+				["rst", 26, 1, 109],
+				["syn", 27, 1, 110],
+				["fin", 28, 1, 111],
+				["window", 29, 16, 112],
+				["checksum", 30, 16, 128],
+				["urgentPtr", 31, 16, 144]
+			],
+			"parser": {
+				"fields":[],
+				"transition": [
+					{
+						"tag": "default",
+						"next_state": "accept"
+					}
+				]
+			}
+		}
+	],
+	
+	"structs": [
+		{
+			"name": "standard_metadata",
+			"id" : 3,
+			"alias": "s",
+			"fields" : [
+				["ingress_port", 0, 9],
+				["egress_spec", 1, 9],
+				["egress_port", 2, 9],
+				["instance_type", 3, 32],
+				["packet_length", 4, 32],
+				["enq_timestamp", 5, 32],
+				["enq_qdepth", 6, 19],
+				["deq_timedelta", 7, 32],
+				["deq_depth", 8, 19],
+				["ingress_global_timestamp", 9, 48],
+				["egress_global_timestamp", 10, 48],
+				["mcast_grp", 11, 16],
+				["egress_rid", 12, 16],
+				["checksum_error", 13, 1],
+				["priority", 14, 3]
+			]
+		},
+		{
+			"name" : "ingress_variable",
+			"id" : 4,
+			"alias" : "iv",
+			"fields" : [
+				{
+					"name" : "bloom_filter_1",
+					"id" : 0,
+					"type" : "register_array",
+					"width" : 1,
+					"length" : 4096
+				},
+				{
+					"name" : "bloom_filter_2",
+					"id" : 1,
+					"type" : "register_array",
+					"width" : 1,
+					"length" : 4096
+				},
+				{
+					"name" : "reg_pos_one",
+					"id" : 2,
+					"type" : "single_register",
+					"width" : 32
+				},
+				{
+					"name" : "reg_pos_two",
+					"id" : 3,
+					"type" : "single_register",
+					"width" : 32
+				},
+				{
+					"name" : "reg_val_one",
+					"id" : 4,
+					"type" : "single_register",
+					"width" : 1
+				},
+				{
+					"name" : "reg_val_two",
+					"id" : 5,
+					"type" : "single_register",
+					"width" : 1
+				},
+				{
+					"name" : "direction",
+					"id" : 6,
+					"type" : "single_register",
+					"width" : 1
+				}
+			]
+		},
+		{
+			"name" : "egress_variable",
+			"id" : 5,
+			"alias" : "ev",
+			"fields" : []
+		},
+		{
+			"name" : "header_sequence",
+			"id" : 6,
+			"alias" : "hs",
+			"fields": [
+				{
+					"name": "ethernet",
+					"id" : 0,
+					"header": "ethernet_t",
+					"header_id" : 0
+				},
+				{
+					"name": "ipv4",
+					"id" : 1,
+					"header": "ipv4_t",
+					"header_id" : 1
+				},
+				{
+					"name": "tcp",
+					"id" : 2,
+					"header": "tcp_t",
+					"header_id" : 2
+				}
+			]
+		}
+	],
+	
+	
+	"actions" : [
+		{
+			"name" : "ipv4_forward",
+			"id" : 0,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type": "field",
+							"header": "standard_metadata",
+							"header_id": 3,
+							"field": "egress_spec",
+							"field_id": 1
+						},
+						{
+							"type": "parameter",
+							"field": "port",
+							"field_index": 0
+						}
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "field",
+							"header": "ethernet_t",
+							"header_id" : 0,
+							"field": "dstAddr",
+							"field_id" : 0
+						},
+						{
+							"type" : "field",
+							"header": "ethernet_t",
+							"header_id" : 0,
+							"field": "srcAddr",
+							"field_id" : 1
+						}
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type": "parameter",
+							"field": "dstAddr",
+							"field_index": 1
+						},
+						{
+							"type" : "field",
+							"header": "ethernet_t",
+							"header_id" : 0,
+							"field": "dstAddr",
+							"field_id" : 0
+						}
+					]
+				},
+				{
+					"primitive_name" : "decrement",
+					"primitive_id" : 2,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "field",
+							"header": "ipv4_t",
+							"header_id" : 1,
+							"field": "ttl",
+							"field_id" : 10
+						}
+					]
+				},
+				{
+					"primitive_name" : "goto",
+					"primitive_id" : 9,
+					"type" : "primitive",
+					"parameters" : {
+						"pipeline": "rP4_Ingress",
+						"stage": "tcp_valid_s",
+						"stage_id" : 1
+					}
+				}
+			]
+		},
+		{
+			"name" : "direction_init",
+			"id" : 1,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "direction",
+							"field_id" : 6
+						},
+						{
+							"type" : "constant",
+							"width" : 1,
+							"value" : 0
+						}
+					]
+				},
+				{
+					"primitive_name" : "goto",
+					"primitive_id" : 9,
+					"type" : "primitive",
+					"parameters" : {
+						"pipeline": "rP4_Ingress",
+						"stage": "check_ports_s",
+						"stage_id" : 2
+					}
+				}
+			]
+		},
+		{
+			"name" : "set_direction",
+			"id" : 2,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "direction",
+							"field_id" : 6
+						},
+						{
+							"type": "parameter",
+							"field": "dir",
+							"field_index": 0
+						}
+					]
+				},
+				{
+					"primitive_name" : "goto",
+					"primitive_id" : 9,
+					"type" : "primitive",
+					"parameters" : {
+						"pipeline": "rP4_Ingress",
+						"stage": "compute_hash_s",
+						"stage_id" : 3
+					}
+				}
+			]
+		},
+		{
+			"name" : "compute_hash_0",
+			"id" : 3,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_one",
+							"field_id" : 2
+						},
+						{
+							"type" : "extern",
+							"primitive_name" : "HashAlgorithm.crc16",
+							"primitive_id" : 11,
+							"parameters" : [
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 0
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "dstAddr",
+									"field_id" : 14
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "srcAddr",
+									"field_id" : 13
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "dstPort",
+									"field_id" : 16
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "srcPort",
+									"field_id" : 15
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "protocol",
+									"field_id" : 11
+								},
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 4096
+								}
+							]
+						}
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_two",
+							"field_id" : 3
+						},
+						{
+							"type" : "extern",
+							"primitive_name" : "HashAlgorithm.crc32",
+							"primitive_id" : 11,
+							"parameters" : [
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 0
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "dstAddr",
+									"field_id" : 14
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "srcAddr",
+									"field_id" : 13
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "dstPort",
+									"field_id" : 16
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "srcPort",
+									"field_id" : 15
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "protocol",
+									"field_id" : 11
+								},
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 4096
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "compute_hash_1",
+			"id" : 4,
+			"primitives" : [
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_one",
+							"field_id" : 2
+						},
+						{
+							"type" : "extern",
+							"primitive_name" : "HashAlgorithm.crc16",
+							"primitive_id" : 11,
+							"parameters" : [
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 0
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "srcAddr",
+									"field_id" : 13
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "dstAddr",
+									"field_id" : 14
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "srcPort",
+									"field_id" : 15
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "dstPort",
+									"field_id" : 16
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "protocol",
+									"field_id" : 11
+								},
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 4096
+								}
+							]
+						}
+					]
+				},
+				{
+					"primitive_name" : "modify_field",
+					"primitive_id" : 0,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_two",
+							"field_id" : 3
+						},
+						{
+							"type" : "extern",
+							"primitive_name" : "HashAlgorithm.crc32",
+							"primitive_id" : 11,
+							"parameters" : [
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 0
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "srcAddr",
+									"field_id" : 13
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "dstAddr",
+									"field_id" : 14
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "srcPort",
+									"field_id" : 15
+								},
+								{
+									"type" : "field",
+									"header": "tcp_t",
+									"header_id" : 1,
+									"field": "dstPort",
+									"field_id" : 16
+								},
+								{
+									"type" : "field",
+									"header": "ipv4_t",
+									"header_id" : 1,
+									"field": "protocol",
+									"field_id" : 11
+								},
+								{
+									"type" : "constant",
+									"width" : 32,
+									"value" : 4096
+								}
+							]
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "bloom_filter_write_0",
+			"id" : 5,
+			"primitives" : [
+				{
+					"primitive_name" : "register_write",
+					"primitive_id" : 3,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_1",
+							"field_id" : 0
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_one",
+							"field_id" : 2
+						},
+						{
+							"type" : "constant",
+							"width" : 32,
+							"value" : 1
+						}
+					]
+				},
+				{
+					"primitive_name" : "register_write",
+					"primitive_id" : 3,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_2",
+							"field_id" : 1
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_two",
+							"field_id" : 3
+						},
+						{
+							"type" : "constant",
+							"width" : 32,
+							"value" : 1
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "bloom_filter_write_1",
+			"id" : 6,
+			"primitives" : [
+				{
+					"primitive_name" : "register_write",
+					"primitive_id" : 3,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_1",
+							"field_id" : 0
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_one",
+							"field_id" : 2
+						},
+						{
+							"type" : "constant",
+							"width" : 32,
+							"value" : 1
+						}
+					]
+				},
+				{
+					"primitive_name" : "register_write",
+					"primitive_id" : 3,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_2",
+							"field_id" : 1
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_two",
+							"field_id" : 3
+						},
+						{
+							"type" : "constant",
+							"width" : 32,
+							"value" : 1
+						}
+					]
+				},
+				{
+					"primitive_name" : "drop",
+					"type" : "action",
+					"action_id" : 8,
+					"parameters" :[]
+				}
+			]
+		},
+		{
+			"name" : "bloom_filter_write_2",
+			"id" : 7,
+			"primitives" : [
+				{
+					"primitive_name" : "register_read",
+					"primitive_id" : 4,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_1",
+							"field_id" : 0
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_val_one",
+							"field_id" : 4
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_one",
+							"field_id" : 2
+						}
+					]
+				},
+				{
+					"primitive_name" : "register_read",
+					"primitive_id" : 4,
+					"type" : "primitive",
+					"parameters" : [
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "bloom_filter_2",
+							"field_id" : 1
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_val_two",
+							"field_id" : 5
+						},
+						{
+							"type" : "variable",
+							"header" : "iv",
+							"header_id" : 4, 
+							"field" : "reg_pos_two",
+							"field_id" : 3
+						}
+					]
+				}
+			]
+		},
+		{
+			"name" : "drop",
+			"id" : 8,
+			"primitives" : [
+				{
+					"primitive_name" : "mark_to_drop",
+					"primitive_id" : 5,
+					"type" : "extern",
+					"parameters" : [
+						{
+							"type" : "header",
+							"header" : "standard_metadata",
+							"header_id" : 3
+						}
+					]
+				}
+			]
+		}
+	],
+	
+	"tables" : [
+		{
+			"name" : "ipv4_lpm",
+			"id" : 0,
+			"size" : 1024,
+			"match_type" : "lpm",
+			"fields" : [
+				{
+					"type" : "field",
+					"header" : "ipv4_t",
+					"header_id" : 1,
+					"field" : "dstAddr",
+					"field_id" : 14,
+					"match_type" : "lpm"
+				}
+			]
+		},
+		{
+			"name" : "check_ports",
+			"id" : 1,
+			"size" : 1024,
+			"match_type" : "exact",
+			"fields" : [
+				{
+					"type" : "field",
+					"header" : "standard_metadata",
+					"header_id" : 3,
+					"field" : "ingress_port",
+					"field_id" : 0,
+					"match_type" : "exact"
+				},
+				{
+					"type" : "field",
+					"header" : "standard_metadata",
+					"header_id" : 3,
+					"field" : "egress_spec",
+					"field_id" : 1,
+					"match_type" : "exact"
+				}
+			]
+		}
+	], 
+	
+	"rP4_Ingress" : {
+		"before_pipeline" : null,
+		"after_pipeline" : null,
+		"entry" : "ipv4_lpm_s",
+		"entry_id" : 0,
+		"stages" : [
+			{
+				"name" : "ipv4_lpm_s",
+				"id" : 0,
+				"parser" : [
+					{
+						"pointer_name" : "hs.ipv4",
+						"extract_header" : "ipv4_t",
+						"extract_header_id" : 1,
+						"parse_succeed" : "verify_checksum",
+						"parse_fail" : "break"
+					}
+				],
+				"matcher" : {
+					"type" : "table_search",
+					"content" : {
+						"table_name" : "ipv4_lpm",
+						"table_id" : 0,
+						"match_type" : "lpm",
+						"match_fields" : [
+							{
+								"type" : "field",
+								"header" : "hs.ipv4",
+								"header_id" : 1,
+								"field" : "dstAddr",
+								"field_id" : 14,
+								"match_type" : "lpm"
+							}
+						]
+					},
+					"atoms" : {
+						
+					}
+				},
+				"executer": [
+					{
+						"tag" : "2b00",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "ipv4_forward",
+								"action_id" : 0
+							}
+						]
+					},
+					{
+						"tag" : "2b01",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "drop",
+								"action_id" : 8
+							}
+						]
+					}
+				]
+			},
+			{
+				"name" : "tcp_valid_s",
+				"id" : 1,
+				"parser" : [
+					{
+						"pointer_name" : "hs.tcp",
+						"extract_hdr" : "tcp_t",
+						"extract_header_id" : 1,
+						"parse_succeed" : null,
+						"parse_fail" : "break"
+					}
+				],
+				"matcher" : null,
+				"executer" : [
+					{
+						"tag" : "default",
+						"type" : "default",
+						"actions" : [
+							{
+								"action_name" : "direction_init",
+								"action_id" : 1
+							}
+						]
+					}
+				]
+			},
+			{
+				"name" : "check_ports_s",
+				"id" : 2,
+				"parser" : [],
+				"matcher" : [
+					{
+						"type" : "table_search",
+						"content" : {
+							"table_name" : "check_ports",
+							"table_id" : 1,
+							"match_type" : "exact",
+							"match_fields" : [
+								{
+									"type" : "field",
+									"header" : "standard_metadata",
+									"header_id" : 3,
+									"field" : "ingress_port",
+									"field_id" : 0,
+									"match_type" : "exact"
+								},
+								{
+									"type" : "field",
+									"header" : "standard_metadata",
+									"header_id" : 3,
+									"field" : "egress_spec",
+									"field_id" : 1,
+									"match_type" : "exact"
+								}
+							]
+						},
+						"atoms" : {
+						
+						}
+					}
+				],
+				"executer" : [
+					{
+						"tag" : "1b0",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "set_direction",
+								"action_id" : 2
+							}
+						]
+					}
+				]
+			},
+			{
+				"name" : "compute_hash_s",
+				"id" : 3,
+				"parser" : [],
+				"matcher" : [
+					{
+						"type" : "logic",
+						"content" : [
+							{
+								"op" : "eq",
+								"op_id" : 6,
+								"parameters" : [
+									{
+										"type" : "variable",
+										"header" : "iv",
+										"header_id" : 4, 
+										"field" : "direction",
+										"field_id" : 6
+									},
+									{
+										"type" : "constant",
+										"width" : 1,
+										"value" : 0
+									}
+								]
+							}
+						]
+					}
+				],
+				"executer" : [
+					{
+						"tag" : "1b0",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "compute_hash_1",
+								"action_id" : 4
+							}
+						]
+					},
+					{
+						"tag" : "1b1",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "compute_hash_0",
+								"action_id" : 3
+							}
+						]
+					}
+				]
+			},
+			{
+				"name" : "bloom_filter_set_s",
+				"id" : 4,
+				"parser" : null,
+				"matcher" : [
+					{
+						"type" : "logic",
+						"content" : [
+							{
+								"op" : "sum",
+								"op_id" : 7,
+								"parameters" : [
+									{
+										"op" : "left_shift",
+										"op_id" : 15,
+										"parameters" : [
+											{
+												"op" : "cmp",
+												"op_id" : 1,
+												"parameters" : [
+													{
+														"type" : "variable",
+														"header" : "iv",
+														"header_id" : 4, 
+														"field" : "direction",
+														"field_id" : 6
+													},
+													{
+														"type" : "constant",
+														"width" : 1,
+														"value" : 0
+													}
+												]
+											}, 
+											{
+												"type" : "constant",
+												"width" : 32,
+												"value" : 2
+											}
+										]
+									},
+									{
+										"op" : "left_shift",
+										"op_id" : 15,
+										"parameters" : [
+											{
+												"op" : "cmp",
+												"op_id" : 1,
+												"parameters" : [
+													{
+														"type" : "field",
+														"header" : "hs.tcp",
+														"header_id" : 2,
+														"field" : "syn",
+														"field_id" : 28
+													},
+													{
+														"type" : "constant",
+														"width" : 32,
+														"value" : 1
+													}
+												]
+											},
+											{
+												"type" : "constant",
+												"width" : 32,
+												"value" : 1
+											}
+										]
+									},
+									{
+										"op" : "or",
+										"op_id" : 16,
+										"parameters" : [
+											{
+												"op" : "neq",
+												"op_id" : 8,
+												"parameters" : [
+													{
+														"type" : "variable",
+														"header" : "iv",
+														"header_id" : 4,
+														"field" : "reg_val_one",
+														"field_id" : 4
+													},
+													{
+														"type" : "constant",
+														"width" : 32,
+														"value" : 1
+													}
+												]
+											},
+											{
+												"op" : "neq",
+												"op_id" : 8,
+												"parameters" : [
+													{
+														"type" : "variable",
+														"header" : "iv",
+														"header_id" : 4,
+														"field" : "reg_val_two",
+														"field_id" : 5
+													},
+													{
+														"type" : "constant",
+														"width" : 32,
+														"value" : 1
+													}
+												]
+											}
+										]
+									}
+								]
+							}
+						]
+					}
+				],
+				"executer" : [
+					{
+						"tag" : "3b110",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_0",
+								"action_id" : 5
+							}
+						]
+					},
+					{
+						"tag" : "3b111",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_0",
+								"action_id" : 5
+							}
+						]
+					},
+					{
+						"tag" : "3b001",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_1",
+								"action_id" : 6
+							}
+						]
+					},
+					{
+						"tag" : "3b011",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_1",
+								"action_id" : 6
+							}
+						]
+					},
+					{
+						"tag" : "3b000",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_2",
+								"action_id" : 7
+							}
+						]
+					},
+					{
+						"tag" : "3b010",
+						"type" : "binary",
+						"actions" : [
+							{
+								"action_name" : "bloom_filter_write_2",
+								"action_id" : 7
+							}
+						]
+					},
+					{
+						"tag" : "default",
+						"type" : "default",
+						"actions" : null
+					}
+				]
+			}
+		]
+	},
+	"rP4_Egress" : {
+		"before_pipeline" : null,
+		"after_pipeline" : ["update_checksum"],
+		"entry" : "",
+		"stages" : []
+	},
+	"user_funcs" : [
+		{
+			"func" : "ipv4_forward",
+			"stages" : [
+				["rP4_Ingress", "ipv4_lpm_s"]
+			]
+		},
+		{
+			"func" : "tcp_firewall",
+			"stages" : [
+				["rP4_Ingress", "tcp_valid_s"],
+				["rP4_Ingress", "check_ports_s"],
+				["rP4_Ingress", "compute_hash_s"],
+				["rP4_Ingress", "bloom_filter_set_s"]
+			]
+		}
+	]
+}
