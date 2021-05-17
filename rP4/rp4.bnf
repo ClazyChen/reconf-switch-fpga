@@ -1,0 +1,53 @@
+
+<rp4_declaration> ::= <headers_declaration> <structs_declaration> <header_sequence_declaration> <actions_declaration>
+                      <tables_declaration> {<control_declaration>} <ingress_pipeline> <egress_pipeline> <user_funcs>
+<headers_declaration> ::= 'headers{' {<header_definition>} '}'
+<header_definition> ::= 'header' <header_name> '{' {<field_definition>} {<func_definition> ';'} '}'
+<field_definition> ::= <bit_def> <field_name>
+<func_definition> ::= <parser_definition>
+                    | <built-in_func_definition>
+<parser_definition> ::= 'implicit parser(' {<header_field_name>} ') {' {<header_tag> ':' <header_name>} '}'
+<header_field_name> ::= <header_name>'.'<field_name>
+                    | <struct_name>'.'<field_name>
+<built-in_func_definition> ::= 'implicit' 'func' <func_name> '()' '{' {<statement>} '}'
+<structs_declaration> ::= 'structs' '{' {<struct_declaration>} '}'
+<header_sequence_declaration> ::= 'header_sequence' '{' {<header_name> <instance_name> ';' } '}'
+<actions_declaration> ::= 'action' <action_name>'('{<field_definition>}')' '{' {<statement>} '}'
+<struct_declaration> ::= 'struct' <struct_name> '{' {<member_type> <member_name>} '}'
+<tables_declaration> ::= 'tables{' {<table_declaration>} '}'
+<table_declaration> ::= 'table' <table_name> '{' 'key={' {<match_field> ':' <match_type>} '}' ['size='<digit>] '}'
+<match_field> ::= <struct_name>'.'<member_name> 
+                | 'hs.'<header_name>'.'<field_name>
+<control_declaration> ::= P4_control_declaration
+<ingress_pipeline> ::= 'control rP4_Ingress {' {<stage_declaration>} '}'
+<egress_pipeline> ::= 'control rP4_Egress {' {<stage_declaration>} '}'
+<stage_declaration> ::= '{' 
+                        'parser:' {<parser_module>}
+                        'matcher:' [<matcher_module>]
+                        'executer:' <executer_module>
+                     '}'
+<parser_module> ::= 'hs.'<instance_name> '=' 'packet_seg.extract(' <header_name> ')'
+<matcher module> ::= 'action, para=' <match_expr> 
+                    | 'action, para=' <logic_expr>
+<match_expr> ::= <table_name>'.'<match_type>'(['{<match_field>}'])'
+<match_type> ::= 'lpm'
+                | 'exact'
+                | 'ternary'
+<member_type> ::= <bit_def>
+                | 'register'[<bit_def>] ['('<digit>')']
+<field_definition> ::= <bit_def> <field_name>
+<bit_def> = 'bit' '<' <bit width> '>'
+<struct_name> ::= 'ingress_variable'
+                | 'egress_variable'
+                | 'metadata'
+                | <other_struct_name>
+<header_name> ::= ''
+<instance_name> ::= ''
+<field_name> ::= ''
+<member_name> ::= ''
+<header_tag> ::= ''
+<func_name> ::= ''
+<table_name> ::= ''
+<other_struct_name> ::= ''
+<logic_expr> :: P4_expression
+<statement> ::= P4_statement
