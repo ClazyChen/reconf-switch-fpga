@@ -473,12 +473,6 @@ module switch_sopc (
     wire [`BYTE_BUS] proc3_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
     wire [`NUM_PORTS - 1:0] proc3_out_port_o;
 
-    // tm
-    wire [`NUM_PORTS - 1:0] tm_out_port_i;
-    wire [`BYTE_BUS] tm_pkt_hdr_i [0:`HDR_MAX_LEN - 1];
-    wire [`NUM_PORTS - 1:0] tm_out_port_o;
-    wire [`BYTE_BUS] tm_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
-
     proc_axi #(
         .PROC_ID(0)
     ) proc_axi0(
@@ -516,8 +510,6 @@ module switch_sopc (
         .ex_mod_hit_action_addr_i(ex0_mod_hit_action_addr_i),
         .ex_mod_miss_action_addr_i(ex0_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex0_mod_ops_i),
-        // tm
-        .tm_valid_i(`FALSE),
         // axi
         .axi_awid(m_axi_awid[0]),
         .axi_awaddr(m_axi_awaddr[0]),
@@ -595,8 +587,6 @@ module switch_sopc (
         .ex_mod_hit_action_addr_i(ex1_mod_hit_action_addr_i),
         .ex_mod_miss_action_addr_i(ex1_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex1_mod_ops_i),
-        // tm
-        .tm_valid_i(`FALSE),
         // axi
         .axi_awid(m_axi_awid[1]),
         .axi_awaddr(m_axi_awaddr[1]),
@@ -674,12 +664,6 @@ module switch_sopc (
         .ex_mod_hit_action_addr_i(ex2_mod_hit_action_addr_i),
         .ex_mod_miss_action_addr_i(ex2_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex2_mod_ops_i),
-        // tm
-        .tm_valid_i(`TRUE),
-        .tm_out_port_i(tm_out_port_i),
-        .tm_pkt_hdr_i(tm_pkt_hdr_i),
-        .tm_out_port_o(tm_out_port_o),
-        .tm_pkt_hdr_o(tm_pkt_hdr_o),
         // axi
         .axi_awid(m_axi_awid[2]),
         .axi_awaddr(m_axi_awaddr[2]),
@@ -757,8 +741,6 @@ module switch_sopc (
         .ex_mod_hit_action_addr_i(ex3_mod_hit_action_addr_i),
         .ex_mod_miss_action_addr_i(ex3_mod_miss_action_addr_i),
         .ex_mod_ops_i(ex3_mod_ops_i),
-        // tm
-        .tm_valid_i(`FALSE),
         // axi
         .axi_awid(m_axi_awid[3]),
         .axi_awaddr(m_axi_awaddr[3]),
@@ -943,14 +925,5 @@ module switch_sopc (
     );
     assign proc3_out_empty_i = latch4_empty_i;
     assign sw_out_empty_o = latch4_empty_i;
-
-    tm tm0(
-        .clk(clk),
-        .rst(rst),
-        .tm_out_port_i(tm_out_port_o),
-        .tm_pkt_hdr_i(tm_pkt_hdr_o),
-        .tm_out_port_o(tm_out_port_i),
-        .tm_pkt_hdr_o(tm_pkt_hdr_i)
-    );
 
 endmodule

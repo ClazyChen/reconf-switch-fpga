@@ -44,13 +44,7 @@ module proc #(
     input wire ex_mod_start_i,
     input wire [`ADDR_BUS] ex_mod_hit_action_addr_i,
     input wire [`ADDR_BUS] ex_mod_miss_action_addr_i,
-    input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1],
-    // tm
-    input wire tm_valid_i,
-    input wire [`NUM_PORTS - 1:0] tm_out_port_i,
-    input wire [`BYTE_BUS] tm_pkt_hdr_i [0:`HDR_MAX_LEN - 1],
-    output reg [`NUM_PORTS - 1:0] tm_out_port_o,
-    output reg [`BYTE_BUS] tm_pkt_hdr_o [0:`HDR_MAX_LEN - 1]
+    input wire [`QUAD_BUS] ex_mod_ops_i [0:`MAX_OP_NUM - 1]
 );
 
     // parser
@@ -67,12 +61,6 @@ module proc #(
     // executor
     reg ex_start_o;
     wire ex_ready_i;
-    wire [`NUM_PORTS - 1:0] ex_out_port_o;
-    wire [`BYTE_BUS] ex_pkt_hdr_o [0:`HDR_MAX_LEN - 1];
-
-    // tm
-    assign out_port_o = (tm_valid_i == `TRUE) ? tm_out_port_i : ex_out_port_o;
-    assign pkt_hdr_o = (tm_valid_i == `TRUE) ? tm_pkt_hdr_i : ex_pkt_hdr_o;
 
     enum {
         STATE_FREE,
@@ -99,26 +87,14 @@ module proc #(
             case (state)
             STATE_FREE: begin
                 if (in_empty_i == `FALSE) begin
-                    if (tm_valid_i == `TRUE) begin
-                        if (out_empty_i == `TRUE) begin
-                            tm_out_port_o <= out_port_i;
-                            tm_pkt_hdr_o <= pkt_hdr_i;
-                            in_rd_o <= `TRUE;
-                            out_wr_o <= `TRUE;
-                        end else begin
-                            in_rd_o <= `FALSE;
-                            out_wr_o <= `FALSE;
-                        end
-                    end else begin
-                        // parser
-                        ps_start_o <= `TRUE;
-                        // matcher
-                        mt_start_o <= `FALSE;
-                        // executor
-                        ex_start_o <= `FALSE;
-                        // proc
-                        state <= STATE_PARSER;
-                    end
+                    // parser
+                    ps_start_o <= `TRUE;
+                    // matcher
+                    mt_start_o <= `FALSE;
+                    // executor
+                    ex_start_o <= `FALSE;
+                    // proc
+                    state <= STATE_PARSER;
                 end
             end
             STATE_PARSER: begin
@@ -225,8 +201,8 @@ module proc #(
         .out_port_i(out_port_i),
         // output
         .ready_o(ex_ready_i),
-        .pkt_hdr_o(ex_pkt_hdr_o),
-        .out_port_o(ex_out_port_o),
+        .pkt_hdr_o(pkt_hdr_o),
+        .out_port_o(out_port_o),
         // mod
         .mod_start_i(ex_mod_start_i),
         .mod_hit_action_addr_i(ex_mod_hit_action_addr_i),
