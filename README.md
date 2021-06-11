@@ -103,3 +103,22 @@ Pop Tag
 | 001001 (6) | header_id (4) | reserved (54) |
 +------------+---------------+---------------+
 ```
+
+## Ablation Study
+
+Fixed Processors
+
+![](fig/fixed_parser.png)
+
+![](fig/fixed_matcher.png)
+
+![](fig/fixed_executor.png)
+
+Reconfigurable Processors
+
+![](fig/parser.png)
+
+![](fig/matcher.png)
+
+![](fig/executor.png)
+
