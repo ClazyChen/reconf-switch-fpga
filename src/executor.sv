@@ -47,6 +47,7 @@ module executor (
     enum {
         COPY_STATE_FREE, COPY_STATE_LOAD, COPY_STATE_STORE
     } copy_state;
+    int copy_cnt = 0;
     reg [`ADDR_BUS] copy_src_addr;
     reg [`ADDR_BUS] copy_src_end_addr;
     reg [`ADDR_BUS] copy_dst_addr;
@@ -158,17 +159,18 @@ module executor (
                     inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_COPY_FIELD: begin
-                    if (f2_hdr == `ARGS_FIELD_ID) begin
-                        for (int i = 0; i < f1_len; i++) begin
-                            pkt_hdr_o[f1_start + i] <= args_i[f2_off + i];
+                    if (copy_cnt < f1_len) begin
+                        if (f2_hdr == `ARGS_FIELD_ID) begin
+                            pkt_hdr_o[f1_start + copy_cnt] <= args_i[f2_off + copy_cnt];
+                        end else begin
+                            pkt_hdr_o[f1_start + copy_cnt] <= pkt_hdr_o[f2_start + copy_cnt];
                         end
+                        copy_cnt <= copy_cnt + 1;
                     end else begin
-                        for (int i = 0; i < f1_len; i++) begin
-                            pkt_hdr_o[f1_start + i] <= pkt_hdr_o[f2_start + i];
-                        end
+                        copy_cnt <= 0;
+                        inst <= ops[inst_cnt];
+                        inst_cnt <= inst_cnt + 1;
                     end
-                    inst <= ops[inst_cnt];
-                    inst_cnt <= inst_cnt + 1;
                 end
                 `OPCODE_SET_PORT: begin
                     if (f2_hdr == `ARGS_FIELD_ID) begin
