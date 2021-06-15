@@ -55,4 +55,4 @@
 `define FLOW_TAG_LEN    2
 
 // fixed
-// `define FIXED
+`define FIXED

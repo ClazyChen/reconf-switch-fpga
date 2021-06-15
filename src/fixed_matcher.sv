@@ -20,12 +20,24 @@ module fixed_matcher (
     output reg [`BYTE_BUS] flow_val_o [`MAX_VAL_LEN - 1:0]
 );
 
+    // table
+    reg [3:0] match_hdr_id;
+    reg [5:0] match_key_off;
+    reg [5:0] match_key_len;
+    reg [5:0] match_val_len;
+    reg [`DATA_BUS] logic_entry_len;
+    reg [`DATA_BUS] logic_start_addr;
+    reg [`BYTE_BUS] logic_tag;
+    reg is_counter_table;
+
     // load
     int mem_cnt;
 
     // key
     reg [`BYTE_BUS] key_data [7:0];     // format: [ tag(1) | zero(1) | match_key(6) ]
     reg [`BYTE_BUS] entry_key_data [7:0];
+    assign key_data[0] = logic_tag;
+    assign key_data[1] = `ZERO_BYTE;
 
     // hash
     reg hash_start_i;
@@ -55,6 +67,15 @@ module fixed_matcher (
             for (int i = 0; i < `MAX_VAL_LEN; i++) begin
                 flow_val_o[i] = 0;
             end
+            // table
+            match_hdr_id <= 1;
+            match_key_off <= 16;
+            match_key_len <= 4;
+            match_val_len <= 6 + 2;
+            logic_entry_len <= 16;
+            logic_start_addr <= 0;
+            logic_tag <= 1;
+            is_counter_table <= `FALSE;
             // reg
             hash_start_i <= `FALSE;
             mem_addr_o <= `ZERO_ADDR;
@@ -82,9 +103,9 @@ module fixed_matcher (
                     hash_start_i <= `TRUE;
                     mem_addr_o <= `ZERO_ADDR;
                     mem_cnt <= 0;
-                    {key_data[0], key_data[1], key_data[2], key_data[3]} <= {
-                        pkt_hdr_i[14 + 16], pkt_hdr_i[14 + 17], pkt_hdr_i[14 + 18], pkt_hdr_i[14 + 19]
-                    };
+                    for (int i = 0; i < match_key_len; i++) begin
+                        key_data[i + `FLOW_TAG_LEN] <= pkt_hdr_i[parsed_hdrs_i[match_hdr_id] + match_key_off + i];
+                    end
                     for (int i = 0; i < 8; i++) begin
                         entry_key_data[i] <= `ZERO_BYTE;
                     end
@@ -99,13 +120,13 @@ module fixed_matcher (
                 if (hash_ready_i == `TRUE) begin
                     mem_ce_o <= `TRUE;
                     mem_we_o <= `FALSE;
-                    mem_addr_o <= 0 + hash_val_i * 16;
+                    mem_addr_o <= logic_start_addr + hash_val_i * logic_entry_len;
                     mem_cnt <= 0;
                     state <= STATE_LOAD_KEY;
                 end
             end
             STATE_LOAD_KEY: begin
-                if (mem_cnt < 4) begin
+                if (mem_cnt < match_key_len + `FLOW_TAG_LEN) begin
                     // loading key
                     if (mem_ready_i == `TRUE) begin
                         {entry_key_data[mem_cnt], entry_key_data[mem_cnt + 1],
@@ -135,7 +156,7 @@ module fixed_matcher (
                 end
             end
             STATE_LOAD_VAL: begin
-                if (mem_cnt != 12) begin
+                if (mem_cnt != match_val_len) begin
                     // loading
                     if (mem_ready_i == `TRUE) begin
                         {flow_val_o[mem_cnt], flow_val_o[mem_cnt + 1],
@@ -145,10 +166,20 @@ module fixed_matcher (
                     end
                 end else begin
                     // load done
-                    mem_ce_o <= `FALSE;
-                    ready_o <= `TRUE;
-                    is_match_o <= `TRUE;
-                    state <= STATE_FREE;
+                    if (is_counter_table == `TRUE) begin
+                        $display("Counter: dst %d.%d.%d.%d = %d", key_data[2], key_data[3], key_data[4], key_data[5],
+                            flow_val_o[0] + 1);
+                        mem_we_o <= `TRUE;
+                        mem_addr_o <= mem_addr_o - match_val_len;
+                        mem_data_o <= {flow_val_o[0] + 1, flow_val_o[1],
+                                        flow_val_o[2], flow_val_o[3]};
+                        state <= STATE_STORE_VAL;
+                    end else begin
+                        mem_ce_o <= `FALSE;
+                        ready_o <= `TRUE;
+                        is_match_o <= `TRUE;
+                        state <= STATE_FREE;
+                    end
                 end
             end
             STATE_STORE_VAL: begin

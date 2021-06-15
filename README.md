@@ -114,6 +114,14 @@ Fixed Processors
 
 ![](fig/fixed_executor.png)
 
+Fixed Processor v2
+
+![](fig/fixed_parser_v2.png)
+
+![](fig/fixed_matcher_v2.png)
+
+![](fig/fixed_executor_v2.png)
+
 Reconfigurable Processors
 
 ![](fig/parser.png)
