@@ -130,3 +130,6 @@ Reconfigurable Processors
 
 ![](fig/executor.png)
 
+Switch
+
+![](fig/switch.png)
