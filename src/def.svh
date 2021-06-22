@@ -1,3 +1,6 @@
+// fixed
+`define FIXED
+
 `define TRUE 1'b1
 `define FALSE 1'b0
 
@@ -20,9 +23,19 @@
 `define ADDR_BUS    `WORD_BUS
 `define ZERO_ADDR   `ZERO_WORD
 
+`ifdef FIXED
+
+`define NUM_HEADERS 8
+`define NEXT_TABLE_SIZE 256
+
+`else
+
 `define NUM_HEADERS 3
-`define NO_HEADER 32'hffff_ffff
 `define NEXT_TABLE_SIZE 2
+
+`endif
+
+`define NO_HEADER 32'hffff_ffff
 `define NO_NEXT_HEADER 32'hffff_ffff
 
 // axi
@@ -53,6 +66,3 @@
 // hash
 `define MAX_HASH_LEN    8
 `define FLOW_TAG_LEN    2
-
-// fixed
-`define FIXED
