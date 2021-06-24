@@ -132,4 +132,36 @@ Reconfigurable Processors
 
 Switch
 
+4 processors
+
 ![](fig/switch.png)
+
+3 processors
+
+![](fig/reconf_3proc.png)
+
+2 processors
+
+![](fig/reconf_2proc.png)
+
+1 processor
+
+![](fig/reconf_1proc.png)
+
+Fixed Switch
+
+4 proc
+
+![](fig/fixed_4proc.png)
+
+3 proc
+
+![](fig/fixed_3proc.png)
+
+2 proc
+
+![](fig/fixed_2proc.png)
+
+1 proc
+
+![](fig/fixed_1proc.png)
