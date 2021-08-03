@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Tue Aug  3 22:26:13 2021
+# Process ID: 8208
+# Current directory: D:/Workspace/fpga-updated/vivado/fpga-updated/fpga-updated.runs/synth_1
+# Command line: vivado.exe -log Parser.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Parser.tcl
+# Log file: D:/Workspace/fpga-updated/vivado/fpga-updated/fpga-updated.runs/synth_1/Parser.vds
+# Journal file: D:/Workspace/fpga-updated/vivado/fpga-updated/fpga-updated.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source Parser.tcl -notrace

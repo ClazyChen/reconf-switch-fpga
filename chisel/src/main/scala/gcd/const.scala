@@ -4,9 +4,9 @@ import chisel3._
 import chisel3.util._
 
 object const {
-    val processor_number = 8
+    val processor_number = 4
     val sram_number = 4
-    val log_processor_number = 3
+    val log_processor_number = 2
     val log_sram_number = 2
 
     val byte_width = 8

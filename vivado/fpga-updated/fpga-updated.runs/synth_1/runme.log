@@ -1,0 +1,293 @@
+
+*** Running vivado
+    with args -log Parser.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source Parser.tcl
+
+
+
+****** Vivado v2020.2 (64-bit)
+  **** SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+  **** IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+    ** Copyright 1986-2020 Xilinx, Inc. All Rights Reserved.
+
+source Parser.tcl -notrace
+Command: synth_design -top Parser -part xcu280-fsvh2892-2L-e
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xcu280'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xcu280'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 2300
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1146.398 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'Parser' [D:/Workspace/fpga-updated/chisel/Parser.sv:4052]
+INFO: [Synth 8-6157] synthesizing module 'ParseModule' [D:/Workspace/fpga-updated/chisel/Parser.sv:2451]
+INFO: [Synth 8-6157] synthesizing module 'ParseMatcher' [D:/Workspace/fpga-updated/chisel/Parser.sv:99]
+INFO: [Synth 8-6157] synthesizing module 'SRAM' [D:/Workspace/fpga-updated/chisel/Parser.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'SRAM' (1#1) [D:/Workspace/fpga-updated/chisel/Parser.sv:1]
+INFO: [Synth 8-6155] done synthesizing module 'ParseMatcher' (2#1) [D:/Workspace/fpga-updated/chisel/Parser.sv:99]
+INFO: [Synth 8-6157] synthesizing module 'ParseAction' [D:/Workspace/fpga-updated/chisel/Parser.sv:1111]
+INFO: [Synth 8-6155] done synthesizing module 'ParseAction' (3#1) [D:/Workspace/fpga-updated/chisel/Parser.sv:1111]
+INFO: [Synth 8-6155] done synthesizing module 'ParseModule' (4#1) [D:/Workspace/fpga-updated/chisel/Parser.sv:2451]
+INFO: [Synth 8-6155] done synthesizing module 'Parser' (5#1) [D:/Workspace/fpga-updated/chisel/Parser.sv:4052]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1146.398 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1146.398 ; gain = 0.000
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xcu280-fsvh2892-2L-e
+INFO: [Synth 8-6742] Reading net delay rules and data
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1146.398 ; gain = 0.000
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xcu280-fsvh2892-2L-e
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:11 . Memory (MB): peak = 1161.207 ; gain = 14.809
+---------------------------------------------------------------------------------
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM mem_reg. We will not be able to pipeline it. This may degrade performance. 
+No constraint files found.
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input    8 Bit       Adders := 16    
+	   2 Input    7 Bit       Adders := 8     
+	   3 Input    7 Bit       Adders := 8     
++---XORs : 
+	   2 Input     16 Bit         XORs := 8     
++---Registers : 
+	               64 Bit    Registers := 8     
+	               16 Bit    Registers := 272   
+	                8 Bit    Registers := 1584  
+	                1 Bit    Registers := 16    
++---RAMs : 
+	              16K Bit	(256 X 64 bit)          RAMs := 8     
++---Muxes : 
+	   2 Input   16 Bit        Muxes := 264   
+	   2 Input    8 Bit        Muxes := 16    
+	   2 Input    1 Bit        Muxes := 16    
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 9024 (col length:94)
+BRAMs: 4032 (col length: RAMB18 288 RAMB36 144)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM ("ParseModule:/pipe1/mem/mem_reg") is too shallow (depth = 256) to use URAM. Choosing BRAM instead of URAM 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+RAM Pipeline Warning: Read Address Register Found For RAM pipe1/mem/mem_reg. We will not be able to pipeline it. This may degrade performance. 
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Preliminary Mapping	Report (see note below)
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name  | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|ParseModule: | pipe1/mem/mem_reg | 256 x 64(READ_FIRST)   | W |   | 256 x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      |                 | 
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+No constraint files found.
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:37 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+
+Block RAM: Final Mapping	Report
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|Module Name  | RTL Object        | PORT A (Depth x Width) | W | R | PORT B (Depth x Width) | W | R | Ports driving FF | RAMB18 | RAMB36 | Cascade Heights | 
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+|ParseModule: | pipe1/mem/mem_reg | 256 x 64(READ_FIRST)   | W |   | 256 x 64(WRITE_FIRST)  |   | R | Port A and B     | 0      | 1      |                 | 
++-------------+-------------------+------------------------+---+---+------------------------+---+---+------------------+--------+--------+-----------------+
+
+---------------------------------------------------------------------------------
+Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:40 ; elapsed = 00:00:40 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:45 ; elapsed = 00:00:45 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:47 ; elapsed = 00:00:46 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:47 ; elapsed = 00:00:47 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:48 ; elapsed = 00:00:47 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+---------+------+
+|      |Cell     |Count |
++------+---------+------+
+|1     |BUFG     |     1|
+|2     |CARRY8   |     8|
+|3     |LUT2     |   625|
+|4     |LUT3     |  2624|
+|5     |LUT4     |   608|
+|6     |LUT5     |   888|
+|7     |LUT6     |  8570|
+|8     |MUXF7    |  1161|
+|9     |MUXF8    |    48|
+|10    |RAMB36E2 |     8|
+|11    |FDRE     | 17043|
+|12    |IBUF     |  1153|
+|13    |OBUF     |  1057|
++------+---------+------+
+
+Report Instance Areas: 
++------+----------+----------------+------+
+|      |Instance  |Module          |Cells |
++------+----------+----------------+------+
+|1     |top       |                | 33794|
+|2     |  mau_0   |ParseModule     |  3559|
+|3     |    pipe1 |ParseMatcher_25 |  2481|
+|4     |      mem |SRAM_27         |  1404|
+|5     |    pipe2 |ParseAction_26  |  1069|
+|6     |  mau_1   |ParseModule_0   |  3543|
+|7     |    pipe1 |ParseMatcher_22 |  2465|
+|8     |      mem |SRAM_24         |  1392|
+|9     |    pipe2 |ParseAction_23  |  1069|
+|10    |  mau_2   |ParseModule_1   |  3543|
+|11    |    pipe1 |ParseMatcher_19 |  2465|
+|12    |      mem |SRAM_21         |  1392|
+|13    |    pipe2 |ParseAction_20  |  1069|
+|14    |  mau_3   |ParseModule_2   |  5657|
+|15    |    pipe1 |ParseMatcher_16 |  2465|
+|16    |      mem |SRAM_18         |  1392|
+|17    |    pipe2 |ParseAction_17  |  3183|
+|18    |  mau_4   |ParseModule_3   |  3543|
+|19    |    pipe1 |ParseMatcher_13 |  2465|
+|20    |      mem |SRAM_15         |  1392|
+|21    |    pipe2 |ParseAction_14  |  1069|
+|22    |  mau_5   |ParseModule_4   |  3543|
+|23    |    pipe1 |ParseMatcher_10 |  2465|
+|24    |      mem |SRAM_12         |  1392|
+|25    |    pipe2 |ParseAction_11  |  1069|
+|26    |  mau_6   |ParseModule_5   |  3543|
+|27    |    pipe1 |ParseMatcher_7  |  2465|
+|28    |      mem |SRAM_9          |  1392|
+|29    |    pipe2 |ParseAction_8   |  1069|
+|30    |  mau_7   |ParseModule_6   |  4575|
+|31    |    pipe1 |ParseMatcher    |  2452|
+|32    |      mem |SRAM            |  1392|
+|33    |    pipe2 |ParseAction     |  2114|
++------+----------+----------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 0 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+Synthesis Optimization Complete : Time (s): cpu = 00:00:48 ; elapsed = 00:00:48 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:02 ; elapsed = 00:00:01 . Memory (MB): peak = 2705.066 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2371 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.012 . Memory (MB): peak = 2705.066 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 1154 instances were transformed.
+  BUFG => BUFGCE: 1 instance 
+  IBUF => IBUF (IBUFCTRL, INBUF): 1153 instances
+
+INFO: [Common 17-83] Releasing license: Synthesis
+23 Infos, 0 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:01:08 ; elapsed = 00:01:09 . Memory (MB): peak = 2705.066 ; gain = 1558.668
+INFO: [Common 17-1381] The checkpoint 'D:/Workspace/fpga-updated/vivado/fpga-updated/fpga-updated.runs/synth_1/Parser.dcp' has been generated.
+write_checkpoint: Time (s): cpu = 00:00:08 ; elapsed = 00:00:06 . Memory (MB): peak = 2705.066 ; gain = 0.000
+INFO: [runtcl-4] Executing : report_utilization -file Parser_utilization_synth.rpt -pb Parser_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Tue Aug  3 22:27:34 2021...
