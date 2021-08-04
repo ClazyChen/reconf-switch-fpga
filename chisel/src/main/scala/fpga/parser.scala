@@ -20,19 +20,15 @@ class Parser extends Module {
         val exe = Module(new ParseModule)
         exe
     }
-    io.pipe.ready   := mau(0).io.pipe.ready
     io.pipe.phv_out := mau(0).io.pipe.phv_out
     for (j <- 0 until const.mau_number_in_parser) {
         if (j == 0) {
-            mau(j).io.pipe.en     <> io.pipe.en
             mau(j).io.pipe.phv_in <> io.pipe.phv_in
         } else {
-            mau(j).io.pipe.en     <> mau(j-1).io.pipe.ready
             mau(j).io.pipe.phv_in <> mau(j-1).io.pipe.phv_out
-        }
-        when (j.U(const.mau_id_width.W) === last_mau_id) {    // goto matcher
-            io.pipe.ready         := mau(j).io.pipe.ready
-            io.pipe.phv_out       := mau(j).io.pipe.phv_out
+            when (j.U(const.mau_id_width.W) === last_mau_id) {    // goto matcher
+                io.pipe.phv_out   := mau(j).io.pipe.phv_out
+            }
         }
         mau(j).io.mod := io.mod.module_mod
     }

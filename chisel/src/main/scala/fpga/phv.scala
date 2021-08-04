@@ -17,8 +17,6 @@ class PHV extends Bundle {
 }
 
 class Pipeline extends Bundle {
-    val en      = Input(Bool())
-    val ready   = Output(Bool())
     val phv_in  = Input(new PHV)
     val phv_out = Output(new PHV)
 }

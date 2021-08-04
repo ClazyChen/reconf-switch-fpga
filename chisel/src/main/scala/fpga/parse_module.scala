@@ -14,13 +14,10 @@ class ParseMatcher extends Module {
         val rdata  = Output(UInt(const.SRAM.data_width.W)) // the data read from SRAM
     })
 
-    val en    = Reg(Bool())
     val phv   = Reg(new PHV)
     val rdata = Reg(UInt(const.SRAM.data_width.W))
     phv := io.pipe.phv_in
-    en  := io.pipe.en
     io.pipe.phv_out := phv
-    io.pipe.ready   := en
     io.rdata        := rdata
 
     val mem = Module(new SRAM)
@@ -40,12 +37,9 @@ class ParseAction extends Module {
         val valid = Input(Bool())   // or pass, do nothing
     })
 
-    val en    = Reg(Bool())
     val phv   = Reg(new PHV)
     phv := io.pipe.phv_in
-    en  := io.pipe.en
     io.pipe.phv_out := phv
-    io.pipe.ready   := en
 
     when (io.valid) {
         val match_val = io.rdata
@@ -96,14 +90,11 @@ class ParseModule extends Module {
     pipe2.io.valid := pipe1.io.pipe.phv_out.parse.current_state === state_id
 
     io.pipe.phv_in <> pipe1.io.pipe.phv_in
-    io.pipe.en     <> pipe1.io.pipe.en
     io.mod.sram_w  <> pipe1.io.sram_w
 
-    pipe1.io.pipe.ready   <> pipe2.io.pipe.en
     pipe1.io.pipe.phv_out <> pipe2.io.pipe.phv_in
     pipe1.io.rdata        <> pipe2.io.rdata
-
-    pipe2.io.pipe.ready   <> io.pipe.ready
+    
     pipe2.io.pipe.phv_out <> io.pipe.phv_out
 }
 

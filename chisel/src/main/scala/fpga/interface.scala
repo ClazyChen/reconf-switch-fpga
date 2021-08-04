@@ -18,3 +18,8 @@ class ParserModify extends Bundle {
     val cs = Input(UInt(const.mau_number_in_parser.W))
     val module_mod = new ParseModuleModify
 }
+
+class HashModify extends Bundle {
+    val hash_depth_mod = Input(Bool())
+    val hash_depth     = Input(UInt(const.SRAM.sram_id_width.W))
+}
