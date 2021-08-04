@@ -35,5 +35,16 @@ object const {
         val data_width = 64
         val address_width = 8
         val capacity = 1 << address_width
+
+        val sram_number_in_cluster = 8
+        val processor_number_in_cluster = 4
+        val sram_id_width = 3
+    }
+
+    object HASH {
+        val hash_key_width = 64
+        val hash_sum_width = 16
+        val hash_val_width = 8
+        val hash_val_cs_width = SRAM.sram_id_width
     }
 }
