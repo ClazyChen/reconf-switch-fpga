@@ -13,6 +13,7 @@ class Hash extends Module {
     })
 
     // configuration
+    // hash_depth = 0 means 8
     val hash_depth  = Reg(UInt(const.HASH.hash_val_cs_width.W))
     when (io.mod.hash_depth_mod) {
         hash_depth := io.mod.hash_depth
@@ -68,10 +69,14 @@ class Hash extends Module {
         hash_depth := io.hash_depth
         val hash_val = Reg(UInt(const.HASH.hash_sum_width.W))
         hash_val := io.val_in
-        when (hash_depth(level)) {
-            io.val_out := hash_val + sum(15-level,0)
+        when (hash_depth === 0.U(const.HASH.hash_val_cs_width.W)) {
+            io.val_out := sum
         } .otherwise {
-            io.val_out := hash_val
+            when (hash_depth(level)) {
+                io.val_out := hash_val + sum(15-level,0)
+            } .otherwise {
+                io.val_out := hash_val
+            }
         }
     }
 
