@@ -7,7 +7,7 @@ import chisel3.util._
 // width  means by bit
 
 object const {
-
+    val header_id_width = 4
     val max_header_number = 16
 
     val mau_id_width = 3
@@ -29,6 +29,8 @@ object const {
         val current_state_width  = 8
         val current_offset_width = 8
         val transition_field_width = 16
+
+        val offset_width = current_offset_width
     }
 
     object SRAM {
@@ -37,14 +39,31 @@ object const {
         val capacity = 1 << address_width
 
         val sram_number_in_cluster = 8
+        val sram_number_width = 4 // log(8+1)
         val processor_number_in_cluster = 4
         val sram_id_width = 3
+
+        val max_sram_width_extend_degree = 2
+    }
+
+    object MATCH {
+        val match_header_id_width = 8 // real maximum = 15
+        val match_internal_offset_width = PHV.offset_width
+        val match_key_length_width = 4   // real maximum = 8
+        val match_value_length_width = 4 // real maximum = 8
+
+        val match_key_width = 64
+        val match_value_width = 64
+        val match_data_width = match_key_width + match_value_width
+
+        val max_match_key_length = match_key_width >> 3
+        val max_match_value_length = match_value_width >> 3
     }
 
     object HASH {
-        val hash_key_width = 64
+        val hash_key_width = MATCH.match_key_width
         val hash_sum_width = 16
-        val hash_val_width = 8
+        val hash_val_width = SRAM.address_width
         val hash_val_cs_width = SRAM.sram_id_width
     }
 }
