@@ -7,7 +7,8 @@ class Hash extends Module {
     val io = IO(new Bundle {
         val pipe        = new Pipeline
         val mod         = new HashModify
-        val key         = Input(UInt(const.HASH.hash_key_width.W))
+        val key_in      = Input(UInt(const.HASH.hash_key_width.W))
+        val key_out     = Output(UInt(const.HASH.hash_key_width.W))
         val hash_val    = Output(UInt(const.HASH.hash_val_width.W))
         val hash_val_cs = Output(UInt(const.HASH.hash_val_cs_width.W))
     })
@@ -51,6 +52,8 @@ class Hash extends Module {
         val io = IO(new Bundle {
             val pipe = new Pipeline
             val hash_depth = Input(UInt(const.HASH.hash_val_cs_width.W))
+            val key_in  = Input(UInt(const.HASH.hash_key_width.W))
+            val key_out = Output(UInt(const.HASH.hash_key_width.W))
             val sum_in  = Input(UInt(const.HASH.hash_sum_width.W))
             val sum_out = Output(UInt(const.HASH.hash_sum_width.W))
             val val_in  = Input(UInt(const.HASH.hash_sum_width.W))
@@ -60,6 +63,10 @@ class Hash extends Module {
         val phv = Reg(new PHV)
         phv := io.pipe.phv_in
         io.pipe.phv_out := phv
+
+        val key = Reg(UInt(const.HASH.hash_key_width.W))
+        key := io.key_in
+        io.key_out := key
 
         val sum = Reg(UInt(const.HASH.hash_sum_width.W))
         sum := io.sum_in
@@ -89,8 +96,8 @@ class Hash extends Module {
     val pipe6 = Module(new HashReshapeLevel(2))
 
     io.pipe.phv_in        <> pipe1.io.pipe.phv_in
-    io.key                <> pipe1.io.key_in
-    pipe1.io.sum_in       := io.key(const.HASH.hash_sum_width-1,0)
+    io.key_in             <> pipe1.io.key_in
+    pipe1.io.sum_in       := io.key_in(const.HASH.hash_sum_width-1,0)
 
     pipe1.io.pipe.phv_out <> pipe2.io.pipe.phv_in
     pipe1.io.key_out      <> pipe2.io.key_in
@@ -101,21 +108,25 @@ class Hash extends Module {
     pipe2.io.sum_out      <> pipe3.io.sum_in
 
     pipe3.io.pipe.phv_out <> pipe4.io.pipe.phv_in
+    pipe3.io.key_out      <> pipe4.io.key_in
     pipe3.io.sum_out      <> pipe4.io.sum_in
     pipe4.io.val_in       := 0.U(const.HASH.hash_sum_width.W)
     pipe4.io.hash_depth   := hash_depth
     
     pipe4.io.pipe.phv_out <> pipe5.io.pipe.phv_in
+    pipe4.io.key_out      <> pipe5.io.key_in
     pipe4.io.sum_out      <> pipe5.io.sum_in
     pipe4.io.val_out      <> pipe5.io.val_in
     pipe5.io.hash_depth   := hash_depth
 
     pipe5.io.pipe.phv_out <> pipe6.io.pipe.phv_in
+    pipe5.io.key_out      <> pipe6.io.key_in
     pipe5.io.sum_out      <> pipe6.io.sum_in
     pipe5.io.val_out      <> pipe6.io.val_in
     pipe6.io.hash_depth   := hash_depth
 
     pipe6.io.pipe.phv_out <> io.pipe.phv_out
+    pipe6.io.key_out      <> io.key_out
     io.hash_val           := pipe6.io.sum_out(const.HASH.hash_val_width-1,0)
     io.hash_val_cs        := pipe6.io.val_out(const.HASH.hash_val_width-1,const.HASH.hash_val_width-const.HASH.hash_val_cs_width)
 }
