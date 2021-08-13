@@ -13,6 +13,9 @@ object const {
     val mau_id_width = 3
     val mau_number_in_parser = 8
 
+    val processor_id_width = 2
+    val processor_number = 4
+
     object PHV {
         val total_data_length  = 96
         val header_data_length = 64
@@ -65,5 +68,17 @@ object const {
         val hash_sum_width = 16
         val hash_val_width = SRAM.address_width
         val hash_val_cs_width = SRAM.sram_id_width
+    }
+
+    object EXEC {
+        val args_width = MATCH.match_value_width - SRAM.address_width
+        val args_length = args_width >> 3 // 7
+        val sram_number = 2
+        val primitive_width = 32
+        val primitive_number = sram_number * SRAM.data_width / primitive_width
+        val primitive_number_per_sram = primitive_number / sram_number
+
+        val max_field_width = 64
+        val max_field_length = max_field_width >> 3
     }
 }

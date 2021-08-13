@@ -42,3 +42,9 @@ class MatcherModify extends Bundle {
     val key_mod   = Input(new MatchKeyConfig)
     val table_mod = Input(new MatchTableConfig)
 }
+
+class ActionModify extends Bundle {
+    val en        = Input(Bool())
+    val addr      = Input(UInt(const.SRAM.address_width.W))
+    val data      = Vec(const.EXEC.sram_number, Input(UInt(const.SRAM.data_width.W)))
+}
