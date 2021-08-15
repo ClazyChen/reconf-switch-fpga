@@ -14,10 +14,10 @@ class Hash extends Module {
     })
 
     // configuration
-    // hash_depth = 0 means 8
-    val hash_depth  = Reg(UInt(const.HASH.hash_val_cs_width.W))
+    // hash_depth = 0 means 8 for SRAM depth extending
+    val hash_depth  = Reg(Vec(const.config_number, UInt(const.HASH.hash_val_cs_width.W)))
     when (io.mod.hash_depth_mod) {
-        hash_depth := io.mod.hash_depth
+        hash_depth(io.mod.config_id) := io.mod.hash_depth
     }
 
     // 8B key -> 2B key (3 cycles, cyclic plus omitted)
@@ -44,14 +44,19 @@ class Hash extends Module {
 
         val sum = Reg(UInt(const.HASH.hash_sum_width.W))
         sum := io.sum_in
-        io.sum_out := sum + key(level*16+15, level*16)
+
+        when (phv.is_valid_processor) {
+            io.sum_out := sum + key(level*16+15, level*16)
+        } .otherwise {
+            io.sum_out := sum
+        }
     }
 
     // last 3 level template
     class HashReshapeLevel(level: Int) extends Module {
         val io = IO(new Bundle {
             val pipe = new Pipeline
-            val hash_depth = Input(UInt(const.HASH.hash_val_cs_width.W))
+            val hash_depth = Input(Vec(const.config_number, UInt(const.HASH.hash_val_cs_width.W)))
             val key_in  = Input(UInt(const.HASH.hash_key_width.W))
             val key_out = Output(UInt(const.HASH.hash_key_width.W))
             val sum_in  = Input(UInt(const.HASH.hash_sum_width.W))
@@ -73,17 +78,22 @@ class Hash extends Module {
         io.sum_out := sum
 
         val hash_depth = Reg(UInt(const.HASH.hash_val_cs_width.W))
-        hash_depth := io.hash_depth
+        hash_depth := io.hash_depth(io.pipe.phv_in.next_config_id)
         val hash_val = Reg(UInt(const.HASH.hash_sum_width.W))
         hash_val := io.val_in
-        when (hash_depth === 0.U(const.HASH.hash_val_cs_width.W)) {
-            io.val_out := sum
-        } .otherwise {
-            when (hash_depth(level)) {
-                io.val_out := hash_val + sum(15-level,0)
+
+        when (phv.is_valid_processor) {
+            when (hash_depth === 0.U(const.HASH.hash_val_cs_width.W)) {
+                io.val_out := sum
             } .otherwise {
-                io.val_out := hash_val
+                when (hash_depth(level)) {
+                    io.val_out := hash_val + sum(15-level,0)
+                } .otherwise {
+                    io.val_out := hash_val
+                }
             }
+        } .otherwise {
+            io.val_out := hash_val
         }
     }
 

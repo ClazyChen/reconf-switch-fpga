@@ -11,19 +11,25 @@ class Parser extends Module {
     })
 
     // configuration
-    val last_mau_id = Reg(UInt(const.mau_id_width.W))
+    val last_mau_id = Reg(UInt((const.mau_id_width+1).W))
     // MAU[last_id+1:] are disabled
     // from MAU[last_id], directly go to Matcher
+    // if last_mau_id === -1(1111) then directly connect phv_in & phv_out
 
     // MAUs Pipeline
     val mau = for (j <- 0 until const.mau_number_in_parser) yield {
         val exe = Module(new ParseModule)
         exe
     }
-    io.pipe.phv_out := mau(0).io.pipe.phv_out
+
+    // at least 1 cycle
+    val phv   = Reg(new PHV)
+    phv := io.pipe.phv_in
+    io.pipe.phv_out := phv
+    
     for (j <- 0 until const.mau_number_in_parser) {
         if (j == 0) {
-            mau(j).io.pipe.phv_in <> io.pipe.phv_in
+            mau(j).io.pipe.phv_in := phv
         } else {
             mau(j).io.pipe.phv_in <> mau(j-1).io.pipe.phv_out
             when (j.U(const.mau_id_width.W) === last_mau_id) {    // goto matcher
@@ -39,7 +45,7 @@ class Parser extends Module {
             last_mau_id := io.mod.last_mau_id
         }
         for (j <- 0 until const.mau_number_in_parser) {
-            val mod_j = io.mod.cs(j)
+            val mod_j = io.mod.cs === j.U(const.mau_id_width.W)
             mau(j).io.mod.sram_w.en    := io.mod.module_mod.sram_w.en    && mod_j
             mau(j).io.mod.state_id_mod := io.mod.module_mod.state_id_mod && mod_j
         }

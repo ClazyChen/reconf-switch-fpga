@@ -14,7 +14,9 @@ class PHV extends Bundle {
     // higher 8 bits : offset; lower 8 bits : length
     val header = Vec(const.max_header_number, UInt(const.PHV.extracted_info_width.W))
     val parse = new PHVParsingState
-    val next_processor_id = UInt(const.processor_id_width.W)
+    val next_processor_id  = UInt(const.processor_id_width.W)
+    val next_config_id     = UInt(const.config_id_width.W)
+    val is_valid_processor = Bool() // whether valid in the current processor
 }
 
 class Pipeline extends Bundle {

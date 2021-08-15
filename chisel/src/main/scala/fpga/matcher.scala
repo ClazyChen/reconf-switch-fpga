@@ -14,12 +14,12 @@ class Matcher extends Module {
     })
 
     // configuration
-    val key_config = Reg(new MatchKeyConfig)
-    val table_config = Reg(new MatchTableConfig)
+    val key_config = Reg(Vec(const.config_number, new MatchKeyConfig))
+    val table_config = Reg(Vec(const.config_number, new MatchTableConfig))
     
     when (io.mod.en) {
-        key_config   := io.mod.key_mod
-        table_config := io.mod.table_mod
+        key_config(io.mod.config_id)   := io.mod.key_mod
+        table_config(io.mod.config_id) := io.mod.table_mod
     }
 
     // pipeline level 1
@@ -27,7 +27,7 @@ class Matcher extends Module {
     class MatchGetOffset extends Module {
         val io = IO(new Bundle {
             val pipe       = new Pipeline
-            val key_config = Input(new MatchKeyConfig)
+            val key_config = Input(Vec(const.config_number, new MatchKeyConfig))
             val key_offset = Output(UInt(const.PHV.offset_width.W))
         })
 
@@ -35,10 +35,14 @@ class Matcher extends Module {
         phv := io.pipe.phv_in
         io.pipe.phv_out := phv
 
-        val header_offset = const.PHV.offset(phv.header(io.key_config.header_id))
-        val key_offset = header_offset + io.key_config.internal_offset
-        
-        io.key_offset := key_offset
+        when (phv.is_valid_processor) {
+            val key_config = io.key_config(phv.next_config_id)
+            val header_offset = const.PHV.offset(phv.header(key_config.header_id))
+            val key_offset = header_offset + key_config.internal_offset
+            io.key_offset := key_offset
+        } .otherwise {
+            io.key_offset := 0.U(const.PHV.offset_width.W)
+        }
     }
     
     // pipeline level 2
@@ -46,7 +50,7 @@ class Matcher extends Module {
     class MatchGetKey extends Module {
         val io = IO(new Bundle {
             val pipe       = new Pipeline
-            val key_config = Input(new MatchKeyConfig)
+            val key_config = Input(Vec(const.config_number, new MatchKeyConfig))
             val key_offset = Input(UInt(const.PHV.offset_width.W))
             val match_key  = Output(UInt(const.MATCH.match_key_width.W))
         })
@@ -58,20 +62,24 @@ class Matcher extends Module {
         val key_offset = Reg(UInt(const.PHV.offset_width.W))
         key_offset := io.key_offset
 
-        val match_key_bytes = Wire(Vec(const.MATCH.max_match_key_length, UInt(8.W)))
+        when (phv.is_valid_processor) {
+            val match_key_bytes = Wire(Vec(const.MATCH.max_match_key_length, UInt(8.W)))
 
-        // higher bits equals to real match_key, lower bits equals to 0
-        for (j <- 0 until const.MATCH.max_match_key_length) {
-            val local_offset = j.U(const.MATCH.match_key_length_width.W)
-            when (local_offset < io.key_config.key_length) {
-                match_key_bytes(const.MATCH.max_match_key_length-j-1) := phv.data(key_offset + local_offset)
-            } .otherwise {
-                match_key_bytes(const.MATCH.max_match_key_length-j-1) := 0.U(8.W)
+            // higher bits equals to real match_key, lower bits equals to 0
+            for (j <- 0 until const.MATCH.max_match_key_length) {
+                val local_offset = j.U(const.MATCH.match_key_length_width.W)
+                when (local_offset < io.key_config(phv.next_config_id).key_length) {
+                    match_key_bytes(const.MATCH.max_match_key_length-j-1) := phv.data(key_offset + local_offset)
+                } .otherwise {
+                    match_key_bytes(const.MATCH.max_match_key_length-j-1) := 0.U(8.W)
+                }
             }
-        }
 
-        val match_key = match_key_bytes.reduce(Cat(_, _))
-        io.match_key := match_key
+            val match_key = match_key_bytes.reduce(Cat(_, _))
+            io.match_key := match_key
+        } .otherwise {
+            io.match_key := 0.U(const.MATCH.match_key_width.W)
+        }
     }
 
     // pipeline level 345678 : hash
@@ -81,14 +89,14 @@ class Matcher extends Module {
     class MatchGetCs extends Module {
         val io = IO(new Bundle {
             val pipe       = new Pipeline
-            val table_config = Input(new MatchTableConfig)
+            val table_config = Input(Vec(const.config_number, new MatchTableConfig))
             val key_in     = Input(UInt(const.HASH.hash_key_width.W))
             val key_out    = Output(UInt(const.HASH.hash_key_width.W))
             val addr_in    = Input(UInt(const.SRAM.address_width.W))
             val addr_out   = Output(UInt(const.SRAM.address_width.W))
             val cs_in      = Input(UInt(const.SRAM.sram_id_width.W))
             val cs_out     = Output(UInt(const.SRAM.sram_id_width.W))
-            val cs_vec_out = Vec(const.SRAM.sram_number_in_cluster, Output(Bool()))
+            val cs_vec_out = Output(Vec(const.SRAM.sram_number_in_cluster, Bool()))
         })
 
         val phv = Reg(new PHV)
@@ -109,12 +117,15 @@ class Matcher extends Module {
 
         for (j <- 0 until const.SRAM.sram_number_in_cluster) {
             io.cs_vec_out(j) := false.B
-            when (j.U(const.SRAM.sram_id_width.W) === cs) {
-                io.cs_vec_out(j) := true.B
-            }
-            val width_extend = io.table_config.table_width === 2.U(const.SRAM.sram_number_width.W)
-            when (width_extend && j.U(const.SRAM.sram_id_width.W) === cs + io.table_config.table_depth) {
-                io.cs_vec_out(j) := true.B
+            when (phv.is_valid_processor) {
+                when (j.U(const.SRAM.sram_id_width.W) === cs) {
+                    io.cs_vec_out(j) := true.B
+                }
+                val width_extend = io.table_config(phv.next_config_id).table_width === 2.U(const.SRAM.sram_number_width.W)
+                val extended_cs  = cs + io.table_config(phv.next_config_id).table_depth
+                when (width_extend && j.U(const.SRAM.sram_id_width.W) === extended_cs) {
+                    io.cs_vec_out(j) := true.B
+                }
             }
         }
     }
@@ -129,8 +140,8 @@ class Matcher extends Module {
             val cs_in      = Input(UInt(const.SRAM.sram_id_width.W))
             val cs_out     = Output(UInt(const.SRAM.sram_id_width.W))
             val addr_in    = Input(UInt(const.SRAM.address_width.W))
-            val cs_vec_in  = Vec(const.SRAM.sram_number_in_cluster, Input(Bool()))
-            val data_out   = Vec(const.SRAM.sram_number_in_cluster, Output(UInt(const.SRAM.data_width.W)))
+            val cs_vec_in  = Input(Vec(const.SRAM.sram_number_in_cluster, Bool()))
+            val data_out   = Output(Vec(const.SRAM.sram_number_in_cluster, UInt(const.SRAM.data_width.W)))
             val mem        = Flipped(new ClusterReadPort)
         })
 
@@ -147,7 +158,7 @@ class Matcher extends Module {
         io.cs_out := cs
 
         for (j <- 0 until const.SRAM.sram_number_in_cluster) {
-            io.mem.cluster(j).en   := io.cs_vec_in(j)
+            io.mem.cluster(j).en   := io.cs_vec_in(j) && io.pipe.phv_in.is_valid_processor
             io.mem.cluster(j).addr := io.addr_in
             io.data_out(j)         := io.mem.cluster(j).data
         }
@@ -158,11 +169,11 @@ class Matcher extends Module {
     class MatchDataReshape extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
-            val table_config = Input(new MatchTableConfig)
+            val table_config = Input(Vec(const.config_number, new MatchTableConfig))
             val key_in      = Input(UInt(const.HASH.hash_key_width.W))
             val key_out     = Output(UInt(const.HASH.hash_key_width.W))
             val cs_in       = Input(UInt(const.SRAM.sram_id_width.W))
-            val data_in     = Vec(const.SRAM.sram_number_in_cluster, Input(UInt(const.SRAM.data_width.W)))
+            val data_in     = Input(Vec(const.SRAM.sram_number_in_cluster, UInt(const.SRAM.data_width.W)))
             val data_out    = Output(UInt(const.MATCH.match_data_width.W))
         })
         
@@ -175,23 +186,28 @@ class Matcher extends Module {
         io.key_out := key
 
         val data = Reg(UInt(const.MATCH.match_data_width.W))
-        val data1 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-        val data2 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-        
-        data1 := 0.U((const.MATCH.match_data_width>>1).W)
-        data2 := 0.U((const.MATCH.match_data_width>>1).W)
+        val table_config = io.table_config(io.pipe.phv_in.next_config_id)
 
-        for (j <- 0 until const.SRAM.sram_number_in_cluster) {
-            when (io.cs_in === j.U(const.SRAM.sram_id_width.W)) {
-                data1 := io.data_in(j)
+        when (io.pipe.phv_in.is_valid_processor) {
+            val data1 = Wire(UInt((const.MATCH.match_data_width>>1).W))
+            val data2 = Wire(UInt((const.MATCH.match_data_width>>1).W))
+            data1 := 0.U((const.MATCH.match_data_width>>1).W)
+            data2 := 0.U((const.MATCH.match_data_width>>1).W)
+
+            for (j <- 0 until const.SRAM.sram_number_in_cluster) {
+                when (io.cs_in === j.U(const.SRAM.sram_id_width.W)) {
+                    data1 := io.data_in(j)
+                }
+                val width_extend = table_config.table_width === 2.U(const.SRAM.sram_number_width.W)
+                when (width_extend && io.cs_in + table_config.table_depth === j.U(const.SRAM.sram_id_width.W)) {
+                    data2 := io.data_in(j)
+                }
             }
-            val width_extend = io.table_config.table_width === 2.U(const.SRAM.sram_number_width.W)
-            when (width_extend && io.cs_in + io.table_config.table_depth === j.U(const.SRAM.sram_id_width.W)) {
-                data2 := io.data_in(j)
-            }
+            data := Cat(data1, data2)
+        } .otherwise {
+            data := 0.U(const.MATCH.match_data_width.W)
         }
 
-        data := Cat(data1, data2)
         io.data_out := data
     }
 
@@ -200,7 +216,7 @@ class Matcher extends Module {
     class MatchResult extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
-            val key_config  = Input(new MatchKeyConfig)
+            val key_config  = Input(Vec(const.config_number, new MatchKeyConfig))
             val key_in      = Input(UInt(const.HASH.hash_key_width.W))
             val data_in     = Input(UInt(const.MATCH.match_data_width.W))
             val hit         = Output(Bool())
@@ -216,24 +232,30 @@ class Matcher extends Module {
         val data = Reg(UInt(const.MATCH.match_data_width.W))
         data := io.data_in
 
-        val key_equal = Wire(Vec(const.MATCH.max_match_key_length, Bool()))
+        when (phv.is_valid_processor) {
+            val key_equal = Wire(Vec(const.MATCH.max_match_key_length, Bool()))
+            val key_config = io.key_config(phv.next_config_id)
 
-        for (j <- 0 until const.MATCH.max_match_key_length) {
-            val key_byte = key(const.HASH.hash_key_width-1-j*8, const.HASH.hash_key_width-(j+1)*8)
-            val data_byte = data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_data_width-(j+1)*8)
-            when (j.U(const.MATCH.match_key_length_width.W) < io.key_config.key_length) {
-                key_equal(j) := key_byte === data_byte
-            } .otherwise {
-                key_equal(j) := true.B
+            for (j <- 0 until const.MATCH.max_match_key_length) {
+                val key_byte = key(const.HASH.hash_key_width-1-j*8, const.HASH.hash_key_width-(j+1)*8)
+                val data_byte = data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_data_width-(j+1)*8)
+                when (j.U(const.MATCH.match_key_length_width.W) < key_config.key_length) {
+                    key_equal(j) := key_byte === data_byte
+                } .otherwise {
+                    key_equal(j) := true.B
+                }
             }
-        }
 
-        io.hit := key_equal.reduce(_ && _)
-        io.match_value := 0.U(const.MATCH.match_value_width.W)
-        for (j <- 1 until (1+const.MATCH.max_match_key_length)) {
-            when (j.U(const.MATCH.match_key_length_width.W) === io.key_config.key_length) {
-                io.match_value := data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_key_width-j*8)
+            io.hit := key_equal.reduce(_ && _)
+            io.match_value := 0.U(const.MATCH.match_value_width.W)
+            for (j <- 1 until (1+const.MATCH.max_match_key_length)) {
+                when (j.U(const.MATCH.match_key_length_width.W) === key_config.key_length) {
+                    io.match_value := data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_key_width-j*8)
+                }
             }
+        } .otherwise {
+            io.hit := false.B
+            io.match_value := 0.U(const.MATCH.match_value_width.W)
         }
     }
 
@@ -254,14 +276,15 @@ class Matcher extends Module {
     pipe2.io.key_config  := key_config
 
     pipe3to8.io.pipe.phv_in <> pipe2.io.pipe.phv_out
-    pipe3to8.io.mod.hash_depth_mod := io.mod.en && io.mod.table_mod.table_depth =/= table_config.table_depth
+    pipe3to8.io.mod.hash_depth_mod := io.mod.en
+    pipe3to8.io.mod.config_id      := io.mod.config_id
     pipe3to8.io.mod.hash_depth     := io.mod.table_mod.table_depth
     pipe3to8.io.key_in   <> pipe2.io.match_key
 
-    pipe9.io.pipe.phv_in <> pipe3to8.io.pipe.phv_out
-    pipe9.io.key_in      <> pipe3to8.io.key_out
-    pipe9.io.addr_in     <> pipe3to8.io.hash_val
-    pipe9.io.cs_in       <> pipe3to8.io.hash_val_cs
+    pipe9.io.pipe.phv_in  <> pipe3to8.io.pipe.phv_out
+    pipe9.io.key_in       <> pipe3to8.io.key_out
+    pipe9.io.addr_in      <> pipe3to8.io.hash_val
+    pipe9.io.cs_in        <> pipe3to8.io.hash_val_cs
     pipe9.io.table_config := table_config
 
     pipe10.io.pipe.phv_in <> pipe9.io.pipe.phv_out

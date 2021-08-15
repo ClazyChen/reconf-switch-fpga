@@ -8,25 +8,35 @@ import chisel3.util._
 // pipeline L1 : matcher
 class ParseMatcher extends Module {
     val io = IO(new Bundle {
-        val pipe   = new Pipeline
-        val sram_w = new WritePort
-        val valid  = Input(Bool())   // or pass, do nothing
-        val rdata  = Output(UInt(const.SRAM.data_width.W)) // the data read from SRAM
+        val pipe      = new Pipeline
+        val sram_w_cs = Input(UInt(const.config_id_width.W))
+        val sram_w    = new WritePort
+        val valid     = Input(Bool())   // or pass, do nothing
+        val rdata     = Output(UInt(const.SRAM.data_width.W)) // the data read from SRAM
     })
 
     val phv   = Reg(new PHV)
-    val rdata = Reg(UInt(const.SRAM.data_width.W))
     phv := io.pipe.phv_in
     io.pipe.phv_out := phv
-    io.rdata        := rdata
 
-    val mem = Module(new SRAM)
-    mem.io.w <> io.sram_w
-
+    val is_valid = io.valid && io.pipe.phv_in.is_valid_processor
+    io.rdata        := 0.U(const.SRAM.data_width.W)
     val match_key = io.pipe.phv_in.parse.transition_field
-    mem.io.r.en   := io.valid
-    mem.io.r.addr := match_key(15,8) + match_key(7,0)  // omit hash collision
-    rdata         := mem.io.r.data
+
+    val mem = for (j <- 0 until const.config_number) yield {
+        val config_id       = j.U(const.config_id_width.W)
+        val config_to_write = io.sram_w_cs === config_id
+        val config_to_use   = io.pipe.phv_in.next_config_id === config_id
+        val exe = Module(new SRAM)
+        exe.io.w      := io.sram_w
+        exe.io.w.en   := config_to_write
+        exe.io.r.en   := is_valid && config_to_use
+        exe.io.r.addr := match_key(15,8) + match_key(7,0)  // omit hash collision
+        when (config_to_use) {
+            io.rdata  := exe.io.r.data
+        }
+        exe
+    }
 }
 
 // pipeline L2 : action
@@ -41,7 +51,9 @@ class ParseAction extends Module {
     phv := io.pipe.phv_in
     io.pipe.phv_out := phv
 
-    when (io.valid) {
+    val is_valid = io.valid && io.pipe.phv_in.is_valid_processor
+
+    when (is_valid) {
         val match_val = io.rdata
         val match_val_reserved        = match_val(63,56) // 1B reserved
         val match_val_transition_field_header_id = match_val(55,48) // the header containing the transition_field
@@ -89,8 +101,9 @@ class ParseModule extends Module {
     pipe1.io.valid := io.pipe.phv_in.parse.current_state === state_id
     pipe2.io.valid := pipe1.io.pipe.phv_out.parse.current_state === state_id
 
-    io.pipe.phv_in <> pipe1.io.pipe.phv_in
-    io.mod.sram_w  <> pipe1.io.sram_w
+    io.pipe.phv_in   <> pipe1.io.pipe.phv_in
+    io.mod.sram_w    <> pipe1.io.sram_w
+    io.mod.sram_w_cs <> pipe1.io.sram_w_cs
 
     pipe1.io.pipe.phv_out <> pipe2.io.pipe.phv_in
     pipe1.io.rdata        <> pipe2.io.rdata
