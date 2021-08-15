@@ -16,6 +16,9 @@ object const {
     val processor_id_width = 2
     val processor_number = 4
 
+    val config_id_width = 1
+    val config_number = 2
+
     object PHV {
         val total_data_length  = 96
         val header_data_length = 64

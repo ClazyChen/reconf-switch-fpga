@@ -6,6 +6,7 @@ import chisel3.util._
 class ParseModuleModify extends Bundle {
     val state_id_mod = Input(Bool())
     val state_id     = Input(UInt(const.PHV.current_state_width.W))
+    val sram_w_cs    = Input(UInt(const.config_id_width.W))
     val sram_w       = new WritePort
 }
 
@@ -15,12 +16,13 @@ class ParserModify extends Bundle {
     val last_mau_id_mod = Input(Bool())
     val last_mau_id     = Input(UInt(const.mau_id_width.W))
     
-    val cs = Input(UInt(const.mau_number_in_parser.W))
+    val cs = Input(UInt(const.mau_id_width.W))
     val module_mod = new ParseModuleModify
 }
 
 class HashModify extends Bundle {
     val hash_depth_mod = Input(Bool())
+    val config_id      = Input(UInt(const.config_id_width.W))
     val hash_depth     = Input(UInt(const.SRAM.sram_id_width.W))
 }
 
@@ -39,6 +41,7 @@ class MatchTableConfig extends Bundle {
 
 class MatcherModify extends Bundle {
     val en        = Input(Bool())
+    val config_id = Input(UInt(const.config_id_width.W))
     val key_mod   = Input(new MatchKeyConfig)
     val table_mod = Input(new MatchTableConfig)
 }
