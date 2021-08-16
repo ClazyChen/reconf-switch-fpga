@@ -185,30 +185,31 @@ class Matcher extends Module {
         key := io.key_in
         io.key_out := key
 
-        val data = Reg(UInt(const.MATCH.match_data_width.W))
-        val table_config = io.table_config(io.pipe.phv_in.next_config_id)
+        val cs = Reg(UInt(const.SRAM.sram_id_width.W))
+        cs := io.cs_in
 
-        when (io.pipe.phv_in.is_valid_processor) {
-            val data1 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-            val data2 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-            data1 := 0.U((const.MATCH.match_data_width>>1).W)
-            data2 := 0.U((const.MATCH.match_data_width>>1).W)
+        val data = Reg(Vec(const.SRAM.sram_number_in_cluster, UInt(const.SRAM.data_width.W)))
+        data := io.data_in
 
+        val data1 = Wire(UInt((const.MATCH.match_data_width>>1).W))
+        val data2 = Wire(UInt((const.MATCH.match_data_width>>1).W))
+        data1 := 0.U((const.MATCH.match_data_width>>1).W)
+        data2 := 0.U((const.MATCH.match_data_width>>1).W)
+        val table_config = io.table_config(phv.next_config_id)
+
+        when (phv.is_valid_processor) {
             for (j <- 0 until const.SRAM.sram_number_in_cluster) {
-                when (io.cs_in === j.U(const.SRAM.sram_id_width.W)) {
-                    data1 := io.data_in(j)
+                when (cs === j.U(const.SRAM.sram_id_width.W)) {
+                    data1 := data(j)
                 }
                 val width_extend = table_config.table_width === 2.U(const.SRAM.sram_number_width.W)
-                when (width_extend && io.cs_in + table_config.table_depth === j.U(const.SRAM.sram_id_width.W)) {
-                    data2 := io.data_in(j)
+                when (width_extend && cs + table_config.table_depth === j.U(const.SRAM.sram_id_width.W)) {
+                    data2 := data(j)
                 }
             }
-            data := Cat(data1, data2)
-        } .otherwise {
-            data := 0.U(const.MATCH.match_data_width.W)
         }
 
-        io.data_out := data
+        io.data_out := Cat(data1, data2)
     }
 
     // pipeline level 12

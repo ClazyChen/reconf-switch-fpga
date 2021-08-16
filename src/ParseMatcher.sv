@@ -1,5 +1,7 @@
 module ParseMatcher(
   input         clock,
+  input         io_pipe_en,
+  output        io_pipe_ready,
   input  [7:0]  io_pipe_phv_in_data_0,
   input  [7:0]  io_pipe_phv_in_data_1,
   input  [7:0]  io_pipe_phv_in_data_2,
@@ -115,8 +117,6 @@ module ParseMatcher(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [1:0]  io_pipe_phv_in_next_processor_id,
-  input         io_pipe_phv_in_next_config_id,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -232,9 +232,7 @@ module ParseMatcher(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [1:0]  io_pipe_phv_out_next_processor_id,
-  output        io_pipe_phv_out_next_config_id,
-  input         io_sram_w_cs,
+  input         io_sram_w_en,
   input  [7:0]  io_sram_w_addr,
   input  [63:0] io_sram_w_data,
   input         io_valid,
@@ -357,22 +355,16 @@ module ParseMatcher(
   reg [31:0] _RAND_113;
   reg [31:0] _RAND_114;
   reg [31:0] _RAND_115;
-  reg [31:0] _RAND_116;
+  reg [63:0] _RAND_116;
 `endif // RANDOMIZE_REG_INIT
-  wire  mem_0_clock; // @[parse_module.scala 30:25]
-  wire  mem_0_io_w_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_0_io_w_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_0_io_w_data; // @[parse_module.scala 30:25]
-  wire  mem_0_io_r_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_0_io_r_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_0_io_r_data; // @[parse_module.scala 30:25]
-  wire  mem_1_clock; // @[parse_module.scala 30:25]
-  wire  mem_1_io_w_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_1_io_w_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_1_io_w_data; // @[parse_module.scala 30:25]
-  wire  mem_1_io_r_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_1_io_r_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_1_io_r_data; // @[parse_module.scala 30:25]
+  wire  mem_clock; // @[parse_module.scala 26:21]
+  wire  mem_io_w_en; // @[parse_module.scala 26:21]
+  wire [7:0] mem_io_w_addr; // @[parse_module.scala 26:21]
+  wire [63:0] mem_io_w_data; // @[parse_module.scala 26:21]
+  wire  mem_io_r_en; // @[parse_module.scala 26:21]
+  wire [7:0] mem_io_r_addr; // @[parse_module.scala 26:21]
+  wire [63:0] mem_io_r_data; // @[parse_module.scala 26:21]
+  reg  en; // @[parse_module.scala 17:20]
   reg [7:0] phv_data_0; // @[parse_module.scala 18:20]
   reg [7:0] phv_data_1; // @[parse_module.scala 18:20]
   reg [7:0] phv_data_2; // @[parse_module.scala 18:20]
@@ -488,276 +480,257 @@ module ParseMatcher(
   reg [7:0] phv_parse_current_state; // @[parse_module.scala 18:20]
   reg [7:0] phv_parse_current_offset; // @[parse_module.scala 18:20]
   reg [15:0] phv_parse_transition_field; // @[parse_module.scala 18:20]
-  reg [1:0] phv_next_processor_id; // @[parse_module.scala 18:20]
-  reg  phv_next_config_id; // @[parse_module.scala 18:20]
-  wire  config_to_use = ~io_pipe_phv_in_next_config_id; // @[parse_module.scala 29:61]
-  wire [63:0] _GEN_0 = config_to_use ? mem_0_io_r_data : 64'h0; // @[parse_module.scala 35:30 parse_module.scala 36:23 parse_module.scala 22:21]
-  SRAM mem_0 ( // @[parse_module.scala 30:25]
-    .clock(mem_0_clock),
-    .io_w_en(mem_0_io_w_en),
-    .io_w_addr(mem_0_io_w_addr),
-    .io_w_data(mem_0_io_w_data),
-    .io_r_en(mem_0_io_r_en),
-    .io_r_addr(mem_0_io_r_addr),
-    .io_r_data(mem_0_io_r_data)
+  reg [63:0] rdata; // @[parse_module.scala 19:20]
+  SRAM mem ( // @[parse_module.scala 26:21]
+    .clock(mem_clock),
+    .io_w_en(mem_io_w_en),
+    .io_w_addr(mem_io_w_addr),
+    .io_w_data(mem_io_w_data),
+    .io_r_en(mem_io_r_en),
+    .io_r_addr(mem_io_r_addr),
+    .io_r_data(mem_io_r_data)
   );
-  SRAM mem_1 ( // @[parse_module.scala 30:25]
-    .clock(mem_1_clock),
-    .io_w_en(mem_1_io_w_en),
-    .io_w_addr(mem_1_io_w_addr),
-    .io_w_data(mem_1_io_w_data),
-    .io_r_en(mem_1_io_r_en),
-    .io_r_addr(mem_1_io_r_addr),
-    .io_r_data(mem_1_io_r_data)
-  );
-  assign io_pipe_phv_out_data_0 = phv_data_0; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_1 = phv_data_1; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_2 = phv_data_2; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_3 = phv_data_3; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_4 = phv_data_4; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_5 = phv_data_5; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_6 = phv_data_6; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_7 = phv_data_7; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_8 = phv_data_8; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_9 = phv_data_9; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_10 = phv_data_10; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_11 = phv_data_11; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_12 = phv_data_12; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_13 = phv_data_13; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_14 = phv_data_14; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_15 = phv_data_15; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_16 = phv_data_16; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_17 = phv_data_17; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_18 = phv_data_18; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_19 = phv_data_19; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_20 = phv_data_20; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_21 = phv_data_21; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_22 = phv_data_22; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_23 = phv_data_23; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_24 = phv_data_24; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_25 = phv_data_25; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_26 = phv_data_26; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_27 = phv_data_27; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_28 = phv_data_28; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_29 = phv_data_29; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_30 = phv_data_30; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_31 = phv_data_31; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_32 = phv_data_32; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_33 = phv_data_33; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_34 = phv_data_34; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_35 = phv_data_35; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_36 = phv_data_36; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_37 = phv_data_37; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_38 = phv_data_38; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_39 = phv_data_39; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_40 = phv_data_40; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_41 = phv_data_41; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_42 = phv_data_42; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_43 = phv_data_43; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_44 = phv_data_44; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_45 = phv_data_45; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_46 = phv_data_46; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_47 = phv_data_47; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_48 = phv_data_48; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_49 = phv_data_49; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_50 = phv_data_50; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_51 = phv_data_51; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_52 = phv_data_52; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_53 = phv_data_53; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_54 = phv_data_54; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_55 = phv_data_55; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_56 = phv_data_56; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_57 = phv_data_57; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_58 = phv_data_58; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_59 = phv_data_59; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_60 = phv_data_60; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_61 = phv_data_61; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_62 = phv_data_62; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_63 = phv_data_63; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_64 = phv_data_64; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_65 = phv_data_65; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_66 = phv_data_66; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_67 = phv_data_67; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_68 = phv_data_68; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_69 = phv_data_69; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_70 = phv_data_70; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_71 = phv_data_71; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_72 = phv_data_72; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_73 = phv_data_73; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_74 = phv_data_74; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_75 = phv_data_75; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_76 = phv_data_76; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_77 = phv_data_77; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_78 = phv_data_78; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_79 = phv_data_79; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_80 = phv_data_80; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_81 = phv_data_81; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_82 = phv_data_82; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_83 = phv_data_83; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_84 = phv_data_84; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_85 = phv_data_85; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_86 = phv_data_86; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_87 = phv_data_87; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_88 = phv_data_88; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_89 = phv_data_89; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_90 = phv_data_90; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_91 = phv_data_91; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_92 = phv_data_92; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_93 = phv_data_93; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_94 = phv_data_94; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_data_95 = phv_data_95; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_0 = phv_header_0; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_1 = phv_header_1; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_2 = phv_header_2; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_3 = phv_header_3; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_4 = phv_header_4; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_5 = phv_header_5; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_6 = phv_header_6; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_7 = phv_header_7; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_8 = phv_header_8; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_9 = phv_header_9; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_10 = phv_header_10; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_11 = phv_header_11; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_12 = phv_header_12; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_13 = phv_header_13; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_14 = phv_header_14; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_header_15 = phv_header_15; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[parse_module.scala 20:21]
-  assign io_rdata = io_pipe_phv_in_next_config_id ? mem_1_io_r_data : _GEN_0; // @[parse_module.scala 35:30 parse_module.scala 36:23]
-  assign mem_0_clock = clock;
-  assign mem_0_io_w_en = ~io_sram_w_cs; // @[parse_module.scala 28:44]
-  assign mem_0_io_w_addr = io_sram_w_addr; // @[parse_module.scala 31:21]
-  assign mem_0_io_w_data = io_sram_w_data; // @[parse_module.scala 31:21]
-  assign mem_0_io_r_en = io_valid & config_to_use; // @[parse_module.scala 33:33]
-  assign mem_0_io_r_addr = io_pipe_phv_in_parse_transition_field[15:8] + io_pipe_phv_in_parse_transition_field[7:0]; // @[parse_module.scala 34:42]
-  assign mem_1_clock = clock;
-  assign mem_1_io_w_en = io_sram_w_cs; // @[parse_module.scala 28:44]
-  assign mem_1_io_w_addr = io_sram_w_addr; // @[parse_module.scala 31:21]
-  assign mem_1_io_w_data = io_sram_w_data; // @[parse_module.scala 31:21]
-  assign mem_1_io_r_en = io_valid & io_pipe_phv_in_next_config_id; // @[parse_module.scala 33:33]
-  assign mem_1_io_r_addr = io_pipe_phv_in_parse_transition_field[15:8] + io_pipe_phv_in_parse_transition_field[7:0]; // @[parse_module.scala 34:42]
+  assign io_pipe_ready = en; // @[parse_module.scala 23:21]
+  assign io_pipe_phv_out_data_0 = phv_data_0; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_1 = phv_data_1; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_2 = phv_data_2; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_3 = phv_data_3; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_4 = phv_data_4; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_5 = phv_data_5; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_6 = phv_data_6; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_7 = phv_data_7; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_8 = phv_data_8; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_9 = phv_data_9; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_10 = phv_data_10; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_11 = phv_data_11; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_12 = phv_data_12; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_13 = phv_data_13; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_14 = phv_data_14; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_15 = phv_data_15; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_16 = phv_data_16; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_17 = phv_data_17; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_18 = phv_data_18; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_19 = phv_data_19; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_20 = phv_data_20; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_21 = phv_data_21; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_22 = phv_data_22; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_23 = phv_data_23; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_24 = phv_data_24; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_25 = phv_data_25; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_26 = phv_data_26; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_27 = phv_data_27; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_28 = phv_data_28; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_29 = phv_data_29; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_30 = phv_data_30; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_31 = phv_data_31; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_32 = phv_data_32; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_33 = phv_data_33; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_34 = phv_data_34; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_35 = phv_data_35; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_36 = phv_data_36; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_37 = phv_data_37; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_38 = phv_data_38; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_39 = phv_data_39; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_40 = phv_data_40; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_41 = phv_data_41; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_42 = phv_data_42; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_43 = phv_data_43; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_44 = phv_data_44; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_45 = phv_data_45; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_46 = phv_data_46; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_47 = phv_data_47; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_48 = phv_data_48; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_49 = phv_data_49; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_50 = phv_data_50; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_51 = phv_data_51; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_52 = phv_data_52; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_53 = phv_data_53; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_54 = phv_data_54; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_55 = phv_data_55; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_56 = phv_data_56; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_57 = phv_data_57; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_58 = phv_data_58; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_59 = phv_data_59; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_60 = phv_data_60; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_61 = phv_data_61; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_62 = phv_data_62; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_63 = phv_data_63; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_64 = phv_data_64; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_65 = phv_data_65; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_66 = phv_data_66; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_67 = phv_data_67; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_68 = phv_data_68; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_69 = phv_data_69; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_70 = phv_data_70; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_71 = phv_data_71; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_72 = phv_data_72; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_73 = phv_data_73; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_74 = phv_data_74; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_75 = phv_data_75; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_76 = phv_data_76; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_77 = phv_data_77; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_78 = phv_data_78; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_79 = phv_data_79; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_80 = phv_data_80; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_81 = phv_data_81; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_82 = phv_data_82; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_83 = phv_data_83; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_84 = phv_data_84; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_85 = phv_data_85; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_86 = phv_data_86; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_87 = phv_data_87; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_88 = phv_data_88; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_89 = phv_data_89; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_90 = phv_data_90; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_91 = phv_data_91; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_92 = phv_data_92; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_93 = phv_data_93; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_94 = phv_data_94; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_data_95 = phv_data_95; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_0 = phv_header_0; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_1 = phv_header_1; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_2 = phv_header_2; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_3 = phv_header_3; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_4 = phv_header_4; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_5 = phv_header_5; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_6 = phv_header_6; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_7 = phv_header_7; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_8 = phv_header_8; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_9 = phv_header_9; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_10 = phv_header_10; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_11 = phv_header_11; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_12 = phv_header_12; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_13 = phv_header_13; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_14 = phv_header_14; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_header_15 = phv_header_15; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[parse_module.scala 22:21]
+  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[parse_module.scala 22:21]
+  assign io_rdata = rdata; // @[parse_module.scala 24:21]
+  assign mem_clock = clock;
+  assign mem_io_w_en = io_sram_w_en; // @[parse_module.scala 27:14]
+  assign mem_io_w_addr = io_sram_w_addr; // @[parse_module.scala 27:14]
+  assign mem_io_w_data = io_sram_w_data; // @[parse_module.scala 27:14]
+  assign mem_io_r_en = io_valid; // @[parse_module.scala 30:19]
+  assign mem_io_r_addr = io_pipe_phv_in_parse_transition_field[15:8] + io_pipe_phv_in_parse_transition_field[7:0]; // @[parse_module.scala 31:38]
   always @(posedge clock) begin
-    phv_data_0 <= io_pipe_phv_in_data_0; // @[parse_module.scala 19:9]
-    phv_data_1 <= io_pipe_phv_in_data_1; // @[parse_module.scala 19:9]
-    phv_data_2 <= io_pipe_phv_in_data_2; // @[parse_module.scala 19:9]
-    phv_data_3 <= io_pipe_phv_in_data_3; // @[parse_module.scala 19:9]
-    phv_data_4 <= io_pipe_phv_in_data_4; // @[parse_module.scala 19:9]
-    phv_data_5 <= io_pipe_phv_in_data_5; // @[parse_module.scala 19:9]
-    phv_data_6 <= io_pipe_phv_in_data_6; // @[parse_module.scala 19:9]
-    phv_data_7 <= io_pipe_phv_in_data_7; // @[parse_module.scala 19:9]
-    phv_data_8 <= io_pipe_phv_in_data_8; // @[parse_module.scala 19:9]
-    phv_data_9 <= io_pipe_phv_in_data_9; // @[parse_module.scala 19:9]
-    phv_data_10 <= io_pipe_phv_in_data_10; // @[parse_module.scala 19:9]
-    phv_data_11 <= io_pipe_phv_in_data_11; // @[parse_module.scala 19:9]
-    phv_data_12 <= io_pipe_phv_in_data_12; // @[parse_module.scala 19:9]
-    phv_data_13 <= io_pipe_phv_in_data_13; // @[parse_module.scala 19:9]
-    phv_data_14 <= io_pipe_phv_in_data_14; // @[parse_module.scala 19:9]
-    phv_data_15 <= io_pipe_phv_in_data_15; // @[parse_module.scala 19:9]
-    phv_data_16 <= io_pipe_phv_in_data_16; // @[parse_module.scala 19:9]
-    phv_data_17 <= io_pipe_phv_in_data_17; // @[parse_module.scala 19:9]
-    phv_data_18 <= io_pipe_phv_in_data_18; // @[parse_module.scala 19:9]
-    phv_data_19 <= io_pipe_phv_in_data_19; // @[parse_module.scala 19:9]
-    phv_data_20 <= io_pipe_phv_in_data_20; // @[parse_module.scala 19:9]
-    phv_data_21 <= io_pipe_phv_in_data_21; // @[parse_module.scala 19:9]
-    phv_data_22 <= io_pipe_phv_in_data_22; // @[parse_module.scala 19:9]
-    phv_data_23 <= io_pipe_phv_in_data_23; // @[parse_module.scala 19:9]
-    phv_data_24 <= io_pipe_phv_in_data_24; // @[parse_module.scala 19:9]
-    phv_data_25 <= io_pipe_phv_in_data_25; // @[parse_module.scala 19:9]
-    phv_data_26 <= io_pipe_phv_in_data_26; // @[parse_module.scala 19:9]
-    phv_data_27 <= io_pipe_phv_in_data_27; // @[parse_module.scala 19:9]
-    phv_data_28 <= io_pipe_phv_in_data_28; // @[parse_module.scala 19:9]
-    phv_data_29 <= io_pipe_phv_in_data_29; // @[parse_module.scala 19:9]
-    phv_data_30 <= io_pipe_phv_in_data_30; // @[parse_module.scala 19:9]
-    phv_data_31 <= io_pipe_phv_in_data_31; // @[parse_module.scala 19:9]
-    phv_data_32 <= io_pipe_phv_in_data_32; // @[parse_module.scala 19:9]
-    phv_data_33 <= io_pipe_phv_in_data_33; // @[parse_module.scala 19:9]
-    phv_data_34 <= io_pipe_phv_in_data_34; // @[parse_module.scala 19:9]
-    phv_data_35 <= io_pipe_phv_in_data_35; // @[parse_module.scala 19:9]
-    phv_data_36 <= io_pipe_phv_in_data_36; // @[parse_module.scala 19:9]
-    phv_data_37 <= io_pipe_phv_in_data_37; // @[parse_module.scala 19:9]
-    phv_data_38 <= io_pipe_phv_in_data_38; // @[parse_module.scala 19:9]
-    phv_data_39 <= io_pipe_phv_in_data_39; // @[parse_module.scala 19:9]
-    phv_data_40 <= io_pipe_phv_in_data_40; // @[parse_module.scala 19:9]
-    phv_data_41 <= io_pipe_phv_in_data_41; // @[parse_module.scala 19:9]
-    phv_data_42 <= io_pipe_phv_in_data_42; // @[parse_module.scala 19:9]
-    phv_data_43 <= io_pipe_phv_in_data_43; // @[parse_module.scala 19:9]
-    phv_data_44 <= io_pipe_phv_in_data_44; // @[parse_module.scala 19:9]
-    phv_data_45 <= io_pipe_phv_in_data_45; // @[parse_module.scala 19:9]
-    phv_data_46 <= io_pipe_phv_in_data_46; // @[parse_module.scala 19:9]
-    phv_data_47 <= io_pipe_phv_in_data_47; // @[parse_module.scala 19:9]
-    phv_data_48 <= io_pipe_phv_in_data_48; // @[parse_module.scala 19:9]
-    phv_data_49 <= io_pipe_phv_in_data_49; // @[parse_module.scala 19:9]
-    phv_data_50 <= io_pipe_phv_in_data_50; // @[parse_module.scala 19:9]
-    phv_data_51 <= io_pipe_phv_in_data_51; // @[parse_module.scala 19:9]
-    phv_data_52 <= io_pipe_phv_in_data_52; // @[parse_module.scala 19:9]
-    phv_data_53 <= io_pipe_phv_in_data_53; // @[parse_module.scala 19:9]
-    phv_data_54 <= io_pipe_phv_in_data_54; // @[parse_module.scala 19:9]
-    phv_data_55 <= io_pipe_phv_in_data_55; // @[parse_module.scala 19:9]
-    phv_data_56 <= io_pipe_phv_in_data_56; // @[parse_module.scala 19:9]
-    phv_data_57 <= io_pipe_phv_in_data_57; // @[parse_module.scala 19:9]
-    phv_data_58 <= io_pipe_phv_in_data_58; // @[parse_module.scala 19:9]
-    phv_data_59 <= io_pipe_phv_in_data_59; // @[parse_module.scala 19:9]
-    phv_data_60 <= io_pipe_phv_in_data_60; // @[parse_module.scala 19:9]
-    phv_data_61 <= io_pipe_phv_in_data_61; // @[parse_module.scala 19:9]
-    phv_data_62 <= io_pipe_phv_in_data_62; // @[parse_module.scala 19:9]
-    phv_data_63 <= io_pipe_phv_in_data_63; // @[parse_module.scala 19:9]
-    phv_data_64 <= io_pipe_phv_in_data_64; // @[parse_module.scala 19:9]
-    phv_data_65 <= io_pipe_phv_in_data_65; // @[parse_module.scala 19:9]
-    phv_data_66 <= io_pipe_phv_in_data_66; // @[parse_module.scala 19:9]
-    phv_data_67 <= io_pipe_phv_in_data_67; // @[parse_module.scala 19:9]
-    phv_data_68 <= io_pipe_phv_in_data_68; // @[parse_module.scala 19:9]
-    phv_data_69 <= io_pipe_phv_in_data_69; // @[parse_module.scala 19:9]
-    phv_data_70 <= io_pipe_phv_in_data_70; // @[parse_module.scala 19:9]
-    phv_data_71 <= io_pipe_phv_in_data_71; // @[parse_module.scala 19:9]
-    phv_data_72 <= io_pipe_phv_in_data_72; // @[parse_module.scala 19:9]
-    phv_data_73 <= io_pipe_phv_in_data_73; // @[parse_module.scala 19:9]
-    phv_data_74 <= io_pipe_phv_in_data_74; // @[parse_module.scala 19:9]
-    phv_data_75 <= io_pipe_phv_in_data_75; // @[parse_module.scala 19:9]
-    phv_data_76 <= io_pipe_phv_in_data_76; // @[parse_module.scala 19:9]
-    phv_data_77 <= io_pipe_phv_in_data_77; // @[parse_module.scala 19:9]
-    phv_data_78 <= io_pipe_phv_in_data_78; // @[parse_module.scala 19:9]
-    phv_data_79 <= io_pipe_phv_in_data_79; // @[parse_module.scala 19:9]
-    phv_data_80 <= io_pipe_phv_in_data_80; // @[parse_module.scala 19:9]
-    phv_data_81 <= io_pipe_phv_in_data_81; // @[parse_module.scala 19:9]
-    phv_data_82 <= io_pipe_phv_in_data_82; // @[parse_module.scala 19:9]
-    phv_data_83 <= io_pipe_phv_in_data_83; // @[parse_module.scala 19:9]
-    phv_data_84 <= io_pipe_phv_in_data_84; // @[parse_module.scala 19:9]
-    phv_data_85 <= io_pipe_phv_in_data_85; // @[parse_module.scala 19:9]
-    phv_data_86 <= io_pipe_phv_in_data_86; // @[parse_module.scala 19:9]
-    phv_data_87 <= io_pipe_phv_in_data_87; // @[parse_module.scala 19:9]
-    phv_data_88 <= io_pipe_phv_in_data_88; // @[parse_module.scala 19:9]
-    phv_data_89 <= io_pipe_phv_in_data_89; // @[parse_module.scala 19:9]
-    phv_data_90 <= io_pipe_phv_in_data_90; // @[parse_module.scala 19:9]
-    phv_data_91 <= io_pipe_phv_in_data_91; // @[parse_module.scala 19:9]
-    phv_data_92 <= io_pipe_phv_in_data_92; // @[parse_module.scala 19:9]
-    phv_data_93 <= io_pipe_phv_in_data_93; // @[parse_module.scala 19:9]
-    phv_data_94 <= io_pipe_phv_in_data_94; // @[parse_module.scala 19:9]
-    phv_data_95 <= io_pipe_phv_in_data_95; // @[parse_module.scala 19:9]
-    phv_header_0 <= io_pipe_phv_in_header_0; // @[parse_module.scala 19:9]
-    phv_header_1 <= io_pipe_phv_in_header_1; // @[parse_module.scala 19:9]
-    phv_header_2 <= io_pipe_phv_in_header_2; // @[parse_module.scala 19:9]
-    phv_header_3 <= io_pipe_phv_in_header_3; // @[parse_module.scala 19:9]
-    phv_header_4 <= io_pipe_phv_in_header_4; // @[parse_module.scala 19:9]
-    phv_header_5 <= io_pipe_phv_in_header_5; // @[parse_module.scala 19:9]
-    phv_header_6 <= io_pipe_phv_in_header_6; // @[parse_module.scala 19:9]
-    phv_header_7 <= io_pipe_phv_in_header_7; // @[parse_module.scala 19:9]
-    phv_header_8 <= io_pipe_phv_in_header_8; // @[parse_module.scala 19:9]
-    phv_header_9 <= io_pipe_phv_in_header_9; // @[parse_module.scala 19:9]
-    phv_header_10 <= io_pipe_phv_in_header_10; // @[parse_module.scala 19:9]
-    phv_header_11 <= io_pipe_phv_in_header_11; // @[parse_module.scala 19:9]
-    phv_header_12 <= io_pipe_phv_in_header_12; // @[parse_module.scala 19:9]
-    phv_header_13 <= io_pipe_phv_in_header_13; // @[parse_module.scala 19:9]
-    phv_header_14 <= io_pipe_phv_in_header_14; // @[parse_module.scala 19:9]
-    phv_header_15 <= io_pipe_phv_in_header_15; // @[parse_module.scala 19:9]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[parse_module.scala 19:9]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 19:9]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 19:9]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[parse_module.scala 19:9]
-    phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[parse_module.scala 19:9]
+    en <= io_pipe_en; // @[parse_module.scala 21:9]
+    phv_data_0 <= io_pipe_phv_in_data_0; // @[parse_module.scala 20:9]
+    phv_data_1 <= io_pipe_phv_in_data_1; // @[parse_module.scala 20:9]
+    phv_data_2 <= io_pipe_phv_in_data_2; // @[parse_module.scala 20:9]
+    phv_data_3 <= io_pipe_phv_in_data_3; // @[parse_module.scala 20:9]
+    phv_data_4 <= io_pipe_phv_in_data_4; // @[parse_module.scala 20:9]
+    phv_data_5 <= io_pipe_phv_in_data_5; // @[parse_module.scala 20:9]
+    phv_data_6 <= io_pipe_phv_in_data_6; // @[parse_module.scala 20:9]
+    phv_data_7 <= io_pipe_phv_in_data_7; // @[parse_module.scala 20:9]
+    phv_data_8 <= io_pipe_phv_in_data_8; // @[parse_module.scala 20:9]
+    phv_data_9 <= io_pipe_phv_in_data_9; // @[parse_module.scala 20:9]
+    phv_data_10 <= io_pipe_phv_in_data_10; // @[parse_module.scala 20:9]
+    phv_data_11 <= io_pipe_phv_in_data_11; // @[parse_module.scala 20:9]
+    phv_data_12 <= io_pipe_phv_in_data_12; // @[parse_module.scala 20:9]
+    phv_data_13 <= io_pipe_phv_in_data_13; // @[parse_module.scala 20:9]
+    phv_data_14 <= io_pipe_phv_in_data_14; // @[parse_module.scala 20:9]
+    phv_data_15 <= io_pipe_phv_in_data_15; // @[parse_module.scala 20:9]
+    phv_data_16 <= io_pipe_phv_in_data_16; // @[parse_module.scala 20:9]
+    phv_data_17 <= io_pipe_phv_in_data_17; // @[parse_module.scala 20:9]
+    phv_data_18 <= io_pipe_phv_in_data_18; // @[parse_module.scala 20:9]
+    phv_data_19 <= io_pipe_phv_in_data_19; // @[parse_module.scala 20:9]
+    phv_data_20 <= io_pipe_phv_in_data_20; // @[parse_module.scala 20:9]
+    phv_data_21 <= io_pipe_phv_in_data_21; // @[parse_module.scala 20:9]
+    phv_data_22 <= io_pipe_phv_in_data_22; // @[parse_module.scala 20:9]
+    phv_data_23 <= io_pipe_phv_in_data_23; // @[parse_module.scala 20:9]
+    phv_data_24 <= io_pipe_phv_in_data_24; // @[parse_module.scala 20:9]
+    phv_data_25 <= io_pipe_phv_in_data_25; // @[parse_module.scala 20:9]
+    phv_data_26 <= io_pipe_phv_in_data_26; // @[parse_module.scala 20:9]
+    phv_data_27 <= io_pipe_phv_in_data_27; // @[parse_module.scala 20:9]
+    phv_data_28 <= io_pipe_phv_in_data_28; // @[parse_module.scala 20:9]
+    phv_data_29 <= io_pipe_phv_in_data_29; // @[parse_module.scala 20:9]
+    phv_data_30 <= io_pipe_phv_in_data_30; // @[parse_module.scala 20:9]
+    phv_data_31 <= io_pipe_phv_in_data_31; // @[parse_module.scala 20:9]
+    phv_data_32 <= io_pipe_phv_in_data_32; // @[parse_module.scala 20:9]
+    phv_data_33 <= io_pipe_phv_in_data_33; // @[parse_module.scala 20:9]
+    phv_data_34 <= io_pipe_phv_in_data_34; // @[parse_module.scala 20:9]
+    phv_data_35 <= io_pipe_phv_in_data_35; // @[parse_module.scala 20:9]
+    phv_data_36 <= io_pipe_phv_in_data_36; // @[parse_module.scala 20:9]
+    phv_data_37 <= io_pipe_phv_in_data_37; // @[parse_module.scala 20:9]
+    phv_data_38 <= io_pipe_phv_in_data_38; // @[parse_module.scala 20:9]
+    phv_data_39 <= io_pipe_phv_in_data_39; // @[parse_module.scala 20:9]
+    phv_data_40 <= io_pipe_phv_in_data_40; // @[parse_module.scala 20:9]
+    phv_data_41 <= io_pipe_phv_in_data_41; // @[parse_module.scala 20:9]
+    phv_data_42 <= io_pipe_phv_in_data_42; // @[parse_module.scala 20:9]
+    phv_data_43 <= io_pipe_phv_in_data_43; // @[parse_module.scala 20:9]
+    phv_data_44 <= io_pipe_phv_in_data_44; // @[parse_module.scala 20:9]
+    phv_data_45 <= io_pipe_phv_in_data_45; // @[parse_module.scala 20:9]
+    phv_data_46 <= io_pipe_phv_in_data_46; // @[parse_module.scala 20:9]
+    phv_data_47 <= io_pipe_phv_in_data_47; // @[parse_module.scala 20:9]
+    phv_data_48 <= io_pipe_phv_in_data_48; // @[parse_module.scala 20:9]
+    phv_data_49 <= io_pipe_phv_in_data_49; // @[parse_module.scala 20:9]
+    phv_data_50 <= io_pipe_phv_in_data_50; // @[parse_module.scala 20:9]
+    phv_data_51 <= io_pipe_phv_in_data_51; // @[parse_module.scala 20:9]
+    phv_data_52 <= io_pipe_phv_in_data_52; // @[parse_module.scala 20:9]
+    phv_data_53 <= io_pipe_phv_in_data_53; // @[parse_module.scala 20:9]
+    phv_data_54 <= io_pipe_phv_in_data_54; // @[parse_module.scala 20:9]
+    phv_data_55 <= io_pipe_phv_in_data_55; // @[parse_module.scala 20:9]
+    phv_data_56 <= io_pipe_phv_in_data_56; // @[parse_module.scala 20:9]
+    phv_data_57 <= io_pipe_phv_in_data_57; // @[parse_module.scala 20:9]
+    phv_data_58 <= io_pipe_phv_in_data_58; // @[parse_module.scala 20:9]
+    phv_data_59 <= io_pipe_phv_in_data_59; // @[parse_module.scala 20:9]
+    phv_data_60 <= io_pipe_phv_in_data_60; // @[parse_module.scala 20:9]
+    phv_data_61 <= io_pipe_phv_in_data_61; // @[parse_module.scala 20:9]
+    phv_data_62 <= io_pipe_phv_in_data_62; // @[parse_module.scala 20:9]
+    phv_data_63 <= io_pipe_phv_in_data_63; // @[parse_module.scala 20:9]
+    phv_data_64 <= io_pipe_phv_in_data_64; // @[parse_module.scala 20:9]
+    phv_data_65 <= io_pipe_phv_in_data_65; // @[parse_module.scala 20:9]
+    phv_data_66 <= io_pipe_phv_in_data_66; // @[parse_module.scala 20:9]
+    phv_data_67 <= io_pipe_phv_in_data_67; // @[parse_module.scala 20:9]
+    phv_data_68 <= io_pipe_phv_in_data_68; // @[parse_module.scala 20:9]
+    phv_data_69 <= io_pipe_phv_in_data_69; // @[parse_module.scala 20:9]
+    phv_data_70 <= io_pipe_phv_in_data_70; // @[parse_module.scala 20:9]
+    phv_data_71 <= io_pipe_phv_in_data_71; // @[parse_module.scala 20:9]
+    phv_data_72 <= io_pipe_phv_in_data_72; // @[parse_module.scala 20:9]
+    phv_data_73 <= io_pipe_phv_in_data_73; // @[parse_module.scala 20:9]
+    phv_data_74 <= io_pipe_phv_in_data_74; // @[parse_module.scala 20:9]
+    phv_data_75 <= io_pipe_phv_in_data_75; // @[parse_module.scala 20:9]
+    phv_data_76 <= io_pipe_phv_in_data_76; // @[parse_module.scala 20:9]
+    phv_data_77 <= io_pipe_phv_in_data_77; // @[parse_module.scala 20:9]
+    phv_data_78 <= io_pipe_phv_in_data_78; // @[parse_module.scala 20:9]
+    phv_data_79 <= io_pipe_phv_in_data_79; // @[parse_module.scala 20:9]
+    phv_data_80 <= io_pipe_phv_in_data_80; // @[parse_module.scala 20:9]
+    phv_data_81 <= io_pipe_phv_in_data_81; // @[parse_module.scala 20:9]
+    phv_data_82 <= io_pipe_phv_in_data_82; // @[parse_module.scala 20:9]
+    phv_data_83 <= io_pipe_phv_in_data_83; // @[parse_module.scala 20:9]
+    phv_data_84 <= io_pipe_phv_in_data_84; // @[parse_module.scala 20:9]
+    phv_data_85 <= io_pipe_phv_in_data_85; // @[parse_module.scala 20:9]
+    phv_data_86 <= io_pipe_phv_in_data_86; // @[parse_module.scala 20:9]
+    phv_data_87 <= io_pipe_phv_in_data_87; // @[parse_module.scala 20:9]
+    phv_data_88 <= io_pipe_phv_in_data_88; // @[parse_module.scala 20:9]
+    phv_data_89 <= io_pipe_phv_in_data_89; // @[parse_module.scala 20:9]
+    phv_data_90 <= io_pipe_phv_in_data_90; // @[parse_module.scala 20:9]
+    phv_data_91 <= io_pipe_phv_in_data_91; // @[parse_module.scala 20:9]
+    phv_data_92 <= io_pipe_phv_in_data_92; // @[parse_module.scala 20:9]
+    phv_data_93 <= io_pipe_phv_in_data_93; // @[parse_module.scala 20:9]
+    phv_data_94 <= io_pipe_phv_in_data_94; // @[parse_module.scala 20:9]
+    phv_data_95 <= io_pipe_phv_in_data_95; // @[parse_module.scala 20:9]
+    phv_header_0 <= io_pipe_phv_in_header_0; // @[parse_module.scala 20:9]
+    phv_header_1 <= io_pipe_phv_in_header_1; // @[parse_module.scala 20:9]
+    phv_header_2 <= io_pipe_phv_in_header_2; // @[parse_module.scala 20:9]
+    phv_header_3 <= io_pipe_phv_in_header_3; // @[parse_module.scala 20:9]
+    phv_header_4 <= io_pipe_phv_in_header_4; // @[parse_module.scala 20:9]
+    phv_header_5 <= io_pipe_phv_in_header_5; // @[parse_module.scala 20:9]
+    phv_header_6 <= io_pipe_phv_in_header_6; // @[parse_module.scala 20:9]
+    phv_header_7 <= io_pipe_phv_in_header_7; // @[parse_module.scala 20:9]
+    phv_header_8 <= io_pipe_phv_in_header_8; // @[parse_module.scala 20:9]
+    phv_header_9 <= io_pipe_phv_in_header_9; // @[parse_module.scala 20:9]
+    phv_header_10 <= io_pipe_phv_in_header_10; // @[parse_module.scala 20:9]
+    phv_header_11 <= io_pipe_phv_in_header_11; // @[parse_module.scala 20:9]
+    phv_header_12 <= io_pipe_phv_in_header_12; // @[parse_module.scala 20:9]
+    phv_header_13 <= io_pipe_phv_in_header_13; // @[parse_module.scala 20:9]
+    phv_header_14 <= io_pipe_phv_in_header_14; // @[parse_module.scala 20:9]
+    phv_header_15 <= io_pipe_phv_in_header_15; // @[parse_module.scala 20:9]
+    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[parse_module.scala 20:9]
+    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 20:9]
+    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 20:9]
+    rdata <= mem_io_r_data; // @[parse_module.scala 32:19]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -796,239 +769,239 @@ initial begin
     `endif
 `ifdef RANDOMIZE_REG_INIT
   _RAND_0 = {1{`RANDOM}};
-  phv_data_0 = _RAND_0[7:0];
+  en = _RAND_0[0:0];
   _RAND_1 = {1{`RANDOM}};
-  phv_data_1 = _RAND_1[7:0];
+  phv_data_0 = _RAND_1[7:0];
   _RAND_2 = {1{`RANDOM}};
-  phv_data_2 = _RAND_2[7:0];
+  phv_data_1 = _RAND_2[7:0];
   _RAND_3 = {1{`RANDOM}};
-  phv_data_3 = _RAND_3[7:0];
+  phv_data_2 = _RAND_3[7:0];
   _RAND_4 = {1{`RANDOM}};
-  phv_data_4 = _RAND_4[7:0];
+  phv_data_3 = _RAND_4[7:0];
   _RAND_5 = {1{`RANDOM}};
-  phv_data_5 = _RAND_5[7:0];
+  phv_data_4 = _RAND_5[7:0];
   _RAND_6 = {1{`RANDOM}};
-  phv_data_6 = _RAND_6[7:0];
+  phv_data_5 = _RAND_6[7:0];
   _RAND_7 = {1{`RANDOM}};
-  phv_data_7 = _RAND_7[7:0];
+  phv_data_6 = _RAND_7[7:0];
   _RAND_8 = {1{`RANDOM}};
-  phv_data_8 = _RAND_8[7:0];
+  phv_data_7 = _RAND_8[7:0];
   _RAND_9 = {1{`RANDOM}};
-  phv_data_9 = _RAND_9[7:0];
+  phv_data_8 = _RAND_9[7:0];
   _RAND_10 = {1{`RANDOM}};
-  phv_data_10 = _RAND_10[7:0];
+  phv_data_9 = _RAND_10[7:0];
   _RAND_11 = {1{`RANDOM}};
-  phv_data_11 = _RAND_11[7:0];
+  phv_data_10 = _RAND_11[7:0];
   _RAND_12 = {1{`RANDOM}};
-  phv_data_12 = _RAND_12[7:0];
+  phv_data_11 = _RAND_12[7:0];
   _RAND_13 = {1{`RANDOM}};
-  phv_data_13 = _RAND_13[7:0];
+  phv_data_12 = _RAND_13[7:0];
   _RAND_14 = {1{`RANDOM}};
-  phv_data_14 = _RAND_14[7:0];
+  phv_data_13 = _RAND_14[7:0];
   _RAND_15 = {1{`RANDOM}};
-  phv_data_15 = _RAND_15[7:0];
+  phv_data_14 = _RAND_15[7:0];
   _RAND_16 = {1{`RANDOM}};
-  phv_data_16 = _RAND_16[7:0];
+  phv_data_15 = _RAND_16[7:0];
   _RAND_17 = {1{`RANDOM}};
-  phv_data_17 = _RAND_17[7:0];
+  phv_data_16 = _RAND_17[7:0];
   _RAND_18 = {1{`RANDOM}};
-  phv_data_18 = _RAND_18[7:0];
+  phv_data_17 = _RAND_18[7:0];
   _RAND_19 = {1{`RANDOM}};
-  phv_data_19 = _RAND_19[7:0];
+  phv_data_18 = _RAND_19[7:0];
   _RAND_20 = {1{`RANDOM}};
-  phv_data_20 = _RAND_20[7:0];
+  phv_data_19 = _RAND_20[7:0];
   _RAND_21 = {1{`RANDOM}};
-  phv_data_21 = _RAND_21[7:0];
+  phv_data_20 = _RAND_21[7:0];
   _RAND_22 = {1{`RANDOM}};
-  phv_data_22 = _RAND_22[7:0];
+  phv_data_21 = _RAND_22[7:0];
   _RAND_23 = {1{`RANDOM}};
-  phv_data_23 = _RAND_23[7:0];
+  phv_data_22 = _RAND_23[7:0];
   _RAND_24 = {1{`RANDOM}};
-  phv_data_24 = _RAND_24[7:0];
+  phv_data_23 = _RAND_24[7:0];
   _RAND_25 = {1{`RANDOM}};
-  phv_data_25 = _RAND_25[7:0];
+  phv_data_24 = _RAND_25[7:0];
   _RAND_26 = {1{`RANDOM}};
-  phv_data_26 = _RAND_26[7:0];
+  phv_data_25 = _RAND_26[7:0];
   _RAND_27 = {1{`RANDOM}};
-  phv_data_27 = _RAND_27[7:0];
+  phv_data_26 = _RAND_27[7:0];
   _RAND_28 = {1{`RANDOM}};
-  phv_data_28 = _RAND_28[7:0];
+  phv_data_27 = _RAND_28[7:0];
   _RAND_29 = {1{`RANDOM}};
-  phv_data_29 = _RAND_29[7:0];
+  phv_data_28 = _RAND_29[7:0];
   _RAND_30 = {1{`RANDOM}};
-  phv_data_30 = _RAND_30[7:0];
+  phv_data_29 = _RAND_30[7:0];
   _RAND_31 = {1{`RANDOM}};
-  phv_data_31 = _RAND_31[7:0];
+  phv_data_30 = _RAND_31[7:0];
   _RAND_32 = {1{`RANDOM}};
-  phv_data_32 = _RAND_32[7:0];
+  phv_data_31 = _RAND_32[7:0];
   _RAND_33 = {1{`RANDOM}};
-  phv_data_33 = _RAND_33[7:0];
+  phv_data_32 = _RAND_33[7:0];
   _RAND_34 = {1{`RANDOM}};
-  phv_data_34 = _RAND_34[7:0];
+  phv_data_33 = _RAND_34[7:0];
   _RAND_35 = {1{`RANDOM}};
-  phv_data_35 = _RAND_35[7:0];
+  phv_data_34 = _RAND_35[7:0];
   _RAND_36 = {1{`RANDOM}};
-  phv_data_36 = _RAND_36[7:0];
+  phv_data_35 = _RAND_36[7:0];
   _RAND_37 = {1{`RANDOM}};
-  phv_data_37 = _RAND_37[7:0];
+  phv_data_36 = _RAND_37[7:0];
   _RAND_38 = {1{`RANDOM}};
-  phv_data_38 = _RAND_38[7:0];
+  phv_data_37 = _RAND_38[7:0];
   _RAND_39 = {1{`RANDOM}};
-  phv_data_39 = _RAND_39[7:0];
+  phv_data_38 = _RAND_39[7:0];
   _RAND_40 = {1{`RANDOM}};
-  phv_data_40 = _RAND_40[7:0];
+  phv_data_39 = _RAND_40[7:0];
   _RAND_41 = {1{`RANDOM}};
-  phv_data_41 = _RAND_41[7:0];
+  phv_data_40 = _RAND_41[7:0];
   _RAND_42 = {1{`RANDOM}};
-  phv_data_42 = _RAND_42[7:0];
+  phv_data_41 = _RAND_42[7:0];
   _RAND_43 = {1{`RANDOM}};
-  phv_data_43 = _RAND_43[7:0];
+  phv_data_42 = _RAND_43[7:0];
   _RAND_44 = {1{`RANDOM}};
-  phv_data_44 = _RAND_44[7:0];
+  phv_data_43 = _RAND_44[7:0];
   _RAND_45 = {1{`RANDOM}};
-  phv_data_45 = _RAND_45[7:0];
+  phv_data_44 = _RAND_45[7:0];
   _RAND_46 = {1{`RANDOM}};
-  phv_data_46 = _RAND_46[7:0];
+  phv_data_45 = _RAND_46[7:0];
   _RAND_47 = {1{`RANDOM}};
-  phv_data_47 = _RAND_47[7:0];
+  phv_data_46 = _RAND_47[7:0];
   _RAND_48 = {1{`RANDOM}};
-  phv_data_48 = _RAND_48[7:0];
+  phv_data_47 = _RAND_48[7:0];
   _RAND_49 = {1{`RANDOM}};
-  phv_data_49 = _RAND_49[7:0];
+  phv_data_48 = _RAND_49[7:0];
   _RAND_50 = {1{`RANDOM}};
-  phv_data_50 = _RAND_50[7:0];
+  phv_data_49 = _RAND_50[7:0];
   _RAND_51 = {1{`RANDOM}};
-  phv_data_51 = _RAND_51[7:0];
+  phv_data_50 = _RAND_51[7:0];
   _RAND_52 = {1{`RANDOM}};
-  phv_data_52 = _RAND_52[7:0];
+  phv_data_51 = _RAND_52[7:0];
   _RAND_53 = {1{`RANDOM}};
-  phv_data_53 = _RAND_53[7:0];
+  phv_data_52 = _RAND_53[7:0];
   _RAND_54 = {1{`RANDOM}};
-  phv_data_54 = _RAND_54[7:0];
+  phv_data_53 = _RAND_54[7:0];
   _RAND_55 = {1{`RANDOM}};
-  phv_data_55 = _RAND_55[7:0];
+  phv_data_54 = _RAND_55[7:0];
   _RAND_56 = {1{`RANDOM}};
-  phv_data_56 = _RAND_56[7:0];
+  phv_data_55 = _RAND_56[7:0];
   _RAND_57 = {1{`RANDOM}};
-  phv_data_57 = _RAND_57[7:0];
+  phv_data_56 = _RAND_57[7:0];
   _RAND_58 = {1{`RANDOM}};
-  phv_data_58 = _RAND_58[7:0];
+  phv_data_57 = _RAND_58[7:0];
   _RAND_59 = {1{`RANDOM}};
-  phv_data_59 = _RAND_59[7:0];
+  phv_data_58 = _RAND_59[7:0];
   _RAND_60 = {1{`RANDOM}};
-  phv_data_60 = _RAND_60[7:0];
+  phv_data_59 = _RAND_60[7:0];
   _RAND_61 = {1{`RANDOM}};
-  phv_data_61 = _RAND_61[7:0];
+  phv_data_60 = _RAND_61[7:0];
   _RAND_62 = {1{`RANDOM}};
-  phv_data_62 = _RAND_62[7:0];
+  phv_data_61 = _RAND_62[7:0];
   _RAND_63 = {1{`RANDOM}};
-  phv_data_63 = _RAND_63[7:0];
+  phv_data_62 = _RAND_63[7:0];
   _RAND_64 = {1{`RANDOM}};
-  phv_data_64 = _RAND_64[7:0];
+  phv_data_63 = _RAND_64[7:0];
   _RAND_65 = {1{`RANDOM}};
-  phv_data_65 = _RAND_65[7:0];
+  phv_data_64 = _RAND_65[7:0];
   _RAND_66 = {1{`RANDOM}};
-  phv_data_66 = _RAND_66[7:0];
+  phv_data_65 = _RAND_66[7:0];
   _RAND_67 = {1{`RANDOM}};
-  phv_data_67 = _RAND_67[7:0];
+  phv_data_66 = _RAND_67[7:0];
   _RAND_68 = {1{`RANDOM}};
-  phv_data_68 = _RAND_68[7:0];
+  phv_data_67 = _RAND_68[7:0];
   _RAND_69 = {1{`RANDOM}};
-  phv_data_69 = _RAND_69[7:0];
+  phv_data_68 = _RAND_69[7:0];
   _RAND_70 = {1{`RANDOM}};
-  phv_data_70 = _RAND_70[7:0];
+  phv_data_69 = _RAND_70[7:0];
   _RAND_71 = {1{`RANDOM}};
-  phv_data_71 = _RAND_71[7:0];
+  phv_data_70 = _RAND_71[7:0];
   _RAND_72 = {1{`RANDOM}};
-  phv_data_72 = _RAND_72[7:0];
+  phv_data_71 = _RAND_72[7:0];
   _RAND_73 = {1{`RANDOM}};
-  phv_data_73 = _RAND_73[7:0];
+  phv_data_72 = _RAND_73[7:0];
   _RAND_74 = {1{`RANDOM}};
-  phv_data_74 = _RAND_74[7:0];
+  phv_data_73 = _RAND_74[7:0];
   _RAND_75 = {1{`RANDOM}};
-  phv_data_75 = _RAND_75[7:0];
+  phv_data_74 = _RAND_75[7:0];
   _RAND_76 = {1{`RANDOM}};
-  phv_data_76 = _RAND_76[7:0];
+  phv_data_75 = _RAND_76[7:0];
   _RAND_77 = {1{`RANDOM}};
-  phv_data_77 = _RAND_77[7:0];
+  phv_data_76 = _RAND_77[7:0];
   _RAND_78 = {1{`RANDOM}};
-  phv_data_78 = _RAND_78[7:0];
+  phv_data_77 = _RAND_78[7:0];
   _RAND_79 = {1{`RANDOM}};
-  phv_data_79 = _RAND_79[7:0];
+  phv_data_78 = _RAND_79[7:0];
   _RAND_80 = {1{`RANDOM}};
-  phv_data_80 = _RAND_80[7:0];
+  phv_data_79 = _RAND_80[7:0];
   _RAND_81 = {1{`RANDOM}};
-  phv_data_81 = _RAND_81[7:0];
+  phv_data_80 = _RAND_81[7:0];
   _RAND_82 = {1{`RANDOM}};
-  phv_data_82 = _RAND_82[7:0];
+  phv_data_81 = _RAND_82[7:0];
   _RAND_83 = {1{`RANDOM}};
-  phv_data_83 = _RAND_83[7:0];
+  phv_data_82 = _RAND_83[7:0];
   _RAND_84 = {1{`RANDOM}};
-  phv_data_84 = _RAND_84[7:0];
+  phv_data_83 = _RAND_84[7:0];
   _RAND_85 = {1{`RANDOM}};
-  phv_data_85 = _RAND_85[7:0];
+  phv_data_84 = _RAND_85[7:0];
   _RAND_86 = {1{`RANDOM}};
-  phv_data_86 = _RAND_86[7:0];
+  phv_data_85 = _RAND_86[7:0];
   _RAND_87 = {1{`RANDOM}};
-  phv_data_87 = _RAND_87[7:0];
+  phv_data_86 = _RAND_87[7:0];
   _RAND_88 = {1{`RANDOM}};
-  phv_data_88 = _RAND_88[7:0];
+  phv_data_87 = _RAND_88[7:0];
   _RAND_89 = {1{`RANDOM}};
-  phv_data_89 = _RAND_89[7:0];
+  phv_data_88 = _RAND_89[7:0];
   _RAND_90 = {1{`RANDOM}};
-  phv_data_90 = _RAND_90[7:0];
+  phv_data_89 = _RAND_90[7:0];
   _RAND_91 = {1{`RANDOM}};
-  phv_data_91 = _RAND_91[7:0];
+  phv_data_90 = _RAND_91[7:0];
   _RAND_92 = {1{`RANDOM}};
-  phv_data_92 = _RAND_92[7:0];
+  phv_data_91 = _RAND_92[7:0];
   _RAND_93 = {1{`RANDOM}};
-  phv_data_93 = _RAND_93[7:0];
+  phv_data_92 = _RAND_93[7:0];
   _RAND_94 = {1{`RANDOM}};
-  phv_data_94 = _RAND_94[7:0];
+  phv_data_93 = _RAND_94[7:0];
   _RAND_95 = {1{`RANDOM}};
-  phv_data_95 = _RAND_95[7:0];
+  phv_data_94 = _RAND_95[7:0];
   _RAND_96 = {1{`RANDOM}};
-  phv_header_0 = _RAND_96[15:0];
+  phv_data_95 = _RAND_96[7:0];
   _RAND_97 = {1{`RANDOM}};
-  phv_header_1 = _RAND_97[15:0];
+  phv_header_0 = _RAND_97[15:0];
   _RAND_98 = {1{`RANDOM}};
-  phv_header_2 = _RAND_98[15:0];
+  phv_header_1 = _RAND_98[15:0];
   _RAND_99 = {1{`RANDOM}};
-  phv_header_3 = _RAND_99[15:0];
+  phv_header_2 = _RAND_99[15:0];
   _RAND_100 = {1{`RANDOM}};
-  phv_header_4 = _RAND_100[15:0];
+  phv_header_3 = _RAND_100[15:0];
   _RAND_101 = {1{`RANDOM}};
-  phv_header_5 = _RAND_101[15:0];
+  phv_header_4 = _RAND_101[15:0];
   _RAND_102 = {1{`RANDOM}};
-  phv_header_6 = _RAND_102[15:0];
+  phv_header_5 = _RAND_102[15:0];
   _RAND_103 = {1{`RANDOM}};
-  phv_header_7 = _RAND_103[15:0];
+  phv_header_6 = _RAND_103[15:0];
   _RAND_104 = {1{`RANDOM}};
-  phv_header_8 = _RAND_104[15:0];
+  phv_header_7 = _RAND_104[15:0];
   _RAND_105 = {1{`RANDOM}};
-  phv_header_9 = _RAND_105[15:0];
+  phv_header_8 = _RAND_105[15:0];
   _RAND_106 = {1{`RANDOM}};
-  phv_header_10 = _RAND_106[15:0];
+  phv_header_9 = _RAND_106[15:0];
   _RAND_107 = {1{`RANDOM}};
-  phv_header_11 = _RAND_107[15:0];
+  phv_header_10 = _RAND_107[15:0];
   _RAND_108 = {1{`RANDOM}};
-  phv_header_12 = _RAND_108[15:0];
+  phv_header_11 = _RAND_108[15:0];
   _RAND_109 = {1{`RANDOM}};
-  phv_header_13 = _RAND_109[15:0];
+  phv_header_12 = _RAND_109[15:0];
   _RAND_110 = {1{`RANDOM}};
-  phv_header_14 = _RAND_110[15:0];
+  phv_header_13 = _RAND_110[15:0];
   _RAND_111 = {1{`RANDOM}};
-  phv_header_15 = _RAND_111[15:0];
+  phv_header_14 = _RAND_111[15:0];
   _RAND_112 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_112[7:0];
+  phv_header_15 = _RAND_112[15:0];
   _RAND_113 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_113[7:0];
+  phv_parse_current_state = _RAND_113[7:0];
   _RAND_114 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_114[15:0];
+  phv_parse_current_offset = _RAND_114[7:0];
   _RAND_115 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_115[1:0];
-  _RAND_116 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_116[0:0];
+  phv_parse_transition_field = _RAND_115[15:0];
+  _RAND_116 = {2{`RANDOM}};
+  rdata = _RAND_116[63:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
