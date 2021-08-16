@@ -373,7 +373,15 @@ module MatchDataReshape(
   reg [31:0] _RAND_116;
   reg [31:0] _RAND_117;
   reg [63:0] _RAND_118;
-  reg [127:0] _RAND_119;
+  reg [31:0] _RAND_119;
+  reg [63:0] _RAND_120;
+  reg [63:0] _RAND_121;
+  reg [63:0] _RAND_122;
+  reg [63:0] _RAND_123;
+  reg [63:0] _RAND_124;
+  reg [63:0] _RAND_125;
+  reg [63:0] _RAND_126;
+  reg [63:0] _RAND_127;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[matcher.scala 180:22]
   reg [7:0] phv_data_1; // @[matcher.scala 180:22]
@@ -494,29 +502,38 @@ module MatchDataReshape(
   reg  phv_next_config_id; // @[matcher.scala 180:22]
   reg  phv_is_valid_processor; // @[matcher.scala 180:22]
   reg [63:0] key; // @[matcher.scala 184:22]
-  reg [127:0] data; // @[matcher.scala 188:23]
-  wire [63:0] _GEN_0 = io_cs_in == 3'h0 ? io_data_in_0 : 64'h0; // @[matcher.scala 198:69 matcher.scala 199:27 matcher.scala 194:19]
-  wire [3:0] _GEN_19 = io_pipe_phv_in_next_config_id ? io_table_config_1_table_width : io_table_config_0_table_width; // @[matcher.scala 201:61 matcher.scala 201:61]
-  wire [3:0] _GEN_20 = io_pipe_phv_in_next_config_id ? io_table_config_1_table_depth : io_table_config_0_table_depth; // @[matcher.scala 201:61 matcher.scala 201:61]
-  wire  width_extend = _GEN_19 == 4'h2; // @[matcher.scala 201:61]
-  wire [3:0] _GEN_37 = {{1'd0}, io_cs_in}; // @[matcher.scala 202:48]
-  wire [3:0] _T_2 = _GEN_37 + _GEN_20; // @[matcher.scala 202:48]
-  wire [63:0] _GEN_21 = width_extend & _T_2 == 4'h0 ? io_data_in_0 : 64'h0; // @[matcher.scala 202:112 matcher.scala 203:27 matcher.scala 195:19]
-  wire [63:0] _GEN_22 = io_cs_in == 3'h1 ? io_data_in_1 : _GEN_0; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_23 = width_extend & _T_2 == 4'h1 ? io_data_in_1 : _GEN_21; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] _GEN_24 = io_cs_in == 3'h2 ? io_data_in_2 : _GEN_22; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_25 = width_extend & _T_2 == 4'h2 ? io_data_in_2 : _GEN_23; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] _GEN_26 = io_cs_in == 3'h3 ? io_data_in_3 : _GEN_24; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_27 = width_extend & _T_2 == 4'h3 ? io_data_in_3 : _GEN_25; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] _GEN_28 = io_cs_in == 3'h4 ? io_data_in_4 : _GEN_26; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_29 = width_extend & _T_2 == 4'h4 ? io_data_in_4 : _GEN_27; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] _GEN_30 = io_cs_in == 3'h5 ? io_data_in_5 : _GEN_28; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_31 = width_extend & _T_2 == 4'h5 ? io_data_in_5 : _GEN_29; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] _GEN_32 = io_cs_in == 3'h6 ? io_data_in_6 : _GEN_30; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] _GEN_33 = width_extend & _T_2 == 4'h6 ? io_data_in_6 : _GEN_31; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [63:0] data_hi = io_cs_in == 3'h7 ? io_data_in_7 : _GEN_32; // @[matcher.scala 198:69 matcher.scala 199:27]
-  wire [63:0] data_lo = width_extend & _T_2 == 4'h7 ? io_data_in_7 : _GEN_33; // @[matcher.scala 202:112 matcher.scala 203:27]
-  wire [127:0] _data_T = {data_hi,data_lo}; // @[Cat.scala 30:58]
+  reg [2:0] cs; // @[matcher.scala 188:21]
+  reg [63:0] data_0; // @[matcher.scala 191:23]
+  reg [63:0] data_1; // @[matcher.scala 191:23]
+  reg [63:0] data_2; // @[matcher.scala 191:23]
+  reg [63:0] data_3; // @[matcher.scala 191:23]
+  reg [63:0] data_4; // @[matcher.scala 191:23]
+  reg [63:0] data_5; // @[matcher.scala 191:23]
+  reg [63:0] data_6; // @[matcher.scala 191:23]
+  reg [63:0] data_7; // @[matcher.scala 191:23]
+  wire [63:0] _GEN_0 = cs == 3'h0 ? data_0 : 64'h0; // @[matcher.scala 202:63 matcher.scala 203:27 matcher.scala 196:15]
+  wire [3:0] _GEN_19 = phv_next_config_id ? io_table_config_1_table_width : io_table_config_0_table_width; // @[matcher.scala 205:61 matcher.scala 205:61]
+  wire [3:0] _GEN_20 = phv_next_config_id ? io_table_config_1_table_depth : io_table_config_0_table_depth; // @[matcher.scala 205:61 matcher.scala 205:61]
+  wire  width_extend = _GEN_19 == 4'h2; // @[matcher.scala 205:61]
+  wire [3:0] _GEN_38 = {{1'd0}, cs}; // @[matcher.scala 206:42]
+  wire [3:0] _T_2 = _GEN_38 + _GEN_20; // @[matcher.scala 206:42]
+  wire [63:0] _GEN_21 = width_extend & _T_2 == 4'h0 ? data_0 : 64'h0; // @[matcher.scala 206:106 matcher.scala 207:27 matcher.scala 197:15]
+  wire [63:0] _GEN_22 = cs == 3'h1 ? data_1 : _GEN_0; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_23 = width_extend & _T_2 == 4'h1 ? data_1 : _GEN_21; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_24 = cs == 3'h2 ? data_2 : _GEN_22; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_25 = width_extend & _T_2 == 4'h2 ? data_2 : _GEN_23; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_26 = cs == 3'h3 ? data_3 : _GEN_24; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_27 = width_extend & _T_2 == 4'h3 ? data_3 : _GEN_25; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_28 = cs == 3'h4 ? data_4 : _GEN_26; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_29 = width_extend & _T_2 == 4'h4 ? data_4 : _GEN_27; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_30 = cs == 3'h5 ? data_5 : _GEN_28; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_31 = width_extend & _T_2 == 4'h5 ? data_5 : _GEN_29; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_32 = cs == 3'h6 ? data_6 : _GEN_30; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_33 = width_extend & _T_2 == 4'h6 ? data_6 : _GEN_31; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] _GEN_34 = cs == 3'h7 ? data_7 : _GEN_32; // @[matcher.scala 202:63 matcher.scala 203:27]
+  wire [63:0] _GEN_35 = width_extend & _T_2 == 4'h7 ? data_7 : _GEN_33; // @[matcher.scala 206:106 matcher.scala 207:27]
+  wire [63:0] data1 = phv_is_valid_processor ? _GEN_34 : 64'h0; // @[matcher.scala 200:39 matcher.scala 196:15]
+  wire [63:0] data2 = phv_is_valid_processor ? _GEN_35 : 64'h0; // @[matcher.scala 200:39 matcher.scala 197:15]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[matcher.scala 182:25]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[matcher.scala 182:25]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[matcher.scala 182:25]
@@ -636,7 +653,7 @@ module MatchDataReshape(
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher.scala 182:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher.scala 182:25]
   assign io_key_out = key; // @[matcher.scala 186:20]
-  assign io_data_out = data; // @[matcher.scala 211:21]
+  assign io_data_out = {data1,data2}; // @[Cat.scala 30:58]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[matcher.scala 181:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[matcher.scala 181:13]
@@ -757,11 +774,15 @@ module MatchDataReshape(
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher.scala 181:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher.scala 181:13]
     key <= io_key_in; // @[matcher.scala 185:13]
-    if (io_pipe_phv_in_is_valid_processor) begin // @[matcher.scala 191:50]
-      data <= _data_T; // @[matcher.scala 206:18]
-    end else begin
-      data <= 128'h0; // @[matcher.scala 208:18]
-    end
+    cs <= io_cs_in; // @[matcher.scala 189:12]
+    data_0 <= io_data_in_0; // @[matcher.scala 192:14]
+    data_1 <= io_data_in_1; // @[matcher.scala 192:14]
+    data_2 <= io_data_in_2; // @[matcher.scala 192:14]
+    data_3 <= io_data_in_3; // @[matcher.scala 192:14]
+    data_4 <= io_data_in_4; // @[matcher.scala 192:14]
+    data_5 <= io_data_in_5; // @[matcher.scala 192:14]
+    data_6 <= io_data_in_6; // @[matcher.scala 192:14]
+    data_7 <= io_data_in_7; // @[matcher.scala 192:14]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1037,8 +1058,24 @@ initial begin
   phv_is_valid_processor = _RAND_117[0:0];
   _RAND_118 = {2{`RANDOM}};
   key = _RAND_118[63:0];
-  _RAND_119 = {4{`RANDOM}};
-  data = _RAND_119[127:0];
+  _RAND_119 = {1{`RANDOM}};
+  cs = _RAND_119[2:0];
+  _RAND_120 = {2{`RANDOM}};
+  data_0 = _RAND_120[63:0];
+  _RAND_121 = {2{`RANDOM}};
+  data_1 = _RAND_121[63:0];
+  _RAND_122 = {2{`RANDOM}};
+  data_2 = _RAND_122[63:0];
+  _RAND_123 = {2{`RANDOM}};
+  data_3 = _RAND_123[63:0];
+  _RAND_124 = {2{`RANDOM}};
+  data_4 = _RAND_124[63:0];
+  _RAND_125 = {2{`RANDOM}};
+  data_5 = _RAND_125[63:0];
+  _RAND_126 = {2{`RANDOM}};
+  data_6 = _RAND_126[63:0];
+  _RAND_127 = {2{`RANDOM}};
+  data_7 = _RAND_127[63:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

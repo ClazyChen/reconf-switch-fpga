@@ -33,7 +33,11 @@ class Executor extends Module {
         val args = Reg(UInt(const.EXEC.args_width.W))
         args := io.match_value(const.EXEC.args_width-1,0)
         for (j <- 0 until const.EXEC.args_length) {
-            io.args_out(j) := args(const.EXEC.args_width-1-j*8, const.EXEC.args_width-(j+1)*8)
+            when (phv.is_valid_processor) {
+                io.args_out(j) := args(const.EXEC.args_width-1-j*8, const.EXEC.args_width-(j+1)*8)
+            } .otherwise {
+                io.args_out(j) := 0.U(8.W)
+            }
         }
 
         val sram = for (j <- 0 until const.EXEC.sram_number) yield {
@@ -45,10 +49,15 @@ class Executor extends Module {
             exe.io.w.data := io.action_mod.data(j)
             exe
         }
-
+        
         for (j <- 0 until const.EXEC.sram_number) {
             for (k <- 0 until const.EXEC.primitive_number_per_sram) {
-                io.vliw_out(j*const.EXEC.primitive_number_per_sram + k) := sram(j).io.r.data(const.SRAM.data_width-k*const.EXEC.primitive_width-1,const.SRAM.data_width-(k+1)*const.EXEC.primitive_width)
+                val vliw_id = j*const.EXEC.primitive_number_per_sram + k
+                when (phv.is_valid_processor) {
+                    io.vliw_out(vliw_id) := sram(j).io.r.data(const.SRAM.data_width-k*const.EXEC.primitive_width-1,const.SRAM.data_width-(k+1)*const.EXEC.primitive_width)
+                } .otherwise {
+                    io.vliw_out(vliw_id) := 0.U(const.EXEC.primitive_width.W)
+                }                
             }
         }
     }
@@ -86,7 +95,7 @@ class Executor extends Module {
             val is_addi     = PRIM.OPCODE.addi === opcode
             val is_copy     = PRIM.OPCODE.copy === opcode
 
-            when (is_addi || is_copy) {
+            when (phv.is_valid_processor && (is_addi || is_copy)) {
                 val dst = Mux(is_addi, parameter_1, parameter_2)
                 val header_id       = PRIM.FIELD.header_id(dst)
                 val internal_offset = PRIM.FIELD.internal_offset(dst)
@@ -138,39 +147,41 @@ class Executor extends Module {
             val parameter_2 = PRIM.parameter_2(vliw(j))
             
             io.field_out(j) := 0.U(const.EXEC.max_field_length.W)
-            val from_header = length(j) =/= 0.U(const.PHV.offset_width.W)
-            when (from_header) { // addi or copy
-                val field_offset = offset(j)
-                val field_length = length(j)
-                val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
-                for (k <- 0 until const.EXEC.max_field_length) {
-                    val local_offset = k.U(const.PHV.offset_width.W)
-                    val total_offset = field_offset + local_offset
-                    when (local_offset < field_length) {
-                        bytes(k) := phv.data(total_offset)
-                    } .otherwise {
-                        bytes(k) := 0.U(8.W)
-                    }
-                }
-                io.field_out(j) := bytes.reduce(Cat(_, _))
-            } .otherwise {
-                when (PRIM.OPCODE.set === opcode) { // argument
-                    val args_offset = PRIM.ARG.offset(parameter_2)
-                    val args_length = PRIM.ARG.length(parameter_2)
-                    val bytes = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+            when (phv.is_valid_processor) {
+                val from_header = length(j) =/= 0.U(const.PHV.offset_width.W)
+                when (from_header) { // addi or copy
+                    val field_offset = offset(j)
+                    val field_length = length(j)
+                    val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
                     for (k <- 0 until const.EXEC.max_field_length) {
                         val local_offset = k.U(const.PHV.offset_width.W)
-                        val total_offset = args_offset + local_offset
-                        when (local_offset < args_length) {
-                            bytes(k) := args(total_offset)
+                        val total_offset = field_offset + local_offset
+                        when (local_offset < field_length) {
+                            bytes(k) := phv.data(total_offset)
                         } .otherwise {
                             bytes(k) := 0.U(8.W)
                         }
                     }
                     io.field_out(j) := bytes.reduce(Cat(_, _))
-                } .otherwise {                       // immediate number, seti or goto
-                    val imm = parameter_2
-                    io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
+                } .otherwise {
+                    when (PRIM.OPCODE.set === opcode) { // argument
+                        val args_offset = PRIM.ARG.offset(parameter_2)
+                        val args_length = PRIM.ARG.length(parameter_2)
+                        val bytes = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                        for (k <- 0 until const.EXEC.max_field_length) {
+                            val local_offset = k.U(const.PHV.offset_width.W)
+                            val total_offset = args_offset + local_offset
+                            when (local_offset < args_length) {
+                                bytes(k) := args(total_offset)
+                            } .otherwise {
+                                bytes(k) := 0.U(8.W)
+                            }
+                        }
+                        io.field_out(j) := bytes.reduce(Cat(_, _))
+                    } .otherwise {                       // immediate number, seti or goto
+                        val imm = parameter_2
+                        io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
+                    }
                 }
             }
         }
@@ -203,7 +214,7 @@ class Executor extends Module {
             val parameter_1 = PRIM.parameter_1(vliw(j))
             val parameter_2 = PRIM.parameter_2(vliw(j))
 
-            when (PRIM.OPCODE.addi === opcode) {
+            when (phv.is_valid_processor && PRIM.OPCODE.addi === opcode) {
                 val imm = Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, parameter_2(PRIM.parameter_width-1)), parameter_2)
                 io.field_out(j) := field(j) + imm
             } .otherwise {
@@ -236,21 +247,26 @@ class Executor extends Module {
         io.field_out := field
 
         for (j <- 0 until const.EXEC.primitive_number) {
-            val opcode      = PRIM.operation(vliw(j))
-            val parameter_1 = PRIM.parameter_1(vliw(j)) // always = dst field
-            val parameter_2 = PRIM.parameter_2(vliw(j))
+            when (phv.is_valid_processor) {
+                val opcode      = PRIM.operation(vliw(j))
+                val parameter_1 = PRIM.parameter_1(vliw(j)) // always = dst field
+                val parameter_2 = PRIM.parameter_2(vliw(j))
 
-            val field_header_id       = PRIM.FIELD.header_id(parameter_1)
-            val field_internal_offset = PRIM.FIELD.internal_offset(parameter_1)
-            val field_length          = PRIM.FIELD.length(parameter_1)
-            val field_header_offset   = const.PHV.offset(phv.header(field_header_id))
-            val field_offset          = field_header_offset + field_internal_offset
+                val field_header_id       = PRIM.FIELD.header_id(parameter_1)
+                val field_internal_offset = PRIM.FIELD.internal_offset(parameter_1)
+                val field_length          = PRIM.FIELD.length(parameter_1)
+                val field_header_offset   = const.PHV.offset(phv.header(field_header_id))
+                val field_offset          = field_header_offset + field_internal_offset
 
-            io.offset_out(j) := field_offset
-            when (PRIM.OPCODE.goto === opcode) {
-                io.length_out(j) := 0.U(const.PHV.offset_width.W)
+                io.offset_out(j) := field_offset
+                when (PRIM.OPCODE.goto === opcode) {
+                    io.length_out(j) := 0.U(const.PHV.offset_width.W)
+                } .otherwise {
+                    io.length_out(j) := field_length
+                }
             } .otherwise {
-                io.length_out(j) := field_length
+                io.offset_out(j) := 0.U(const.PHV.offset_width.W)
+                io.length_out(j) := 0.U(const.PHV.offset_width.W)
             }
         }
     }
@@ -276,19 +292,21 @@ class Executor extends Module {
         length := io.length_in
         field  := io.field_in
 
-        for (j <- 0 until const.EXEC.primitive_number) {
-            val field_length = length(j)
-            val field_offset = offset(j)
-            val field_content = field(j)
-            when (field_length === 0.U(const.PHV.offset_width.W)) {
-                io.pipe.phv_out.next_processor_id := field_content
-            } .otherwise {
-                for (k <- 0 until const.EXEC.max_field_length) {
-                    val field_byte   = field_content(const.EXEC.max_field_width-8*k-1, const.EXEC.max_field_width-8*(k+1))
-                    val local_offset = k.U(const.PHV.offset_width.W)
-                    val total_offset = field_offset + local_offset
-                    when (local_offset < field_length) {
-                        io.pipe.phv_out.data(total_offset) := field_byte
+        when (phv.is_valid_processor) {
+            for (j <- 0 until const.EXEC.primitive_number) {
+                val field_length = length(j)
+                val field_offset = offset(j)
+                val field_content = field(j)
+                when (field_length === 0.U(const.PHV.offset_width.W)) {
+                    io.pipe.phv_out.next_processor_id := field_content
+                } .otherwise {
+                    for (k <- 0 until const.EXEC.max_field_length) {
+                        val field_byte   = field_content(const.EXEC.max_field_width-8*k-1, const.EXEC.max_field_width-8*(k+1))
+                        val local_offset = k.U(const.PHV.offset_width.W)
+                        val total_offset = field_offset + local_offset
+                        when (local_offset < field_length) {
+                            io.pipe.phv_out.data(total_offset) := field_byte
+                        }
                     }
                 }
             }
