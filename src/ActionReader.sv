@@ -379,12 +379,14 @@ module ActionReader(
   wire  sram_0_io_w_en; // @[executor.scala 44:29]
   wire [7:0] sram_0_io_w_addr; // @[executor.scala 44:29]
   wire [63:0] sram_0_io_w_data; // @[executor.scala 44:29]
+  wire  sram_0_io_r_en; // @[executor.scala 44:29]
   wire [7:0] sram_0_io_r_addr; // @[executor.scala 44:29]
   wire [63:0] sram_0_io_r_data; // @[executor.scala 44:29]
   wire  sram_1_clock; // @[executor.scala 44:29]
   wire  sram_1_io_w_en; // @[executor.scala 44:29]
   wire [7:0] sram_1_io_w_addr; // @[executor.scala 44:29]
   wire [63:0] sram_1_io_w_data; // @[executor.scala 44:29]
+  wire  sram_1_io_r_en; // @[executor.scala 44:29]
   wire [7:0] sram_1_io_r_addr; // @[executor.scala 44:29]
   wire [63:0] sram_1_io_r_data; // @[executor.scala 44:29]
   reg [7:0] phv_data_0; // @[executor.scala 28:22]
@@ -511,6 +513,7 @@ module ActionReader(
     .io_w_en(sram_0_io_w_en),
     .io_w_addr(sram_0_io_w_addr),
     .io_w_data(sram_0_io_w_data),
+    .io_r_en(sram_0_io_r_en),
     .io_r_addr(sram_0_io_r_addr),
     .io_r_data(sram_0_io_r_data)
   );
@@ -519,6 +522,7 @@ module ActionReader(
     .io_w_en(sram_1_io_w_en),
     .io_w_addr(sram_1_io_w_addr),
     .io_w_data(sram_1_io_w_data),
+    .io_r_en(sram_1_io_r_en),
     .io_r_addr(sram_1_io_r_addr),
     .io_r_data(sram_1_io_r_data)
   );
@@ -655,11 +659,13 @@ module ActionReader(
   assign sram_0_io_w_en = io_action_mod_en; // @[executor.scala 47:27]
   assign sram_0_io_w_addr = io_action_mod_addr; // @[executor.scala 48:27]
   assign sram_0_io_w_data = io_action_mod_data_0; // @[executor.scala 49:27]
+  assign sram_0_io_r_en = 1'h1; // @[executor.scala 45:27]
   assign sram_0_io_r_addr = io_hit ? 8'h0 : io_match_value[63:56]; // @[executor.scala 32:28]
   assign sram_1_clock = clock;
   assign sram_1_io_w_en = io_action_mod_en; // @[executor.scala 47:27]
   assign sram_1_io_w_addr = io_action_mod_addr; // @[executor.scala 48:27]
   assign sram_1_io_w_data = io_action_mod_data_1; // @[executor.scala 49:27]
+  assign sram_1_io_r_en = 1'h1; // @[executor.scala 45:27]
   assign sram_1_io_r_addr = io_hit ? 8'h0 : io_match_value[63:56]; // @[executor.scala 32:28]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[executor.scala 29:13]

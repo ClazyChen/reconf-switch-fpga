@@ -1,6 +1,5 @@
 module Parser(
   input         clock,
-  input         reset,
   input  [7:0]  io_pipe_phv_in_data_0,
   input  [7:0]  io_pipe_phv_in_data_1,
   input  [7:0]  io_pipe_phv_in_data_2,
@@ -244,7 +243,6 @@ module Parser(
   input         io_mod_module_mod_state_id_mod,
   input  [7:0]  io_mod_module_mod_state_id,
   input         io_mod_module_mod_sram_w_cs,
-  input         io_mod_module_mod_sram_w_en,
   input  [7:0]  io_mod_module_mod_sram_w_addr,
   input  [63:0] io_mod_module_mod_sram_w_data
 );
