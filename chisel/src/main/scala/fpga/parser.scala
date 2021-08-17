@@ -22,14 +22,12 @@ class Parser extends Module {
         exe
     }
 
-    // at least 1 cycle
-    val phv   = Reg(new PHV)
-    phv := io.pipe.phv_in
-    io.pipe.phv_out := phv
+    // allow no MAU is used and pass directly
+    io.pipe.phv_out := io.pipe.phv_in
     
     for (j <- 0 until const.mau_number_in_parser) {
         if (j == 0) {
-            mau(j).io.pipe.phv_in := phv
+            mau(j).io.pipe.phv_in <> io.pipe.phv_in
         } else {
             mau(j).io.pipe.phv_in <> mau(j-1).io.pipe.phv_out
             when (j.U(const.mau_id_width.W) === last_mau_id) {    // goto matcher
