@@ -3,6 +3,7 @@ module SRAM(
   input         io_w_en,
   input  [7:0]  io_w_addr,
   input  [63:0] io_w_data,
+  input         io_r_en,
   input  [7:0]  io_r_addr,
   output [63:0] io_r_data
 );
@@ -36,9 +37,9 @@ module SRAM(
     if (io_w_en) begin
       mem_io_r_data_MPORT_en_pipe_0 <= 1'h0;
     end else begin
-      mem_io_r_data_MPORT_en_pipe_0 <= 1'h1;
+      mem_io_r_data_MPORT_en_pipe_0 <= io_r_en;
     end
-    if (io_w_en ? 1'h0 : 1'h1) begin
+    if (io_w_en ? 1'h0 : io_r_en) begin
       mem_io_r_data_MPORT_addr_pipe_0 <= io_r_addr;
     end
   end

@@ -1,6 +1,7 @@
 *.fir
 *.json
 *.v
+chisel/*.sv
 chisel/.bsp
 chisel/project/target
 chisel/target
