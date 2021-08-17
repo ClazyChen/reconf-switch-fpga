@@ -49,5 +49,11 @@ class MatcherModify extends Bundle {
 class ActionModify extends Bundle {
     val en        = Input(Bool())
     val addr      = Input(UInt(const.SRAM.address_width.W))
-    val data      = Vec(const.EXEC.sram_number, Input(UInt(const.SRAM.data_width.W)))
+    val data      = Input(Vec(const.EXEC.sram_number, UInt(const.SRAM.data_width.W)))
+}
+
+class ProcessorModify extends Bundle {
+    val par_mod   = new ParserModify
+    val mat_mod   = new MatcherModify
+    val act_mod   = new ActionModify
 }

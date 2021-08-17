@@ -1,6 +1,5 @@
 module Executor(
   input         clock,
-  input         reset,
   input  [7:0]  io_pipe_phv_in_data_0,
   input  [7:0]  io_pipe_phv_in_data_1,
   input  [7:0]  io_pipe_phv_in_data_2,
