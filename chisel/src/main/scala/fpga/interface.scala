@@ -57,3 +57,15 @@ class ProcessorModify extends Bundle {
     val mat_mod   = new MatcherModify
     val act_mod   = new ActionModify
 }
+
+class CrossbarModify extends Bundle {
+    val en            = Input(Bool())
+    val first_proc_id = Input(UInt(const.processor_id_width.W))
+    val last_proc_id  = Input(UInt(const.processor_id_width.W))
+    val next_proc_id  = Input(Vec(const.processor_number, UInt(const.processor_id_width.W)))
+}
+
+class IPSAModify extends Bundle {
+    val proc_mod  = Vec(const.processor_number, new ProcessorModify)
+    val xbar_mod  = new CrossbarModify
+}

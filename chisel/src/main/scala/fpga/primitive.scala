@@ -19,7 +19,8 @@ object PRIM {
         val copy = 9.U(4.W)  // copy from <field> to <field>          copy dst src
         val set  = 10.U(4.W) // set <arguments> to <field>            set  dst arg
         val seti = 11.U(4.W) // set <immediate number> to <field>     seti dst imm
-        val goto = 15.U(4.W) // goto <next processor id>              goto     pid
+        val goto = 15.U(4.W) // goto <next processor id>              goto     <pid, cid>
+                             // if there is no next processor, let pid = id of current processor
     }
 
     // field parameter[14]
