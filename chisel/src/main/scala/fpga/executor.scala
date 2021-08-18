@@ -298,7 +298,8 @@ class Executor extends Module {
                 val field_offset = offset(j)
                 val field_content = field(j)
                 when (field_length === 0.U(const.PHV.offset_width.W)) {
-                    io.pipe.phv_out.next_processor_id := field_content
+                    io.pipe.phv_out.next_processor_id := field_content(PRIM.parameter_width-1, PRIM.parameter_width-const.header_id_width)
+                    io.pipe.phv_out.next_config_id    := field_content(const.config_id_width-1, 0)
                 } .otherwise {
                     for (k <- 0 until const.EXEC.max_field_length) {
                         val field_byte   = field_content(const.EXEC.max_field_width-8*k-1, const.EXEC.max_field_width-8*(k+1))

@@ -7,12 +7,15 @@ class ClusterReadPort extends Bundle {
     val cluster = Vec(const.SRAM.sram_number_in_cluster, new ReadPort)
 }
 
+class ClusterWritePort extends Bundle {
+    val wcs = Input(UInt(const.SRAM.sram_id_width.W))
+    val w = new WritePort
+}
+
 // SRAM cluster containing 8 SRAMs
 class SRAMCluster extends Module {
     val io = IO(new Bundle {
-        val wcs = Input(UInt(const.SRAM.sram_id_width.W))
-        val w = new WritePort
-
+        val w = new ClusterWritePort
         val r = Vec(const.SRAM.processor_number_in_cluster, new ClusterReadPort)
     })
 
@@ -24,8 +27,8 @@ class SRAMCluster extends Module {
 
     // write port
     for (j <- 0 until const.SRAM.sram_number_in_cluster) {
-        sram(j).io.w := io.w
-        when (j.U(const.SRAM.sram_id_width.W) =/= io.wcs) {
+        sram(j).io.w := io.w.w
+        when (j.U(const.SRAM.sram_id_width.W) =/= io.w.wcs) {
             sram(j).io.w.en := false.B
         }
     }

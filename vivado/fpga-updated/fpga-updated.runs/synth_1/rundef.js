@@ -23,7 +23,7 @@ eval( EAInclude(ISEJScriptLib) );
 
 
 ISEStep( "vivado",
-         "-log SRAMCluster.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SRAMCluster.tcl" );
+         "-log IPSA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IPSA.tcl" );
 
 
 

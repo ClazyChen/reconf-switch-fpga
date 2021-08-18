@@ -1,6 +1,5 @@
 module Processor(
   input         clock,
-  input         reset,
   input  [7:0]  io_pipe_phv_in_data_0,
   input  [7:0]  io_pipe_phv_in_data_1,
   input  [7:0]  io_pipe_phv_in_data_2,
@@ -236,7 +235,6 @@ module Processor(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [1:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
-  output        io_pipe_phv_out_is_valid_processor,
   input         io_mod_par_mod_en,
   input         io_mod_par_mod_last_mau_id_mod,
   input  [2:0]  io_mod_par_mod_last_mau_id,
@@ -244,7 +242,6 @@ module Processor(
   input         io_mod_par_mod_module_mod_state_id_mod,
   input  [7:0]  io_mod_par_mod_module_mod_state_id,
   input         io_mod_par_mod_module_mod_sram_w_cs,
-  input         io_mod_par_mod_module_mod_sram_w_en,
   input  [7:0]  io_mod_par_mod_module_mod_sram_w_addr,
   input  [63:0] io_mod_par_mod_module_mod_sram_w_data,
   input         io_mod_mat_mod_en,
@@ -252,15 +249,6 @@ module Processor(
   input  [7:0]  io_mod_mat_mod_key_mod_header_id,
   input  [7:0]  io_mod_mat_mod_key_mod_internal_offset,
   input  [3:0]  io_mod_mat_mod_key_mod_key_length,
-  input  [3:0]  io_mod_mat_mod_key_mod_val_length,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_0,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_1,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_2,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_3,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_4,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_5,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_6,
-  input  [2:0]  io_mod_mat_mod_table_mod_sram_id_table_7,
   input  [3:0]  io_mod_mat_mod_table_mod_table_width,
   input  [3:0]  io_mod_mat_mod_table_mod_table_depth,
   input         io_mod_act_mod_en,
@@ -1044,7 +1032,6 @@ module Processor(
   wire [15:0] EXE_io_pipe_phv_out_parse_transition_field; // @[processor.scala 15:21]
   wire [1:0] EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 15:21]
-  wire  EXE_io_pipe_phv_out_is_valid_processor; // @[processor.scala 15:21]
   wire  EXE_io_hit; // @[processor.scala 15:21]
   wire [63:0] EXE_io_match_value; // @[processor.scala 15:21]
   wire  EXE_io_action_mod_en; // @[processor.scala 15:21]
@@ -1808,7 +1795,6 @@ module Processor(
     .io_pipe_phv_out_parse_transition_field(EXE_io_pipe_phv_out_parse_transition_field),
     .io_pipe_phv_out_next_processor_id(EXE_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(EXE_io_pipe_phv_out_next_config_id),
-    .io_pipe_phv_out_is_valid_processor(EXE_io_pipe_phv_out_is_valid_processor),
     .io_hit(EXE_io_hit),
     .io_match_value(EXE_io_match_value),
     .io_action_mod_en(EXE_io_action_mod_en),
@@ -1933,7 +1919,6 @@ module Processor(
   assign io_pipe_phv_out_parse_transition_field = EXE_io_pipe_phv_out_parse_transition_field; // @[processor.scala 29:24]
   assign io_pipe_phv_out_next_processor_id = EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 29:24]
   assign io_pipe_phv_out_next_config_id = EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 29:24]
-  assign io_pipe_phv_out_is_valid_processor = EXE_io_pipe_phv_out_is_valid_processor; // @[processor.scala 29:24]
   assign io_mem_cluster_0_en = MAT_io_mem_cluster_0_en; // @[processor.scala 22:24]
   assign io_mem_cluster_0_addr = MAT_io_mem_cluster_0_addr; // @[processor.scala 22:24]
   assign io_mem_cluster_1_en = MAT_io_mem_cluster_1_en; // @[processor.scala 22:24]

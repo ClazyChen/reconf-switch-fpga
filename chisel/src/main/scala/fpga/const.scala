@@ -15,6 +15,8 @@ object const {
 
     val processor_id_width = 2
     val processor_number = 4
+    val cluster_number   = 1
+    val processor_number_in_cluster = processor_number / cluster_number
 
     val config_id_width = 1
     val config_number = 2
@@ -46,7 +48,7 @@ object const {
 
         val sram_number_in_cluster = 8
         val sram_number_width = 4 // log(8+1)
-        val processor_number_in_cluster = 4
+        val processor_number_in_cluster = const.processor_number_in_cluster
         val sram_id_width = 3
 
         val max_sram_width_extend_degree = 2

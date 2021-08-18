@@ -40,4 +40,4 @@ EAStep()
      fi
 }
 
-EAStep vivado -log SRAMCluster.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source SRAMCluster.tcl
+EAStep vivado -log IPSA.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source IPSA.tcl
