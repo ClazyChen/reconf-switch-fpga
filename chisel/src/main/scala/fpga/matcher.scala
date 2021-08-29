@@ -82,9 +82,9 @@ class Matcher extends Module {
         }
     }
 
-    // pipeline level 345678 : hash
+    // pipeline level 3(actually 8) : hash
     
-    // pipeline level 9
+    // pipeline level 4
     // calculate cs
     class MatchGetCs extends Module {
         val io = IO(new Bundle {
@@ -115,22 +115,27 @@ class Matcher extends Module {
         cs := io.cs_in
         io.cs_out := cs
 
+        val config = io.table_config(phv.next_config_id)
+        val width = config.table_width
+        val depth = config.table_depth
         for (j <- 0 until const.SRAM.sram_number_in_cluster) {
             io.cs_vec_out(j) := false.B
-            when (phv.is_valid_processor) {
-                when (j.U(const.SRAM.sram_id_width.W) === cs) {
-                    io.cs_vec_out(j) := true.B
-                }
-                val width_extend = io.table_config(phv.next_config_id).table_width === 2.U(const.SRAM.sram_number_width.W)
-                val extended_cs  = cs + io.table_config(phv.next_config_id).table_depth
-                when (width_extend && j.U(const.SRAM.sram_id_width.W) === extended_cs) {
-                    io.cs_vec_out(j) := true.B
+        }
+        when (phv.is_valid_processor) {
+            for (k <- 0 until const.SRAM.max_sram_width_extend_degree) {
+                val width_extend = io.table_config(phv.next_config_id).table_width > k.U(const.SRAM.sram_number_width.W)
+                when (width_extend) {
+                    // val extended_cs = cs + depth * k
+                    val cs0 = cs
+                    val cs1 = Mux(depth(0), cs0 + depth, cs0)
+                    val cs2 = Mux(depth(1), cs1 + Cat(depth, 0.U(1.W)), cs1)
+                    io.cs_vec_out(cs2) := true.B
                 }
             }
         }
     }
 
-    // pipeline level 10
+    // pipeline level 5
     // read data
     class MatchReadData extends Module {
         val io = IO(new Bundle {
@@ -191,25 +196,27 @@ class Matcher extends Module {
         val data = Reg(Vec(const.SRAM.sram_number_in_cluster, UInt(const.SRAM.data_width.W)))
         data := io.data_in
 
-        val data1 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-        val data2 = Wire(UInt((const.MATCH.match_data_width>>1).W))
-        data1 := 0.U((const.MATCH.match_data_width>>1).W)
-        data2 := 0.U((const.MATCH.match_data_width>>1).W)
+        val possible  = const.MATCH.match_data_width / const.SRAM.data_width
+        val data_temp = Wire(Vec(possible, UInt(const.SRAM.data_width.W)))
+        for (j <- 0 until possible) {
+            data_temp(j) := 0.U(const.SRAM.data_width.W)
+        }
         val table_config = io.table_config(phv.next_config_id)
+        val depth = table_config.table_depth
 
         when (phv.is_valid_processor) {
-            for (j <- 0 until const.SRAM.sram_number_in_cluster) {
-                when (cs === j.U(const.SRAM.sram_id_width.W)) {
-                    data1 := data(j)
-                }
-                val width_extend = table_config.table_width === 2.U(const.SRAM.sram_number_width.W)
-                when (width_extend && cs + table_config.table_depth === j.U(const.SRAM.sram_id_width.W)) {
-                    data2 := data(j)
+            for (k <- 0 until const.SRAM.max_sram_width_extend_degree) {
+                val width_extend = io.table_config(phv.next_config_id).table_width > k.U(const.SRAM.sram_number_width.W)
+                when (width_extend) {
+                    // val extended_cs = cs + depth * k
+                    val cs0 = cs
+                    val cs1 = Mux(depth(0), cs0 + depth, cs0)
+                    val cs2 = Mux(depth(1), cs1 + Cat(depth, 0.U(1.W)), cs1)
+                    data_temp(k) := data(cs2)
                 }
             }
         }
-
-        io.data_out := Cat(data1, data2)
+        io.data_out := data_temp.reduce(Cat(_, _))
     }
 
     // pipeline level 12
@@ -263,7 +270,7 @@ class Matcher extends Module {
     // pipeline
     val pipe1 = Module(new MatchGetOffset)
     val pipe2 = Module(new MatchGetKey)
-    val pipe3to8 = Module(new Hash)
+    val pipe3to8 = Module(new Hash) // actually 8 levels not 6
     val pipe9 = Module(new MatchGetCs)
     val pipe10 = Module(new MatchReadData)
     val pipe11 = Module(new MatchDataReshape)

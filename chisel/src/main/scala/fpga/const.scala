@@ -13,17 +13,17 @@ object const {
     val mau_id_width = 3
     val mau_number_in_parser = 8
 
-    val processor_id_width = 2
-    val processor_number = 4
-    val cluster_number   = 1
+    val processor_id_width = 4
+    val processor_number = 10
+    val cluster_number   = 5
     val processor_number_in_cluster = processor_number / cluster_number
 
     val config_id_width = 1
     val config_number = 2
 
     object PHV {
-        val total_data_length  = 96
-        val header_data_length = 64
+        val total_data_length  = 160
+        val header_data_length = 128
         val metadata_offset    = header_data_length
         val metadata_length    = total_data_length - header_data_length
 
@@ -46,21 +46,26 @@ object const {
         val address_width = 8
         val capacity = 1 << address_width
 
-        val sram_number_in_cluster = 8
-        val sram_number_width = 4 // log(8+1)
+        val sram_number_in_cluster = 16
+        val sram_number_width = 5 // log(8+1)
         val processor_number_in_cluster = const.processor_number_in_cluster
-        val sram_id_width = 3
+        val sram_id_width = 4
 
-        val max_sram_width_extend_degree = 2
+        val max_sram_width_extend_degree = 4
+    }
+
+    object PCIE {
+        val data_width    = 64
+        val address_width = 32
     }
 
     object MATCH {
         val match_header_id_width = 8 // real maximum = 15
         val match_internal_offset_width = PHV.offset_width
-        val match_key_length_width = 4   // real maximum = 8
+        val match_key_length_width = 8   // real maximum = 24
         val match_value_length_width = 4 // real maximum = 8
 
-        val match_key_width = 64
+        val match_key_width = 192
         val match_value_width = 64
         val match_data_width = match_key_width + match_value_width
 
@@ -85,5 +90,11 @@ object const {
 
         val max_field_width = 64
         val max_field_length = max_field_width >> 3
+    }
+
+    object OUTPORT {
+        val sram_id_width = 4 // log(16)
+        val sram_number = const.PHV.header_data_length * 8 / const.SRAM.data_width // 16
+        val sram_data_length = const.SRAM.data_width / 8
     }
 }

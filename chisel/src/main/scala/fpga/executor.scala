@@ -44,7 +44,7 @@ class Executor extends Module {
             val exe = Module(new SRAM)
             exe.io.r.en   := true.B
             exe.io.r.addr := sram_addr
-            exe.io.w.en   := io.action_mod.en
+            exe.io.w.en   := io.action_mod.en(j)
             exe.io.w.addr := io.action_mod.addr
             exe.io.w.data := io.action_mod.data(j)
             exe
