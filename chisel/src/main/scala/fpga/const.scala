@@ -10,8 +10,8 @@ object const {
     val header_id_width = 4
     val max_header_number = 16
 
-    val mau_id_width = 3
-    val mau_number_in_parser = 8
+    val mau_id_width = 2
+    val mau_number_in_parser = 4
 
     val processor_id_width = 4
     val processor_number = 10
@@ -56,7 +56,7 @@ object const {
 
     object PCIE {
         val data_width    = 64
-        val address_width = 32
+        val address_width = 20
     }
 
     object MATCH {
@@ -93,8 +93,8 @@ object const {
     }
 
     object OUTPORT {
-        val sram_id_width = 4 // log(16)
-        val sram_number = const.PHV.header_data_length * 8 / const.SRAM.data_width // 16
+        val sram_id_width = 5 // log(20) 20 * 8B
+        val sram_number = const.PHV.total_data_length * 8 / const.SRAM.data_width // 20
         val sram_data_length = const.SRAM.data_width / 8
     }
 }

@@ -365,8 +365,8 @@ module Processor(
   output        io_pipe_phv_out_next_config_id,
   input         io_mod_par_mod_en,
   input         io_mod_par_mod_last_mau_id_mod,
-  input  [2:0]  io_mod_par_mod_last_mau_id,
-  input  [2:0]  io_mod_par_mod_cs,
+  input  [1:0]  io_mod_par_mod_last_mau_id,
+  input  [1:0]  io_mod_par_mod_cs,
   input         io_mod_par_mod_module_mod_state_id_mod,
   input  [7:0]  io_mod_par_mod_module_mod_state_id,
   input         io_mod_par_mod_module_mod_sram_w_cs,
@@ -800,8 +800,8 @@ module Processor(
   wire  PAR_io_pipe_phv_out_is_valid_processor; // @[processor.scala 13:21]
   wire  PAR_io_mod_en; // @[processor.scala 13:21]
   wire  PAR_io_mod_last_mau_id_mod; // @[processor.scala 13:21]
-  wire [2:0] PAR_io_mod_last_mau_id; // @[processor.scala 13:21]
-  wire [2:0] PAR_io_mod_cs; // @[processor.scala 13:21]
+  wire [1:0] PAR_io_mod_last_mau_id; // @[processor.scala 13:21]
+  wire [1:0] PAR_io_mod_cs; // @[processor.scala 13:21]
   wire  PAR_io_mod_module_mod_state_id_mod; // @[processor.scala 13:21]
   wire [7:0] PAR_io_mod_module_mod_state_id; // @[processor.scala 13:21]
   wire  PAR_io_mod_module_mod_sram_w_cs; // @[processor.scala 13:21]

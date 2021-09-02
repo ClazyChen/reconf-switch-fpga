@@ -1,7 +1,16 @@
 *.fir
 *.json
-*.v
 chisel/*.sv
 chisel/.bsp
 chisel/project/target
 chisel/target
+vivado/fpga-updated/fpga-updated.sims
+vivado/fpga-updated/fpga-updated.runs
+vivado/fpga-updated/fpga-updated.cache
+vivado/fpga-updated/fpga-updated.hw
+vivado/fpga-updated/fpga-updated.ip_user_files
+vivado/fpga-updated/fpga-updated.gen
+
+*.jou
+*.log
+*.str

@@ -113,6 +113,7 @@ class Executor extends Module {
 
     // pipeline level 3
     // get src or imm or arg
+    // read 64 bits at first, maybe have bias
     class PrimitiveGetSource extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
@@ -122,7 +123,9 @@ class Executor extends Module {
             val length_in   = Vec(const.EXEC.primitive_number, Input(UInt(const.PHV.offset_width.W)))
 
             val vliw_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.primitive_width.W)))
-            val field_out   = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_width.W)))
+            val field_bytes_out = Vec(const.EXEC.primitive_number, Output(Vec(const.EXEC.max_field_length, UInt(8.W))))
+            val length_out  = Vec(const.EXEC.primitive_number, Output(UInt(const.PHV.offset_width.W)))
+            val bias_out    = Vec(const.EXEC.primitive_number, Output(UInt(3.W)))
         })
 
         val phv = Reg(new PHV)
@@ -140,48 +143,108 @@ class Executor extends Module {
         val length = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
         offset := io.offset_in
         length := io.length_in
+        io.length_out := length
+        io.bias_out   := offset
 
         for (j <- 0 until const.EXEC.primitive_number) {
             val opcode      = PRIM.operation(vliw(j))
             val parameter_1 = PRIM.parameter_1(vliw(j))
             val parameter_2 = PRIM.parameter_2(vliw(j))
-            
-            io.field_out(j) := 0.U(const.EXEC.max_field_length.W)
+
+            for (k <- 0 until const.EXEC.max_field_length) {
+                io.field_bytes_out(j)(k) := 0.U(8.W)
+            }
+
             when (phv.is_valid_processor) {
                 val from_header = length(j) =/= 0.U(const.PHV.offset_width.W)
                 when (from_header) { // addi or copy
-                    val field_offset = offset(j)
-                    val field_length = length(j)
+                    val field_offset_aligned = offset(j)(const.PHV.offset_width-1, 3)
                     val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
                     for (k <- 0 until const.EXEC.max_field_length) {
-                        val local_offset = k.U(const.PHV.offset_width.W)
-                        val total_offset = field_offset + local_offset
-                        when (local_offset < field_length) {
-                            bytes(k) := phv.data(total_offset)
-                        } .otherwise {
-                            bytes(k) := 0.U(8.W)
-                        }
+                        val total_offset = Cat(field_offset_aligned, k.U(3.W))
+                        bytes(k) := phv.data(total_offset)
                     }
-                    io.field_out(j) := bytes.reduce(Cat(_, _))
+                    io.field_bytes_out(j) := bytes
                 } .otherwise {
                     when (PRIM.OPCODE.set === opcode) { // argument
                         val args_offset = PRIM.ARG.offset(parameter_2)
                         val args_length = PRIM.ARG.length(parameter_2)
-                        val bytes = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                        io.length_out(j) := args_length
+                        io.bias_out(j)   := args_offset(2,0)
                         for (k <- 0 until const.EXEC.max_field_length) {
-                            val local_offset = k.U(const.PHV.offset_width.W)
-                            val total_offset = args_offset + local_offset
-                            when (local_offset < args_length) {
-                                bytes(k) := args(total_offset)
-                            } .otherwise {
-                                bytes(k) := 0.U(8.W)
+                            if (k < const.EXEC.args_length) {
+                                io.field_bytes_out(j)(k) := args(k)
+                            } else {
+                                io.field_bytes_out(j)(k) := 0.U(8.W)
                             }
                         }
-                        io.field_out(j) := bytes.reduce(Cat(_, _))
+                        
                     } .otherwise {                       // immediate number, seti or goto
-                        val imm = parameter_2
-                        io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
+                        //val imm = parameter_2
+                        //io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
                     }
+                }
+            }
+        }
+    }
+
+    // pipeline level 3.5
+    // shifting
+    class PrimitiveShiftSource extends Module {
+        val io = IO(new Bundle {
+            val pipe        = new Pipeline
+            val vliw_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.primitive_width.W)))
+            val field_bytes_in = Vec(const.EXEC.primitive_number, Input(Vec(const.EXEC.max_field_length, UInt(8.W))))
+            val length_in   = Vec(const.EXEC.primitive_number,Input(UInt(const.PHV.offset_width.W)))
+            val bias_in     = Vec(const.EXEC.primitive_number, Input(UInt(3.W)))
+            
+            val vliw_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.primitive_width.W)))
+            val field_out   = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_width.W)))
+        })
+
+        val phv = Reg(new PHV)
+        phv := io.pipe.phv_in
+        io.pipe.phv_out := phv
+
+        val vliw = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.primitive_width.W)))
+        vliw := io.vliw_in
+        io.vliw_out := vliw
+
+        val bias = Reg(Vec(const.EXEC.primitive_number, UInt(3.W)))
+        val length = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
+        bias   := io.bias_in
+        length := io.length_in
+
+        val field_bytes = Reg(Vec(const.EXEC.primitive_number, Vec(const.EXEC.max_field_length, UInt(8.W))))
+        field_bytes := io.field_bytes_in
+
+        for (j <- 0 until const.EXEC.primitive_number) {
+            val opcode      = PRIM.operation(vliw(j))
+            val parameter_1 = PRIM.parameter_1(vliw(j))
+            val parameter_2 = PRIM.parameter_2(vliw(j))
+
+            io.field_out(j) := 0.U(const.EXEC.max_field_width.W)
+
+            when (phv.is_valid_processor) {
+                val from_imm = PRIM.OPCODE.seti === opcode || PRIM.OPCODE.goto === opcode
+                when (from_imm) {
+                    val imm = parameter_2
+                    io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
+                } .otherwise {
+                    val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                    for (k <- 0 until const.EXEC.max_field_length) {
+                        when (length(j) < k.U(4.W)) {
+                            bytes(k) := field_bytes(j)(k)
+                            for (l <- 1 until const.EXEC.max_field_length if l + k < const.EXEC.max_field_length) {
+                                when (bias(j) === l.U(3.W)) {
+                                    bytes(k) := field_bytes(j)(k+l)
+                                }
+                            }
+                        } .otherwise {
+                            bytes(k) := 0.U(8.W)
+                        }
+                    }
+                    io.field_out(j) := bytes.reduce(Cat(_,_))
                 }
             }
         }
@@ -318,6 +381,7 @@ class Executor extends Module {
     val pipe1 = Module(new ActionReader)
     val pipe2 = Module(new PrimitiveGetOffset)
     val pipe3 = Module(new PrimitiveGetSource)
+    val pipe3p = Module(new PrimitiveShiftSource)
     val pipe4 = Module(new PrimitiveALU)
     val pipe5 = Module(new PrimitiveGetWriteBackOffset)
     val pipe6 = Module(new PrimitiveWriteBack)
@@ -337,9 +401,15 @@ class Executor extends Module {
     pipe3.io.offset_in   <> pipe2.io.offset_out
     pipe3.io.length_in   <> pipe2.io.length_out
 
-    pipe4.io.pipe.phv_in <> pipe3.io.pipe.phv_out
-    pipe4.io.vliw_in     <> pipe3.io.vliw_out
-    pipe4.io.field_in    <> pipe3.io.field_out
+    pipe3p.io.pipe.phv_in <> pipe3.io.pipe.phv_out
+    pipe3p.io.vliw_in <> pipe3.io.vliw_out
+    pipe3p.io.bias_in <> pipe3.io.bias_out
+    pipe3p.io.length_in <> pipe3.io.length_out
+    pipe3p.io.field_bytes_in <> pipe3.io.field_bytes_out
+
+    pipe4.io.pipe.phv_in <> pipe3p.io.pipe.phv_out
+    pipe4.io.vliw_in     <> pipe3p.io.vliw_out
+    pipe4.io.field_in    <> pipe3p.io.field_out
 
     pipe5.io.pipe.phv_in <> pipe4.io.pipe.phv_out
     pipe5.io.vliw_in     <> pipe4.io.vliw_out

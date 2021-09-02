@@ -2,10 +2,10 @@ module IPSAPCIE(
   input         clock,
   input         reset,
   input         io_pcie_r_en,
-  input  [31:0] io_pcie_r_addr,
+  input  [19:0] io_pcie_r_addr,
   output [63:0] io_pcie_r_data,
   input         io_pcie_w_en,
-  input  [31:0] io_pcie_w_addr,
+  input  [19:0] io_pcie_w_addr,
   input  [63:0] io_pcie_w_data
 );
   wire  ipsa_clock; // @[ipsa_pcie.scala 13:22]
@@ -137,6 +137,38 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_pipe_phv_in_data_125; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_pipe_phv_in_data_126; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_pipe_phv_in_data_127; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_0; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_1; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_2; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_3; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_4; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_5; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_6; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_7; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_8; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_9; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_10; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_11; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_12; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_13; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_14; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_15; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_16; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_17; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_18; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_19; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_20; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_21; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_22; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_23; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_24; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_25; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_26; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_27; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_28; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_29; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_30; // @[ipsa_pcie.scala 13:22]
+  wire [7:0] ipsa_io_pipe_phv_out_data_31; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_pipe_phv_out_data_32; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_pipe_phv_out_data_33; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_pipe_phv_out_data_34; // @[ipsa_pcie.scala 13:22]
@@ -267,8 +299,8 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_pipe_phv_out_data_159; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_0_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_0_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_0_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_0_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -288,8 +320,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_0_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_1_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_1_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_1_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_1_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -309,8 +341,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_1_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_2_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_2_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_2_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_2_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -330,8 +362,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_2_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_3_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_3_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_3_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_3_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -351,8 +383,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_3_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_4_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_4_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_4_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_4_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -372,8 +404,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_4_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_5_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_5_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_5_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_5_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -393,8 +425,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_5_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_6_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_6_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_6_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_6_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -414,8 +446,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_6_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_7_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_7_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_7_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_7_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -435,8 +467,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_7_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_8_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_8_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_8_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_8_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -456,8 +488,8 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_mod_proc_mod_8_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_par_mod_en; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_9_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [2:0] ipsa_io_mod_proc_mod_9_par_mod_cs; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_9_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
+  wire [1:0] ipsa_io_mod_proc_mod_9_par_mod_cs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
@@ -510,19 +542,19 @@ module IPSAPCIE(
   wire [63:0] ipsa_io_w_4_w_data; // @[ipsa_pcie.scala 13:22]
   wire  pcie_clock; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_pcie_r_en; // @[ipsa_pcie.scala 14:22]
-  wire [31:0] pcie_io_pcie_r_addr; // @[ipsa_pcie.scala 14:22]
+  wire [19:0] pcie_io_pcie_r_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_pcie_r_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_pcie_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [31:0] pcie_io_pcie_w_addr; // @[ipsa_pcie.scala 14:22]
+  wire [19:0] pcie_io_pcie_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_pcie_w_data; // @[ipsa_pcie.scala 14:22]
-  wire [3:0] pcie_io_pcie_o_cs; // @[ipsa_pcie.scala 14:22]
+  wire [4:0] pcie_io_pcie_o_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_pcie_o_r_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_pcie_o_r_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_pcie_o_r_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_0_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_0_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_0_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_0_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -542,8 +574,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_0_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_1_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_1_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_1_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_1_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -563,8 +595,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_1_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_2_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_2_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_2_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_2_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -584,8 +616,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_2_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_3_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_3_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_3_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_3_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -605,8 +637,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_3_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_4_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_4_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_4_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_4_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -626,8 +658,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_4_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_5_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_5_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_5_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_5_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -647,8 +679,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_5_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_6_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_6_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_6_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_6_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -668,8 +700,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_6_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_7_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_7_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_7_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_7_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -689,8 +721,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_7_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_8_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_8_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_8_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_8_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -710,8 +742,8 @@ module IPSAPCIE(
   wire [63:0] pcie_io_mod_proc_mod_8_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_par_mod_en; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_9_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [2:0] pcie_io_mod_proc_mod_9_par_mod_cs; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_9_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
+  wire [1:0] pcie_io_mod_proc_mod_9_par_mod_cs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
@@ -763,6 +795,38 @@ module IPSAPCIE(
   wire [7:0] pcie_io_w_4_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_w_4_w_data; // @[ipsa_pcie.scala 14:22]
   wire  outp_clock; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_0; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_1; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_2; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_3; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_4; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_5; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_6; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_7; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_8; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_9; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_10; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_11; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_12; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_13; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_14; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_15; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_16; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_17; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_18; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_19; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_20; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_21; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_22; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_23; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_24; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_25; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_26; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_27; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_28; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_29; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_30; // @[ipsa_pcie.scala 15:22]
+  wire [7:0] outp_io_phv_in_data_31; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_32; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_33; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_34; // @[ipsa_pcie.scala 15:22]
@@ -891,7 +955,7 @@ module IPSAPCIE(
   wire [7:0] outp_io_phv_in_data_157; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_158; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_159; // @[ipsa_pcie.scala 15:22]
-  wire [3:0] outp_io_pcie_o_cs; // @[ipsa_pcie.scala 15:22]
+  wire [4:0] outp_io_pcie_o_cs; // @[ipsa_pcie.scala 15:22]
   wire  outp_io_pcie_o_r_en; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_pcie_o_r_addr; // @[ipsa_pcie.scala 15:22]
   wire [63:0] outp_io_pcie_o_r_data; // @[ipsa_pcie.scala 15:22]
@@ -1155,6 +1219,38 @@ module IPSAPCIE(
     .io_pipe_phv_in_data_125(ipsa_io_pipe_phv_in_data_125),
     .io_pipe_phv_in_data_126(ipsa_io_pipe_phv_in_data_126),
     .io_pipe_phv_in_data_127(ipsa_io_pipe_phv_in_data_127),
+    .io_pipe_phv_out_data_0(ipsa_io_pipe_phv_out_data_0),
+    .io_pipe_phv_out_data_1(ipsa_io_pipe_phv_out_data_1),
+    .io_pipe_phv_out_data_2(ipsa_io_pipe_phv_out_data_2),
+    .io_pipe_phv_out_data_3(ipsa_io_pipe_phv_out_data_3),
+    .io_pipe_phv_out_data_4(ipsa_io_pipe_phv_out_data_4),
+    .io_pipe_phv_out_data_5(ipsa_io_pipe_phv_out_data_5),
+    .io_pipe_phv_out_data_6(ipsa_io_pipe_phv_out_data_6),
+    .io_pipe_phv_out_data_7(ipsa_io_pipe_phv_out_data_7),
+    .io_pipe_phv_out_data_8(ipsa_io_pipe_phv_out_data_8),
+    .io_pipe_phv_out_data_9(ipsa_io_pipe_phv_out_data_9),
+    .io_pipe_phv_out_data_10(ipsa_io_pipe_phv_out_data_10),
+    .io_pipe_phv_out_data_11(ipsa_io_pipe_phv_out_data_11),
+    .io_pipe_phv_out_data_12(ipsa_io_pipe_phv_out_data_12),
+    .io_pipe_phv_out_data_13(ipsa_io_pipe_phv_out_data_13),
+    .io_pipe_phv_out_data_14(ipsa_io_pipe_phv_out_data_14),
+    .io_pipe_phv_out_data_15(ipsa_io_pipe_phv_out_data_15),
+    .io_pipe_phv_out_data_16(ipsa_io_pipe_phv_out_data_16),
+    .io_pipe_phv_out_data_17(ipsa_io_pipe_phv_out_data_17),
+    .io_pipe_phv_out_data_18(ipsa_io_pipe_phv_out_data_18),
+    .io_pipe_phv_out_data_19(ipsa_io_pipe_phv_out_data_19),
+    .io_pipe_phv_out_data_20(ipsa_io_pipe_phv_out_data_20),
+    .io_pipe_phv_out_data_21(ipsa_io_pipe_phv_out_data_21),
+    .io_pipe_phv_out_data_22(ipsa_io_pipe_phv_out_data_22),
+    .io_pipe_phv_out_data_23(ipsa_io_pipe_phv_out_data_23),
+    .io_pipe_phv_out_data_24(ipsa_io_pipe_phv_out_data_24),
+    .io_pipe_phv_out_data_25(ipsa_io_pipe_phv_out_data_25),
+    .io_pipe_phv_out_data_26(ipsa_io_pipe_phv_out_data_26),
+    .io_pipe_phv_out_data_27(ipsa_io_pipe_phv_out_data_27),
+    .io_pipe_phv_out_data_28(ipsa_io_pipe_phv_out_data_28),
+    .io_pipe_phv_out_data_29(ipsa_io_pipe_phv_out_data_29),
+    .io_pipe_phv_out_data_30(ipsa_io_pipe_phv_out_data_30),
+    .io_pipe_phv_out_data_31(ipsa_io_pipe_phv_out_data_31),
     .io_pipe_phv_out_data_32(ipsa_io_pipe_phv_out_data_32),
     .io_pipe_phv_out_data_33(ipsa_io_pipe_phv_out_data_33),
     .io_pipe_phv_out_data_34(ipsa_io_pipe_phv_out_data_34),
@@ -1785,6 +1881,38 @@ module IPSAPCIE(
   );
   OutPort outp ( // @[ipsa_pcie.scala 15:22]
     .clock(outp_clock),
+    .io_phv_in_data_0(outp_io_phv_in_data_0),
+    .io_phv_in_data_1(outp_io_phv_in_data_1),
+    .io_phv_in_data_2(outp_io_phv_in_data_2),
+    .io_phv_in_data_3(outp_io_phv_in_data_3),
+    .io_phv_in_data_4(outp_io_phv_in_data_4),
+    .io_phv_in_data_5(outp_io_phv_in_data_5),
+    .io_phv_in_data_6(outp_io_phv_in_data_6),
+    .io_phv_in_data_7(outp_io_phv_in_data_7),
+    .io_phv_in_data_8(outp_io_phv_in_data_8),
+    .io_phv_in_data_9(outp_io_phv_in_data_9),
+    .io_phv_in_data_10(outp_io_phv_in_data_10),
+    .io_phv_in_data_11(outp_io_phv_in_data_11),
+    .io_phv_in_data_12(outp_io_phv_in_data_12),
+    .io_phv_in_data_13(outp_io_phv_in_data_13),
+    .io_phv_in_data_14(outp_io_phv_in_data_14),
+    .io_phv_in_data_15(outp_io_phv_in_data_15),
+    .io_phv_in_data_16(outp_io_phv_in_data_16),
+    .io_phv_in_data_17(outp_io_phv_in_data_17),
+    .io_phv_in_data_18(outp_io_phv_in_data_18),
+    .io_phv_in_data_19(outp_io_phv_in_data_19),
+    .io_phv_in_data_20(outp_io_phv_in_data_20),
+    .io_phv_in_data_21(outp_io_phv_in_data_21),
+    .io_phv_in_data_22(outp_io_phv_in_data_22),
+    .io_phv_in_data_23(outp_io_phv_in_data_23),
+    .io_phv_in_data_24(outp_io_phv_in_data_24),
+    .io_phv_in_data_25(outp_io_phv_in_data_25),
+    .io_phv_in_data_26(outp_io_phv_in_data_26),
+    .io_phv_in_data_27(outp_io_phv_in_data_27),
+    .io_phv_in_data_28(outp_io_phv_in_data_28),
+    .io_phv_in_data_29(outp_io_phv_in_data_29),
+    .io_phv_in_data_30(outp_io_phv_in_data_30),
+    .io_phv_in_data_31(outp_io_phv_in_data_31),
     .io_phv_in_data_32(outp_io_phv_in_data_32),
     .io_phv_in_data_33(outp_io_phv_in_data_33),
     .io_phv_in_data_34(outp_io_phv_in_data_34),
@@ -2451,6 +2579,38 @@ module IPSAPCIE(
   assign pcie_io_pcie_w_data = io_pcie_w_data; // @[ipsa_pcie.scala 21:20]
   assign pcie_io_pcie_o_r_data = outp_io_pcie_o_r_data; // @[ipsa_pcie.scala 26:26]
   assign outp_clock = clock;
+  assign outp_io_phv_in_data_0 = ipsa_io_pipe_phv_out_data_0; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_1 = ipsa_io_pipe_phv_out_data_1; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_2 = ipsa_io_pipe_phv_out_data_2; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_3 = ipsa_io_pipe_phv_out_data_3; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_4 = ipsa_io_pipe_phv_out_data_4; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_5 = ipsa_io_pipe_phv_out_data_5; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_6 = ipsa_io_pipe_phv_out_data_6; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_7 = ipsa_io_pipe_phv_out_data_7; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_8 = ipsa_io_pipe_phv_out_data_8; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_9 = ipsa_io_pipe_phv_out_data_9; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_10 = ipsa_io_pipe_phv_out_data_10; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_11 = ipsa_io_pipe_phv_out_data_11; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_12 = ipsa_io_pipe_phv_out_data_12; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_13 = ipsa_io_pipe_phv_out_data_13; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_14 = ipsa_io_pipe_phv_out_data_14; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_15 = ipsa_io_pipe_phv_out_data_15; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_16 = ipsa_io_pipe_phv_out_data_16; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_17 = ipsa_io_pipe_phv_out_data_17; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_18 = ipsa_io_pipe_phv_out_data_18; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_19 = ipsa_io_pipe_phv_out_data_19; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_20 = ipsa_io_pipe_phv_out_data_20; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_21 = ipsa_io_pipe_phv_out_data_21; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_22 = ipsa_io_pipe_phv_out_data_22; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_23 = ipsa_io_pipe_phv_out_data_23; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_24 = ipsa_io_pipe_phv_out_data_24; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_25 = ipsa_io_pipe_phv_out_data_25; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_26 = ipsa_io_pipe_phv_out_data_26; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_27 = ipsa_io_pipe_phv_out_data_27; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_28 = ipsa_io_pipe_phv_out_data_28; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_29 = ipsa_io_pipe_phv_out_data_29; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_30 = ipsa_io_pipe_phv_out_data_30; // @[ipsa_pcie.scala 25:26]
+  assign outp_io_phv_in_data_31 = ipsa_io_pipe_phv_out_data_31; // @[ipsa_pcie.scala 25:26]
   assign outp_io_phv_in_data_32 = ipsa_io_pipe_phv_out_data_32; // @[ipsa_pcie.scala 25:26]
   assign outp_io_phv_in_data_33 = ipsa_io_pipe_phv_out_data_33; // @[ipsa_pcie.scala 25:26]
   assign outp_io_phv_in_data_34 = ipsa_io_pipe_phv_out_data_34; // @[ipsa_pcie.scala 25:26]
