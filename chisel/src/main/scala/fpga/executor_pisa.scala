@@ -182,8 +182,8 @@ class ExecutorPISA extends Module {
             field_data := 0.U
             field_tag  := 0.U
 
-            val opcode      = vliw(j)(17,15)
-            val parameter_2 = vliw(j)(14,0)
+            val opcode      = vliw(j)(17,14)
+            val parameter_2 = vliw(j)(13,0)
 
             when (opcode === PRIM.OPCODE.set) {
                 val args_offset = PRIM.ARG.offset(parameter_2)
