@@ -183,7 +183,6 @@ module ProcessorPISA(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
-  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -366,11 +365,16 @@ module ProcessorPISA(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  output        io_pipe_phv_out_valid,
-  input         io_mod_par_mod_sram_w_cs,
-  input         io_mod_par_mod_sram_w_en,
-  input  [7:0]  io_mod_par_mod_sram_w_addr,
-  input  [63:0] io_mod_par_mod_sram_w_data,
+  input         io_mod_par_mod_en,
+  input         io_mod_par_mod_last_mau_id_mod,
+  input  [3:0]  io_mod_par_mod_last_mau_id,
+  input  [2:0]  io_mod_par_mod_cs,
+  input         io_mod_par_mod_module_mod_state_id_mod,
+  input  [7:0]  io_mod_par_mod_module_mod_state_id,
+  input         io_mod_par_mod_module_mod_sram_w_cs,
+  input         io_mod_par_mod_module_mod_sram_w_en,
+  input  [7:0]  io_mod_par_mod_module_mod_sram_w_addr,
+  input  [63:0] io_mod_par_mod_module_mod_sram_w_data,
   input         io_mod_mat_mod_en,
   input         io_mod_mat_mod_config_id,
   input         io_mod_mat_mod_key_mod_en,
@@ -398,7 +402,6 @@ module ProcessorPISA(
   input  [63:0] io_mod_exe_mod_data_1
 );
   wire  PAR_clock; // @[processor_pisa.scala 18:21]
-  wire  PAR_reset; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_in_data_0; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_in_data_1; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_in_data_2; // @[processor_pisa.scala 18:21]
@@ -581,7 +584,6 @@ module ProcessorPISA(
   wire [3:0] PAR_io_pipe_phv_in_next_processor_id; // @[processor_pisa.scala 18:21]
   wire  PAR_io_pipe_phv_in_next_config_id; // @[processor_pisa.scala 18:21]
   wire  PAR_io_pipe_phv_in_is_valid_processor; // @[processor_pisa.scala 18:21]
-  wire  PAR_io_pipe_phv_in_valid; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_out_data_0; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_out_data_1; // @[processor_pisa.scala 18:21]
   wire [7:0] PAR_io_pipe_phv_out_data_2; // @[processor_pisa.scala 18:21]
@@ -764,11 +766,16 @@ module ProcessorPISA(
   wire [3:0] PAR_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 18:21]
   wire  PAR_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 18:21]
   wire  PAR_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 18:21]
-  wire  PAR_io_pipe_phv_out_valid; // @[processor_pisa.scala 18:21]
-  wire  PAR_io_mod_sram_w_cs; // @[processor_pisa.scala 18:21]
-  wire  PAR_io_mod_sram_w_en; // @[processor_pisa.scala 18:21]
-  wire [7:0] PAR_io_mod_sram_w_addr; // @[processor_pisa.scala 18:21]
-  wire [63:0] PAR_io_mod_sram_w_data; // @[processor_pisa.scala 18:21]
+  wire  PAR_io_mod_en; // @[processor_pisa.scala 18:21]
+  wire  PAR_io_mod_last_mau_id_mod; // @[processor_pisa.scala 18:21]
+  wire [3:0] PAR_io_mod_last_mau_id; // @[processor_pisa.scala 18:21]
+  wire [2:0] PAR_io_mod_cs; // @[processor_pisa.scala 18:21]
+  wire  PAR_io_mod_module_mod_state_id_mod; // @[processor_pisa.scala 18:21]
+  wire [7:0] PAR_io_mod_module_mod_state_id; // @[processor_pisa.scala 18:21]
+  wire  PAR_io_mod_module_mod_sram_w_cs; // @[processor_pisa.scala 18:21]
+  wire  PAR_io_mod_module_mod_sram_w_en; // @[processor_pisa.scala 18:21]
+  wire [7:0] PAR_io_mod_module_mod_sram_w_addr; // @[processor_pisa.scala 18:21]
+  wire [63:0] PAR_io_mod_module_mod_sram_w_data; // @[processor_pisa.scala 18:21]
   wire  MAT_clock; // @[processor_pisa.scala 19:21]
   wire [7:0] MAT_io_pipe_phv_in_data_0; // @[processor_pisa.scala 19:21]
   wire [7:0] MAT_io_pipe_phv_in_data_1; // @[processor_pisa.scala 19:21]
@@ -952,7 +959,6 @@ module ProcessorPISA(
   wire [3:0] MAT_io_pipe_phv_in_next_processor_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_pipe_phv_in_next_config_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_pipe_phv_in_is_valid_processor; // @[processor_pisa.scala 19:21]
-  wire  MAT_io_pipe_phv_in_valid; // @[processor_pisa.scala 19:21]
   wire [7:0] MAT_io_pipe_phv_out_data_0; // @[processor_pisa.scala 19:21]
   wire [7:0] MAT_io_pipe_phv_out_data_1; // @[processor_pisa.scala 19:21]
   wire [7:0] MAT_io_pipe_phv_out_data_2; // @[processor_pisa.scala 19:21]
@@ -1135,7 +1141,6 @@ module ProcessorPISA(
   wire [3:0] MAT_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 19:21]
-  wire  MAT_io_pipe_phv_out_valid; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_en; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_config_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_key_mod_en; // @[processor_pisa.scala 19:21]
@@ -1341,7 +1346,6 @@ module ProcessorPISA(
   wire [3:0] EXE_io_pipe_phv_in_next_processor_id; // @[processor_pisa.scala 20:21]
   wire  EXE_io_pipe_phv_in_next_config_id; // @[processor_pisa.scala 20:21]
   wire  EXE_io_pipe_phv_in_is_valid_processor; // @[processor_pisa.scala 20:21]
-  wire  EXE_io_pipe_phv_in_valid; // @[processor_pisa.scala 20:21]
   wire [7:0] EXE_io_pipe_phv_out_data_0; // @[processor_pisa.scala 20:21]
   wire [7:0] EXE_io_pipe_phv_out_data_1; // @[processor_pisa.scala 20:21]
   wire [7:0] EXE_io_pipe_phv_out_data_2; // @[processor_pisa.scala 20:21]
@@ -1524,7 +1528,6 @@ module ProcessorPISA(
   wire [3:0] EXE_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 20:21]
   wire  EXE_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 20:21]
   wire  EXE_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 20:21]
-  wire  EXE_io_pipe_phv_out_valid; // @[processor_pisa.scala 20:21]
   wire  EXE_io_hit; // @[processor_pisa.scala 20:21]
   wire [63:0] EXE_io_match_value; // @[processor_pisa.scala 20:21]
   wire  EXE_io_action_mod_en_0; // @[processor_pisa.scala 20:21]
@@ -1534,7 +1537,6 @@ module ProcessorPISA(
   wire [63:0] EXE_io_action_mod_data_1; // @[processor_pisa.scala 20:21]
   ParserPISA PAR ( // @[processor_pisa.scala 18:21]
     .clock(PAR_clock),
-    .reset(PAR_reset),
     .io_pipe_phv_in_data_0(PAR_io_pipe_phv_in_data_0),
     .io_pipe_phv_in_data_1(PAR_io_pipe_phv_in_data_1),
     .io_pipe_phv_in_data_2(PAR_io_pipe_phv_in_data_2),
@@ -1717,7 +1719,6 @@ module ProcessorPISA(
     .io_pipe_phv_in_next_processor_id(PAR_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(PAR_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(PAR_io_pipe_phv_in_is_valid_processor),
-    .io_pipe_phv_in_valid(PAR_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(PAR_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(PAR_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(PAR_io_pipe_phv_out_data_2),
@@ -1900,11 +1901,16 @@ module ProcessorPISA(
     .io_pipe_phv_out_next_processor_id(PAR_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(PAR_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(PAR_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(PAR_io_pipe_phv_out_valid),
-    .io_mod_sram_w_cs(PAR_io_mod_sram_w_cs),
-    .io_mod_sram_w_en(PAR_io_mod_sram_w_en),
-    .io_mod_sram_w_addr(PAR_io_mod_sram_w_addr),
-    .io_mod_sram_w_data(PAR_io_mod_sram_w_data)
+    .io_mod_en(PAR_io_mod_en),
+    .io_mod_last_mau_id_mod(PAR_io_mod_last_mau_id_mod),
+    .io_mod_last_mau_id(PAR_io_mod_last_mau_id),
+    .io_mod_cs(PAR_io_mod_cs),
+    .io_mod_module_mod_state_id_mod(PAR_io_mod_module_mod_state_id_mod),
+    .io_mod_module_mod_state_id(PAR_io_mod_module_mod_state_id),
+    .io_mod_module_mod_sram_w_cs(PAR_io_mod_module_mod_sram_w_cs),
+    .io_mod_module_mod_sram_w_en(PAR_io_mod_module_mod_sram_w_en),
+    .io_mod_module_mod_sram_w_addr(PAR_io_mod_module_mod_sram_w_addr),
+    .io_mod_module_mod_sram_w_data(PAR_io_mod_module_mod_sram_w_data)
   );
   MatcherPISA MAT ( // @[processor_pisa.scala 19:21]
     .clock(MAT_clock),
@@ -2090,7 +2096,6 @@ module ProcessorPISA(
     .io_pipe_phv_in_next_processor_id(MAT_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(MAT_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(MAT_io_pipe_phv_in_is_valid_processor),
-    .io_pipe_phv_in_valid(MAT_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(MAT_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(MAT_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(MAT_io_pipe_phv_out_data_2),
@@ -2273,7 +2278,6 @@ module ProcessorPISA(
     .io_pipe_phv_out_next_processor_id(MAT_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(MAT_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(MAT_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(MAT_io_pipe_phv_out_valid),
     .io_mod_en(MAT_io_mod_en),
     .io_mod_config_id(MAT_io_mod_config_id),
     .io_mod_key_mod_en(MAT_io_mod_key_mod_en),
@@ -2481,7 +2485,6 @@ module ProcessorPISA(
     .io_pipe_phv_in_next_processor_id(EXE_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(EXE_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(EXE_io_pipe_phv_in_is_valid_processor),
-    .io_pipe_phv_in_valid(EXE_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(EXE_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(EXE_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(EXE_io_pipe_phv_out_data_2),
@@ -2664,7 +2667,6 @@ module ProcessorPISA(
     .io_pipe_phv_out_next_processor_id(EXE_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(EXE_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(EXE_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(EXE_io_pipe_phv_out_valid),
     .io_hit(EXE_io_hit),
     .io_match_value(EXE_io_match_value),
     .io_action_mod_en_0(EXE_io_action_mod_en_0),
@@ -2855,9 +2857,7 @@ module ProcessorPISA(
   assign io_pipe_phv_out_next_processor_id = EXE_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 33:24]
   assign io_pipe_phv_out_next_config_id = EXE_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 33:24]
   assign io_pipe_phv_out_is_valid_processor = EXE_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 33:24]
-  assign io_pipe_phv_out_valid = EXE_io_pipe_phv_out_valid; // @[processor_pisa.scala 33:24]
   assign PAR_clock = clock;
-  assign PAR_reset = reset;
   assign PAR_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[processor_pisa.scala 22:24]
   assign PAR_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[processor_pisa.scala 22:24]
   assign PAR_io_pipe_phv_in_data_2 = io_pipe_phv_in_data_2; // @[processor_pisa.scala 22:24]
@@ -3040,11 +3040,16 @@ module ProcessorPISA(
   assign PAR_io_pipe_phv_in_next_processor_id = io_pipe_phv_in_next_processor_id; // @[processor_pisa.scala 22:24]
   assign PAR_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[processor_pisa.scala 22:24]
   assign PAR_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[processor_pisa.scala 22:24]
-  assign PAR_io_pipe_phv_in_valid = io_pipe_phv_in_valid; // @[processor_pisa.scala 22:24]
-  assign PAR_io_mod_sram_w_cs = io_mod_par_mod_sram_w_cs; // @[processor_pisa.scala 23:24]
-  assign PAR_io_mod_sram_w_en = io_mod_par_mod_sram_w_en; // @[processor_pisa.scala 23:24]
-  assign PAR_io_mod_sram_w_addr = io_mod_par_mod_sram_w_addr; // @[processor_pisa.scala 23:24]
-  assign PAR_io_mod_sram_w_data = io_mod_par_mod_sram_w_data; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_en = io_mod_par_mod_en; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_last_mau_id_mod = io_mod_par_mod_last_mau_id_mod; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_last_mau_id = io_mod_par_mod_last_mau_id; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_cs = io_mod_par_mod_cs; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_state_id_mod = io_mod_par_mod_module_mod_state_id_mod; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_state_id = io_mod_par_mod_module_mod_state_id; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_sram_w_cs = io_mod_par_mod_module_mod_sram_w_cs; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_sram_w_en = io_mod_par_mod_module_mod_sram_w_en; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_sram_w_addr = io_mod_par_mod_module_mod_sram_w_addr; // @[processor_pisa.scala 23:24]
+  assign PAR_io_mod_module_mod_sram_w_data = io_mod_par_mod_module_mod_sram_w_data; // @[processor_pisa.scala 23:24]
   assign MAT_clock = clock;
   assign MAT_io_pipe_phv_in_data_0 = PAR_io_pipe_phv_out_data_0; // @[processor_pisa.scala 25:24]
   assign MAT_io_pipe_phv_in_data_1 = PAR_io_pipe_phv_out_data_1; // @[processor_pisa.scala 25:24]
@@ -3228,7 +3233,6 @@ module ProcessorPISA(
   assign MAT_io_pipe_phv_in_next_processor_id = PAR_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 25:24]
   assign MAT_io_pipe_phv_in_next_config_id = PAR_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 25:24]
   assign MAT_io_pipe_phv_in_is_valid_processor = PAR_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 25:24]
-  assign MAT_io_pipe_phv_in_valid = PAR_io_pipe_phv_out_valid; // @[processor_pisa.scala 25:24]
   assign MAT_io_mod_en = io_mod_mat_mod_en; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_config_id = io_mod_mat_mod_config_id; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_key_mod_en = io_mod_mat_mod_key_mod_en; // @[processor_pisa.scala 26:24]
@@ -3432,7 +3436,6 @@ module ProcessorPISA(
   assign EXE_io_pipe_phv_in_next_processor_id = MAT_io_pipe_phv_out_next_processor_id; // @[processor_pisa.scala 28:24]
   assign EXE_io_pipe_phv_in_next_config_id = MAT_io_pipe_phv_out_next_config_id; // @[processor_pisa.scala 28:24]
   assign EXE_io_pipe_phv_in_is_valid_processor = MAT_io_pipe_phv_out_is_valid_processor; // @[processor_pisa.scala 28:24]
-  assign EXE_io_pipe_phv_in_valid = MAT_io_pipe_phv_out_valid; // @[processor_pisa.scala 28:24]
   assign EXE_io_hit = MAT_io_hit; // @[processor_pisa.scala 29:24]
   assign EXE_io_match_value = MAT_io_match_value; // @[processor_pisa.scala 30:24]
   assign EXE_io_action_mod_en_0 = io_mod_exe_mod_en_0; // @[processor_pisa.scala 31:24]

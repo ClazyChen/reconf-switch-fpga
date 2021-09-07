@@ -182,7 +182,6 @@ module HashReshapeLevel_3(
   input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
-  input          io_pipe_phv_in_valid,
   output [7:0]   io_pipe_phv_out_data_0,
   output [7:0]   io_pipe_phv_out_data_1,
   output [7:0]   io_pipe_phv_out_data_2,
@@ -365,7 +364,6 @@ module HashReshapeLevel_3(
   output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
-  output         io_pipe_phv_out_valid,
   input  [3:0]   io_hash_depth_0,
   input  [3:0]   io_hash_depth_1,
   input  [191:0] io_key_in,
@@ -558,11 +556,10 @@ module HashReshapeLevel_3(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
-  reg [31:0] _RAND_182;
-  reg [191:0] _RAND_183;
+  reg [191:0] _RAND_182;
+  reg [31:0] _RAND_183;
   reg [31:0] _RAND_184;
   reg [31:0] _RAND_185;
-  reg [31:0] _RAND_186;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[hash.scala 94:22]
   reg [7:0] phv_data_1; // @[hash.scala 94:22]
@@ -746,7 +743,6 @@ module HashReshapeLevel_3(
   reg [3:0] phv_next_processor_id; // @[hash.scala 94:22]
   reg  phv_next_config_id; // @[hash.scala 94:22]
   reg  phv_is_valid_processor; // @[hash.scala 94:22]
-  reg  phv_valid; // @[hash.scala 94:22]
   reg [191:0] key; // @[hash.scala 98:22]
   reg [15:0] sum; // @[hash.scala 102:22]
   reg [3:0] hash_depth; // @[hash.scala 106:29]
@@ -937,7 +933,6 @@ module HashReshapeLevel_3(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[hash.scala 96:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[hash.scala 96:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[hash.scala 96:25]
-  assign io_pipe_phv_out_valid = phv_valid; // @[hash.scala 96:25]
   assign io_key_out = key; // @[hash.scala 100:20]
   assign io_sum_out = sum; // @[hash.scala 104:20]
   assign io_val_out = phv_is_valid_processor ? _GEN_3 : hash_val; // @[hash.scala 111:39 hash.scala 122:24]
@@ -1124,7 +1119,6 @@ module HashReshapeLevel_3(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[hash.scala 95:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[hash.scala 95:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[hash.scala 95:13]
-    phv_valid <= io_pipe_phv_in_valid; // @[hash.scala 95:13]
     key <= io_key_in; // @[hash.scala 99:13]
     sum <= io_sum_in; // @[hash.scala 103:13]
     if (io_pipe_phv_in_next_config_id) begin // @[hash.scala 107:20]
@@ -1534,16 +1528,14 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
-  _RAND_182 = {1{`RANDOM}};
-  phv_valid = _RAND_182[0:0];
-  _RAND_183 = {6{`RANDOM}};
-  key = _RAND_183[191:0];
+  _RAND_182 = {6{`RANDOM}};
+  key = _RAND_182[191:0];
+  _RAND_183 = {1{`RANDOM}};
+  sum = _RAND_183[15:0];
   _RAND_184 = {1{`RANDOM}};
-  sum = _RAND_184[15:0];
+  hash_depth = _RAND_184[3:0];
   _RAND_185 = {1{`RANDOM}};
-  hash_depth = _RAND_185[3:0];
-  _RAND_186 = {1{`RANDOM}};
-  hash_val = _RAND_186[15:0];
+  hash_val = _RAND_185[15:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

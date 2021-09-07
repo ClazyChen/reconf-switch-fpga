@@ -182,7 +182,6 @@ module HashSumLevel_3(
   input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
-  input          io_pipe_phv_in_valid,
   output [7:0]   io_pipe_phv_out_data_0,
   output [7:0]   io_pipe_phv_out_data_1,
   output [7:0]   io_pipe_phv_out_data_2,
@@ -365,7 +364,6 @@ module HashSumLevel_3(
   output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
-  output         io_pipe_phv_out_valid,
   input  [191:0] io_key_in,
   output [191:0] io_key_out,
   input  [191:0] io_sum_in,
@@ -554,9 +552,8 @@ module HashSumLevel_3(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
-  reg [31:0] _RAND_182;
+  reg [191:0] _RAND_182;
   reg [191:0] _RAND_183;
-  reg [191:0] _RAND_184;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[hash.scala 41:22]
   reg [7:0] phv_data_1; // @[hash.scala 41:22]
@@ -740,7 +737,6 @@ module HashSumLevel_3(
   reg [3:0] phv_next_processor_id; // @[hash.scala 41:22]
   reg  phv_next_config_id; // @[hash.scala 41:22]
   reg  phv_is_valid_processor; // @[hash.scala 41:22]
-  reg  phv_valid; // @[hash.scala 41:22]
   reg [191:0] key; // @[hash.scala 45:22]
   reg [191:0] sum; // @[hash.scala 49:22]
   wire [15:0] sum_temp_0 = sum[191:176]; // @[hash.scala 64:35]
@@ -928,7 +924,6 @@ module HashSumLevel_3(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[hash.scala 43:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[hash.scala 43:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[hash.scala 43:25]
-  assign io_pipe_phv_out_valid = phv_valid; // @[hash.scala 43:25]
   assign io_key_out = key; // @[hash.scala 47:20]
   assign io_sum_out = phv_is_valid_processor ? {{176'd0}, out_temp_0} : sum; // @[hash.scala 52:39 hash.scala 75:24 hash.scala 77:24]
   always @(posedge clock) begin
@@ -1114,7 +1109,6 @@ module HashSumLevel_3(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[hash.scala 42:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[hash.scala 42:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[hash.scala 42:13]
-    phv_valid <= io_pipe_phv_in_valid; // @[hash.scala 42:13]
     key <= io_key_in; // @[hash.scala 46:13]
     sum <= io_sum_in; // @[hash.scala 50:13]
   end
@@ -1518,12 +1512,10 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
-  _RAND_182 = {1{`RANDOM}};
-  phv_valid = _RAND_182[0:0];
+  _RAND_182 = {6{`RANDOM}};
+  key = _RAND_182[191:0];
   _RAND_183 = {6{`RANDOM}};
-  key = _RAND_183[191:0];
-  _RAND_184 = {6{`RANDOM}};
-  sum = _RAND_184[191:0];
+  sum = _RAND_183[191:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

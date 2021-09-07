@@ -182,7 +182,6 @@ module PrimitiveDistributionPISA(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
-  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -365,7 +364,6 @@ module PrimitiveDistributionPISA(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  output        io_pipe_phv_out_valid,
   input  [7:0]  io_args_in_0,
   input  [7:0]  io_args_in_1,
   input  [7:0]  io_args_in_2,
@@ -650,7 +648,6 @@ module PrimitiveDistributionPISA(
   reg [31:0] _RAND_190;
   reg [31:0] _RAND_191;
   reg [31:0] _RAND_192;
-  reg [31:0] _RAND_193;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor_pisa.scala 75:22]
   reg [7:0] phv_data_1; // @[executor_pisa.scala 75:22]
@@ -834,7 +831,6 @@ module PrimitiveDistributionPISA(
   reg [3:0] phv_next_processor_id; // @[executor_pisa.scala 75:22]
   reg  phv_next_config_id; // @[executor_pisa.scala 75:22]
   reg  phv_is_valid_processor; // @[executor_pisa.scala 75:22]
-  reg  phv_valid; // @[executor_pisa.scala 75:22]
   reg [7:0] args_0; // @[executor_pisa.scala 79:23]
   reg [7:0] args_1; // @[executor_pisa.scala 79:23]
   reg [7:0] args_2; // @[executor_pisa.scala 79:23]
@@ -1612,7 +1608,6 @@ module PrimitiveDistributionPISA(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor_pisa.scala 77:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor_pisa.scala 77:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor_pisa.scala 77:25]
-  assign io_pipe_phv_out_valid = phv_valid; // @[executor_pisa.scala 77:25]
   assign io_args_out_0 = args_0; // @[executor_pisa.scala 81:21]
   assign io_args_out_1 = args_1; // @[executor_pisa.scala 81:21]
   assign io_args_out_2 = args_2; // @[executor_pisa.scala 81:21]
@@ -1874,7 +1869,6 @@ module PrimitiveDistributionPISA(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor_pisa.scala 76:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor_pisa.scala 76:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor_pisa.scala 76:13]
-    phv_valid <= io_pipe_phv_in_valid; // @[executor_pisa.scala 76:13]
     args_0 <= io_args_in_0; // @[executor_pisa.scala 80:14]
     args_1 <= io_args_in_1; // @[executor_pisa.scala 80:14]
     args_2 <= io_args_in_2; // @[executor_pisa.scala 80:14]
@@ -2288,29 +2282,27 @@ initial begin
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
   _RAND_182 = {1{`RANDOM}};
-  phv_valid = _RAND_182[0:0];
+  args_0 = _RAND_182[7:0];
   _RAND_183 = {1{`RANDOM}};
-  args_0 = _RAND_183[7:0];
+  args_1 = _RAND_183[7:0];
   _RAND_184 = {1{`RANDOM}};
-  args_1 = _RAND_184[7:0];
+  args_2 = _RAND_184[7:0];
   _RAND_185 = {1{`RANDOM}};
-  args_2 = _RAND_185[7:0];
+  args_3 = _RAND_185[7:0];
   _RAND_186 = {1{`RANDOM}};
-  args_3 = _RAND_186[7:0];
+  args_4 = _RAND_186[7:0];
   _RAND_187 = {1{`RANDOM}};
-  args_4 = _RAND_187[7:0];
+  args_5 = _RAND_187[7:0];
   _RAND_188 = {1{`RANDOM}};
-  args_5 = _RAND_188[7:0];
+  args_6 = _RAND_188[7:0];
   _RAND_189 = {1{`RANDOM}};
-  args_6 = _RAND_189[7:0];
+  vliw_0 = _RAND_189[31:0];
   _RAND_190 = {1{`RANDOM}};
-  vliw_0 = _RAND_190[31:0];
+  vliw_1 = _RAND_190[31:0];
   _RAND_191 = {1{`RANDOM}};
-  vliw_1 = _RAND_191[31:0];
+  vliw_2 = _RAND_191[31:0];
   _RAND_192 = {1{`RANDOM}};
-  vliw_2 = _RAND_192[31:0];
-  _RAND_193 = {1{`RANDOM}};
-  vliw_3 = _RAND_193[31:0];
+  vliw_3 = _RAND_192[31:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

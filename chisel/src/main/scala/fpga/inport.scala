@@ -33,5 +33,5 @@ class InPort extends Module {
     io.phv_out.next_processor_id      := 0.U(const.processor_id_width.W)
     io.phv_out.next_config_id         := 0.U(const.config_id_width.W)
     io.phv_out.is_valid_processor     := false.B
-    io.phv_out.valid                  := true.B
+   // io.phv_out.valid                  := true.B
 }
