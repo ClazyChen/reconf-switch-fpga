@@ -370,6 +370,7 @@ module Processor(
   input         io_mod_par_mod_module_mod_state_id_mod,
   input  [7:0]  io_mod_par_mod_module_mod_state_id,
   input         io_mod_par_mod_module_mod_sram_w_cs,
+  input         io_mod_par_mod_module_mod_sram_w_en,
   input  [7:0]  io_mod_par_mod_module_mod_sram_w_addr,
   input  [63:0] io_mod_par_mod_module_mod_sram_w_data,
   input         io_mod_mat_mod_en,
@@ -805,6 +806,7 @@ module Processor(
   wire  PAR_io_mod_module_mod_state_id_mod; // @[processor.scala 13:21]
   wire [7:0] PAR_io_mod_module_mod_state_id; // @[processor.scala 13:21]
   wire  PAR_io_mod_module_mod_sram_w_cs; // @[processor.scala 13:21]
+  wire  PAR_io_mod_module_mod_sram_w_en; // @[processor.scala 13:21]
   wire [7:0] PAR_io_mod_module_mod_sram_w_addr; // @[processor.scala 13:21]
   wire [63:0] PAR_io_mod_module_mod_sram_w_data; // @[processor.scala 13:21]
   wire  MAT_clock; // @[processor.scala 14:21]
@@ -1973,6 +1975,7 @@ module Processor(
     .io_mod_module_mod_state_id_mod(PAR_io_mod_module_mod_state_id_mod),
     .io_mod_module_mod_state_id(PAR_io_mod_module_mod_state_id),
     .io_mod_module_mod_sram_w_cs(PAR_io_mod_module_mod_sram_w_cs),
+    .io_mod_module_mod_sram_w_en(PAR_io_mod_module_mod_sram_w_en),
     .io_mod_module_mod_sram_w_addr(PAR_io_mod_module_mod_sram_w_addr),
     .io_mod_module_mod_sram_w_data(PAR_io_mod_module_mod_sram_w_data)
   );
@@ -3176,6 +3179,7 @@ module Processor(
   assign PAR_io_mod_module_mod_state_id_mod = io_mod_par_mod_module_mod_state_id_mod; // @[processor.scala 18:24]
   assign PAR_io_mod_module_mod_state_id = io_mod_par_mod_module_mod_state_id; // @[processor.scala 18:24]
   assign PAR_io_mod_module_mod_sram_w_cs = io_mod_par_mod_module_mod_sram_w_cs; // @[processor.scala 18:24]
+  assign PAR_io_mod_module_mod_sram_w_en = io_mod_par_mod_module_mod_sram_w_en; // @[processor.scala 18:24]
   assign PAR_io_mod_module_mod_sram_w_addr = io_mod_par_mod_module_mod_sram_w_addr; // @[processor.scala 18:24]
   assign PAR_io_mod_module_mod_sram_w_data = io_mod_par_mod_module_mod_sram_w_data; // @[processor.scala 18:24]
   assign MAT_clock = clock;

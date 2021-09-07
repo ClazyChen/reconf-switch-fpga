@@ -17,6 +17,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_0_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_0_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_0_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_0_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_0_mat_mod_en,
@@ -38,6 +39,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_1_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_1_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_1_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_1_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_1_mat_mod_en,
@@ -59,6 +61,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_2_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_2_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_2_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_2_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_2_mat_mod_en,
@@ -80,6 +83,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_3_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_3_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_3_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_3_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_3_mat_mod_en,
@@ -101,6 +105,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_4_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_4_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_4_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_4_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_4_mat_mod_en,
@@ -122,6 +127,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_5_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_5_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_5_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_5_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_5_mat_mod_en,
@@ -143,6 +149,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_6_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_6_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_6_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_6_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_6_mat_mod_en,
@@ -164,6 +171,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_7_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_7_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_7_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_7_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_7_mat_mod_en,
@@ -185,6 +193,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_8_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_8_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_8_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_8_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_8_mat_mod_en,
@@ -206,6 +215,7 @@ module PCIEInterface(
   output        io_mod_proc_mod_9_par_mod_module_mod_state_id_mod,
   output [7:0]  io_mod_proc_mod_9_par_mod_module_mod_state_id,
   output        io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs,
+  output        io_mod_proc_mod_9_par_mod_module_mod_sram_w_en,
   output [7:0]  io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr,
   output [63:0] io_mod_proc_mod_9_par_mod_module_mod_sram_w_data,
   output        io_mod_proc_mod_9_mat_mod_en,
@@ -637,6 +647,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_0_par_mod_module_mod_state_id_mod = _io_w_0_w_en_T & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_0_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_0_par_mod_module_mod_sram_w_en = _io_w_0_w_en_T & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_0_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_0_mat_mod_en = _io_w_0_w_en_T & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -658,6 +669,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_1_par_mod_module_mod_state_id_mod = _io_w_1_w_en_T & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_1_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_1_par_mod_module_mod_sram_w_en = _io_w_1_w_en_T & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_1_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_1_mat_mod_en = _io_w_1_w_en_T & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -679,6 +691,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_2_par_mod_module_mod_state_id_mod = _io_w_2_w_en_T & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_2_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_2_par_mod_module_mod_sram_w_en = _io_w_2_w_en_T & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_2_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_2_mat_mod_en = _io_w_2_w_en_T & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -700,6 +713,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_3_par_mod_module_mod_state_id_mod = _io_w_3_w_en_T & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_3_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_3_par_mod_module_mod_sram_w_en = _io_w_3_w_en_T & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_3_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_3_mat_mod_en = _io_w_3_w_en_T & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -721,6 +735,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_4_par_mod_module_mod_state_id_mod = _io_w_4_w_en_T & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_4_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_4_par_mod_module_mod_sram_w_en = _io_w_4_w_en_T & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_4_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_4_mat_mod_en = _io_w_4_w_en_T & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -742,6 +757,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_5_par_mod_module_mod_state_id_mod = cluster_id_field == 4'h5 & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_5_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_5_par_mod_module_mod_sram_w_en = cluster_id_field == 4'h5 & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_5_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_5_mat_mod_en = cluster_id_field == 4'h5 & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -763,6 +779,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_6_par_mod_module_mod_state_id_mod = cluster_id_field == 4'h6 & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_6_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_6_par_mod_module_mod_sram_w_en = cluster_id_field == 4'h6 & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_6_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_6_mat_mod_en = cluster_id_field == 4'h6 & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -784,6 +801,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_7_par_mod_module_mod_state_id_mod = cluster_id_field == 4'h7 & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_7_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_7_par_mod_module_mod_sram_w_en = cluster_id_field == 4'h7 & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_7_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_7_mat_mod_en = cluster_id_field == 4'h7 & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -805,6 +823,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_8_par_mod_module_mod_state_id_mod = cluster_id_field == 4'h8 & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_8_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_8_par_mod_module_mod_sram_w_en = cluster_id_field == 4'h8 & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_8_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_8_mat_mod_en = cluster_id_field == 4'h8 & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]
@@ -826,6 +845,7 @@ module PCIEInterface(
   assign io_mod_proc_mod_9_par_mod_module_mod_state_id_mod = cluster_id_field == 4'h9 & _GEN_62; // @[pcie_interface.scala 137:43 pcie_interface.scala 117:41]
   assign io_mod_proc_mod_9_par_mod_module_mod_state_id = state_id; // @[pcie_interface.scala 118:41]
   assign io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs = sram_id_field[3]; // @[pcie_interface.scala 119:58]
+  assign io_mod_proc_mod_9_par_mod_module_mod_sram_w_en = cluster_id_field == 4'h9 & _T_1; // @[pcie_interface.scala 137:43 pcie_interface.scala 120:41]
   assign io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_mod_proc_mod_9_par_mod_module_mod_sram_w_data = io_pcie_w_data; // @[pcie_interface.scala 122:41]
   assign io_mod_proc_mod_9_mat_mod_en = cluster_id_field == 4'h9 & _GEN_86; // @[pcie_interface.scala 137:43 pcie_interface.scala 125:27]

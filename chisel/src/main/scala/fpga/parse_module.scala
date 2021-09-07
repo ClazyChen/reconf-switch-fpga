@@ -29,7 +29,7 @@ class ParseMatcher extends Module {
         val config_to_use   = io.pipe.phv_in.next_config_id === config_id
         val exe = Module(new SRAM)
         exe.io.w      := io.sram_w
-        exe.io.w.en   := config_to_write
+        exe.io.w.en   := io.sram_w.en && config_to_write
         exe.io.r.en   := is_valid && config_to_use
         exe.io.r.addr := match_key(15,8) + match_key(7,0)  // omit hash collision
         when (config_to_use) {

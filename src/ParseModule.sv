@@ -367,6 +367,7 @@ module ParseModule(
   input         io_mod_state_id_mod,
   input  [7:0]  io_mod_state_id,
   input         io_mod_sram_w_cs,
+  input         io_mod_sram_w_en,
   input  [7:0]  io_mod_sram_w_addr,
   input  [63:0] io_mod_sram_w_data
 );
@@ -739,6 +740,7 @@ module ParseModule(
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[parse_module.scala 98:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[parse_module.scala 98:23]
   wire  pipe1_io_sram_w_cs; // @[parse_module.scala 98:23]
+  wire  pipe1_io_sram_w_en; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_sram_w_addr; // @[parse_module.scala 98:23]
   wire [63:0] pipe1_io_sram_w_data; // @[parse_module.scala 98:23]
   wire  pipe1_io_valid; // @[parse_module.scala 98:23]
@@ -1478,6 +1480,7 @@ module ParseModule(
     .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
     .io_sram_w_cs(pipe1_io_sram_w_cs),
+    .io_sram_w_en(pipe1_io_sram_w_en),
     .io_sram_w_addr(pipe1_io_sram_w_addr),
     .io_sram_w_data(pipe1_io_sram_w_data),
     .io_valid(pipe1_io_valid),
@@ -2218,6 +2221,7 @@ module ParseModule(
   assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[parse_module.scala 104:22]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 104:22]
   assign pipe1_io_sram_w_cs = io_mod_sram_w_cs; // @[parse_module.scala 106:22]
+  assign pipe1_io_sram_w_en = io_mod_sram_w_en; // @[parse_module.scala 105:22]
   assign pipe1_io_sram_w_addr = io_mod_sram_w_addr; // @[parse_module.scala 105:22]
   assign pipe1_io_sram_w_data = io_mod_sram_w_data; // @[parse_module.scala 105:22]
   assign pipe1_io_valid = io_pipe_phv_in_parse_current_state == state_id; // @[parse_module.scala 101:58]

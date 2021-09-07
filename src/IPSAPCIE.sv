@@ -304,6 +304,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -325,6 +326,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -346,6 +348,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -367,6 +370,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -388,6 +392,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -409,6 +414,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -430,6 +436,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -451,6 +458,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -472,6 +480,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -493,6 +502,7 @@ module IPSAPCIE(
   wire  ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
+  wire  ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_mat_mod_en; // @[ipsa_pcie.scala 13:22]
@@ -558,6 +568,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -579,6 +590,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -600,6 +612,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -621,6 +634,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -642,6 +656,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -663,6 +678,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -684,6 +700,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -705,6 +722,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -726,6 +744,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -747,6 +766,7 @@ module IPSAPCIE(
   wire  pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
+  wire  pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_mat_mod_en; // @[ipsa_pcie.scala 14:22]
@@ -1386,6 +1406,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_0_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_0_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_0_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_0_mat_mod_en(ipsa_io_mod_proc_mod_0_mat_mod_en),
@@ -1407,6 +1428,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_1_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_1_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_1_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_1_mat_mod_en(ipsa_io_mod_proc_mod_1_mat_mod_en),
@@ -1428,6 +1450,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_2_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_2_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_2_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_2_mat_mod_en(ipsa_io_mod_proc_mod_2_mat_mod_en),
@@ -1449,6 +1472,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_3_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_3_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_3_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_3_mat_mod_en(ipsa_io_mod_proc_mod_3_mat_mod_en),
@@ -1470,6 +1494,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_4_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_4_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_4_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_4_mat_mod_en(ipsa_io_mod_proc_mod_4_mat_mod_en),
@@ -1491,6 +1516,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_5_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_5_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_5_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_5_mat_mod_en(ipsa_io_mod_proc_mod_5_mat_mod_en),
@@ -1512,6 +1538,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_6_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_6_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_6_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_6_mat_mod_en(ipsa_io_mod_proc_mod_6_mat_mod_en),
@@ -1533,6 +1560,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_7_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_7_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_7_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_7_mat_mod_en(ipsa_io_mod_proc_mod_7_mat_mod_en),
@@ -1554,6 +1582,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_8_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_8_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_8_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_8_mat_mod_en(ipsa_io_mod_proc_mod_8_mat_mod_en),
@@ -1575,6 +1604,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_9_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_9_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_9_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_9_mat_mod_en(ipsa_io_mod_proc_mod_9_mat_mod_en),
@@ -1642,6 +1672,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_0_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_0_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_0_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_0_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_0_mat_mod_en(pcie_io_mod_proc_mod_0_mat_mod_en),
@@ -1663,6 +1694,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_1_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_1_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_1_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_1_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_1_mat_mod_en(pcie_io_mod_proc_mod_1_mat_mod_en),
@@ -1684,6 +1716,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_2_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_2_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_2_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_2_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_2_mat_mod_en(pcie_io_mod_proc_mod_2_mat_mod_en),
@@ -1705,6 +1738,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_3_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_3_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_3_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_3_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_3_mat_mod_en(pcie_io_mod_proc_mod_3_mat_mod_en),
@@ -1726,6 +1760,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_4_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_4_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_4_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_4_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_4_mat_mod_en(pcie_io_mod_proc_mod_4_mat_mod_en),
@@ -1747,6 +1782,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_5_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_5_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_5_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_5_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_5_mat_mod_en(pcie_io_mod_proc_mod_5_mat_mod_en),
@@ -1768,6 +1804,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_6_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_6_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_6_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_6_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_6_mat_mod_en(pcie_io_mod_proc_mod_6_mat_mod_en),
@@ -1789,6 +1826,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_7_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_7_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_7_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_7_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_7_mat_mod_en(pcie_io_mod_proc_mod_7_mat_mod_en),
@@ -1810,6 +1848,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_8_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_8_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_8_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_8_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_8_mat_mod_en(pcie_io_mod_proc_mod_8_mat_mod_en),
@@ -1831,6 +1870,7 @@ module IPSAPCIE(
     .io_mod_proc_mod_9_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id_mod),
     .io_mod_proc_mod_9_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs),
+    .io_mod_proc_mod_9_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr),
     .io_mod_proc_mod_9_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data),
     .io_mod_proc_mod_9_mat_mod_en(pcie_io_mod_proc_mod_9_mat_mod_en),
@@ -2316,6 +2356,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_0_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_0_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_mat_mod_en = pcie_io_mod_proc_mod_0_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2339,6 +2380,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_1_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_1_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_mat_mod_en = pcie_io_mod_proc_mod_1_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2362,6 +2404,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_2_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_2_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_mat_mod_en = pcie_io_mod_proc_mod_2_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2385,6 +2428,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_3_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_3_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_mat_mod_en = pcie_io_mod_proc_mod_3_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2408,6 +2452,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_4_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_4_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_mat_mod_en = pcie_io_mod_proc_mod_4_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2431,6 +2476,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_5_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_5_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_mat_mod_en = pcie_io_mod_proc_mod_5_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2454,6 +2500,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_6_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_6_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_mat_mod_en = pcie_io_mod_proc_mod_6_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2477,6 +2524,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_7_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_7_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_mat_mod_en = pcie_io_mod_proc_mod_7_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2500,6 +2548,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_8_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_8_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_mat_mod_en = pcie_io_mod_proc_mod_8_mat_mod_en; // @[ipsa_pcie.scala 22:20]
@@ -2523,6 +2572,7 @@ module IPSAPCIE(
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_9_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_9_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_mat_mod_en = pcie_io_mod_proc_mod_9_mat_mod_en; // @[ipsa_pcie.scala 22:20]
