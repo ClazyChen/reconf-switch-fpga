@@ -160,26 +160,6 @@ module PrimitiveGetSourcePISA(
   input  [7:0]  io_pipe_phv_in_data_157,
   input  [7:0]  io_pipe_phv_in_data_158,
   input  [7:0]  io_pipe_phv_in_data_159,
-  input  [15:0] io_pipe_phv_in_header_0,
-  input  [15:0] io_pipe_phv_in_header_1,
-  input  [15:0] io_pipe_phv_in_header_2,
-  input  [15:0] io_pipe_phv_in_header_3,
-  input  [15:0] io_pipe_phv_in_header_4,
-  input  [15:0] io_pipe_phv_in_header_5,
-  input  [15:0] io_pipe_phv_in_header_6,
-  input  [15:0] io_pipe_phv_in_header_7,
-  input  [15:0] io_pipe_phv_in_header_8,
-  input  [15:0] io_pipe_phv_in_header_9,
-  input  [15:0] io_pipe_phv_in_header_10,
-  input  [15:0] io_pipe_phv_in_header_11,
-  input  [15:0] io_pipe_phv_in_header_12,
-  input  [15:0] io_pipe_phv_in_header_13,
-  input  [15:0] io_pipe_phv_in_header_14,
-  input  [15:0] io_pipe_phv_in_header_15,
-  input  [7:0]  io_pipe_phv_in_parse_current_state,
-  input  [7:0]  io_pipe_phv_in_parse_current_offset,
-  input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -342,26 +322,6 @@ module PrimitiveGetSourcePISA(
   output [7:0]  io_pipe_phv_out_data_157,
   output [7:0]  io_pipe_phv_out_data_158,
   output [7:0]  io_pipe_phv_out_data_159,
-  output [15:0] io_pipe_phv_out_header_0,
-  output [15:0] io_pipe_phv_out_header_1,
-  output [15:0] io_pipe_phv_out_header_2,
-  output [15:0] io_pipe_phv_out_header_3,
-  output [15:0] io_pipe_phv_out_header_4,
-  output [15:0] io_pipe_phv_out_header_5,
-  output [15:0] io_pipe_phv_out_header_6,
-  output [15:0] io_pipe_phv_out_header_7,
-  output [15:0] io_pipe_phv_out_header_8,
-  output [15:0] io_pipe_phv_out_header_9,
-  output [15:0] io_pipe_phv_out_header_10,
-  output [15:0] io_pipe_phv_out_header_11,
-  output [15:0] io_pipe_phv_out_header_12,
-  output [15:0] io_pipe_phv_out_header_13,
-  output [15:0] io_pipe_phv_out_header_14,
-  output [15:0] io_pipe_phv_out_header_15,
-  output [7:0]  io_pipe_phv_out_parse_current_state,
-  output [7:0]  io_pipe_phv_out_parse_current_offset,
-  output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input  [7:0]  io_args_in_0,
@@ -825,26 +785,6 @@ module PrimitiveGetSourcePISA(
   reg [31:0] _RAND_237;
   reg [31:0] _RAND_238;
   reg [31:0] _RAND_239;
-  reg [31:0] _RAND_240;
-  reg [31:0] _RAND_241;
-  reg [31:0] _RAND_242;
-  reg [31:0] _RAND_243;
-  reg [31:0] _RAND_244;
-  reg [31:0] _RAND_245;
-  reg [31:0] _RAND_246;
-  reg [31:0] _RAND_247;
-  reg [31:0] _RAND_248;
-  reg [31:0] _RAND_249;
-  reg [31:0] _RAND_250;
-  reg [31:0] _RAND_251;
-  reg [31:0] _RAND_252;
-  reg [31:0] _RAND_253;
-  reg [31:0] _RAND_254;
-  reg [31:0] _RAND_255;
-  reg [31:0] _RAND_256;
-  reg [31:0] _RAND_257;
-  reg [31:0] _RAND_258;
-  reg [31:0] _RAND_259;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor_pisa.scala 163:22]
   reg [7:0] phv_data_1; // @[executor_pisa.scala 163:22]
@@ -1006,26 +946,6 @@ module PrimitiveGetSourcePISA(
   reg [7:0] phv_data_157; // @[executor_pisa.scala 163:22]
   reg [7:0] phv_data_158; // @[executor_pisa.scala 163:22]
   reg [7:0] phv_data_159; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_0; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_1; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_2; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_3; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_4; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_5; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_6; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_7; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_8; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_9; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_10; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_11; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_12; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_13; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_14; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_header_15; // @[executor_pisa.scala 163:22]
-  reg [7:0] phv_parse_current_state; // @[executor_pisa.scala 163:22]
-  reg [7:0] phv_parse_current_offset; // @[executor_pisa.scala 163:22]
-  reg [15:0] phv_parse_transition_field; // @[executor_pisa.scala 163:22]
-  reg [3:0] phv_next_processor_id; // @[executor_pisa.scala 163:22]
   reg  phv_next_config_id; // @[executor_pisa.scala 163:22]
   reg  phv_is_valid_processor; // @[executor_pisa.scala 163:22]
   reg [7:0] args_0; // @[executor_pisa.scala 167:23]
@@ -5376,26 +5296,6 @@ module PrimitiveGetSourcePISA(
   assign io_pipe_phv_out_data_157 = phv_data_157; // @[executor_pisa.scala 165:25]
   assign io_pipe_phv_out_data_158 = phv_data_158; // @[executor_pisa.scala 165:25]
   assign io_pipe_phv_out_data_159 = phv_data_159; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_0 = phv_header_0; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_1 = phv_header_1; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_2 = phv_header_2; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_3 = phv_header_3; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_4 = phv_header_4; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_5 = phv_header_5; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_6 = phv_header_6; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_7 = phv_header_7; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_8 = phv_header_8; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_9 = phv_header_9; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_10 = phv_header_10; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_11 = phv_header_11; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_12 = phv_header_12; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_13 = phv_header_13; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_14 = phv_header_14; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_header_15 = phv_header_15; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor_pisa.scala 165:25]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor_pisa.scala 165:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor_pisa.scala 165:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor_pisa.scala 165:25]
   assign io_nid_out = nid; // @[executor_pisa.scala 175:20]
@@ -5700,26 +5600,6 @@ module PrimitiveGetSourcePISA(
     phv_data_157 <= io_pipe_phv_in_data_157; // @[executor_pisa.scala 164:13]
     phv_data_158 <= io_pipe_phv_in_data_158; // @[executor_pisa.scala 164:13]
     phv_data_159 <= io_pipe_phv_in_data_159; // @[executor_pisa.scala 164:13]
-    phv_header_0 <= io_pipe_phv_in_header_0; // @[executor_pisa.scala 164:13]
-    phv_header_1 <= io_pipe_phv_in_header_1; // @[executor_pisa.scala 164:13]
-    phv_header_2 <= io_pipe_phv_in_header_2; // @[executor_pisa.scala 164:13]
-    phv_header_3 <= io_pipe_phv_in_header_3; // @[executor_pisa.scala 164:13]
-    phv_header_4 <= io_pipe_phv_in_header_4; // @[executor_pisa.scala 164:13]
-    phv_header_5 <= io_pipe_phv_in_header_5; // @[executor_pisa.scala 164:13]
-    phv_header_6 <= io_pipe_phv_in_header_6; // @[executor_pisa.scala 164:13]
-    phv_header_7 <= io_pipe_phv_in_header_7; // @[executor_pisa.scala 164:13]
-    phv_header_8 <= io_pipe_phv_in_header_8; // @[executor_pisa.scala 164:13]
-    phv_header_9 <= io_pipe_phv_in_header_9; // @[executor_pisa.scala 164:13]
-    phv_header_10 <= io_pipe_phv_in_header_10; // @[executor_pisa.scala 164:13]
-    phv_header_11 <= io_pipe_phv_in_header_11; // @[executor_pisa.scala 164:13]
-    phv_header_12 <= io_pipe_phv_in_header_12; // @[executor_pisa.scala 164:13]
-    phv_header_13 <= io_pipe_phv_in_header_13; // @[executor_pisa.scala 164:13]
-    phv_header_14 <= io_pipe_phv_in_header_14; // @[executor_pisa.scala 164:13]
-    phv_header_15 <= io_pipe_phv_in_header_15; // @[executor_pisa.scala 164:13]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[executor_pisa.scala 164:13]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[executor_pisa.scala 164:13]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[executor_pisa.scala 164:13]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor_pisa.scala 164:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor_pisa.scala 164:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor_pisa.scala 164:13]
     args_0 <= io_args_in_0; // @[executor_pisa.scala 168:14]
@@ -6158,205 +6038,165 @@ initial begin
   _RAND_159 = {1{`RANDOM}};
   phv_data_159 = _RAND_159[7:0];
   _RAND_160 = {1{`RANDOM}};
-  phv_header_0 = _RAND_160[15:0];
+  phv_next_config_id = _RAND_160[0:0];
   _RAND_161 = {1{`RANDOM}};
-  phv_header_1 = _RAND_161[15:0];
+  phv_is_valid_processor = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
-  phv_header_2 = _RAND_162[15:0];
+  args_0 = _RAND_162[7:0];
   _RAND_163 = {1{`RANDOM}};
-  phv_header_3 = _RAND_163[15:0];
+  args_1 = _RAND_163[7:0];
   _RAND_164 = {1{`RANDOM}};
-  phv_header_4 = _RAND_164[15:0];
+  args_2 = _RAND_164[7:0];
   _RAND_165 = {1{`RANDOM}};
-  phv_header_5 = _RAND_165[15:0];
+  args_3 = _RAND_165[7:0];
   _RAND_166 = {1{`RANDOM}};
-  phv_header_6 = _RAND_166[15:0];
+  args_4 = _RAND_166[7:0];
   _RAND_167 = {1{`RANDOM}};
-  phv_header_7 = _RAND_167[15:0];
+  args_5 = _RAND_167[7:0];
   _RAND_168 = {1{`RANDOM}};
-  phv_header_8 = _RAND_168[15:0];
+  args_6 = _RAND_168[7:0];
   _RAND_169 = {1{`RANDOM}};
-  phv_header_9 = _RAND_169[15:0];
+  vliw_0 = _RAND_169[17:0];
   _RAND_170 = {1{`RANDOM}};
-  phv_header_10 = _RAND_170[15:0];
+  vliw_1 = _RAND_170[17:0];
   _RAND_171 = {1{`RANDOM}};
-  phv_header_11 = _RAND_171[15:0];
+  vliw_2 = _RAND_171[17:0];
   _RAND_172 = {1{`RANDOM}};
-  phv_header_12 = _RAND_172[15:0];
+  vliw_3 = _RAND_172[17:0];
   _RAND_173 = {1{`RANDOM}};
-  phv_header_13 = _RAND_173[15:0];
+  vliw_4 = _RAND_173[17:0];
   _RAND_174 = {1{`RANDOM}};
-  phv_header_14 = _RAND_174[15:0];
+  vliw_5 = _RAND_174[17:0];
   _RAND_175 = {1{`RANDOM}};
-  phv_header_15 = _RAND_175[15:0];
+  vliw_6 = _RAND_175[17:0];
   _RAND_176 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_176[7:0];
+  vliw_7 = _RAND_176[17:0];
   _RAND_177 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_177[7:0];
+  vliw_8 = _RAND_177[17:0];
   _RAND_178 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_178[15:0];
+  vliw_9 = _RAND_178[17:0];
   _RAND_179 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_179[3:0];
+  vliw_10 = _RAND_179[17:0];
   _RAND_180 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_180[0:0];
+  vliw_11 = _RAND_180[17:0];
   _RAND_181 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_181[0:0];
+  vliw_12 = _RAND_181[17:0];
   _RAND_182 = {1{`RANDOM}};
-  args_0 = _RAND_182[7:0];
+  vliw_13 = _RAND_182[17:0];
   _RAND_183 = {1{`RANDOM}};
-  args_1 = _RAND_183[7:0];
+  vliw_14 = _RAND_183[17:0];
   _RAND_184 = {1{`RANDOM}};
-  args_2 = _RAND_184[7:0];
+  vliw_15 = _RAND_184[17:0];
   _RAND_185 = {1{`RANDOM}};
-  args_3 = _RAND_185[7:0];
+  vliw_16 = _RAND_185[17:0];
   _RAND_186 = {1{`RANDOM}};
-  args_4 = _RAND_186[7:0];
+  vliw_17 = _RAND_186[17:0];
   _RAND_187 = {1{`RANDOM}};
-  args_5 = _RAND_187[7:0];
+  vliw_18 = _RAND_187[17:0];
   _RAND_188 = {1{`RANDOM}};
-  args_6 = _RAND_188[7:0];
+  vliw_19 = _RAND_188[17:0];
   _RAND_189 = {1{`RANDOM}};
-  vliw_0 = _RAND_189[17:0];
+  vliw_20 = _RAND_189[17:0];
   _RAND_190 = {1{`RANDOM}};
-  vliw_1 = _RAND_190[17:0];
+  vliw_21 = _RAND_190[17:0];
   _RAND_191 = {1{`RANDOM}};
-  vliw_2 = _RAND_191[17:0];
+  vliw_22 = _RAND_191[17:0];
   _RAND_192 = {1{`RANDOM}};
-  vliw_3 = _RAND_192[17:0];
+  vliw_23 = _RAND_192[17:0];
   _RAND_193 = {1{`RANDOM}};
-  vliw_4 = _RAND_193[17:0];
+  vliw_24 = _RAND_193[17:0];
   _RAND_194 = {1{`RANDOM}};
-  vliw_5 = _RAND_194[17:0];
+  vliw_25 = _RAND_194[17:0];
   _RAND_195 = {1{`RANDOM}};
-  vliw_6 = _RAND_195[17:0];
+  vliw_26 = _RAND_195[17:0];
   _RAND_196 = {1{`RANDOM}};
-  vliw_7 = _RAND_196[17:0];
+  vliw_27 = _RAND_196[17:0];
   _RAND_197 = {1{`RANDOM}};
-  vliw_8 = _RAND_197[17:0];
+  vliw_28 = _RAND_197[17:0];
   _RAND_198 = {1{`RANDOM}};
-  vliw_9 = _RAND_198[17:0];
+  vliw_29 = _RAND_198[17:0];
   _RAND_199 = {1{`RANDOM}};
-  vliw_10 = _RAND_199[17:0];
+  vliw_30 = _RAND_199[17:0];
   _RAND_200 = {1{`RANDOM}};
-  vliw_11 = _RAND_200[17:0];
+  vliw_31 = _RAND_200[17:0];
   _RAND_201 = {1{`RANDOM}};
-  vliw_12 = _RAND_201[17:0];
+  vliw_32 = _RAND_201[17:0];
   _RAND_202 = {1{`RANDOM}};
-  vliw_13 = _RAND_202[17:0];
+  vliw_33 = _RAND_202[17:0];
   _RAND_203 = {1{`RANDOM}};
-  vliw_14 = _RAND_203[17:0];
+  vliw_34 = _RAND_203[17:0];
   _RAND_204 = {1{`RANDOM}};
-  vliw_15 = _RAND_204[17:0];
+  vliw_35 = _RAND_204[17:0];
   _RAND_205 = {1{`RANDOM}};
-  vliw_16 = _RAND_205[17:0];
+  vliw_36 = _RAND_205[17:0];
   _RAND_206 = {1{`RANDOM}};
-  vliw_17 = _RAND_206[17:0];
+  vliw_37 = _RAND_206[17:0];
   _RAND_207 = {1{`RANDOM}};
-  vliw_18 = _RAND_207[17:0];
+  vliw_38 = _RAND_207[17:0];
   _RAND_208 = {1{`RANDOM}};
-  vliw_19 = _RAND_208[17:0];
+  vliw_39 = _RAND_208[17:0];
   _RAND_209 = {1{`RANDOM}};
-  vliw_20 = _RAND_209[17:0];
+  vliw_40 = _RAND_209[17:0];
   _RAND_210 = {1{`RANDOM}};
-  vliw_21 = _RAND_210[17:0];
+  vliw_41 = _RAND_210[17:0];
   _RAND_211 = {1{`RANDOM}};
-  vliw_22 = _RAND_211[17:0];
+  vliw_42 = _RAND_211[17:0];
   _RAND_212 = {1{`RANDOM}};
-  vliw_23 = _RAND_212[17:0];
+  vliw_43 = _RAND_212[17:0];
   _RAND_213 = {1{`RANDOM}};
-  vliw_24 = _RAND_213[17:0];
+  vliw_44 = _RAND_213[17:0];
   _RAND_214 = {1{`RANDOM}};
-  vliw_25 = _RAND_214[17:0];
+  vliw_45 = _RAND_214[17:0];
   _RAND_215 = {1{`RANDOM}};
-  vliw_26 = _RAND_215[17:0];
+  vliw_46 = _RAND_215[17:0];
   _RAND_216 = {1{`RANDOM}};
-  vliw_27 = _RAND_216[17:0];
+  vliw_47 = _RAND_216[17:0];
   _RAND_217 = {1{`RANDOM}};
-  vliw_28 = _RAND_217[17:0];
+  vliw_48 = _RAND_217[17:0];
   _RAND_218 = {1{`RANDOM}};
-  vliw_29 = _RAND_218[17:0];
+  vliw_49 = _RAND_218[17:0];
   _RAND_219 = {1{`RANDOM}};
-  vliw_30 = _RAND_219[17:0];
+  vliw_50 = _RAND_219[17:0];
   _RAND_220 = {1{`RANDOM}};
-  vliw_31 = _RAND_220[17:0];
+  vliw_51 = _RAND_220[17:0];
   _RAND_221 = {1{`RANDOM}};
-  vliw_32 = _RAND_221[17:0];
+  vliw_52 = _RAND_221[17:0];
   _RAND_222 = {1{`RANDOM}};
-  vliw_33 = _RAND_222[17:0];
+  vliw_53 = _RAND_222[17:0];
   _RAND_223 = {1{`RANDOM}};
-  vliw_34 = _RAND_223[17:0];
+  vliw_54 = _RAND_223[17:0];
   _RAND_224 = {1{`RANDOM}};
-  vliw_35 = _RAND_224[17:0];
+  vliw_55 = _RAND_224[17:0];
   _RAND_225 = {1{`RANDOM}};
-  vliw_36 = _RAND_225[17:0];
+  vliw_56 = _RAND_225[17:0];
   _RAND_226 = {1{`RANDOM}};
-  vliw_37 = _RAND_226[17:0];
+  vliw_57 = _RAND_226[17:0];
   _RAND_227 = {1{`RANDOM}};
-  vliw_38 = _RAND_227[17:0];
+  vliw_58 = _RAND_227[17:0];
   _RAND_228 = {1{`RANDOM}};
-  vliw_39 = _RAND_228[17:0];
+  vliw_59 = _RAND_228[17:0];
   _RAND_229 = {1{`RANDOM}};
-  vliw_40 = _RAND_229[17:0];
+  vliw_60 = _RAND_229[17:0];
   _RAND_230 = {1{`RANDOM}};
-  vliw_41 = _RAND_230[17:0];
+  vliw_61 = _RAND_230[17:0];
   _RAND_231 = {1{`RANDOM}};
-  vliw_42 = _RAND_231[17:0];
+  vliw_62 = _RAND_231[17:0];
   _RAND_232 = {1{`RANDOM}};
-  vliw_43 = _RAND_232[17:0];
+  vliw_63 = _RAND_232[17:0];
   _RAND_233 = {1{`RANDOM}};
-  vliw_44 = _RAND_233[17:0];
+  vliw_64 = _RAND_233[17:0];
   _RAND_234 = {1{`RANDOM}};
-  vliw_45 = _RAND_234[17:0];
+  vliw_65 = _RAND_234[17:0];
   _RAND_235 = {1{`RANDOM}};
-  vliw_46 = _RAND_235[17:0];
+  vliw_66 = _RAND_235[17:0];
   _RAND_236 = {1{`RANDOM}};
-  vliw_47 = _RAND_236[17:0];
+  vliw_67 = _RAND_236[17:0];
   _RAND_237 = {1{`RANDOM}};
-  vliw_48 = _RAND_237[17:0];
+  vliw_68 = _RAND_237[17:0];
   _RAND_238 = {1{`RANDOM}};
-  vliw_49 = _RAND_238[17:0];
+  vliw_69 = _RAND_238[17:0];
   _RAND_239 = {1{`RANDOM}};
-  vliw_50 = _RAND_239[17:0];
-  _RAND_240 = {1{`RANDOM}};
-  vliw_51 = _RAND_240[17:0];
-  _RAND_241 = {1{`RANDOM}};
-  vliw_52 = _RAND_241[17:0];
-  _RAND_242 = {1{`RANDOM}};
-  vliw_53 = _RAND_242[17:0];
-  _RAND_243 = {1{`RANDOM}};
-  vliw_54 = _RAND_243[17:0];
-  _RAND_244 = {1{`RANDOM}};
-  vliw_55 = _RAND_244[17:0];
-  _RAND_245 = {1{`RANDOM}};
-  vliw_56 = _RAND_245[17:0];
-  _RAND_246 = {1{`RANDOM}};
-  vliw_57 = _RAND_246[17:0];
-  _RAND_247 = {1{`RANDOM}};
-  vliw_58 = _RAND_247[17:0];
-  _RAND_248 = {1{`RANDOM}};
-  vliw_59 = _RAND_248[17:0];
-  _RAND_249 = {1{`RANDOM}};
-  vliw_60 = _RAND_249[17:0];
-  _RAND_250 = {1{`RANDOM}};
-  vliw_61 = _RAND_250[17:0];
-  _RAND_251 = {1{`RANDOM}};
-  vliw_62 = _RAND_251[17:0];
-  _RAND_252 = {1{`RANDOM}};
-  vliw_63 = _RAND_252[17:0];
-  _RAND_253 = {1{`RANDOM}};
-  vliw_64 = _RAND_253[17:0];
-  _RAND_254 = {1{`RANDOM}};
-  vliw_65 = _RAND_254[17:0];
-  _RAND_255 = {1{`RANDOM}};
-  vliw_66 = _RAND_255[17:0];
-  _RAND_256 = {1{`RANDOM}};
-  vliw_67 = _RAND_256[17:0];
-  _RAND_257 = {1{`RANDOM}};
-  vliw_68 = _RAND_257[17:0];
-  _RAND_258 = {1{`RANDOM}};
-  vliw_69 = _RAND_258[17:0];
-  _RAND_259 = {1{`RANDOM}};
-  nid = _RAND_259[14:0];
+  nid = _RAND_239[14:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

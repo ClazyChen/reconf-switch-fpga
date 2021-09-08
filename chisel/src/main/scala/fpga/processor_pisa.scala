@@ -4,7 +4,7 @@ import chisel3._
 import chisel3.util._
 
 class ProcessorPISAModify extends Bundle {
-    val par_mod  = new ParserPISAModify
+    //val par_mod  = new ParserPISAModify
     val mat_mod  = new MatcherPISAModify
     val exe_mod  = new ActionModify
 }
@@ -15,14 +15,14 @@ class ProcessorPISA extends Module {
         val mod    = new ProcessorPISAModify
     })
 
-    val PAR = Module(new ParserPISA)
+    //val PAR = Module(new ParserPISA)
     val MAT = Module(new MatcherPISA)
     val EXE = Module(new ExecutorPISA)
 
-    PAR.io.pipe.phv_in <> io.pipe.phv_in
-    PAR.io.mod         <> io.mod.par_mod
+    //PAR.io.pipe.phv_in <> io.pipe.phv_in
+    //PAR.io.mod         <> io.mod.par_mod
 
-    MAT.io.pipe.phv_in <> PAR.io.pipe.phv_out
+    MAT.io.pipe.phv_in <> io.pipe.phv_in
     MAT.io.mod         <> io.mod.mat_mod
     
     EXE.io.pipe.phv_in <> MAT.io.pipe.phv_out

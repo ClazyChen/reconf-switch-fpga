@@ -160,26 +160,6 @@ module MatchReadDataPISA(
   input  [7:0]   io_pipe_phv_in_data_157,
   input  [7:0]   io_pipe_phv_in_data_158,
   input  [7:0]   io_pipe_phv_in_data_159,
-  input  [15:0]  io_pipe_phv_in_header_0,
-  input  [15:0]  io_pipe_phv_in_header_1,
-  input  [15:0]  io_pipe_phv_in_header_2,
-  input  [15:0]  io_pipe_phv_in_header_3,
-  input  [15:0]  io_pipe_phv_in_header_4,
-  input  [15:0]  io_pipe_phv_in_header_5,
-  input  [15:0]  io_pipe_phv_in_header_6,
-  input  [15:0]  io_pipe_phv_in_header_7,
-  input  [15:0]  io_pipe_phv_in_header_8,
-  input  [15:0]  io_pipe_phv_in_header_9,
-  input  [15:0]  io_pipe_phv_in_header_10,
-  input  [15:0]  io_pipe_phv_in_header_11,
-  input  [15:0]  io_pipe_phv_in_header_12,
-  input  [15:0]  io_pipe_phv_in_header_13,
-  input  [15:0]  io_pipe_phv_in_header_14,
-  input  [15:0]  io_pipe_phv_in_header_15,
-  input  [7:0]   io_pipe_phv_in_parse_current_state,
-  input  [7:0]   io_pipe_phv_in_parse_current_offset,
-  input  [15:0]  io_pipe_phv_in_parse_transition_field,
-  input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
   output [7:0]   io_pipe_phv_out_data_0,
@@ -342,26 +322,6 @@ module MatchReadDataPISA(
   output [7:0]   io_pipe_phv_out_data_157,
   output [7:0]   io_pipe_phv_out_data_158,
   output [7:0]   io_pipe_phv_out_data_159,
-  output [15:0]  io_pipe_phv_out_header_0,
-  output [15:0]  io_pipe_phv_out_header_1,
-  output [15:0]  io_pipe_phv_out_header_2,
-  output [15:0]  io_pipe_phv_out_header_3,
-  output [15:0]  io_pipe_phv_out_header_4,
-  output [15:0]  io_pipe_phv_out_header_5,
-  output [15:0]  io_pipe_phv_out_header_6,
-  output [15:0]  io_pipe_phv_out_header_7,
-  output [15:0]  io_pipe_phv_out_header_8,
-  output [15:0]  io_pipe_phv_out_header_9,
-  output [15:0]  io_pipe_phv_out_header_10,
-  output [15:0]  io_pipe_phv_out_header_11,
-  output [15:0]  io_pipe_phv_out_header_12,
-  output [15:0]  io_pipe_phv_out_header_13,
-  output [15:0]  io_pipe_phv_out_header_14,
-  output [15:0]  io_pipe_phv_out_header_15,
-  output [7:0]   io_pipe_phv_out_parse_current_state,
-  output [7:0]   io_pipe_phv_out_parse_current_offset,
-  output [15:0]  io_pipe_phv_out_parse_transition_field,
-  output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
   input  [4:0]   io_table_config_0_table_depth,
@@ -541,28 +501,8 @@ module MatchReadDataPISA(
   reg [31:0] _RAND_159;
   reg [31:0] _RAND_160;
   reg [31:0] _RAND_161;
-  reg [31:0] _RAND_162;
+  reg [191:0] _RAND_162;
   reg [31:0] _RAND_163;
-  reg [31:0] _RAND_164;
-  reg [31:0] _RAND_165;
-  reg [31:0] _RAND_166;
-  reg [31:0] _RAND_167;
-  reg [31:0] _RAND_168;
-  reg [31:0] _RAND_169;
-  reg [31:0] _RAND_170;
-  reg [31:0] _RAND_171;
-  reg [31:0] _RAND_172;
-  reg [31:0] _RAND_173;
-  reg [31:0] _RAND_174;
-  reg [31:0] _RAND_175;
-  reg [31:0] _RAND_176;
-  reg [31:0] _RAND_177;
-  reg [31:0] _RAND_178;
-  reg [31:0] _RAND_179;
-  reg [31:0] _RAND_180;
-  reg [31:0] _RAND_181;
-  reg [191:0] _RAND_182;
-  reg [31:0] _RAND_183;
 `endif // RANDOMIZE_REG_INIT
   wire  mem_0_clock; // @[matcher_pisa.scala 195:29]
   wire  mem_0_io_w_en; // @[matcher_pisa.scala 195:29]
@@ -780,26 +720,6 @@ module MatchReadDataPISA(
   reg [7:0] phv_data_157; // @[matcher_pisa.scala 180:22]
   reg [7:0] phv_data_158; // @[matcher_pisa.scala 180:22]
   reg [7:0] phv_data_159; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_0; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_1; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_2; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_3; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_4; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_5; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_6; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_7; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_8; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_9; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_10; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_11; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_12; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_13; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_14; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_header_15; // @[matcher_pisa.scala 180:22]
-  reg [7:0] phv_parse_current_state; // @[matcher_pisa.scala 180:22]
-  reg [7:0] phv_parse_current_offset; // @[matcher_pisa.scala 180:22]
-  reg [15:0] phv_parse_transition_field; // @[matcher_pisa.scala 180:22]
-  reg [3:0] phv_next_processor_id; // @[matcher_pisa.scala 180:22]
   reg  phv_next_config_id; // @[matcher_pisa.scala 180:22]
   reg  phv_is_valid_processor; // @[matcher_pisa.scala 180:22]
   reg [191:0] key; // @[matcher_pisa.scala 184:22]
@@ -1156,26 +1076,6 @@ module MatchReadDataPISA(
   assign io_pipe_phv_out_data_157 = phv_data_157; // @[matcher_pisa.scala 182:25]
   assign io_pipe_phv_out_data_158 = phv_data_158; // @[matcher_pisa.scala 182:25]
   assign io_pipe_phv_out_data_159 = phv_data_159; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_0 = phv_header_0; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_1 = phv_header_1; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_2 = phv_header_2; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_3 = phv_header_3; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_4 = phv_header_4; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_5 = phv_header_5; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_6 = phv_header_6; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_7 = phv_header_7; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_8 = phv_header_8; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_9 = phv_header_9; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_10 = phv_header_10; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_11 = phv_header_11; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_12 = phv_header_12; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_13 = phv_header_13; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_14 = phv_header_14; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_header_15 = phv_header_15; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[matcher_pisa.scala 182:25]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher_pisa.scala 182:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher_pisa.scala 182:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher_pisa.scala 182:25]
   assign io_key_out = key; // @[matcher_pisa.scala 186:20]
@@ -1389,26 +1289,6 @@ module MatchReadDataPISA(
     phv_data_157 <= io_pipe_phv_in_data_157; // @[matcher_pisa.scala 181:13]
     phv_data_158 <= io_pipe_phv_in_data_158; // @[matcher_pisa.scala 181:13]
     phv_data_159 <= io_pipe_phv_in_data_159; // @[matcher_pisa.scala 181:13]
-    phv_header_0 <= io_pipe_phv_in_header_0; // @[matcher_pisa.scala 181:13]
-    phv_header_1 <= io_pipe_phv_in_header_1; // @[matcher_pisa.scala 181:13]
-    phv_header_2 <= io_pipe_phv_in_header_2; // @[matcher_pisa.scala 181:13]
-    phv_header_3 <= io_pipe_phv_in_header_3; // @[matcher_pisa.scala 181:13]
-    phv_header_4 <= io_pipe_phv_in_header_4; // @[matcher_pisa.scala 181:13]
-    phv_header_5 <= io_pipe_phv_in_header_5; // @[matcher_pisa.scala 181:13]
-    phv_header_6 <= io_pipe_phv_in_header_6; // @[matcher_pisa.scala 181:13]
-    phv_header_7 <= io_pipe_phv_in_header_7; // @[matcher_pisa.scala 181:13]
-    phv_header_8 <= io_pipe_phv_in_header_8; // @[matcher_pisa.scala 181:13]
-    phv_header_9 <= io_pipe_phv_in_header_9; // @[matcher_pisa.scala 181:13]
-    phv_header_10 <= io_pipe_phv_in_header_10; // @[matcher_pisa.scala 181:13]
-    phv_header_11 <= io_pipe_phv_in_header_11; // @[matcher_pisa.scala 181:13]
-    phv_header_12 <= io_pipe_phv_in_header_12; // @[matcher_pisa.scala 181:13]
-    phv_header_13 <= io_pipe_phv_in_header_13; // @[matcher_pisa.scala 181:13]
-    phv_header_14 <= io_pipe_phv_in_header_14; // @[matcher_pisa.scala 181:13]
-    phv_header_15 <= io_pipe_phv_in_header_15; // @[matcher_pisa.scala 181:13]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[matcher_pisa.scala 181:13]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[matcher_pisa.scala 181:13]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[matcher_pisa.scala 181:13]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 181:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 181:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 181:13]
     key <= io_key_in; // @[matcher_pisa.scala 185:13]
@@ -1771,53 +1651,13 @@ initial begin
   _RAND_159 = {1{`RANDOM}};
   phv_data_159 = _RAND_159[7:0];
   _RAND_160 = {1{`RANDOM}};
-  phv_header_0 = _RAND_160[15:0];
+  phv_next_config_id = _RAND_160[0:0];
   _RAND_161 = {1{`RANDOM}};
-  phv_header_1 = _RAND_161[15:0];
-  _RAND_162 = {1{`RANDOM}};
-  phv_header_2 = _RAND_162[15:0];
+  phv_is_valid_processor = _RAND_161[0:0];
+  _RAND_162 = {6{`RANDOM}};
+  key = _RAND_162[191:0];
   _RAND_163 = {1{`RANDOM}};
-  phv_header_3 = _RAND_163[15:0];
-  _RAND_164 = {1{`RANDOM}};
-  phv_header_4 = _RAND_164[15:0];
-  _RAND_165 = {1{`RANDOM}};
-  phv_header_5 = _RAND_165[15:0];
-  _RAND_166 = {1{`RANDOM}};
-  phv_header_6 = _RAND_166[15:0];
-  _RAND_167 = {1{`RANDOM}};
-  phv_header_7 = _RAND_167[15:0];
-  _RAND_168 = {1{`RANDOM}};
-  phv_header_8 = _RAND_168[15:0];
-  _RAND_169 = {1{`RANDOM}};
-  phv_header_9 = _RAND_169[15:0];
-  _RAND_170 = {1{`RANDOM}};
-  phv_header_10 = _RAND_170[15:0];
-  _RAND_171 = {1{`RANDOM}};
-  phv_header_11 = _RAND_171[15:0];
-  _RAND_172 = {1{`RANDOM}};
-  phv_header_12 = _RAND_172[15:0];
-  _RAND_173 = {1{`RANDOM}};
-  phv_header_13 = _RAND_173[15:0];
-  _RAND_174 = {1{`RANDOM}};
-  phv_header_14 = _RAND_174[15:0];
-  _RAND_175 = {1{`RANDOM}};
-  phv_header_15 = _RAND_175[15:0];
-  _RAND_176 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_176[7:0];
-  _RAND_177 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_177[7:0];
-  _RAND_178 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_178[15:0];
-  _RAND_179 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_179[3:0];
-  _RAND_180 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_180[0:0];
-  _RAND_181 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_181[0:0];
-  _RAND_182 = {6{`RANDOM}};
-  key = _RAND_182[191:0];
-  _RAND_183 = {1{`RANDOM}};
-  cs = _RAND_183[3:0];
+  cs = _RAND_163[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
