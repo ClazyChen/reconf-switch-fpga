@@ -155,7 +155,7 @@ class MatcherPISA extends Module {
                     }
                 }
             }
-            io.match_key := groups.reduce(Cat(_,_))
+            io.match_key := groups.reduce(Cat(_, _)) // Cat(5,4,3,2,1,0)
         } .otherwise {
             io.match_key := 0.U(const.MATCH.match_key_width.W)
         }
@@ -250,7 +250,7 @@ class MatcherPISA extends Module {
                     }
                 }
             }
-            io.data_out := dqbytes.reduce(Cat(_, _))
+            io.data_out := dqbytes.reduce(Cat(_, _))// Cat(dqbytes(3:0))
         }
     }
 
@@ -259,8 +259,8 @@ class MatcherPISA extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
             val key_config  = Input(Vec(const.config_number, new MatchKeyPISAConfig))
-            val key_in      = Input(UInt(const.HASH.hash_key_width.W))
-            val data_in     = Input(UInt(const.MATCH.match_data_width.W))
+            val key_in      = Input(UInt(const.HASH.hash_key_width.W)) // lower bits are valid
+            val data_in     = Input(UInt(const.MATCH.match_data_width.W)) // lower bits are valid
             val hit         = Output(Bool())
             val match_value = Output(UInt(const.MATCH.match_value_width.W))
         })
@@ -281,8 +281,8 @@ class MatcherPISA extends Module {
                 val group_config = config.field_config(j)
                 val group_mask   = config.field_mask(j)
                 val group_id     = config.field_id(j)
-                val group_data   = data(const.MATCH.match_data_width-1-j*32, const.MATCH.match_data_width-(j+1)*32)
-                val key_data     = key(const.MATCH.match_key_width-1-j*32, const.MATCH.match_key_width-(j+1)*32)
+                val group_data   = data((j+1)*32-1+const.MATCH.match_value_width, j*32+const.MATCH.match_value_width)
+                val key_data     = key((j+1)*32-1,j*32)
                 key_equal(j)     := true.B
                 when (group_config === 1.U(2.W)) {
                     // 4*1
@@ -314,13 +314,7 @@ class MatcherPISA extends Module {
                 }
             }
             io.hit := key_equal.reduce(_ && _)
-
-            io.match_value := 0.U(const.MATCH.match_value_width.W)
-            for (j <- 1 until (1+const.MATCH.max_match_key_length)) {
-                when (j.U(const.MATCH.match_key_length_width.W) === config.key_length) {
-                    io.match_value := data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_key_width-j*8)
-                }
-            }
+            io.match_value := data(const.MATCH.match_value_width-1,0)
         } .otherwise {
             io.hit := false.B
             io.match_value := 0.U(const.MATCH.match_value_width.W)

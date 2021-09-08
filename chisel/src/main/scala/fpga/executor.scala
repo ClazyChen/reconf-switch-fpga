@@ -111,9 +111,29 @@ class Executor extends Module {
         }
     }
 
+    def imm_extend(parameter_2: UInt):UInt = {
+        return Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, parameter_2(PRIM.parameter_width-1)), parameter_2)
+    }
+
+    def imm_extend_with_bias(parameter_2: UInt, bias: Int):UInt = {
+        if (bias == 0) {
+            return imm_extend(parameter_2)
+        } else if (bias == 1) {
+            return Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width-8, parameter_2(PRIM.parameter_width-1)), parameter_2, 0.U(8.W))
+        } else if (bias == 2) {
+            return Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width-16, parameter_2(PRIM.parameter_width-1)), parameter_2, 0.U(16.W))
+        } else {
+            return Cat(parameter_2(7,0), 0.U(24.W))
+        }
+    }
+
     // pipeline level 3
     // get src or imm or arg
-    // read 64 bits at first, maybe have bias
+    // read 64 bits at first, maybe have bias, [7:0] (with bytes)
+    // need to right shift {bias} bytes to get the real field
+    // anyway, we do not need to do the right shift
+    // just reserve the {bias} and wait for write back
+    // which means we need to do a left shift for seti/addi operation
     class PrimitiveGetSource extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
@@ -123,9 +143,9 @@ class Executor extends Module {
             val length_in   = Vec(const.EXEC.primitive_number, Input(UInt(const.PHV.offset_width.W)))
 
             val vliw_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.primitive_width.W)))
-            val field_bytes_out = Vec(const.EXEC.primitive_number, Output(Vec(const.EXEC.max_field_length, UInt(8.W))))
-            val length_out  = Vec(const.EXEC.primitive_number, Output(UInt(const.PHV.offset_width.W)))
-            val bias_out    = Vec(const.EXEC.primitive_number, Output(UInt(3.W)))
+            val field_out   = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_width.W)))
+            val mask_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_length.W))) // which bytes are valid?
+            val bias_out    = Vec(const.EXEC.primitive_number, Output(UInt(2.W)))
         })
 
         val phv = Reg(new PHV)
@@ -143,63 +163,98 @@ class Executor extends Module {
         val length = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
         offset := io.offset_in
         length := io.length_in
-        io.length_out := length
-        io.bias_out   := offset
 
         for (j <- 0 until const.EXEC.primitive_number) {
             val opcode      = PRIM.operation(vliw(j))
             val parameter_1 = PRIM.parameter_1(vliw(j))
             val parameter_2 = PRIM.parameter_2(vliw(j))
 
-            for (k <- 0 until const.EXEC.max_field_length) {
-                io.field_bytes_out(j)(k) := 0.U(8.W)
-            }
+            io.field_out(j) := 0.U(const.EXEC.max_field_width.W)
+            io.mask_out(j)  := 0.U(const.EXEC.max_field_length.W)
+            io.bias_out(j)  := 0.U(2.W)
 
             when (phv.is_valid_processor) {
                 val from_header = length(j) =/= 0.U(const.PHV.offset_width.W)
                 when (from_header) { // addi or copy
-                    val field_offset_aligned = offset(j)(const.PHV.offset_width-1, 3)
-                    val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                    // e.g. offset = 3, length = 4
+                    // which means field = [3,4,5,6]
+                    // read_offset = 0, bytes(0) = data(7), bytes[7:0] = data[0:7]
+                    // bias = 1 (right shift), mask[7:0] = 00011110
+                    // the MAX_LENGTH has been changed to 4
+                    val field_bytes = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                    val mask        = Wire(Vec(const.EXEC.max_field_length, UInt(1.W)))
+
                     for (k <- 0 until const.EXEC.max_field_length) {
-                        val total_offset = Cat(field_offset_aligned, k.U(3.W))
-                        bytes(k) := phv.data(total_offset)
+                        field_bytes(k) := 0.U(8.W)
+                        mask(k)        := 0.U(1.W)
                     }
-                    io.field_bytes_out(j) := bytes
+                    val field_offset_aligned = offset(j)(const.PHV.offset_width-1, 2)
+                    val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                    val ending  = (offset(j) + length(j))(1,0)
+                    val bias    = (4.U(4.W) - ending)(1,0)
+                    for (k <- 0 until const.EXEC.max_field_length) {
+                        val total_offset = Cat(field_offset_aligned, k.U(2.W))
+                        bytes(const.EXEC.max_field_length -1- k) := phv.data(total_offset)
+                        mask(const.EXEC.max_field_length-1-k) := Mux(
+                            k.U(2.W) >= offset(j)(1,0) && (k.U(2.W) < ending || ending === 0.U),
+                            1.U(1.W), 0.U(1.W))
+                    }
+                    field_bytes := bytes
+                    io.bias_out(j) := bias
+                    io.field_out(j) := field_bytes.reduce(Cat(_, _))
+                    io.mask_out(j)  := mask.reduce(Cat(_, _))
                 } .otherwise {
-                    when (PRIM.OPCODE.set === opcode) { // argument
+                    when (PRIM.OPCODE.set === opcode) { 
+                        // from argument, full crossbar
                         val args_offset = PRIM.ARG.offset(parameter_2)
                         val args_length = PRIM.ARG.length(parameter_2)
-                        io.length_out(j) := args_length
-                        io.bias_out(j)   := args_offset(2,0)
-                        for (k <- 0 until const.EXEC.max_field_length) {
-                            if (k < const.EXEC.args_length) {
-                                io.field_bytes_out(j)(k) := args(k)
-                            } else {
-                                io.field_bytes_out(j)(k) := 0.U(8.W)
+                        val field_bytes = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                        // e.g. offset = 3, length = 2
+                        // which means field = [3,4]
+                        // bytes[3:0] = [=,=,3,4]
+                        // bytes[0] = offset + length - 1
+                        // bytes[1] = offset + length - 2
+                        // bytes[2] = offset + length - 3
+                        // bytes[3] = offset + length - 4
+                        for (l <- 0 until const.EXEC.max_field_length) {
+                            field_bytes(l) := 0.U(8.W)
+                            for (k <- 0 until const.EXEC.args_length) {
+                                val local_offset = k.U(3.W) + args_offset(2,0)
+                                when ((l+k+1).U === args_length) {
+                                    field_bytes(l) := args(local_offset)
+                                }
                             }
                         }
-                        
-                    } .otherwise {                       // immediate number, seti or goto
-                        //val imm = parameter_2
-                        //io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
+                        io.field_out(j) := field_bytes.reduce(Cat(_, _))
+                    }
+                    when (PRIM.OPCODE.seti === opcode) {
+                        io.field_out(j) := imm_extend(parameter_2)
                     }
                 }
             }
         }
     }
 
-    // pipeline level 3.5
+    // pipeline level 4
     // shifting
+    // addi : field = [src shifted] waiting for add shifted imm
+    // copy : field = [src shifted] this stage shift it to dst shift configuration
+    // set  : field = [arg]         this stage shift it to dst shift configuration
+    // seti : field = [imm]         this stage shift it to dst shift configuration
+    // goto : field = []            no operation
     class PrimitiveShiftSource extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
             val vliw_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.primitive_width.W)))
-            val field_bytes_in = Vec(const.EXEC.primitive_number, Input(Vec(const.EXEC.max_field_length, UInt(8.W))))
-            val length_in   = Vec(const.EXEC.primitive_number,Input(UInt(const.PHV.offset_width.W)))
-            val bias_in     = Vec(const.EXEC.primitive_number, Input(UInt(3.W)))
+            val field_in    = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_width.W)))
+            val mask_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_length.W))) // which bytes are valid?
+            val bias_in     = Vec(const.EXEC.primitive_number, Input(UInt(2.W)))
             
             val vliw_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.primitive_width.W)))
             val field_out   = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_width.W)))
+            val mask_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_length.W)))
+            val bias_out    = Vec(const.EXEC.primitive_number, Output(UInt(2.W)))
+            val dst_offset_out = Vec(const.EXEC.primitive_number, Output(UInt((const.PHV.offset_width-2).W))) // aligned
         })
 
         val phv = Reg(new PHV)
@@ -210,55 +265,79 @@ class Executor extends Module {
         vliw := io.vliw_in
         io.vliw_out := vliw
 
-        val bias = Reg(Vec(const.EXEC.primitive_number, UInt(3.W)))
-        val length = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
-        bias   := io.bias_in
-        length := io.length_in
+        val field = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_width.W)))
+        val field_o = Wire(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_width.W)))
+        field := io.field_in
+        field_o := field
 
-        val field_bytes = Reg(Vec(const.EXEC.primitive_number, Vec(const.EXEC.max_field_length, UInt(8.W))))
-        field_bytes := io.field_bytes_in
+        val mask = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_length.W)))
+        val bias = Reg(Vec(const.EXEC.primitive_number, UInt(2.W)))
+        mask := io.mask_in
+        io.mask_out := mask
+        bias := io.bias_in
+        io.bias_out := bias
 
         for (j <- 0 until const.EXEC.primitive_number) {
             val opcode      = PRIM.operation(vliw(j))
             val parameter_1 = PRIM.parameter_1(vliw(j))
             val parameter_2 = PRIM.parameter_2(vliw(j))
 
-            io.field_out(j) := 0.U(const.EXEC.max_field_width.W)
-
+            io.dst_offset_out(j) := 0.U
             when (phv.is_valid_processor) {
-                val from_imm = PRIM.OPCODE.seti === opcode || PRIM.OPCODE.goto === opcode
-                when (from_imm) {
-                    val imm = parameter_2
-                    io.field_out(j) := Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, imm(PRIM.parameter_width-1)), imm)
-                } .otherwise {
-                    val bytes   = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                val bias_p  = bias(j)
+                val bias_n  = Wire(UInt(2.W)) // bias_p -> bias_n
+                bias_n := bias_p
+                val dst = parameter_1
+                val header_id       = PRIM.FIELD.header_id(dst)
+                val internal_offset = PRIM.FIELD.internal_offset(dst)
+                val length          = PRIM.FIELD.length(dst)
+                val header_offset   = const.PHV.offset(phv.header(header_id))
+                val offset          = header_offset + internal_offset
+                io.dst_offset_out(j) := offset(const.PHV.offset_width-1, 2)
+                when (opcode === PRIM.OPCODE.copy || opcode === PRIM.OPCODE.seti || opcode === PRIM.OPCODE.set) {
+                    val ending      = (offset + length)(1,0)
+                    bias_n := (4.U(4.W) - ending)(1,0)
+                }
+                // bias_p -> bias_n
+                when (bias_n =/= bias_p) {
+                    val bytes_p = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
                     for (k <- 0 until const.EXEC.max_field_length) {
-                        when (length(j) < k.U(4.W)) {
-                            bytes(k) := field_bytes(j)(k)
-                            for (l <- 1 until const.EXEC.max_field_length if l + k < const.EXEC.max_field_length) {
-                                when (bias(j) === l.U(3.W)) {
-                                    bytes(k) := field_bytes(j)(k+l)
-                                }
+                        bytes_p(k) := field(j)((k+1)*8-1,k*8)
+                    }
+                    val bytes_n = Wire(Vec(const.EXEC.max_field_length, UInt(8.W)))
+                    // right shift step = bias_p - bias_n
+                    // N[k] = P[k+bias_p - bias_n]
+                    for (k <- 0 until const.EXEC.max_field_length) {
+                        bytes_n(k) := 0.U(8.W)
+                        for (l <- 0 until const.EXEC.max_field_length) {
+                            when (k.U(3.W) + bias_p === l.U(3.W) + bias_n) {
+                                bytes_n(k) := bytes_p(l)
                             }
-                        } .otherwise {
-                            bytes(k) := 0.U(8.W)
                         }
                     }
-                    io.field_out(j) := bytes.reduce(Cat(_,_))
+                    field_o(j) := bytes_n.reduce(Cat(_, _))
+                    io.bias_out(j) := bias_n
                 }
             }
         }
+        io.field_out := field_o
     }
 
-    // pipeline level 4
+    // pipeline level 5
     // ALU
     class PrimitiveALU extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
             val vliw_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.primitive_width.W)))
             val field_in    = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_width.W)))
+            val mask_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_length.W)))
+            val bias_in     = Vec(const.EXEC.primitive_number, Input(UInt(2.W)))
+            val dst_offset_in = Vec(const.EXEC.primitive_number, Input(UInt((const.PHV.offset_width-2).W))) // aligned
+
             val vliw_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.primitive_width.W)))
             val field_out   = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_width.W)))
+            val mask_out    = Vec(const.EXEC.primitive_number, Output(UInt(const.EXEC.max_field_length.W)))
+            val dst_offset_out = Vec(const.EXEC.primitive_number, Output(UInt((const.PHV.offset_width-2).W))) // aligned
         })
 
         val phv = Reg(new PHV)
@@ -272,21 +351,41 @@ class Executor extends Module {
         val field = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_width.W)))
         field := io.field_in
 
+        val mask = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_length.W)))
+        val bias = Reg(Vec(const.EXEC.primitive_number, UInt(2.W)))
+        mask := io.mask_in
+        io.mask_out := mask
+        bias := io.bias_in
+
+        val dst_offset = Reg(Vec(const.EXEC.primitive_number, UInt((const.PHV.offset_width-2).W)))
+        dst_offset := io.dst_offset_in
+        io.dst_offset_out := dst_offset
+
         for (j <- 0 until const.EXEC.primitive_number) {
             val opcode      = PRIM.operation(vliw(j))
             val parameter_1 = PRIM.parameter_1(vliw(j))
             val parameter_2 = PRIM.parameter_2(vliw(j))
 
-            when (phv.is_valid_processor && PRIM.OPCODE.addi === opcode) {
-                val imm = Cat(Fill(const.EXEC.max_field_width-PRIM.parameter_width, parameter_2(PRIM.parameter_width-1)), parameter_2)
-                io.field_out(j) := field(j) + imm
+            when (phv.is_valid_processor) {
+                val add1 = field(j)
+                val add2 = Wire(UInt(const.EXEC.max_field_width.W))
+                add2 := 0.U(const.EXEC.max_field_width.W)
+                when (opcode === PRIM.OPCODE.addi) {
+                    for (k <- 0 until const.EXEC.max_field_length) {
+                        when (k.U === bias(j)) {
+                            add2 := imm_extend_with_bias(parameter_2, k)
+                        }
+                    }
+                }
+                io.field_out(j) := add1 + add2
             } .otherwise {
                 io.field_out(j) := field(j)
             }
         }
     }
 
-    // pipeline level 5
+    /* disabled
+    // pipeline level 5 (original)
     // calculate offset & length
     class PrimitiveGetWriteBackOffset extends Module {
         val io = IO(new Bundle {
@@ -333,43 +432,52 @@ class Executor extends Module {
             }
         }
     }
+    */
 
     // pipeline level 6
     // write back
     class PrimitiveWriteBack extends Module {
         val io = IO(new Bundle {
-            val pipe        = new Pipeline
-            val offset_in   = Vec(const.EXEC.primitive_number, Input(UInt(const.PHV.offset_width.W)))
-            val length_in   = Vec(const.EXEC.primitive_number, Input(UInt(const.PHV.offset_width.W)))
-            val field_in    = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_width.W)))
+            val pipe          = new Pipeline
+            val vliw_in       = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.primitive_width.W)))
+            val field_in      = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_width.W)))
+            val mask_in       = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.max_field_length.W)))
+            val dst_offset_in = Vec(const.EXEC.primitive_number, Input(UInt((const.PHV.offset_width-2).W))) // aligned
         })
 
         val phv = Reg(new PHV)
         phv := io.pipe.phv_in
         io.pipe.phv_out := phv
 
-        val offset = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
-        val length = Reg(Vec(const.EXEC.primitive_number, UInt(const.PHV.offset_width.W)))
-        val field  = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_width.W)))
-        offset := io.offset_in
-        length := io.length_in
-        field  := io.field_in
+        val vliw = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.primitive_width.W)))
+        vliw := io.vliw_in
+        val field = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_width.W)))
+        field := io.field_in
+        val mask = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.max_field_length.W)))
+        mask := io.mask_in
+        val dst_offset = Reg(Vec(const.EXEC.primitive_number, UInt((const.PHV.offset_width-2).W)))
+        dst_offset := io.dst_offset_in
 
         when (phv.is_valid_processor) {
             for (j <- 0 until const.EXEC.primitive_number) {
-                val field_length = length(j)
-                val field_offset = offset(j)
-                val field_content = field(j)
-                when (field_length === 0.U(const.PHV.offset_width.W)) {
-                    io.pipe.phv_out.next_processor_id := field_content(PRIM.parameter_width-1, PRIM.parameter_width-const.header_id_width)
-                    io.pipe.phv_out.next_config_id    := field_content(const.config_id_width-1, 0)
+                val opcode      = PRIM.operation(vliw(j))
+                val parameter_1 = PRIM.parameter_1(vliw(j))
+                val parameter_2 = PRIM.parameter_2(vliw(j))
+                when (opcode === PRIM.OPCODE.goto) {
+                    io.pipe.phv_out.next_processor_id := parameter_2(PRIM.parameter_width-1, PRIM.parameter_width-const.header_id_width)
+                    io.pipe.phv_out.next_config_id    := parameter_2(const.config_id_width-1, 0)
                 } .otherwise {
-                    for (k <- 0 until const.EXEC.max_field_length) {
-                        val field_byte   = field_content(const.EXEC.max_field_width-8*k-1, const.EXEC.max_field_width-8*(k+1))
-                        val local_offset = k.U(const.PHV.offset_width.W)
-                        val total_offset = field_offset + local_offset
-                        when (local_offset < field_length) {
-                            io.pipe.phv_out.data(total_offset) := field_byte
+                    when (opcode =/= PRIM.OPCODE.nop) {
+                        // field -> dst_offset masked
+                        for (l <- 0 until const.PHV.total_data_length >> 2) {
+                            when (dst_offset(j) === l.U(const.PHV.offset_width.W)) {
+                                for (k <- 0 until const.EXEC.max_field_length) {
+                                    val byte = field(j)((k+1)*8-1, k*8)
+                                    when (mask(j)(k)) {
+                                        io.pipe.phv_out.data(l*4+3-k) := byte
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -381,9 +489,8 @@ class Executor extends Module {
     val pipe1 = Module(new ActionReader)
     val pipe2 = Module(new PrimitiveGetOffset)
     val pipe3 = Module(new PrimitiveGetSource)
-    val pipe3p = Module(new PrimitiveShiftSource)
-    val pipe4 = Module(new PrimitiveALU)
-    val pipe5 = Module(new PrimitiveGetWriteBackOffset)
+    val pipe4 = Module(new PrimitiveShiftSource)
+    val pipe5 = Module(new PrimitiveALU)
     val pipe6 = Module(new PrimitiveWriteBack)
 
     pipe1.io.pipe.phv_in <> io.pipe.phv_in
@@ -401,24 +508,24 @@ class Executor extends Module {
     pipe3.io.offset_in   <> pipe2.io.offset_out
     pipe3.io.length_in   <> pipe2.io.length_out
 
-    pipe3p.io.pipe.phv_in <> pipe3.io.pipe.phv_out
-    pipe3p.io.vliw_in <> pipe3.io.vliw_out
-    pipe3p.io.bias_in <> pipe3.io.bias_out
-    pipe3p.io.length_in <> pipe3.io.length_out
-    pipe3p.io.field_bytes_in <> pipe3.io.field_bytes_out
-
-    pipe4.io.pipe.phv_in <> pipe3p.io.pipe.phv_out
-    pipe4.io.vliw_in     <> pipe3p.io.vliw_out
-    pipe4.io.field_in    <> pipe3p.io.field_out
+    pipe4.io.pipe.phv_in  <> pipe3.io.pipe.phv_out
+    pipe4.io.vliw_in      <> pipe3.io.vliw_out
+    pipe4.io.field_in     <> pipe3.io.field_out
+    pipe4.io.mask_in      <> pipe3.io.mask_out
+    pipe4.io.bias_in      <> pipe3.io.bias_out
 
     pipe5.io.pipe.phv_in <> pipe4.io.pipe.phv_out
     pipe5.io.vliw_in     <> pipe4.io.vliw_out
     pipe5.io.field_in    <> pipe4.io.field_out
+    pipe5.io.mask_in     <> pipe4.io.mask_out
+    pipe5.io.bias_in     <> pipe4.io.bias_out
+    pipe5.io.dst_offset_in <> pipe4.io.dst_offset_out
 
     pipe6.io.pipe.phv_in <> pipe5.io.pipe.phv_out
+    pipe6.io.vliw_in     <> pipe5.io.vliw_out
     pipe6.io.field_in    <> pipe5.io.field_out
-    pipe6.io.offset_in   <> pipe5.io.offset_out
-    pipe6.io.length_in   <> pipe5.io.length_out
+    pipe6.io.mask_in     <> pipe5.io.mask_out
+    pipe6.io.dst_offset_in <> pipe5.io.dst_offset_out
 
     pipe6.io.pipe.phv_out <> io.pipe.phv_out
 }

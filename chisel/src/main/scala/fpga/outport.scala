@@ -25,7 +25,7 @@ class OutPort extends Module {
         exe.io.w.addr  := addr
         val data_vec = Wire(Vec(const.OUTPORT.sram_data_length, UInt(8.W)))
         for (k <- 0 until const.OUTPORT.sram_data_length) {
-            data_vec(k) := io.phv_in.data(const.PHV.total_data_length-1-j*const.OUTPORT.sram_data_length-k)
+            data_vec(k) := io.phv_in.data(j*const.OUTPORT.sram_data_length+k)
         }
         exe.io.w.data  := data_vec.reduce(Cat(_, _))
         val cs_hit = io.pcie_o.cs === j.U(const.OUTPORT.sram_id_width.W)

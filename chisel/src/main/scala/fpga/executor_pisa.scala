@@ -191,16 +191,16 @@ class ExecutorPISA extends Module {
                 val bias        = args_offset(2,0)
                 val field_bytes = Wire(Vec(field_length, UInt(8.W)))
                 for (l <- 0 until field_length) {
-                    field_bytes(l) := 0.U(8.W)
+                    field_bytes(field_length-1-l) := 0.U(8.W)
                     val local_offset = l.U(3.W)
                     when (local_offset < args_length) {
                         val total_offset = bias + local_offset
                         when (total_offset < const.EXEC.args_length.U) {
-                            field_bytes(l) := args(total_offset)
+                            field_bytes(field_length-1-l) := args(total_offset)
                         }
                     }
                 }
-                field_data := field_bytes.reduce(Cat(_, _))
+                field_data := field_bytes.reduce(Cat(_, _)) // Cat(args[offset+0:l])
                 field_tag  := 2.U
             }
             when (opcode === PRIM.OPCODE.addi || opcode === PRIM.OPCODE.seti) {

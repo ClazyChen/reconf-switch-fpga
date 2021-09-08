@@ -88,7 +88,7 @@ object const {
         val primitive_number = sram_number * SRAM.data_width / primitive_width
         val primitive_number_per_sram = primitive_number / sram_number
 
-        val max_field_width = 64
+        val max_field_width = 32
         val max_field_length = max_field_width >> 3
     }
 

@@ -61,7 +61,7 @@ class Hash extends Module {
             val sum_temp = Wire(Vec(sum_w, UInt(const.HASH.hash_sum_width.W)))
             val out_temp = Wire(Vec(out_w, UInt(const.HASH.hash_sum_width.W)))
             for (j <- 0 until sum_w) {
-                sum_temp(j) := sum(const.HASH.hash_key_width-1-j*const.HASH.hash_sum_width, const.HASH.hash_key_width-(j+1)*const.HASH.hash_sum_width)
+                sum_temp(j) := sum((j+1)*const.HASH.hash_sum_width-1, j*const.HASH.hash_sum_width)
             }
             for (j <- 0 until out_w) {
                 val add1 = j << 1
@@ -72,7 +72,7 @@ class Hash extends Module {
                     out_temp(j) := sum_temp(add1)
                 }
             }
-            io.sum_out := out_temp.reduce(Cat(_, _))
+            io.sum_out := out_temp.reduce(Cat(_, _)) // passed
         } .otherwise {
             io.sum_out := sum
         }

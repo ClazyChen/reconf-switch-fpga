@@ -12,7 +12,7 @@ vivado/fpga-updated/fpga-updated.ip_user_files
 vivado/fpga-updated/fpga-updated.gen
 vivado/xdma_0_ex
 *tester.scala
-*Test.sv
+*Test*.sv
 *.jou
 *.log
 *.str

@@ -59,8 +59,8 @@ class Matcher extends Module {
             val io = IO(new Bundle {
                 val pipe             = new Pipeline
                 val key_config       = Input(Vec(const.config_number, new MatchKeyConfig))
-                val key_offset_in    = Input(UInt(const.PHV.offset_width.W))
-                val key_offset_out   = Output(UInt(const.PHV.offset_width.W))
+                val key_offset_in    = Input(UInt(const.PHV.offset_width.W))  // start offset
+                val bias_out         = Output(UInt(2.W)) // bias
                 val match_key_bytes  = Output(Vec(const.MATCH.match_key_width >> 3, UInt(8.W)))
             })
 
@@ -70,25 +70,31 @@ class Matcher extends Module {
 
             val key_offset = Reg(UInt(const.PHV.offset_width.W))
             key_offset := io.key_offset_in
-            io.key_offset_out := key_offset
+            val read_key_offset = Cat(key_offset(const.PHV.offset_width-1, 2), 0.U(2.W))
+            // e.g. MAX_KEY_LENGTH = 192 (32*6)
+            // while key_offset = 7 length = 15 (7:22)
+            // actually read 0 [23:20] [19:16] [15:12] [11:8] [7:4]
+            // bias = 3 (key_offset(1,0)) right shift 3 bytes
+
+            io.bias_out := key_offset(1,0)
 
             when (phv.is_valid_processor) {
-                val qbytes_number = const.MATCH.match_key_width >> 5
+                val qbytes_number    = const.MATCH.match_key_width >> 5
                 val match_key_qbytes = Wire(Vec(qbytes_number, UInt(32.W)))
                 val end_offset       = io.key_config(phv.next_config_id).key_length + key_offset
-                // higher bits equals to real match_key, lower bits equals to 0
+                // qbytes(6:0)
                 for (j <- 0 until qbytes_number) {
-                    val local_offset = (j << 2).U(const.PHV.offset_width.W) + Cat(key_offset(const.PHV.offset_width-1, 2), 0.U(2.W))
-                    when (local_offset < io.key_config(phv.next_config_id).key_length) {
-                        match_key_qbytes(qbytes_number-j-1) := 
+                    val local_offset = (j << 2).U(const.PHV.offset_width.W) + read_key_offset
+                    when (local_offset < end_offset) {
+                        match_key_qbytes(j) := 
                         Cat(
-                            phv.data(local_offset),
-                            phv.data(Cat(local_offset(const.PHV.offset_width-1, 2), 1.U(2.W))),
+                            phv.data(Cat(local_offset(const.PHV.offset_width-1, 2), 3.U(2.W))),
                             phv.data(Cat(local_offset(const.PHV.offset_width-1, 2), 2.U(2.W))),
-                            phv.data(Cat(local_offset(const.PHV.offset_width-1, 2), 3.U(2.W)))
+                            phv.data(Cat(local_offset(const.PHV.offset_width-1, 2), 1.U(2.W))),
+                            phv.data(local_offset)
                         )
                     } .otherwise {
-                        match_key_qbytes(qbytes_number-j-1) := 0.U(32.W)
+                        match_key_qbytes(j) := 0.U(32.W)
                     }
                     for (k <- 0 until 4) {
                         io.match_key_bytes(j*4+k) := match_key_qbytes(j)(k*8+7,k*8)
@@ -104,7 +110,7 @@ class Matcher extends Module {
         class MatchGetKeyShifting extends Module {
             val io = IO(new Bundle {
                 val pipe             = new Pipeline
-                val key_offset_in    = Input(UInt(const.PHV.offset_width.W))
+                val bias_in          = Input(UInt(2.W))
                 val match_key_bytes  = Input(Vec(const.MATCH.match_key_width >> 3, UInt(8.W)))
                 val match_key        = Output(UInt(const.MATCH.match_key_width.W))
             })
@@ -113,13 +119,15 @@ class Matcher extends Module {
             phv := io.pipe.phv_in
             io.pipe.phv_out := phv
 
-            val key_offset = Reg(UInt(const.PHV.offset_width.W))
-            key_offset := io.key_offset_in
+            val bias = Reg(UInt(2.W))
+            bias := io.bias_in
 
             val match_key_bytes = Reg(Vec(const.MATCH.match_key_width >> 3, UInt(8.W)))
             match_key_bytes := io.match_key_bytes
 
-            val bias = key_offset(1,0)
+            // e.g. bias = 3
+            // which means O[0] = I[3], O[1] = I[4], ...
+
             when (phv.is_valid_processor) {
                 val match_key_bytes_out = Wire(Vec(const.MATCH.match_key_width >> 3, UInt(8.W)))
                 for (j <- 0 until const.MATCH.match_key_width >> 3) {
@@ -130,7 +138,7 @@ class Matcher extends Module {
                         }
                     }
                 }
-                io.match_key := match_key_bytes_out.reduce(Cat(_, _))
+                io.match_key := match_key_bytes_out.reduce(Cat(_, _)) // Cat O[23:0]
             } .otherwise {
                 io.match_key := 0.U(const.MATCH.match_key_width.W)
             }   
@@ -144,14 +152,14 @@ class Matcher extends Module {
         pipe1.io.key_config := io.key_config
 
         pipe2.io.pipe.phv_in <> pipe1.io.pipe.phv_out
-        pipe2.io.key_offset_in <> pipe1.io.key_offset_out
+        pipe2.io.bias_in     <> pipe1.io.bias_out
         pipe2.io.match_key_bytes <> pipe1.io.match_key_bytes
         pipe2.io.match_key <> io.match_key
         pipe2.io.pipe.phv_out <> io.pipe.phv_out
 
     }
 
-    // pipeline level 3(actually 8) : hash
+    // pipeline level III(actually 8) : hash
     
     // pipeline level 4
     // calculate cs
@@ -294,8 +302,8 @@ class Matcher extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
             val key_config  = Input(Vec(const.config_number, new MatchKeyConfig))
-            val key_in      = Input(UInt(const.HASH.hash_key_width.W))
-            val data_in     = Input(UInt(const.MATCH.match_data_width.W))
+            val key_in      = Input(UInt(const.HASH.hash_key_width.W))    // lower bits are valid
+            val data_in     = Input(UInt(const.MATCH.match_data_width.W)) // lower bits are valid
             val hit         = Output(Bool())
             val match_value = Output(UInt(const.MATCH.match_value_width.W))
         })
@@ -314,8 +322,8 @@ class Matcher extends Module {
             val key_config = io.key_config(phv.next_config_id)
 
             for (j <- 0 until const.MATCH.max_match_key_length) {
-                val key_byte = key(const.HASH.hash_key_width-1-j*8, const.HASH.hash_key_width-(j+1)*8)
-                val data_byte = data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_data_width-(j+1)*8)
+                val key_byte = key((j+1)*8-1, j*8)
+                val data_byte = data((j+1)*8-1+const.MATCH.match_value_width,j*8+const.MATCH.match_value_width)
                 when (j.U(const.MATCH.match_key_length_width.W) < key_config.key_length) {
                     key_equal(j) := key_byte === data_byte
                 } .otherwise {
@@ -324,12 +332,7 @@ class Matcher extends Module {
             }
 
             io.hit := key_equal.reduce(_ && _)
-            io.match_value := 0.U(const.MATCH.match_value_width.W)
-            for (j <- 1 until (1+const.MATCH.max_match_key_length)) {
-                when (j.U(const.MATCH.match_key_length_width.W) === key_config.key_length) {
-                    io.match_value := data(const.MATCH.match_data_width-1-j*8, const.MATCH.match_key_width-j*8)
-                }
-            }
+            io.match_value := data(const.MATCH.match_value_width-1,0)
         } .otherwise {
             io.hit := false.B
             io.match_value := 0.U(const.MATCH.match_value_width.W)
