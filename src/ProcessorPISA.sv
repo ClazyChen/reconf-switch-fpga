@@ -1144,7 +1144,6 @@ module ProcessorPISA(
   wire  MAT_io_mod_en; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_config_id; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_key_mod_en; // @[processor_pisa.scala 19:21]
-  wire [7:0] MAT_io_mod_key_mod_key_length; // @[processor_pisa.scala 19:21]
   wire [2:0] MAT_io_mod_key_mod_group_index; // @[processor_pisa.scala 19:21]
   wire [1:0] MAT_io_mod_key_mod_group_config; // @[processor_pisa.scala 19:21]
   wire  MAT_io_mod_key_mod_group_mask_0; // @[processor_pisa.scala 19:21]
@@ -2281,7 +2280,6 @@ module ProcessorPISA(
     .io_mod_en(MAT_io_mod_en),
     .io_mod_config_id(MAT_io_mod_config_id),
     .io_mod_key_mod_en(MAT_io_mod_key_mod_en),
-    .io_mod_key_mod_key_length(MAT_io_mod_key_mod_key_length),
     .io_mod_key_mod_group_index(MAT_io_mod_key_mod_group_index),
     .io_mod_key_mod_group_config(MAT_io_mod_key_mod_group_config),
     .io_mod_key_mod_group_mask_0(MAT_io_mod_key_mod_group_mask_0),
@@ -3236,7 +3234,6 @@ module ProcessorPISA(
   assign MAT_io_mod_en = io_mod_mat_mod_en; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_config_id = io_mod_mat_mod_config_id; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_key_mod_en = io_mod_mat_mod_key_mod_en; // @[processor_pisa.scala 26:24]
-  assign MAT_io_mod_key_mod_key_length = io_mod_mat_mod_key_mod_key_length; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_key_mod_group_index = io_mod_mat_mod_key_mod_group_index; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_key_mod_group_config = io_mod_mat_mod_key_mod_group_config; // @[processor_pisa.scala 26:24]
   assign MAT_io_mod_key_mod_group_mask_0 = io_mod_mat_mod_key_mod_group_mask_0; // @[processor_pisa.scala 26:24]

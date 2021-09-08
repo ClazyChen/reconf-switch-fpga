@@ -364,7 +364,6 @@ module MatchResultPISA(
   output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
-  input  [7:0]   io_key_config_0_key_length,
   input  [1:0]   io_key_config_0_field_config_0,
   input  [1:0]   io_key_config_0_field_config_1,
   input  [1:0]   io_key_config_0_field_config_2,
@@ -395,7 +394,6 @@ module MatchResultPISA(
   input          io_key_config_0_field_mask_5_1,
   input          io_key_config_0_field_mask_5_2,
   input          io_key_config_0_field_mask_5_3,
-  input  [7:0]   io_key_config_1_key_length,
   input  [1:0]   io_key_config_1_field_config_0,
   input  [1:0]   io_key_config_1_field_config_1,
   input  [1:0]   io_key_config_1_field_config_2,
@@ -801,9 +799,8 @@ module MatchResultPISA(
   reg  phv_is_valid_processor; // @[matcher_pisa.scala 268:22]
   reg [191:0] key; // @[matcher_pisa.scala 272:22]
   reg [255:0] data; // @[matcher_pisa.scala 274:23]
-  wire [31:0] group_data = data[255:224]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data = key[191:160]; // @[matcher_pisa.scala 285:39]
-  wire [7:0] _GEN_55 = phv_next_config_id ? io_key_config_1_key_length : io_key_config_0_key_length; // @[matcher_pisa.scala 287:36 matcher_pisa.scala 287:36]
+  wire [31:0] group_data = data[95:64]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data = key[31:0]; // @[matcher_pisa.scala 285:39]
   wire [1:0] _GEN_56 = phv_next_config_id ? io_key_config_1_field_config_0 : io_key_config_0_field_config_0; // @[matcher_pisa.scala 287:36 matcher_pisa.scala 287:36]
   wire [1:0] _GEN_57 = phv_next_config_id ? io_key_config_1_field_config_1 : io_key_config_0_field_config_1; // @[matcher_pisa.scala 287:36 matcher_pisa.scala 287:36]
   wire [1:0] _GEN_58 = phv_next_config_id ? io_key_config_1_field_config_2 : io_key_config_0_field_config_2; // @[matcher_pisa.scala 287:36 matcher_pisa.scala 287:36]
@@ -843,8 +840,8 @@ module MatchResultPISA(
   wire  dbytes_equal__1 = _GEN_63 ? group_data[15:0] == key_data[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_117 = _GEN_56 == 2'h2 ? dbytes_equal__0 & dbytes_equal__1 : _GEN_114; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_0 = _GEN_56 == 2'h3 ? group_data == key_data : _GEN_117; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [31:0] group_data_1 = data[223:192]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data_1 = key[159:128]; // @[matcher_pisa.scala 285:39]
+  wire [31:0] group_data_1 = data[127:96]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data_1 = key[63:32]; // @[matcher_pisa.scala 285:39]
   wire  bytes_equal_1_0 = _GEN_66 ? group_data_1[31:24] == key_data_1[31:24] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_1_1 = _GEN_67 ? group_data_1[23:16] == key_data_1[23:16] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_1_2 = _GEN_68 ? group_data_1[15:8] == key_data_1[15:8] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
@@ -854,8 +851,8 @@ module MatchResultPISA(
   wire  dbytes_equal_1_1 = _GEN_67 ? group_data_1[15:0] == key_data_1[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_126 = _GEN_57 == 2'h2 ? dbytes_equal_1_0 & dbytes_equal_1_1 : _GEN_123; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_1 = _GEN_57 == 2'h3 ? group_data_1 == key_data_1 : _GEN_126; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [31:0] group_data_2 = data[191:160]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data_2 = key[127:96]; // @[matcher_pisa.scala 285:39]
+  wire [31:0] group_data_2 = data[159:128]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data_2 = key[95:64]; // @[matcher_pisa.scala 285:39]
   wire  bytes_equal_2_0 = _GEN_70 ? group_data_2[31:24] == key_data_2[31:24] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_2_1 = _GEN_71 ? group_data_2[23:16] == key_data_2[23:16] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_2_2 = _GEN_72 ? group_data_2[15:8] == key_data_2[15:8] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
@@ -865,8 +862,8 @@ module MatchResultPISA(
   wire  dbytes_equal_2_1 = _GEN_71 ? group_data_2[15:0] == key_data_2[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_135 = _GEN_58 == 2'h2 ? dbytes_equal_2_0 & dbytes_equal_2_1 : _GEN_132; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_2 = _GEN_58 == 2'h3 ? group_data_2 == key_data_2 : _GEN_135; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [31:0] group_data_3 = data[159:128]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data_3 = key[95:64]; // @[matcher_pisa.scala 285:39]
+  wire [31:0] group_data_3 = data[191:160]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data_3 = key[127:96]; // @[matcher_pisa.scala 285:39]
   wire  bytes_equal_3_0 = _GEN_74 ? group_data_3[31:24] == key_data_3[31:24] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_3_1 = _GEN_75 ? group_data_3[23:16] == key_data_3[23:16] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_3_2 = _GEN_76 ? group_data_3[15:8] == key_data_3[15:8] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
@@ -876,8 +873,8 @@ module MatchResultPISA(
   wire  dbytes_equal_3_1 = _GEN_75 ? group_data_3[15:0] == key_data_3[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_144 = _GEN_59 == 2'h2 ? dbytes_equal_3_0 & dbytes_equal_3_1 : _GEN_141; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_3 = _GEN_59 == 2'h3 ? group_data_3 == key_data_3 : _GEN_144; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [31:0] group_data_4 = data[127:96]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data_4 = key[63:32]; // @[matcher_pisa.scala 285:39]
+  wire [31:0] group_data_4 = data[223:192]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data_4 = key[159:128]; // @[matcher_pisa.scala 285:39]
   wire  bytes_equal_4_0 = _GEN_78 ? group_data_4[31:24] == key_data_4[31:24] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_4_1 = _GEN_79 ? group_data_4[23:16] == key_data_4[23:16] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_4_2 = _GEN_80 ? group_data_4[15:8] == key_data_4[15:8] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
@@ -887,8 +884,8 @@ module MatchResultPISA(
   wire  dbytes_equal_4_1 = _GEN_79 ? group_data_4[15:0] == key_data_4[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_153 = _GEN_60 == 2'h2 ? dbytes_equal_4_0 & dbytes_equal_4_1 : _GEN_150; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_4 = _GEN_60 == 2'h3 ? group_data_4 == key_data_4 : _GEN_153; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [31:0] group_data_5 = data[95:64]; // @[matcher_pisa.scala 284:40]
-  wire [31:0] key_data_5 = key[31:0]; // @[matcher_pisa.scala 285:39]
+  wire [31:0] group_data_5 = data[255:224]; // @[matcher_pisa.scala 284:40]
+  wire [31:0] key_data_5 = key[191:160]; // @[matcher_pisa.scala 285:39]
   wire  bytes_equal_5_0 = _GEN_82 ? group_data_5[31:24] == key_data_5[31:24] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_5_1 = _GEN_83 ? group_data_5[23:16] == key_data_5[23:16] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
   wire  bytes_equal_5_2 = _GEN_84 ? group_data_5[15:8] == key_data_5[15:8] : 1'h1; // @[matcher_pisa.scala 291:46 matcher_pisa.scala 292:44 matcher_pisa.scala 294:44]
@@ -898,30 +895,6 @@ module MatchResultPISA(
   wire  dbytes_equal_5_1 = _GEN_83 ? group_data_5[15:0] == key_data_5[15:0] : 1'h1; // @[matcher_pisa.scala 303:46 matcher_pisa.scala 304:45 matcher_pisa.scala 306:45]
   wire  _GEN_162 = _GEN_61 == 2'h2 ? dbytes_equal_5_0 & dbytes_equal_5_1 : _GEN_159; // @[matcher_pisa.scala 299:50 matcher_pisa.scala 309:34]
   wire  key_equal_5 = _GEN_61 == 2'h3 ? group_data_5 == key_data_5 : _GEN_162; // @[matcher_pisa.scala 311:50 matcher_pisa.scala 313:34]
-  wire [63:0] _GEN_164 = 8'h1 == _GEN_55 ? data[247:184] : 64'h0; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36 matcher_pisa.scala 318:28]
-  wire [63:0] _GEN_165 = 8'h2 == _GEN_55 ? data[239:176] : _GEN_164; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_166 = 8'h3 == _GEN_55 ? data[231:168] : _GEN_165; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_167 = 8'h4 == _GEN_55 ? data[223:160] : _GEN_166; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_168 = 8'h5 == _GEN_55 ? data[215:152] : _GEN_167; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_169 = 8'h6 == _GEN_55 ? data[207:144] : _GEN_168; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_170 = 8'h7 == _GEN_55 ? data[199:136] : _GEN_169; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_171 = 8'h8 == _GEN_55 ? data[191:128] : _GEN_170; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_172 = 8'h9 == _GEN_55 ? data[183:120] : _GEN_171; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_173 = 8'ha == _GEN_55 ? data[175:112] : _GEN_172; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_174 = 8'hb == _GEN_55 ? data[167:104] : _GEN_173; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_175 = 8'hc == _GEN_55 ? data[159:96] : _GEN_174; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_176 = 8'hd == _GEN_55 ? data[151:88] : _GEN_175; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_177 = 8'he == _GEN_55 ? data[143:80] : _GEN_176; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_178 = 8'hf == _GEN_55 ? data[135:72] : _GEN_177; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_179 = 8'h10 == _GEN_55 ? data[127:64] : _GEN_178; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_180 = 8'h11 == _GEN_55 ? data[119:56] : _GEN_179; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_181 = 8'h12 == _GEN_55 ? data[111:48] : _GEN_180; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_182 = 8'h13 == _GEN_55 ? data[103:40] : _GEN_181; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_183 = 8'h14 == _GEN_55 ? data[95:32] : _GEN_182; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_184 = 8'h15 == _GEN_55 ? data[87:24] : _GEN_183; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_185 = 8'h16 == _GEN_55 ? data[79:16] : _GEN_184; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_186 = 8'h17 == _GEN_55 ? data[71:8] : _GEN_185; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
-  wire [63:0] _GEN_187 = 8'h18 == _GEN_55 ? data[63:0] : _GEN_186; // @[matcher_pisa.scala 320:88 matcher_pisa.scala 321:36]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[matcher_pisa.scala 270:25]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[matcher_pisa.scala 270:25]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[matcher_pisa.scala 270:25]
@@ -1105,8 +1078,8 @@ module MatchResultPISA(
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher_pisa.scala 270:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher_pisa.scala 270:25]
   assign io_hit = phv_is_valid_processor & (key_equal_0 & key_equal_1 & key_equal_2 & key_equal_3 & key_equal_4 &
-    key_equal_5); // @[matcher_pisa.scala 278:39 matcher_pisa.scala 316:20 matcher_pisa.scala 325:20]
-  assign io_match_value = phv_is_valid_processor ? _GEN_187 : 64'h0; // @[matcher_pisa.scala 278:39 matcher_pisa.scala 326:28]
+    key_equal_5); // @[matcher_pisa.scala 278:39 matcher_pisa.scala 316:20 matcher_pisa.scala 319:20]
+  assign io_match_value = phv_is_valid_processor ? data[63:0] : 64'h0; // @[matcher_pisa.scala 278:39 matcher_pisa.scala 317:28 matcher_pisa.scala 320:28]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[matcher_pisa.scala 269:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[matcher_pisa.scala 269:13]

@@ -366,6 +366,7 @@ module ActionReader(
   output        io_pipe_phv_out_is_valid_processor,
   input         io_hit,
   input  [63:0] io_match_value,
+  output [7:0]  io_args_out_0,
   output [7:0]  io_args_out_1,
   output [7:0]  io_args_out_2,
   output [7:0]  io_args_out_3,
@@ -964,6 +965,7 @@ module ActionReader(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 30:25]
+  assign io_args_out_0 = phv_is_valid_processor ? args[55:48] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
   assign io_args_out_1 = phv_is_valid_processor ? args[47:40] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
   assign io_args_out_2 = phv_is_valid_processor ? args[39:32] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
   assign io_args_out_3 = phv_is_valid_processor ? args[31:24] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
