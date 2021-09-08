@@ -3,19 +3,29 @@ package fpga
 import chisel3._
 import chisel3.util._
 
-// there are 70 fields in total
-// so the field id width is 7
+// 32 - 48 - 32 = 112 fields
+// there are 112 fields in total
+// so the field id width is 8
+
+object PISAconst {
+    val group_number = 6
+    val field_id_width = 8
+    val field_number = 112
+    val field8_number = field_number*2/7
+    val field16_number = field_number*3/7
+    val field32_number = field_number*2/7
+}
 
 class MatchKeyPISAConfig extends Bundle {
-    // 192 bits = 24 Bytes
-    // splitted into 6 groups
+    // 256 bits = 32 Bytes
+    // splitted into 8 groups
     // each group is configured as 3 types
     // 4 * 1 or 2 * 2 or 1 * 4
     // config : 0-invalid, 1-4*1, 2-2*2, 3-1*4
     val key_length   = UInt(const.MATCH.match_key_length_width.W)
-    val field_config = Vec(6, UInt(2.W))
-    val field_mask   = Vec(6, Vec(4, Bool()))
-    val field_id     = Vec(6, Vec(4, UInt(7.W)))
+    val field_config = Vec(PISAconst.group_number, UInt(2.W))
+    val field_mask   = Vec(PISAconst.group_number, Vec(4, Bool()))
+    val field_id     = Vec(PISAconst.group_number, Vec(4, UInt(PISAconst.field_id_width.W)))
 }
 
 class MatchTablePISAConfig extends Bundle {
@@ -29,7 +39,7 @@ class MatchKeyPISAConfigModify extends Bundle {
     val group_index  = Input(UInt(3.W))
     val group_config = Input(UInt(2.W))
     val group_mask   = Input(Vec(4, Bool()))
-    val group_id     = Input(Vec(4, UInt(7.W)))
+    val group_id     = Input(Vec(4, UInt(PISAconst.field_id_width.W)))
 }
 
 class MatcherSRAMPISAModify extends Bundle {
@@ -69,11 +79,9 @@ class MatcherPISA extends Module {
         table_config(io.mod.config_id) := io.mod.table_mod
     }
 
-    // matcher split the 160-bit header into 8, 16, and 32 fields
-    // 20 * 8 + 30 * 16 + 20 * 32 = 160
-    val fields = for (j <- 0 until 70) yield {
-        val field_length = if (j < 20) 1 else (if (j < 50) 2 else 4)
-        val field_start  = if (j < 20) j else (if (j < 50) j * 2 - 20 else j * 4 - 120)
+    val fields = for (j <- 0 until PISAconst.field_number) yield {
+        val field_length = if (j < PISAconst.field8_number) 1 else (if (j < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
+        val field_start  = if (j < PISAconst.field8_number) j else (if (j < PISAconst.field8_number + PISAconst.field16_number) j * 2 - PISAconst.field8_number else j * 4 - PISAconst.field8_number*3 - PISAconst.field16_number*2)
         if (field_length == 1) {
             (phv: PHV) => phv.data(field_start)
         } else if (field_length == 2) {
@@ -106,8 +114,8 @@ class MatcherPISA extends Module {
         val config = io.key_config(phv.next_config_id)
 
         when (phv.is_valid_processor) {
-            val groups = Wire(Vec(6, UInt(32.W)))
-            for (j <- 0 until 6) {
+            val groups = Wire(Vec(PISAconst.group_number, UInt(32.W)))
+            for (j <- 0 until PISAconst.group_number) {
                 val group_config = config.field_config(j)
                 val group_mask   = config.field_mask(j)
                 val group_id     = config.field_id(j)
@@ -119,8 +127,8 @@ class MatcherPISA extends Module {
                         val field_id = group_id(k)
                         bytes(k) := 0.U(8.W)
                         when (group_mask(k)) {
-                            for (l <- 0 until 20) {
-                                when (l.U(7.W) === field_id) {
+                            for (l <- 0 until PISAconst.field8_number) {
+                                when (l.U(PISAconst.field_id_width.W) === field_id) {
                                     bytes(k) := fields(l)(phv)
                                 }
                             }
@@ -135,8 +143,8 @@ class MatcherPISA extends Module {
                         val field_id = group_id(k)
                         double_bytes(k) := 0.U(16.W)
                         when (group_mask(k)) {
-                            for (l <- 20 until 50) {
-                                when (l.U(7.W) === field_id) {
+                            for (l <- PISAconst.field8_number until PISAconst.field8_number + PISAconst.field16_number) {
+                                when (l.U(PISAconst.field_id_width.W) === field_id) {
                                     double_bytes(k) := fields(l)(phv)
                                 }
                             }
@@ -148,8 +156,8 @@ class MatcherPISA extends Module {
                     // 1*4
                     val field_id = group_id(0)
                     groups(j) := 0.U(32.W)
-                    for (l <- 50 until 70) {
-                        when (l.U(7.W) === field_id) {
+                    for (l <- PISAconst.field8_number + PISAconst.field16_number until PISAconst.field_number) {
+                        when (l.U(PISAconst.field_id_width.W) === field_id) {
                             groups(j) := fields(l)(phv)
                         }
                     }
@@ -276,8 +284,8 @@ class MatcherPISA extends Module {
 
         val config = io.key_config(phv.next_config_id)
         when (phv.is_valid_processor) {
-            val key_equal = Wire(Vec(6, Bool()))
-            for (j <- 0 until 6) {
+            val key_equal = Wire(Vec(PISAconst.group_number, Bool()))
+            for (j <- 0 until PISAconst.group_number) {
                 val group_config = config.field_config(j)
                 val group_mask   = config.field_mask(j)
                 val group_id     = config.field_id(j)

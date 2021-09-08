@@ -68,7 +68,7 @@ class ExecutorPISA extends Module {
             val args_in     = Vec(const.EXEC.args_length, Input(UInt(8.W)))
             val vliw_in     = Vec(const.EXEC.primitive_number, Input(UInt(const.EXEC.primitive_width.W)))
             val args_out    = Vec(const.EXEC.args_length, Output(UInt(8.W)))
-            val vliw_out    = Vec(70, Output(UInt(18.W))) // 32 - 14
+            val vliw_out    = Vec(PISAconst.field_number, Output(UInt(18.W))) // 32 - 14
             val nid_out     = Output(UInt(15.W)) // enable - pid - cid
         })
 
@@ -83,8 +83,8 @@ class ExecutorPISA extends Module {
         val vliw = Reg(Vec(const.EXEC.primitive_number, UInt(const.EXEC.primitive_width.W)))
         vliw := io.vliw_in
 
-        val vliw_dis = Wire(Vec(70, UInt(18.W)))
-        for (j <- 0 until 70) {
+        val vliw_dis = Wire(Vec(PISAconst.field_number, UInt(18.W)))
+        for (j <- 0 until PISAconst.field_number) {
             vliw_dis(j) := 0.U
         }
         val nid      = Wire(UInt(15.W))
@@ -98,7 +98,7 @@ class ExecutorPISA extends Module {
                 when (opcode === PRIM.OPCODE.goto) {
                     nid := Cat(1.U(1.W), parameter_2)
                 } .otherwise {
-                    for (k <- 0 until 70) {
+                    for (k <- 0 until PISAconst.field_number) {
                         when (k.U === parameter_1) {
                             vliw_dis(k) := Cat(opcode, parameter_2)
                         }
@@ -112,26 +112,24 @@ class ExecutorPISA extends Module {
     }
 
     class FieldSet extends Bundle {
-        val field8  = Vec(20, UInt(8.W))
-        val field16 = Vec(30, UInt(16.W))
-        val field32 = Vec(20, UInt(32.W))
+        val field8  = Vec(PISAconst.field8_number, UInt(8.W))
+        val field16 = Vec(PISAconst.field16_number, UInt(16.W))
+        val field32 = Vec(PISAconst.field32_number, UInt(32.W))
     }
     
     def select_field(fs : FieldSet, index : Int):UInt = {
-        if (index < 20) {
+        if (index < PISAconst.field8_number) {
             return fs.field8(index)
-        } else if (index < 50) {
-            return fs.field16(index - 20)
+        } else if (index < PISAconst.field8_number + PISAconst.field16_number) {
+            return fs.field16(index - PISAconst.field8_number)
         } else {
-            return fs.field32(index - 50)
+            return fs.field32(index - PISAconst.field8_number - PISAconst.field16_number)
         }
     }
 
-    // matcher split the 160-bit header into 8, 16, and 32 fields
-    // 20 * 8 + 30 * 16 + 20 * 32 = 160
-    val fields = for (j <- 0 until 70) yield {
-        val field_length = if (j < 20) 1 else (if (j < 50) 2 else 4)
-        val field_start  = if (j < 20) j else (if (j < 50) j * 2 - 20 else j * 4 - 120)
+    val fields = for (j <- 0 until PISAconst.field_number) yield {
+        val field_length = if (j < PISAconst.field8_number) 1 else (if (j < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
+        val field_start  = if (j < PISAconst.field8_number) j else (if (j < PISAconst.field8_number + PISAconst.field16_number) j * 2 - PISAconst.field8_number else j * 4 - PISAconst.field8_number*3 - PISAconst.field16_number*2)
         if (field_length == 1) {
             (phv: PHV) => phv.data(field_start)
         } else if (field_length == 2) {
@@ -153,10 +151,10 @@ class ExecutorPISA extends Module {
         val io = IO(new Bundle {
             val pipe        = new Pipeline
             val args_in     = Vec(const.EXEC.args_length, Input(UInt(8.W)))
-            val vliw_in     = Vec(70, Input(UInt(18.W))) 
+            val vliw_in     = Vec(PISAconst.field_number, Input(UInt(18.W))) 
             val nid_in      = Input(UInt(15.W))
             val nid_out     = Output(UInt(15.W))
-            val tag_out     = Output(Vec(70, UInt(2.W))) // 0 - unmodified, 1 - wait for add, 2 - set
+            val tag_out     = Output(Vec(PISAconst.field_number, UInt(2.W))) // 0 - unmodified, 1 - wait for add, 2 - set
             val field_set   = Output(new FieldSet)
         })
 
@@ -167,16 +165,15 @@ class ExecutorPISA extends Module {
         val args = Reg(Vec(const.EXEC.args_length, UInt(8.W)))
         args := io.args_in
 
-        val vliw = Reg(Vec(70, UInt(18.W)))
+        val vliw = Reg(Vec(PISAconst.field_number, UInt(18.W)))
         vliw := io.vliw_in
 
         val nid  = Reg(UInt(15.W))
         nid := io.nid_in
         io.nid_out := nid
 
-        for (j <- 0 until 70) {
-            // 70 ALUs
-            val field_length = if (j < 20) 1 else (if (j < 50) 2 else 4)
+        for (j <- 0 until PISAconst.field_number) {
+            val field_length = if (j < PISAconst.field8_number) 1 else (if (j < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
             val field_data = Wire(UInt((field_length << 3).W))
             val field_tag  = Wire(UInt(2.W))
             field_data := 0.U
@@ -213,8 +210,8 @@ class ExecutorPISA extends Module {
                 field_tag   := Mux(opcode === PRIM.OPCODE.addi, 1.U(2.W), 2.U(2.W))
             }
             when (opcode === PRIM.OPCODE.copy) {
-                for (l <- 0 until 70) {
-                    val src_length = if (l < 20) 1 else (if (l < 50) 2 else 4)
+                for (l <- 0 until PISAconst.field_number) {
+                    val src_length = if (l < PISAconst.field8_number) 1 else (if (l < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
                     if (src_length == field_length) {
                         when (l.U === parameter_2) {
                             field_data := fields(l)(phv)
@@ -229,8 +226,8 @@ class ExecutorPISA extends Module {
     }
 
     def update_field(phv: PHV, j: Int, data: UInt):Unit = {
-        val field_length = if (j < 20) 1 else (if (j < 50) 2 else 4)
-        val field_start  = if (j < 20) j else (if (j < 50) j * 2 - 20 else j * 4 - 120)
+        val field_length = if (j < PISAconst.field8_number) 1 else (if (j < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
+        val field_start  = if (j < PISAconst.field8_number) j else (if (j < PISAconst.field8_number + PISAconst.field16_number) j * 2 - PISAconst.field8_number else j * 4 - PISAconst.field8_number*3 - PISAconst.field16_number*2)
         for (k <- 0 until field_length) {
             phv.data(field_start + k) := data((field_length-k)*8-1, (field_length-k-1)*8)
         }
@@ -240,7 +237,7 @@ class ExecutorPISA extends Module {
         val io = IO(new Bundle {
             val pipe       = new Pipeline
             val nid_in     = Input(UInt(15.W))
-            val tag_in     = Input(Vec(70, UInt(2.W))) // 0 - unmodified, 1 - wait for add, 2 - set
+            val tag_in     = Input(Vec(PISAconst.field_number, UInt(2.W))) // 0 - unmodified, 1 - wait for add, 2 - set
             val field_set  = Input(new FieldSet)
         })
 
@@ -251,14 +248,14 @@ class ExecutorPISA extends Module {
         val fs = Reg(new FieldSet)
         fs := io.field_set
 
-        val tag = Reg(Vec(70, UInt(2.W)))
+        val tag = Reg(Vec(PISAconst.field_number, UInt(2.W)))
         tag := io.tag_in
 
         val nid = Reg(UInt(15.W))
         nid := io.nid_in
 
         for (j <- 0 until 70) {
-            val field_length = if (j < 20) 1 else (if (j < 50) 2 else 4)
+            val field_length = if (j < PISAconst.field8_number) 1 else (if (j < PISAconst.field8_number + PISAconst.field16_number) 2 else 4)
             val field_width  = field_length << 3
             val field_tag    = tag(j)
             val add1 = Wire(UInt(field_width.W))

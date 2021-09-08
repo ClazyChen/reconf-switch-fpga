@@ -30,10 +30,13 @@ class PISA extends Module {
         exe
     }
 
-    proc(0).io.pipe.phv_in <> PAR.io.pipe.phv_out
     for (j <- 0 until const.processor_number) {
         if (j > 0) {
-            proc(j).io.pipe.phv_in <> proc(j-1).io.pipe.phv_out
+            proc(j).io.pipe.phv_in := proc(j-1).io.pipe.phv_out
+            proc(j).io.pipe.phv_in.is_valid_processor := j.U === proc(j-1).io.pipe.phv_out.next_processor_id
+        } else {
+            proc(j).io.pipe.phv_in := PAR.io.pipe.phv_out
+            proc(j).io.pipe.phv_in.is_valid_processor := true.B
         }
     }
     proc(const.processor_number-1).io.pipe.phv_out <> io.pipe.phv_out
