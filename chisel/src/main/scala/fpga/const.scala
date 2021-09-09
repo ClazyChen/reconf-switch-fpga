@@ -14,16 +14,16 @@ object const {
     val mau_number_in_parser = 4
 
     val processor_id_width = 4
-    val processor_number = 12
-    val cluster_number   = 6
+    val processor_number = 16
+    val cluster_number   = 8
     val processor_number_in_cluster = processor_number / cluster_number
 
     val config_id_width = 1
     val config_number = 2
 
     object PHV {
-        val total_data_length  = 256
-        val header_data_length = 192
+        val total_data_length  = 160
+        val header_data_length = 128
         val metadata_offset    = header_data_length
         val metadata_length    = total_data_length - header_data_length
 
@@ -83,7 +83,7 @@ object const {
     object EXEC {
         val args_width = MATCH.match_value_width - SRAM.address_width
         val args_length = args_width >> 3 // 7
-        val sram_number = 4
+        val sram_number = 2
         val primitive_width = 32
         val primitive_number = sram_number * SRAM.data_width / primitive_width
         val primitive_number_per_sram = primitive_number / sram_number
