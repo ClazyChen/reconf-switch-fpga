@@ -11,6 +11,8 @@ vivado/fpga-updated/fpga-updated.hw
 vivado/fpga-updated/fpga-updated.ip_user_files
 vivado/fpga-updated/fpga-updated.gen
 vivado/xdma_0_ex
+.VSCodeCounter
+stat.py
 *tester.scala
 *Test*.sv
 *.jou
