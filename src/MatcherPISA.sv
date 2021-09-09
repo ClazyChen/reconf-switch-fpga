@@ -163,6 +163,7 @@ module MatcherPISA(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -326,6 +327,7 @@ module MatcherPISA(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
+  output        io_pipe_phv_out_valid,
   input         io_mod_en,
   input         io_mod_config_id,
   input         io_mod_key_mod_en,
@@ -626,6 +628,7 @@ module MatcherPISA(
   wire [3:0] pipe1_io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 333:23]
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 333:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 333:23]
+  wire  pipe1_io_pipe_phv_in_valid; // @[matcher_pisa.scala 333:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[matcher_pisa.scala 333:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_1; // @[matcher_pisa.scala 333:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_2; // @[matcher_pisa.scala 333:23]
@@ -789,6 +792,7 @@ module MatcherPISA(
   wire [3:0] pipe1_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 333:23]
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 333:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 333:23]
+  wire  pipe1_io_pipe_phv_out_valid; // @[matcher_pisa.scala 333:23]
   wire [1:0] pipe1_io_key_config_0_field_config_0; // @[matcher_pisa.scala 333:23]
   wire [1:0] pipe1_io_key_config_0_field_config_1; // @[matcher_pisa.scala 333:23]
   wire [1:0] pipe1_io_key_config_0_field_config_2; // @[matcher_pisa.scala 333:23]
@@ -1062,6 +1066,7 @@ module MatcherPISA(
   wire [3:0] pipe2_io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 334:23]
+  wire  pipe2_io_pipe_phv_in_valid; // @[matcher_pisa.scala 334:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[matcher_pisa.scala 334:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_1; // @[matcher_pisa.scala 334:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_2; // @[matcher_pisa.scala 334:23]
@@ -1225,6 +1230,7 @@ module MatcherPISA(
   wire [3:0] pipe2_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 334:23]
+  wire  pipe2_io_pipe_phv_out_valid; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_mod_hash_depth_mod; // @[matcher_pisa.scala 334:23]
   wire  pipe2_io_mod_config_id; // @[matcher_pisa.scala 334:23]
   wire [3:0] pipe2_io_mod_hash_depth; // @[matcher_pisa.scala 334:23]
@@ -1396,6 +1402,7 @@ module MatcherPISA(
   wire [3:0] pipe3_io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 335:23]
   wire  pipe3_io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 335:23]
   wire  pipe3_io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 335:23]
+  wire  pipe3_io_pipe_phv_in_valid; // @[matcher_pisa.scala 335:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_0; // @[matcher_pisa.scala 335:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_1; // @[matcher_pisa.scala 335:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_2; // @[matcher_pisa.scala 335:23]
@@ -1559,6 +1566,7 @@ module MatcherPISA(
   wire [3:0] pipe3_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 335:23]
   wire  pipe3_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 335:23]
   wire  pipe3_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 335:23]
+  wire  pipe3_io_pipe_phv_out_valid; // @[matcher_pisa.scala 335:23]
   wire [4:0] pipe3_io_table_config_0_table_depth; // @[matcher_pisa.scala 335:23]
   wire [4:0] pipe3_io_table_config_0_table_width; // @[matcher_pisa.scala 335:23]
   wire [4:0] pipe3_io_table_config_1_table_depth; // @[matcher_pisa.scala 335:23]
@@ -1736,6 +1744,7 @@ module MatcherPISA(
   wire [3:0] pipe4_io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 336:23]
   wire  pipe4_io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 336:23]
   wire  pipe4_io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 336:23]
+  wire  pipe4_io_pipe_phv_in_valid; // @[matcher_pisa.scala 336:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_0; // @[matcher_pisa.scala 336:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_1; // @[matcher_pisa.scala 336:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_2; // @[matcher_pisa.scala 336:23]
@@ -1899,6 +1908,7 @@ module MatcherPISA(
   wire [3:0] pipe4_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 336:23]
   wire  pipe4_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 336:23]
   wire  pipe4_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 336:23]
+  wire  pipe4_io_pipe_phv_out_valid; // @[matcher_pisa.scala 336:23]
   wire [1:0] pipe4_io_key_config_0_field_config_0; // @[matcher_pisa.scala 336:23]
   wire [1:0] pipe4_io_key_config_0_field_config_1; // @[matcher_pisa.scala 336:23]
   wire [1:0] pipe4_io_key_config_0_field_config_2; // @[matcher_pisa.scala 336:23]
@@ -2247,6 +2257,7 @@ module MatcherPISA(
     .io_pipe_phv_in_next_processor_id(pipe1_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe1_io_pipe_phv_in_is_valid_processor),
+    .io_pipe_phv_in_valid(pipe1_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(pipe1_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe1_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe1_io_pipe_phv_out_data_2),
@@ -2410,6 +2421,7 @@ module MatcherPISA(
     .io_pipe_phv_out_next_processor_id(pipe1_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
+    .io_pipe_phv_out_valid(pipe1_io_pipe_phv_out_valid),
     .io_key_config_0_field_config_0(pipe1_io_key_config_0_field_config_0),
     .io_key_config_0_field_config_1(pipe1_io_key_config_0_field_config_1),
     .io_key_config_0_field_config_2(pipe1_io_key_config_0_field_config_2),
@@ -2685,6 +2697,7 @@ module MatcherPISA(
     .io_pipe_phv_in_next_processor_id(pipe2_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe2_io_pipe_phv_in_is_valid_processor),
+    .io_pipe_phv_in_valid(pipe2_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(pipe2_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe2_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe2_io_pipe_phv_out_data_2),
@@ -2848,6 +2861,7 @@ module MatcherPISA(
     .io_pipe_phv_out_next_processor_id(pipe2_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe2_io_pipe_phv_out_is_valid_processor),
+    .io_pipe_phv_out_valid(pipe2_io_pipe_phv_out_valid),
     .io_mod_hash_depth_mod(pipe2_io_mod_hash_depth_mod),
     .io_mod_config_id(pipe2_io_mod_config_id),
     .io_mod_hash_depth(pipe2_io_mod_hash_depth),
@@ -3021,6 +3035,7 @@ module MatcherPISA(
     .io_pipe_phv_in_next_processor_id(pipe3_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe3_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe3_io_pipe_phv_in_is_valid_processor),
+    .io_pipe_phv_in_valid(pipe3_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(pipe3_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe3_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe3_io_pipe_phv_out_data_2),
@@ -3184,6 +3199,7 @@ module MatcherPISA(
     .io_pipe_phv_out_next_processor_id(pipe3_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe3_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe3_io_pipe_phv_out_is_valid_processor),
+    .io_pipe_phv_out_valid(pipe3_io_pipe_phv_out_valid),
     .io_table_config_0_table_depth(pipe3_io_table_config_0_table_depth),
     .io_table_config_0_table_width(pipe3_io_table_config_0_table_width),
     .io_table_config_1_table_depth(pipe3_io_table_config_1_table_depth),
@@ -3363,6 +3379,7 @@ module MatcherPISA(
     .io_pipe_phv_in_next_processor_id(pipe4_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe4_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe4_io_pipe_phv_in_is_valid_processor),
+    .io_pipe_phv_in_valid(pipe4_io_pipe_phv_in_valid),
     .io_pipe_phv_out_data_0(pipe4_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe4_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe4_io_pipe_phv_out_data_2),
@@ -3526,6 +3543,7 @@ module MatcherPISA(
     .io_pipe_phv_out_next_processor_id(pipe4_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe4_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe4_io_pipe_phv_out_is_valid_processor),
+    .io_pipe_phv_out_valid(pipe4_io_pipe_phv_out_valid),
     .io_key_config_0_field_config_0(pipe4_io_key_config_0_field_config_0),
     .io_key_config_0_field_config_1(pipe4_io_key_config_0_field_config_1),
     .io_key_config_0_field_config_2(pipe4_io_key_config_0_field_config_2),
@@ -3754,6 +3772,7 @@ module MatcherPISA(
   assign io_pipe_phv_out_next_processor_id = pipe4_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 359:26]
   assign io_pipe_phv_out_next_config_id = pipe4_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 359:26]
   assign io_pipe_phv_out_is_valid_processor = pipe4_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 359:26]
+  assign io_pipe_phv_out_valid = pipe4_io_pipe_phv_out_valid; // @[matcher_pisa.scala 359:26]
   assign io_hit = pipe4_io_hit; // @[matcher_pisa.scala 360:26]
   assign io_match_value = pipe4_io_match_value; // @[matcher_pisa.scala 361:26]
   assign pipe1_clock = clock;
@@ -3920,6 +3939,7 @@ module MatcherPISA(
   assign pipe1_io_pipe_phv_in_next_processor_id = io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 338:26]
   assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 338:26]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 338:26]
+  assign pipe1_io_pipe_phv_in_valid = io_pipe_phv_in_valid; // @[matcher_pisa.scala 338:26]
   assign pipe1_io_key_config_0_field_config_0 = key_config_0_field_config_0; // @[matcher_pisa.scala 339:26]
   assign pipe1_io_key_config_0_field_config_1 = key_config_0_field_config_1; // @[matcher_pisa.scala 339:26]
   assign pipe1_io_key_config_0_field_config_2 = key_config_0_field_config_2; // @[matcher_pisa.scala 339:26]
@@ -4192,6 +4212,7 @@ module MatcherPISA(
   assign pipe2_io_pipe_phv_in_next_processor_id = pipe1_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 341:26]
   assign pipe2_io_pipe_phv_in_next_config_id = pipe1_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 341:26]
   assign pipe2_io_pipe_phv_in_is_valid_processor = pipe1_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 341:26]
+  assign pipe2_io_pipe_phv_in_valid = pipe1_io_pipe_phv_out_valid; // @[matcher_pisa.scala 341:26]
   assign pipe2_io_mod_hash_depth_mod = io_mod_en; // @[matcher_pisa.scala 342:33]
   assign pipe2_io_mod_config_id = io_mod_config_id; // @[matcher_pisa.scala 343:28]
   assign pipe2_io_mod_hash_depth = io_mod_table_mod_table_depth[3:0]; // @[matcher_pisa.scala 344:29]
@@ -4360,6 +4381,7 @@ module MatcherPISA(
   assign pipe3_io_pipe_phv_in_next_processor_id = pipe2_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 347:26]
   assign pipe3_io_pipe_phv_in_next_config_id = pipe2_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 347:26]
   assign pipe3_io_pipe_phv_in_is_valid_processor = pipe2_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 347:26]
+  assign pipe3_io_pipe_phv_in_valid = pipe2_io_pipe_phv_out_valid; // @[matcher_pisa.scala 347:26]
   assign pipe3_io_table_config_0_table_depth = table_config_0_table_depth; // @[matcher_pisa.scala 348:27]
   assign pipe3_io_table_config_0_table_width = table_config_0_table_width; // @[matcher_pisa.scala 348:27]
   assign pipe3_io_table_config_1_table_depth = table_config_1_table_depth; // @[matcher_pisa.scala 348:27]
@@ -4535,6 +4557,7 @@ module MatcherPISA(
   assign pipe4_io_pipe_phv_in_next_processor_id = pipe3_io_pipe_phv_out_next_processor_id; // @[matcher_pisa.scala 354:26]
   assign pipe4_io_pipe_phv_in_next_config_id = pipe3_io_pipe_phv_out_next_config_id; // @[matcher_pisa.scala 354:26]
   assign pipe4_io_pipe_phv_in_is_valid_processor = pipe3_io_pipe_phv_out_is_valid_processor; // @[matcher_pisa.scala 354:26]
+  assign pipe4_io_pipe_phv_in_valid = pipe3_io_pipe_phv_out_valid; // @[matcher_pisa.scala 354:26]
   assign pipe4_io_key_config_0_field_config_0 = key_config_0_field_config_0; // @[matcher_pisa.scala 357:26]
   assign pipe4_io_key_config_0_field_config_1 = key_config_0_field_config_1; // @[matcher_pisa.scala 357:26]
   assign pipe4_io_key_config_0_field_config_2 = key_config_0_field_config_2; // @[matcher_pisa.scala 357:26]

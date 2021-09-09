@@ -179,7 +179,6 @@ module ParseModule(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -361,19 +360,9 @@ module ParseModule(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
-  output        io_pipe_phv_out_is_valid_processor,
-  input         io_mod_state_id_mod,
-  input  [7:0]  io_mod_state_id,
-  input         io_mod_sram_w_cs,
-  input         io_mod_sram_w_en,
-  input  [7:0]  io_mod_sram_w_addr,
-  input  [63:0] io_mod_sram_w_data
+  output        io_pipe_phv_out_is_valid_processor
 );
-`ifdef RANDOMIZE_REG_INIT
-  reg [31:0] _RAND_0;
-`endif // RANDOMIZE_REG_INIT
   wire  pipe1_clock; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_pipe_phv_in_data_0; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_pipe_phv_in_data_1; // @[parse_module.scala 98:23]
@@ -554,7 +543,6 @@ module ParseModule(
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_state; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 98:23]
   wire [15:0] pipe1_io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 98:23]
-  wire [3:0] pipe1_io_pipe_phv_in_next_processor_id; // @[parse_module.scala 98:23]
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[parse_module.scala 98:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[parse_module.scala 98:23]
@@ -736,13 +724,8 @@ module ParseModule(
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_state; // @[parse_module.scala 98:23]
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_offset; // @[parse_module.scala 98:23]
   wire [15:0] pipe1_io_pipe_phv_out_parse_transition_field; // @[parse_module.scala 98:23]
-  wire [3:0] pipe1_io_pipe_phv_out_next_processor_id; // @[parse_module.scala 98:23]
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[parse_module.scala 98:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[parse_module.scala 98:23]
-  wire  pipe1_io_sram_w_cs; // @[parse_module.scala 98:23]
-  wire  pipe1_io_sram_w_en; // @[parse_module.scala 98:23]
-  wire [7:0] pipe1_io_sram_w_addr; // @[parse_module.scala 98:23]
-  wire [63:0] pipe1_io_sram_w_data; // @[parse_module.scala 98:23]
   wire  pipe1_io_valid; // @[parse_module.scala 98:23]
   wire [63:0] pipe1_io_rdata; // @[parse_module.scala 98:23]
   wire  pipe2_clock; // @[parse_module.scala 99:23]
@@ -925,7 +908,6 @@ module ParseModule(
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_state; // @[parse_module.scala 99:23]
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 99:23]
   wire [15:0] pipe2_io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 99:23]
-  wire [3:0] pipe2_io_pipe_phv_in_next_processor_id; // @[parse_module.scala 99:23]
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[parse_module.scala 99:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 99:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[parse_module.scala 99:23]
@@ -1107,12 +1089,10 @@ module ParseModule(
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_state; // @[parse_module.scala 99:23]
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_offset; // @[parse_module.scala 99:23]
   wire [15:0] pipe2_io_pipe_phv_out_parse_transition_field; // @[parse_module.scala 99:23]
-  wire [3:0] pipe2_io_pipe_phv_out_next_processor_id; // @[parse_module.scala 99:23]
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[parse_module.scala 99:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[parse_module.scala 99:23]
   wire [63:0] pipe2_io_rdata; // @[parse_module.scala 99:23]
   wire  pipe2_io_valid; // @[parse_module.scala 99:23]
-  reg [7:0] state_id; // @[parse_module.scala 93:23]
   ParseMatcher pipe1 ( // @[parse_module.scala 98:23]
     .clock(pipe1_clock),
     .io_pipe_phv_in_data_0(pipe1_io_pipe_phv_in_data_0),
@@ -1294,7 +1274,6 @@ module ParseModule(
     .io_pipe_phv_in_parse_current_state(pipe1_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(pipe1_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(pipe1_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(pipe1_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe1_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe1_io_pipe_phv_out_data_0),
@@ -1476,13 +1455,8 @@ module ParseModule(
     .io_pipe_phv_out_parse_current_state(pipe1_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(pipe1_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(pipe1_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(pipe1_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
-    .io_sram_w_cs(pipe1_io_sram_w_cs),
-    .io_sram_w_en(pipe1_io_sram_w_en),
-    .io_sram_w_addr(pipe1_io_sram_w_addr),
-    .io_sram_w_data(pipe1_io_sram_w_data),
     .io_valid(pipe1_io_valid),
     .io_rdata(pipe1_io_rdata)
   );
@@ -1667,7 +1641,6 @@ module ParseModule(
     .io_pipe_phv_in_parse_current_state(pipe2_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(pipe2_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(pipe2_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(pipe2_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(pipe2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe2_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe2_io_pipe_phv_out_data_0),
@@ -1849,7 +1822,6 @@ module ParseModule(
     .io_pipe_phv_out_parse_current_state(pipe2_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(pipe2_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(pipe2_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(pipe2_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe2_io_pipe_phv_out_is_valid_processor),
     .io_rdata(pipe2_io_rdata),
@@ -2034,7 +2006,6 @@ module ParseModule(
   assign io_pipe_phv_out_parse_current_state = pipe2_io_pipe_phv_out_parse_current_state; // @[parse_module.scala 111:27]
   assign io_pipe_phv_out_parse_current_offset = pipe2_io_pipe_phv_out_parse_current_offset; // @[parse_module.scala 111:27]
   assign io_pipe_phv_out_parse_transition_field = pipe2_io_pipe_phv_out_parse_transition_field; // @[parse_module.scala 111:27]
-  assign io_pipe_phv_out_next_processor_id = pipe2_io_pipe_phv_out_next_processor_id; // @[parse_module.scala 111:27]
   assign io_pipe_phv_out_next_config_id = pipe2_io_pipe_phv_out_next_config_id; // @[parse_module.scala 111:27]
   assign io_pipe_phv_out_is_valid_processor = pipe2_io_pipe_phv_out_is_valid_processor; // @[parse_module.scala 111:27]
   assign pipe1_clock = clock;
@@ -2217,14 +2188,9 @@ module ParseModule(
   assign pipe1_io_pipe_phv_in_parse_current_state = io_pipe_phv_in_parse_current_state; // @[parse_module.scala 104:22]
   assign pipe1_io_pipe_phv_in_parse_current_offset = io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 104:22]
   assign pipe1_io_pipe_phv_in_parse_transition_field = io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 104:22]
-  assign pipe1_io_pipe_phv_in_next_processor_id = io_pipe_phv_in_next_processor_id; // @[parse_module.scala 104:22]
   assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[parse_module.scala 104:22]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 104:22]
-  assign pipe1_io_sram_w_cs = io_mod_sram_w_cs; // @[parse_module.scala 106:22]
-  assign pipe1_io_sram_w_en = io_mod_sram_w_en; // @[parse_module.scala 105:22]
-  assign pipe1_io_sram_w_addr = io_mod_sram_w_addr; // @[parse_module.scala 105:22]
-  assign pipe1_io_sram_w_data = io_mod_sram_w_data; // @[parse_module.scala 105:22]
-  assign pipe1_io_valid = io_pipe_phv_in_parse_current_state == state_id; // @[parse_module.scala 101:58]
+  assign pipe1_io_valid = io_pipe_phv_in_parse_current_state == 8'h0; // @[parse_module.scala 101:58]
   assign pipe2_clock = clock;
   assign pipe2_io_pipe_phv_in_data_0 = pipe1_io_pipe_phv_out_data_0; // @[parse_module.scala 108:27]
   assign pipe2_io_pipe_phv_in_data_1 = pipe1_io_pipe_phv_out_data_1; // @[parse_module.scala 108:27]
@@ -2405,59 +2371,8 @@ module ParseModule(
   assign pipe2_io_pipe_phv_in_parse_current_state = pipe1_io_pipe_phv_out_parse_current_state; // @[parse_module.scala 108:27]
   assign pipe2_io_pipe_phv_in_parse_current_offset = pipe1_io_pipe_phv_out_parse_current_offset; // @[parse_module.scala 108:27]
   assign pipe2_io_pipe_phv_in_parse_transition_field = pipe1_io_pipe_phv_out_parse_transition_field; // @[parse_module.scala 108:27]
-  assign pipe2_io_pipe_phv_in_next_processor_id = pipe1_io_pipe_phv_out_next_processor_id; // @[parse_module.scala 108:27]
   assign pipe2_io_pipe_phv_in_next_config_id = pipe1_io_pipe_phv_out_next_config_id; // @[parse_module.scala 108:27]
   assign pipe2_io_pipe_phv_in_is_valid_processor = pipe1_io_pipe_phv_out_is_valid_processor; // @[parse_module.scala 108:27]
   assign pipe2_io_rdata = pipe1_io_rdata; // @[parse_module.scala 109:27]
-  assign pipe2_io_valid = pipe1_io_pipe_phv_out_parse_current_state == state_id; // @[parse_module.scala 102:65]
-  always @(posedge clock) begin
-    if (io_mod_state_id_mod) begin // @[parse_module.scala 94:32]
-      state_id <= io_mod_state_id; // @[parse_module.scala 95:18]
-    end
-  end
-// Register and memory initialization
-`ifdef RANDOMIZE_GARBAGE_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_INVALID_ASSIGN
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_REG_INIT
-`define RANDOMIZE
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-`define RANDOMIZE
-`endif
-`ifndef RANDOM
-`define RANDOM $random
-`endif
-`ifdef RANDOMIZE_MEM_INIT
-  integer initvar;
-`endif
-`ifndef SYNTHESIS
-`ifdef FIRRTL_BEFORE_INITIAL
-`FIRRTL_BEFORE_INITIAL
-`endif
-initial begin
-  `ifdef RANDOMIZE
-    `ifdef INIT_RANDOM
-      `INIT_RANDOM
-    `endif
-    `ifndef VERILATOR
-      `ifdef RANDOMIZE_DELAY
-        #`RANDOMIZE_DELAY begin end
-      `else
-        #0.002 begin end
-      `endif
-    `endif
-`ifdef RANDOMIZE_REG_INIT
-  _RAND_0 = {1{`RANDOM}};
-  state_id = _RAND_0[7:0];
-`endif // RANDOMIZE_REG_INIT
-  `endif // RANDOMIZE
-end // initial
-`ifdef FIRRTL_AFTER_INITIAL
-`FIRRTL_AFTER_INITIAL
-`endif
-`endif // SYNTHESIS
+  assign pipe2_io_valid = pipe1_io_pipe_phv_out_parse_current_state == 8'h0; // @[parse_module.scala 102:65]
 endmodule

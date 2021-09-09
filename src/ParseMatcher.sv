@@ -179,7 +179,6 @@ module ParseMatcher(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -361,13 +360,8 @@ module ParseMatcher(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  input         io_sram_w_cs,
-  input         io_sram_w_en,
-  input  [7:0]  io_sram_w_addr,
-  input  [63:0] io_sram_w_data,
   input         io_valid,
   output [63:0] io_rdata
 );
@@ -553,19 +547,12 @@ module ParseMatcher(
   reg [31:0] _RAND_178;
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
-  reg [31:0] _RAND_181;
 `endif // RANDOMIZE_REG_INIT
   wire  mem_0_clock; // @[parse_module.scala 30:25]
-  wire  mem_0_io_w_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_0_io_w_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_0_io_w_data; // @[parse_module.scala 30:25]
   wire  mem_0_io_r_en; // @[parse_module.scala 30:25]
   wire [7:0] mem_0_io_r_addr; // @[parse_module.scala 30:25]
   wire [63:0] mem_0_io_r_data; // @[parse_module.scala 30:25]
   wire  mem_1_clock; // @[parse_module.scala 30:25]
-  wire  mem_1_io_w_en; // @[parse_module.scala 30:25]
-  wire [7:0] mem_1_io_w_addr; // @[parse_module.scala 30:25]
-  wire [63:0] mem_1_io_w_data; // @[parse_module.scala 30:25]
   wire  mem_1_io_r_en; // @[parse_module.scala 30:25]
   wire [7:0] mem_1_io_r_addr; // @[parse_module.scala 30:25]
   wire [63:0] mem_1_io_r_data; // @[parse_module.scala 30:25]
@@ -748,27 +735,19 @@ module ParseMatcher(
   reg [7:0] phv_parse_current_state; // @[parse_module.scala 18:20]
   reg [7:0] phv_parse_current_offset; // @[parse_module.scala 18:20]
   reg [15:0] phv_parse_transition_field; // @[parse_module.scala 18:20]
-  reg [3:0] phv_next_processor_id; // @[parse_module.scala 18:20]
   reg  phv_next_config_id; // @[parse_module.scala 18:20]
   reg  phv_is_valid_processor; // @[parse_module.scala 18:20]
   wire  is_valid = io_valid & io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 22:29]
-  wire  config_to_write = ~io_sram_w_cs; // @[parse_module.scala 28:44]
   wire  config_to_use = ~io_pipe_phv_in_next_config_id; // @[parse_module.scala 29:61]
   wire [63:0] _GEN_0 = config_to_use ? mem_0_io_r_data : 64'h0; // @[parse_module.scala 35:30 parse_module.scala 36:23 parse_module.scala 23:21]
   SRAM mem_0 ( // @[parse_module.scala 30:25]
     .clock(mem_0_clock),
-    .io_w_en(mem_0_io_w_en),
-    .io_w_addr(mem_0_io_w_addr),
-    .io_w_data(mem_0_io_w_data),
     .io_r_en(mem_0_io_r_en),
     .io_r_addr(mem_0_io_r_addr),
     .io_r_data(mem_0_io_r_data)
   );
   SRAM mem_1 ( // @[parse_module.scala 30:25]
     .clock(mem_1_clock),
-    .io_w_en(mem_1_io_w_en),
-    .io_w_addr(mem_1_io_w_addr),
-    .io_w_data(mem_1_io_w_data),
     .io_r_en(mem_1_io_r_en),
     .io_r_addr(mem_1_io_r_addr),
     .io_r_data(mem_1_io_r_data)
@@ -952,20 +931,13 @@ module ParseMatcher(
   assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[parse_module.scala 20:21]
   assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[parse_module.scala 20:21]
   assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[parse_module.scala 20:21]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[parse_module.scala 20:21]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[parse_module.scala 20:21]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[parse_module.scala 20:21]
   assign io_rdata = io_pipe_phv_in_next_config_id ? mem_1_io_r_data : _GEN_0; // @[parse_module.scala 35:30 parse_module.scala 36:23]
   assign mem_0_clock = clock;
-  assign mem_0_io_w_en = io_sram_w_en & config_to_write; // @[parse_module.scala 32:39]
-  assign mem_0_io_w_addr = io_sram_w_addr; // @[parse_module.scala 31:23]
-  assign mem_0_io_w_data = io_sram_w_data; // @[parse_module.scala 31:23]
   assign mem_0_io_r_en = is_valid & config_to_use; // @[parse_module.scala 33:35]
   assign mem_0_io_r_addr = io_pipe_phv_in_parse_transition_field[15:8] + io_pipe_phv_in_parse_transition_field[7:0]; // @[parse_module.scala 34:42]
   assign mem_1_clock = clock;
-  assign mem_1_io_w_en = io_sram_w_en & io_sram_w_cs; // @[parse_module.scala 32:39]
-  assign mem_1_io_w_addr = io_sram_w_addr; // @[parse_module.scala 31:23]
-  assign mem_1_io_w_data = io_sram_w_data; // @[parse_module.scala 31:23]
   assign mem_1_io_r_en = is_valid & io_pipe_phv_in_next_config_id; // @[parse_module.scala 33:35]
   assign mem_1_io_r_addr = io_pipe_phv_in_parse_transition_field[15:8] + io_pipe_phv_in_parse_transition_field[7:0]; // @[parse_module.scala 34:42]
   always @(posedge clock) begin
@@ -1148,7 +1120,6 @@ module ParseMatcher(
     phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[parse_module.scala 19:9]
     phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[parse_module.scala 19:9]
     phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 19:9]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[parse_module.scala 19:9]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[parse_module.scala 19:9]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 19:9]
   end
@@ -1547,11 +1518,9 @@ initial begin
   _RAND_178 = {1{`RANDOM}};
   phv_parse_transition_field = _RAND_178[15:0];
   _RAND_179 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_179[3:0];
+  phv_next_config_id = _RAND_179[0:0];
   _RAND_180 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_180[0:0];
-  _RAND_181 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_181[0:0];
+  phv_is_valid_processor = _RAND_180[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

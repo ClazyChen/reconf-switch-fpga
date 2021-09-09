@@ -182,6 +182,7 @@ module ActionReader(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,24 +365,11 @@ module ActionReader(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  input         io_hit,
-  input  [63:0] io_match_value,
-  output [7:0]  io_args_out_0,
-  output [7:0]  io_args_out_1,
-  output [7:0]  io_args_out_2,
-  output [7:0]  io_args_out_3,
-  output [7:0]  io_args_out_4,
-  output [7:0]  io_args_out_5,
-  output [7:0]  io_args_out_6,
+  output        io_pipe_phv_out_valid,
   output [31:0] io_vliw_out_0,
   output [31:0] io_vliw_out_1,
   output [31:0] io_vliw_out_2,
-  output [31:0] io_vliw_out_3,
-  input         io_action_mod_en_0,
-  input         io_action_mod_en_1,
-  input  [7:0]  io_action_mod_addr,
-  input  [63:0] io_action_mod_data_0,
-  input  [63:0] io_action_mod_data_1
+  output [31:0] io_vliw_out_3
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -566,19 +554,13 @@ module ActionReader(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
-  reg [63:0] _RAND_182;
+  reg [31:0] _RAND_182;
 `endif // RANDOMIZE_REG_INIT
   wire  sram_0_clock; // @[executor.scala 44:29]
-  wire  sram_0_io_w_en; // @[executor.scala 44:29]
-  wire [7:0] sram_0_io_w_addr; // @[executor.scala 44:29]
-  wire [63:0] sram_0_io_w_data; // @[executor.scala 44:29]
   wire  sram_0_io_r_en; // @[executor.scala 44:29]
   wire [7:0] sram_0_io_r_addr; // @[executor.scala 44:29]
   wire [63:0] sram_0_io_r_data; // @[executor.scala 44:29]
   wire  sram_1_clock; // @[executor.scala 44:29]
-  wire  sram_1_io_w_en; // @[executor.scala 44:29]
-  wire [7:0] sram_1_io_w_addr; // @[executor.scala 44:29]
-  wire [63:0] sram_1_io_w_data; // @[executor.scala 44:29]
   wire  sram_1_io_r_en; // @[executor.scala 44:29]
   wire [7:0] sram_1_io_r_addr; // @[executor.scala 44:29]
   wire [63:0] sram_1_io_r_data; // @[executor.scala 44:29]
@@ -764,21 +746,15 @@ module ActionReader(
   reg [3:0] phv_next_processor_id; // @[executor.scala 28:22]
   reg  phv_next_config_id; // @[executor.scala 28:22]
   reg  phv_is_valid_processor; // @[executor.scala 28:22]
-  reg [55:0] args; // @[executor.scala 33:23]
+  reg  phv_valid; // @[executor.scala 28:22]
   SRAM sram_0 ( // @[executor.scala 44:29]
     .clock(sram_0_clock),
-    .io_w_en(sram_0_io_w_en),
-    .io_w_addr(sram_0_io_w_addr),
-    .io_w_data(sram_0_io_w_data),
     .io_r_en(sram_0_io_r_en),
     .io_r_addr(sram_0_io_r_addr),
     .io_r_data(sram_0_io_r_data)
   );
   SRAM sram_1 ( // @[executor.scala 44:29]
     .clock(sram_1_clock),
-    .io_w_en(sram_1_io_w_en),
-    .io_w_addr(sram_1_io_w_addr),
-    .io_w_data(sram_1_io_w_data),
     .io_r_en(sram_1_io_r_en),
     .io_r_addr(sram_1_io_r_addr),
     .io_r_data(sram_1_io_r_data)
@@ -965,29 +941,17 @@ module ActionReader(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 30:25]
-  assign io_args_out_0 = phv_is_valid_processor ? args[55:48] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_1 = phv_is_valid_processor ? args[47:40] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_2 = phv_is_valid_processor ? args[39:32] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_3 = phv_is_valid_processor ? args[31:24] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_4 = phv_is_valid_processor ? args[23:16] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_5 = phv_is_valid_processor ? args[15:8] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
-  assign io_args_out_6 = phv_is_valid_processor ? args[7:0] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
+  assign io_pipe_phv_out_valid = phv_valid; // @[executor.scala 30:25]
   assign io_vliw_out_0 = phv_is_valid_processor ? sram_0_io_r_data[63:32] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign io_vliw_out_1 = phv_is_valid_processor ? sram_0_io_r_data[31:0] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign io_vliw_out_2 = phv_is_valid_processor ? sram_1_io_r_data[63:32] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign io_vliw_out_3 = phv_is_valid_processor ? sram_1_io_r_data[31:0] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign sram_0_clock = clock;
-  assign sram_0_io_w_en = io_action_mod_en_0; // @[executor.scala 47:27]
-  assign sram_0_io_w_addr = io_action_mod_addr; // @[executor.scala 48:27]
-  assign sram_0_io_w_data = io_action_mod_data_0; // @[executor.scala 49:27]
   assign sram_0_io_r_en = 1'h1; // @[executor.scala 45:27]
-  assign sram_0_io_r_addr = io_hit ? 8'h0 : io_match_value[63:56]; // @[executor.scala 32:28]
+  assign sram_0_io_r_addr = 8'h0; // @[executor.scala 32:28]
   assign sram_1_clock = clock;
-  assign sram_1_io_w_en = io_action_mod_en_1; // @[executor.scala 47:27]
-  assign sram_1_io_w_addr = io_action_mod_addr; // @[executor.scala 48:27]
-  assign sram_1_io_w_data = io_action_mod_data_1; // @[executor.scala 49:27]
   assign sram_1_io_r_en = 1'h1; // @[executor.scala 45:27]
-  assign sram_1_io_r_addr = io_hit ? 8'h0 : io_match_value[63:56]; // @[executor.scala 32:28]
+  assign sram_1_io_r_addr = 8'h0; // @[executor.scala 32:28]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[executor.scala 29:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[executor.scala 29:13]
@@ -1171,7 +1135,7 @@ module ActionReader(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 29:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 29:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 29:13]
-    args <= io_match_value[55:0]; // @[executor.scala 34:31]
+    phv_valid <= io_pipe_phv_in_valid; // @[executor.scala 29:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1573,8 +1537,8 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
-  _RAND_182 = {2{`RANDOM}};
-  args = _RAND_182[55:0];
+  _RAND_182 = {1{`RANDOM}};
+  phv_valid = _RAND_182[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

@@ -128,6 +128,7 @@ module Initializer(
   input  [7:0] io_pipe_phv_in_data_125,
   input  [7:0] io_pipe_phv_in_data_126,
   input  [7:0] io_pipe_phv_in_data_127,
+  input        io_pipe_phv_in_valid,
   output [7:0] io_pipe_phv_out_data_0,
   output [7:0] io_pipe_phv_out_data_1,
   output [7:0] io_pipe_phv_out_data_2,
@@ -256,8 +257,7 @@ module Initializer(
   output [7:0] io_pipe_phv_out_data_125,
   output [7:0] io_pipe_phv_out_data_126,
   output [7:0] io_pipe_phv_out_data_127,
-  output [3:0] io_pipe_phv_out_next_processor_id,
-  input  [3:0] io_first_proc_id
+  output       io_pipe_phv_out_valid
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -388,6 +388,7 @@ module Initializer(
   reg [31:0] _RAND_125;
   reg [31:0] _RAND_126;
   reg [31:0] _RAND_127;
+  reg [31:0] _RAND_128;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[ipsa.scala 12:18]
   reg [7:0] phv_data_1; // @[ipsa.scala 12:18]
@@ -517,6 +518,7 @@ module Initializer(
   reg [7:0] phv_data_125; // @[ipsa.scala 12:18]
   reg [7:0] phv_data_126; // @[ipsa.scala 12:18]
   reg [7:0] phv_data_127; // @[ipsa.scala 12:18]
+  reg  phv_valid; // @[ipsa.scala 12:18]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[ipsa.scala 14:21]
@@ -645,7 +647,7 @@ module Initializer(
   assign io_pipe_phv_out_data_125 = phv_data_125; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_126 = phv_data_126; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_127 = phv_data_127; // @[ipsa.scala 14:21]
-  assign io_pipe_phv_out_next_processor_id = io_first_proc_id; // @[ipsa.scala 16:39]
+  assign io_pipe_phv_out_valid = phv_valid; // @[ipsa.scala 14:21]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[ipsa.scala 13:9]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[ipsa.scala 13:9]
@@ -775,6 +777,7 @@ module Initializer(
     phv_data_125 <= io_pipe_phv_in_data_125; // @[ipsa.scala 13:9]
     phv_data_126 <= io_pipe_phv_in_data_126; // @[ipsa.scala 13:9]
     phv_data_127 <= io_pipe_phv_in_data_127; // @[ipsa.scala 13:9]
+    phv_valid <= io_pipe_phv_in_valid; // @[ipsa.scala 13:9]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1068,6 +1071,8 @@ initial begin
   phv_data_126 = _RAND_126[7:0];
   _RAND_127 = {1{`RANDOM}};
   phv_data_127 = _RAND_127[7:0];
+  _RAND_128 = {1{`RANDOM}};
+  phv_valid = _RAND_128[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

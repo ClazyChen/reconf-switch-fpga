@@ -163,6 +163,7 @@ module MatchGetKeyPISA(
   input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
+  input          io_pipe_phv_in_valid,
   output [7:0]   io_pipe_phv_out_data_0,
   output [7:0]   io_pipe_phv_out_data_1,
   output [7:0]   io_pipe_phv_out_data_2,
@@ -326,6 +327,7 @@ module MatchGetKeyPISA(
   output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
+  output         io_pipe_phv_out_valid,
   input  [1:0]   io_key_config_0_field_config_0,
   input  [1:0]   io_key_config_0_field_config_1,
   input  [1:0]   io_key_config_0_field_config_2,
@@ -600,6 +602,7 @@ module MatchGetKeyPISA(
   reg [31:0] _RAND_160;
   reg [31:0] _RAND_161;
   reg [31:0] _RAND_162;
+  reg [31:0] _RAND_163;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[matcher_pisa.scala 110:22]
   reg [7:0] phv_data_1; // @[matcher_pisa.scala 110:22]
@@ -764,6 +767,7 @@ module MatchGetKeyPISA(
   reg [3:0] phv_next_processor_id; // @[matcher_pisa.scala 110:22]
   reg  phv_next_config_id; // @[matcher_pisa.scala 110:22]
   reg  phv_is_valid_processor; // @[matcher_pisa.scala 110:22]
+  reg  phv_valid; // @[matcher_pisa.scala 110:22]
   wire [1:0] _GEN_56 = phv_next_config_id ? io_key_config_1_field_config_0 : io_key_config_0_field_config_0; // @[matcher_pisa.scala 123:36 matcher_pisa.scala 123:36]
   wire [1:0] _GEN_57 = phv_next_config_id ? io_key_config_1_field_config_1 : io_key_config_0_field_config_1; // @[matcher_pisa.scala 123:36 matcher_pisa.scala 123:36]
   wire [1:0] _GEN_58 = phv_next_config_id ? io_key_config_1_field_config_2 : io_key_config_0_field_config_2; // @[matcher_pisa.scala 123:36 matcher_pisa.scala 123:36]
@@ -2058,6 +2062,7 @@ module MatchGetKeyPISA(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher_pisa.scala 112:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher_pisa.scala 112:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher_pisa.scala 112:25]
+  assign io_pipe_phv_out_valid = phv_valid; // @[matcher_pisa.scala 112:25]
   assign io_match_key = phv_is_valid_processor ? _io_match_key_T : 192'h0; // @[matcher_pisa.scala 116:39 matcher_pisa.scala 166:26 matcher_pisa.scala 168:26]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[matcher_pisa.scala 111:13]
@@ -2223,6 +2228,7 @@ module MatchGetKeyPISA(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 111:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 111:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 111:13]
+    phv_valid <= io_pipe_phv_in_valid; // @[matcher_pisa.scala 111:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -2586,6 +2592,8 @@ initial begin
   phv_next_config_id = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_162[0:0];
+  _RAND_163 = {1{`RANDOM}};
+  phv_valid = _RAND_163[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

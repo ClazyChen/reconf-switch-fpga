@@ -1,395 +1,371 @@
 module MatchGetCs(
-  input          clock,
-  input  [7:0]   io_pipe_phv_in_data_0,
-  input  [7:0]   io_pipe_phv_in_data_1,
-  input  [7:0]   io_pipe_phv_in_data_2,
-  input  [7:0]   io_pipe_phv_in_data_3,
-  input  [7:0]   io_pipe_phv_in_data_4,
-  input  [7:0]   io_pipe_phv_in_data_5,
-  input  [7:0]   io_pipe_phv_in_data_6,
-  input  [7:0]   io_pipe_phv_in_data_7,
-  input  [7:0]   io_pipe_phv_in_data_8,
-  input  [7:0]   io_pipe_phv_in_data_9,
-  input  [7:0]   io_pipe_phv_in_data_10,
-  input  [7:0]   io_pipe_phv_in_data_11,
-  input  [7:0]   io_pipe_phv_in_data_12,
-  input  [7:0]   io_pipe_phv_in_data_13,
-  input  [7:0]   io_pipe_phv_in_data_14,
-  input  [7:0]   io_pipe_phv_in_data_15,
-  input  [7:0]   io_pipe_phv_in_data_16,
-  input  [7:0]   io_pipe_phv_in_data_17,
-  input  [7:0]   io_pipe_phv_in_data_18,
-  input  [7:0]   io_pipe_phv_in_data_19,
-  input  [7:0]   io_pipe_phv_in_data_20,
-  input  [7:0]   io_pipe_phv_in_data_21,
-  input  [7:0]   io_pipe_phv_in_data_22,
-  input  [7:0]   io_pipe_phv_in_data_23,
-  input  [7:0]   io_pipe_phv_in_data_24,
-  input  [7:0]   io_pipe_phv_in_data_25,
-  input  [7:0]   io_pipe_phv_in_data_26,
-  input  [7:0]   io_pipe_phv_in_data_27,
-  input  [7:0]   io_pipe_phv_in_data_28,
-  input  [7:0]   io_pipe_phv_in_data_29,
-  input  [7:0]   io_pipe_phv_in_data_30,
-  input  [7:0]   io_pipe_phv_in_data_31,
-  input  [7:0]   io_pipe_phv_in_data_32,
-  input  [7:0]   io_pipe_phv_in_data_33,
-  input  [7:0]   io_pipe_phv_in_data_34,
-  input  [7:0]   io_pipe_phv_in_data_35,
-  input  [7:0]   io_pipe_phv_in_data_36,
-  input  [7:0]   io_pipe_phv_in_data_37,
-  input  [7:0]   io_pipe_phv_in_data_38,
-  input  [7:0]   io_pipe_phv_in_data_39,
-  input  [7:0]   io_pipe_phv_in_data_40,
-  input  [7:0]   io_pipe_phv_in_data_41,
-  input  [7:0]   io_pipe_phv_in_data_42,
-  input  [7:0]   io_pipe_phv_in_data_43,
-  input  [7:0]   io_pipe_phv_in_data_44,
-  input  [7:0]   io_pipe_phv_in_data_45,
-  input  [7:0]   io_pipe_phv_in_data_46,
-  input  [7:0]   io_pipe_phv_in_data_47,
-  input  [7:0]   io_pipe_phv_in_data_48,
-  input  [7:0]   io_pipe_phv_in_data_49,
-  input  [7:0]   io_pipe_phv_in_data_50,
-  input  [7:0]   io_pipe_phv_in_data_51,
-  input  [7:0]   io_pipe_phv_in_data_52,
-  input  [7:0]   io_pipe_phv_in_data_53,
-  input  [7:0]   io_pipe_phv_in_data_54,
-  input  [7:0]   io_pipe_phv_in_data_55,
-  input  [7:0]   io_pipe_phv_in_data_56,
-  input  [7:0]   io_pipe_phv_in_data_57,
-  input  [7:0]   io_pipe_phv_in_data_58,
-  input  [7:0]   io_pipe_phv_in_data_59,
-  input  [7:0]   io_pipe_phv_in_data_60,
-  input  [7:0]   io_pipe_phv_in_data_61,
-  input  [7:0]   io_pipe_phv_in_data_62,
-  input  [7:0]   io_pipe_phv_in_data_63,
-  input  [7:0]   io_pipe_phv_in_data_64,
-  input  [7:0]   io_pipe_phv_in_data_65,
-  input  [7:0]   io_pipe_phv_in_data_66,
-  input  [7:0]   io_pipe_phv_in_data_67,
-  input  [7:0]   io_pipe_phv_in_data_68,
-  input  [7:0]   io_pipe_phv_in_data_69,
-  input  [7:0]   io_pipe_phv_in_data_70,
-  input  [7:0]   io_pipe_phv_in_data_71,
-  input  [7:0]   io_pipe_phv_in_data_72,
-  input  [7:0]   io_pipe_phv_in_data_73,
-  input  [7:0]   io_pipe_phv_in_data_74,
-  input  [7:0]   io_pipe_phv_in_data_75,
-  input  [7:0]   io_pipe_phv_in_data_76,
-  input  [7:0]   io_pipe_phv_in_data_77,
-  input  [7:0]   io_pipe_phv_in_data_78,
-  input  [7:0]   io_pipe_phv_in_data_79,
-  input  [7:0]   io_pipe_phv_in_data_80,
-  input  [7:0]   io_pipe_phv_in_data_81,
-  input  [7:0]   io_pipe_phv_in_data_82,
-  input  [7:0]   io_pipe_phv_in_data_83,
-  input  [7:0]   io_pipe_phv_in_data_84,
-  input  [7:0]   io_pipe_phv_in_data_85,
-  input  [7:0]   io_pipe_phv_in_data_86,
-  input  [7:0]   io_pipe_phv_in_data_87,
-  input  [7:0]   io_pipe_phv_in_data_88,
-  input  [7:0]   io_pipe_phv_in_data_89,
-  input  [7:0]   io_pipe_phv_in_data_90,
-  input  [7:0]   io_pipe_phv_in_data_91,
-  input  [7:0]   io_pipe_phv_in_data_92,
-  input  [7:0]   io_pipe_phv_in_data_93,
-  input  [7:0]   io_pipe_phv_in_data_94,
-  input  [7:0]   io_pipe_phv_in_data_95,
-  input  [7:0]   io_pipe_phv_in_data_96,
-  input  [7:0]   io_pipe_phv_in_data_97,
-  input  [7:0]   io_pipe_phv_in_data_98,
-  input  [7:0]   io_pipe_phv_in_data_99,
-  input  [7:0]   io_pipe_phv_in_data_100,
-  input  [7:0]   io_pipe_phv_in_data_101,
-  input  [7:0]   io_pipe_phv_in_data_102,
-  input  [7:0]   io_pipe_phv_in_data_103,
-  input  [7:0]   io_pipe_phv_in_data_104,
-  input  [7:0]   io_pipe_phv_in_data_105,
-  input  [7:0]   io_pipe_phv_in_data_106,
-  input  [7:0]   io_pipe_phv_in_data_107,
-  input  [7:0]   io_pipe_phv_in_data_108,
-  input  [7:0]   io_pipe_phv_in_data_109,
-  input  [7:0]   io_pipe_phv_in_data_110,
-  input  [7:0]   io_pipe_phv_in_data_111,
-  input  [7:0]   io_pipe_phv_in_data_112,
-  input  [7:0]   io_pipe_phv_in_data_113,
-  input  [7:0]   io_pipe_phv_in_data_114,
-  input  [7:0]   io_pipe_phv_in_data_115,
-  input  [7:0]   io_pipe_phv_in_data_116,
-  input  [7:0]   io_pipe_phv_in_data_117,
-  input  [7:0]   io_pipe_phv_in_data_118,
-  input  [7:0]   io_pipe_phv_in_data_119,
-  input  [7:0]   io_pipe_phv_in_data_120,
-  input  [7:0]   io_pipe_phv_in_data_121,
-  input  [7:0]   io_pipe_phv_in_data_122,
-  input  [7:0]   io_pipe_phv_in_data_123,
-  input  [7:0]   io_pipe_phv_in_data_124,
-  input  [7:0]   io_pipe_phv_in_data_125,
-  input  [7:0]   io_pipe_phv_in_data_126,
-  input  [7:0]   io_pipe_phv_in_data_127,
-  input  [7:0]   io_pipe_phv_in_data_128,
-  input  [7:0]   io_pipe_phv_in_data_129,
-  input  [7:0]   io_pipe_phv_in_data_130,
-  input  [7:0]   io_pipe_phv_in_data_131,
-  input  [7:0]   io_pipe_phv_in_data_132,
-  input  [7:0]   io_pipe_phv_in_data_133,
-  input  [7:0]   io_pipe_phv_in_data_134,
-  input  [7:0]   io_pipe_phv_in_data_135,
-  input  [7:0]   io_pipe_phv_in_data_136,
-  input  [7:0]   io_pipe_phv_in_data_137,
-  input  [7:0]   io_pipe_phv_in_data_138,
-  input  [7:0]   io_pipe_phv_in_data_139,
-  input  [7:0]   io_pipe_phv_in_data_140,
-  input  [7:0]   io_pipe_phv_in_data_141,
-  input  [7:0]   io_pipe_phv_in_data_142,
-  input  [7:0]   io_pipe_phv_in_data_143,
-  input  [7:0]   io_pipe_phv_in_data_144,
-  input  [7:0]   io_pipe_phv_in_data_145,
-  input  [7:0]   io_pipe_phv_in_data_146,
-  input  [7:0]   io_pipe_phv_in_data_147,
-  input  [7:0]   io_pipe_phv_in_data_148,
-  input  [7:0]   io_pipe_phv_in_data_149,
-  input  [7:0]   io_pipe_phv_in_data_150,
-  input  [7:0]   io_pipe_phv_in_data_151,
-  input  [7:0]   io_pipe_phv_in_data_152,
-  input  [7:0]   io_pipe_phv_in_data_153,
-  input  [7:0]   io_pipe_phv_in_data_154,
-  input  [7:0]   io_pipe_phv_in_data_155,
-  input  [7:0]   io_pipe_phv_in_data_156,
-  input  [7:0]   io_pipe_phv_in_data_157,
-  input  [7:0]   io_pipe_phv_in_data_158,
-  input  [7:0]   io_pipe_phv_in_data_159,
-  input  [15:0]  io_pipe_phv_in_header_0,
-  input  [15:0]  io_pipe_phv_in_header_1,
-  input  [15:0]  io_pipe_phv_in_header_2,
-  input  [15:0]  io_pipe_phv_in_header_3,
-  input  [15:0]  io_pipe_phv_in_header_4,
-  input  [15:0]  io_pipe_phv_in_header_5,
-  input  [15:0]  io_pipe_phv_in_header_6,
-  input  [15:0]  io_pipe_phv_in_header_7,
-  input  [15:0]  io_pipe_phv_in_header_8,
-  input  [15:0]  io_pipe_phv_in_header_9,
-  input  [15:0]  io_pipe_phv_in_header_10,
-  input  [15:0]  io_pipe_phv_in_header_11,
-  input  [15:0]  io_pipe_phv_in_header_12,
-  input  [15:0]  io_pipe_phv_in_header_13,
-  input  [15:0]  io_pipe_phv_in_header_14,
-  input  [15:0]  io_pipe_phv_in_header_15,
-  input  [7:0]   io_pipe_phv_in_parse_current_state,
-  input  [7:0]   io_pipe_phv_in_parse_current_offset,
-  input  [15:0]  io_pipe_phv_in_parse_transition_field,
-  input  [3:0]   io_pipe_phv_in_next_processor_id,
-  input          io_pipe_phv_in_next_config_id,
-  input          io_pipe_phv_in_is_valid_processor,
-  output [7:0]   io_pipe_phv_out_data_0,
-  output [7:0]   io_pipe_phv_out_data_1,
-  output [7:0]   io_pipe_phv_out_data_2,
-  output [7:0]   io_pipe_phv_out_data_3,
-  output [7:0]   io_pipe_phv_out_data_4,
-  output [7:0]   io_pipe_phv_out_data_5,
-  output [7:0]   io_pipe_phv_out_data_6,
-  output [7:0]   io_pipe_phv_out_data_7,
-  output [7:0]   io_pipe_phv_out_data_8,
-  output [7:0]   io_pipe_phv_out_data_9,
-  output [7:0]   io_pipe_phv_out_data_10,
-  output [7:0]   io_pipe_phv_out_data_11,
-  output [7:0]   io_pipe_phv_out_data_12,
-  output [7:0]   io_pipe_phv_out_data_13,
-  output [7:0]   io_pipe_phv_out_data_14,
-  output [7:0]   io_pipe_phv_out_data_15,
-  output [7:0]   io_pipe_phv_out_data_16,
-  output [7:0]   io_pipe_phv_out_data_17,
-  output [7:0]   io_pipe_phv_out_data_18,
-  output [7:0]   io_pipe_phv_out_data_19,
-  output [7:0]   io_pipe_phv_out_data_20,
-  output [7:0]   io_pipe_phv_out_data_21,
-  output [7:0]   io_pipe_phv_out_data_22,
-  output [7:0]   io_pipe_phv_out_data_23,
-  output [7:0]   io_pipe_phv_out_data_24,
-  output [7:0]   io_pipe_phv_out_data_25,
-  output [7:0]   io_pipe_phv_out_data_26,
-  output [7:0]   io_pipe_phv_out_data_27,
-  output [7:0]   io_pipe_phv_out_data_28,
-  output [7:0]   io_pipe_phv_out_data_29,
-  output [7:0]   io_pipe_phv_out_data_30,
-  output [7:0]   io_pipe_phv_out_data_31,
-  output [7:0]   io_pipe_phv_out_data_32,
-  output [7:0]   io_pipe_phv_out_data_33,
-  output [7:0]   io_pipe_phv_out_data_34,
-  output [7:0]   io_pipe_phv_out_data_35,
-  output [7:0]   io_pipe_phv_out_data_36,
-  output [7:0]   io_pipe_phv_out_data_37,
-  output [7:0]   io_pipe_phv_out_data_38,
-  output [7:0]   io_pipe_phv_out_data_39,
-  output [7:0]   io_pipe_phv_out_data_40,
-  output [7:0]   io_pipe_phv_out_data_41,
-  output [7:0]   io_pipe_phv_out_data_42,
-  output [7:0]   io_pipe_phv_out_data_43,
-  output [7:0]   io_pipe_phv_out_data_44,
-  output [7:0]   io_pipe_phv_out_data_45,
-  output [7:0]   io_pipe_phv_out_data_46,
-  output [7:0]   io_pipe_phv_out_data_47,
-  output [7:0]   io_pipe_phv_out_data_48,
-  output [7:0]   io_pipe_phv_out_data_49,
-  output [7:0]   io_pipe_phv_out_data_50,
-  output [7:0]   io_pipe_phv_out_data_51,
-  output [7:0]   io_pipe_phv_out_data_52,
-  output [7:0]   io_pipe_phv_out_data_53,
-  output [7:0]   io_pipe_phv_out_data_54,
-  output [7:0]   io_pipe_phv_out_data_55,
-  output [7:0]   io_pipe_phv_out_data_56,
-  output [7:0]   io_pipe_phv_out_data_57,
-  output [7:0]   io_pipe_phv_out_data_58,
-  output [7:0]   io_pipe_phv_out_data_59,
-  output [7:0]   io_pipe_phv_out_data_60,
-  output [7:0]   io_pipe_phv_out_data_61,
-  output [7:0]   io_pipe_phv_out_data_62,
-  output [7:0]   io_pipe_phv_out_data_63,
-  output [7:0]   io_pipe_phv_out_data_64,
-  output [7:0]   io_pipe_phv_out_data_65,
-  output [7:0]   io_pipe_phv_out_data_66,
-  output [7:0]   io_pipe_phv_out_data_67,
-  output [7:0]   io_pipe_phv_out_data_68,
-  output [7:0]   io_pipe_phv_out_data_69,
-  output [7:0]   io_pipe_phv_out_data_70,
-  output [7:0]   io_pipe_phv_out_data_71,
-  output [7:0]   io_pipe_phv_out_data_72,
-  output [7:0]   io_pipe_phv_out_data_73,
-  output [7:0]   io_pipe_phv_out_data_74,
-  output [7:0]   io_pipe_phv_out_data_75,
-  output [7:0]   io_pipe_phv_out_data_76,
-  output [7:0]   io_pipe_phv_out_data_77,
-  output [7:0]   io_pipe_phv_out_data_78,
-  output [7:0]   io_pipe_phv_out_data_79,
-  output [7:0]   io_pipe_phv_out_data_80,
-  output [7:0]   io_pipe_phv_out_data_81,
-  output [7:0]   io_pipe_phv_out_data_82,
-  output [7:0]   io_pipe_phv_out_data_83,
-  output [7:0]   io_pipe_phv_out_data_84,
-  output [7:0]   io_pipe_phv_out_data_85,
-  output [7:0]   io_pipe_phv_out_data_86,
-  output [7:0]   io_pipe_phv_out_data_87,
-  output [7:0]   io_pipe_phv_out_data_88,
-  output [7:0]   io_pipe_phv_out_data_89,
-  output [7:0]   io_pipe_phv_out_data_90,
-  output [7:0]   io_pipe_phv_out_data_91,
-  output [7:0]   io_pipe_phv_out_data_92,
-  output [7:0]   io_pipe_phv_out_data_93,
-  output [7:0]   io_pipe_phv_out_data_94,
-  output [7:0]   io_pipe_phv_out_data_95,
-  output [7:0]   io_pipe_phv_out_data_96,
-  output [7:0]   io_pipe_phv_out_data_97,
-  output [7:0]   io_pipe_phv_out_data_98,
-  output [7:0]   io_pipe_phv_out_data_99,
-  output [7:0]   io_pipe_phv_out_data_100,
-  output [7:0]   io_pipe_phv_out_data_101,
-  output [7:0]   io_pipe_phv_out_data_102,
-  output [7:0]   io_pipe_phv_out_data_103,
-  output [7:0]   io_pipe_phv_out_data_104,
-  output [7:0]   io_pipe_phv_out_data_105,
-  output [7:0]   io_pipe_phv_out_data_106,
-  output [7:0]   io_pipe_phv_out_data_107,
-  output [7:0]   io_pipe_phv_out_data_108,
-  output [7:0]   io_pipe_phv_out_data_109,
-  output [7:0]   io_pipe_phv_out_data_110,
-  output [7:0]   io_pipe_phv_out_data_111,
-  output [7:0]   io_pipe_phv_out_data_112,
-  output [7:0]   io_pipe_phv_out_data_113,
-  output [7:0]   io_pipe_phv_out_data_114,
-  output [7:0]   io_pipe_phv_out_data_115,
-  output [7:0]   io_pipe_phv_out_data_116,
-  output [7:0]   io_pipe_phv_out_data_117,
-  output [7:0]   io_pipe_phv_out_data_118,
-  output [7:0]   io_pipe_phv_out_data_119,
-  output [7:0]   io_pipe_phv_out_data_120,
-  output [7:0]   io_pipe_phv_out_data_121,
-  output [7:0]   io_pipe_phv_out_data_122,
-  output [7:0]   io_pipe_phv_out_data_123,
-  output [7:0]   io_pipe_phv_out_data_124,
-  output [7:0]   io_pipe_phv_out_data_125,
-  output [7:0]   io_pipe_phv_out_data_126,
-  output [7:0]   io_pipe_phv_out_data_127,
-  output [7:0]   io_pipe_phv_out_data_128,
-  output [7:0]   io_pipe_phv_out_data_129,
-  output [7:0]   io_pipe_phv_out_data_130,
-  output [7:0]   io_pipe_phv_out_data_131,
-  output [7:0]   io_pipe_phv_out_data_132,
-  output [7:0]   io_pipe_phv_out_data_133,
-  output [7:0]   io_pipe_phv_out_data_134,
-  output [7:0]   io_pipe_phv_out_data_135,
-  output [7:0]   io_pipe_phv_out_data_136,
-  output [7:0]   io_pipe_phv_out_data_137,
-  output [7:0]   io_pipe_phv_out_data_138,
-  output [7:0]   io_pipe_phv_out_data_139,
-  output [7:0]   io_pipe_phv_out_data_140,
-  output [7:0]   io_pipe_phv_out_data_141,
-  output [7:0]   io_pipe_phv_out_data_142,
-  output [7:0]   io_pipe_phv_out_data_143,
-  output [7:0]   io_pipe_phv_out_data_144,
-  output [7:0]   io_pipe_phv_out_data_145,
-  output [7:0]   io_pipe_phv_out_data_146,
-  output [7:0]   io_pipe_phv_out_data_147,
-  output [7:0]   io_pipe_phv_out_data_148,
-  output [7:0]   io_pipe_phv_out_data_149,
-  output [7:0]   io_pipe_phv_out_data_150,
-  output [7:0]   io_pipe_phv_out_data_151,
-  output [7:0]   io_pipe_phv_out_data_152,
-  output [7:0]   io_pipe_phv_out_data_153,
-  output [7:0]   io_pipe_phv_out_data_154,
-  output [7:0]   io_pipe_phv_out_data_155,
-  output [7:0]   io_pipe_phv_out_data_156,
-  output [7:0]   io_pipe_phv_out_data_157,
-  output [7:0]   io_pipe_phv_out_data_158,
-  output [7:0]   io_pipe_phv_out_data_159,
-  output [15:0]  io_pipe_phv_out_header_0,
-  output [15:0]  io_pipe_phv_out_header_1,
-  output [15:0]  io_pipe_phv_out_header_2,
-  output [15:0]  io_pipe_phv_out_header_3,
-  output [15:0]  io_pipe_phv_out_header_4,
-  output [15:0]  io_pipe_phv_out_header_5,
-  output [15:0]  io_pipe_phv_out_header_6,
-  output [15:0]  io_pipe_phv_out_header_7,
-  output [15:0]  io_pipe_phv_out_header_8,
-  output [15:0]  io_pipe_phv_out_header_9,
-  output [15:0]  io_pipe_phv_out_header_10,
-  output [15:0]  io_pipe_phv_out_header_11,
-  output [15:0]  io_pipe_phv_out_header_12,
-  output [15:0]  io_pipe_phv_out_header_13,
-  output [15:0]  io_pipe_phv_out_header_14,
-  output [15:0]  io_pipe_phv_out_header_15,
-  output [7:0]   io_pipe_phv_out_parse_current_state,
-  output [7:0]   io_pipe_phv_out_parse_current_offset,
-  output [15:0]  io_pipe_phv_out_parse_transition_field,
-  output [3:0]   io_pipe_phv_out_next_processor_id,
-  output         io_pipe_phv_out_next_config_id,
-  output         io_pipe_phv_out_is_valid_processor,
-  input  [4:0]   io_table_config_0_table_width,
-  input  [4:0]   io_table_config_0_table_depth,
-  input  [4:0]   io_table_config_1_table_width,
-  input  [4:0]   io_table_config_1_table_depth,
-  input  [191:0] io_key_in,
-  output [191:0] io_key_out,
-  input  [7:0]   io_addr_in,
-  output [7:0]   io_addr_out,
-  input  [3:0]   io_cs_in,
-  output [3:0]   io_cs_out,
-  output         io_cs_vec_out_0,
-  output         io_cs_vec_out_1,
-  output         io_cs_vec_out_2,
-  output         io_cs_vec_out_3,
-  output         io_cs_vec_out_4,
-  output         io_cs_vec_out_5,
-  output         io_cs_vec_out_6,
-  output         io_cs_vec_out_7,
-  output         io_cs_vec_out_8,
-  output         io_cs_vec_out_9,
-  output         io_cs_vec_out_10,
-  output         io_cs_vec_out_11,
-  output         io_cs_vec_out_12,
-  output         io_cs_vec_out_13,
-  output         io_cs_vec_out_14,
-  output         io_cs_vec_out_15
+  input         clock,
+  input  [7:0]  io_pipe_phv_in_data_0,
+  input  [7:0]  io_pipe_phv_in_data_1,
+  input  [7:0]  io_pipe_phv_in_data_2,
+  input  [7:0]  io_pipe_phv_in_data_3,
+  input  [7:0]  io_pipe_phv_in_data_4,
+  input  [7:0]  io_pipe_phv_in_data_5,
+  input  [7:0]  io_pipe_phv_in_data_6,
+  input  [7:0]  io_pipe_phv_in_data_7,
+  input  [7:0]  io_pipe_phv_in_data_8,
+  input  [7:0]  io_pipe_phv_in_data_9,
+  input  [7:0]  io_pipe_phv_in_data_10,
+  input  [7:0]  io_pipe_phv_in_data_11,
+  input  [7:0]  io_pipe_phv_in_data_12,
+  input  [7:0]  io_pipe_phv_in_data_13,
+  input  [7:0]  io_pipe_phv_in_data_14,
+  input  [7:0]  io_pipe_phv_in_data_15,
+  input  [7:0]  io_pipe_phv_in_data_16,
+  input  [7:0]  io_pipe_phv_in_data_17,
+  input  [7:0]  io_pipe_phv_in_data_18,
+  input  [7:0]  io_pipe_phv_in_data_19,
+  input  [7:0]  io_pipe_phv_in_data_20,
+  input  [7:0]  io_pipe_phv_in_data_21,
+  input  [7:0]  io_pipe_phv_in_data_22,
+  input  [7:0]  io_pipe_phv_in_data_23,
+  input  [7:0]  io_pipe_phv_in_data_24,
+  input  [7:0]  io_pipe_phv_in_data_25,
+  input  [7:0]  io_pipe_phv_in_data_26,
+  input  [7:0]  io_pipe_phv_in_data_27,
+  input  [7:0]  io_pipe_phv_in_data_28,
+  input  [7:0]  io_pipe_phv_in_data_29,
+  input  [7:0]  io_pipe_phv_in_data_30,
+  input  [7:0]  io_pipe_phv_in_data_31,
+  input  [7:0]  io_pipe_phv_in_data_32,
+  input  [7:0]  io_pipe_phv_in_data_33,
+  input  [7:0]  io_pipe_phv_in_data_34,
+  input  [7:0]  io_pipe_phv_in_data_35,
+  input  [7:0]  io_pipe_phv_in_data_36,
+  input  [7:0]  io_pipe_phv_in_data_37,
+  input  [7:0]  io_pipe_phv_in_data_38,
+  input  [7:0]  io_pipe_phv_in_data_39,
+  input  [7:0]  io_pipe_phv_in_data_40,
+  input  [7:0]  io_pipe_phv_in_data_41,
+  input  [7:0]  io_pipe_phv_in_data_42,
+  input  [7:0]  io_pipe_phv_in_data_43,
+  input  [7:0]  io_pipe_phv_in_data_44,
+  input  [7:0]  io_pipe_phv_in_data_45,
+  input  [7:0]  io_pipe_phv_in_data_46,
+  input  [7:0]  io_pipe_phv_in_data_47,
+  input  [7:0]  io_pipe_phv_in_data_48,
+  input  [7:0]  io_pipe_phv_in_data_49,
+  input  [7:0]  io_pipe_phv_in_data_50,
+  input  [7:0]  io_pipe_phv_in_data_51,
+  input  [7:0]  io_pipe_phv_in_data_52,
+  input  [7:0]  io_pipe_phv_in_data_53,
+  input  [7:0]  io_pipe_phv_in_data_54,
+  input  [7:0]  io_pipe_phv_in_data_55,
+  input  [7:0]  io_pipe_phv_in_data_56,
+  input  [7:0]  io_pipe_phv_in_data_57,
+  input  [7:0]  io_pipe_phv_in_data_58,
+  input  [7:0]  io_pipe_phv_in_data_59,
+  input  [7:0]  io_pipe_phv_in_data_60,
+  input  [7:0]  io_pipe_phv_in_data_61,
+  input  [7:0]  io_pipe_phv_in_data_62,
+  input  [7:0]  io_pipe_phv_in_data_63,
+  input  [7:0]  io_pipe_phv_in_data_64,
+  input  [7:0]  io_pipe_phv_in_data_65,
+  input  [7:0]  io_pipe_phv_in_data_66,
+  input  [7:0]  io_pipe_phv_in_data_67,
+  input  [7:0]  io_pipe_phv_in_data_68,
+  input  [7:0]  io_pipe_phv_in_data_69,
+  input  [7:0]  io_pipe_phv_in_data_70,
+  input  [7:0]  io_pipe_phv_in_data_71,
+  input  [7:0]  io_pipe_phv_in_data_72,
+  input  [7:0]  io_pipe_phv_in_data_73,
+  input  [7:0]  io_pipe_phv_in_data_74,
+  input  [7:0]  io_pipe_phv_in_data_75,
+  input  [7:0]  io_pipe_phv_in_data_76,
+  input  [7:0]  io_pipe_phv_in_data_77,
+  input  [7:0]  io_pipe_phv_in_data_78,
+  input  [7:0]  io_pipe_phv_in_data_79,
+  input  [7:0]  io_pipe_phv_in_data_80,
+  input  [7:0]  io_pipe_phv_in_data_81,
+  input  [7:0]  io_pipe_phv_in_data_82,
+  input  [7:0]  io_pipe_phv_in_data_83,
+  input  [7:0]  io_pipe_phv_in_data_84,
+  input  [7:0]  io_pipe_phv_in_data_85,
+  input  [7:0]  io_pipe_phv_in_data_86,
+  input  [7:0]  io_pipe_phv_in_data_87,
+  input  [7:0]  io_pipe_phv_in_data_88,
+  input  [7:0]  io_pipe_phv_in_data_89,
+  input  [7:0]  io_pipe_phv_in_data_90,
+  input  [7:0]  io_pipe_phv_in_data_91,
+  input  [7:0]  io_pipe_phv_in_data_92,
+  input  [7:0]  io_pipe_phv_in_data_93,
+  input  [7:0]  io_pipe_phv_in_data_94,
+  input  [7:0]  io_pipe_phv_in_data_95,
+  input  [7:0]  io_pipe_phv_in_data_96,
+  input  [7:0]  io_pipe_phv_in_data_97,
+  input  [7:0]  io_pipe_phv_in_data_98,
+  input  [7:0]  io_pipe_phv_in_data_99,
+  input  [7:0]  io_pipe_phv_in_data_100,
+  input  [7:0]  io_pipe_phv_in_data_101,
+  input  [7:0]  io_pipe_phv_in_data_102,
+  input  [7:0]  io_pipe_phv_in_data_103,
+  input  [7:0]  io_pipe_phv_in_data_104,
+  input  [7:0]  io_pipe_phv_in_data_105,
+  input  [7:0]  io_pipe_phv_in_data_106,
+  input  [7:0]  io_pipe_phv_in_data_107,
+  input  [7:0]  io_pipe_phv_in_data_108,
+  input  [7:0]  io_pipe_phv_in_data_109,
+  input  [7:0]  io_pipe_phv_in_data_110,
+  input  [7:0]  io_pipe_phv_in_data_111,
+  input  [7:0]  io_pipe_phv_in_data_112,
+  input  [7:0]  io_pipe_phv_in_data_113,
+  input  [7:0]  io_pipe_phv_in_data_114,
+  input  [7:0]  io_pipe_phv_in_data_115,
+  input  [7:0]  io_pipe_phv_in_data_116,
+  input  [7:0]  io_pipe_phv_in_data_117,
+  input  [7:0]  io_pipe_phv_in_data_118,
+  input  [7:0]  io_pipe_phv_in_data_119,
+  input  [7:0]  io_pipe_phv_in_data_120,
+  input  [7:0]  io_pipe_phv_in_data_121,
+  input  [7:0]  io_pipe_phv_in_data_122,
+  input  [7:0]  io_pipe_phv_in_data_123,
+  input  [7:0]  io_pipe_phv_in_data_124,
+  input  [7:0]  io_pipe_phv_in_data_125,
+  input  [7:0]  io_pipe_phv_in_data_126,
+  input  [7:0]  io_pipe_phv_in_data_127,
+  input  [7:0]  io_pipe_phv_in_data_128,
+  input  [7:0]  io_pipe_phv_in_data_129,
+  input  [7:0]  io_pipe_phv_in_data_130,
+  input  [7:0]  io_pipe_phv_in_data_131,
+  input  [7:0]  io_pipe_phv_in_data_132,
+  input  [7:0]  io_pipe_phv_in_data_133,
+  input  [7:0]  io_pipe_phv_in_data_134,
+  input  [7:0]  io_pipe_phv_in_data_135,
+  input  [7:0]  io_pipe_phv_in_data_136,
+  input  [7:0]  io_pipe_phv_in_data_137,
+  input  [7:0]  io_pipe_phv_in_data_138,
+  input  [7:0]  io_pipe_phv_in_data_139,
+  input  [7:0]  io_pipe_phv_in_data_140,
+  input  [7:0]  io_pipe_phv_in_data_141,
+  input  [7:0]  io_pipe_phv_in_data_142,
+  input  [7:0]  io_pipe_phv_in_data_143,
+  input  [7:0]  io_pipe_phv_in_data_144,
+  input  [7:0]  io_pipe_phv_in_data_145,
+  input  [7:0]  io_pipe_phv_in_data_146,
+  input  [7:0]  io_pipe_phv_in_data_147,
+  input  [7:0]  io_pipe_phv_in_data_148,
+  input  [7:0]  io_pipe_phv_in_data_149,
+  input  [7:0]  io_pipe_phv_in_data_150,
+  input  [7:0]  io_pipe_phv_in_data_151,
+  input  [7:0]  io_pipe_phv_in_data_152,
+  input  [7:0]  io_pipe_phv_in_data_153,
+  input  [7:0]  io_pipe_phv_in_data_154,
+  input  [7:0]  io_pipe_phv_in_data_155,
+  input  [7:0]  io_pipe_phv_in_data_156,
+  input  [7:0]  io_pipe_phv_in_data_157,
+  input  [7:0]  io_pipe_phv_in_data_158,
+  input  [7:0]  io_pipe_phv_in_data_159,
+  input  [15:0] io_pipe_phv_in_header_0,
+  input  [15:0] io_pipe_phv_in_header_1,
+  input  [15:0] io_pipe_phv_in_header_2,
+  input  [15:0] io_pipe_phv_in_header_3,
+  input  [15:0] io_pipe_phv_in_header_4,
+  input  [15:0] io_pipe_phv_in_header_5,
+  input  [15:0] io_pipe_phv_in_header_6,
+  input  [15:0] io_pipe_phv_in_header_7,
+  input  [15:0] io_pipe_phv_in_header_8,
+  input  [15:0] io_pipe_phv_in_header_9,
+  input  [15:0] io_pipe_phv_in_header_10,
+  input  [15:0] io_pipe_phv_in_header_11,
+  input  [15:0] io_pipe_phv_in_header_12,
+  input  [15:0] io_pipe_phv_in_header_13,
+  input  [15:0] io_pipe_phv_in_header_14,
+  input  [15:0] io_pipe_phv_in_header_15,
+  input  [7:0]  io_pipe_phv_in_parse_current_state,
+  input  [7:0]  io_pipe_phv_in_parse_current_offset,
+  input  [15:0] io_pipe_phv_in_parse_transition_field,
+  input  [3:0]  io_pipe_phv_in_next_processor_id,
+  input         io_pipe_phv_in_next_config_id,
+  input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
+  output [7:0]  io_pipe_phv_out_data_0,
+  output [7:0]  io_pipe_phv_out_data_1,
+  output [7:0]  io_pipe_phv_out_data_2,
+  output [7:0]  io_pipe_phv_out_data_3,
+  output [7:0]  io_pipe_phv_out_data_4,
+  output [7:0]  io_pipe_phv_out_data_5,
+  output [7:0]  io_pipe_phv_out_data_6,
+  output [7:0]  io_pipe_phv_out_data_7,
+  output [7:0]  io_pipe_phv_out_data_8,
+  output [7:0]  io_pipe_phv_out_data_9,
+  output [7:0]  io_pipe_phv_out_data_10,
+  output [7:0]  io_pipe_phv_out_data_11,
+  output [7:0]  io_pipe_phv_out_data_12,
+  output [7:0]  io_pipe_phv_out_data_13,
+  output [7:0]  io_pipe_phv_out_data_14,
+  output [7:0]  io_pipe_phv_out_data_15,
+  output [7:0]  io_pipe_phv_out_data_16,
+  output [7:0]  io_pipe_phv_out_data_17,
+  output [7:0]  io_pipe_phv_out_data_18,
+  output [7:0]  io_pipe_phv_out_data_19,
+  output [7:0]  io_pipe_phv_out_data_20,
+  output [7:0]  io_pipe_phv_out_data_21,
+  output [7:0]  io_pipe_phv_out_data_22,
+  output [7:0]  io_pipe_phv_out_data_23,
+  output [7:0]  io_pipe_phv_out_data_24,
+  output [7:0]  io_pipe_phv_out_data_25,
+  output [7:0]  io_pipe_phv_out_data_26,
+  output [7:0]  io_pipe_phv_out_data_27,
+  output [7:0]  io_pipe_phv_out_data_28,
+  output [7:0]  io_pipe_phv_out_data_29,
+  output [7:0]  io_pipe_phv_out_data_30,
+  output [7:0]  io_pipe_phv_out_data_31,
+  output [7:0]  io_pipe_phv_out_data_32,
+  output [7:0]  io_pipe_phv_out_data_33,
+  output [7:0]  io_pipe_phv_out_data_34,
+  output [7:0]  io_pipe_phv_out_data_35,
+  output [7:0]  io_pipe_phv_out_data_36,
+  output [7:0]  io_pipe_phv_out_data_37,
+  output [7:0]  io_pipe_phv_out_data_38,
+  output [7:0]  io_pipe_phv_out_data_39,
+  output [7:0]  io_pipe_phv_out_data_40,
+  output [7:0]  io_pipe_phv_out_data_41,
+  output [7:0]  io_pipe_phv_out_data_42,
+  output [7:0]  io_pipe_phv_out_data_43,
+  output [7:0]  io_pipe_phv_out_data_44,
+  output [7:0]  io_pipe_phv_out_data_45,
+  output [7:0]  io_pipe_phv_out_data_46,
+  output [7:0]  io_pipe_phv_out_data_47,
+  output [7:0]  io_pipe_phv_out_data_48,
+  output [7:0]  io_pipe_phv_out_data_49,
+  output [7:0]  io_pipe_phv_out_data_50,
+  output [7:0]  io_pipe_phv_out_data_51,
+  output [7:0]  io_pipe_phv_out_data_52,
+  output [7:0]  io_pipe_phv_out_data_53,
+  output [7:0]  io_pipe_phv_out_data_54,
+  output [7:0]  io_pipe_phv_out_data_55,
+  output [7:0]  io_pipe_phv_out_data_56,
+  output [7:0]  io_pipe_phv_out_data_57,
+  output [7:0]  io_pipe_phv_out_data_58,
+  output [7:0]  io_pipe_phv_out_data_59,
+  output [7:0]  io_pipe_phv_out_data_60,
+  output [7:0]  io_pipe_phv_out_data_61,
+  output [7:0]  io_pipe_phv_out_data_62,
+  output [7:0]  io_pipe_phv_out_data_63,
+  output [7:0]  io_pipe_phv_out_data_64,
+  output [7:0]  io_pipe_phv_out_data_65,
+  output [7:0]  io_pipe_phv_out_data_66,
+  output [7:0]  io_pipe_phv_out_data_67,
+  output [7:0]  io_pipe_phv_out_data_68,
+  output [7:0]  io_pipe_phv_out_data_69,
+  output [7:0]  io_pipe_phv_out_data_70,
+  output [7:0]  io_pipe_phv_out_data_71,
+  output [7:0]  io_pipe_phv_out_data_72,
+  output [7:0]  io_pipe_phv_out_data_73,
+  output [7:0]  io_pipe_phv_out_data_74,
+  output [7:0]  io_pipe_phv_out_data_75,
+  output [7:0]  io_pipe_phv_out_data_76,
+  output [7:0]  io_pipe_phv_out_data_77,
+  output [7:0]  io_pipe_phv_out_data_78,
+  output [7:0]  io_pipe_phv_out_data_79,
+  output [7:0]  io_pipe_phv_out_data_80,
+  output [7:0]  io_pipe_phv_out_data_81,
+  output [7:0]  io_pipe_phv_out_data_82,
+  output [7:0]  io_pipe_phv_out_data_83,
+  output [7:0]  io_pipe_phv_out_data_84,
+  output [7:0]  io_pipe_phv_out_data_85,
+  output [7:0]  io_pipe_phv_out_data_86,
+  output [7:0]  io_pipe_phv_out_data_87,
+  output [7:0]  io_pipe_phv_out_data_88,
+  output [7:0]  io_pipe_phv_out_data_89,
+  output [7:0]  io_pipe_phv_out_data_90,
+  output [7:0]  io_pipe_phv_out_data_91,
+  output [7:0]  io_pipe_phv_out_data_92,
+  output [7:0]  io_pipe_phv_out_data_93,
+  output [7:0]  io_pipe_phv_out_data_94,
+  output [7:0]  io_pipe_phv_out_data_95,
+  output [7:0]  io_pipe_phv_out_data_96,
+  output [7:0]  io_pipe_phv_out_data_97,
+  output [7:0]  io_pipe_phv_out_data_98,
+  output [7:0]  io_pipe_phv_out_data_99,
+  output [7:0]  io_pipe_phv_out_data_100,
+  output [7:0]  io_pipe_phv_out_data_101,
+  output [7:0]  io_pipe_phv_out_data_102,
+  output [7:0]  io_pipe_phv_out_data_103,
+  output [7:0]  io_pipe_phv_out_data_104,
+  output [7:0]  io_pipe_phv_out_data_105,
+  output [7:0]  io_pipe_phv_out_data_106,
+  output [7:0]  io_pipe_phv_out_data_107,
+  output [7:0]  io_pipe_phv_out_data_108,
+  output [7:0]  io_pipe_phv_out_data_109,
+  output [7:0]  io_pipe_phv_out_data_110,
+  output [7:0]  io_pipe_phv_out_data_111,
+  output [7:0]  io_pipe_phv_out_data_112,
+  output [7:0]  io_pipe_phv_out_data_113,
+  output [7:0]  io_pipe_phv_out_data_114,
+  output [7:0]  io_pipe_phv_out_data_115,
+  output [7:0]  io_pipe_phv_out_data_116,
+  output [7:0]  io_pipe_phv_out_data_117,
+  output [7:0]  io_pipe_phv_out_data_118,
+  output [7:0]  io_pipe_phv_out_data_119,
+  output [7:0]  io_pipe_phv_out_data_120,
+  output [7:0]  io_pipe_phv_out_data_121,
+  output [7:0]  io_pipe_phv_out_data_122,
+  output [7:0]  io_pipe_phv_out_data_123,
+  output [7:0]  io_pipe_phv_out_data_124,
+  output [7:0]  io_pipe_phv_out_data_125,
+  output [7:0]  io_pipe_phv_out_data_126,
+  output [7:0]  io_pipe_phv_out_data_127,
+  output [7:0]  io_pipe_phv_out_data_128,
+  output [7:0]  io_pipe_phv_out_data_129,
+  output [7:0]  io_pipe_phv_out_data_130,
+  output [7:0]  io_pipe_phv_out_data_131,
+  output [7:0]  io_pipe_phv_out_data_132,
+  output [7:0]  io_pipe_phv_out_data_133,
+  output [7:0]  io_pipe_phv_out_data_134,
+  output [7:0]  io_pipe_phv_out_data_135,
+  output [7:0]  io_pipe_phv_out_data_136,
+  output [7:0]  io_pipe_phv_out_data_137,
+  output [7:0]  io_pipe_phv_out_data_138,
+  output [7:0]  io_pipe_phv_out_data_139,
+  output [7:0]  io_pipe_phv_out_data_140,
+  output [7:0]  io_pipe_phv_out_data_141,
+  output [7:0]  io_pipe_phv_out_data_142,
+  output [7:0]  io_pipe_phv_out_data_143,
+  output [7:0]  io_pipe_phv_out_data_144,
+  output [7:0]  io_pipe_phv_out_data_145,
+  output [7:0]  io_pipe_phv_out_data_146,
+  output [7:0]  io_pipe_phv_out_data_147,
+  output [7:0]  io_pipe_phv_out_data_148,
+  output [7:0]  io_pipe_phv_out_data_149,
+  output [7:0]  io_pipe_phv_out_data_150,
+  output [7:0]  io_pipe_phv_out_data_151,
+  output [7:0]  io_pipe_phv_out_data_152,
+  output [7:0]  io_pipe_phv_out_data_153,
+  output [7:0]  io_pipe_phv_out_data_154,
+  output [7:0]  io_pipe_phv_out_data_155,
+  output [7:0]  io_pipe_phv_out_data_156,
+  output [7:0]  io_pipe_phv_out_data_157,
+  output [7:0]  io_pipe_phv_out_data_158,
+  output [7:0]  io_pipe_phv_out_data_159,
+  output [15:0] io_pipe_phv_out_header_0,
+  output [15:0] io_pipe_phv_out_header_1,
+  output [15:0] io_pipe_phv_out_header_2,
+  output [15:0] io_pipe_phv_out_header_3,
+  output [15:0] io_pipe_phv_out_header_4,
+  output [15:0] io_pipe_phv_out_header_5,
+  output [15:0] io_pipe_phv_out_header_6,
+  output [15:0] io_pipe_phv_out_header_7,
+  output [15:0] io_pipe_phv_out_header_8,
+  output [15:0] io_pipe_phv_out_header_9,
+  output [15:0] io_pipe_phv_out_header_10,
+  output [15:0] io_pipe_phv_out_header_11,
+  output [15:0] io_pipe_phv_out_header_12,
+  output [15:0] io_pipe_phv_out_header_13,
+  output [15:0] io_pipe_phv_out_header_14,
+  output [15:0] io_pipe_phv_out_header_15,
+  output [7:0]  io_pipe_phv_out_parse_current_state,
+  output [7:0]  io_pipe_phv_out_parse_current_offset,
+  output [15:0] io_pipe_phv_out_parse_transition_field,
+  output [3:0]  io_pipe_phv_out_next_processor_id,
+  output        io_pipe_phv_out_next_config_id,
+  output        io_pipe_phv_out_is_valid_processor,
+  output        io_pipe_phv_out_valid
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -574,9 +550,7 @@ module MatchGetCs(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
-  reg [191:0] _RAND_182;
-  reg [31:0] _RAND_183;
-  reg [31:0] _RAND_184;
+  reg [31:0] _RAND_182;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[matcher.scala 179:22]
   reg [7:0] phv_data_1; // @[matcher.scala 179:22]
@@ -760,150 +734,7 @@ module MatchGetCs(
   reg [3:0] phv_next_processor_id; // @[matcher.scala 179:22]
   reg  phv_next_config_id; // @[matcher.scala 179:22]
   reg  phv_is_valid_processor; // @[matcher.scala 179:22]
-  reg [191:0] key; // @[matcher.scala 183:22]
-  reg [7:0] addr; // @[matcher.scala 187:23]
-  reg [3:0] cs; // @[matcher.scala 191:21]
-  wire [4:0] _GEN_34 = phv_next_config_id ? io_table_config_1_table_width : io_table_config_0_table_width; // @[matcher.scala 203:84 matcher.scala 203:84]
-  wire [4:0] _GEN_35 = phv_next_config_id ? io_table_config_1_table_depth : io_table_config_0_table_depth; // @[matcher.scala 203:84 matcher.scala 203:84]
-  wire  width_extend = _GEN_34 > 5'h0; // @[matcher.scala 203:84]
-  wire [4:0] _GEN_180 = {{1'd0}, cs}; // @[matcher.scala 207:49]
-  wire [4:0] _cs1_T_2 = _GEN_180 + _GEN_35; // @[matcher.scala 207:49]
-  wire [4:0] cs1 = _GEN_35[0] ? _cs1_T_2 : {{1'd0}, cs}; // @[matcher.scala 207:34]
-  wire [5:0] _cs2_T_1 = {_GEN_35,1'h0}; // @[Cat.scala 30:58]
-  wire [5:0] _GEN_181 = {{1'd0}, cs1}; // @[matcher.scala 208:49]
-  wire [5:0] _cs2_T_3 = _GEN_181 + _cs2_T_1; // @[matcher.scala 208:49]
-  wire [5:0] cs2 = _GEN_35[1] ? _cs2_T_3 : {{1'd0}, cs1}; // @[matcher.scala 208:34]
-  wire  _GEN_36 = 4'h0 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_37 = 4'h1 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_38 = 4'h2 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_39 = 4'h3 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_40 = 4'h4 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_41 = 4'h5 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_42 = 4'h6 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_43 = 4'h7 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_44 = 4'h8 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_45 = 4'h9 == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_46 = 4'ha == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_47 = 4'hb == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_48 = 4'hc == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_49 = 4'hd == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_50 = 4'he == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_51 = 4'hf == cs2[3:0]; // @[matcher.scala 209:40 matcher.scala 209:40 matcher.scala 199:30]
-  wire  _GEN_52 = width_extend & _GEN_36; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_53 = width_extend & _GEN_37; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_54 = width_extend & _GEN_38; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_55 = width_extend & _GEN_39; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_56 = width_extend & _GEN_40; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_57 = width_extend & _GEN_41; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_58 = width_extend & _GEN_42; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_59 = width_extend & _GEN_43; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_60 = width_extend & _GEN_44; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_61 = width_extend & _GEN_45; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_62 = width_extend & _GEN_46; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_63 = width_extend & _GEN_47; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_64 = width_extend & _GEN_48; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_65 = width_extend & _GEN_49; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_66 = width_extend & _GEN_50; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  _GEN_67 = width_extend & _GEN_51; // @[matcher.scala 204:37 matcher.scala 199:30]
-  wire  width_extend_1 = _GEN_34 > 5'h1; // @[matcher.scala 203:84]
-  wire  _GEN_68 = _GEN_36 | _GEN_52; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_69 = _GEN_37 | _GEN_53; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_70 = _GEN_38 | _GEN_54; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_71 = _GEN_39 | _GEN_55; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_72 = _GEN_40 | _GEN_56; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_73 = _GEN_41 | _GEN_57; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_74 = _GEN_42 | _GEN_58; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_75 = _GEN_43 | _GEN_59; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_76 = _GEN_44 | _GEN_60; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_77 = _GEN_45 | _GEN_61; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_78 = _GEN_46 | _GEN_62; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_79 = _GEN_47 | _GEN_63; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_80 = _GEN_48 | _GEN_64; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_81 = _GEN_49 | _GEN_65; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_82 = _GEN_50 | _GEN_66; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_83 = _GEN_51 | _GEN_67; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_84 = width_extend_1 ? _GEN_68 : _GEN_52; // @[matcher.scala 204:37]
-  wire  _GEN_85 = width_extend_1 ? _GEN_69 : _GEN_53; // @[matcher.scala 204:37]
-  wire  _GEN_86 = width_extend_1 ? _GEN_70 : _GEN_54; // @[matcher.scala 204:37]
-  wire  _GEN_87 = width_extend_1 ? _GEN_71 : _GEN_55; // @[matcher.scala 204:37]
-  wire  _GEN_88 = width_extend_1 ? _GEN_72 : _GEN_56; // @[matcher.scala 204:37]
-  wire  _GEN_89 = width_extend_1 ? _GEN_73 : _GEN_57; // @[matcher.scala 204:37]
-  wire  _GEN_90 = width_extend_1 ? _GEN_74 : _GEN_58; // @[matcher.scala 204:37]
-  wire  _GEN_91 = width_extend_1 ? _GEN_75 : _GEN_59; // @[matcher.scala 204:37]
-  wire  _GEN_92 = width_extend_1 ? _GEN_76 : _GEN_60; // @[matcher.scala 204:37]
-  wire  _GEN_93 = width_extend_1 ? _GEN_77 : _GEN_61; // @[matcher.scala 204:37]
-  wire  _GEN_94 = width_extend_1 ? _GEN_78 : _GEN_62; // @[matcher.scala 204:37]
-  wire  _GEN_95 = width_extend_1 ? _GEN_79 : _GEN_63; // @[matcher.scala 204:37]
-  wire  _GEN_96 = width_extend_1 ? _GEN_80 : _GEN_64; // @[matcher.scala 204:37]
-  wire  _GEN_97 = width_extend_1 ? _GEN_81 : _GEN_65; // @[matcher.scala 204:37]
-  wire  _GEN_98 = width_extend_1 ? _GEN_82 : _GEN_66; // @[matcher.scala 204:37]
-  wire  _GEN_99 = width_extend_1 ? _GEN_83 : _GEN_67; // @[matcher.scala 204:37]
-  wire  width_extend_2 = _GEN_34 > 5'h2; // @[matcher.scala 203:84]
-  wire  _GEN_100 = _GEN_36 | _GEN_84; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_101 = _GEN_37 | _GEN_85; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_102 = _GEN_38 | _GEN_86; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_103 = _GEN_39 | _GEN_87; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_104 = _GEN_40 | _GEN_88; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_105 = _GEN_41 | _GEN_89; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_106 = _GEN_42 | _GEN_90; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_107 = _GEN_43 | _GEN_91; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_108 = _GEN_44 | _GEN_92; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_109 = _GEN_45 | _GEN_93; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_110 = _GEN_46 | _GEN_94; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_111 = _GEN_47 | _GEN_95; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_112 = _GEN_48 | _GEN_96; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_113 = _GEN_49 | _GEN_97; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_114 = _GEN_50 | _GEN_98; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_115 = _GEN_51 | _GEN_99; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_116 = width_extend_2 ? _GEN_100 : _GEN_84; // @[matcher.scala 204:37]
-  wire  _GEN_117 = width_extend_2 ? _GEN_101 : _GEN_85; // @[matcher.scala 204:37]
-  wire  _GEN_118 = width_extend_2 ? _GEN_102 : _GEN_86; // @[matcher.scala 204:37]
-  wire  _GEN_119 = width_extend_2 ? _GEN_103 : _GEN_87; // @[matcher.scala 204:37]
-  wire  _GEN_120 = width_extend_2 ? _GEN_104 : _GEN_88; // @[matcher.scala 204:37]
-  wire  _GEN_121 = width_extend_2 ? _GEN_105 : _GEN_89; // @[matcher.scala 204:37]
-  wire  _GEN_122 = width_extend_2 ? _GEN_106 : _GEN_90; // @[matcher.scala 204:37]
-  wire  _GEN_123 = width_extend_2 ? _GEN_107 : _GEN_91; // @[matcher.scala 204:37]
-  wire  _GEN_124 = width_extend_2 ? _GEN_108 : _GEN_92; // @[matcher.scala 204:37]
-  wire  _GEN_125 = width_extend_2 ? _GEN_109 : _GEN_93; // @[matcher.scala 204:37]
-  wire  _GEN_126 = width_extend_2 ? _GEN_110 : _GEN_94; // @[matcher.scala 204:37]
-  wire  _GEN_127 = width_extend_2 ? _GEN_111 : _GEN_95; // @[matcher.scala 204:37]
-  wire  _GEN_128 = width_extend_2 ? _GEN_112 : _GEN_96; // @[matcher.scala 204:37]
-  wire  _GEN_129 = width_extend_2 ? _GEN_113 : _GEN_97; // @[matcher.scala 204:37]
-  wire  _GEN_130 = width_extend_2 ? _GEN_114 : _GEN_98; // @[matcher.scala 204:37]
-  wire  _GEN_131 = width_extend_2 ? _GEN_115 : _GEN_99; // @[matcher.scala 204:37]
-  wire  width_extend_3 = _GEN_34 > 5'h3; // @[matcher.scala 203:84]
-  wire  _GEN_132 = _GEN_36 | _GEN_116; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_133 = _GEN_37 | _GEN_117; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_134 = _GEN_38 | _GEN_118; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_135 = _GEN_39 | _GEN_119; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_136 = _GEN_40 | _GEN_120; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_137 = _GEN_41 | _GEN_121; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_138 = _GEN_42 | _GEN_122; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_139 = _GEN_43 | _GEN_123; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_140 = _GEN_44 | _GEN_124; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_141 = _GEN_45 | _GEN_125; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_142 = _GEN_46 | _GEN_126; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_143 = _GEN_47 | _GEN_127; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_144 = _GEN_48 | _GEN_128; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_145 = _GEN_49 | _GEN_129; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_146 = _GEN_50 | _GEN_130; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_147 = _GEN_51 | _GEN_131; // @[matcher.scala 209:40 matcher.scala 209:40]
-  wire  _GEN_148 = width_extend_3 ? _GEN_132 : _GEN_116; // @[matcher.scala 204:37]
-  wire  _GEN_149 = width_extend_3 ? _GEN_133 : _GEN_117; // @[matcher.scala 204:37]
-  wire  _GEN_150 = width_extend_3 ? _GEN_134 : _GEN_118; // @[matcher.scala 204:37]
-  wire  _GEN_151 = width_extend_3 ? _GEN_135 : _GEN_119; // @[matcher.scala 204:37]
-  wire  _GEN_152 = width_extend_3 ? _GEN_136 : _GEN_120; // @[matcher.scala 204:37]
-  wire  _GEN_153 = width_extend_3 ? _GEN_137 : _GEN_121; // @[matcher.scala 204:37]
-  wire  _GEN_154 = width_extend_3 ? _GEN_138 : _GEN_122; // @[matcher.scala 204:37]
-  wire  _GEN_155 = width_extend_3 ? _GEN_139 : _GEN_123; // @[matcher.scala 204:37]
-  wire  _GEN_156 = width_extend_3 ? _GEN_140 : _GEN_124; // @[matcher.scala 204:37]
-  wire  _GEN_157 = width_extend_3 ? _GEN_141 : _GEN_125; // @[matcher.scala 204:37]
-  wire  _GEN_158 = width_extend_3 ? _GEN_142 : _GEN_126; // @[matcher.scala 204:37]
-  wire  _GEN_159 = width_extend_3 ? _GEN_143 : _GEN_127; // @[matcher.scala 204:37]
-  wire  _GEN_160 = width_extend_3 ? _GEN_144 : _GEN_128; // @[matcher.scala 204:37]
-  wire  _GEN_161 = width_extend_3 ? _GEN_145 : _GEN_129; // @[matcher.scala 204:37]
-  wire  _GEN_162 = width_extend_3 ? _GEN_146 : _GEN_130; // @[matcher.scala 204:37]
-  wire  _GEN_163 = width_extend_3 ? _GEN_147 : _GEN_131; // @[matcher.scala 204:37]
+  reg  phv_valid; // @[matcher.scala 179:22]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[matcher.scala 181:25]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[matcher.scala 181:25]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[matcher.scala 181:25]
@@ -1086,25 +917,7 @@ module MatchGetCs(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher.scala 181:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher.scala 181:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher.scala 181:25]
-  assign io_key_out = key; // @[matcher.scala 185:20]
-  assign io_addr_out = addr; // @[matcher.scala 189:21]
-  assign io_cs_out = cs; // @[matcher.scala 193:19]
-  assign io_cs_vec_out_0 = phv_is_valid_processor & _GEN_148; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_1 = phv_is_valid_processor & _GEN_149; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_2 = phv_is_valid_processor & _GEN_150; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_3 = phv_is_valid_processor & _GEN_151; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_4 = phv_is_valid_processor & _GEN_152; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_5 = phv_is_valid_processor & _GEN_153; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_6 = phv_is_valid_processor & _GEN_154; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_7 = phv_is_valid_processor & _GEN_155; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_8 = phv_is_valid_processor & _GEN_156; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_9 = phv_is_valid_processor & _GEN_157; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_10 = phv_is_valid_processor & _GEN_158; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_11 = phv_is_valid_processor & _GEN_159; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_12 = phv_is_valid_processor & _GEN_160; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_13 = phv_is_valid_processor & _GEN_161; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_14 = phv_is_valid_processor & _GEN_162; // @[matcher.scala 201:39 matcher.scala 199:30]
-  assign io_cs_vec_out_15 = phv_is_valid_processor & _GEN_163; // @[matcher.scala 201:39 matcher.scala 199:30]
+  assign io_pipe_phv_out_valid = phv_valid; // @[matcher.scala 181:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[matcher.scala 180:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[matcher.scala 180:13]
@@ -1288,9 +1101,7 @@ module MatchGetCs(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher.scala 180:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher.scala 180:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher.scala 180:13]
-    key <= io_key_in; // @[matcher.scala 184:13]
-    addr <= io_addr_in; // @[matcher.scala 188:14]
-    cs <= io_cs_in; // @[matcher.scala 192:12]
+    phv_valid <= io_pipe_phv_in_valid; // @[matcher.scala 180:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1692,12 +1503,8 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
-  _RAND_182 = {6{`RANDOM}};
-  key = _RAND_182[191:0];
-  _RAND_183 = {1{`RANDOM}};
-  addr = _RAND_183[7:0];
-  _RAND_184 = {1{`RANDOM}};
-  cs = _RAND_184[3:0];
+  _RAND_182 = {1{`RANDOM}};
+  phv_valid = _RAND_182[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

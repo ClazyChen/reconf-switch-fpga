@@ -163,6 +163,7 @@ module MatchReadDataPISA(
   input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
+  input          io_pipe_phv_in_valid,
   output [7:0]   io_pipe_phv_out_data_0,
   output [7:0]   io_pipe_phv_out_data_1,
   output [7:0]   io_pipe_phv_out_data_2,
@@ -326,6 +327,7 @@ module MatchReadDataPISA(
   output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
+  output         io_pipe_phv_out_valid,
   input  [4:0]   io_table_config_0_table_depth,
   input  [4:0]   io_table_config_0_table_width,
   input  [4:0]   io_table_config_1_table_depth,
@@ -504,8 +506,9 @@ module MatchReadDataPISA(
   reg [31:0] _RAND_160;
   reg [31:0] _RAND_161;
   reg [31:0] _RAND_162;
-  reg [191:0] _RAND_163;
-  reg [31:0] _RAND_164;
+  reg [31:0] _RAND_163;
+  reg [191:0] _RAND_164;
+  reg [31:0] _RAND_165;
 `endif // RANDOMIZE_REG_INIT
   wire  mem_0_clock; // @[matcher_pisa.scala 203:29]
   wire  mem_0_io_w_en; // @[matcher_pisa.scala 203:29]
@@ -726,6 +729,7 @@ module MatchReadDataPISA(
   reg [3:0] phv_next_processor_id; // @[matcher_pisa.scala 188:22]
   reg  phv_next_config_id; // @[matcher_pisa.scala 188:22]
   reg  phv_is_valid_processor; // @[matcher_pisa.scala 188:22]
+  reg  phv_valid; // @[matcher_pisa.scala 188:22]
   reg [191:0] key; // @[matcher_pisa.scala 192:22]
   reg [3:0] cs; // @[matcher_pisa.scala 199:21]
   wire [4:0] _GEN_2 = io_pipe_phv_in_next_config_id ? io_table_config_1_table_depth : io_table_config_0_table_depth; // @[matcher_pisa.scala 222:39 matcher_pisa.scala 222:39]
@@ -1083,6 +1087,7 @@ module MatchReadDataPISA(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher_pisa.scala 190:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher_pisa.scala 190:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher_pisa.scala 190:25]
+  assign io_pipe_phv_out_valid = phv_valid; // @[matcher_pisa.scala 190:25]
   assign io_key_out = key; // @[matcher_pisa.scala 194:20]
   assign io_data_out = phv_is_valid_processor ? _io_data_out_T : 256'h0; // @[matcher_pisa.scala 241:39 matcher_pisa.scala 261:25 matcher_pisa.scala 240:21]
   assign mem_0_clock = clock;
@@ -1297,6 +1302,7 @@ module MatchReadDataPISA(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher_pisa.scala 189:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher_pisa.scala 189:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher_pisa.scala 189:13]
+    phv_valid <= io_pipe_phv_in_valid; // @[matcher_pisa.scala 189:13]
     key <= io_key_in; // @[matcher_pisa.scala 193:13]
     cs <= io_cs_in; // @[matcher_pisa.scala 200:12]
   end
@@ -1662,10 +1668,12 @@ initial begin
   phv_next_config_id = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_162[0:0];
-  _RAND_163 = {6{`RANDOM}};
-  key = _RAND_163[191:0];
-  _RAND_164 = {1{`RANDOM}};
-  cs = _RAND_164[3:0];
+  _RAND_163 = {1{`RANDOM}};
+  phv_valid = _RAND_163[0:0];
+  _RAND_164 = {6{`RANDOM}};
+  key = _RAND_164[191:0];
+  _RAND_165 = {1{`RANDOM}};
+  cs = _RAND_165[3:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

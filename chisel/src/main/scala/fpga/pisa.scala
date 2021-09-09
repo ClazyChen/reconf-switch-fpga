@@ -33,10 +33,10 @@ class PISA extends Module {
     for (j <- 0 until const.processor_number) {
         if (j > 0) {
             proc(j).io.pipe.phv_in := proc(j-1).io.pipe.phv_out
-            proc(j).io.pipe.phv_in.is_valid_processor := j.U === proc(j-1).io.pipe.phv_out.next_processor_id
+            proc(j).io.pipe.phv_in.is_valid_processor := j.U === proc(j-1).io.pipe.phv_out.next_processor_id && proc(j-1).io.pipe.phv_out.valid
         } else {
             proc(j).io.pipe.phv_in := PAR.io.pipe.phv_out
-            proc(j).io.pipe.phv_in.is_valid_processor := true.B
+            proc(j).io.pipe.phv_in.is_valid_processor := PAR.io.pipe.phv_out.valid
         }
     }
     proc(const.processor_number-1).io.pipe.phv_out <> io.pipe.phv_out

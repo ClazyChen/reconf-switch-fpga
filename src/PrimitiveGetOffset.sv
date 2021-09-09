@@ -182,6 +182,7 @@ module PrimitiveGetOffset(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,24 +365,11 @@ module PrimitiveGetOffset(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  input  [7:0]  io_args_in_0,
-  input  [7:0]  io_args_in_1,
-  input  [7:0]  io_args_in_2,
-  input  [7:0]  io_args_in_3,
-  input  [7:0]  io_args_in_4,
-  input  [7:0]  io_args_in_5,
-  input  [7:0]  io_args_in_6,
+  output        io_pipe_phv_out_valid,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
   input  [31:0] io_vliw_in_2,
   input  [31:0] io_vliw_in_3,
-  output [7:0]  io_args_out_0,
-  output [7:0]  io_args_out_1,
-  output [7:0]  io_args_out_2,
-  output [7:0]  io_args_out_3,
-  output [7:0]  io_args_out_4,
-  output [7:0]  io_args_out_5,
-  output [7:0]  io_args_out_6,
   output [31:0] io_vliw_out_0,
   output [31:0] io_vliw_out_1,
   output [31:0] io_vliw_out_2,
@@ -583,12 +571,6 @@ module PrimitiveGetOffset(
   reg [31:0] _RAND_184;
   reg [31:0] _RAND_185;
   reg [31:0] _RAND_186;
-  reg [31:0] _RAND_187;
-  reg [31:0] _RAND_188;
-  reg [31:0] _RAND_189;
-  reg [31:0] _RAND_190;
-  reg [31:0] _RAND_191;
-  reg [31:0] _RAND_192;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor.scala 78:22]
   reg [7:0] phv_data_1; // @[executor.scala 78:22]
@@ -772,13 +754,7 @@ module PrimitiveGetOffset(
   reg [3:0] phv_next_processor_id; // @[executor.scala 78:22]
   reg  phv_next_config_id; // @[executor.scala 78:22]
   reg  phv_is_valid_processor; // @[executor.scala 78:22]
-  reg [7:0] args_0; // @[executor.scala 82:23]
-  reg [7:0] args_1; // @[executor.scala 82:23]
-  reg [7:0] args_2; // @[executor.scala 82:23]
-  reg [7:0] args_3; // @[executor.scala 82:23]
-  reg [7:0] args_4; // @[executor.scala 82:23]
-  reg [7:0] args_5; // @[executor.scala 82:23]
-  reg [7:0] args_6; // @[executor.scala 82:23]
+  reg  phv_valid; // @[executor.scala 78:22]
   reg [31:0] vliw_0; // @[executor.scala 86:23]
   reg [31:0] vliw_1; // @[executor.scala 86:23]
   reg [31:0] vliw_2; // @[executor.scala 86:23]
@@ -1073,13 +1049,7 @@ module PrimitiveGetOffset(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 80:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 80:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 80:25]
-  assign io_args_out_0 = args_0; // @[executor.scala 84:21]
-  assign io_args_out_1 = args_1; // @[executor.scala 84:21]
-  assign io_args_out_2 = args_2; // @[executor.scala 84:21]
-  assign io_args_out_3 = args_3; // @[executor.scala 84:21]
-  assign io_args_out_4 = args_4; // @[executor.scala 84:21]
-  assign io_args_out_5 = args_5; // @[executor.scala 84:21]
-  assign io_args_out_6 = args_6; // @[executor.scala 84:21]
+  assign io_pipe_phv_out_valid = phv_valid; // @[executor.scala 80:25]
   assign io_vliw_out_0 = vliw_0; // @[executor.scala 88:21]
   assign io_vliw_out_1 = vliw_1; // @[executor.scala 88:21]
   assign io_vliw_out_2 = vliw_2; // @[executor.scala 88:21]
@@ -1275,13 +1245,7 @@ module PrimitiveGetOffset(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 79:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 79:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 79:13]
-    args_0 <= io_args_in_0; // @[executor.scala 83:14]
-    args_1 <= io_args_in_1; // @[executor.scala 83:14]
-    args_2 <= io_args_in_2; // @[executor.scala 83:14]
-    args_3 <= io_args_in_3; // @[executor.scala 83:14]
-    args_4 <= io_args_in_4; // @[executor.scala 83:14]
-    args_5 <= io_args_in_5; // @[executor.scala 83:14]
-    args_6 <= io_args_in_6; // @[executor.scala 83:14]
+    phv_valid <= io_pipe_phv_in_valid; // @[executor.scala 79:13]
     vliw_0 <= io_vliw_in_0; // @[executor.scala 87:14]
     vliw_1 <= io_vliw_in_1; // @[executor.scala 87:14]
     vliw_2 <= io_vliw_in_2; // @[executor.scala 87:14]
@@ -1688,27 +1652,15 @@ initial begin
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
   _RAND_182 = {1{`RANDOM}};
-  args_0 = _RAND_182[7:0];
+  phv_valid = _RAND_182[0:0];
   _RAND_183 = {1{`RANDOM}};
-  args_1 = _RAND_183[7:0];
+  vliw_0 = _RAND_183[31:0];
   _RAND_184 = {1{`RANDOM}};
-  args_2 = _RAND_184[7:0];
+  vliw_1 = _RAND_184[31:0];
   _RAND_185 = {1{`RANDOM}};
-  args_3 = _RAND_185[7:0];
+  vliw_2 = _RAND_185[31:0];
   _RAND_186 = {1{`RANDOM}};
-  args_4 = _RAND_186[7:0];
-  _RAND_187 = {1{`RANDOM}};
-  args_5 = _RAND_187[7:0];
-  _RAND_188 = {1{`RANDOM}};
-  args_6 = _RAND_188[7:0];
-  _RAND_189 = {1{`RANDOM}};
-  vliw_0 = _RAND_189[31:0];
-  _RAND_190 = {1{`RANDOM}};
-  vliw_1 = _RAND_190[31:0];
-  _RAND_191 = {1{`RANDOM}};
-  vliw_2 = _RAND_191[31:0];
-  _RAND_192 = {1{`RANDOM}};
-  vliw_3 = _RAND_192[31:0];
+  vliw_3 = _RAND_186[31:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

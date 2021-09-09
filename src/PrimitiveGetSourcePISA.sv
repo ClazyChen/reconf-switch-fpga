@@ -162,6 +162,7 @@ module PrimitiveGetSourcePISA(
   input  [7:0]  io_pipe_phv_in_data_159,
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -324,6 +325,7 @@ module PrimitiveGetSourcePISA(
   output [7:0]  io_pipe_phv_out_data_159,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
+  output        io_pipe_phv_out_valid,
   input  [7:0]  io_args_in_0,
   input  [7:0]  io_args_in_1,
   input  [7:0]  io_args_in_2,
@@ -785,6 +787,7 @@ module PrimitiveGetSourcePISA(
   reg [31:0] _RAND_237;
   reg [31:0] _RAND_238;
   reg [31:0] _RAND_239;
+  reg [31:0] _RAND_240;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor_pisa.scala 161:22]
   reg [7:0] phv_data_1; // @[executor_pisa.scala 161:22]
@@ -948,6 +951,7 @@ module PrimitiveGetSourcePISA(
   reg [7:0] phv_data_159; // @[executor_pisa.scala 161:22]
   reg [3:0] phv_next_processor_id; // @[executor_pisa.scala 161:22]
   reg  phv_next_config_id; // @[executor_pisa.scala 161:22]
+  reg  phv_valid; // @[executor_pisa.scala 161:22]
   reg [7:0] args_0; // @[executor_pisa.scala 165:23]
   reg [7:0] args_1; // @[executor_pisa.scala 165:23]
   reg [7:0] args_2; // @[executor_pisa.scala 165:23]
@@ -5298,6 +5302,7 @@ module PrimitiveGetSourcePISA(
   assign io_pipe_phv_out_data_159 = phv_data_159; // @[executor_pisa.scala 163:25]
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor_pisa.scala 163:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor_pisa.scala 163:25]
+  assign io_pipe_phv_out_valid = phv_valid; // @[executor_pisa.scala 163:25]
   assign io_nid_out = nid; // @[executor_pisa.scala 173:20]
   assign io_tag_out_0 = opcode == 4'h9 ? 2'h2 : _GEN_12; // @[executor_pisa.scala 212:48 executor_pisa.scala 221:29]
   assign io_tag_out_1 = opcode_1 == 4'h9 ? 2'h2 : _GEN_47; // @[executor_pisa.scala 212:48 executor_pisa.scala 221:29]
@@ -5602,6 +5607,7 @@ module PrimitiveGetSourcePISA(
     phv_data_159 <= io_pipe_phv_in_data_159; // @[executor_pisa.scala 162:13]
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor_pisa.scala 162:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor_pisa.scala 162:13]
+    phv_valid <= io_pipe_phv_in_valid; // @[executor_pisa.scala 162:13]
     args_0 <= io_args_in_0; // @[executor_pisa.scala 166:14]
     args_1 <= io_args_in_1; // @[executor_pisa.scala 166:14]
     args_2 <= io_args_in_2; // @[executor_pisa.scala 166:14]
@@ -6042,161 +6048,163 @@ initial begin
   _RAND_161 = {1{`RANDOM}};
   phv_next_config_id = _RAND_161[0:0];
   _RAND_162 = {1{`RANDOM}};
-  args_0 = _RAND_162[7:0];
+  phv_valid = _RAND_162[0:0];
   _RAND_163 = {1{`RANDOM}};
-  args_1 = _RAND_163[7:0];
+  args_0 = _RAND_163[7:0];
   _RAND_164 = {1{`RANDOM}};
-  args_2 = _RAND_164[7:0];
+  args_1 = _RAND_164[7:0];
   _RAND_165 = {1{`RANDOM}};
-  args_3 = _RAND_165[7:0];
+  args_2 = _RAND_165[7:0];
   _RAND_166 = {1{`RANDOM}};
-  args_4 = _RAND_166[7:0];
+  args_3 = _RAND_166[7:0];
   _RAND_167 = {1{`RANDOM}};
-  args_5 = _RAND_167[7:0];
+  args_4 = _RAND_167[7:0];
   _RAND_168 = {1{`RANDOM}};
-  args_6 = _RAND_168[7:0];
+  args_5 = _RAND_168[7:0];
   _RAND_169 = {1{`RANDOM}};
-  vliw_0 = _RAND_169[17:0];
+  args_6 = _RAND_169[7:0];
   _RAND_170 = {1{`RANDOM}};
-  vliw_1 = _RAND_170[17:0];
+  vliw_0 = _RAND_170[17:0];
   _RAND_171 = {1{`RANDOM}};
-  vliw_2 = _RAND_171[17:0];
+  vliw_1 = _RAND_171[17:0];
   _RAND_172 = {1{`RANDOM}};
-  vliw_3 = _RAND_172[17:0];
+  vliw_2 = _RAND_172[17:0];
   _RAND_173 = {1{`RANDOM}};
-  vliw_4 = _RAND_173[17:0];
+  vliw_3 = _RAND_173[17:0];
   _RAND_174 = {1{`RANDOM}};
-  vliw_5 = _RAND_174[17:0];
+  vliw_4 = _RAND_174[17:0];
   _RAND_175 = {1{`RANDOM}};
-  vliw_6 = _RAND_175[17:0];
+  vliw_5 = _RAND_175[17:0];
   _RAND_176 = {1{`RANDOM}};
-  vliw_7 = _RAND_176[17:0];
+  vliw_6 = _RAND_176[17:0];
   _RAND_177 = {1{`RANDOM}};
-  vliw_8 = _RAND_177[17:0];
+  vliw_7 = _RAND_177[17:0];
   _RAND_178 = {1{`RANDOM}};
-  vliw_9 = _RAND_178[17:0];
+  vliw_8 = _RAND_178[17:0];
   _RAND_179 = {1{`RANDOM}};
-  vliw_10 = _RAND_179[17:0];
+  vliw_9 = _RAND_179[17:0];
   _RAND_180 = {1{`RANDOM}};
-  vliw_11 = _RAND_180[17:0];
+  vliw_10 = _RAND_180[17:0];
   _RAND_181 = {1{`RANDOM}};
-  vliw_12 = _RAND_181[17:0];
+  vliw_11 = _RAND_181[17:0];
   _RAND_182 = {1{`RANDOM}};
-  vliw_13 = _RAND_182[17:0];
+  vliw_12 = _RAND_182[17:0];
   _RAND_183 = {1{`RANDOM}};
-  vliw_14 = _RAND_183[17:0];
+  vliw_13 = _RAND_183[17:0];
   _RAND_184 = {1{`RANDOM}};
-  vliw_15 = _RAND_184[17:0];
+  vliw_14 = _RAND_184[17:0];
   _RAND_185 = {1{`RANDOM}};
-  vliw_16 = _RAND_185[17:0];
+  vliw_15 = _RAND_185[17:0];
   _RAND_186 = {1{`RANDOM}};
-  vliw_17 = _RAND_186[17:0];
+  vliw_16 = _RAND_186[17:0];
   _RAND_187 = {1{`RANDOM}};
-  vliw_18 = _RAND_187[17:0];
+  vliw_17 = _RAND_187[17:0];
   _RAND_188 = {1{`RANDOM}};
-  vliw_19 = _RAND_188[17:0];
+  vliw_18 = _RAND_188[17:0];
   _RAND_189 = {1{`RANDOM}};
-  vliw_20 = _RAND_189[17:0];
+  vliw_19 = _RAND_189[17:0];
   _RAND_190 = {1{`RANDOM}};
-  vliw_21 = _RAND_190[17:0];
+  vliw_20 = _RAND_190[17:0];
   _RAND_191 = {1{`RANDOM}};
-  vliw_22 = _RAND_191[17:0];
+  vliw_21 = _RAND_191[17:0];
   _RAND_192 = {1{`RANDOM}};
-  vliw_23 = _RAND_192[17:0];
+  vliw_22 = _RAND_192[17:0];
   _RAND_193 = {1{`RANDOM}};
-  vliw_24 = _RAND_193[17:0];
+  vliw_23 = _RAND_193[17:0];
   _RAND_194 = {1{`RANDOM}};
-  vliw_25 = _RAND_194[17:0];
+  vliw_24 = _RAND_194[17:0];
   _RAND_195 = {1{`RANDOM}};
-  vliw_26 = _RAND_195[17:0];
+  vliw_25 = _RAND_195[17:0];
   _RAND_196 = {1{`RANDOM}};
-  vliw_27 = _RAND_196[17:0];
+  vliw_26 = _RAND_196[17:0];
   _RAND_197 = {1{`RANDOM}};
-  vliw_28 = _RAND_197[17:0];
+  vliw_27 = _RAND_197[17:0];
   _RAND_198 = {1{`RANDOM}};
-  vliw_29 = _RAND_198[17:0];
+  vliw_28 = _RAND_198[17:0];
   _RAND_199 = {1{`RANDOM}};
-  vliw_30 = _RAND_199[17:0];
+  vliw_29 = _RAND_199[17:0];
   _RAND_200 = {1{`RANDOM}};
-  vliw_31 = _RAND_200[17:0];
+  vliw_30 = _RAND_200[17:0];
   _RAND_201 = {1{`RANDOM}};
-  vliw_32 = _RAND_201[17:0];
+  vliw_31 = _RAND_201[17:0];
   _RAND_202 = {1{`RANDOM}};
-  vliw_33 = _RAND_202[17:0];
+  vliw_32 = _RAND_202[17:0];
   _RAND_203 = {1{`RANDOM}};
-  vliw_34 = _RAND_203[17:0];
+  vliw_33 = _RAND_203[17:0];
   _RAND_204 = {1{`RANDOM}};
-  vliw_35 = _RAND_204[17:0];
+  vliw_34 = _RAND_204[17:0];
   _RAND_205 = {1{`RANDOM}};
-  vliw_36 = _RAND_205[17:0];
+  vliw_35 = _RAND_205[17:0];
   _RAND_206 = {1{`RANDOM}};
-  vliw_37 = _RAND_206[17:0];
+  vliw_36 = _RAND_206[17:0];
   _RAND_207 = {1{`RANDOM}};
-  vliw_38 = _RAND_207[17:0];
+  vliw_37 = _RAND_207[17:0];
   _RAND_208 = {1{`RANDOM}};
-  vliw_39 = _RAND_208[17:0];
+  vliw_38 = _RAND_208[17:0];
   _RAND_209 = {1{`RANDOM}};
-  vliw_40 = _RAND_209[17:0];
+  vliw_39 = _RAND_209[17:0];
   _RAND_210 = {1{`RANDOM}};
-  vliw_41 = _RAND_210[17:0];
+  vliw_40 = _RAND_210[17:0];
   _RAND_211 = {1{`RANDOM}};
-  vliw_42 = _RAND_211[17:0];
+  vliw_41 = _RAND_211[17:0];
   _RAND_212 = {1{`RANDOM}};
-  vliw_43 = _RAND_212[17:0];
+  vliw_42 = _RAND_212[17:0];
   _RAND_213 = {1{`RANDOM}};
-  vliw_44 = _RAND_213[17:0];
+  vliw_43 = _RAND_213[17:0];
   _RAND_214 = {1{`RANDOM}};
-  vliw_45 = _RAND_214[17:0];
+  vliw_44 = _RAND_214[17:0];
   _RAND_215 = {1{`RANDOM}};
-  vliw_46 = _RAND_215[17:0];
+  vliw_45 = _RAND_215[17:0];
   _RAND_216 = {1{`RANDOM}};
-  vliw_47 = _RAND_216[17:0];
+  vliw_46 = _RAND_216[17:0];
   _RAND_217 = {1{`RANDOM}};
-  vliw_48 = _RAND_217[17:0];
+  vliw_47 = _RAND_217[17:0];
   _RAND_218 = {1{`RANDOM}};
-  vliw_49 = _RAND_218[17:0];
+  vliw_48 = _RAND_218[17:0];
   _RAND_219 = {1{`RANDOM}};
-  vliw_50 = _RAND_219[17:0];
+  vliw_49 = _RAND_219[17:0];
   _RAND_220 = {1{`RANDOM}};
-  vliw_51 = _RAND_220[17:0];
+  vliw_50 = _RAND_220[17:0];
   _RAND_221 = {1{`RANDOM}};
-  vliw_52 = _RAND_221[17:0];
+  vliw_51 = _RAND_221[17:0];
   _RAND_222 = {1{`RANDOM}};
-  vliw_53 = _RAND_222[17:0];
+  vliw_52 = _RAND_222[17:0];
   _RAND_223 = {1{`RANDOM}};
-  vliw_54 = _RAND_223[17:0];
+  vliw_53 = _RAND_223[17:0];
   _RAND_224 = {1{`RANDOM}};
-  vliw_55 = _RAND_224[17:0];
+  vliw_54 = _RAND_224[17:0];
   _RAND_225 = {1{`RANDOM}};
-  vliw_56 = _RAND_225[17:0];
+  vliw_55 = _RAND_225[17:0];
   _RAND_226 = {1{`RANDOM}};
-  vliw_57 = _RAND_226[17:0];
+  vliw_56 = _RAND_226[17:0];
   _RAND_227 = {1{`RANDOM}};
-  vliw_58 = _RAND_227[17:0];
+  vliw_57 = _RAND_227[17:0];
   _RAND_228 = {1{`RANDOM}};
-  vliw_59 = _RAND_228[17:0];
+  vliw_58 = _RAND_228[17:0];
   _RAND_229 = {1{`RANDOM}};
-  vliw_60 = _RAND_229[17:0];
+  vliw_59 = _RAND_229[17:0];
   _RAND_230 = {1{`RANDOM}};
-  vliw_61 = _RAND_230[17:0];
+  vliw_60 = _RAND_230[17:0];
   _RAND_231 = {1{`RANDOM}};
-  vliw_62 = _RAND_231[17:0];
+  vliw_61 = _RAND_231[17:0];
   _RAND_232 = {1{`RANDOM}};
-  vliw_63 = _RAND_232[17:0];
+  vliw_62 = _RAND_232[17:0];
   _RAND_233 = {1{`RANDOM}};
-  vliw_64 = _RAND_233[17:0];
+  vliw_63 = _RAND_233[17:0];
   _RAND_234 = {1{`RANDOM}};
-  vliw_65 = _RAND_234[17:0];
+  vliw_64 = _RAND_234[17:0];
   _RAND_235 = {1{`RANDOM}};
-  vliw_66 = _RAND_235[17:0];
+  vliw_65 = _RAND_235[17:0];
   _RAND_236 = {1{`RANDOM}};
-  vliw_67 = _RAND_236[17:0];
+  vliw_66 = _RAND_236[17:0];
   _RAND_237 = {1{`RANDOM}};
-  vliw_68 = _RAND_237[17:0];
+  vliw_67 = _RAND_237[17:0];
   _RAND_238 = {1{`RANDOM}};
-  vliw_69 = _RAND_238[17:0];
+  vliw_68 = _RAND_238[17:0];
   _RAND_239 = {1{`RANDOM}};
-  nid = _RAND_239[14:0];
+  vliw_69 = _RAND_239[17:0];
+  _RAND_240 = {1{`RANDOM}};
+  nid = _RAND_240[14:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

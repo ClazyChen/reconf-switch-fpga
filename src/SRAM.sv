@@ -1,8 +1,5 @@
 module SRAM(
   input         clock,
-  input         io_w_en,
-  input  [7:0]  io_w_addr,
-  input  [63:0] io_w_data,
   input         io_r_en,
   input  [7:0]  io_r_addr,
   output [63:0] io_r_data
@@ -25,21 +22,17 @@ module SRAM(
   reg [7:0] mem_io_r_data_MPORT_addr_pipe_0;
   assign mem_io_r_data_MPORT_addr = mem_io_r_data_MPORT_addr_pipe_0;
   assign mem_io_r_data_MPORT_data = mem[mem_io_r_data_MPORT_addr]; // @[sram.scala 30:26]
-  assign mem_MPORT_data = io_w_data;
-  assign mem_MPORT_addr = io_w_addr;
+  assign mem_MPORT_data = 64'h0;
+  assign mem_MPORT_addr = 8'h0;
   assign mem_MPORT_mask = 1'h1;
-  assign mem_MPORT_en = io_w_en;
+  assign mem_MPORT_en = 1'h0;
   assign io_r_data = mem_io_r_data_MPORT_data; // @[sram.scala 37:24 sram.scala 38:23]
   always @(posedge clock) begin
     if(mem_MPORT_en & mem_MPORT_mask) begin
       mem[mem_MPORT_addr] <= mem_MPORT_data; // @[sram.scala 30:26]
     end
-    if (io_w_en) begin
-      mem_io_r_data_MPORT_en_pipe_0 <= 1'h0;
-    end else begin
-      mem_io_r_data_MPORT_en_pipe_0 <= io_r_en;
-    end
-    if (io_w_en ? 1'h0 : io_r_en) begin
+    mem_io_r_data_MPORT_en_pipe_0 <= io_r_en;
+    if (io_r_en) begin
       mem_io_r_data_MPORT_addr_pipe_0 <= io_r_addr;
     end
   end

@@ -182,6 +182,7 @@ module MatchGetOffset(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,11 +365,7 @@ module MatchGetOffset(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  input  [7:0]  io_key_config_0_header_id,
-  input  [7:0]  io_key_config_0_internal_offset,
-  input  [7:0]  io_key_config_1_header_id,
-  input  [7:0]  io_key_config_1_internal_offset,
-  output [7:0]  io_key_offset
+  output        io_pipe_phv_out_valid
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -553,6 +550,7 @@ module MatchGetOffset(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
+  reg [31:0] _RAND_182;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[matcher.scala 34:22]
   reg [7:0] phv_data_1; // @[matcher.scala 34:22]
@@ -736,25 +734,7 @@ module MatchGetOffset(
   reg [3:0] phv_next_processor_id; // @[matcher.scala 34:22]
   reg  phv_next_config_id; // @[matcher.scala 34:22]
   reg  phv_is_valid_processor; // @[matcher.scala 34:22]
-  wire [7:0] _GEN_4 = phv_next_config_id ? io_key_config_1_header_id : io_key_config_0_header_id; // @[]
-  wire [7:0] _GEN_5 = phv_next_config_id ? io_key_config_1_internal_offset : io_key_config_0_internal_offset; // @[]
-  wire [15:0] _GEN_9 = 4'h1 == _GEN_4[3:0] ? phv_header_1 : phv_header_0; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_10 = 4'h2 == _GEN_4[3:0] ? phv_header_2 : _GEN_9; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_11 = 4'h3 == _GEN_4[3:0] ? phv_header_3 : _GEN_10; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_12 = 4'h4 == _GEN_4[3:0] ? phv_header_4 : _GEN_11; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_13 = 4'h5 == _GEN_4[3:0] ? phv_header_5 : _GEN_12; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_14 = 4'h6 == _GEN_4[3:0] ? phv_header_6 : _GEN_13; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_15 = 4'h7 == _GEN_4[3:0] ? phv_header_7 : _GEN_14; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_16 = 4'h8 == _GEN_4[3:0] ? phv_header_8 : _GEN_15; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_17 = 4'h9 == _GEN_4[3:0] ? phv_header_9 : _GEN_16; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_18 = 4'ha == _GEN_4[3:0] ? phv_header_10 : _GEN_17; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_19 = 4'hb == _GEN_4[3:0] ? phv_header_11 : _GEN_18; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_20 = 4'hc == _GEN_4[3:0] ? phv_header_12 : _GEN_19; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_21 = 4'hd == _GEN_4[3:0] ? phv_header_13 : _GEN_20; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_22 = 4'he == _GEN_4[3:0] ? phv_header_14 : _GEN_21; // @[const.scala 34:43 const.scala 34:43]
-  wire [15:0] _GEN_23 = 4'hf == _GEN_4[3:0] ? phv_header_15 : _GEN_22; // @[const.scala 34:43 const.scala 34:43]
-  wire [7:0] header_offset = _GEN_23[15:8]; // @[const.scala 34:43]
-  wire [7:0] key_offset = header_offset + _GEN_5; // @[matcher.scala 41:44]
+  reg  phv_valid; // @[matcher.scala 34:22]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[matcher.scala 36:25]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[matcher.scala 36:25]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[matcher.scala 36:25]
@@ -937,7 +917,7 @@ module MatchGetOffset(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher.scala 36:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher.scala 36:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher.scala 36:25]
-  assign io_key_offset = phv_is_valid_processor ? key_offset : 8'h0; // @[matcher.scala 38:39 matcher.scala 42:27 matcher.scala 44:27]
+  assign io_pipe_phv_out_valid = phv_valid; // @[matcher.scala 36:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[matcher.scala 35:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[matcher.scala 35:13]
@@ -1121,6 +1101,7 @@ module MatchGetOffset(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher.scala 35:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher.scala 35:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher.scala 35:13]
+    phv_valid <= io_pipe_phv_in_valid; // @[matcher.scala 35:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1522,6 +1503,8 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
+  _RAND_182 = {1{`RANDOM}};
+  phv_valid = _RAND_182[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

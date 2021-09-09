@@ -182,6 +182,7 @@ module PrimitiveShiftSource(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
+  input         io_pipe_phv_in_valid,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,6 +365,7 @@ module PrimitiveShiftSource(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
+  output        io_pipe_phv_out_valid,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
   input  [31:0] io_vliw_in_2,
@@ -600,6 +602,7 @@ module PrimitiveShiftSource(
   reg [31:0] _RAND_195;
   reg [31:0] _RAND_196;
   reg [31:0] _RAND_197;
+  reg [31:0] _RAND_198;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor.scala 260:22]
   reg [7:0] phv_data_1; // @[executor.scala 260:22]
@@ -783,6 +786,7 @@ module PrimitiveShiftSource(
   reg [3:0] phv_next_processor_id; // @[executor.scala 260:22]
   reg  phv_next_config_id; // @[executor.scala 260:22]
   reg  phv_is_valid_processor; // @[executor.scala 260:22]
+  reg  phv_valid; // @[executor.scala 260:22]
   reg [31:0] vliw_0; // @[executor.scala 264:23]
   reg [31:0] vliw_1; // @[executor.scala 264:23]
   reg [31:0] vliw_2; // @[executor.scala 264:23]
@@ -1229,6 +1233,7 @@ module PrimitiveShiftSource(
   assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 262:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 262:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_valid = phv_valid; // @[executor.scala 262:25]
   assign io_vliw_out_0 = vliw_0; // @[executor.scala 266:21]
   assign io_vliw_out_1 = vliw_1; // @[executor.scala 266:21]
   assign io_vliw_out_2 = vliw_2; // @[executor.scala 266:21]
@@ -1432,6 +1437,7 @@ module PrimitiveShiftSource(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 261:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 261:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 261:13]
+    phv_valid <= io_pipe_phv_in_valid; // @[executor.scala 261:13]
     vliw_0 <= io_vliw_in_0; // @[executor.scala 265:14]
     vliw_1 <= io_vliw_in_1; // @[executor.scala 265:14]
     vliw_2 <= io_vliw_in_2; // @[executor.scala 265:14]
@@ -1850,37 +1856,39 @@ initial begin
   _RAND_181 = {1{`RANDOM}};
   phv_is_valid_processor = _RAND_181[0:0];
   _RAND_182 = {1{`RANDOM}};
-  vliw_0 = _RAND_182[31:0];
+  phv_valid = _RAND_182[0:0];
   _RAND_183 = {1{`RANDOM}};
-  vliw_1 = _RAND_183[31:0];
+  vliw_0 = _RAND_183[31:0];
   _RAND_184 = {1{`RANDOM}};
-  vliw_2 = _RAND_184[31:0];
+  vliw_1 = _RAND_184[31:0];
   _RAND_185 = {1{`RANDOM}};
-  vliw_3 = _RAND_185[31:0];
+  vliw_2 = _RAND_185[31:0];
   _RAND_186 = {1{`RANDOM}};
-  field_0 = _RAND_186[31:0];
+  vliw_3 = _RAND_186[31:0];
   _RAND_187 = {1{`RANDOM}};
-  field_1 = _RAND_187[31:0];
+  field_0 = _RAND_187[31:0];
   _RAND_188 = {1{`RANDOM}};
-  field_2 = _RAND_188[31:0];
+  field_1 = _RAND_188[31:0];
   _RAND_189 = {1{`RANDOM}};
-  field_3 = _RAND_189[31:0];
+  field_2 = _RAND_189[31:0];
   _RAND_190 = {1{`RANDOM}};
-  mask_0 = _RAND_190[3:0];
+  field_3 = _RAND_190[31:0];
   _RAND_191 = {1{`RANDOM}};
-  mask_1 = _RAND_191[3:0];
+  mask_0 = _RAND_191[3:0];
   _RAND_192 = {1{`RANDOM}};
-  mask_2 = _RAND_192[3:0];
+  mask_1 = _RAND_192[3:0];
   _RAND_193 = {1{`RANDOM}};
-  mask_3 = _RAND_193[3:0];
+  mask_2 = _RAND_193[3:0];
   _RAND_194 = {1{`RANDOM}};
-  bias_0 = _RAND_194[1:0];
+  mask_3 = _RAND_194[3:0];
   _RAND_195 = {1{`RANDOM}};
-  bias_1 = _RAND_195[1:0];
+  bias_0 = _RAND_195[1:0];
   _RAND_196 = {1{`RANDOM}};
-  bias_2 = _RAND_196[1:0];
+  bias_1 = _RAND_196[1:0];
   _RAND_197 = {1{`RANDOM}};
-  bias_3 = _RAND_197[1:0];
+  bias_2 = _RAND_197[1:0];
+  _RAND_198 = {1{`RANDOM}};
+  bias_3 = _RAND_198[1:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

@@ -2,16 +2,21 @@ package fpga
 
 import chisel3._
 import chisel3.util._
+import chisel3.util.random._
 
-class InPort extends Module {
+class InPortInternal extends Module {
     val io = IO(new Bundle {
-        val en      = Input(Bool())
-        val data    = Input(UInt((const.PHV.header_data_length*8).W))
         val phv_out = Output(new PHV)
     })
 
-    for (j <- 0 until const.PHV.header_data_length) {
-        io.phv_out.data(j) := io.data(const.PHV.header_data_length*8-1-j*8, const.PHV.header_data_length*8-(j+1)*8)
+    val rand = for (j <- 0 until const.PHV.header_data_length / 2) yield {
+        val exe = LFSR(16)
+        exe
+    }
+
+    for (j <- 0 until const.PHV.header_data_length / 2) {
+        io.phv_out.data(j*2)   := rand(j)(15,8)
+        io.phv_out.data(j*2+1) := rand(j)(7,0)
     }
 
     for (j <- const.PHV.header_data_length until const.PHV.total_data_length) {
@@ -28,5 +33,5 @@ class InPort extends Module {
     io.phv_out.next_processor_id      := 0.U(const.processor_id_width.W)
     io.phv_out.next_config_id         := 0.U(const.config_id_width.W)
     io.phv_out.is_valid_processor     := false.B
-    io.phv_out.valid                  := io.en
+    io.phv_out.valid                  := true.B
 }

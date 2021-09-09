@@ -28,7 +28,7 @@ class InterProcessorTransfer extends Module {
     phv := io.pipe.phv_in
     io.pipe.phv_out := phv
 
-    io.pipe.phv_out.is_valid_processor := io.next_proc_exist && io.next_proc_id === phv.next_processor_id
+    io.pipe.phv_out.is_valid_processor := io.next_proc_exist && io.next_proc_id === phv.next_processor_id && phv.valid
 }
 
 // The total IPSA switch
@@ -86,7 +86,7 @@ class IPSA extends Module {
     io.pipe.phv_out := io.pipe.phv_in
     for (j <- 0 until const.processor_number) {
         proc(j).io.pipe.phv_in := init.io.pipe.phv_out
-        proc(j).io.pipe.phv_in.is_valid_processor := j.U(const.processor_id_width.W) === first_proc_id
+        proc(j).io.pipe.phv_in.is_valid_processor := j.U(const.processor_id_width.W) === first_proc_id && init.io.pipe.phv_out.valid
     }
 
     for (j <- 0 until const.processor_number) {
@@ -101,8 +101,4 @@ class IPSA extends Module {
             io.pipe.phv_out := trans(j).io.pipe.phv_out
         }
     }
-}
-
-object IPSA_OBJ extends App {
-    Driver.execute(args, () => new IPSA)
 }

@@ -2483,7 +2483,7 @@ module PISAPCIE(
     .io_mod_proc_mod_15_exe_mod_data_0(pcie_io_mod_proc_mod_15_exe_mod_data_0),
     .io_mod_proc_mod_15_exe_mod_data_1(pcie_io_mod_proc_mod_15_exe_mod_data_1)
   );
-  OutPort outp ( // @[pisa_pcie.scala 15:22]
+  OutPortInternal outp ( // @[pisa_pcie.scala 15:22]
     .clock(outp_clock),
     .io_phv_in_data_0(outp_io_phv_in_data_0),
     .io_phv_in_data_1(outp_io_phv_in_data_1),
@@ -2650,7 +2650,7 @@ module PISAPCIE(
     .io_pcie_o_r_addr(outp_io_pcie_o_r_addr),
     .io_pcie_o_r_data(outp_io_pcie_o_r_data)
   );
-  InPort inp ( // @[pisa_pcie.scala 16:22]
+  InPortInternal inp ( // @[pisa_pcie.scala 16:22]
     .clock(inp_clock),
     .reset(inp_reset),
     .io_phv_out_data_0(inp_io_phv_out_data_0),
