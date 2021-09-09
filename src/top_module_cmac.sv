@@ -10,8 +10,8 @@ module top_module_cmac (
     input           s_axis_tlast,
     output          m_axis_tvalid,
     input           m_axis_tready,
-    output [1023:0] m_axis_tdata,
-    output [127:0]  m_axis_tkeep,
+    output [511:0]  m_axis_tdata,
+    output [63:0]   m_axis_tkeep,
     output          m_axis_tlast
 );
     wire            ipsa_io_en_in;
