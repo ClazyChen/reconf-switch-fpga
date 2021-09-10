@@ -612,7 +612,6 @@
       <File Path="$PPRDIR/../../src/xdma_app.sv">
         <FileInfo>
           <Attr Name="UserDisabled" Val="1"/>
-          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -711,6 +710,7 @@
     <FileSet Name="axis_dwidth_converter_0" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dwidth_converter_0" RelGenDir="$PGENDIR/axis_dwidth_converter_0">
       <File Path="$PSRCDIR/sources_1/ip/axis_dwidth_converter_0/axis_dwidth_converter_0.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
@@ -724,6 +724,7 @@
     <FileSet Name="axis_dwidth_converter_1" Type="BlockSrcs" RelSrcDir="$PSRCDIR/axis_dwidth_converter_1" RelGenDir="$PGENDIR/axis_dwidth_converter_1">
       <File Path="$PSRCDIR/sources_1/ip/axis_dwidth_converter_1/axis_dwidth_converter_1.xci">
         <FileInfo>
+          <Attr Name="AutoDisabled" Val="1"/>
           <Attr Name="UsedIn" Val="synthesis"/>
           <Attr Name="UsedIn" Val="implementation"/>
           <Attr Name="UsedIn" Val="simulation"/>
