@@ -16,3 +16,5 @@ vivado/xdma_0_ex
 *.jou
 *.log
 *.str
+.VSCodeCounter
+stat.py
