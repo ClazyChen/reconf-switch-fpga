@@ -9,8 +9,8 @@ import chisel3.util._
 
 object PISAconst {
     val group_number = 6
-    val field_id_width = 7
-    val field_number = 70
+    val field_id_width = 8
+    val field_number = 224
     val field8_number = field_number*2/7
     val field16_number = field_number*3/7
     val field32_number = field_number*2/7

@@ -15,15 +15,15 @@ object const {
 
     val processor_id_width = 4
     val processor_number = 12
-    val cluster_number   = processor_number / 2
+    val cluster_number   = processor_number / 3
     val processor_number_in_cluster = processor_number / cluster_number
 
     val config_id_width = 1
     val config_number = 2
 
     object PHV {
-        val total_data_length  = 256
-        val header_data_length = 192
+        val total_data_length  = 512
+        val header_data_length = 384
         val metadata_offset    = header_data_length
         val metadata_length    = total_data_length - header_data_length
 
@@ -93,7 +93,7 @@ object const {
     }
 
     object OUTPORT {
-        val sram_id_width = 5 // log(20) 20 * 8B
+        val sram_id_width = 6 // log(20) 20 * 8B
         val sram_number = const.PHV.total_data_length * 8 / const.SRAM.data_width // 32
         val sram_data_length = const.SRAM.data_width / 8
     }
