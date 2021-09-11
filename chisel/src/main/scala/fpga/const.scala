@@ -14,16 +14,16 @@ object const {
     val mau_number_in_parser = 4
 
     val processor_id_width = 4
-    val processor_number = 16
-    val cluster_number   = 8
+    val processor_number = 12
+    val cluster_number   = processor_number / 2
     val processor_number_in_cluster = processor_number / cluster_number
 
     val config_id_width = 1
     val config_number = 2
 
     object PHV {
-        val total_data_length  = 160
-        val header_data_length = 128
+        val total_data_length  = 256
+        val header_data_length = 192
         val metadata_offset    = header_data_length
         val metadata_length    = total_data_length - header_data_length
 
