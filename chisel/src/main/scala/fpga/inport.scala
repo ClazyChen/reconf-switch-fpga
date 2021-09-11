@@ -6,6 +6,7 @@ import chisel3.util._
 class InPort extends Module {
     val io = IO(new Bundle {
         val en      = Input(Bool())
+        val last = Input(Bool())
         val data    = Input(UInt((const.PHV.header_data_length*8).W))
         val phv_out = Output(new PHV)
     })
@@ -29,4 +30,5 @@ class InPort extends Module {
     io.phv_out.next_config_id         := 0.U(const.config_id_width.W)
     io.phv_out.is_valid_processor     := false.B
     io.phv_out.valid                  := io.en
+    io.phv_out.last                   := io.last
 }

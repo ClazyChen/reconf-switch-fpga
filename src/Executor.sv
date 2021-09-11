@@ -183,6 +183,7 @@ module Executor(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,7 +365,8 @@ module Executor(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
-  output        io_pipe_phv_out_valid
+  output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last
 );
   wire  pipe1_clock; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_in_data_0; // @[executor.scala 489:23]
@@ -550,6 +552,7 @@ module Executor(
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_in_valid; // @[executor.scala 489:23]
+  wire  pipe1_io_pipe_phv_in_last; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_1; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_2; // @[executor.scala 489:23]
@@ -733,6 +736,7 @@ module Executor(
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_out_valid; // @[executor.scala 489:23]
+  wire  pipe1_io_pipe_phv_out_last; // @[executor.scala 489:23]
   wire [31:0] pipe1_io_vliw_out_0; // @[executor.scala 489:23]
   wire [31:0] pipe1_io_vliw_out_1; // @[executor.scala 489:23]
   wire [31:0] pipe1_io_vliw_out_2; // @[executor.scala 489:23]
@@ -921,6 +925,7 @@ module Executor(
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_in_valid; // @[executor.scala 490:23]
+  wire  pipe2_io_pipe_phv_in_last; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_1; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_2; // @[executor.scala 490:23]
@@ -1104,6 +1109,7 @@ module Executor(
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_out_valid; // @[executor.scala 490:23]
+  wire  pipe2_io_pipe_phv_out_last; // @[executor.scala 490:23]
   wire [31:0] pipe2_io_vliw_in_0; // @[executor.scala 490:23]
   wire [31:0] pipe2_io_vliw_in_1; // @[executor.scala 490:23]
   wire [31:0] pipe2_io_vliw_in_2; // @[executor.scala 490:23]
@@ -1304,6 +1310,7 @@ module Executor(
   wire  pipe3_io_pipe_phv_in_next_config_id; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_in_is_valid_processor; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_in_valid; // @[executor.scala 491:23]
+  wire  pipe3_io_pipe_phv_in_last; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_0; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_1; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_2; // @[executor.scala 491:23]
@@ -1487,6 +1494,7 @@ module Executor(
   wire  pipe3_io_pipe_phv_out_next_config_id; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_out_is_valid_processor; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_out_valid; // @[executor.scala 491:23]
+  wire  pipe3_io_pipe_phv_out_last; // @[executor.scala 491:23]
   wire [31:0] pipe3_io_vliw_in_0; // @[executor.scala 491:23]
   wire [31:0] pipe3_io_vliw_in_1; // @[executor.scala 491:23]
   wire [31:0] pipe3_io_vliw_in_2; // @[executor.scala 491:23]
@@ -1699,6 +1707,7 @@ module Executor(
   wire  pipe4_io_pipe_phv_in_next_config_id; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_in_is_valid_processor; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_in_valid; // @[executor.scala 492:23]
+  wire  pipe4_io_pipe_phv_in_last; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_0; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_1; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_2; // @[executor.scala 492:23]
@@ -1882,6 +1891,7 @@ module Executor(
   wire  pipe4_io_pipe_phv_out_next_config_id; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_out_is_valid_processor; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_out_valid; // @[executor.scala 492:23]
+  wire  pipe4_io_pipe_phv_out_last; // @[executor.scala 492:23]
   wire [31:0] pipe4_io_vliw_in_0; // @[executor.scala 492:23]
   wire [31:0] pipe4_io_vliw_in_1; // @[executor.scala 492:23]
   wire [31:0] pipe4_io_vliw_in_2; // @[executor.scala 492:23]
@@ -2102,6 +2112,7 @@ module Executor(
   wire  pipe5_io_pipe_phv_in_next_config_id; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_in_is_valid_processor; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_in_valid; // @[executor.scala 493:23]
+  wire  pipe5_io_pipe_phv_in_last; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_0; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_1; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_2; // @[executor.scala 493:23]
@@ -2285,6 +2296,7 @@ module Executor(
   wire  pipe5_io_pipe_phv_out_next_config_id; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_out_is_valid_processor; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_out_valid; // @[executor.scala 493:23]
+  wire  pipe5_io_pipe_phv_out_last; // @[executor.scala 493:23]
   wire [31:0] pipe5_io_vliw_in_0; // @[executor.scala 493:23]
   wire [31:0] pipe5_io_vliw_in_1; // @[executor.scala 493:23]
   wire [31:0] pipe5_io_vliw_in_2; // @[executor.scala 493:23]
@@ -2505,6 +2517,7 @@ module Executor(
   wire  pipe6_io_pipe_phv_in_next_config_id; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_in_is_valid_processor; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_in_valid; // @[executor.scala 494:23]
+  wire  pipe6_io_pipe_phv_in_last; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_0; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_1; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_2; // @[executor.scala 494:23]
@@ -2687,6 +2700,7 @@ module Executor(
   wire [3:0] pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_out_valid; // @[executor.scala 494:23]
+  wire  pipe6_io_pipe_phv_out_last; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_0; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_1; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_2; // @[executor.scala 494:23]
@@ -2888,6 +2902,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe1_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe1_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe1_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe1_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe1_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe1_io_pipe_phv_out_data_2),
@@ -3071,6 +3086,7 @@ module Executor(
     .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
     .io_pipe_phv_out_valid(pipe1_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe1_io_pipe_phv_out_last),
     .io_vliw_out_0(pipe1_io_vliw_out_0),
     .io_vliw_out_1(pipe1_io_vliw_out_1),
     .io_vliw_out_2(pipe1_io_vliw_out_2),
@@ -3261,6 +3277,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe2_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe2_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe2_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe2_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe2_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe2_io_pipe_phv_out_data_2),
@@ -3444,6 +3461,7 @@ module Executor(
     .io_pipe_phv_out_next_config_id(pipe2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe2_io_pipe_phv_out_is_valid_processor),
     .io_pipe_phv_out_valid(pipe2_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe2_io_pipe_phv_out_last),
     .io_vliw_in_0(pipe2_io_vliw_in_0),
     .io_vliw_in_1(pipe2_io_vliw_in_1),
     .io_vliw_in_2(pipe2_io_vliw_in_2),
@@ -3646,6 +3664,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe3_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe3_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe3_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe3_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe3_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe3_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe3_io_pipe_phv_out_data_2),
@@ -3829,6 +3848,7 @@ module Executor(
     .io_pipe_phv_out_next_config_id(pipe3_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe3_io_pipe_phv_out_is_valid_processor),
     .io_pipe_phv_out_valid(pipe3_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe3_io_pipe_phv_out_last),
     .io_vliw_in_0(pipe3_io_vliw_in_0),
     .io_vliw_in_1(pipe3_io_vliw_in_1),
     .io_vliw_in_2(pipe3_io_vliw_in_2),
@@ -4043,6 +4063,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe4_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe4_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe4_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe4_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe4_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe4_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe4_io_pipe_phv_out_data_2),
@@ -4226,6 +4247,7 @@ module Executor(
     .io_pipe_phv_out_next_config_id(pipe4_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe4_io_pipe_phv_out_is_valid_processor),
     .io_pipe_phv_out_valid(pipe4_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe4_io_pipe_phv_out_last),
     .io_vliw_in_0(pipe4_io_vliw_in_0),
     .io_vliw_in_1(pipe4_io_vliw_in_1),
     .io_vliw_in_2(pipe4_io_vliw_in_2),
@@ -4448,6 +4470,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe5_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe5_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe5_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe5_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe5_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe5_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe5_io_pipe_phv_out_data_2),
@@ -4631,6 +4654,7 @@ module Executor(
     .io_pipe_phv_out_next_config_id(pipe5_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe5_io_pipe_phv_out_is_valid_processor),
     .io_pipe_phv_out_valid(pipe5_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe5_io_pipe_phv_out_last),
     .io_vliw_in_0(pipe5_io_vliw_in_0),
     .io_vliw_in_1(pipe5_io_vliw_in_1),
     .io_vliw_in_2(pipe5_io_vliw_in_2),
@@ -4853,6 +4877,7 @@ module Executor(
     .io_pipe_phv_in_next_config_id(pipe6_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe6_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe6_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe6_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe6_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe6_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe6_io_pipe_phv_out_data_2),
@@ -5035,6 +5060,7 @@ module Executor(
     .io_pipe_phv_out_next_processor_id(pipe6_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe6_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_valid(pipe6_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe6_io_pipe_phv_out_last),
     .io_vliw_in_0(pipe6_io_vliw_in_0),
     .io_vliw_in_1(pipe6_io_vliw_in_1),
     .io_vliw_in_2(pipe6_io_vliw_in_2),
@@ -5234,6 +5260,7 @@ module Executor(
   assign io_pipe_phv_out_next_processor_id = pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 530:27]
   assign io_pipe_phv_out_next_config_id = pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 530:27]
   assign io_pipe_phv_out_valid = pipe6_io_pipe_phv_out_valid; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_last = pipe6_io_pipe_phv_out_last; // @[executor.scala 530:27]
   assign pipe1_clock = clock;
   assign pipe1_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[executor.scala 496:26]
@@ -5418,6 +5445,7 @@ module Executor(
   assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_valid = io_pipe_phv_in_valid; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_last = io_pipe_phv_in_last; // @[executor.scala 496:26]
   assign pipe2_clock = clock;
   assign pipe2_io_pipe_phv_in_data_0 = pipe1_io_pipe_phv_out_data_0; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_data_1 = pipe1_io_pipe_phv_out_data_1; // @[executor.scala 501:26]
@@ -5602,6 +5630,7 @@ module Executor(
   assign pipe2_io_pipe_phv_in_next_config_id = pipe1_io_pipe_phv_out_next_config_id; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_is_valid_processor = pipe1_io_pipe_phv_out_is_valid_processor; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_valid = pipe1_io_pipe_phv_out_valid; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_last = pipe1_io_pipe_phv_out_last; // @[executor.scala 501:26]
   assign pipe2_io_vliw_in_0 = pipe1_io_vliw_out_0; // @[executor.scala 503:26]
   assign pipe2_io_vliw_in_1 = pipe1_io_vliw_out_1; // @[executor.scala 503:26]
   assign pipe2_io_vliw_in_2 = pipe1_io_vliw_out_2; // @[executor.scala 503:26]
@@ -5790,6 +5819,7 @@ module Executor(
   assign pipe3_io_pipe_phv_in_next_config_id = pipe2_io_pipe_phv_out_next_config_id; // @[executor.scala 505:26]
   assign pipe3_io_pipe_phv_in_is_valid_processor = pipe2_io_pipe_phv_out_is_valid_processor; // @[executor.scala 505:26]
   assign pipe3_io_pipe_phv_in_valid = pipe2_io_pipe_phv_out_valid; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_last = pipe2_io_pipe_phv_out_last; // @[executor.scala 505:26]
   assign pipe3_io_vliw_in_0 = pipe2_io_vliw_out_0; // @[executor.scala 507:26]
   assign pipe3_io_vliw_in_1 = pipe2_io_vliw_out_1; // @[executor.scala 507:26]
   assign pipe3_io_vliw_in_2 = pipe2_io_vliw_out_2; // @[executor.scala 507:26]
@@ -5986,6 +6016,7 @@ module Executor(
   assign pipe4_io_pipe_phv_in_next_config_id = pipe3_io_pipe_phv_out_next_config_id; // @[executor.scala 511:27]
   assign pipe4_io_pipe_phv_in_is_valid_processor = pipe3_io_pipe_phv_out_is_valid_processor; // @[executor.scala 511:27]
   assign pipe4_io_pipe_phv_in_valid = pipe3_io_pipe_phv_out_valid; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_last = pipe3_io_pipe_phv_out_last; // @[executor.scala 511:27]
   assign pipe4_io_vliw_in_0 = pipe3_io_vliw_out_0; // @[executor.scala 512:27]
   assign pipe4_io_vliw_in_1 = pipe3_io_vliw_out_1; // @[executor.scala 512:27]
   assign pipe4_io_vliw_in_2 = pipe3_io_vliw_out_2; // @[executor.scala 512:27]
@@ -6186,6 +6217,7 @@ module Executor(
   assign pipe5_io_pipe_phv_in_next_config_id = pipe4_io_pipe_phv_out_next_config_id; // @[executor.scala 517:26]
   assign pipe5_io_pipe_phv_in_is_valid_processor = pipe4_io_pipe_phv_out_is_valid_processor; // @[executor.scala 517:26]
   assign pipe5_io_pipe_phv_in_valid = pipe4_io_pipe_phv_out_valid; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_last = pipe4_io_pipe_phv_out_last; // @[executor.scala 517:26]
   assign pipe5_io_vliw_in_0 = pipe4_io_vliw_out_0; // @[executor.scala 518:26]
   assign pipe5_io_vliw_in_1 = pipe4_io_vliw_out_1; // @[executor.scala 518:26]
   assign pipe5_io_vliw_in_2 = pipe4_io_vliw_out_2; // @[executor.scala 518:26]
@@ -6390,6 +6422,7 @@ module Executor(
   assign pipe6_io_pipe_phv_in_next_config_id = pipe5_io_pipe_phv_out_next_config_id; // @[executor.scala 524:26]
   assign pipe6_io_pipe_phv_in_is_valid_processor = pipe5_io_pipe_phv_out_is_valid_processor; // @[executor.scala 524:26]
   assign pipe6_io_pipe_phv_in_valid = pipe5_io_pipe_phv_out_valid; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_last = pipe5_io_pipe_phv_out_last; // @[executor.scala 524:26]
   assign pipe6_io_vliw_in_0 = pipe5_io_vliw_out_0; // @[executor.scala 525:26]
   assign pipe6_io_vliw_in_1 = pipe5_io_vliw_out_1; // @[executor.scala 525:26]
   assign pipe6_io_vliw_in_2 = pipe5_io_vliw_out_2; // @[executor.scala 525:26]

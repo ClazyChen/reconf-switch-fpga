@@ -7,6 +7,7 @@ class OutPort extends Module {
     val io = IO(new Bundle {
         val phv_in = Input(new PHV)
         val data   = Output(UInt((const.PHV.header_data_length*8).W))
+        val last   = Output(Bool())
         val en     = Output(Bool())
     })
 
@@ -16,4 +17,5 @@ class OutPort extends Module {
     }
     io.data := bytes.reduce(Cat(_, _))
     io.en   := io.phv_in.valid
+    io.last := io.phv_in.last
 }

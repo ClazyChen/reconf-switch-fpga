@@ -182,6 +182,7 @@ module InterProcessorTransfer(
   input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -365,6 +366,7 @@ module InterProcessorTransfer(
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last,
   input         io_next_proc_exist
 );
 `ifdef RANDOMIZE_REG_INIT
@@ -550,6 +552,7 @@ module InterProcessorTransfer(
   reg [31:0] _RAND_179;
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
+  reg [31:0] _RAND_182;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[ipsa.scala 27:18]
   reg [7:0] phv_data_1; // @[ipsa.scala 27:18]
@@ -733,6 +736,7 @@ module InterProcessorTransfer(
   reg [3:0] phv_next_processor_id; // @[ipsa.scala 27:18]
   reg  phv_next_config_id; // @[ipsa.scala 27:18]
   reg  phv_valid; // @[ipsa.scala 27:18]
+  reg  phv_last; // @[ipsa.scala 27:18]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[ipsa.scala 29:21]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[ipsa.scala 29:21]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[ipsa.scala 29:21]
@@ -916,6 +920,7 @@ module InterProcessorTransfer(
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[ipsa.scala 29:21]
   assign io_pipe_phv_out_is_valid_processor = io_next_proc_exist & 4'h0 == phv_next_processor_id & phv_valid; // @[ipsa.scala 31:107]
   assign io_pipe_phv_out_valid = phv_valid; // @[ipsa.scala 29:21]
+  assign io_pipe_phv_out_last = phv_last; // @[ipsa.scala 29:21]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[ipsa.scala 28:9]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[ipsa.scala 28:9]
@@ -1099,6 +1104,7 @@ module InterProcessorTransfer(
     phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[ipsa.scala 28:9]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[ipsa.scala 28:9]
     phv_valid <= io_pipe_phv_in_valid; // @[ipsa.scala 28:9]
+    phv_last <= io_pipe_phv_in_last; // @[ipsa.scala 28:9]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1500,6 +1506,8 @@ initial begin
   phv_next_config_id = _RAND_180[0:0];
   _RAND_181 = {1{`RANDOM}};
   phv_valid = _RAND_181[0:0];
+  _RAND_182 = {1{`RANDOM}};
+  phv_last = _RAND_182[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

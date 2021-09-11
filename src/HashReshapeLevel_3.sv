@@ -183,6 +183,7 @@ module HashReshapeLevel_3(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -365,7 +366,8 @@ module HashReshapeLevel_3(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  output        io_pipe_phv_out_valid
+  output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -551,6 +553,7 @@ module HashReshapeLevel_3(
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
   reg [31:0] _RAND_182;
+  reg [31:0] _RAND_183;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[hash.scala 94:22]
   reg [7:0] phv_data_1; // @[hash.scala 94:22]
@@ -735,6 +738,7 @@ module HashReshapeLevel_3(
   reg  phv_next_config_id; // @[hash.scala 94:22]
   reg  phv_is_valid_processor; // @[hash.scala 94:22]
   reg  phv_valid; // @[hash.scala 94:22]
+  reg  phv_last; // @[hash.scala 94:22]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[hash.scala 96:25]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[hash.scala 96:25]
   assign io_pipe_phv_out_data_2 = phv_data_2; // @[hash.scala 96:25]
@@ -918,6 +922,7 @@ module HashReshapeLevel_3(
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[hash.scala 96:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[hash.scala 96:25]
   assign io_pipe_phv_out_valid = phv_valid; // @[hash.scala 96:25]
+  assign io_pipe_phv_out_last = phv_last; // @[hash.scala 96:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[hash.scala 95:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[hash.scala 95:13]
@@ -1102,6 +1107,7 @@ module HashReshapeLevel_3(
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[hash.scala 95:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[hash.scala 95:13]
     phv_valid <= io_pipe_phv_in_valid; // @[hash.scala 95:13]
+    phv_last <= io_pipe_phv_in_last; // @[hash.scala 95:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1505,6 +1511,8 @@ initial begin
   phv_is_valid_processor = _RAND_181[0:0];
   _RAND_182 = {1{`RANDOM}};
   phv_valid = _RAND_182[0:0];
+  _RAND_183 = {1{`RANDOM}};
+  phv_last = _RAND_183[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

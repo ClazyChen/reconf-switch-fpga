@@ -7,54 +7,40 @@ module InAXI(
   input  [63:0]   io_s_axis_tkeep,
   input           io_s_axis_tlast,
   output          io_ipsa_en_in,
+  output          io_ipsa_last_in,
   output [1023:0] io_ipsa_data_in
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [511:0] _RAND_0;
   reg [31:0] _RAND_1;
+  reg [31:0] _RAND_2;
 `endif // RANDOMIZE_REG_INIT
-  reg [511:0] buf_; // @[inaxi.scala 25:18]
-  reg [1:0] status; // @[inaxi.scala 26:25]
-  wire [1023:0] _io_ipsa_data_in_T = {io_s_axis_tdata,512'h0}; // @[Cat.scala 30:58]
-  wire [1:0] _GEN_0 = io_s_axis_tlast ? 2'h0 : 2'h1; // @[inaxi.scala 32:36 inaxi.scala 33:24 inaxi.scala 37:24]
-  wire [1023:0] _GEN_2 = io_s_axis_tlast ? _io_ipsa_data_in_T : 1024'h0; // @[inaxi.scala 32:36 inaxi.scala 35:33 inaxi.scala 23:21]
-  wire [1:0] _GEN_4 = io_s_axis_tvalid ? _GEN_0 : status; // @[inaxi.scala 31:33 inaxi.scala 26:25]
-  wire  _GEN_5 = io_s_axis_tvalid & io_s_axis_tlast; // @[inaxi.scala 31:33 inaxi.scala 22:19]
-  wire [1023:0] _GEN_6 = io_s_axis_tvalid ? _GEN_2 : 1024'h0; // @[inaxi.scala 31:33 inaxi.scala 23:21]
-  wire [1:0] _GEN_8 = status == 2'h0 ? _GEN_4 : status; // @[inaxi.scala 30:32 inaxi.scala 26:25]
-  wire  _GEN_9 = status == 2'h0 & _GEN_5; // @[inaxi.scala 30:32 inaxi.scala 22:19]
-  wire [1023:0] _GEN_10 = status == 2'h0 ? _GEN_6 : 1024'h0; // @[inaxi.scala 30:32 inaxi.scala 23:21]
-  wire [1:0] _GEN_12 = io_s_axis_tlast ? 2'h0 : 2'h2; // @[inaxi.scala 44:36 inaxi.scala 45:24 inaxi.scala 47:24]
-  wire [1023:0] _io_ipsa_data_in_T_1 = {buf_,io_s_axis_tdata}; // @[Cat.scala 30:58]
-  wire [1:0] _GEN_13 = io_s_axis_tvalid ? _GEN_12 : _GEN_8; // @[inaxi.scala 43:33]
-  wire  _GEN_14 = io_s_axis_tvalid | _GEN_9; // @[inaxi.scala 43:33 inaxi.scala 49:27]
-  wire [1023:0] _GEN_15 = io_s_axis_tvalid ? _io_ipsa_data_in_T_1 : _GEN_10; // @[inaxi.scala 43:33 inaxi.scala 50:29]
-  wire [1:0] _GEN_16 = status == 2'h1 ? _GEN_13 : _GEN_8; // @[inaxi.scala 42:32]
-  assign io_s_axis_tready = 1'h1; // @[inaxi.scala 21:22]
-  assign io_ipsa_en_in = status == 2'h1 ? _GEN_14 : _GEN_9; // @[inaxi.scala 42:32]
-  assign io_ipsa_data_in = status == 2'h1 ? _GEN_15 : _GEN_10; // @[inaxi.scala 42:32]
+  reg [511:0] buf_; // @[inaxi.scala 27:18]
+  reg  last; // @[inaxi.scala 28:24]
+  reg  phase; // @[inaxi.scala 29:24]
+  wire  _T = ~phase; // @[inaxi.scala 33:21]
+  wire [1023:0] _io_ipsa_data_in_T = {buf_,io_s_axis_tdata}; // @[Cat.scala 30:58]
+  wire  _GEN_2 = ~phase ? 1'h0 : last; // @[inaxi.scala 33:35 inaxi.scala 23:19 inaxi.scala 38:29]
+  wire [1023:0] _GEN_3 = ~phase ? 1024'h0 : _io_ipsa_data_in_T; // @[inaxi.scala 33:35 inaxi.scala 25:21 inaxi.scala 39:29]
+  wire  _GEN_4 = ~phase ? 1'h0 : io_s_axis_tlast; // @[inaxi.scala 33:35 inaxi.scala 24:21 inaxi.scala 40:29]
+  wire  _GEN_5 = ~phase ? last : io_s_axis_tlast; // @[inaxi.scala 33:35 inaxi.scala 28:24 inaxi.scala 41:19]
+  wire  _GEN_6 = io_s_axis_tvalid & _T; // @[inaxi.scala 32:29 inaxi.scala 45:15]
+  wire  _GEN_11 = io_s_axis_tvalid ? _GEN_5 : 1'h1; // @[inaxi.scala 32:29 inaxi.scala 44:15]
+  assign io_s_axis_tready = 1'h1; // @[inaxi.scala 22:22]
+  assign io_ipsa_en_in = io_s_axis_tvalid & _GEN_2; // @[inaxi.scala 32:29 inaxi.scala 23:19]
+  assign io_ipsa_last_in = io_s_axis_tvalid & _GEN_4; // @[inaxi.scala 32:29 inaxi.scala 24:21]
+  assign io_ipsa_data_in = io_s_axis_tvalid ? _GEN_3 : 1024'h0; // @[inaxi.scala 32:29 inaxi.scala 25:21]
   always @(posedge clock) begin
-    if (status == 2'h0) begin // @[inaxi.scala 30:32]
-      if (io_s_axis_tvalid) begin // @[inaxi.scala 31:33]
-        if (!(io_s_axis_tlast)) begin // @[inaxi.scala 32:36]
-          buf_ <= io_s_axis_tdata; // @[inaxi.scala 38:21]
-        end
+    if (io_s_axis_tvalid) begin // @[inaxi.scala 32:29]
+      if (~phase) begin // @[inaxi.scala 33:35]
+        buf_ <= io_s_axis_tdata; // @[inaxi.scala 35:19]
       end
     end
-    if (reset) begin // @[inaxi.scala 26:25]
-      status <= 2'h0; // @[inaxi.scala 26:25]
-    end else if (status == 2'h2) begin // @[inaxi.scala 53:32]
-      if (io_s_axis_tvalid) begin // @[inaxi.scala 54:33]
-        if (io_s_axis_tlast) begin // @[inaxi.scala 55:36]
-          status <= 2'h0; // @[inaxi.scala 56:24]
-        end else begin
-          status <= _GEN_16;
-        end
-      end else begin
-        status <= _GEN_16;
-      end
+    last <= reset | _GEN_11; // @[inaxi.scala 28:24 inaxi.scala 28:24]
+    if (reset) begin // @[inaxi.scala 29:24]
+      phase <= 1'h0; // @[inaxi.scala 29:24]
     end else begin
-      status <= _GEN_16;
+      phase <= _GEN_6;
     end
   end
 // Register and memory initialization
@@ -96,7 +82,9 @@ initial begin
   _RAND_0 = {16{`RANDOM}};
   buf_ = _RAND_0[511:0];
   _RAND_1 = {1{`RANDOM}};
-  status = _RAND_1[1:0];
+  last = _RAND_1[0:0];
+  _RAND_2 = {1{`RANDOM}};
+  phase = _RAND_2[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

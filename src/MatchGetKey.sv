@@ -183,6 +183,7 @@ module MatchGetKey(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -365,7 +366,8 @@ module MatchGetKey(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  output        io_pipe_phv_out_valid
+  output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last
 );
   wire  pipe1_clock; // @[matcher.scala 147:27]
   wire [7:0] pipe1_io_pipe_phv_in_data_0; // @[matcher.scala 147:27]
@@ -551,6 +553,7 @@ module MatchGetKey(
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[matcher.scala 147:27]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 147:27]
   wire  pipe1_io_pipe_phv_in_valid; // @[matcher.scala 147:27]
+  wire  pipe1_io_pipe_phv_in_last; // @[matcher.scala 147:27]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[matcher.scala 147:27]
   wire [7:0] pipe1_io_pipe_phv_out_data_1; // @[matcher.scala 147:27]
   wire [7:0] pipe1_io_pipe_phv_out_data_2; // @[matcher.scala 147:27]
@@ -734,6 +737,7 @@ module MatchGetKey(
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[matcher.scala 147:27]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 147:27]
   wire  pipe1_io_pipe_phv_out_valid; // @[matcher.scala 147:27]
+  wire  pipe1_io_pipe_phv_out_last; // @[matcher.scala 147:27]
   wire  pipe2_clock; // @[matcher.scala 148:27]
   wire [7:0] pipe2_io_pipe_phv_in_data_0; // @[matcher.scala 148:27]
   wire [7:0] pipe2_io_pipe_phv_in_data_1; // @[matcher.scala 148:27]
@@ -918,6 +922,7 @@ module MatchGetKey(
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[matcher.scala 148:27]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 148:27]
   wire  pipe2_io_pipe_phv_in_valid; // @[matcher.scala 148:27]
+  wire  pipe2_io_pipe_phv_in_last; // @[matcher.scala 148:27]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[matcher.scala 148:27]
   wire [7:0] pipe2_io_pipe_phv_out_data_1; // @[matcher.scala 148:27]
   wire [7:0] pipe2_io_pipe_phv_out_data_2; // @[matcher.scala 148:27]
@@ -1101,6 +1106,7 @@ module MatchGetKey(
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[matcher.scala 148:27]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 148:27]
   wire  pipe2_io_pipe_phv_out_valid; // @[matcher.scala 148:27]
+  wire  pipe2_io_pipe_phv_out_last; // @[matcher.scala 148:27]
   MatchGetKeyRaw pipe1 ( // @[matcher.scala 147:27]
     .clock(pipe1_clock),
     .io_pipe_phv_in_data_0(pipe1_io_pipe_phv_in_data_0),
@@ -1286,6 +1292,7 @@ module MatchGetKey(
     .io_pipe_phv_in_next_config_id(pipe1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe1_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe1_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe1_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe1_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe1_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe1_io_pipe_phv_out_data_2),
@@ -1468,7 +1475,8 @@ module MatchGetKey(
     .io_pipe_phv_out_next_processor_id(pipe1_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(pipe1_io_pipe_phv_out_valid)
+    .io_pipe_phv_out_valid(pipe1_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe1_io_pipe_phv_out_last)
   );
   MatchGetKeyShifting pipe2 ( // @[matcher.scala 148:27]
     .clock(pipe2_clock),
@@ -1655,6 +1663,7 @@ module MatchGetKey(
     .io_pipe_phv_in_next_config_id(pipe2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe2_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(pipe2_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(pipe2_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(pipe2_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe2_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(pipe2_io_pipe_phv_out_data_2),
@@ -1837,7 +1846,8 @@ module MatchGetKey(
     .io_pipe_phv_out_next_processor_id(pipe2_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe2_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(pipe2_io_pipe_phv_out_valid)
+    .io_pipe_phv_out_valid(pipe2_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(pipe2_io_pipe_phv_out_last)
   );
   assign io_pipe_phv_out_data_0 = pipe2_io_pipe_phv_out_data_0; // @[matcher.scala 158:31]
   assign io_pipe_phv_out_data_1 = pipe2_io_pipe_phv_out_data_1; // @[matcher.scala 158:31]
@@ -2022,6 +2032,7 @@ module MatchGetKey(
   assign io_pipe_phv_out_next_config_id = pipe2_io_pipe_phv_out_next_config_id; // @[matcher.scala 158:31]
   assign io_pipe_phv_out_is_valid_processor = pipe2_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 158:31]
   assign io_pipe_phv_out_valid = pipe2_io_pipe_phv_out_valid; // @[matcher.scala 158:31]
+  assign io_pipe_phv_out_last = pipe2_io_pipe_phv_out_last; // @[matcher.scala 158:31]
   assign pipe1_clock = clock;
   assign pipe1_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[matcher.scala 150:30]
   assign pipe1_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[matcher.scala 150:30]
@@ -2206,6 +2217,7 @@ module MatchGetKey(
   assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[matcher.scala 150:30]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[matcher.scala 150:30]
   assign pipe1_io_pipe_phv_in_valid = io_pipe_phv_in_valid; // @[matcher.scala 150:30]
+  assign pipe1_io_pipe_phv_in_last = io_pipe_phv_in_last; // @[matcher.scala 150:30]
   assign pipe2_clock = clock;
   assign pipe2_io_pipe_phv_in_data_0 = pipe1_io_pipe_phv_out_data_0; // @[matcher.scala 154:30]
   assign pipe2_io_pipe_phv_in_data_1 = pipe1_io_pipe_phv_out_data_1; // @[matcher.scala 154:30]
@@ -2390,4 +2402,5 @@ module MatchGetKey(
   assign pipe2_io_pipe_phv_in_next_config_id = pipe1_io_pipe_phv_out_next_config_id; // @[matcher.scala 154:30]
   assign pipe2_io_pipe_phv_in_is_valid_processor = pipe1_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 154:30]
   assign pipe2_io_pipe_phv_in_valid = pipe1_io_pipe_phv_out_valid; // @[matcher.scala 154:30]
+  assign pipe2_io_pipe_phv_in_last = pipe1_io_pipe_phv_out_last; // @[matcher.scala 154:30]
 endmodule

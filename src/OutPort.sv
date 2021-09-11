@@ -128,7 +128,9 @@ module OutPort(
   input  [7:0]    io_phv_in_data_126,
   input  [7:0]    io_phv_in_data_127,
   input           io_phv_in_valid,
+  input           io_phv_in_last,
   output [1023:0] io_data,
+  output          io_last,
   output          io_en
 );
   wire [79:0] io_data_hi_8 = {io_phv_in_data_127,io_phv_in_data_126,io_phv_in_data_125,io_phv_in_data_124,
@@ -160,5 +162,6 @@ module OutPort(
   wire [1015:0] io_data_hi_125 = {io_data_hi_116,io_phv_in_data_9,io_phv_in_data_8,io_phv_in_data_7,io_phv_in_data_6,
     io_phv_in_data_5,io_phv_in_data_4,io_phv_in_data_3,io_phv_in_data_2,io_phv_in_data_1}; // @[Cat.scala 30:58]
   assign io_data = {io_data_hi_125,io_phv_in_data_0}; // @[Cat.scala 30:58]
-  assign io_en = io_phv_in_valid; // @[outport.scala 18:13]
+  assign io_last = io_phv_in_last; // @[outport.scala 20:13]
+  assign io_en = io_phv_in_valid; // @[outport.scala 19:13]
 endmodule

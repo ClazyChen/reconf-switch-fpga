@@ -16,6 +16,8 @@ module top_module_cmac (
 );
     wire            ipsa_io_en_in;
     wire            ipsa_io_en_out;
+    wire            ipsa_io_last_in;
+    wire            ipsa_io_last_out;
     wire  [1023:0]  ipsa_io_data_in;
     wire  [1023:0]  ipsa_io_data_out;
 
@@ -24,8 +26,10 @@ module top_module_cmac (
         .reset           (ap_rst_n),
         .io_en_in        (ipsa_io_en_in),
         .io_data_in      (ipsa_io_data_in),
+        .io_last_in      (ipsa_io_last_in),
         .io_en_out       (ipsa_io_en_out),
-        .io_data_out     (ipsa_io_data_out)
+        .io_data_out     (ipsa_io_data_out),
+        .io_last_out     (ipsa_io_last_out)
     );
 
     InAXI in_axi (
@@ -37,7 +41,8 @@ module top_module_cmac (
         .io_s_axis_tkeep (s_axis_tkeep),
         .io_s_axis_tlast (s_axis_tlast),
         .io_ipsa_en_in   (ipsa_io_en_in),
-        .io_ipsa_data_in (ipsa_io_data_in)
+        .io_ipsa_data_in (ipsa_io_data_in),
+        .io_ipsa_last_in (ipsa_io_last_in)
     );
 
     OutAXI out_axi (
@@ -49,7 +54,8 @@ module top_module_cmac (
         .io_m_axis_tkeep (m_axis_tkeep),
         .io_m_axis_tlast (m_axis_tlast),
         .io_ipsa_en_out  (ipsa_io_en_out),
-        .io_ipsa_data_out(ipsa_io_data_out)
+        .io_ipsa_data_out(ipsa_io_data_out),
+        .io_ipsa_last_out(ipsa_io_last_out)
     );
 
 endmodule

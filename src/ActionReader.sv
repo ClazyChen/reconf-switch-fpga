@@ -183,6 +183,7 @@ module ActionReader(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -366,6 +367,7 @@ module ActionReader(
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last,
   output [31:0] io_vliw_out_0,
   output [31:0] io_vliw_out_1,
   output [31:0] io_vliw_out_2,
@@ -555,6 +557,7 @@ module ActionReader(
   reg [31:0] _RAND_180;
   reg [31:0] _RAND_181;
   reg [31:0] _RAND_182;
+  reg [31:0] _RAND_183;
 `endif // RANDOMIZE_REG_INIT
   wire  sram_0_clock; // @[executor.scala 44:29]
   wire  sram_0_io_r_en; // @[executor.scala 44:29]
@@ -747,6 +750,7 @@ module ActionReader(
   reg  phv_next_config_id; // @[executor.scala 28:22]
   reg  phv_is_valid_processor; // @[executor.scala 28:22]
   reg  phv_valid; // @[executor.scala 28:22]
+  reg  phv_last; // @[executor.scala 28:22]
   SRAM sram_0 ( // @[executor.scala 44:29]
     .clock(sram_0_clock),
     .io_r_en(sram_0_io_r_en),
@@ -942,6 +946,7 @@ module ActionReader(
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 30:25]
   assign io_pipe_phv_out_valid = phv_valid; // @[executor.scala 30:25]
+  assign io_pipe_phv_out_last = phv_last; // @[executor.scala 30:25]
   assign io_vliw_out_0 = phv_is_valid_processor ? sram_0_io_r_data[63:32] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign io_vliw_out_1 = phv_is_valid_processor ? sram_0_io_r_data[31:0] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
   assign io_vliw_out_2 = phv_is_valid_processor ? sram_1_io_r_data[63:32] : 32'h0; // @[executor.scala 56:47 executor.scala 57:42 executor.scala 59:42]
@@ -1136,6 +1141,7 @@ module ActionReader(
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 29:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 29:13]
     phv_valid <= io_pipe_phv_in_valid; // @[executor.scala 29:13]
+    phv_last <= io_pipe_phv_in_last; // @[executor.scala 29:13]
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN
@@ -1539,6 +1545,8 @@ initial begin
   phv_is_valid_processor = _RAND_181[0:0];
   _RAND_182 = {1{`RANDOM}};
   phv_valid = _RAND_182[0:0];
+  _RAND_183 = {1{`RANDOM}};
+  phv_last = _RAND_183[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

@@ -183,6 +183,7 @@ module Processor(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -364,7 +365,8 @@ module Processor(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
-  output        io_pipe_phv_out_valid
+  output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last
 );
   wire  PAR_clock; // @[processor.scala 13:21]
   wire [7:0] PAR_io_pipe_phv_in_data_0; // @[processor.scala 13:21]
@@ -550,6 +552,7 @@ module Processor(
   wire  PAR_io_pipe_phv_in_next_config_id; // @[processor.scala 13:21]
   wire  PAR_io_pipe_phv_in_is_valid_processor; // @[processor.scala 13:21]
   wire  PAR_io_pipe_phv_in_valid; // @[processor.scala 13:21]
+  wire  PAR_io_pipe_phv_in_last; // @[processor.scala 13:21]
   wire [7:0] PAR_io_pipe_phv_out_data_0; // @[processor.scala 13:21]
   wire [7:0] PAR_io_pipe_phv_out_data_1; // @[processor.scala 13:21]
   wire [7:0] PAR_io_pipe_phv_out_data_2; // @[processor.scala 13:21]
@@ -733,6 +736,7 @@ module Processor(
   wire  PAR_io_pipe_phv_out_next_config_id; // @[processor.scala 13:21]
   wire  PAR_io_pipe_phv_out_is_valid_processor; // @[processor.scala 13:21]
   wire  PAR_io_pipe_phv_out_valid; // @[processor.scala 13:21]
+  wire  PAR_io_pipe_phv_out_last; // @[processor.scala 13:21]
   wire  MAT_clock; // @[processor.scala 14:21]
   wire [7:0] MAT_io_pipe_phv_in_data_0; // @[processor.scala 14:21]
   wire [7:0] MAT_io_pipe_phv_in_data_1; // @[processor.scala 14:21]
@@ -917,6 +921,7 @@ module Processor(
   wire  MAT_io_pipe_phv_in_next_config_id; // @[processor.scala 14:21]
   wire  MAT_io_pipe_phv_in_is_valid_processor; // @[processor.scala 14:21]
   wire  MAT_io_pipe_phv_in_valid; // @[processor.scala 14:21]
+  wire  MAT_io_pipe_phv_in_last; // @[processor.scala 14:21]
   wire [7:0] MAT_io_pipe_phv_out_data_0; // @[processor.scala 14:21]
   wire [7:0] MAT_io_pipe_phv_out_data_1; // @[processor.scala 14:21]
   wire [7:0] MAT_io_pipe_phv_out_data_2; // @[processor.scala 14:21]
@@ -1100,6 +1105,7 @@ module Processor(
   wire  MAT_io_pipe_phv_out_next_config_id; // @[processor.scala 14:21]
   wire  MAT_io_pipe_phv_out_is_valid_processor; // @[processor.scala 14:21]
   wire  MAT_io_pipe_phv_out_valid; // @[processor.scala 14:21]
+  wire  MAT_io_pipe_phv_out_last; // @[processor.scala 14:21]
   wire  EXE_clock; // @[processor.scala 15:21]
   wire [7:0] EXE_io_pipe_phv_in_data_0; // @[processor.scala 15:21]
   wire [7:0] EXE_io_pipe_phv_in_data_1; // @[processor.scala 15:21]
@@ -1284,6 +1290,7 @@ module Processor(
   wire  EXE_io_pipe_phv_in_next_config_id; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_in_is_valid_processor; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_in_valid; // @[processor.scala 15:21]
+  wire  EXE_io_pipe_phv_in_last; // @[processor.scala 15:21]
   wire [7:0] EXE_io_pipe_phv_out_data_0; // @[processor.scala 15:21]
   wire [7:0] EXE_io_pipe_phv_out_data_1; // @[processor.scala 15:21]
   wire [7:0] EXE_io_pipe_phv_out_data_2; // @[processor.scala 15:21]
@@ -1466,6 +1473,7 @@ module Processor(
   wire [3:0] EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_out_valid; // @[processor.scala 15:21]
+  wire  EXE_io_pipe_phv_out_last; // @[processor.scala 15:21]
   Parser PAR ( // @[processor.scala 13:21]
     .clock(PAR_clock),
     .io_pipe_phv_in_data_0(PAR_io_pipe_phv_in_data_0),
@@ -1651,6 +1659,7 @@ module Processor(
     .io_pipe_phv_in_next_config_id(PAR_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(PAR_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(PAR_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(PAR_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(PAR_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(PAR_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(PAR_io_pipe_phv_out_data_2),
@@ -1833,7 +1842,8 @@ module Processor(
     .io_pipe_phv_out_next_processor_id(PAR_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(PAR_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(PAR_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(PAR_io_pipe_phv_out_valid)
+    .io_pipe_phv_out_valid(PAR_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(PAR_io_pipe_phv_out_last)
   );
   Matcher MAT ( // @[processor.scala 14:21]
     .clock(MAT_clock),
@@ -2020,6 +2030,7 @@ module Processor(
     .io_pipe_phv_in_next_config_id(MAT_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(MAT_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(MAT_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(MAT_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(MAT_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(MAT_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(MAT_io_pipe_phv_out_data_2),
@@ -2202,7 +2213,8 @@ module Processor(
     .io_pipe_phv_out_next_processor_id(MAT_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(MAT_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(MAT_io_pipe_phv_out_is_valid_processor),
-    .io_pipe_phv_out_valid(MAT_io_pipe_phv_out_valid)
+    .io_pipe_phv_out_valid(MAT_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(MAT_io_pipe_phv_out_last)
   );
   Executor EXE ( // @[processor.scala 15:21]
     .clock(EXE_clock),
@@ -2389,6 +2401,7 @@ module Processor(
     .io_pipe_phv_in_next_config_id(EXE_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(EXE_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_in_valid(EXE_io_pipe_phv_in_valid),
+    .io_pipe_phv_in_last(EXE_io_pipe_phv_in_last),
     .io_pipe_phv_out_data_0(EXE_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(EXE_io_pipe_phv_out_data_1),
     .io_pipe_phv_out_data_2(EXE_io_pipe_phv_out_data_2),
@@ -2570,7 +2583,8 @@ module Processor(
     .io_pipe_phv_out_parse_transition_field(EXE_io_pipe_phv_out_parse_transition_field),
     .io_pipe_phv_out_next_processor_id(EXE_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(EXE_io_pipe_phv_out_next_config_id),
-    .io_pipe_phv_out_valid(EXE_io_pipe_phv_out_valid)
+    .io_pipe_phv_out_valid(EXE_io_pipe_phv_out_valid),
+    .io_pipe_phv_out_last(EXE_io_pipe_phv_out_last)
   );
   assign io_pipe_phv_out_data_0 = EXE_io_pipe_phv_out_data_0; // @[processor.scala 29:24]
   assign io_pipe_phv_out_data_1 = EXE_io_pipe_phv_out_data_1; // @[processor.scala 29:24]
@@ -2754,6 +2768,7 @@ module Processor(
   assign io_pipe_phv_out_next_processor_id = EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 29:24]
   assign io_pipe_phv_out_next_config_id = EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 29:24]
   assign io_pipe_phv_out_valid = EXE_io_pipe_phv_out_valid; // @[processor.scala 29:24]
+  assign io_pipe_phv_out_last = EXE_io_pipe_phv_out_last; // @[processor.scala 29:24]
   assign PAR_clock = clock;
   assign PAR_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[processor.scala 17:24]
   assign PAR_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[processor.scala 17:24]
@@ -2938,6 +2953,7 @@ module Processor(
   assign PAR_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[processor.scala 17:24]
   assign PAR_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[processor.scala 17:24]
   assign PAR_io_pipe_phv_in_valid = io_pipe_phv_in_valid; // @[processor.scala 17:24]
+  assign PAR_io_pipe_phv_in_last = io_pipe_phv_in_last; // @[processor.scala 17:24]
   assign MAT_clock = clock;
   assign MAT_io_pipe_phv_in_data_0 = PAR_io_pipe_phv_out_data_0; // @[processor.scala 20:24]
   assign MAT_io_pipe_phv_in_data_1 = PAR_io_pipe_phv_out_data_1; // @[processor.scala 20:24]
@@ -3122,6 +3138,7 @@ module Processor(
   assign MAT_io_pipe_phv_in_next_config_id = PAR_io_pipe_phv_out_next_config_id; // @[processor.scala 20:24]
   assign MAT_io_pipe_phv_in_is_valid_processor = PAR_io_pipe_phv_out_is_valid_processor; // @[processor.scala 20:24]
   assign MAT_io_pipe_phv_in_valid = PAR_io_pipe_phv_out_valid; // @[processor.scala 20:24]
+  assign MAT_io_pipe_phv_in_last = PAR_io_pipe_phv_out_last; // @[processor.scala 20:24]
   assign EXE_clock = clock;
   assign EXE_io_pipe_phv_in_data_0 = MAT_io_pipe_phv_out_data_0; // @[processor.scala 24:24]
   assign EXE_io_pipe_phv_in_data_1 = MAT_io_pipe_phv_out_data_1; // @[processor.scala 24:24]
@@ -3306,4 +3323,5 @@ module Processor(
   assign EXE_io_pipe_phv_in_next_config_id = MAT_io_pipe_phv_out_next_config_id; // @[processor.scala 24:24]
   assign EXE_io_pipe_phv_in_is_valid_processor = MAT_io_pipe_phv_out_is_valid_processor; // @[processor.scala 24:24]
   assign EXE_io_pipe_phv_in_valid = MAT_io_pipe_phv_out_valid; // @[processor.scala 24:24]
+  assign EXE_io_pipe_phv_in_last = MAT_io_pipe_phv_out_last; // @[processor.scala 24:24]
 endmodule

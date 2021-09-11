@@ -18,6 +18,7 @@ class PHV extends Bundle {
     val next_config_id     = UInt(const.config_id_width.W)
     val is_valid_processor = Bool() // whether valid in the current processor
     val valid              = Bool() // whether valid (or bubbles)
+    val last               = Bool()
 }
 
 class Pipeline extends Bundle {

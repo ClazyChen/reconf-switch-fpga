@@ -14,35 +14,58 @@ import chisel3.util._
 class OutAXI extends Module {
     val io = IO(new Bundle {
         val m_axis        = Flipped(new AXIS)
+        val ipsa_last_out = Input(Bool())
         val ipsa_en_out   = Input(Bool())
         val ipsa_data_out = Input(UInt(1024.W))
     })
 
     val buf    = Reg(UInt(512.W))
-    val status = RegInit(0.U(2.W))
+    val phase = RegInit(0.U(1.W))
+    val last  = RegInit(0.U(1.W))
     
-    io.m_axis.tvalid := false.B
+    io.m_axis.tvalid := true.B
     io.m_axis.tdata  := 0.U(512.W)
     io.m_axis.tkeep  := 0.U(64.W)
     io.m_axis.tlast  := false.B
 
     when (io.m_axis.tready) {
-        when (status === 0.U(2.W)) {
-            when (io.ipsa_en_out) { // input
-                io.m_axis.tvalid := true.B
-                io.m_axis.tkeep  := ~ 0.U(64.W)
-                io.m_axis.tdata := io.ipsa_data_out(1023,512)
+        when (phase === 0.U(1.W)) {
+            when (io.ipsa_en_out) {
+                phase := 1.U(1.W)
+                io.m_axis.tkeep  := ~0.U(64.W)
+                io.m_axis.tdata  := io.ipsa_data_out(1023,512)
                 buf := io.ipsa_data_out(511,0)
-                status := 1.U(2.W)
+                last := io.ipsa_last_out
             }
+        } .otherwise {
+            phase := 0.U(1.W)
+            io.m_axis.tkeep := ~ 0.U(64.W)
+            io.m_axis.tdata := buf
+            io.m_axis.tlast := last
+            last := 0.U(1.W)
         }
-        when (status === 1.U(2.W)) {
-            io.m_axis.tvalid := true.B
-            io.m_axis.tkeep  := ~ 0.U(64.W)
-            io.m_axis.tdata  := status
-            status := 0.U(2.W)
-        }
+    } .otherwise {
+        phase := 0.U(1.W)
+        last := 0.U(1.W)
     }
+
+    // when (io.m_axis.tready) {
+    //     when (status === 0.U(2.W)) {
+    //         when (io.ipsa_en_out) { // input
+    //             io.m_axis.tvalid := true.B
+    //             io.m_axis.tkeep  := ~ 0.U(64.W)
+    //             io.m_axis.tdata := io.ipsa_data_out(1023,512)
+    //             buf := io.ipsa_data_out(511,0)
+    //             status := 1.U(2.W)
+    //         }
+    //     }
+    //     when (status === 1.U(2.W)) {
+    //         io.m_axis.tvalid := true.B
+    //         io.m_axis.tkeep  := ~ 0.U(64.W)
+    //         io.m_axis.tdata  := status
+    //         status := 0.U(2.W)
+    //     }
+    // }
 }
 
 object OUT_AXI_OBJ extends App {

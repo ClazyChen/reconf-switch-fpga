@@ -183,6 +183,7 @@ module Parser(
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   input         io_pipe_phv_in_valid,
+  input         io_pipe_phv_in_last,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -365,7 +366,8 @@ module Parser(
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
-  output        io_pipe_phv_out_valid
+  output        io_pipe_phv_out_valid,
+  output        io_pipe_phv_out_last
 );
   wire  mau_0_clock; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_in_data_0; // @[parser.scala 21:25]
@@ -3462,6 +3464,7 @@ module Parser(
   assign io_pipe_phv_out_next_config_id = io_pipe_phv_in_next_config_id; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_valid = io_pipe_phv_in_valid; // @[parser.scala 33:62 parser.scala 34:35]
+  assign io_pipe_phv_out_last = io_pipe_phv_in_last; // @[parser.scala 33:62 parser.scala 34:35]
   assign mau_0_clock = clock;
   assign mau_0_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[parser.scala 30:35]
   assign mau_0_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[parser.scala 30:35]
