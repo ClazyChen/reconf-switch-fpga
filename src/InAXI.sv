@@ -2,9 +2,7 @@ module InAXI(
   input           clock,
   input           reset,
   input           io_s_axis_tvalid,
-  output          io_s_axis_tready,
   input  [511:0]  io_s_axis_tdata,
-  input  [63:0]   io_s_axis_tkeep,
   input           io_s_axis_tlast,
   output          io_ipsa_en_in,
   output          io_ipsa_last_in,
@@ -26,7 +24,6 @@ module InAXI(
   wire  _GEN_5 = ~phase ? last : io_s_axis_tlast; // @[inaxi.scala 33:35 inaxi.scala 28:24 inaxi.scala 41:19]
   wire  _GEN_6 = io_s_axis_tvalid & _T; // @[inaxi.scala 32:29 inaxi.scala 45:15]
   wire  _GEN_11 = io_s_axis_tvalid ? _GEN_5 : 1'h1; // @[inaxi.scala 32:29 inaxi.scala 44:15]
-  assign io_s_axis_tready = 1'h1; // @[inaxi.scala 22:22]
   assign io_ipsa_en_in = io_s_axis_tvalid & _GEN_2; // @[inaxi.scala 32:29 inaxi.scala 23:19]
   assign io_ipsa_last_in = io_s_axis_tvalid & _GEN_4; // @[inaxi.scala 32:29 inaxi.scala 24:21]
   assign io_ipsa_data_in = io_s_axis_tvalid ? _GEN_3 : 1024'h0; // @[inaxi.scala 32:29 inaxi.scala 25:21]

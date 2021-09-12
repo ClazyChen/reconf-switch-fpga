@@ -17,10 +17,10 @@ class PCIEWritePort extends Bundle {
 
 class PCIEInterface extends Module {
     val io = IO(new Bundle {
-        val pcie_r = new PCIEReadPort
+        // val pcie_r = new PCIEReadPort
         val pcie_w = new PCIEWritePort
 
-        val pcie_o = Flipped(new OutputInterface)
+        // val pcie_o = Flipped(new OutputInterface)
         val mod    = Flipped(new IPSAModify)
         val w      = Vec(const.cluster_number, Flipped(new ClusterWritePort))
     })
@@ -68,11 +68,11 @@ class PCIEInterface extends Module {
         0x F**** – Transmit Ending Signal
     */
 
-    // read
-    io.pcie_o.cs     := io.pcie_r.addr(12,8)
-    io.pcie_o.r.en   := io.pcie_r.en
-    io.pcie_o.r.addr := io.pcie_r.addr(7,0)
-    io.pcie_o.r.data <> io.pcie_r.data
+    // // read
+    // io.pcie_o.cs     := io.pcie_r.addr(12,8)
+    // io.pcie_o.r.en   := io.pcie_r.en
+    // io.pcie_o.r.addr := io.pcie_r.addr(7,0)
+    // io.pcie_o.r.data <> io.pcie_r.data
 
     // write
     val pcie_addr = io.pcie_w.addr

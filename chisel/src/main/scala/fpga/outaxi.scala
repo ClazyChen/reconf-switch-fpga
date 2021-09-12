@@ -19,31 +19,37 @@ class OutAXI extends Module {
         val ipsa_data_out = Input(UInt(1024.W))
     })
 
-    val buf    = Reg(UInt(512.W))
+    val buf   = Reg(UInt(512.W))
     val phase = RegInit(0.U(1.W))
+    val waitl = RegInit(0.U(1.W)) // waiting for last
     val last  = RegInit(0.U(1.W))
     
     io.m_axis.tvalid := true.B
     io.m_axis.tdata  := 0.U(512.W)
-    io.m_axis.tkeep  := 0.U(64.W)
+    io.m_axis.tkeep  := ~0.U(64.W)
     io.m_axis.tlast  := false.B
 
     when (io.m_axis.tready) {
         when (phase === 0.U(1.W)) {
-            phase := 1.U(1.W)
-            io.m_axis.tkeep  := ~0.U(64.W)
-            io.m_axis.tdata  := io.ipsa_data_out(1023,512)
-            buf := io.ipsa_data_out(511,0)
-            last := io.ipsa_last_out
+            when (waitl === 1.U(1.W) || io.ipsa_en_out) {
+                phase := 1.U(1.W)
+                io.m_axis.tdata  := io.ipsa_data_out(1023,512)
+                buf  := io.ipsa_data_out(511,0)
+                last := io.ipsa_last_out
+                waitl := 1.U(1.W)
+            }
         } .otherwise {
             phase := 0.U(1.W)
-            io.m_axis.tkeep := ~ 0.U(64.W)
             io.m_axis.tdata := buf
             io.m_axis.tlast := last
+            when (last === 1.U(1.W)) {
+                waitl := 0.U(1.W)
+            }
         }
     } .otherwise {
         phase := 0.U(1.W)
         last := 0.U(1.W)
+        waitl := 0.U(1.W)
     }
 
     // when (io.m_axis.tready) {

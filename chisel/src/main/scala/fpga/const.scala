@@ -55,6 +55,8 @@ object const {
     }
 
     object PCIE {
+        val fifo_depth    = 8
+        val fifo_id_width = 3
         val data_width    = 64
         val address_width = 20
     }

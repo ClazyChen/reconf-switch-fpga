@@ -8,7 +8,7 @@ import chisel3.util._
 class IPSAPCIE extends Module {
     val io = IO(new Bundle {
         // val pcie_r   = new PCIEReadPort
-        // val pcie_w   = new PCIEWritePort
+        val pcie_w   = new PCIEWritePort
         val en_in    = Input(Bool())
         val last_in  = Input(Bool())
         val data_in  = Input(UInt((const.PHV.header_data_length*8).W))
@@ -28,13 +28,13 @@ class IPSAPCIE extends Module {
     io.last_in           <> inp.io.last
 
     // pcie.io.pcie_r <> io.pcie_r
-    // pcie.io.pcie_w <> io.pcie_w
-    pcie.io.pcie_r.en   := false.B
-    pcie.io.pcie_w.en   := false.B
-    pcie.io.pcie_r.addr := 0.U(const.PCIE.address_width.W)
-    pcie.io.pcie_w.addr := 0.U(const.PCIE.address_width.W)
-    pcie.io.pcie_w.data := 0.U(const.PCIE.data_width.W)
-    pcie.io.pcie_o.r.data := 0.U(const.SRAM.data_width.W)
+    pcie.io.pcie_w <> io.pcie_w
+    // pcie.io.pcie_r.en   := false.B
+    // pcie.io.pcie_w.en   := false.B
+    // pcie.io.pcie_r.addr := 0.U(const.PCIE.address_width.W)
+    // pcie.io.pcie_w.addr := 0.U(const.PCIE.address_width.W)
+    // pcie.io.pcie_w.data := 0.U(const.PCIE.data_width.W)
+    // pcie.io.pcie_o.r.data := 0.U(const.SRAM.data_width.W)
 
     pcie.io.mod    <> ipsa.io.mod
     pcie.io.w      <> ipsa.io.w

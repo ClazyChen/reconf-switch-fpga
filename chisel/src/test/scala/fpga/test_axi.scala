@@ -26,7 +26,7 @@ class AXITester(c: Test) extends PeekPokeTester(c) {
         // var x = peek(c.io.data)
         // println("data  = { " + (x >> 512).toString + " , " + (x & tkeep).toString + " }")
         println("valid = " + peek(c.io.m_axis.tvalid))
-        println("data  = " + peek(c.io.m_axis.tdata))
+        println("data  = " + (peek(c.io.m_axis.tdata) >> 504).toString)
         println("last  = " + peek(c.io.m_axis.tlast))
     }
 }

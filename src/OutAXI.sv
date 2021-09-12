@@ -1,10 +1,8 @@
 module OutAXI(
   input           clock,
   input           reset,
-  output          io_m_axis_tvalid,
   input           io_m_axis_tready,
   output [511:0]  io_m_axis_tdata,
-  output [63:0]   io_m_axis_tkeep,
   output          io_m_axis_tlast,
   input           io_ipsa_last_out,
   input           io_ipsa_en_out,
@@ -14,35 +12,49 @@ module OutAXI(
   reg [511:0] _RAND_0;
   reg [31:0] _RAND_1;
   reg [31:0] _RAND_2;
+  reg [31:0] _RAND_3;
 `endif // RANDOMIZE_REG_INIT
-  reg [511:0] buf_; // @[outaxi.scala 22:21]
+  reg [511:0] buf_; // @[outaxi.scala 22:20]
   reg  phase; // @[outaxi.scala 23:24]
-  reg  last; // @[outaxi.scala 24:24]
-  wire  _T = ~phase; // @[outaxi.scala 32:21]
-  wire [511:0] _GEN_2 = ~phase ? io_ipsa_data_out[1023:512] : buf_; // @[outaxi.scala 32:35 outaxi.scala 35:30 outaxi.scala 41:29]
-  wire  _GEN_4 = ~phase ? io_ipsa_last_out : last; // @[outaxi.scala 32:35 outaxi.scala 37:18 outaxi.scala 24:24]
-  wire  _GEN_5 = ~phase ? 1'h0 : last; // @[outaxi.scala 32:35 outaxi.scala 29:22 outaxi.scala 42:29]
-  wire  _GEN_6 = io_m_axis_tready & _T; // @[outaxi.scala 31:29 outaxi.scala 45:15]
-  wire  _GEN_10 = io_m_axis_tready & _GEN_4; // @[outaxi.scala 31:29 outaxi.scala 46:14]
-  assign io_m_axis_tvalid = 1'h1; // @[outaxi.scala 26:22]
-  assign io_m_axis_tdata = io_m_axis_tready ? _GEN_2 : 512'h0; // @[outaxi.scala 31:29 outaxi.scala 27:22]
-  assign io_m_axis_tkeep = io_m_axis_tready ? 64'hffffffffffffffff : 64'h0; // @[outaxi.scala 31:29 outaxi.scala 28:22]
-  assign io_m_axis_tlast = io_m_axis_tready & _GEN_5; // @[outaxi.scala 31:29 outaxi.scala 29:22]
+  reg  waitl; // @[outaxi.scala 24:24]
+  reg  last; // @[outaxi.scala 25:24]
+  wire  _GEN_0 = waitl | io_ipsa_en_out | phase; // @[outaxi.scala 34:57 outaxi.scala 35:23 outaxi.scala 23:24]
+  wire [511:0] _GEN_1 = waitl | io_ipsa_en_out ? io_ipsa_data_out[1023:512] : 512'h0; // @[outaxi.scala 34:57 outaxi.scala 36:34 outaxi.scala 28:22]
+  wire  _GEN_3 = waitl | io_ipsa_en_out ? io_ipsa_last_out : last; // @[outaxi.scala 34:57 outaxi.scala 38:22 outaxi.scala 25:24]
+  wire  _GEN_4 = waitl | io_ipsa_en_out | waitl; // @[outaxi.scala 34:57 outaxi.scala 39:23 outaxi.scala 24:24]
+  wire  _GEN_5 = last ? 1'h0 : waitl; // @[outaxi.scala 45:38 outaxi.scala 46:23 outaxi.scala 24:24]
+  wire  _GEN_6 = ~phase & _GEN_0; // @[outaxi.scala 33:35 outaxi.scala 42:19]
+  wire [511:0] _GEN_7 = ~phase ? _GEN_1 : buf_; // @[outaxi.scala 33:35 outaxi.scala 43:29]
+  wire  _GEN_9 = ~phase ? _GEN_3 : last; // @[outaxi.scala 33:35 outaxi.scala 25:24]
+  wire  _GEN_10 = ~phase ? _GEN_4 : _GEN_5; // @[outaxi.scala 33:35]
+  wire  _GEN_11 = ~phase ? 1'h0 : last; // @[outaxi.scala 33:35 outaxi.scala 30:22 outaxi.scala 44:29]
+  wire  _GEN_12 = io_m_axis_tready & _GEN_6; // @[outaxi.scala 32:29 outaxi.scala 50:15]
+  wire  _GEN_15 = io_m_axis_tready & _GEN_9; // @[outaxi.scala 32:29 outaxi.scala 51:14]
+  wire  _GEN_16 = io_m_axis_tready & _GEN_10; // @[outaxi.scala 32:29 outaxi.scala 52:15]
+  assign io_m_axis_tdata = io_m_axis_tready ? _GEN_7 : 512'h0; // @[outaxi.scala 32:29 outaxi.scala 28:22]
+  assign io_m_axis_tlast = io_m_axis_tready & _GEN_11; // @[outaxi.scala 32:29 outaxi.scala 30:22]
   always @(posedge clock) begin
-    if (io_m_axis_tready) begin // @[outaxi.scala 31:29]
-      if (~phase) begin // @[outaxi.scala 32:35]
-        buf_ <= io_ipsa_data_out[511:0]; // @[outaxi.scala 36:17]
+    if (io_m_axis_tready) begin // @[outaxi.scala 32:29]
+      if (~phase) begin // @[outaxi.scala 33:35]
+        if (waitl | io_ipsa_en_out) begin // @[outaxi.scala 34:57]
+          buf_ <= io_ipsa_data_out[511:0]; // @[outaxi.scala 37:22]
+        end
       end
     end
     if (reset) begin // @[outaxi.scala 23:24]
       phase <= 1'h0; // @[outaxi.scala 23:24]
     end else begin
-      phase <= _GEN_6;
+      phase <= _GEN_12;
     end
     if (reset) begin // @[outaxi.scala 24:24]
-      last <= 1'h0; // @[outaxi.scala 24:24]
+      waitl <= 1'h0; // @[outaxi.scala 24:24]
     end else begin
-      last <= _GEN_10;
+      waitl <= _GEN_16;
+    end
+    if (reset) begin // @[outaxi.scala 25:24]
+      last <= 1'h0; // @[outaxi.scala 25:24]
+    end else begin
+      last <= _GEN_15;
     end
   end
 // Register and memory initialization
@@ -86,7 +98,9 @@ initial begin
   _RAND_1 = {1{`RANDOM}};
   phase = _RAND_1[0:0];
   _RAND_2 = {1{`RANDOM}};
-  last = _RAND_2[0:0];
+  waitl = _RAND_2[0:0];
+  _RAND_3 = {1{`RANDOM}};
+  last = _RAND_3[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
