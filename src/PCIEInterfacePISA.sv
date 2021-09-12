@@ -6,7 +6,7 @@ module PCIEInterfacePISA(
   input         io_pcie_w_en,
   input  [19:0] io_pcie_w_addr,
   input  [63:0] io_pcie_w_data,
-  output [5:0]  io_pcie_o_cs,
+  output [4:0]  io_pcie_o_cs,
   output        io_pcie_o_r_en,
   output [7:0]  io_pcie_o_r_addr,
   input  [63:0] io_pcie_o_r_data,
@@ -29,10 +29,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_0_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_0_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_0_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_0_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_0_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_0_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_0_mat_mod_w_en,
@@ -53,10 +53,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_1_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_1_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_1_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_1_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_1_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_1_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_1_mat_mod_w_en,
@@ -77,10 +77,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_2_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_2_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_2_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_2_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_2_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_2_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_2_mat_mod_w_en,
@@ -101,10 +101,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_3_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_3_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_3_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_3_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_3_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_3_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_3_mat_mod_w_en,
@@ -125,10 +125,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_4_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_4_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_4_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_4_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_4_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_4_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_4_mat_mod_w_en,
@@ -149,10 +149,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_5_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_5_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_5_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_5_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_5_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_5_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_5_mat_mod_w_en,
@@ -173,10 +173,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_6_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_6_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_6_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_6_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_6_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_6_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_6_mat_mod_w_en,
@@ -197,10 +197,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_7_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_7_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_7_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_7_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_7_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_7_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_7_mat_mod_w_en,
@@ -221,10 +221,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_8_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_8_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_8_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_8_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_8_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_8_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_8_mat_mod_w_en,
@@ -245,10 +245,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_9_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_9_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_9_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_9_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_9_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_9_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_9_mat_mod_w_en,
@@ -269,10 +269,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_10_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_10_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_10_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_10_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_10_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_10_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_10_mat_mod_w_en,
@@ -293,10 +293,10 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_11_mat_mod_key_mod_group_mask_1,
   output        io_mod_proc_mod_11_mat_mod_key_mod_group_mask_2,
   output        io_mod_proc_mod_11_mat_mod_key_mod_group_mask_3,
-  output [7:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_0,
-  output [7:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_1,
-  output [7:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_2,
-  output [7:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_3,
+  output [6:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_11_mat_mod_key_mod_group_id_3,
   output [4:0]  io_mod_proc_mod_11_mat_mod_table_mod_table_depth,
   output [4:0]  io_mod_proc_mod_11_mat_mod_table_mod_table_width,
   output        io_mod_proc_mod_11_mat_mod_w_en,
@@ -307,7 +307,103 @@ module PCIEInterfacePISA(
   output        io_mod_proc_mod_11_exe_mod_en_1,
   output [7:0]  io_mod_proc_mod_11_exe_mod_addr,
   output [63:0] io_mod_proc_mod_11_exe_mod_data_0,
-  output [63:0] io_mod_proc_mod_11_exe_mod_data_1
+  output [63:0] io_mod_proc_mod_11_exe_mod_data_1,
+  output        io_mod_proc_mod_12_mat_mod_en,
+  output        io_mod_proc_mod_12_mat_mod_config_id,
+  output        io_mod_proc_mod_12_mat_mod_key_mod_en,
+  output [2:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_index,
+  output [1:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_config,
+  output        io_mod_proc_mod_12_mat_mod_key_mod_group_mask_0,
+  output        io_mod_proc_mod_12_mat_mod_key_mod_group_mask_1,
+  output        io_mod_proc_mod_12_mat_mod_key_mod_group_mask_2,
+  output        io_mod_proc_mod_12_mat_mod_key_mod_group_mask_3,
+  output [6:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_12_mat_mod_key_mod_group_id_3,
+  output [4:0]  io_mod_proc_mod_12_mat_mod_table_mod_table_depth,
+  output [4:0]  io_mod_proc_mod_12_mat_mod_table_mod_table_width,
+  output        io_mod_proc_mod_12_mat_mod_w_en,
+  output [3:0]  io_mod_proc_mod_12_mat_mod_w_sram_id,
+  output [7:0]  io_mod_proc_mod_12_mat_mod_w_addr,
+  output [63:0] io_mod_proc_mod_12_mat_mod_w_data,
+  output        io_mod_proc_mod_12_exe_mod_en_0,
+  output        io_mod_proc_mod_12_exe_mod_en_1,
+  output [7:0]  io_mod_proc_mod_12_exe_mod_addr,
+  output [63:0] io_mod_proc_mod_12_exe_mod_data_0,
+  output [63:0] io_mod_proc_mod_12_exe_mod_data_1,
+  output        io_mod_proc_mod_13_mat_mod_en,
+  output        io_mod_proc_mod_13_mat_mod_config_id,
+  output        io_mod_proc_mod_13_mat_mod_key_mod_en,
+  output [2:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_index,
+  output [1:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_config,
+  output        io_mod_proc_mod_13_mat_mod_key_mod_group_mask_0,
+  output        io_mod_proc_mod_13_mat_mod_key_mod_group_mask_1,
+  output        io_mod_proc_mod_13_mat_mod_key_mod_group_mask_2,
+  output        io_mod_proc_mod_13_mat_mod_key_mod_group_mask_3,
+  output [6:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_13_mat_mod_key_mod_group_id_3,
+  output [4:0]  io_mod_proc_mod_13_mat_mod_table_mod_table_depth,
+  output [4:0]  io_mod_proc_mod_13_mat_mod_table_mod_table_width,
+  output        io_mod_proc_mod_13_mat_mod_w_en,
+  output [3:0]  io_mod_proc_mod_13_mat_mod_w_sram_id,
+  output [7:0]  io_mod_proc_mod_13_mat_mod_w_addr,
+  output [63:0] io_mod_proc_mod_13_mat_mod_w_data,
+  output        io_mod_proc_mod_13_exe_mod_en_0,
+  output        io_mod_proc_mod_13_exe_mod_en_1,
+  output [7:0]  io_mod_proc_mod_13_exe_mod_addr,
+  output [63:0] io_mod_proc_mod_13_exe_mod_data_0,
+  output [63:0] io_mod_proc_mod_13_exe_mod_data_1,
+  output        io_mod_proc_mod_14_mat_mod_en,
+  output        io_mod_proc_mod_14_mat_mod_config_id,
+  output        io_mod_proc_mod_14_mat_mod_key_mod_en,
+  output [2:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_index,
+  output [1:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_config,
+  output        io_mod_proc_mod_14_mat_mod_key_mod_group_mask_0,
+  output        io_mod_proc_mod_14_mat_mod_key_mod_group_mask_1,
+  output        io_mod_proc_mod_14_mat_mod_key_mod_group_mask_2,
+  output        io_mod_proc_mod_14_mat_mod_key_mod_group_mask_3,
+  output [6:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_14_mat_mod_key_mod_group_id_3,
+  output [4:0]  io_mod_proc_mod_14_mat_mod_table_mod_table_depth,
+  output [4:0]  io_mod_proc_mod_14_mat_mod_table_mod_table_width,
+  output        io_mod_proc_mod_14_mat_mod_w_en,
+  output [3:0]  io_mod_proc_mod_14_mat_mod_w_sram_id,
+  output [7:0]  io_mod_proc_mod_14_mat_mod_w_addr,
+  output [63:0] io_mod_proc_mod_14_mat_mod_w_data,
+  output        io_mod_proc_mod_14_exe_mod_en_0,
+  output        io_mod_proc_mod_14_exe_mod_en_1,
+  output [7:0]  io_mod_proc_mod_14_exe_mod_addr,
+  output [63:0] io_mod_proc_mod_14_exe_mod_data_0,
+  output [63:0] io_mod_proc_mod_14_exe_mod_data_1,
+  output        io_mod_proc_mod_15_mat_mod_en,
+  output        io_mod_proc_mod_15_mat_mod_config_id,
+  output        io_mod_proc_mod_15_mat_mod_key_mod_en,
+  output [2:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_index,
+  output [1:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_config,
+  output        io_mod_proc_mod_15_mat_mod_key_mod_group_mask_0,
+  output        io_mod_proc_mod_15_mat_mod_key_mod_group_mask_1,
+  output        io_mod_proc_mod_15_mat_mod_key_mod_group_mask_2,
+  output        io_mod_proc_mod_15_mat_mod_key_mod_group_mask_3,
+  output [6:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_id_0,
+  output [6:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_id_1,
+  output [6:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_id_2,
+  output [6:0]  io_mod_proc_mod_15_mat_mod_key_mod_group_id_3,
+  output [4:0]  io_mod_proc_mod_15_mat_mod_table_mod_table_depth,
+  output [4:0]  io_mod_proc_mod_15_mat_mod_table_mod_table_width,
+  output        io_mod_proc_mod_15_mat_mod_w_en,
+  output [3:0]  io_mod_proc_mod_15_mat_mod_w_sram_id,
+  output [7:0]  io_mod_proc_mod_15_mat_mod_w_addr,
+  output [63:0] io_mod_proc_mod_15_mat_mod_w_data,
+  output        io_mod_proc_mod_15_exe_mod_en_0,
+  output        io_mod_proc_mod_15_exe_mod_en_1,
+  output [7:0]  io_mod_proc_mod_15_exe_mod_addr,
+  output [63:0] io_mod_proc_mod_15_exe_mod_data_0,
+  output [63:0] io_mod_proc_mod_15_exe_mod_data_1
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -912,22 +1008,218 @@ module PCIEInterfacePISA(
   wire  _io_mod_proc_mod_11_mat_mod_w_en_T_1 = proc_id_field == 4'hb; // @[pcie_interface_pisa.scala 90:66]
   wire [63:0] _GEN_786 = bias_field == 4'h4 ? io_pcie_w_data : _GEN_767; // @[pcie_interface_pisa.scala 110:54 pcie_interface_pisa.scala 111:37]
   wire [63:0] _GEN_787 = bias_field == 4'h5 ? io_pcie_w_data : _GEN_768; // @[pcie_interface_pisa.scala 113:54 pcie_interface_pisa.scala 114:38]
+  wire  _GEN_788 = bias_field == 4'h6 ? io_pcie_w_data[0] : _GEN_769; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_789 = bias_field == 4'h6 ? io_pcie_w_data[1] : _GEN_770; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_790 = bias_field == 4'h6 ? io_pcie_w_data[2] : _GEN_771; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_791 = bias_field == 4'h6 ? io_pcie_w_data[3] : _GEN_772; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire [6:0] _GEN_792 = bias_field == 4'h7 ? io_pcie_w_data[6:0] : _GEN_773; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_793 = bias_field == 4'h7 ? io_pcie_w_data[14:8] : _GEN_774; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_794 = bias_field == 4'h7 ? io_pcie_w_data[22:16] : _GEN_775; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_795 = bias_field == 4'h7 ? io_pcie_w_data[30:24] : _GEN_776; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
   wire [63:0] _GEN_797 = sram_id_field == 4'h3 ? _GEN_786 : _GEN_767; // @[pcie_interface_pisa.scala 106:52]
   wire [63:0] _GEN_798 = sram_id_field == 4'h3 ? _GEN_787 : _GEN_768; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_799 = sram_id_field == 4'h3 ? _GEN_788 : _GEN_769; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_800 = sram_id_field == 4'h3 ? _GEN_789 : _GEN_770; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_801 = sram_id_field == 4'h3 ? _GEN_790 : _GEN_771; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_802 = sram_id_field == 4'h3 ? _GEN_791 : _GEN_772; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_803 = sram_id_field == 4'h3 ? _GEN_792 : _GEN_773; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_804 = sram_id_field == 4'h3 ? _GEN_793 : _GEN_774; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_805 = sram_id_field == 4'h3 ? _GEN_794 : _GEN_775; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_806 = sram_id_field == 4'h3 ? _GEN_795 : _GEN_776; // @[pcie_interface_pisa.scala 106:52]
   wire [63:0] _GEN_807 = _T_4 ? io_pcie_w_data : _GEN_777; // @[pcie_interface_pisa.scala 128:54 pcie_interface_pisa.scala 129:45]
   wire [63:0] _GEN_808 = bias_field == 4'h1 ? io_pcie_w_data : _GEN_778; // @[pcie_interface_pisa.scala 131:54 pcie_interface_pisa.scala 132:45]
   wire [63:0] _GEN_810 = sram_id_field == 4'h5 ? _GEN_807 : _GEN_777; // @[pcie_interface_pisa.scala 127:52]
   wire [63:0] _GEN_811 = sram_id_field == 4'h5 ? _GEN_808 : _GEN_778; // @[pcie_interface_pisa.scala 127:52]
   wire [63:0] _GEN_814 = _T_1 ? _GEN_797 : _GEN_767; // @[pcie_interface_pisa.scala 104:44]
   wire [63:0] _GEN_815 = _T_1 ? _GEN_798 : _GEN_768; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_816 = _T_1 ? _GEN_799 : _GEN_769; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_817 = _T_1 ? _GEN_800 : _GEN_770; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_818 = _T_1 ? _GEN_801 : _GEN_771; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_819 = _T_1 ? _GEN_802 : _GEN_772; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_820 = _T_1 ? _GEN_803 : _GEN_773; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_821 = _T_1 ? _GEN_804 : _GEN_774; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_822 = _T_1 ? _GEN_805 : _GEN_775; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_823 = _T_1 ? _GEN_806 : _GEN_776; // @[pcie_interface_pisa.scala 104:44]
   wire [63:0] _GEN_824 = _T_1 ? _GEN_810 : _GEN_777; // @[pcie_interface_pisa.scala 104:44]
   wire [63:0] _GEN_825 = _T_1 ? _GEN_811 : _GEN_778; // @[pcie_interface_pisa.scala 104:44]
   wire [63:0] _GEN_837 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_814 : _GEN_767; // @[pcie_interface_pisa.scala 102:43]
   wire [63:0] _GEN_838 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_815 : _GEN_768; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_839 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_816 : _GEN_769; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_840 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_817 : _GEN_770; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_841 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_818 : _GEN_771; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_842 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_819 : _GEN_772; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_843 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_820 : _GEN_773; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_844 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_821 : _GEN_774; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_845 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_822 : _GEN_775; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_846 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_823 : _GEN_776; // @[pcie_interface_pisa.scala 102:43]
   wire [63:0] _GEN_847 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_824 : _GEN_777; // @[pcie_interface_pisa.scala 102:43]
   wire [63:0] _GEN_848 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_825 : _GEN_778; // @[pcie_interface_pisa.scala 102:43]
+  wire  _io_mod_proc_mod_12_mat_mod_w_en_T_1 = proc_id_field == 4'hc; // @[pcie_interface_pisa.scala 90:66]
+  wire [63:0] _GEN_856 = bias_field == 4'h4 ? io_pcie_w_data : _GEN_837; // @[pcie_interface_pisa.scala 110:54 pcie_interface_pisa.scala 111:37]
+  wire [63:0] _GEN_857 = bias_field == 4'h5 ? io_pcie_w_data : _GEN_838; // @[pcie_interface_pisa.scala 113:54 pcie_interface_pisa.scala 114:38]
+  wire  _GEN_858 = bias_field == 4'h6 ? io_pcie_w_data[0] : _GEN_839; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_859 = bias_field == 4'h6 ? io_pcie_w_data[1] : _GEN_840; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_860 = bias_field == 4'h6 ? io_pcie_w_data[2] : _GEN_841; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_861 = bias_field == 4'h6 ? io_pcie_w_data[3] : _GEN_842; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire [6:0] _GEN_862 = bias_field == 4'h7 ? io_pcie_w_data[6:0] : _GEN_843; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_863 = bias_field == 4'h7 ? io_pcie_w_data[14:8] : _GEN_844; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_864 = bias_field == 4'h7 ? io_pcie_w_data[22:16] : _GEN_845; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_865 = bias_field == 4'h7 ? io_pcie_w_data[30:24] : _GEN_846; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [63:0] _GEN_867 = sram_id_field == 4'h3 ? _GEN_856 : _GEN_837; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_868 = sram_id_field == 4'h3 ? _GEN_857 : _GEN_838; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_869 = sram_id_field == 4'h3 ? _GEN_858 : _GEN_839; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_870 = sram_id_field == 4'h3 ? _GEN_859 : _GEN_840; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_871 = sram_id_field == 4'h3 ? _GEN_860 : _GEN_841; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_872 = sram_id_field == 4'h3 ? _GEN_861 : _GEN_842; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_873 = sram_id_field == 4'h3 ? _GEN_862 : _GEN_843; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_874 = sram_id_field == 4'h3 ? _GEN_863 : _GEN_844; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_875 = sram_id_field == 4'h3 ? _GEN_864 : _GEN_845; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_876 = sram_id_field == 4'h3 ? _GEN_865 : _GEN_846; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_877 = _T_4 ? io_pcie_w_data : _GEN_847; // @[pcie_interface_pisa.scala 128:54 pcie_interface_pisa.scala 129:45]
+  wire [63:0] _GEN_878 = bias_field == 4'h1 ? io_pcie_w_data : _GEN_848; // @[pcie_interface_pisa.scala 131:54 pcie_interface_pisa.scala 132:45]
+  wire [63:0] _GEN_880 = sram_id_field == 4'h5 ? _GEN_877 : _GEN_847; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_881 = sram_id_field == 4'h5 ? _GEN_878 : _GEN_848; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_884 = _T_1 ? _GEN_867 : _GEN_837; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_885 = _T_1 ? _GEN_868 : _GEN_838; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_886 = _T_1 ? _GEN_869 : _GEN_839; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_887 = _T_1 ? _GEN_870 : _GEN_840; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_888 = _T_1 ? _GEN_871 : _GEN_841; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_889 = _T_1 ? _GEN_872 : _GEN_842; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_890 = _T_1 ? _GEN_873 : _GEN_843; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_891 = _T_1 ? _GEN_874 : _GEN_844; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_892 = _T_1 ? _GEN_875 : _GEN_845; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_893 = _T_1 ? _GEN_876 : _GEN_846; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_894 = _T_1 ? _GEN_880 : _GEN_847; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_895 = _T_1 ? _GEN_881 : _GEN_848; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_907 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_884 : _GEN_837; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_908 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_885 : _GEN_838; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_909 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_886 : _GEN_839; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_910 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_887 : _GEN_840; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_911 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_888 : _GEN_841; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_912 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_889 : _GEN_842; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_913 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_890 : _GEN_843; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_914 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_891 : _GEN_844; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_915 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_892 : _GEN_845; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_916 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_893 : _GEN_846; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_917 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_894 : _GEN_847; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_918 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_895 : _GEN_848; // @[pcie_interface_pisa.scala 102:43]
+  wire  _io_mod_proc_mod_13_mat_mod_w_en_T_1 = proc_id_field == 4'hd; // @[pcie_interface_pisa.scala 90:66]
+  wire [63:0] _GEN_926 = bias_field == 4'h4 ? io_pcie_w_data : _GEN_907; // @[pcie_interface_pisa.scala 110:54 pcie_interface_pisa.scala 111:37]
+  wire [63:0] _GEN_927 = bias_field == 4'h5 ? io_pcie_w_data : _GEN_908; // @[pcie_interface_pisa.scala 113:54 pcie_interface_pisa.scala 114:38]
+  wire  _GEN_928 = bias_field == 4'h6 ? io_pcie_w_data[0] : _GEN_909; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_929 = bias_field == 4'h6 ? io_pcie_w_data[1] : _GEN_910; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_930 = bias_field == 4'h6 ? io_pcie_w_data[2] : _GEN_911; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_931 = bias_field == 4'h6 ? io_pcie_w_data[3] : _GEN_912; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire [6:0] _GEN_932 = bias_field == 4'h7 ? io_pcie_w_data[6:0] : _GEN_913; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_933 = bias_field == 4'h7 ? io_pcie_w_data[14:8] : _GEN_914; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_934 = bias_field == 4'h7 ? io_pcie_w_data[22:16] : _GEN_915; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_935 = bias_field == 4'h7 ? io_pcie_w_data[30:24] : _GEN_916; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [63:0] _GEN_937 = sram_id_field == 4'h3 ? _GEN_926 : _GEN_907; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_938 = sram_id_field == 4'h3 ? _GEN_927 : _GEN_908; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_939 = sram_id_field == 4'h3 ? _GEN_928 : _GEN_909; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_940 = sram_id_field == 4'h3 ? _GEN_929 : _GEN_910; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_941 = sram_id_field == 4'h3 ? _GEN_930 : _GEN_911; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_942 = sram_id_field == 4'h3 ? _GEN_931 : _GEN_912; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_943 = sram_id_field == 4'h3 ? _GEN_932 : _GEN_913; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_944 = sram_id_field == 4'h3 ? _GEN_933 : _GEN_914; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_945 = sram_id_field == 4'h3 ? _GEN_934 : _GEN_915; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_946 = sram_id_field == 4'h3 ? _GEN_935 : _GEN_916; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_947 = _T_4 ? io_pcie_w_data : _GEN_917; // @[pcie_interface_pisa.scala 128:54 pcie_interface_pisa.scala 129:45]
+  wire [63:0] _GEN_948 = bias_field == 4'h1 ? io_pcie_w_data : _GEN_918; // @[pcie_interface_pisa.scala 131:54 pcie_interface_pisa.scala 132:45]
+  wire [63:0] _GEN_950 = sram_id_field == 4'h5 ? _GEN_947 : _GEN_917; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_951 = sram_id_field == 4'h5 ? _GEN_948 : _GEN_918; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_954 = _T_1 ? _GEN_937 : _GEN_907; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_955 = _T_1 ? _GEN_938 : _GEN_908; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_956 = _T_1 ? _GEN_939 : _GEN_909; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_957 = _T_1 ? _GEN_940 : _GEN_910; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_958 = _T_1 ? _GEN_941 : _GEN_911; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_959 = _T_1 ? _GEN_942 : _GEN_912; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_960 = _T_1 ? _GEN_943 : _GEN_913; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_961 = _T_1 ? _GEN_944 : _GEN_914; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_962 = _T_1 ? _GEN_945 : _GEN_915; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_963 = _T_1 ? _GEN_946 : _GEN_916; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_964 = _T_1 ? _GEN_950 : _GEN_917; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_965 = _T_1 ? _GEN_951 : _GEN_918; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_977 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_954 : _GEN_907; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_978 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_955 : _GEN_908; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_979 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_956 : _GEN_909; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_980 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_957 : _GEN_910; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_981 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_958 : _GEN_911; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_982 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_959 : _GEN_912; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_983 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_960 : _GEN_913; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_984 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_961 : _GEN_914; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_985 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_962 : _GEN_915; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_986 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_963 : _GEN_916; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_987 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_964 : _GEN_917; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_988 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_965 : _GEN_918; // @[pcie_interface_pisa.scala 102:43]
+  wire  _io_mod_proc_mod_14_mat_mod_w_en_T_1 = proc_id_field == 4'he; // @[pcie_interface_pisa.scala 90:66]
+  wire [63:0] _GEN_996 = bias_field == 4'h4 ? io_pcie_w_data : _GEN_977; // @[pcie_interface_pisa.scala 110:54 pcie_interface_pisa.scala 111:37]
+  wire [63:0] _GEN_997 = bias_field == 4'h5 ? io_pcie_w_data : _GEN_978; // @[pcie_interface_pisa.scala 113:54 pcie_interface_pisa.scala 114:38]
+  wire  _GEN_998 = bias_field == 4'h6 ? io_pcie_w_data[0] : _GEN_979; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_999 = bias_field == 4'h6 ? io_pcie_w_data[1] : _GEN_980; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_1000 = bias_field == 4'h6 ? io_pcie_w_data[2] : _GEN_981; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire  _GEN_1001 = bias_field == 4'h6 ? io_pcie_w_data[3] : _GEN_982; // @[pcie_interface_pisa.scala 116:54 pcie_interface_pisa.scala 118:43]
+  wire [6:0] _GEN_1002 = bias_field == 4'h7 ? io_pcie_w_data[6:0] : _GEN_983; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_1003 = bias_field == 4'h7 ? io_pcie_w_data[14:8] : _GEN_984; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_1004 = bias_field == 4'h7 ? io_pcie_w_data[22:16] : _GEN_985; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [6:0] _GEN_1005 = bias_field == 4'h7 ? io_pcie_w_data[30:24] : _GEN_986; // @[pcie_interface_pisa.scala 121:54 pcie_interface_pisa.scala 123:41]
+  wire [63:0] _GEN_1007 = sram_id_field == 4'h3 ? _GEN_996 : _GEN_977; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_1008 = sram_id_field == 4'h3 ? _GEN_997 : _GEN_978; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_1009 = sram_id_field == 4'h3 ? _GEN_998 : _GEN_979; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_1010 = sram_id_field == 4'h3 ? _GEN_999 : _GEN_980; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_1011 = sram_id_field == 4'h3 ? _GEN_1000 : _GEN_981; // @[pcie_interface_pisa.scala 106:52]
+  wire  _GEN_1012 = sram_id_field == 4'h3 ? _GEN_1001 : _GEN_982; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_1013 = sram_id_field == 4'h3 ? _GEN_1002 : _GEN_983; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_1014 = sram_id_field == 4'h3 ? _GEN_1003 : _GEN_984; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_1015 = sram_id_field == 4'h3 ? _GEN_1004 : _GEN_985; // @[pcie_interface_pisa.scala 106:52]
+  wire [6:0] _GEN_1016 = sram_id_field == 4'h3 ? _GEN_1005 : _GEN_986; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_1017 = _T_4 ? io_pcie_w_data : _GEN_987; // @[pcie_interface_pisa.scala 128:54 pcie_interface_pisa.scala 129:45]
+  wire [63:0] _GEN_1018 = bias_field == 4'h1 ? io_pcie_w_data : _GEN_988; // @[pcie_interface_pisa.scala 131:54 pcie_interface_pisa.scala 132:45]
+  wire [63:0] _GEN_1020 = sram_id_field == 4'h5 ? _GEN_1017 : _GEN_987; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_1021 = sram_id_field == 4'h5 ? _GEN_1018 : _GEN_988; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_1024 = _T_1 ? _GEN_1007 : _GEN_977; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1025 = _T_1 ? _GEN_1008 : _GEN_978; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_1026 = _T_1 ? _GEN_1009 : _GEN_979; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_1027 = _T_1 ? _GEN_1010 : _GEN_980; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_1028 = _T_1 ? _GEN_1011 : _GEN_981; // @[pcie_interface_pisa.scala 104:44]
+  wire  _GEN_1029 = _T_1 ? _GEN_1012 : _GEN_982; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_1030 = _T_1 ? _GEN_1013 : _GEN_983; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_1031 = _T_1 ? _GEN_1014 : _GEN_984; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_1032 = _T_1 ? _GEN_1015 : _GEN_985; // @[pcie_interface_pisa.scala 104:44]
+  wire [6:0] _GEN_1033 = _T_1 ? _GEN_1016 : _GEN_986; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1034 = _T_1 ? _GEN_1020 : _GEN_987; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1035 = _T_1 ? _GEN_1021 : _GEN_988; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1047 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1024 : _GEN_977; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1048 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1025 : _GEN_978; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_1049 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1026 : _GEN_979; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_1050 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1027 : _GEN_980; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_1051 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1028 : _GEN_981; // @[pcie_interface_pisa.scala 102:43]
+  wire  _GEN_1052 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1029 : _GEN_982; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_1053 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1030 : _GEN_983; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_1054 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1031 : _GEN_984; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_1055 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1032 : _GEN_985; // @[pcie_interface_pisa.scala 102:43]
+  wire [6:0] _GEN_1056 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1033 : _GEN_986; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1057 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1034 : _GEN_987; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1058 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_1035 : _GEN_988; // @[pcie_interface_pisa.scala 102:43]
+  wire  _io_mod_proc_mod_15_mat_mod_w_en_T_1 = proc_id_field == 4'hf; // @[pcie_interface_pisa.scala 90:66]
+  wire [63:0] _GEN_1066 = bias_field == 4'h4 ? io_pcie_w_data : _GEN_1047; // @[pcie_interface_pisa.scala 110:54 pcie_interface_pisa.scala 111:37]
+  wire [63:0] _GEN_1067 = bias_field == 4'h5 ? io_pcie_w_data : _GEN_1048; // @[pcie_interface_pisa.scala 113:54 pcie_interface_pisa.scala 114:38]
+  wire [63:0] _GEN_1077 = sram_id_field == 4'h3 ? _GEN_1066 : _GEN_1047; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_1078 = sram_id_field == 4'h3 ? _GEN_1067 : _GEN_1048; // @[pcie_interface_pisa.scala 106:52]
+  wire [63:0] _GEN_1087 = _T_4 ? io_pcie_w_data : _GEN_1057; // @[pcie_interface_pisa.scala 128:54 pcie_interface_pisa.scala 129:45]
+  wire [63:0] _GEN_1088 = bias_field == 4'h1 ? io_pcie_w_data : _GEN_1058; // @[pcie_interface_pisa.scala 131:54 pcie_interface_pisa.scala 132:45]
+  wire [63:0] _GEN_1090 = sram_id_field == 4'h5 ? _GEN_1087 : _GEN_1057; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_1091 = sram_id_field == 4'h5 ? _GEN_1088 : _GEN_1058; // @[pcie_interface_pisa.scala 127:52]
+  wire [63:0] _GEN_1094 = _T_1 ? _GEN_1077 : _GEN_1047; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1095 = _T_1 ? _GEN_1078 : _GEN_1048; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1104 = _T_1 ? _GEN_1090 : _GEN_1057; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1105 = _T_1 ? _GEN_1091 : _GEN_1058; // @[pcie_interface_pisa.scala 104:44]
+  wire [63:0] _GEN_1117 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_1094 : _GEN_1047; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1118 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_1095 : _GEN_1048; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1127 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_1104 : _GEN_1057; // @[pcie_interface_pisa.scala 102:43]
+  wire [63:0] _GEN_1128 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_1105 : _GEN_1058; // @[pcie_interface_pisa.scala 102:43]
   assign io_pcie_r_data = io_pcie_o_r_data; // @[pcie_interface_pisa.scala 19:22]
-  assign io_pcie_o_cs = {{1'd0}, io_pcie_r_addr[12:8]}; // @[pcie_interface_pisa.scala 16:39]
+  assign io_pcie_o_cs = io_pcie_r_addr[12:8]; // @[pcie_interface_pisa.scala 16:39]
   assign io_pcie_o_r_en = io_pcie_r_en; // @[pcie_interface_pisa.scala 17:22]
   assign io_pcie_o_r_addr = io_pcie_r_addr[7:0]; // @[pcie_interface_pisa.scala 18:39]
   assign io_mod_par_mod_en = type_field == 4'h3 ? _GEN_7 : _T; // @[pcie_interface_pisa.scala 52:36]
@@ -949,10 +1241,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_0_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_0_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_0_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_0_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_0_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_0_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_0_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h0; // @[pcie_interface_pisa.scala 90:49]
@@ -973,10 +1265,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_1_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_1_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_1_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_1_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_1_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_1_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_1_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h1; // @[pcie_interface_pisa.scala 90:49]
@@ -997,10 +1289,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_2_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_2_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_2_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_2_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_2_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_2_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_2_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h2; // @[pcie_interface_pisa.scala 90:49]
@@ -1021,10 +1313,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_3_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_3_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_3_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_3_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_3_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_3_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_3_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h3; // @[pcie_interface_pisa.scala 90:49]
@@ -1045,10 +1337,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_4_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_4_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_4_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_4_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_4_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_4_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_4_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h4; // @[pcie_interface_pisa.scala 90:49]
@@ -1069,10 +1361,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_5_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_5_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_5_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_5_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_5_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_5_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_5_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h5; // @[pcie_interface_pisa.scala 90:49]
@@ -1093,10 +1385,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_6_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_6_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_6_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_6_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_6_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_6_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_6_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h6; // @[pcie_interface_pisa.scala 90:49]
@@ -1117,10 +1409,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_7_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_7_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_7_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_7_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_7_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_7_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_7_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h7; // @[pcie_interface_pisa.scala 90:49]
@@ -1141,10 +1433,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_8_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_8_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_8_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_8_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_8_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_8_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_8_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h8; // @[pcie_interface_pisa.scala 90:49]
@@ -1165,10 +1457,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_9_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_9_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_9_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_9_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_9_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_9_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_9_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'h9; // @[pcie_interface_pisa.scala 90:49]
@@ -1189,10 +1481,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_10_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_10_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_10_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_10_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_10_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_10_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_10_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'ha; // @[pcie_interface_pisa.scala 90:49]
@@ -1213,10 +1505,10 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_11_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_11_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
   assign io_mod_proc_mod_11_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
-  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_0 = {{1'd0}, group_id_0}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_1 = {{1'd0}, group_id_1}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_2 = {{1'd0}, group_id_2}; // @[pcie_interface_pisa.scala 88:34]
-  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_3 = {{1'd0}, group_id_3}; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_11_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
   assign io_mod_proc_mod_11_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_11_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
   assign io_mod_proc_mod_11_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'hb; // @[pcie_interface_pisa.scala 90:49]
@@ -1228,149 +1520,245 @@ module PCIEInterfacePISA(
   assign io_mod_proc_mod_11_exe_mod_addr = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_61 : 8'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 98:29]
   assign io_mod_proc_mod_11_exe_mod_data_0 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_63 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
   assign io_mod_proc_mod_11_exe_mod_data_1 = _io_mod_proc_mod_11_mat_mod_w_en_T_1 ? _GEN_65 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_12_mat_mod_en = _io_mod_proc_mod_12_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_12_mat_mod_config_id = config_field[0]; // @[pcie_interface_pisa.scala 82:27]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_en = _io_mod_proc_mod_12_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_index = group_index; // @[pcie_interface_pisa.scala 85:37]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_config = group_config; // @[pcie_interface_pisa.scala 86:38]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_mask_0 = group_mask_0; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_12_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_12_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_12_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_12_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'hc; // @[pcie_interface_pisa.scala 90:49]
+  assign io_mod_proc_mod_12_mat_mod_w_sram_id = io_pcie_w_addr[11:8]; // @[pcie_interface_pisa.scala 26:35]
+  assign io_mod_proc_mod_12_mat_mod_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface_pisa.scala 29:35]
+  assign io_mod_proc_mod_12_mat_mod_w_data = io_pcie_w_data; // @[pcie_interface_pisa.scala 93:24]
+  assign io_mod_proc_mod_12_exe_mod_en_0 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 & _GEN_62; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_12_exe_mod_en_1 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 & _GEN_64; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_12_exe_mod_addr = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_61 : 8'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 98:29]
+  assign io_mod_proc_mod_12_exe_mod_data_0 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_63 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_12_exe_mod_data_1 = _io_mod_proc_mod_12_mat_mod_w_en_T_1 ? _GEN_65 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_13_mat_mod_en = _io_mod_proc_mod_13_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_13_mat_mod_config_id = config_field[0]; // @[pcie_interface_pisa.scala 82:27]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_en = _io_mod_proc_mod_13_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_index = group_index; // @[pcie_interface_pisa.scala 85:37]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_config = group_config; // @[pcie_interface_pisa.scala 86:38]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_mask_0 = group_mask_0; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_13_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_13_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_13_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_13_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'hd; // @[pcie_interface_pisa.scala 90:49]
+  assign io_mod_proc_mod_13_mat_mod_w_sram_id = io_pcie_w_addr[11:8]; // @[pcie_interface_pisa.scala 26:35]
+  assign io_mod_proc_mod_13_mat_mod_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface_pisa.scala 29:35]
+  assign io_mod_proc_mod_13_mat_mod_w_data = io_pcie_w_data; // @[pcie_interface_pisa.scala 93:24]
+  assign io_mod_proc_mod_13_exe_mod_en_0 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 & _GEN_62; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_13_exe_mod_en_1 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 & _GEN_64; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_13_exe_mod_addr = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_61 : 8'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 98:29]
+  assign io_mod_proc_mod_13_exe_mod_data_0 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_63 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_13_exe_mod_data_1 = _io_mod_proc_mod_13_mat_mod_w_en_T_1 ? _GEN_65 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_14_mat_mod_en = _io_mod_proc_mod_14_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_14_mat_mod_config_id = config_field[0]; // @[pcie_interface_pisa.scala 82:27]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_en = _io_mod_proc_mod_14_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_index = group_index; // @[pcie_interface_pisa.scala 85:37]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_config = group_config; // @[pcie_interface_pisa.scala 86:38]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_mask_0 = group_mask_0; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_14_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_14_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_14_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_14_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'he; // @[pcie_interface_pisa.scala 90:49]
+  assign io_mod_proc_mod_14_mat_mod_w_sram_id = io_pcie_w_addr[11:8]; // @[pcie_interface_pisa.scala 26:35]
+  assign io_mod_proc_mod_14_mat_mod_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface_pisa.scala 29:35]
+  assign io_mod_proc_mod_14_mat_mod_w_data = io_pcie_w_data; // @[pcie_interface_pisa.scala 93:24]
+  assign io_mod_proc_mod_14_exe_mod_en_0 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 & _GEN_62; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_14_exe_mod_en_1 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 & _GEN_64; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_14_exe_mod_addr = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_61 : 8'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 98:29]
+  assign io_mod_proc_mod_14_exe_mod_data_0 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_63 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_14_exe_mod_data_1 = _io_mod_proc_mod_14_mat_mod_w_en_T_1 ? _GEN_65 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_15_mat_mod_en = _io_mod_proc_mod_15_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_15_mat_mod_config_id = config_field[0]; // @[pcie_interface_pisa.scala 82:27]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_en = _io_mod_proc_mod_15_mat_mod_w_en_T_1 & _GEN_56; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 81:27]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_index = group_index; // @[pcie_interface_pisa.scala 85:37]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_config = group_config; // @[pcie_interface_pisa.scala 86:38]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_mask_0 = group_mask_0; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_mask_1 = group_mask_1; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_mask_2 = group_mask_2; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_mask_3 = group_mask_3; // @[pcie_interface_pisa.scala 87:36]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_id_0 = group_id_0; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_id_1 = group_id_1; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_id_2 = group_id_2; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_15_mat_mod_key_mod_group_id_3 = group_id_3; // @[pcie_interface_pisa.scala 88:34]
+  assign io_mod_proc_mod_15_mat_mod_table_mod_table_depth = mat_tab_table_depth; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_15_mat_mod_table_mod_table_width = mat_tab_table_width; // @[pcie_interface_pisa.scala 89:27]
+  assign io_mod_proc_mod_15_mat_mod_w_en = type_field == 4'h1 & proc_id_field == 4'hf; // @[pcie_interface_pisa.scala 90:49]
+  assign io_mod_proc_mod_15_mat_mod_w_sram_id = io_pcie_w_addr[11:8]; // @[pcie_interface_pisa.scala 26:35]
+  assign io_mod_proc_mod_15_mat_mod_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface_pisa.scala 29:35]
+  assign io_mod_proc_mod_15_mat_mod_w_data = io_pcie_w_data; // @[pcie_interface_pisa.scala 93:24]
+  assign io_mod_proc_mod_15_exe_mod_en_0 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 & _GEN_62; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_15_exe_mod_en_1 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 & _GEN_64; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 97:29]
+  assign io_mod_proc_mod_15_exe_mod_addr = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_61 : 8'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 98:29]
+  assign io_mod_proc_mod_15_exe_mod_data_0 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_63 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
+  assign io_mod_proc_mod_15_exe_mod_data_1 = _io_mod_proc_mod_15_mat_mod_w_en_T_1 ? _GEN_65 : 64'h0; // @[pcie_interface_pisa.scala 102:43 pcie_interface_pisa.scala 99:29]
   always @(posedge clock) begin
     last_mau_id <= _GEN_10[1:0];
     state_id <= _GEN_11[7:0];
-    group_index <= _GEN_837[2:0];
-    group_config <= _GEN_838[1:0];
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    group_index <= _GEN_1117[2:0];
+    group_config <= _GEN_1118[1:0];
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h6) begin // @[pcie_interface_pisa.scala 116:54]
             group_mask_0 <= io_pcie_w_data[0]; // @[pcie_interface_pisa.scala 118:43]
           end else begin
-            group_mask_0 <= _GEN_769;
+            group_mask_0 <= _GEN_1049;
           end
         end else begin
-          group_mask_0 <= _GEN_769;
+          group_mask_0 <= _GEN_1049;
         end
       end else begin
-        group_mask_0 <= _GEN_769;
+        group_mask_0 <= _GEN_1049;
       end
     end else begin
-      group_mask_0 <= _GEN_769;
+      group_mask_0 <= _GEN_1049;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h6) begin // @[pcie_interface_pisa.scala 116:54]
             group_mask_1 <= io_pcie_w_data[1]; // @[pcie_interface_pisa.scala 118:43]
           end else begin
-            group_mask_1 <= _GEN_770;
+            group_mask_1 <= _GEN_1050;
           end
         end else begin
-          group_mask_1 <= _GEN_770;
+          group_mask_1 <= _GEN_1050;
         end
       end else begin
-        group_mask_1 <= _GEN_770;
+        group_mask_1 <= _GEN_1050;
       end
     end else begin
-      group_mask_1 <= _GEN_770;
+      group_mask_1 <= _GEN_1050;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h6) begin // @[pcie_interface_pisa.scala 116:54]
             group_mask_2 <= io_pcie_w_data[2]; // @[pcie_interface_pisa.scala 118:43]
           end else begin
-            group_mask_2 <= _GEN_771;
+            group_mask_2 <= _GEN_1051;
           end
         end else begin
-          group_mask_2 <= _GEN_771;
+          group_mask_2 <= _GEN_1051;
         end
       end else begin
-        group_mask_2 <= _GEN_771;
+        group_mask_2 <= _GEN_1051;
       end
     end else begin
-      group_mask_2 <= _GEN_771;
+      group_mask_2 <= _GEN_1051;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h6) begin // @[pcie_interface_pisa.scala 116:54]
             group_mask_3 <= io_pcie_w_data[3]; // @[pcie_interface_pisa.scala 118:43]
           end else begin
-            group_mask_3 <= _GEN_772;
+            group_mask_3 <= _GEN_1052;
           end
         end else begin
-          group_mask_3 <= _GEN_772;
+          group_mask_3 <= _GEN_1052;
         end
       end else begin
-        group_mask_3 <= _GEN_772;
+        group_mask_3 <= _GEN_1052;
       end
     end else begin
-      group_mask_3 <= _GEN_772;
+      group_mask_3 <= _GEN_1052;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h7) begin // @[pcie_interface_pisa.scala 121:54]
             group_id_0 <= io_pcie_w_data[6:0]; // @[pcie_interface_pisa.scala 123:41]
           end else begin
-            group_id_0 <= _GEN_773;
+            group_id_0 <= _GEN_1053;
           end
         end else begin
-          group_id_0 <= _GEN_773;
+          group_id_0 <= _GEN_1053;
         end
       end else begin
-        group_id_0 <= _GEN_773;
+        group_id_0 <= _GEN_1053;
       end
     end else begin
-      group_id_0 <= _GEN_773;
+      group_id_0 <= _GEN_1053;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h7) begin // @[pcie_interface_pisa.scala 121:54]
             group_id_1 <= io_pcie_w_data[14:8]; // @[pcie_interface_pisa.scala 123:41]
           end else begin
-            group_id_1 <= _GEN_774;
+            group_id_1 <= _GEN_1054;
           end
         end else begin
-          group_id_1 <= _GEN_774;
+          group_id_1 <= _GEN_1054;
         end
       end else begin
-        group_id_1 <= _GEN_774;
+        group_id_1 <= _GEN_1054;
       end
     end else begin
-      group_id_1 <= _GEN_774;
+      group_id_1 <= _GEN_1054;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h7) begin // @[pcie_interface_pisa.scala 121:54]
             group_id_2 <= io_pcie_w_data[22:16]; // @[pcie_interface_pisa.scala 123:41]
           end else begin
-            group_id_2 <= _GEN_775;
+            group_id_2 <= _GEN_1055;
           end
         end else begin
-          group_id_2 <= _GEN_775;
+          group_id_2 <= _GEN_1055;
         end
       end else begin
-        group_id_2 <= _GEN_775;
+        group_id_2 <= _GEN_1055;
       end
     end else begin
-      group_id_2 <= _GEN_775;
+      group_id_2 <= _GEN_1055;
     end
-    if (_io_mod_proc_mod_11_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
+    if (_io_mod_proc_mod_15_mat_mod_w_en_T_1) begin // @[pcie_interface_pisa.scala 102:43]
       if (_T_1) begin // @[pcie_interface_pisa.scala 104:44]
         if (sram_id_field == 4'h3) begin // @[pcie_interface_pisa.scala 106:52]
           if (bias_field == 4'h7) begin // @[pcie_interface_pisa.scala 121:54]
             group_id_3 <= io_pcie_w_data[30:24]; // @[pcie_interface_pisa.scala 123:41]
           end else begin
-            group_id_3 <= _GEN_776;
+            group_id_3 <= _GEN_1056;
           end
         end else begin
-          group_id_3 <= _GEN_776;
+          group_id_3 <= _GEN_1056;
         end
       end else begin
-        group_id_3 <= _GEN_776;
+        group_id_3 <= _GEN_1056;
       end
     end else begin
-      group_id_3 <= _GEN_776;
+      group_id_3 <= _GEN_1056;
     end
-    mat_tab_table_depth <= _GEN_848[4:0];
-    mat_tab_table_width <= _GEN_847[4:0];
+    mat_tab_table_depth <= _GEN_1128[4:0];
+    mat_tab_table_width <= _GEN_1127[4:0];
   end
 // Register and memory initialization
 `ifdef RANDOMIZE_GARBAGE_ASSIGN

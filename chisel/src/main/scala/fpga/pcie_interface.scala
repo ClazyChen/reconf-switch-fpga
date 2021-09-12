@@ -93,8 +93,8 @@ class PCIEInterface extends Module {
     val cluster_id_field = proc_id_field
     for (j <- 0 until const.cluster_number) {
         val cluster_mod = io.w(j)
-        cluster_mod.wcs    := sram_id_field
-        cluster_mod.w.en   := cluster_id_field === j.U(4.W) && sram_resource_pool
+        cluster_mod.wcs    := Cat(cluster_id_field(1,0) === sram_id_field)
+        cluster_mod.w.en   := cluster_id_field(3,2) === j.U(2.W) && sram_resource_pool
         cluster_mod.w.addr := offset_field
         cluster_mod.w.data := pcie_data 
     }
@@ -174,7 +174,7 @@ class PCIEInterface extends Module {
                     }
                 }
                 when (sub_type_field === 4.U(4.W)) {
-                    mat_tab.sram_id_table(bias_field(const.SRAM.sram_id_width-1,0)) := pcie_data
+                    mat_tab.sram_id_table(Cat(config_field(3,2),bias_field)) := pcie_data
                 }
                 when (sub_type_field === 5.U(4.W)) {
                     when (bias_field === 0x0.U(4.W)) {

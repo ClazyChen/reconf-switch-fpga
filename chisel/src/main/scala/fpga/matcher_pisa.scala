@@ -9,8 +9,8 @@ import chisel3.util._
 
 object PISAconst {
     val group_number = 6
-    val field_id_width = 8
-    val field_number = 224
+    val field_id_width = 7
+    val field_number = 112
     val field8_number = field_number*2/7
     val field16_number = field_number*3/7
     val field32_number = field_number*2/7
@@ -199,7 +199,7 @@ class MatcherPISA extends Module {
         val cs = Reg(UInt(const.SRAM.sram_id_width.W))
         cs := io.cs_in
 
-        val mem = for (j <- 0 until 8) yield {
+        val mem = for (j <- 0 until 16) yield {
             val exe = Module(new SRAM)
             exe.io.w.en   := io.w.en && j.U(4.W) === io.w.sram_id
             exe.io.w.addr := io.w.addr
@@ -208,8 +208,8 @@ class MatcherPISA extends Module {
             exe
         }
 
-        val cs_vec = Wire(Vec(8, Bool()))
-        for (j <- 0 until 8) {
+        val cs_vec = Wire(Vec(16, Bool()))
+        for (j <- 0 until 16) {
             cs_vec(j) := false.B
         }
         
@@ -225,7 +225,7 @@ class MatcherPISA extends Module {
 
             for (j <- 0 until 4) {
                 when (j.U < width) {
-                    for (k <- 0 until 8) {
+                    for (k <- 0 until 16) {
                         when (cs_signals(j) === k.U) {
                             cs_vec(k) := true.B
                         }
@@ -233,7 +233,7 @@ class MatcherPISA extends Module {
                 }
             }
         }
-        for (j <- 0 until 8) {
+        for (j <- 0 until 16) {
             mem(j).io.r.en := cs_vec(j)
         }
 
@@ -252,7 +252,7 @@ class MatcherPISA extends Module {
             val dqbytes = Wire(Vec(4, UInt(64.W)))
             for (j <- 0 until 4) {
                 dqbytes(j) := 0.U(64.W)
-                for (k <- 0 until 8) {
+                for (k <- 0 until 16) {
                     when (cs_signals(j) === k.U) {
                         dqbytes(j) := mem(k).io.r.data
                     }
