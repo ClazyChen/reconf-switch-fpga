@@ -13,7 +13,8 @@ class OutPort extends Module {
 
     val bytes = Wire(Vec(const.PHV.header_data_length, UInt(8.W)))
     for (j <- 0 until const.PHV.header_data_length) {
-        bytes(j) := io.phv_in.data(const.PHV.header_data_length-1-j)
+        bytes(j) := io.phv_in.data(j)
+        //bytes(j) := io.phv_in.data(const.PHV.header_data_length-1-j)
     }
     io.data := bytes.reduce(Cat(_, _))
     io.en   := io.phv_in.valid

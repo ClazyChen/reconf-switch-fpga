@@ -30,19 +30,16 @@ class OutAXI extends Module {
 
     when (io.m_axis.tready) {
         when (phase === 0.U(1.W)) {
-            when (io.ipsa_en_out) {
-                phase := 1.U(1.W)
-                io.m_axis.tkeep  := ~0.U(64.W)
-                io.m_axis.tdata  := io.ipsa_data_out(1023,512)
-                buf := io.ipsa_data_out(511,0)
-                last := io.ipsa_last_out
-            }
+            phase := 1.U(1.W)
+            io.m_axis.tkeep  := ~0.U(64.W)
+            io.m_axis.tdata  := io.ipsa_data_out(1023,512)
+            buf := io.ipsa_data_out(511,0)
+            last := io.ipsa_last_out
         } .otherwise {
             phase := 0.U(1.W)
             io.m_axis.tkeep := ~ 0.U(64.W)
             io.m_axis.tdata := buf
             io.m_axis.tlast := last
-            last := 0.U(1.W)
         }
     } .otherwise {
         phase := 0.U(1.W)
