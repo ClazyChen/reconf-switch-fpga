@@ -570,6 +570,70 @@ module Processor(
   input  [7:0]  io_mod_mat_mod_key_mod_header_id,
   input  [7:0]  io_mod_mat_mod_key_mod_internal_offset,
   input  [7:0]  io_mod_mat_mod_key_mod_key_length,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_0,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_1,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_2,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_3,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_4,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_5,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_6,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_7,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_8,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_9,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_10,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_11,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_12,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_13,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_14,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_15,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_16,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_17,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_18,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_19,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_20,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_21,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_22,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_23,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_24,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_25,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_26,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_27,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_28,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_29,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_30,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_31,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_32,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_33,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_34,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_35,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_36,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_37,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_38,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_39,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_40,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_41,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_42,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_43,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_44,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_45,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_46,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_47,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_48,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_49,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_50,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_51,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_52,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_53,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_54,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_55,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_56,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_57,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_58,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_59,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_60,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_61,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_62,
+  input  [5:0]  io_mod_mat_mod_table_mod_sram_id_table_63,
   input  [6:0]  io_mod_mat_mod_table_mod_table_width,
   input  [6:0]  io_mod_mat_mod_table_mod_table_depth,
   input         io_mod_act_mod_en_0,
@@ -1899,6 +1963,70 @@ module Processor(
   wire [7:0] MAT_io_mod_key_mod_header_id; // @[processor.scala 14:21]
   wire [7:0] MAT_io_mod_key_mod_internal_offset; // @[processor.scala 14:21]
   wire [7:0] MAT_io_mod_key_mod_key_length; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_0; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_1; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_2; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_3; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_4; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_5; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_6; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_7; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_8; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_9; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_10; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_11; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_12; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_13; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_14; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_15; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_16; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_17; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_18; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_19; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_20; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_21; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_22; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_23; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_24; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_25; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_26; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_27; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_28; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_29; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_30; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_31; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_32; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_33; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_34; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_35; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_36; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_37; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_38; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_39; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_40; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_41; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_42; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_43; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_44; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_45; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_46; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_47; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_48; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_49; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_50; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_51; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_52; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_53; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_54; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_55; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_56; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_57; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_58; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_59; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_60; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_61; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_62; // @[processor.scala 14:21]
+  wire [5:0] MAT_io_mod_table_mod_sram_id_table_63; // @[processor.scala 14:21]
   wire [6:0] MAT_io_mod_table_mod_table_width; // @[processor.scala 14:21]
   wire [6:0] MAT_io_mod_table_mod_table_depth; // @[processor.scala 14:21]
   wire  MAT_io_hit; // @[processor.scala 14:21]
@@ -3790,6 +3918,70 @@ module Processor(
     .io_mod_key_mod_header_id(MAT_io_mod_key_mod_header_id),
     .io_mod_key_mod_internal_offset(MAT_io_mod_key_mod_internal_offset),
     .io_mod_key_mod_key_length(MAT_io_mod_key_mod_key_length),
+    .io_mod_table_mod_sram_id_table_0(MAT_io_mod_table_mod_sram_id_table_0),
+    .io_mod_table_mod_sram_id_table_1(MAT_io_mod_table_mod_sram_id_table_1),
+    .io_mod_table_mod_sram_id_table_2(MAT_io_mod_table_mod_sram_id_table_2),
+    .io_mod_table_mod_sram_id_table_3(MAT_io_mod_table_mod_sram_id_table_3),
+    .io_mod_table_mod_sram_id_table_4(MAT_io_mod_table_mod_sram_id_table_4),
+    .io_mod_table_mod_sram_id_table_5(MAT_io_mod_table_mod_sram_id_table_5),
+    .io_mod_table_mod_sram_id_table_6(MAT_io_mod_table_mod_sram_id_table_6),
+    .io_mod_table_mod_sram_id_table_7(MAT_io_mod_table_mod_sram_id_table_7),
+    .io_mod_table_mod_sram_id_table_8(MAT_io_mod_table_mod_sram_id_table_8),
+    .io_mod_table_mod_sram_id_table_9(MAT_io_mod_table_mod_sram_id_table_9),
+    .io_mod_table_mod_sram_id_table_10(MAT_io_mod_table_mod_sram_id_table_10),
+    .io_mod_table_mod_sram_id_table_11(MAT_io_mod_table_mod_sram_id_table_11),
+    .io_mod_table_mod_sram_id_table_12(MAT_io_mod_table_mod_sram_id_table_12),
+    .io_mod_table_mod_sram_id_table_13(MAT_io_mod_table_mod_sram_id_table_13),
+    .io_mod_table_mod_sram_id_table_14(MAT_io_mod_table_mod_sram_id_table_14),
+    .io_mod_table_mod_sram_id_table_15(MAT_io_mod_table_mod_sram_id_table_15),
+    .io_mod_table_mod_sram_id_table_16(MAT_io_mod_table_mod_sram_id_table_16),
+    .io_mod_table_mod_sram_id_table_17(MAT_io_mod_table_mod_sram_id_table_17),
+    .io_mod_table_mod_sram_id_table_18(MAT_io_mod_table_mod_sram_id_table_18),
+    .io_mod_table_mod_sram_id_table_19(MAT_io_mod_table_mod_sram_id_table_19),
+    .io_mod_table_mod_sram_id_table_20(MAT_io_mod_table_mod_sram_id_table_20),
+    .io_mod_table_mod_sram_id_table_21(MAT_io_mod_table_mod_sram_id_table_21),
+    .io_mod_table_mod_sram_id_table_22(MAT_io_mod_table_mod_sram_id_table_22),
+    .io_mod_table_mod_sram_id_table_23(MAT_io_mod_table_mod_sram_id_table_23),
+    .io_mod_table_mod_sram_id_table_24(MAT_io_mod_table_mod_sram_id_table_24),
+    .io_mod_table_mod_sram_id_table_25(MAT_io_mod_table_mod_sram_id_table_25),
+    .io_mod_table_mod_sram_id_table_26(MAT_io_mod_table_mod_sram_id_table_26),
+    .io_mod_table_mod_sram_id_table_27(MAT_io_mod_table_mod_sram_id_table_27),
+    .io_mod_table_mod_sram_id_table_28(MAT_io_mod_table_mod_sram_id_table_28),
+    .io_mod_table_mod_sram_id_table_29(MAT_io_mod_table_mod_sram_id_table_29),
+    .io_mod_table_mod_sram_id_table_30(MAT_io_mod_table_mod_sram_id_table_30),
+    .io_mod_table_mod_sram_id_table_31(MAT_io_mod_table_mod_sram_id_table_31),
+    .io_mod_table_mod_sram_id_table_32(MAT_io_mod_table_mod_sram_id_table_32),
+    .io_mod_table_mod_sram_id_table_33(MAT_io_mod_table_mod_sram_id_table_33),
+    .io_mod_table_mod_sram_id_table_34(MAT_io_mod_table_mod_sram_id_table_34),
+    .io_mod_table_mod_sram_id_table_35(MAT_io_mod_table_mod_sram_id_table_35),
+    .io_mod_table_mod_sram_id_table_36(MAT_io_mod_table_mod_sram_id_table_36),
+    .io_mod_table_mod_sram_id_table_37(MAT_io_mod_table_mod_sram_id_table_37),
+    .io_mod_table_mod_sram_id_table_38(MAT_io_mod_table_mod_sram_id_table_38),
+    .io_mod_table_mod_sram_id_table_39(MAT_io_mod_table_mod_sram_id_table_39),
+    .io_mod_table_mod_sram_id_table_40(MAT_io_mod_table_mod_sram_id_table_40),
+    .io_mod_table_mod_sram_id_table_41(MAT_io_mod_table_mod_sram_id_table_41),
+    .io_mod_table_mod_sram_id_table_42(MAT_io_mod_table_mod_sram_id_table_42),
+    .io_mod_table_mod_sram_id_table_43(MAT_io_mod_table_mod_sram_id_table_43),
+    .io_mod_table_mod_sram_id_table_44(MAT_io_mod_table_mod_sram_id_table_44),
+    .io_mod_table_mod_sram_id_table_45(MAT_io_mod_table_mod_sram_id_table_45),
+    .io_mod_table_mod_sram_id_table_46(MAT_io_mod_table_mod_sram_id_table_46),
+    .io_mod_table_mod_sram_id_table_47(MAT_io_mod_table_mod_sram_id_table_47),
+    .io_mod_table_mod_sram_id_table_48(MAT_io_mod_table_mod_sram_id_table_48),
+    .io_mod_table_mod_sram_id_table_49(MAT_io_mod_table_mod_sram_id_table_49),
+    .io_mod_table_mod_sram_id_table_50(MAT_io_mod_table_mod_sram_id_table_50),
+    .io_mod_table_mod_sram_id_table_51(MAT_io_mod_table_mod_sram_id_table_51),
+    .io_mod_table_mod_sram_id_table_52(MAT_io_mod_table_mod_sram_id_table_52),
+    .io_mod_table_mod_sram_id_table_53(MAT_io_mod_table_mod_sram_id_table_53),
+    .io_mod_table_mod_sram_id_table_54(MAT_io_mod_table_mod_sram_id_table_54),
+    .io_mod_table_mod_sram_id_table_55(MAT_io_mod_table_mod_sram_id_table_55),
+    .io_mod_table_mod_sram_id_table_56(MAT_io_mod_table_mod_sram_id_table_56),
+    .io_mod_table_mod_sram_id_table_57(MAT_io_mod_table_mod_sram_id_table_57),
+    .io_mod_table_mod_sram_id_table_58(MAT_io_mod_table_mod_sram_id_table_58),
+    .io_mod_table_mod_sram_id_table_59(MAT_io_mod_table_mod_sram_id_table_59),
+    .io_mod_table_mod_sram_id_table_60(MAT_io_mod_table_mod_sram_id_table_60),
+    .io_mod_table_mod_sram_id_table_61(MAT_io_mod_table_mod_sram_id_table_61),
+    .io_mod_table_mod_sram_id_table_62(MAT_io_mod_table_mod_sram_id_table_62),
+    .io_mod_table_mod_sram_id_table_63(MAT_io_mod_table_mod_sram_id_table_63),
     .io_mod_table_mod_table_width(MAT_io_mod_table_mod_table_width),
     .io_mod_table_mod_table_depth(MAT_io_mod_table_mod_table_depth),
     .io_hit(MAT_io_hit),
@@ -5530,6 +5722,70 @@ module Processor(
   assign MAT_io_mod_key_mod_header_id = io_mod_mat_mod_key_mod_header_id; // @[processor.scala 21:24]
   assign MAT_io_mod_key_mod_internal_offset = io_mod_mat_mod_key_mod_internal_offset; // @[processor.scala 21:24]
   assign MAT_io_mod_key_mod_key_length = io_mod_mat_mod_key_mod_key_length; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_0 = io_mod_mat_mod_table_mod_sram_id_table_0; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_1 = io_mod_mat_mod_table_mod_sram_id_table_1; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_2 = io_mod_mat_mod_table_mod_sram_id_table_2; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_3 = io_mod_mat_mod_table_mod_sram_id_table_3; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_4 = io_mod_mat_mod_table_mod_sram_id_table_4; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_5 = io_mod_mat_mod_table_mod_sram_id_table_5; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_6 = io_mod_mat_mod_table_mod_sram_id_table_6; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_7 = io_mod_mat_mod_table_mod_sram_id_table_7; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_8 = io_mod_mat_mod_table_mod_sram_id_table_8; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_9 = io_mod_mat_mod_table_mod_sram_id_table_9; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_10 = io_mod_mat_mod_table_mod_sram_id_table_10; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_11 = io_mod_mat_mod_table_mod_sram_id_table_11; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_12 = io_mod_mat_mod_table_mod_sram_id_table_12; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_13 = io_mod_mat_mod_table_mod_sram_id_table_13; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_14 = io_mod_mat_mod_table_mod_sram_id_table_14; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_15 = io_mod_mat_mod_table_mod_sram_id_table_15; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_16 = io_mod_mat_mod_table_mod_sram_id_table_16; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_17 = io_mod_mat_mod_table_mod_sram_id_table_17; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_18 = io_mod_mat_mod_table_mod_sram_id_table_18; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_19 = io_mod_mat_mod_table_mod_sram_id_table_19; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_20 = io_mod_mat_mod_table_mod_sram_id_table_20; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_21 = io_mod_mat_mod_table_mod_sram_id_table_21; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_22 = io_mod_mat_mod_table_mod_sram_id_table_22; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_23 = io_mod_mat_mod_table_mod_sram_id_table_23; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_24 = io_mod_mat_mod_table_mod_sram_id_table_24; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_25 = io_mod_mat_mod_table_mod_sram_id_table_25; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_26 = io_mod_mat_mod_table_mod_sram_id_table_26; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_27 = io_mod_mat_mod_table_mod_sram_id_table_27; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_28 = io_mod_mat_mod_table_mod_sram_id_table_28; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_29 = io_mod_mat_mod_table_mod_sram_id_table_29; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_30 = io_mod_mat_mod_table_mod_sram_id_table_30; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_31 = io_mod_mat_mod_table_mod_sram_id_table_31; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_32 = io_mod_mat_mod_table_mod_sram_id_table_32; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_33 = io_mod_mat_mod_table_mod_sram_id_table_33; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_34 = io_mod_mat_mod_table_mod_sram_id_table_34; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_35 = io_mod_mat_mod_table_mod_sram_id_table_35; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_36 = io_mod_mat_mod_table_mod_sram_id_table_36; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_37 = io_mod_mat_mod_table_mod_sram_id_table_37; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_38 = io_mod_mat_mod_table_mod_sram_id_table_38; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_39 = io_mod_mat_mod_table_mod_sram_id_table_39; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_40 = io_mod_mat_mod_table_mod_sram_id_table_40; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_41 = io_mod_mat_mod_table_mod_sram_id_table_41; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_42 = io_mod_mat_mod_table_mod_sram_id_table_42; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_43 = io_mod_mat_mod_table_mod_sram_id_table_43; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_44 = io_mod_mat_mod_table_mod_sram_id_table_44; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_45 = io_mod_mat_mod_table_mod_sram_id_table_45; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_46 = io_mod_mat_mod_table_mod_sram_id_table_46; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_47 = io_mod_mat_mod_table_mod_sram_id_table_47; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_48 = io_mod_mat_mod_table_mod_sram_id_table_48; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_49 = io_mod_mat_mod_table_mod_sram_id_table_49; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_50 = io_mod_mat_mod_table_mod_sram_id_table_50; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_51 = io_mod_mat_mod_table_mod_sram_id_table_51; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_52 = io_mod_mat_mod_table_mod_sram_id_table_52; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_53 = io_mod_mat_mod_table_mod_sram_id_table_53; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_54 = io_mod_mat_mod_table_mod_sram_id_table_54; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_55 = io_mod_mat_mod_table_mod_sram_id_table_55; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_56 = io_mod_mat_mod_table_mod_sram_id_table_56; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_57 = io_mod_mat_mod_table_mod_sram_id_table_57; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_58 = io_mod_mat_mod_table_mod_sram_id_table_58; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_59 = io_mod_mat_mod_table_mod_sram_id_table_59; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_60 = io_mod_mat_mod_table_mod_sram_id_table_60; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_61 = io_mod_mat_mod_table_mod_sram_id_table_61; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_62 = io_mod_mat_mod_table_mod_sram_id_table_62; // @[processor.scala 21:24]
+  assign MAT_io_mod_table_mod_sram_id_table_63 = io_mod_mat_mod_table_mod_sram_id_table_63; // @[processor.scala 21:24]
   assign MAT_io_mod_table_mod_table_width = io_mod_mat_mod_table_mod_table_width; // @[processor.scala 21:24]
   assign MAT_io_mod_table_mod_table_depth = io_mod_mat_mod_table_mod_table_depth; // @[processor.scala 21:24]
   assign MAT_io_mem_cluster_0_data = io_mem_cluster_0_data; // @[processor.scala 22:24]

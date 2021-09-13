@@ -472,6 +472,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_0_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_0_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_0_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -494,6 +558,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_1_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_1_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_1_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -516,6 +644,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_2_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_2_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_2_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -538,6 +730,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_3_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_3_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_3_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -560,6 +816,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_4_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_4_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_4_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -582,6 +902,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_5_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_5_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_5_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -604,6 +988,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_6_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_6_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_6_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -626,6 +1074,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_7_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_7_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_7_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -648,6 +1160,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_8_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_8_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_8_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -670,6 +1246,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_9_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_9_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_9_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -692,6 +1332,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_10_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_10_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_10_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -714,6 +1418,70 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_11_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_mod_proc_mod_11_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 13:22]
+  wire [5:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
   wire [6:0] ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_proc_mod_11_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
@@ -721,94 +1489,6 @@ module IPSAPCIE(
   wire [7:0] ipsa_io_mod_proc_mod_11_act_mod_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_11_act_mod_data_0; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_mod_proc_mod_11_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_par_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_12_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_12_par_mod_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_mat_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_mat_mod_config_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_12_act_mod_en_1; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_12_act_mod_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_12_act_mod_data_0; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_12_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_par_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_13_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_13_par_mod_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_mat_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_mat_mod_config_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_13_act_mod_en_1; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_13_act_mod_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_13_act_mod_data_0; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_13_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_par_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_14_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_14_par_mod_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_mat_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_mat_mod_config_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_14_act_mod_en_1; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_14_act_mod_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_14_act_mod_data_0; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_14_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_par_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_15_par_mod_last_mau_id; // @[ipsa_pcie.scala 13:22]
-  wire [1:0] ipsa_io_mod_proc_mod_15_par_mod_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_mat_mod_en; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_mat_mod_config_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 13:22]
-  wire [6:0] ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_act_mod_en_0; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_mod_proc_mod_15_act_mod_en_1; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_mod_proc_mod_15_act_mod_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_15_act_mod_data_0; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_mod_proc_mod_15_act_mod_data_1; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_mod_xbar_mod_en; // @[ipsa_pcie.scala 13:22]
   wire [3:0] ipsa_io_mod_xbar_mod_first_proc_id; // @[ipsa_pcie.scala 13:22]
   wire [3:0] ipsa_io_mod_xbar_mod_last_proc_id; // @[ipsa_pcie.scala 13:22]
@@ -824,10 +1504,6 @@ module IPSAPCIE(
   wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_9; // @[ipsa_pcie.scala 13:22]
   wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_10; // @[ipsa_pcie.scala 13:22]
   wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_11; // @[ipsa_pcie.scala 13:22]
-  wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_12; // @[ipsa_pcie.scala 13:22]
-  wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_13; // @[ipsa_pcie.scala 13:22]
-  wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_14; // @[ipsa_pcie.scala 13:22]
-  wire [3:0] ipsa_io_mod_xbar_mod_next_proc_id_15; // @[ipsa_pcie.scala 13:22]
   wire [5:0] ipsa_io_w_0_wcs; // @[ipsa_pcie.scala 13:22]
   wire  ipsa_io_w_0_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_w_0_w_addr; // @[ipsa_pcie.scala 13:22]
@@ -870,6 +1546,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_0_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_0_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_0_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -892,6 +1632,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_1_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_1_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_1_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -914,6 +1718,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_2_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_2_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_2_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -936,6 +1804,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_3_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_3_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_3_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -958,6 +1890,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_4_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_4_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_4_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -980,6 +1976,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_5_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_5_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_5_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1002,6 +2062,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_6_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_6_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_6_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1024,6 +2148,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_7_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_7_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_7_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1046,6 +2234,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_8_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_8_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_8_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1068,6 +2320,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_9_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_9_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_9_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1090,6 +2406,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_10_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_10_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_10_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1112,6 +2492,70 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_11_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_mod_proc_mod_11_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 14:22]
+  wire [5:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
   wire [6:0] pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_proc_mod_11_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
@@ -1119,94 +2563,6 @@ module IPSAPCIE(
   wire [7:0] pcie_io_mod_proc_mod_11_act_mod_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_11_act_mod_data_0; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_mod_proc_mod_11_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_par_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_12_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_12_par_mod_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_mat_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_mat_mod_config_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_12_act_mod_en_1; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_12_act_mod_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_12_act_mod_data_0; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_12_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_par_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_13_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_13_par_mod_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_mat_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_mat_mod_config_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_13_act_mod_en_1; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_13_act_mod_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_13_act_mod_data_0; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_13_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_par_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_14_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_14_par_mod_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_mat_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_mat_mod_config_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_14_act_mod_en_1; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_14_act_mod_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_14_act_mod_data_0; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_14_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_par_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_15_par_mod_last_mau_id; // @[ipsa_pcie.scala 14:22]
-  wire [1:0] pcie_io_mod_proc_mod_15_par_mod_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_mat_mod_en; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_mat_mod_config_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 14:22]
-  wire [6:0] pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_act_mod_en_0; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_mod_proc_mod_15_act_mod_en_1; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_mod_proc_mod_15_act_mod_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_15_act_mod_data_0; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_mod_proc_mod_15_act_mod_data_1; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_mod_xbar_mod_en; // @[ipsa_pcie.scala 14:22]
   wire [3:0] pcie_io_mod_xbar_mod_first_proc_id; // @[ipsa_pcie.scala 14:22]
   wire [3:0] pcie_io_mod_xbar_mod_last_proc_id; // @[ipsa_pcie.scala 14:22]
@@ -1222,10 +2578,6 @@ module IPSAPCIE(
   wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_9; // @[ipsa_pcie.scala 14:22]
   wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_10; // @[ipsa_pcie.scala 14:22]
   wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_11; // @[ipsa_pcie.scala 14:22]
-  wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_12; // @[ipsa_pcie.scala 14:22]
-  wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_13; // @[ipsa_pcie.scala 14:22]
-  wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_14; // @[ipsa_pcie.scala 14:22]
-  wire [3:0] pcie_io_mod_xbar_mod_next_proc_id_15; // @[ipsa_pcie.scala 14:22]
   wire [5:0] pcie_io_w_0_wcs; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_w_0_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_w_0_w_addr; // @[ipsa_pcie.scala 14:22]
@@ -2162,6 +3514,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_0_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_0_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_0_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_0_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_0_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_0_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_0_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_0_act_mod_en_0(ipsa_io_mod_proc_mod_0_act_mod_en_0),
@@ -2184,6 +3600,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_1_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_1_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_1_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_1_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_1_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_1_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_1_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_1_act_mod_en_0(ipsa_io_mod_proc_mod_1_act_mod_en_0),
@@ -2206,6 +3686,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_2_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_2_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_2_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_2_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_2_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_2_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_2_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_2_act_mod_en_0(ipsa_io_mod_proc_mod_2_act_mod_en_0),
@@ -2228,6 +3772,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_3_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_3_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_3_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_3_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_3_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_3_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_3_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_3_act_mod_en_0(ipsa_io_mod_proc_mod_3_act_mod_en_0),
@@ -2250,6 +3858,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_4_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_4_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_4_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_4_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_4_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_4_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_4_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_4_act_mod_en_0(ipsa_io_mod_proc_mod_4_act_mod_en_0),
@@ -2272,6 +3944,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_5_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_5_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_5_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_5_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_5_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_5_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_5_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_5_act_mod_en_0(ipsa_io_mod_proc_mod_5_act_mod_en_0),
@@ -2294,6 +4030,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_6_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_6_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_6_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_6_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_6_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_6_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_6_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_6_act_mod_en_0(ipsa_io_mod_proc_mod_6_act_mod_en_0),
@@ -2316,6 +4116,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_7_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_7_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_7_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_7_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_7_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_7_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_7_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_7_act_mod_en_0(ipsa_io_mod_proc_mod_7_act_mod_en_0),
@@ -2338,6 +4202,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_8_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_8_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_8_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_8_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_8_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_8_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_8_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_8_act_mod_en_0(ipsa_io_mod_proc_mod_8_act_mod_en_0),
@@ -2360,6 +4288,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_9_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_9_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_9_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_9_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_9_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_9_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_9_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_9_act_mod_en_0(ipsa_io_mod_proc_mod_9_act_mod_en_0),
@@ -2382,6 +4374,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_10_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_10_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_10_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_10_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_10_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_10_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_10_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_10_act_mod_en_0(ipsa_io_mod_proc_mod_10_act_mod_en_0),
@@ -2404,6 +4460,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_11_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_11_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_11_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_11_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_11_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_11_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_11_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_11_act_mod_en_0(ipsa_io_mod_proc_mod_11_act_mod_en_0),
@@ -2411,94 +4531,6 @@ module IPSAPCIE(
     .io_mod_proc_mod_11_act_mod_addr(ipsa_io_mod_proc_mod_11_act_mod_addr),
     .io_mod_proc_mod_11_act_mod_data_0(ipsa_io_mod_proc_mod_11_act_mod_data_0),
     .io_mod_proc_mod_11_act_mod_data_1(ipsa_io_mod_proc_mod_11_act_mod_data_1),
-    .io_mod_proc_mod_12_par_mod_en(ipsa_io_mod_proc_mod_12_par_mod_en),
-    .io_mod_proc_mod_12_par_mod_last_mau_id_mod(ipsa_io_mod_proc_mod_12_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_12_par_mod_last_mau_id(ipsa_io_mod_proc_mod_12_par_mod_last_mau_id),
-    .io_mod_proc_mod_12_par_mod_cs(ipsa_io_mod_proc_mod_12_par_mod_cs),
-    .io_mod_proc_mod_12_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_12_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_12_mat_mod_en(ipsa_io_mod_proc_mod_12_mat_mod_en),
-    .io_mod_proc_mod_12_mat_mod_config_id(ipsa_io_mod_proc_mod_12_mat_mod_config_id),
-    .io_mod_proc_mod_12_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_12_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_12_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_12_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_12_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_12_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_12_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_12_act_mod_en_0(ipsa_io_mod_proc_mod_12_act_mod_en_0),
-    .io_mod_proc_mod_12_act_mod_en_1(ipsa_io_mod_proc_mod_12_act_mod_en_1),
-    .io_mod_proc_mod_12_act_mod_addr(ipsa_io_mod_proc_mod_12_act_mod_addr),
-    .io_mod_proc_mod_12_act_mod_data_0(ipsa_io_mod_proc_mod_12_act_mod_data_0),
-    .io_mod_proc_mod_12_act_mod_data_1(ipsa_io_mod_proc_mod_12_act_mod_data_1),
-    .io_mod_proc_mod_13_par_mod_en(ipsa_io_mod_proc_mod_13_par_mod_en),
-    .io_mod_proc_mod_13_par_mod_last_mau_id_mod(ipsa_io_mod_proc_mod_13_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_13_par_mod_last_mau_id(ipsa_io_mod_proc_mod_13_par_mod_last_mau_id),
-    .io_mod_proc_mod_13_par_mod_cs(ipsa_io_mod_proc_mod_13_par_mod_cs),
-    .io_mod_proc_mod_13_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_13_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_13_mat_mod_en(ipsa_io_mod_proc_mod_13_mat_mod_en),
-    .io_mod_proc_mod_13_mat_mod_config_id(ipsa_io_mod_proc_mod_13_mat_mod_config_id),
-    .io_mod_proc_mod_13_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_13_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_13_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_13_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_13_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_13_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_13_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_13_act_mod_en_0(ipsa_io_mod_proc_mod_13_act_mod_en_0),
-    .io_mod_proc_mod_13_act_mod_en_1(ipsa_io_mod_proc_mod_13_act_mod_en_1),
-    .io_mod_proc_mod_13_act_mod_addr(ipsa_io_mod_proc_mod_13_act_mod_addr),
-    .io_mod_proc_mod_13_act_mod_data_0(ipsa_io_mod_proc_mod_13_act_mod_data_0),
-    .io_mod_proc_mod_13_act_mod_data_1(ipsa_io_mod_proc_mod_13_act_mod_data_1),
-    .io_mod_proc_mod_14_par_mod_en(ipsa_io_mod_proc_mod_14_par_mod_en),
-    .io_mod_proc_mod_14_par_mod_last_mau_id_mod(ipsa_io_mod_proc_mod_14_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_14_par_mod_last_mau_id(ipsa_io_mod_proc_mod_14_par_mod_last_mau_id),
-    .io_mod_proc_mod_14_par_mod_cs(ipsa_io_mod_proc_mod_14_par_mod_cs),
-    .io_mod_proc_mod_14_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_14_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_14_mat_mod_en(ipsa_io_mod_proc_mod_14_mat_mod_en),
-    .io_mod_proc_mod_14_mat_mod_config_id(ipsa_io_mod_proc_mod_14_mat_mod_config_id),
-    .io_mod_proc_mod_14_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_14_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_14_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_14_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_14_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_14_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_14_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_14_act_mod_en_0(ipsa_io_mod_proc_mod_14_act_mod_en_0),
-    .io_mod_proc_mod_14_act_mod_en_1(ipsa_io_mod_proc_mod_14_act_mod_en_1),
-    .io_mod_proc_mod_14_act_mod_addr(ipsa_io_mod_proc_mod_14_act_mod_addr),
-    .io_mod_proc_mod_14_act_mod_data_0(ipsa_io_mod_proc_mod_14_act_mod_data_0),
-    .io_mod_proc_mod_14_act_mod_data_1(ipsa_io_mod_proc_mod_14_act_mod_data_1),
-    .io_mod_proc_mod_15_par_mod_en(ipsa_io_mod_proc_mod_15_par_mod_en),
-    .io_mod_proc_mod_15_par_mod_last_mau_id_mod(ipsa_io_mod_proc_mod_15_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_15_par_mod_last_mau_id(ipsa_io_mod_proc_mod_15_par_mod_last_mau_id),
-    .io_mod_proc_mod_15_par_mod_cs(ipsa_io_mod_proc_mod_15_par_mod_cs),
-    .io_mod_proc_mod_15_par_mod_module_mod_state_id_mod(ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_15_par_mod_module_mod_state_id(ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs(ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_en(ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr(ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_data(ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_15_mat_mod_en(ipsa_io_mod_proc_mod_15_mat_mod_en),
-    .io_mod_proc_mod_15_mat_mod_config_id(ipsa_io_mod_proc_mod_15_mat_mod_config_id),
-    .io_mod_proc_mod_15_mat_mod_key_mod_header_id(ipsa_io_mod_proc_mod_15_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_15_mat_mod_key_mod_internal_offset(ipsa_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_15_mat_mod_key_mod_key_length(ipsa_io_mod_proc_mod_15_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_15_mat_mod_table_mod_table_width(ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_15_mat_mod_table_mod_table_depth(ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_15_act_mod_en_0(ipsa_io_mod_proc_mod_15_act_mod_en_0),
-    .io_mod_proc_mod_15_act_mod_en_1(ipsa_io_mod_proc_mod_15_act_mod_en_1),
-    .io_mod_proc_mod_15_act_mod_addr(ipsa_io_mod_proc_mod_15_act_mod_addr),
-    .io_mod_proc_mod_15_act_mod_data_0(ipsa_io_mod_proc_mod_15_act_mod_data_0),
-    .io_mod_proc_mod_15_act_mod_data_1(ipsa_io_mod_proc_mod_15_act_mod_data_1),
     .io_mod_xbar_mod_en(ipsa_io_mod_xbar_mod_en),
     .io_mod_xbar_mod_first_proc_id(ipsa_io_mod_xbar_mod_first_proc_id),
     .io_mod_xbar_mod_last_proc_id(ipsa_io_mod_xbar_mod_last_proc_id),
@@ -2514,10 +4546,6 @@ module IPSAPCIE(
     .io_mod_xbar_mod_next_proc_id_9(ipsa_io_mod_xbar_mod_next_proc_id_9),
     .io_mod_xbar_mod_next_proc_id_10(ipsa_io_mod_xbar_mod_next_proc_id_10),
     .io_mod_xbar_mod_next_proc_id_11(ipsa_io_mod_xbar_mod_next_proc_id_11),
-    .io_mod_xbar_mod_next_proc_id_12(ipsa_io_mod_xbar_mod_next_proc_id_12),
-    .io_mod_xbar_mod_next_proc_id_13(ipsa_io_mod_xbar_mod_next_proc_id_13),
-    .io_mod_xbar_mod_next_proc_id_14(ipsa_io_mod_xbar_mod_next_proc_id_14),
-    .io_mod_xbar_mod_next_proc_id_15(ipsa_io_mod_xbar_mod_next_proc_id_15),
     .io_w_0_wcs(ipsa_io_w_0_wcs),
     .io_w_0_w_en(ipsa_io_w_0_w_en),
     .io_w_0_w_addr(ipsa_io_w_0_w_addr),
@@ -2562,6 +4590,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_0_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_0_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_0_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_0_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_0_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_0_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_0_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_0_act_mod_en_0(pcie_io_mod_proc_mod_0_act_mod_en_0),
@@ -2584,6 +4676,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_1_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_1_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_1_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_1_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_1_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_1_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_1_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_1_act_mod_en_0(pcie_io_mod_proc_mod_1_act_mod_en_0),
@@ -2606,6 +4762,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_2_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_2_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_2_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_2_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_2_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_2_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_2_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_2_act_mod_en_0(pcie_io_mod_proc_mod_2_act_mod_en_0),
@@ -2628,6 +4848,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_3_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_3_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_3_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_3_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_3_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_3_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_3_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_3_act_mod_en_0(pcie_io_mod_proc_mod_3_act_mod_en_0),
@@ -2650,6 +4934,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_4_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_4_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_4_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_4_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_4_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_4_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_4_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_4_act_mod_en_0(pcie_io_mod_proc_mod_4_act_mod_en_0),
@@ -2672,6 +5020,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_5_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_5_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_5_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_5_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_5_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_5_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_5_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_5_act_mod_en_0(pcie_io_mod_proc_mod_5_act_mod_en_0),
@@ -2694,6 +5106,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_6_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_6_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_6_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_6_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_6_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_6_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_6_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_6_act_mod_en_0(pcie_io_mod_proc_mod_6_act_mod_en_0),
@@ -2716,6 +5192,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_7_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_7_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_7_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_7_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_7_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_7_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_7_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_7_act_mod_en_0(pcie_io_mod_proc_mod_7_act_mod_en_0),
@@ -2738,6 +5278,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_8_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_8_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_8_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_8_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_8_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_8_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_8_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_8_act_mod_en_0(pcie_io_mod_proc_mod_8_act_mod_en_0),
@@ -2760,6 +5364,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_9_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_9_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_9_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_9_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_9_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_9_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_9_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_9_act_mod_en_0(pcie_io_mod_proc_mod_9_act_mod_en_0),
@@ -2782,6 +5450,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_10_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_10_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_10_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_10_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_10_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_10_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_10_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_10_act_mod_en_0(pcie_io_mod_proc_mod_10_act_mod_en_0),
@@ -2804,6 +5536,70 @@ module IPSAPCIE(
     .io_mod_proc_mod_11_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_11_mat_mod_key_mod_header_id),
     .io_mod_proc_mod_11_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset),
     .io_mod_proc_mod_11_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_11_mat_mod_key_mod_key_length),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62),
+    .io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63(pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63),
     .io_mod_proc_mod_11_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_width),
     .io_mod_proc_mod_11_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_depth),
     .io_mod_proc_mod_11_act_mod_en_0(pcie_io_mod_proc_mod_11_act_mod_en_0),
@@ -2811,94 +5607,6 @@ module IPSAPCIE(
     .io_mod_proc_mod_11_act_mod_addr(pcie_io_mod_proc_mod_11_act_mod_addr),
     .io_mod_proc_mod_11_act_mod_data_0(pcie_io_mod_proc_mod_11_act_mod_data_0),
     .io_mod_proc_mod_11_act_mod_data_1(pcie_io_mod_proc_mod_11_act_mod_data_1),
-    .io_mod_proc_mod_12_par_mod_en(pcie_io_mod_proc_mod_12_par_mod_en),
-    .io_mod_proc_mod_12_par_mod_last_mau_id_mod(pcie_io_mod_proc_mod_12_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_12_par_mod_last_mau_id(pcie_io_mod_proc_mod_12_par_mod_last_mau_id),
-    .io_mod_proc_mod_12_par_mod_cs(pcie_io_mod_proc_mod_12_par_mod_cs),
-    .io_mod_proc_mod_12_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_12_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_12_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_12_mat_mod_en(pcie_io_mod_proc_mod_12_mat_mod_en),
-    .io_mod_proc_mod_12_mat_mod_config_id(pcie_io_mod_proc_mod_12_mat_mod_config_id),
-    .io_mod_proc_mod_12_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_12_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_12_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_12_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_12_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_12_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_12_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_12_act_mod_en_0(pcie_io_mod_proc_mod_12_act_mod_en_0),
-    .io_mod_proc_mod_12_act_mod_en_1(pcie_io_mod_proc_mod_12_act_mod_en_1),
-    .io_mod_proc_mod_12_act_mod_addr(pcie_io_mod_proc_mod_12_act_mod_addr),
-    .io_mod_proc_mod_12_act_mod_data_0(pcie_io_mod_proc_mod_12_act_mod_data_0),
-    .io_mod_proc_mod_12_act_mod_data_1(pcie_io_mod_proc_mod_12_act_mod_data_1),
-    .io_mod_proc_mod_13_par_mod_en(pcie_io_mod_proc_mod_13_par_mod_en),
-    .io_mod_proc_mod_13_par_mod_last_mau_id_mod(pcie_io_mod_proc_mod_13_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_13_par_mod_last_mau_id(pcie_io_mod_proc_mod_13_par_mod_last_mau_id),
-    .io_mod_proc_mod_13_par_mod_cs(pcie_io_mod_proc_mod_13_par_mod_cs),
-    .io_mod_proc_mod_13_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_13_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_13_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_13_mat_mod_en(pcie_io_mod_proc_mod_13_mat_mod_en),
-    .io_mod_proc_mod_13_mat_mod_config_id(pcie_io_mod_proc_mod_13_mat_mod_config_id),
-    .io_mod_proc_mod_13_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_13_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_13_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_13_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_13_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_13_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_13_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_13_act_mod_en_0(pcie_io_mod_proc_mod_13_act_mod_en_0),
-    .io_mod_proc_mod_13_act_mod_en_1(pcie_io_mod_proc_mod_13_act_mod_en_1),
-    .io_mod_proc_mod_13_act_mod_addr(pcie_io_mod_proc_mod_13_act_mod_addr),
-    .io_mod_proc_mod_13_act_mod_data_0(pcie_io_mod_proc_mod_13_act_mod_data_0),
-    .io_mod_proc_mod_13_act_mod_data_1(pcie_io_mod_proc_mod_13_act_mod_data_1),
-    .io_mod_proc_mod_14_par_mod_en(pcie_io_mod_proc_mod_14_par_mod_en),
-    .io_mod_proc_mod_14_par_mod_last_mau_id_mod(pcie_io_mod_proc_mod_14_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_14_par_mod_last_mau_id(pcie_io_mod_proc_mod_14_par_mod_last_mau_id),
-    .io_mod_proc_mod_14_par_mod_cs(pcie_io_mod_proc_mod_14_par_mod_cs),
-    .io_mod_proc_mod_14_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_14_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_14_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_14_mat_mod_en(pcie_io_mod_proc_mod_14_mat_mod_en),
-    .io_mod_proc_mod_14_mat_mod_config_id(pcie_io_mod_proc_mod_14_mat_mod_config_id),
-    .io_mod_proc_mod_14_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_14_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_14_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_14_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_14_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_14_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_14_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_14_act_mod_en_0(pcie_io_mod_proc_mod_14_act_mod_en_0),
-    .io_mod_proc_mod_14_act_mod_en_1(pcie_io_mod_proc_mod_14_act_mod_en_1),
-    .io_mod_proc_mod_14_act_mod_addr(pcie_io_mod_proc_mod_14_act_mod_addr),
-    .io_mod_proc_mod_14_act_mod_data_0(pcie_io_mod_proc_mod_14_act_mod_data_0),
-    .io_mod_proc_mod_14_act_mod_data_1(pcie_io_mod_proc_mod_14_act_mod_data_1),
-    .io_mod_proc_mod_15_par_mod_en(pcie_io_mod_proc_mod_15_par_mod_en),
-    .io_mod_proc_mod_15_par_mod_last_mau_id_mod(pcie_io_mod_proc_mod_15_par_mod_last_mau_id_mod),
-    .io_mod_proc_mod_15_par_mod_last_mau_id(pcie_io_mod_proc_mod_15_par_mod_last_mau_id),
-    .io_mod_proc_mod_15_par_mod_cs(pcie_io_mod_proc_mod_15_par_mod_cs),
-    .io_mod_proc_mod_15_par_mod_module_mod_state_id_mod(pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod),
-    .io_mod_proc_mod_15_par_mod_module_mod_state_id(pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs(pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_en(pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr(pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr),
-    .io_mod_proc_mod_15_par_mod_module_mod_sram_w_data(pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data),
-    .io_mod_proc_mod_15_mat_mod_en(pcie_io_mod_proc_mod_15_mat_mod_en),
-    .io_mod_proc_mod_15_mat_mod_config_id(pcie_io_mod_proc_mod_15_mat_mod_config_id),
-    .io_mod_proc_mod_15_mat_mod_key_mod_header_id(pcie_io_mod_proc_mod_15_mat_mod_key_mod_header_id),
-    .io_mod_proc_mod_15_mat_mod_key_mod_internal_offset(pcie_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset),
-    .io_mod_proc_mod_15_mat_mod_key_mod_key_length(pcie_io_mod_proc_mod_15_mat_mod_key_mod_key_length),
-    .io_mod_proc_mod_15_mat_mod_table_mod_table_width(pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_width),
-    .io_mod_proc_mod_15_mat_mod_table_mod_table_depth(pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_depth),
-    .io_mod_proc_mod_15_act_mod_en_0(pcie_io_mod_proc_mod_15_act_mod_en_0),
-    .io_mod_proc_mod_15_act_mod_en_1(pcie_io_mod_proc_mod_15_act_mod_en_1),
-    .io_mod_proc_mod_15_act_mod_addr(pcie_io_mod_proc_mod_15_act_mod_addr),
-    .io_mod_proc_mod_15_act_mod_data_0(pcie_io_mod_proc_mod_15_act_mod_data_0),
-    .io_mod_proc_mod_15_act_mod_data_1(pcie_io_mod_proc_mod_15_act_mod_data_1),
     .io_mod_xbar_mod_en(pcie_io_mod_xbar_mod_en),
     .io_mod_xbar_mod_first_proc_id(pcie_io_mod_xbar_mod_first_proc_id),
     .io_mod_xbar_mod_last_proc_id(pcie_io_mod_xbar_mod_last_proc_id),
@@ -2914,10 +5622,6 @@ module IPSAPCIE(
     .io_mod_xbar_mod_next_proc_id_9(pcie_io_mod_xbar_mod_next_proc_id_9),
     .io_mod_xbar_mod_next_proc_id_10(pcie_io_mod_xbar_mod_next_proc_id_10),
     .io_mod_xbar_mod_next_proc_id_11(pcie_io_mod_xbar_mod_next_proc_id_11),
-    .io_mod_xbar_mod_next_proc_id_12(pcie_io_mod_xbar_mod_next_proc_id_12),
-    .io_mod_xbar_mod_next_proc_id_13(pcie_io_mod_xbar_mod_next_proc_id_13),
-    .io_mod_xbar_mod_next_proc_id_14(pcie_io_mod_xbar_mod_next_proc_id_14),
-    .io_mod_xbar_mod_next_proc_id_15(pcie_io_mod_xbar_mod_next_proc_id_15),
     .io_w_0_wcs(pcie_io_w_0_wcs),
     .io_w_0_w_en(pcie_io_w_0_w_en),
     .io_w_0_w_addr(pcie_io_w_0_w_addr),
@@ -3605,6 +6309,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_0_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_0_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_0_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_0_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_0_act_mod_en_0 = pcie_io_mod_proc_mod_0_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3629,6 +6461,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_1_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_1_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_1_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_1_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_1_act_mod_en_0 = pcie_io_mod_proc_mod_1_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3653,6 +6613,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_2_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_2_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_2_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_2_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_2_act_mod_en_0 = pcie_io_mod_proc_mod_2_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3677,6 +6765,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_3_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_3_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_3_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_3_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_3_act_mod_en_0 = pcie_io_mod_proc_mod_3_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3701,6 +6917,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_4_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_4_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_4_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_4_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_4_act_mod_en_0 = pcie_io_mod_proc_mod_4_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3725,6 +7069,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_5_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_5_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_5_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_5_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_5_act_mod_en_0 = pcie_io_mod_proc_mod_5_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3749,6 +7221,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_6_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_6_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_6_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_6_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_6_act_mod_en_0 = pcie_io_mod_proc_mod_6_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3773,6 +7373,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_7_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_7_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_7_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_7_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_7_act_mod_en_0 = pcie_io_mod_proc_mod_7_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3797,6 +7525,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_8_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_8_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_8_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_8_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_8_act_mod_en_0 = pcie_io_mod_proc_mod_8_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3821,6 +7677,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset = pcie_io_mod_proc_mod_9_mat_mod_key_mod_internal_offset
     ; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_9_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_9_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_9_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_9_act_mod_en_0 = pcie_io_mod_proc_mod_9_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3847,6 +7831,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset =
     pcie_io_mod_proc_mod_10_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_10_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_10_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_10_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_10_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_10_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_10_act_mod_en_0 = pcie_io_mod_proc_mod_10_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3873,6 +7985,134 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset =
     pcie_io_mod_proc_mod_11_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_11_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_0; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_1; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_2; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_3; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_4; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_5; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_6; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_7; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_8; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_9; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_10; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_11; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_12; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_13; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_14; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_15; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_16; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_17; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_18; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_19; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_20; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_21; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_22; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_23; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_24; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_25; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_26; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_27; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_28; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_29; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_30; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_31; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_32; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_33; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_34; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_35; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_36; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_37; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_38; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_39; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_40; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_41; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_42; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_43; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_44; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_45; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_46; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_47; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_48; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_49; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_50; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_51; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_52; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_53; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_54; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_55; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_56; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_57; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_58; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_59; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_60; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_61; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_62; // @[ipsa_pcie.scala 22:20]
+  assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63 =
+    pcie_io_mod_proc_mod_11_mat_mod_table_mod_sram_id_table_63; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_11_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_act_mod_en_0 = pcie_io_mod_proc_mod_11_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
@@ -3880,110 +8120,6 @@ module IPSAPCIE(
   assign ipsa_io_mod_proc_mod_11_act_mod_addr = pcie_io_mod_proc_mod_11_act_mod_addr; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_act_mod_data_0 = pcie_io_mod_proc_mod_11_act_mod_data_0; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_proc_mod_11_act_mod_data_1 = pcie_io_mod_proc_mod_11_act_mod_data_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_en = pcie_io_mod_proc_mod_12_par_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_last_mau_id_mod = pcie_io_mod_proc_mod_12_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_last_mau_id = pcie_io_mod_proc_mod_12_par_mod_last_mau_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_cs = pcie_io_mod_proc_mod_12_par_mod_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod =
-    pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_12_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_addr
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_12_par_mod_module_mod_sram_w_data
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_en = pcie_io_mod_proc_mod_12_mat_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_config_id = pcie_io_mod_proc_mod_12_mat_mod_config_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_key_mod_header_id = pcie_io_mod_proc_mod_12_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset =
-    pcie_io_mod_proc_mod_12_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_12_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_12_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_act_mod_en_0 = pcie_io_mod_proc_mod_12_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_act_mod_en_1 = pcie_io_mod_proc_mod_12_act_mod_en_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_act_mod_addr = pcie_io_mod_proc_mod_12_act_mod_addr; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_act_mod_data_0 = pcie_io_mod_proc_mod_12_act_mod_data_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_12_act_mod_data_1 = pcie_io_mod_proc_mod_12_act_mod_data_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_en = pcie_io_mod_proc_mod_13_par_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_last_mau_id_mod = pcie_io_mod_proc_mod_13_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_last_mau_id = pcie_io_mod_proc_mod_13_par_mod_last_mau_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_cs = pcie_io_mod_proc_mod_13_par_mod_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod =
-    pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_13_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_addr
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_13_par_mod_module_mod_sram_w_data
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_en = pcie_io_mod_proc_mod_13_mat_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_config_id = pcie_io_mod_proc_mod_13_mat_mod_config_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_key_mod_header_id = pcie_io_mod_proc_mod_13_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset =
-    pcie_io_mod_proc_mod_13_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_13_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_13_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_act_mod_en_0 = pcie_io_mod_proc_mod_13_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_act_mod_en_1 = pcie_io_mod_proc_mod_13_act_mod_en_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_act_mod_addr = pcie_io_mod_proc_mod_13_act_mod_addr; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_act_mod_data_0 = pcie_io_mod_proc_mod_13_act_mod_data_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_13_act_mod_data_1 = pcie_io_mod_proc_mod_13_act_mod_data_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_en = pcie_io_mod_proc_mod_14_par_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_last_mau_id_mod = pcie_io_mod_proc_mod_14_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_last_mau_id = pcie_io_mod_proc_mod_14_par_mod_last_mau_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_cs = pcie_io_mod_proc_mod_14_par_mod_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod =
-    pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_14_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_addr
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_14_par_mod_module_mod_sram_w_data
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_en = pcie_io_mod_proc_mod_14_mat_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_config_id = pcie_io_mod_proc_mod_14_mat_mod_config_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_key_mod_header_id = pcie_io_mod_proc_mod_14_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset =
-    pcie_io_mod_proc_mod_14_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_14_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_14_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_act_mod_en_0 = pcie_io_mod_proc_mod_14_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_act_mod_en_1 = pcie_io_mod_proc_mod_14_act_mod_en_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_act_mod_addr = pcie_io_mod_proc_mod_14_act_mod_addr; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_act_mod_data_0 = pcie_io_mod_proc_mod_14_act_mod_data_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_14_act_mod_data_1 = pcie_io_mod_proc_mod_14_act_mod_data_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_en = pcie_io_mod_proc_mod_15_par_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_last_mau_id_mod = pcie_io_mod_proc_mod_15_par_mod_last_mau_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_last_mau_id = pcie_io_mod_proc_mod_15_par_mod_last_mau_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_cs = pcie_io_mod_proc_mod_15_par_mod_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod =
-    pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id_mod; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_state_id = pcie_io_mod_proc_mod_15_par_mod_module_mod_state_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs = pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_cs; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en = pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr = pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_addr
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data = pcie_io_mod_proc_mod_15_par_mod_module_mod_sram_w_data
-    ; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_en = pcie_io_mod_proc_mod_15_mat_mod_en; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_config_id = pcie_io_mod_proc_mod_15_mat_mod_config_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_key_mod_header_id = pcie_io_mod_proc_mod_15_mat_mod_key_mod_header_id; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset =
-    pcie_io_mod_proc_mod_15_mat_mod_key_mod_internal_offset; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_key_mod_key_length = pcie_io_mod_proc_mod_15_mat_mod_key_mod_key_length; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_width = pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_width; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_mat_mod_table_mod_table_depth = pcie_io_mod_proc_mod_15_mat_mod_table_mod_table_depth; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_act_mod_en_0 = pcie_io_mod_proc_mod_15_act_mod_en_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_act_mod_en_1 = pcie_io_mod_proc_mod_15_act_mod_en_1; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_act_mod_addr = pcie_io_mod_proc_mod_15_act_mod_addr; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_act_mod_data_0 = pcie_io_mod_proc_mod_15_act_mod_data_0; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_proc_mod_15_act_mod_data_1 = pcie_io_mod_proc_mod_15_act_mod_data_1; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_xbar_mod_en = pcie_io_mod_xbar_mod_en; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_xbar_mod_first_proc_id = pcie_io_mod_xbar_mod_first_proc_id; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_xbar_mod_last_proc_id = pcie_io_mod_xbar_mod_last_proc_id; // @[ipsa_pcie.scala 22:20]
@@ -3999,10 +8135,6 @@ module IPSAPCIE(
   assign ipsa_io_mod_xbar_mod_next_proc_id_9 = pcie_io_mod_xbar_mod_next_proc_id_9; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_xbar_mod_next_proc_id_10 = pcie_io_mod_xbar_mod_next_proc_id_10; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_mod_xbar_mod_next_proc_id_11 = pcie_io_mod_xbar_mod_next_proc_id_11; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_xbar_mod_next_proc_id_12 = pcie_io_mod_xbar_mod_next_proc_id_12; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_xbar_mod_next_proc_id_13 = pcie_io_mod_xbar_mod_next_proc_id_13; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_xbar_mod_next_proc_id_14 = pcie_io_mod_xbar_mod_next_proc_id_14; // @[ipsa_pcie.scala 22:20]
-  assign ipsa_io_mod_xbar_mod_next_proc_id_15 = pcie_io_mod_xbar_mod_next_proc_id_15; // @[ipsa_pcie.scala 22:20]
   assign ipsa_io_w_0_wcs = pcie_io_w_0_wcs; // @[ipsa_pcie.scala 23:20]
   assign ipsa_io_w_0_w_en = pcie_io_w_0_w_en; // @[ipsa_pcie.scala 23:20]
   assign ipsa_io_w_0_w_addr = pcie_io_w_0_w_addr; // @[ipsa_pcie.scala 23:20]

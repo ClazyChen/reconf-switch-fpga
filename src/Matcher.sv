@@ -561,6 +561,70 @@ module Matcher(
   input  [7:0]  io_mod_key_mod_header_id,
   input  [7:0]  io_mod_key_mod_internal_offset,
   input  [7:0]  io_mod_key_mod_key_length,
+  input  [5:0]  io_mod_table_mod_sram_id_table_0,
+  input  [5:0]  io_mod_table_mod_sram_id_table_1,
+  input  [5:0]  io_mod_table_mod_sram_id_table_2,
+  input  [5:0]  io_mod_table_mod_sram_id_table_3,
+  input  [5:0]  io_mod_table_mod_sram_id_table_4,
+  input  [5:0]  io_mod_table_mod_sram_id_table_5,
+  input  [5:0]  io_mod_table_mod_sram_id_table_6,
+  input  [5:0]  io_mod_table_mod_sram_id_table_7,
+  input  [5:0]  io_mod_table_mod_sram_id_table_8,
+  input  [5:0]  io_mod_table_mod_sram_id_table_9,
+  input  [5:0]  io_mod_table_mod_sram_id_table_10,
+  input  [5:0]  io_mod_table_mod_sram_id_table_11,
+  input  [5:0]  io_mod_table_mod_sram_id_table_12,
+  input  [5:0]  io_mod_table_mod_sram_id_table_13,
+  input  [5:0]  io_mod_table_mod_sram_id_table_14,
+  input  [5:0]  io_mod_table_mod_sram_id_table_15,
+  input  [5:0]  io_mod_table_mod_sram_id_table_16,
+  input  [5:0]  io_mod_table_mod_sram_id_table_17,
+  input  [5:0]  io_mod_table_mod_sram_id_table_18,
+  input  [5:0]  io_mod_table_mod_sram_id_table_19,
+  input  [5:0]  io_mod_table_mod_sram_id_table_20,
+  input  [5:0]  io_mod_table_mod_sram_id_table_21,
+  input  [5:0]  io_mod_table_mod_sram_id_table_22,
+  input  [5:0]  io_mod_table_mod_sram_id_table_23,
+  input  [5:0]  io_mod_table_mod_sram_id_table_24,
+  input  [5:0]  io_mod_table_mod_sram_id_table_25,
+  input  [5:0]  io_mod_table_mod_sram_id_table_26,
+  input  [5:0]  io_mod_table_mod_sram_id_table_27,
+  input  [5:0]  io_mod_table_mod_sram_id_table_28,
+  input  [5:0]  io_mod_table_mod_sram_id_table_29,
+  input  [5:0]  io_mod_table_mod_sram_id_table_30,
+  input  [5:0]  io_mod_table_mod_sram_id_table_31,
+  input  [5:0]  io_mod_table_mod_sram_id_table_32,
+  input  [5:0]  io_mod_table_mod_sram_id_table_33,
+  input  [5:0]  io_mod_table_mod_sram_id_table_34,
+  input  [5:0]  io_mod_table_mod_sram_id_table_35,
+  input  [5:0]  io_mod_table_mod_sram_id_table_36,
+  input  [5:0]  io_mod_table_mod_sram_id_table_37,
+  input  [5:0]  io_mod_table_mod_sram_id_table_38,
+  input  [5:0]  io_mod_table_mod_sram_id_table_39,
+  input  [5:0]  io_mod_table_mod_sram_id_table_40,
+  input  [5:0]  io_mod_table_mod_sram_id_table_41,
+  input  [5:0]  io_mod_table_mod_sram_id_table_42,
+  input  [5:0]  io_mod_table_mod_sram_id_table_43,
+  input  [5:0]  io_mod_table_mod_sram_id_table_44,
+  input  [5:0]  io_mod_table_mod_sram_id_table_45,
+  input  [5:0]  io_mod_table_mod_sram_id_table_46,
+  input  [5:0]  io_mod_table_mod_sram_id_table_47,
+  input  [5:0]  io_mod_table_mod_sram_id_table_48,
+  input  [5:0]  io_mod_table_mod_sram_id_table_49,
+  input  [5:0]  io_mod_table_mod_sram_id_table_50,
+  input  [5:0]  io_mod_table_mod_sram_id_table_51,
+  input  [5:0]  io_mod_table_mod_sram_id_table_52,
+  input  [5:0]  io_mod_table_mod_sram_id_table_53,
+  input  [5:0]  io_mod_table_mod_sram_id_table_54,
+  input  [5:0]  io_mod_table_mod_sram_id_table_55,
+  input  [5:0]  io_mod_table_mod_sram_id_table_56,
+  input  [5:0]  io_mod_table_mod_sram_id_table_57,
+  input  [5:0]  io_mod_table_mod_sram_id_table_58,
+  input  [5:0]  io_mod_table_mod_sram_id_table_59,
+  input  [5:0]  io_mod_table_mod_sram_id_table_60,
+  input  [5:0]  io_mod_table_mod_sram_id_table_61,
+  input  [5:0]  io_mod_table_mod_sram_id_table_62,
+  input  [5:0]  io_mod_table_mod_sram_id_table_63,
   input  [6:0]  io_mod_table_mod_table_width,
   input  [6:0]  io_mod_table_mod_table_depth,
   output        io_hit,
@@ -769,6 +833,134 @@ module Matcher(
   reg [31:0] _RAND_7;
   reg [31:0] _RAND_8;
   reg [31:0] _RAND_9;
+  reg [31:0] _RAND_10;
+  reg [31:0] _RAND_11;
+  reg [31:0] _RAND_12;
+  reg [31:0] _RAND_13;
+  reg [31:0] _RAND_14;
+  reg [31:0] _RAND_15;
+  reg [31:0] _RAND_16;
+  reg [31:0] _RAND_17;
+  reg [31:0] _RAND_18;
+  reg [31:0] _RAND_19;
+  reg [31:0] _RAND_20;
+  reg [31:0] _RAND_21;
+  reg [31:0] _RAND_22;
+  reg [31:0] _RAND_23;
+  reg [31:0] _RAND_24;
+  reg [31:0] _RAND_25;
+  reg [31:0] _RAND_26;
+  reg [31:0] _RAND_27;
+  reg [31:0] _RAND_28;
+  reg [31:0] _RAND_29;
+  reg [31:0] _RAND_30;
+  reg [31:0] _RAND_31;
+  reg [31:0] _RAND_32;
+  reg [31:0] _RAND_33;
+  reg [31:0] _RAND_34;
+  reg [31:0] _RAND_35;
+  reg [31:0] _RAND_36;
+  reg [31:0] _RAND_37;
+  reg [31:0] _RAND_38;
+  reg [31:0] _RAND_39;
+  reg [31:0] _RAND_40;
+  reg [31:0] _RAND_41;
+  reg [31:0] _RAND_42;
+  reg [31:0] _RAND_43;
+  reg [31:0] _RAND_44;
+  reg [31:0] _RAND_45;
+  reg [31:0] _RAND_46;
+  reg [31:0] _RAND_47;
+  reg [31:0] _RAND_48;
+  reg [31:0] _RAND_49;
+  reg [31:0] _RAND_50;
+  reg [31:0] _RAND_51;
+  reg [31:0] _RAND_52;
+  reg [31:0] _RAND_53;
+  reg [31:0] _RAND_54;
+  reg [31:0] _RAND_55;
+  reg [31:0] _RAND_56;
+  reg [31:0] _RAND_57;
+  reg [31:0] _RAND_58;
+  reg [31:0] _RAND_59;
+  reg [31:0] _RAND_60;
+  reg [31:0] _RAND_61;
+  reg [31:0] _RAND_62;
+  reg [31:0] _RAND_63;
+  reg [31:0] _RAND_64;
+  reg [31:0] _RAND_65;
+  reg [31:0] _RAND_66;
+  reg [31:0] _RAND_67;
+  reg [31:0] _RAND_68;
+  reg [31:0] _RAND_69;
+  reg [31:0] _RAND_70;
+  reg [31:0] _RAND_71;
+  reg [31:0] _RAND_72;
+  reg [31:0] _RAND_73;
+  reg [31:0] _RAND_74;
+  reg [31:0] _RAND_75;
+  reg [31:0] _RAND_76;
+  reg [31:0] _RAND_77;
+  reg [31:0] _RAND_78;
+  reg [31:0] _RAND_79;
+  reg [31:0] _RAND_80;
+  reg [31:0] _RAND_81;
+  reg [31:0] _RAND_82;
+  reg [31:0] _RAND_83;
+  reg [31:0] _RAND_84;
+  reg [31:0] _RAND_85;
+  reg [31:0] _RAND_86;
+  reg [31:0] _RAND_87;
+  reg [31:0] _RAND_88;
+  reg [31:0] _RAND_89;
+  reg [31:0] _RAND_90;
+  reg [31:0] _RAND_91;
+  reg [31:0] _RAND_92;
+  reg [31:0] _RAND_93;
+  reg [31:0] _RAND_94;
+  reg [31:0] _RAND_95;
+  reg [31:0] _RAND_96;
+  reg [31:0] _RAND_97;
+  reg [31:0] _RAND_98;
+  reg [31:0] _RAND_99;
+  reg [31:0] _RAND_100;
+  reg [31:0] _RAND_101;
+  reg [31:0] _RAND_102;
+  reg [31:0] _RAND_103;
+  reg [31:0] _RAND_104;
+  reg [31:0] _RAND_105;
+  reg [31:0] _RAND_106;
+  reg [31:0] _RAND_107;
+  reg [31:0] _RAND_108;
+  reg [31:0] _RAND_109;
+  reg [31:0] _RAND_110;
+  reg [31:0] _RAND_111;
+  reg [31:0] _RAND_112;
+  reg [31:0] _RAND_113;
+  reg [31:0] _RAND_114;
+  reg [31:0] _RAND_115;
+  reg [31:0] _RAND_116;
+  reg [31:0] _RAND_117;
+  reg [31:0] _RAND_118;
+  reg [31:0] _RAND_119;
+  reg [31:0] _RAND_120;
+  reg [31:0] _RAND_121;
+  reg [31:0] _RAND_122;
+  reg [31:0] _RAND_123;
+  reg [31:0] _RAND_124;
+  reg [31:0] _RAND_125;
+  reg [31:0] _RAND_126;
+  reg [31:0] _RAND_127;
+  reg [31:0] _RAND_128;
+  reg [31:0] _RAND_129;
+  reg [31:0] _RAND_130;
+  reg [31:0] _RAND_131;
+  reg [31:0] _RAND_132;
+  reg [31:0] _RAND_133;
+  reg [31:0] _RAND_134;
+  reg [31:0] _RAND_135;
+  reg [31:0] _RAND_136;
+  reg [31:0] _RAND_137;
 `endif // RANDOMIZE_REG_INIT
   wire  pipe1_clock; // @[matcher.scala 343:23]
   wire [7:0] pipe1_io_pipe_phv_in_data_0; // @[matcher.scala 343:23]
@@ -3014,8 +3206,136 @@ module Matcher(
   wire [3:0] pipe9_io_pipe_phv_out_next_processor_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_out_next_config_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_0; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_1; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_2; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_3; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_4; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_5; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_6; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_7; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_8; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_9; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_10; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_11; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_12; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_13; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_14; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_15; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_16; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_17; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_18; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_19; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_20; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_21; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_22; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_23; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_24; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_25; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_26; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_27; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_28; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_29; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_30; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_31; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_32; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_33; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_34; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_35; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_36; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_37; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_38; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_39; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_40; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_41; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_42; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_43; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_44; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_45; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_46; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_47; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_48; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_49; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_50; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_51; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_52; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_53; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_54; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_55; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_56; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_57; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_58; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_59; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_60; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_61; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_62; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_0_sram_id_table_63; // @[matcher.scala 346:23]
   wire [6:0] pipe9_io_table_config_0_table_width; // @[matcher.scala 346:23]
   wire [6:0] pipe9_io_table_config_0_table_depth; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_0; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_1; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_2; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_3; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_4; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_5; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_6; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_7; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_8; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_9; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_10; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_11; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_12; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_13; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_14; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_15; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_16; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_17; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_18; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_19; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_20; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_21; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_22; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_23; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_24; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_25; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_26; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_27; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_28; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_29; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_30; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_31; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_32; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_33; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_34; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_35; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_36; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_37; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_38; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_39; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_40; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_41; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_42; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_43; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_44; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_45; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_46; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_47; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_48; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_49; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_50; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_51; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_52; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_53; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_54; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_55; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_56; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_57; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_58; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_59; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_60; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_61; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_62; // @[matcher.scala 346:23]
+  wire [5:0] pipe9_io_table_config_1_sram_id_table_63; // @[matcher.scala 346:23]
   wire [6:0] pipe9_io_table_config_1_table_width; // @[matcher.scala 346:23]
   wire [6:0] pipe9_io_table_config_1_table_depth; // @[matcher.scala 346:23]
   wire [191:0] pipe9_io_key_in; // @[matcher.scala 346:23]
@@ -5168,8 +5488,136 @@ module Matcher(
   reg [7:0] key_config_1_header_id; // @[matcher.scala 17:25]
   reg [7:0] key_config_1_internal_offset; // @[matcher.scala 17:25]
   reg [7:0] key_config_1_key_length; // @[matcher.scala 17:25]
+  reg [5:0] table_config_0_sram_id_table_0; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_1; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_2; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_3; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_4; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_5; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_6; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_7; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_8; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_9; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_10; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_11; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_12; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_13; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_14; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_15; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_16; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_17; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_18; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_19; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_20; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_21; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_22; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_23; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_24; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_25; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_26; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_27; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_28; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_29; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_30; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_31; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_32; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_33; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_34; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_35; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_36; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_37; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_38; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_39; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_40; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_41; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_42; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_43; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_44; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_45; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_46; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_47; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_48; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_49; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_50; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_51; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_52; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_53; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_54; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_55; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_56; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_57; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_58; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_59; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_60; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_61; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_62; // @[matcher.scala 18:27]
+  reg [5:0] table_config_0_sram_id_table_63; // @[matcher.scala 18:27]
   reg [6:0] table_config_0_table_width; // @[matcher.scala 18:27]
   reg [6:0] table_config_0_table_depth; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_0; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_1; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_2; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_3; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_4; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_5; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_6; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_7; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_8; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_9; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_10; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_11; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_12; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_13; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_14; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_15; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_16; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_17; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_18; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_19; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_20; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_21; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_22; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_23; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_24; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_25; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_26; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_27; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_28; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_29; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_30; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_31; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_32; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_33; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_34; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_35; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_36; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_37; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_38; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_39; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_40; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_41; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_42; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_43; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_44; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_45; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_46; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_47; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_48; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_49; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_50; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_51; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_52; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_53; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_54; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_55; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_56; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_57; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_58; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_59; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_60; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_61; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_62; // @[matcher.scala 18:27]
+  reg [5:0] table_config_1_sram_id_table_63; // @[matcher.scala 18:27]
   reg [6:0] table_config_1_table_width; // @[matcher.scala 18:27]
   reg [6:0] table_config_1_table_depth; // @[matcher.scala 18:27]
   MatchGetOffset pipe1 ( // @[matcher.scala 343:23]
@@ -7423,8 +7871,136 @@ module Matcher(
     .io_pipe_phv_out_next_processor_id(pipe9_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe9_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe9_io_pipe_phv_out_is_valid_processor),
+    .io_table_config_0_sram_id_table_0(pipe9_io_table_config_0_sram_id_table_0),
+    .io_table_config_0_sram_id_table_1(pipe9_io_table_config_0_sram_id_table_1),
+    .io_table_config_0_sram_id_table_2(pipe9_io_table_config_0_sram_id_table_2),
+    .io_table_config_0_sram_id_table_3(pipe9_io_table_config_0_sram_id_table_3),
+    .io_table_config_0_sram_id_table_4(pipe9_io_table_config_0_sram_id_table_4),
+    .io_table_config_0_sram_id_table_5(pipe9_io_table_config_0_sram_id_table_5),
+    .io_table_config_0_sram_id_table_6(pipe9_io_table_config_0_sram_id_table_6),
+    .io_table_config_0_sram_id_table_7(pipe9_io_table_config_0_sram_id_table_7),
+    .io_table_config_0_sram_id_table_8(pipe9_io_table_config_0_sram_id_table_8),
+    .io_table_config_0_sram_id_table_9(pipe9_io_table_config_0_sram_id_table_9),
+    .io_table_config_0_sram_id_table_10(pipe9_io_table_config_0_sram_id_table_10),
+    .io_table_config_0_sram_id_table_11(pipe9_io_table_config_0_sram_id_table_11),
+    .io_table_config_0_sram_id_table_12(pipe9_io_table_config_0_sram_id_table_12),
+    .io_table_config_0_sram_id_table_13(pipe9_io_table_config_0_sram_id_table_13),
+    .io_table_config_0_sram_id_table_14(pipe9_io_table_config_0_sram_id_table_14),
+    .io_table_config_0_sram_id_table_15(pipe9_io_table_config_0_sram_id_table_15),
+    .io_table_config_0_sram_id_table_16(pipe9_io_table_config_0_sram_id_table_16),
+    .io_table_config_0_sram_id_table_17(pipe9_io_table_config_0_sram_id_table_17),
+    .io_table_config_0_sram_id_table_18(pipe9_io_table_config_0_sram_id_table_18),
+    .io_table_config_0_sram_id_table_19(pipe9_io_table_config_0_sram_id_table_19),
+    .io_table_config_0_sram_id_table_20(pipe9_io_table_config_0_sram_id_table_20),
+    .io_table_config_0_sram_id_table_21(pipe9_io_table_config_0_sram_id_table_21),
+    .io_table_config_0_sram_id_table_22(pipe9_io_table_config_0_sram_id_table_22),
+    .io_table_config_0_sram_id_table_23(pipe9_io_table_config_0_sram_id_table_23),
+    .io_table_config_0_sram_id_table_24(pipe9_io_table_config_0_sram_id_table_24),
+    .io_table_config_0_sram_id_table_25(pipe9_io_table_config_0_sram_id_table_25),
+    .io_table_config_0_sram_id_table_26(pipe9_io_table_config_0_sram_id_table_26),
+    .io_table_config_0_sram_id_table_27(pipe9_io_table_config_0_sram_id_table_27),
+    .io_table_config_0_sram_id_table_28(pipe9_io_table_config_0_sram_id_table_28),
+    .io_table_config_0_sram_id_table_29(pipe9_io_table_config_0_sram_id_table_29),
+    .io_table_config_0_sram_id_table_30(pipe9_io_table_config_0_sram_id_table_30),
+    .io_table_config_0_sram_id_table_31(pipe9_io_table_config_0_sram_id_table_31),
+    .io_table_config_0_sram_id_table_32(pipe9_io_table_config_0_sram_id_table_32),
+    .io_table_config_0_sram_id_table_33(pipe9_io_table_config_0_sram_id_table_33),
+    .io_table_config_0_sram_id_table_34(pipe9_io_table_config_0_sram_id_table_34),
+    .io_table_config_0_sram_id_table_35(pipe9_io_table_config_0_sram_id_table_35),
+    .io_table_config_0_sram_id_table_36(pipe9_io_table_config_0_sram_id_table_36),
+    .io_table_config_0_sram_id_table_37(pipe9_io_table_config_0_sram_id_table_37),
+    .io_table_config_0_sram_id_table_38(pipe9_io_table_config_0_sram_id_table_38),
+    .io_table_config_0_sram_id_table_39(pipe9_io_table_config_0_sram_id_table_39),
+    .io_table_config_0_sram_id_table_40(pipe9_io_table_config_0_sram_id_table_40),
+    .io_table_config_0_sram_id_table_41(pipe9_io_table_config_0_sram_id_table_41),
+    .io_table_config_0_sram_id_table_42(pipe9_io_table_config_0_sram_id_table_42),
+    .io_table_config_0_sram_id_table_43(pipe9_io_table_config_0_sram_id_table_43),
+    .io_table_config_0_sram_id_table_44(pipe9_io_table_config_0_sram_id_table_44),
+    .io_table_config_0_sram_id_table_45(pipe9_io_table_config_0_sram_id_table_45),
+    .io_table_config_0_sram_id_table_46(pipe9_io_table_config_0_sram_id_table_46),
+    .io_table_config_0_sram_id_table_47(pipe9_io_table_config_0_sram_id_table_47),
+    .io_table_config_0_sram_id_table_48(pipe9_io_table_config_0_sram_id_table_48),
+    .io_table_config_0_sram_id_table_49(pipe9_io_table_config_0_sram_id_table_49),
+    .io_table_config_0_sram_id_table_50(pipe9_io_table_config_0_sram_id_table_50),
+    .io_table_config_0_sram_id_table_51(pipe9_io_table_config_0_sram_id_table_51),
+    .io_table_config_0_sram_id_table_52(pipe9_io_table_config_0_sram_id_table_52),
+    .io_table_config_0_sram_id_table_53(pipe9_io_table_config_0_sram_id_table_53),
+    .io_table_config_0_sram_id_table_54(pipe9_io_table_config_0_sram_id_table_54),
+    .io_table_config_0_sram_id_table_55(pipe9_io_table_config_0_sram_id_table_55),
+    .io_table_config_0_sram_id_table_56(pipe9_io_table_config_0_sram_id_table_56),
+    .io_table_config_0_sram_id_table_57(pipe9_io_table_config_0_sram_id_table_57),
+    .io_table_config_0_sram_id_table_58(pipe9_io_table_config_0_sram_id_table_58),
+    .io_table_config_0_sram_id_table_59(pipe9_io_table_config_0_sram_id_table_59),
+    .io_table_config_0_sram_id_table_60(pipe9_io_table_config_0_sram_id_table_60),
+    .io_table_config_0_sram_id_table_61(pipe9_io_table_config_0_sram_id_table_61),
+    .io_table_config_0_sram_id_table_62(pipe9_io_table_config_0_sram_id_table_62),
+    .io_table_config_0_sram_id_table_63(pipe9_io_table_config_0_sram_id_table_63),
     .io_table_config_0_table_width(pipe9_io_table_config_0_table_width),
     .io_table_config_0_table_depth(pipe9_io_table_config_0_table_depth),
+    .io_table_config_1_sram_id_table_0(pipe9_io_table_config_1_sram_id_table_0),
+    .io_table_config_1_sram_id_table_1(pipe9_io_table_config_1_sram_id_table_1),
+    .io_table_config_1_sram_id_table_2(pipe9_io_table_config_1_sram_id_table_2),
+    .io_table_config_1_sram_id_table_3(pipe9_io_table_config_1_sram_id_table_3),
+    .io_table_config_1_sram_id_table_4(pipe9_io_table_config_1_sram_id_table_4),
+    .io_table_config_1_sram_id_table_5(pipe9_io_table_config_1_sram_id_table_5),
+    .io_table_config_1_sram_id_table_6(pipe9_io_table_config_1_sram_id_table_6),
+    .io_table_config_1_sram_id_table_7(pipe9_io_table_config_1_sram_id_table_7),
+    .io_table_config_1_sram_id_table_8(pipe9_io_table_config_1_sram_id_table_8),
+    .io_table_config_1_sram_id_table_9(pipe9_io_table_config_1_sram_id_table_9),
+    .io_table_config_1_sram_id_table_10(pipe9_io_table_config_1_sram_id_table_10),
+    .io_table_config_1_sram_id_table_11(pipe9_io_table_config_1_sram_id_table_11),
+    .io_table_config_1_sram_id_table_12(pipe9_io_table_config_1_sram_id_table_12),
+    .io_table_config_1_sram_id_table_13(pipe9_io_table_config_1_sram_id_table_13),
+    .io_table_config_1_sram_id_table_14(pipe9_io_table_config_1_sram_id_table_14),
+    .io_table_config_1_sram_id_table_15(pipe9_io_table_config_1_sram_id_table_15),
+    .io_table_config_1_sram_id_table_16(pipe9_io_table_config_1_sram_id_table_16),
+    .io_table_config_1_sram_id_table_17(pipe9_io_table_config_1_sram_id_table_17),
+    .io_table_config_1_sram_id_table_18(pipe9_io_table_config_1_sram_id_table_18),
+    .io_table_config_1_sram_id_table_19(pipe9_io_table_config_1_sram_id_table_19),
+    .io_table_config_1_sram_id_table_20(pipe9_io_table_config_1_sram_id_table_20),
+    .io_table_config_1_sram_id_table_21(pipe9_io_table_config_1_sram_id_table_21),
+    .io_table_config_1_sram_id_table_22(pipe9_io_table_config_1_sram_id_table_22),
+    .io_table_config_1_sram_id_table_23(pipe9_io_table_config_1_sram_id_table_23),
+    .io_table_config_1_sram_id_table_24(pipe9_io_table_config_1_sram_id_table_24),
+    .io_table_config_1_sram_id_table_25(pipe9_io_table_config_1_sram_id_table_25),
+    .io_table_config_1_sram_id_table_26(pipe9_io_table_config_1_sram_id_table_26),
+    .io_table_config_1_sram_id_table_27(pipe9_io_table_config_1_sram_id_table_27),
+    .io_table_config_1_sram_id_table_28(pipe9_io_table_config_1_sram_id_table_28),
+    .io_table_config_1_sram_id_table_29(pipe9_io_table_config_1_sram_id_table_29),
+    .io_table_config_1_sram_id_table_30(pipe9_io_table_config_1_sram_id_table_30),
+    .io_table_config_1_sram_id_table_31(pipe9_io_table_config_1_sram_id_table_31),
+    .io_table_config_1_sram_id_table_32(pipe9_io_table_config_1_sram_id_table_32),
+    .io_table_config_1_sram_id_table_33(pipe9_io_table_config_1_sram_id_table_33),
+    .io_table_config_1_sram_id_table_34(pipe9_io_table_config_1_sram_id_table_34),
+    .io_table_config_1_sram_id_table_35(pipe9_io_table_config_1_sram_id_table_35),
+    .io_table_config_1_sram_id_table_36(pipe9_io_table_config_1_sram_id_table_36),
+    .io_table_config_1_sram_id_table_37(pipe9_io_table_config_1_sram_id_table_37),
+    .io_table_config_1_sram_id_table_38(pipe9_io_table_config_1_sram_id_table_38),
+    .io_table_config_1_sram_id_table_39(pipe9_io_table_config_1_sram_id_table_39),
+    .io_table_config_1_sram_id_table_40(pipe9_io_table_config_1_sram_id_table_40),
+    .io_table_config_1_sram_id_table_41(pipe9_io_table_config_1_sram_id_table_41),
+    .io_table_config_1_sram_id_table_42(pipe9_io_table_config_1_sram_id_table_42),
+    .io_table_config_1_sram_id_table_43(pipe9_io_table_config_1_sram_id_table_43),
+    .io_table_config_1_sram_id_table_44(pipe9_io_table_config_1_sram_id_table_44),
+    .io_table_config_1_sram_id_table_45(pipe9_io_table_config_1_sram_id_table_45),
+    .io_table_config_1_sram_id_table_46(pipe9_io_table_config_1_sram_id_table_46),
+    .io_table_config_1_sram_id_table_47(pipe9_io_table_config_1_sram_id_table_47),
+    .io_table_config_1_sram_id_table_48(pipe9_io_table_config_1_sram_id_table_48),
+    .io_table_config_1_sram_id_table_49(pipe9_io_table_config_1_sram_id_table_49),
+    .io_table_config_1_sram_id_table_50(pipe9_io_table_config_1_sram_id_table_50),
+    .io_table_config_1_sram_id_table_51(pipe9_io_table_config_1_sram_id_table_51),
+    .io_table_config_1_sram_id_table_52(pipe9_io_table_config_1_sram_id_table_52),
+    .io_table_config_1_sram_id_table_53(pipe9_io_table_config_1_sram_id_table_53),
+    .io_table_config_1_sram_id_table_54(pipe9_io_table_config_1_sram_id_table_54),
+    .io_table_config_1_sram_id_table_55(pipe9_io_table_config_1_sram_id_table_55),
+    .io_table_config_1_sram_id_table_56(pipe9_io_table_config_1_sram_id_table_56),
+    .io_table_config_1_sram_id_table_57(pipe9_io_table_config_1_sram_id_table_57),
+    .io_table_config_1_sram_id_table_58(pipe9_io_table_config_1_sram_id_table_58),
+    .io_table_config_1_sram_id_table_59(pipe9_io_table_config_1_sram_id_table_59),
+    .io_table_config_1_sram_id_table_60(pipe9_io_table_config_1_sram_id_table_60),
+    .io_table_config_1_sram_id_table_61(pipe9_io_table_config_1_sram_id_table_61),
+    .io_table_config_1_sram_id_table_62(pipe9_io_table_config_1_sram_id_table_62),
+    .io_table_config_1_sram_id_table_63(pipe9_io_table_config_1_sram_id_table_63),
     .io_table_config_1_table_width(pipe9_io_table_config_1_table_width),
     .io_table_config_1_table_depth(pipe9_io_table_config_1_table_depth),
     .io_key_in(pipe9_io_key_in),
@@ -11113,8 +11689,136 @@ module Matcher(
   assign pipe9_io_pipe_phv_in_next_processor_id = pipe3to8_io_pipe_phv_out_next_processor_id; // @[matcher.scala 364:27]
   assign pipe9_io_pipe_phv_in_next_config_id = pipe3to8_io_pipe_phv_out_next_config_id; // @[matcher.scala 364:27]
   assign pipe9_io_pipe_phv_in_is_valid_processor = pipe3to8_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 364:27]
+  assign pipe9_io_table_config_0_sram_id_table_0 = table_config_0_sram_id_table_0; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_1 = table_config_0_sram_id_table_1; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_2 = table_config_0_sram_id_table_2; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_3 = table_config_0_sram_id_table_3; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_4 = table_config_0_sram_id_table_4; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_5 = table_config_0_sram_id_table_5; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_6 = table_config_0_sram_id_table_6; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_7 = table_config_0_sram_id_table_7; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_8 = table_config_0_sram_id_table_8; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_9 = table_config_0_sram_id_table_9; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_10 = table_config_0_sram_id_table_10; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_11 = table_config_0_sram_id_table_11; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_12 = table_config_0_sram_id_table_12; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_13 = table_config_0_sram_id_table_13; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_14 = table_config_0_sram_id_table_14; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_15 = table_config_0_sram_id_table_15; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_16 = table_config_0_sram_id_table_16; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_17 = table_config_0_sram_id_table_17; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_18 = table_config_0_sram_id_table_18; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_19 = table_config_0_sram_id_table_19; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_20 = table_config_0_sram_id_table_20; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_21 = table_config_0_sram_id_table_21; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_22 = table_config_0_sram_id_table_22; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_23 = table_config_0_sram_id_table_23; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_24 = table_config_0_sram_id_table_24; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_25 = table_config_0_sram_id_table_25; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_26 = table_config_0_sram_id_table_26; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_27 = table_config_0_sram_id_table_27; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_28 = table_config_0_sram_id_table_28; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_29 = table_config_0_sram_id_table_29; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_30 = table_config_0_sram_id_table_30; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_31 = table_config_0_sram_id_table_31; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_32 = table_config_0_sram_id_table_32; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_33 = table_config_0_sram_id_table_33; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_34 = table_config_0_sram_id_table_34; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_35 = table_config_0_sram_id_table_35; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_36 = table_config_0_sram_id_table_36; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_37 = table_config_0_sram_id_table_37; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_38 = table_config_0_sram_id_table_38; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_39 = table_config_0_sram_id_table_39; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_40 = table_config_0_sram_id_table_40; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_41 = table_config_0_sram_id_table_41; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_42 = table_config_0_sram_id_table_42; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_43 = table_config_0_sram_id_table_43; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_44 = table_config_0_sram_id_table_44; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_45 = table_config_0_sram_id_table_45; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_46 = table_config_0_sram_id_table_46; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_47 = table_config_0_sram_id_table_47; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_48 = table_config_0_sram_id_table_48; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_49 = table_config_0_sram_id_table_49; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_50 = table_config_0_sram_id_table_50; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_51 = table_config_0_sram_id_table_51; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_52 = table_config_0_sram_id_table_52; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_53 = table_config_0_sram_id_table_53; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_54 = table_config_0_sram_id_table_54; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_55 = table_config_0_sram_id_table_55; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_56 = table_config_0_sram_id_table_56; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_57 = table_config_0_sram_id_table_57; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_58 = table_config_0_sram_id_table_58; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_59 = table_config_0_sram_id_table_59; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_60 = table_config_0_sram_id_table_60; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_61 = table_config_0_sram_id_table_61; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_62 = table_config_0_sram_id_table_62; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_0_sram_id_table_63 = table_config_0_sram_id_table_63; // @[matcher.scala 368:27]
   assign pipe9_io_table_config_0_table_width = table_config_0_table_width; // @[matcher.scala 368:27]
   assign pipe9_io_table_config_0_table_depth = table_config_0_table_depth; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_0 = table_config_1_sram_id_table_0; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_1 = table_config_1_sram_id_table_1; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_2 = table_config_1_sram_id_table_2; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_3 = table_config_1_sram_id_table_3; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_4 = table_config_1_sram_id_table_4; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_5 = table_config_1_sram_id_table_5; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_6 = table_config_1_sram_id_table_6; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_7 = table_config_1_sram_id_table_7; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_8 = table_config_1_sram_id_table_8; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_9 = table_config_1_sram_id_table_9; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_10 = table_config_1_sram_id_table_10; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_11 = table_config_1_sram_id_table_11; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_12 = table_config_1_sram_id_table_12; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_13 = table_config_1_sram_id_table_13; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_14 = table_config_1_sram_id_table_14; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_15 = table_config_1_sram_id_table_15; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_16 = table_config_1_sram_id_table_16; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_17 = table_config_1_sram_id_table_17; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_18 = table_config_1_sram_id_table_18; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_19 = table_config_1_sram_id_table_19; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_20 = table_config_1_sram_id_table_20; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_21 = table_config_1_sram_id_table_21; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_22 = table_config_1_sram_id_table_22; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_23 = table_config_1_sram_id_table_23; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_24 = table_config_1_sram_id_table_24; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_25 = table_config_1_sram_id_table_25; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_26 = table_config_1_sram_id_table_26; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_27 = table_config_1_sram_id_table_27; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_28 = table_config_1_sram_id_table_28; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_29 = table_config_1_sram_id_table_29; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_30 = table_config_1_sram_id_table_30; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_31 = table_config_1_sram_id_table_31; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_32 = table_config_1_sram_id_table_32; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_33 = table_config_1_sram_id_table_33; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_34 = table_config_1_sram_id_table_34; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_35 = table_config_1_sram_id_table_35; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_36 = table_config_1_sram_id_table_36; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_37 = table_config_1_sram_id_table_37; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_38 = table_config_1_sram_id_table_38; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_39 = table_config_1_sram_id_table_39; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_40 = table_config_1_sram_id_table_40; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_41 = table_config_1_sram_id_table_41; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_42 = table_config_1_sram_id_table_42; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_43 = table_config_1_sram_id_table_43; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_44 = table_config_1_sram_id_table_44; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_45 = table_config_1_sram_id_table_45; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_46 = table_config_1_sram_id_table_46; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_47 = table_config_1_sram_id_table_47; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_48 = table_config_1_sram_id_table_48; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_49 = table_config_1_sram_id_table_49; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_50 = table_config_1_sram_id_table_50; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_51 = table_config_1_sram_id_table_51; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_52 = table_config_1_sram_id_table_52; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_53 = table_config_1_sram_id_table_53; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_54 = table_config_1_sram_id_table_54; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_55 = table_config_1_sram_id_table_55; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_56 = table_config_1_sram_id_table_56; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_57 = table_config_1_sram_id_table_57; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_58 = table_config_1_sram_id_table_58; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_59 = table_config_1_sram_id_table_59; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_60 = table_config_1_sram_id_table_60; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_61 = table_config_1_sram_id_table_61; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_62 = table_config_1_sram_id_table_62; // @[matcher.scala 368:27]
+  assign pipe9_io_table_config_1_sram_id_table_63 = table_config_1_sram_id_table_63; // @[matcher.scala 368:27]
   assign pipe9_io_table_config_1_table_width = table_config_1_table_width; // @[matcher.scala 368:27]
   assign pipe9_io_table_config_1_table_depth = table_config_1_table_depth; // @[matcher.scala 368:27]
   assign pipe9_io_key_in = pipe3to8_io_key_out; // @[matcher.scala 365:27]
@@ -12195,12 +12899,652 @@ module Matcher(
     end
     if (io_mod_en) begin // @[matcher.scala 20:22]
       if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_0 <= io_mod_table_mod_sram_id_table_0; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_1 <= io_mod_table_mod_sram_id_table_1; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_2 <= io_mod_table_mod_sram_id_table_2; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_3 <= io_mod_table_mod_sram_id_table_3; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_4 <= io_mod_table_mod_sram_id_table_4; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_5 <= io_mod_table_mod_sram_id_table_5; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_6 <= io_mod_table_mod_sram_id_table_6; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_7 <= io_mod_table_mod_sram_id_table_7; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_8 <= io_mod_table_mod_sram_id_table_8; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_9 <= io_mod_table_mod_sram_id_table_9; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_10 <= io_mod_table_mod_sram_id_table_10; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_11 <= io_mod_table_mod_sram_id_table_11; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_12 <= io_mod_table_mod_sram_id_table_12; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_13 <= io_mod_table_mod_sram_id_table_13; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_14 <= io_mod_table_mod_sram_id_table_14; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_15 <= io_mod_table_mod_sram_id_table_15; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_16 <= io_mod_table_mod_sram_id_table_16; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_17 <= io_mod_table_mod_sram_id_table_17; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_18 <= io_mod_table_mod_sram_id_table_18; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_19 <= io_mod_table_mod_sram_id_table_19; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_20 <= io_mod_table_mod_sram_id_table_20; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_21 <= io_mod_table_mod_sram_id_table_21; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_22 <= io_mod_table_mod_sram_id_table_22; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_23 <= io_mod_table_mod_sram_id_table_23; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_24 <= io_mod_table_mod_sram_id_table_24; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_25 <= io_mod_table_mod_sram_id_table_25; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_26 <= io_mod_table_mod_sram_id_table_26; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_27 <= io_mod_table_mod_sram_id_table_27; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_28 <= io_mod_table_mod_sram_id_table_28; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_29 <= io_mod_table_mod_sram_id_table_29; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_30 <= io_mod_table_mod_sram_id_table_30; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_31 <= io_mod_table_mod_sram_id_table_31; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_32 <= io_mod_table_mod_sram_id_table_32; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_33 <= io_mod_table_mod_sram_id_table_33; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_34 <= io_mod_table_mod_sram_id_table_34; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_35 <= io_mod_table_mod_sram_id_table_35; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_36 <= io_mod_table_mod_sram_id_table_36; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_37 <= io_mod_table_mod_sram_id_table_37; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_38 <= io_mod_table_mod_sram_id_table_38; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_39 <= io_mod_table_mod_sram_id_table_39; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_40 <= io_mod_table_mod_sram_id_table_40; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_41 <= io_mod_table_mod_sram_id_table_41; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_42 <= io_mod_table_mod_sram_id_table_42; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_43 <= io_mod_table_mod_sram_id_table_43; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_44 <= io_mod_table_mod_sram_id_table_44; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_45 <= io_mod_table_mod_sram_id_table_45; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_46 <= io_mod_table_mod_sram_id_table_46; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_47 <= io_mod_table_mod_sram_id_table_47; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_48 <= io_mod_table_mod_sram_id_table_48; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_49 <= io_mod_table_mod_sram_id_table_49; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_50 <= io_mod_table_mod_sram_id_table_50; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_51 <= io_mod_table_mod_sram_id_table_51; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_52 <= io_mod_table_mod_sram_id_table_52; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_53 <= io_mod_table_mod_sram_id_table_53; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_54 <= io_mod_table_mod_sram_id_table_54; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_55 <= io_mod_table_mod_sram_id_table_55; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_56 <= io_mod_table_mod_sram_id_table_56; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_57 <= io_mod_table_mod_sram_id_table_57; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_58 <= io_mod_table_mod_sram_id_table_58; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_59 <= io_mod_table_mod_sram_id_table_59; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_60 <= io_mod_table_mod_sram_id_table_60; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_61 <= io_mod_table_mod_sram_id_table_61; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_62 <= io_mod_table_mod_sram_id_table_62; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_0_sram_id_table_63 <= io_mod_table_mod_sram_id_table_63; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (~io_mod_config_id) begin // @[matcher.scala 22:40]
         table_config_0_table_width <= io_mod_table_mod_table_width; // @[matcher.scala 22:40]
       end
     end
     if (io_mod_en) begin // @[matcher.scala 20:22]
       if (~io_mod_config_id) begin // @[matcher.scala 22:40]
         table_config_0_table_depth <= io_mod_table_mod_table_depth; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_0 <= io_mod_table_mod_sram_id_table_0; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_1 <= io_mod_table_mod_sram_id_table_1; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_2 <= io_mod_table_mod_sram_id_table_2; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_3 <= io_mod_table_mod_sram_id_table_3; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_4 <= io_mod_table_mod_sram_id_table_4; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_5 <= io_mod_table_mod_sram_id_table_5; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_6 <= io_mod_table_mod_sram_id_table_6; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_7 <= io_mod_table_mod_sram_id_table_7; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_8 <= io_mod_table_mod_sram_id_table_8; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_9 <= io_mod_table_mod_sram_id_table_9; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_10 <= io_mod_table_mod_sram_id_table_10; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_11 <= io_mod_table_mod_sram_id_table_11; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_12 <= io_mod_table_mod_sram_id_table_12; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_13 <= io_mod_table_mod_sram_id_table_13; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_14 <= io_mod_table_mod_sram_id_table_14; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_15 <= io_mod_table_mod_sram_id_table_15; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_16 <= io_mod_table_mod_sram_id_table_16; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_17 <= io_mod_table_mod_sram_id_table_17; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_18 <= io_mod_table_mod_sram_id_table_18; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_19 <= io_mod_table_mod_sram_id_table_19; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_20 <= io_mod_table_mod_sram_id_table_20; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_21 <= io_mod_table_mod_sram_id_table_21; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_22 <= io_mod_table_mod_sram_id_table_22; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_23 <= io_mod_table_mod_sram_id_table_23; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_24 <= io_mod_table_mod_sram_id_table_24; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_25 <= io_mod_table_mod_sram_id_table_25; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_26 <= io_mod_table_mod_sram_id_table_26; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_27 <= io_mod_table_mod_sram_id_table_27; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_28 <= io_mod_table_mod_sram_id_table_28; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_29 <= io_mod_table_mod_sram_id_table_29; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_30 <= io_mod_table_mod_sram_id_table_30; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_31 <= io_mod_table_mod_sram_id_table_31; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_32 <= io_mod_table_mod_sram_id_table_32; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_33 <= io_mod_table_mod_sram_id_table_33; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_34 <= io_mod_table_mod_sram_id_table_34; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_35 <= io_mod_table_mod_sram_id_table_35; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_36 <= io_mod_table_mod_sram_id_table_36; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_37 <= io_mod_table_mod_sram_id_table_37; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_38 <= io_mod_table_mod_sram_id_table_38; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_39 <= io_mod_table_mod_sram_id_table_39; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_40 <= io_mod_table_mod_sram_id_table_40; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_41 <= io_mod_table_mod_sram_id_table_41; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_42 <= io_mod_table_mod_sram_id_table_42; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_43 <= io_mod_table_mod_sram_id_table_43; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_44 <= io_mod_table_mod_sram_id_table_44; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_45 <= io_mod_table_mod_sram_id_table_45; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_46 <= io_mod_table_mod_sram_id_table_46; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_47 <= io_mod_table_mod_sram_id_table_47; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_48 <= io_mod_table_mod_sram_id_table_48; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_49 <= io_mod_table_mod_sram_id_table_49; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_50 <= io_mod_table_mod_sram_id_table_50; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_51 <= io_mod_table_mod_sram_id_table_51; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_52 <= io_mod_table_mod_sram_id_table_52; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_53 <= io_mod_table_mod_sram_id_table_53; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_54 <= io_mod_table_mod_sram_id_table_54; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_55 <= io_mod_table_mod_sram_id_table_55; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_56 <= io_mod_table_mod_sram_id_table_56; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_57 <= io_mod_table_mod_sram_id_table_57; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_58 <= io_mod_table_mod_sram_id_table_58; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_59 <= io_mod_table_mod_sram_id_table_59; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_60 <= io_mod_table_mod_sram_id_table_60; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_61 <= io_mod_table_mod_sram_id_table_61; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_62 <= io_mod_table_mod_sram_id_table_62; // @[matcher.scala 22:40]
+      end
+    end
+    if (io_mod_en) begin // @[matcher.scala 20:22]
+      if (io_mod_config_id) begin // @[matcher.scala 22:40]
+        table_config_1_sram_id_table_63 <= io_mod_table_mod_sram_id_table_63; // @[matcher.scala 22:40]
       end
     end
     if (io_mod_en) begin // @[matcher.scala 20:22]
@@ -12263,13 +13607,269 @@ initial begin
   _RAND_5 = {1{`RANDOM}};
   key_config_1_key_length = _RAND_5[7:0];
   _RAND_6 = {1{`RANDOM}};
-  table_config_0_table_width = _RAND_6[6:0];
+  table_config_0_sram_id_table_0 = _RAND_6[5:0];
   _RAND_7 = {1{`RANDOM}};
-  table_config_0_table_depth = _RAND_7[6:0];
+  table_config_0_sram_id_table_1 = _RAND_7[5:0];
   _RAND_8 = {1{`RANDOM}};
-  table_config_1_table_width = _RAND_8[6:0];
+  table_config_0_sram_id_table_2 = _RAND_8[5:0];
   _RAND_9 = {1{`RANDOM}};
-  table_config_1_table_depth = _RAND_9[6:0];
+  table_config_0_sram_id_table_3 = _RAND_9[5:0];
+  _RAND_10 = {1{`RANDOM}};
+  table_config_0_sram_id_table_4 = _RAND_10[5:0];
+  _RAND_11 = {1{`RANDOM}};
+  table_config_0_sram_id_table_5 = _RAND_11[5:0];
+  _RAND_12 = {1{`RANDOM}};
+  table_config_0_sram_id_table_6 = _RAND_12[5:0];
+  _RAND_13 = {1{`RANDOM}};
+  table_config_0_sram_id_table_7 = _RAND_13[5:0];
+  _RAND_14 = {1{`RANDOM}};
+  table_config_0_sram_id_table_8 = _RAND_14[5:0];
+  _RAND_15 = {1{`RANDOM}};
+  table_config_0_sram_id_table_9 = _RAND_15[5:0];
+  _RAND_16 = {1{`RANDOM}};
+  table_config_0_sram_id_table_10 = _RAND_16[5:0];
+  _RAND_17 = {1{`RANDOM}};
+  table_config_0_sram_id_table_11 = _RAND_17[5:0];
+  _RAND_18 = {1{`RANDOM}};
+  table_config_0_sram_id_table_12 = _RAND_18[5:0];
+  _RAND_19 = {1{`RANDOM}};
+  table_config_0_sram_id_table_13 = _RAND_19[5:0];
+  _RAND_20 = {1{`RANDOM}};
+  table_config_0_sram_id_table_14 = _RAND_20[5:0];
+  _RAND_21 = {1{`RANDOM}};
+  table_config_0_sram_id_table_15 = _RAND_21[5:0];
+  _RAND_22 = {1{`RANDOM}};
+  table_config_0_sram_id_table_16 = _RAND_22[5:0];
+  _RAND_23 = {1{`RANDOM}};
+  table_config_0_sram_id_table_17 = _RAND_23[5:0];
+  _RAND_24 = {1{`RANDOM}};
+  table_config_0_sram_id_table_18 = _RAND_24[5:0];
+  _RAND_25 = {1{`RANDOM}};
+  table_config_0_sram_id_table_19 = _RAND_25[5:0];
+  _RAND_26 = {1{`RANDOM}};
+  table_config_0_sram_id_table_20 = _RAND_26[5:0];
+  _RAND_27 = {1{`RANDOM}};
+  table_config_0_sram_id_table_21 = _RAND_27[5:0];
+  _RAND_28 = {1{`RANDOM}};
+  table_config_0_sram_id_table_22 = _RAND_28[5:0];
+  _RAND_29 = {1{`RANDOM}};
+  table_config_0_sram_id_table_23 = _RAND_29[5:0];
+  _RAND_30 = {1{`RANDOM}};
+  table_config_0_sram_id_table_24 = _RAND_30[5:0];
+  _RAND_31 = {1{`RANDOM}};
+  table_config_0_sram_id_table_25 = _RAND_31[5:0];
+  _RAND_32 = {1{`RANDOM}};
+  table_config_0_sram_id_table_26 = _RAND_32[5:0];
+  _RAND_33 = {1{`RANDOM}};
+  table_config_0_sram_id_table_27 = _RAND_33[5:0];
+  _RAND_34 = {1{`RANDOM}};
+  table_config_0_sram_id_table_28 = _RAND_34[5:0];
+  _RAND_35 = {1{`RANDOM}};
+  table_config_0_sram_id_table_29 = _RAND_35[5:0];
+  _RAND_36 = {1{`RANDOM}};
+  table_config_0_sram_id_table_30 = _RAND_36[5:0];
+  _RAND_37 = {1{`RANDOM}};
+  table_config_0_sram_id_table_31 = _RAND_37[5:0];
+  _RAND_38 = {1{`RANDOM}};
+  table_config_0_sram_id_table_32 = _RAND_38[5:0];
+  _RAND_39 = {1{`RANDOM}};
+  table_config_0_sram_id_table_33 = _RAND_39[5:0];
+  _RAND_40 = {1{`RANDOM}};
+  table_config_0_sram_id_table_34 = _RAND_40[5:0];
+  _RAND_41 = {1{`RANDOM}};
+  table_config_0_sram_id_table_35 = _RAND_41[5:0];
+  _RAND_42 = {1{`RANDOM}};
+  table_config_0_sram_id_table_36 = _RAND_42[5:0];
+  _RAND_43 = {1{`RANDOM}};
+  table_config_0_sram_id_table_37 = _RAND_43[5:0];
+  _RAND_44 = {1{`RANDOM}};
+  table_config_0_sram_id_table_38 = _RAND_44[5:0];
+  _RAND_45 = {1{`RANDOM}};
+  table_config_0_sram_id_table_39 = _RAND_45[5:0];
+  _RAND_46 = {1{`RANDOM}};
+  table_config_0_sram_id_table_40 = _RAND_46[5:0];
+  _RAND_47 = {1{`RANDOM}};
+  table_config_0_sram_id_table_41 = _RAND_47[5:0];
+  _RAND_48 = {1{`RANDOM}};
+  table_config_0_sram_id_table_42 = _RAND_48[5:0];
+  _RAND_49 = {1{`RANDOM}};
+  table_config_0_sram_id_table_43 = _RAND_49[5:0];
+  _RAND_50 = {1{`RANDOM}};
+  table_config_0_sram_id_table_44 = _RAND_50[5:0];
+  _RAND_51 = {1{`RANDOM}};
+  table_config_0_sram_id_table_45 = _RAND_51[5:0];
+  _RAND_52 = {1{`RANDOM}};
+  table_config_0_sram_id_table_46 = _RAND_52[5:0];
+  _RAND_53 = {1{`RANDOM}};
+  table_config_0_sram_id_table_47 = _RAND_53[5:0];
+  _RAND_54 = {1{`RANDOM}};
+  table_config_0_sram_id_table_48 = _RAND_54[5:0];
+  _RAND_55 = {1{`RANDOM}};
+  table_config_0_sram_id_table_49 = _RAND_55[5:0];
+  _RAND_56 = {1{`RANDOM}};
+  table_config_0_sram_id_table_50 = _RAND_56[5:0];
+  _RAND_57 = {1{`RANDOM}};
+  table_config_0_sram_id_table_51 = _RAND_57[5:0];
+  _RAND_58 = {1{`RANDOM}};
+  table_config_0_sram_id_table_52 = _RAND_58[5:0];
+  _RAND_59 = {1{`RANDOM}};
+  table_config_0_sram_id_table_53 = _RAND_59[5:0];
+  _RAND_60 = {1{`RANDOM}};
+  table_config_0_sram_id_table_54 = _RAND_60[5:0];
+  _RAND_61 = {1{`RANDOM}};
+  table_config_0_sram_id_table_55 = _RAND_61[5:0];
+  _RAND_62 = {1{`RANDOM}};
+  table_config_0_sram_id_table_56 = _RAND_62[5:0];
+  _RAND_63 = {1{`RANDOM}};
+  table_config_0_sram_id_table_57 = _RAND_63[5:0];
+  _RAND_64 = {1{`RANDOM}};
+  table_config_0_sram_id_table_58 = _RAND_64[5:0];
+  _RAND_65 = {1{`RANDOM}};
+  table_config_0_sram_id_table_59 = _RAND_65[5:0];
+  _RAND_66 = {1{`RANDOM}};
+  table_config_0_sram_id_table_60 = _RAND_66[5:0];
+  _RAND_67 = {1{`RANDOM}};
+  table_config_0_sram_id_table_61 = _RAND_67[5:0];
+  _RAND_68 = {1{`RANDOM}};
+  table_config_0_sram_id_table_62 = _RAND_68[5:0];
+  _RAND_69 = {1{`RANDOM}};
+  table_config_0_sram_id_table_63 = _RAND_69[5:0];
+  _RAND_70 = {1{`RANDOM}};
+  table_config_0_table_width = _RAND_70[6:0];
+  _RAND_71 = {1{`RANDOM}};
+  table_config_0_table_depth = _RAND_71[6:0];
+  _RAND_72 = {1{`RANDOM}};
+  table_config_1_sram_id_table_0 = _RAND_72[5:0];
+  _RAND_73 = {1{`RANDOM}};
+  table_config_1_sram_id_table_1 = _RAND_73[5:0];
+  _RAND_74 = {1{`RANDOM}};
+  table_config_1_sram_id_table_2 = _RAND_74[5:0];
+  _RAND_75 = {1{`RANDOM}};
+  table_config_1_sram_id_table_3 = _RAND_75[5:0];
+  _RAND_76 = {1{`RANDOM}};
+  table_config_1_sram_id_table_4 = _RAND_76[5:0];
+  _RAND_77 = {1{`RANDOM}};
+  table_config_1_sram_id_table_5 = _RAND_77[5:0];
+  _RAND_78 = {1{`RANDOM}};
+  table_config_1_sram_id_table_6 = _RAND_78[5:0];
+  _RAND_79 = {1{`RANDOM}};
+  table_config_1_sram_id_table_7 = _RAND_79[5:0];
+  _RAND_80 = {1{`RANDOM}};
+  table_config_1_sram_id_table_8 = _RAND_80[5:0];
+  _RAND_81 = {1{`RANDOM}};
+  table_config_1_sram_id_table_9 = _RAND_81[5:0];
+  _RAND_82 = {1{`RANDOM}};
+  table_config_1_sram_id_table_10 = _RAND_82[5:0];
+  _RAND_83 = {1{`RANDOM}};
+  table_config_1_sram_id_table_11 = _RAND_83[5:0];
+  _RAND_84 = {1{`RANDOM}};
+  table_config_1_sram_id_table_12 = _RAND_84[5:0];
+  _RAND_85 = {1{`RANDOM}};
+  table_config_1_sram_id_table_13 = _RAND_85[5:0];
+  _RAND_86 = {1{`RANDOM}};
+  table_config_1_sram_id_table_14 = _RAND_86[5:0];
+  _RAND_87 = {1{`RANDOM}};
+  table_config_1_sram_id_table_15 = _RAND_87[5:0];
+  _RAND_88 = {1{`RANDOM}};
+  table_config_1_sram_id_table_16 = _RAND_88[5:0];
+  _RAND_89 = {1{`RANDOM}};
+  table_config_1_sram_id_table_17 = _RAND_89[5:0];
+  _RAND_90 = {1{`RANDOM}};
+  table_config_1_sram_id_table_18 = _RAND_90[5:0];
+  _RAND_91 = {1{`RANDOM}};
+  table_config_1_sram_id_table_19 = _RAND_91[5:0];
+  _RAND_92 = {1{`RANDOM}};
+  table_config_1_sram_id_table_20 = _RAND_92[5:0];
+  _RAND_93 = {1{`RANDOM}};
+  table_config_1_sram_id_table_21 = _RAND_93[5:0];
+  _RAND_94 = {1{`RANDOM}};
+  table_config_1_sram_id_table_22 = _RAND_94[5:0];
+  _RAND_95 = {1{`RANDOM}};
+  table_config_1_sram_id_table_23 = _RAND_95[5:0];
+  _RAND_96 = {1{`RANDOM}};
+  table_config_1_sram_id_table_24 = _RAND_96[5:0];
+  _RAND_97 = {1{`RANDOM}};
+  table_config_1_sram_id_table_25 = _RAND_97[5:0];
+  _RAND_98 = {1{`RANDOM}};
+  table_config_1_sram_id_table_26 = _RAND_98[5:0];
+  _RAND_99 = {1{`RANDOM}};
+  table_config_1_sram_id_table_27 = _RAND_99[5:0];
+  _RAND_100 = {1{`RANDOM}};
+  table_config_1_sram_id_table_28 = _RAND_100[5:0];
+  _RAND_101 = {1{`RANDOM}};
+  table_config_1_sram_id_table_29 = _RAND_101[5:0];
+  _RAND_102 = {1{`RANDOM}};
+  table_config_1_sram_id_table_30 = _RAND_102[5:0];
+  _RAND_103 = {1{`RANDOM}};
+  table_config_1_sram_id_table_31 = _RAND_103[5:0];
+  _RAND_104 = {1{`RANDOM}};
+  table_config_1_sram_id_table_32 = _RAND_104[5:0];
+  _RAND_105 = {1{`RANDOM}};
+  table_config_1_sram_id_table_33 = _RAND_105[5:0];
+  _RAND_106 = {1{`RANDOM}};
+  table_config_1_sram_id_table_34 = _RAND_106[5:0];
+  _RAND_107 = {1{`RANDOM}};
+  table_config_1_sram_id_table_35 = _RAND_107[5:0];
+  _RAND_108 = {1{`RANDOM}};
+  table_config_1_sram_id_table_36 = _RAND_108[5:0];
+  _RAND_109 = {1{`RANDOM}};
+  table_config_1_sram_id_table_37 = _RAND_109[5:0];
+  _RAND_110 = {1{`RANDOM}};
+  table_config_1_sram_id_table_38 = _RAND_110[5:0];
+  _RAND_111 = {1{`RANDOM}};
+  table_config_1_sram_id_table_39 = _RAND_111[5:0];
+  _RAND_112 = {1{`RANDOM}};
+  table_config_1_sram_id_table_40 = _RAND_112[5:0];
+  _RAND_113 = {1{`RANDOM}};
+  table_config_1_sram_id_table_41 = _RAND_113[5:0];
+  _RAND_114 = {1{`RANDOM}};
+  table_config_1_sram_id_table_42 = _RAND_114[5:0];
+  _RAND_115 = {1{`RANDOM}};
+  table_config_1_sram_id_table_43 = _RAND_115[5:0];
+  _RAND_116 = {1{`RANDOM}};
+  table_config_1_sram_id_table_44 = _RAND_116[5:0];
+  _RAND_117 = {1{`RANDOM}};
+  table_config_1_sram_id_table_45 = _RAND_117[5:0];
+  _RAND_118 = {1{`RANDOM}};
+  table_config_1_sram_id_table_46 = _RAND_118[5:0];
+  _RAND_119 = {1{`RANDOM}};
+  table_config_1_sram_id_table_47 = _RAND_119[5:0];
+  _RAND_120 = {1{`RANDOM}};
+  table_config_1_sram_id_table_48 = _RAND_120[5:0];
+  _RAND_121 = {1{`RANDOM}};
+  table_config_1_sram_id_table_49 = _RAND_121[5:0];
+  _RAND_122 = {1{`RANDOM}};
+  table_config_1_sram_id_table_50 = _RAND_122[5:0];
+  _RAND_123 = {1{`RANDOM}};
+  table_config_1_sram_id_table_51 = _RAND_123[5:0];
+  _RAND_124 = {1{`RANDOM}};
+  table_config_1_sram_id_table_52 = _RAND_124[5:0];
+  _RAND_125 = {1{`RANDOM}};
+  table_config_1_sram_id_table_53 = _RAND_125[5:0];
+  _RAND_126 = {1{`RANDOM}};
+  table_config_1_sram_id_table_54 = _RAND_126[5:0];
+  _RAND_127 = {1{`RANDOM}};
+  table_config_1_sram_id_table_55 = _RAND_127[5:0];
+  _RAND_128 = {1{`RANDOM}};
+  table_config_1_sram_id_table_56 = _RAND_128[5:0];
+  _RAND_129 = {1{`RANDOM}};
+  table_config_1_sram_id_table_57 = _RAND_129[5:0];
+  _RAND_130 = {1{`RANDOM}};
+  table_config_1_sram_id_table_58 = _RAND_130[5:0];
+  _RAND_131 = {1{`RANDOM}};
+  table_config_1_sram_id_table_59 = _RAND_131[5:0];
+  _RAND_132 = {1{`RANDOM}};
+  table_config_1_sram_id_table_60 = _RAND_132[5:0];
+  _RAND_133 = {1{`RANDOM}};
+  table_config_1_sram_id_table_61 = _RAND_133[5:0];
+  _RAND_134 = {1{`RANDOM}};
+  table_config_1_sram_id_table_62 = _RAND_134[5:0];
+  _RAND_135 = {1{`RANDOM}};
+  table_config_1_sram_id_table_63 = _RAND_135[5:0];
+  _RAND_136 = {1{`RANDOM}};
+  table_config_1_table_width = _RAND_136[6:0];
+  _RAND_137 = {1{`RANDOM}};
+  table_config_1_table_depth = _RAND_137[6:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

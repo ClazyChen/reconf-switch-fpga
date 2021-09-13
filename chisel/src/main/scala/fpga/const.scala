@@ -14,7 +14,7 @@ object const {
     val mau_number_in_parser = 4
 
     val processor_id_width = 4
-    val processor_number = 16
+    val processor_number = 12
     val cluster_number   = 4
     val processor_number_in_cluster = processor_number / cluster_number
 
