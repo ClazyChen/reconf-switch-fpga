@@ -555,6 +555,7 @@ module PrimitiveWriteBack(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
+  output        io_pipe_phv_out_is_valid_processor,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
   input  [31:0] io_vliw_in_2,
@@ -5571,6 +5572,7 @@ module PrimitiveWriteBack(
   assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor.scala 450:25]
   assign io_pipe_phv_out_next_processor_id = phv_is_valid_processor ? _GEN_3846 : phv_next_processor_id; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_next_config_id = phv_is_valid_processor ? _GEN_3847 : phv_next_config_id; // @[executor.scala 461:39 executor.scala 450:25]
+  assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 450:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[executor.scala 449:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[executor.scala 449:13]

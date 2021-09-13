@@ -555,6 +555,7 @@ module Executor(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
+  output        io_pipe_phv_out_is_valid_processor,
   input         io_hit,
   input  [63:0] io_match_value,
   input         io_action_mod_en_0,
@@ -4059,6 +4060,7 @@ module Executor(
   wire [15:0] pipe6_io_pipe_phv_out_parse_transition_field; // @[executor.scala 494:23]
   wire [3:0] pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 494:23]
+  wire  pipe6_io_pipe_phv_out_is_valid_processor; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_0; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_1; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_2; // @[executor.scala 494:23]
@@ -7582,6 +7584,7 @@ module Executor(
     .io_pipe_phv_out_parse_transition_field(pipe6_io_pipe_phv_out_parse_transition_field),
     .io_pipe_phv_out_next_processor_id(pipe6_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(pipe6_io_pipe_phv_out_next_config_id),
+    .io_pipe_phv_out_is_valid_processor(pipe6_io_pipe_phv_out_is_valid_processor),
     .io_vliw_in_0(pipe6_io_vliw_in_0),
     .io_vliw_in_1(pipe6_io_vliw_in_1),
     .io_vliw_in_2(pipe6_io_vliw_in_2),
@@ -7876,6 +7879,7 @@ module Executor(
   assign io_pipe_phv_out_parse_transition_field = pipe6_io_pipe_phv_out_parse_transition_field; // @[executor.scala 530:27]
   assign io_pipe_phv_out_next_processor_id = pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 530:27]
   assign io_pipe_phv_out_next_config_id = pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_is_valid_processor = pipe6_io_pipe_phv_out_is_valid_processor; // @[executor.scala 530:27]
   assign pipe1_clock = clock;
   assign pipe1_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[executor.scala 496:26]

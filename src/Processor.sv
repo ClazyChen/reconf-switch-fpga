@@ -555,6 +555,7 @@ module Processor(
   output [15:0] io_pipe_phv_out_parse_transition_field,
   output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
+  output        io_pipe_phv_out_is_valid_processor,
   input         io_mod_par_mod_en,
   input         io_mod_par_mod_last_mau_id_mod,
   input  [1:0]  io_mod_par_mod_last_mau_id,
@@ -2651,6 +2652,7 @@ module Processor(
   wire [15:0] EXE_io_pipe_phv_out_parse_transition_field; // @[processor.scala 15:21]
   wire [3:0] EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 15:21]
   wire  EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 15:21]
+  wire  EXE_io_pipe_phv_out_is_valid_processor; // @[processor.scala 15:21]
   wire  EXE_io_hit; // @[processor.scala 15:21]
   wire [63:0] EXE_io_match_value; // @[processor.scala 15:21]
   wire  EXE_io_action_mod_en_0; // @[processor.scala 15:21]
@@ -4544,6 +4546,7 @@ module Processor(
     .io_pipe_phv_out_parse_transition_field(EXE_io_pipe_phv_out_parse_transition_field),
     .io_pipe_phv_out_next_processor_id(EXE_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(EXE_io_pipe_phv_out_next_config_id),
+    .io_pipe_phv_out_is_valid_processor(EXE_io_pipe_phv_out_is_valid_processor),
     .io_hit(EXE_io_hit),
     .io_match_value(EXE_io_match_value),
     .io_action_mod_en_0(EXE_io_action_mod_en_0),
@@ -4829,6 +4832,7 @@ module Processor(
   assign io_pipe_phv_out_parse_transition_field = EXE_io_pipe_phv_out_parse_transition_field; // @[processor.scala 29:24]
   assign io_pipe_phv_out_next_processor_id = EXE_io_pipe_phv_out_next_processor_id; // @[processor.scala 29:24]
   assign io_pipe_phv_out_next_config_id = EXE_io_pipe_phv_out_next_config_id; // @[processor.scala 29:24]
+  assign io_pipe_phv_out_is_valid_processor = EXE_io_pipe_phv_out_is_valid_processor; // @[processor.scala 29:24]
   assign io_mem_cluster_0_en = MAT_io_mem_cluster_0_en; // @[processor.scala 22:24]
   assign io_mem_cluster_0_addr = MAT_io_mem_cluster_0_addr; // @[processor.scala 22:24]
   assign io_mem_cluster_1_en = MAT_io_mem_cluster_1_en; // @[processor.scala 22:24]

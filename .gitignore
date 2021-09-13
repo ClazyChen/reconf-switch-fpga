@@ -18,3 +18,4 @@ vivado/xdma_0_ex
 *.str
 .VSCodeCounter
 stat.py
+*.lock
