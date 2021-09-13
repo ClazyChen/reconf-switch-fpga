@@ -192,92 +192,6 @@ module Parser(
   input  [7:0]  io_pipe_phv_in_data_189,
   input  [7:0]  io_pipe_phv_in_data_190,
   input  [7:0]  io_pipe_phv_in_data_191,
-  input  [7:0]  io_pipe_phv_in_data_192,
-  input  [7:0]  io_pipe_phv_in_data_193,
-  input  [7:0]  io_pipe_phv_in_data_194,
-  input  [7:0]  io_pipe_phv_in_data_195,
-  input  [7:0]  io_pipe_phv_in_data_196,
-  input  [7:0]  io_pipe_phv_in_data_197,
-  input  [7:0]  io_pipe_phv_in_data_198,
-  input  [7:0]  io_pipe_phv_in_data_199,
-  input  [7:0]  io_pipe_phv_in_data_200,
-  input  [7:0]  io_pipe_phv_in_data_201,
-  input  [7:0]  io_pipe_phv_in_data_202,
-  input  [7:0]  io_pipe_phv_in_data_203,
-  input  [7:0]  io_pipe_phv_in_data_204,
-  input  [7:0]  io_pipe_phv_in_data_205,
-  input  [7:0]  io_pipe_phv_in_data_206,
-  input  [7:0]  io_pipe_phv_in_data_207,
-  input  [7:0]  io_pipe_phv_in_data_208,
-  input  [7:0]  io_pipe_phv_in_data_209,
-  input  [7:0]  io_pipe_phv_in_data_210,
-  input  [7:0]  io_pipe_phv_in_data_211,
-  input  [7:0]  io_pipe_phv_in_data_212,
-  input  [7:0]  io_pipe_phv_in_data_213,
-  input  [7:0]  io_pipe_phv_in_data_214,
-  input  [7:0]  io_pipe_phv_in_data_215,
-  input  [7:0]  io_pipe_phv_in_data_216,
-  input  [7:0]  io_pipe_phv_in_data_217,
-  input  [7:0]  io_pipe_phv_in_data_218,
-  input  [7:0]  io_pipe_phv_in_data_219,
-  input  [7:0]  io_pipe_phv_in_data_220,
-  input  [7:0]  io_pipe_phv_in_data_221,
-  input  [7:0]  io_pipe_phv_in_data_222,
-  input  [7:0]  io_pipe_phv_in_data_223,
-  input  [7:0]  io_pipe_phv_in_data_224,
-  input  [7:0]  io_pipe_phv_in_data_225,
-  input  [7:0]  io_pipe_phv_in_data_226,
-  input  [7:0]  io_pipe_phv_in_data_227,
-  input  [7:0]  io_pipe_phv_in_data_228,
-  input  [7:0]  io_pipe_phv_in_data_229,
-  input  [7:0]  io_pipe_phv_in_data_230,
-  input  [7:0]  io_pipe_phv_in_data_231,
-  input  [7:0]  io_pipe_phv_in_data_232,
-  input  [7:0]  io_pipe_phv_in_data_233,
-  input  [7:0]  io_pipe_phv_in_data_234,
-  input  [7:0]  io_pipe_phv_in_data_235,
-  input  [7:0]  io_pipe_phv_in_data_236,
-  input  [7:0]  io_pipe_phv_in_data_237,
-  input  [7:0]  io_pipe_phv_in_data_238,
-  input  [7:0]  io_pipe_phv_in_data_239,
-  input  [7:0]  io_pipe_phv_in_data_240,
-  input  [7:0]  io_pipe_phv_in_data_241,
-  input  [7:0]  io_pipe_phv_in_data_242,
-  input  [7:0]  io_pipe_phv_in_data_243,
-  input  [7:0]  io_pipe_phv_in_data_244,
-  input  [7:0]  io_pipe_phv_in_data_245,
-  input  [7:0]  io_pipe_phv_in_data_246,
-  input  [7:0]  io_pipe_phv_in_data_247,
-  input  [7:0]  io_pipe_phv_in_data_248,
-  input  [7:0]  io_pipe_phv_in_data_249,
-  input  [7:0]  io_pipe_phv_in_data_250,
-  input  [7:0]  io_pipe_phv_in_data_251,
-  input  [7:0]  io_pipe_phv_in_data_252,
-  input  [7:0]  io_pipe_phv_in_data_253,
-  input  [7:0]  io_pipe_phv_in_data_254,
-  input  [7:0]  io_pipe_phv_in_data_255,
-  input  [15:0] io_pipe_phv_in_header_0,
-  input  [15:0] io_pipe_phv_in_header_1,
-  input  [15:0] io_pipe_phv_in_header_2,
-  input  [15:0] io_pipe_phv_in_header_3,
-  input  [15:0] io_pipe_phv_in_header_4,
-  input  [15:0] io_pipe_phv_in_header_5,
-  input  [15:0] io_pipe_phv_in_header_6,
-  input  [15:0] io_pipe_phv_in_header_7,
-  input  [15:0] io_pipe_phv_in_header_8,
-  input  [15:0] io_pipe_phv_in_header_9,
-  input  [15:0] io_pipe_phv_in_header_10,
-  input  [15:0] io_pipe_phv_in_header_11,
-  input  [15:0] io_pipe_phv_in_header_12,
-  input  [15:0] io_pipe_phv_in_header_13,
-  input  [15:0] io_pipe_phv_in_header_14,
-  input  [15:0] io_pipe_phv_in_header_15,
-  input  [7:0]  io_pipe_phv_in_parse_current_state,
-  input  [7:0]  io_pipe_phv_in_parse_current_offset,
-  input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
-  input         io_pipe_phv_in_next_config_id,
-  input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
   output [7:0]  io_pipe_phv_out_data_2,
@@ -550,10 +464,6 @@ module Parser(
   output [15:0] io_pipe_phv_out_header_13,
   output [15:0] io_pipe_phv_out_header_14,
   output [15:0] io_pipe_phv_out_header_15,
-  output [7:0]  io_pipe_phv_out_parse_current_state,
-  output [7:0]  io_pipe_phv_out_parse_current_offset,
-  output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input         io_mod_en,
@@ -846,7 +756,6 @@ module Parser(
   wire [7:0] mau_0_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_0_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_0_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -1124,7 +1033,6 @@ module Parser(
   wire [7:0] mau_0_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_0_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_0_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_0_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -1409,7 +1317,6 @@ module Parser(
   wire [7:0] mau_1_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_1_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_1_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -1687,7 +1594,6 @@ module Parser(
   wire [7:0] mau_1_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_1_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_1_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_1_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -1972,7 +1878,6 @@ module Parser(
   wire [7:0] mau_2_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_2_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_2_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -2250,7 +2155,6 @@ module Parser(
   wire [7:0] mau_2_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_2_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_2_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_2_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -2535,7 +2439,6 @@ module Parser(
   wire [7:0] mau_3_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_3_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_3_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -2813,7 +2716,6 @@ module Parser(
   wire [7:0] mau_3_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_3_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_3_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_3_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -2823,31 +2725,24 @@ module Parser(
   wire [7:0] mau_3_io_mod_sram_w_addr; // @[parser.scala 21:25]
   wire [63:0] mau_3_io_mod_sram_w_data; // @[parser.scala 21:25]
   reg [2:0] last_mau_id; // @[parser.scala 14:26]
-  wire  _GEN_0 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_is_valid_processor : io_pipe_phv_in_is_valid_processor; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire  _GEN_1 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_next_config_id : io_pipe_phv_in_next_config_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [3:0] _GEN_2 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_next_processor_id : io_pipe_phv_in_next_processor_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_3 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_parse_transition_field :
-    io_pipe_phv_in_parse_transition_field; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_4 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_parse_current_offset :
-    io_pipe_phv_in_parse_current_offset; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_5 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_parse_current_state :
-    io_pipe_phv_in_parse_current_state; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_6 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_0 : io_pipe_phv_in_header_0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_7 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_1 : io_pipe_phv_in_header_1; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_8 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_2 : io_pipe_phv_in_header_2; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_9 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_3 : io_pipe_phv_in_header_3; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_10 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_4 : io_pipe_phv_in_header_4; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_11 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_5 : io_pipe_phv_in_header_5; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_12 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_6 : io_pipe_phv_in_header_6; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_13 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_7 : io_pipe_phv_in_header_7; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_14 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_8 : io_pipe_phv_in_header_8; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_15 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_9 : io_pipe_phv_in_header_9; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_16 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_10 : io_pipe_phv_in_header_10; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_17 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_11 : io_pipe_phv_in_header_11; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_18 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_12 : io_pipe_phv_in_header_12; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_19 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_13 : io_pipe_phv_in_header_13; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_20 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_14 : io_pipe_phv_in_header_14; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [15:0] _GEN_21 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_15 : io_pipe_phv_in_header_15; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire  _GEN_0 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_is_valid_processor : 1'h1; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire  _GEN_1 = 3'h1 == last_mau_id & mau_1_io_pipe_phv_out_next_config_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_6 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_0 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_7 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_1 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_8 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_2 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_9 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_3 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_10 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_4 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_11 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_5 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_12 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_6 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_13 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_7 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_14 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_8 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_15 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_9 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_16 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_10 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_17 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_11 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_18 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_12 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_19 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_13 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_20 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_14 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [15:0] _GEN_21 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_header_15 : 16'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_22 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_0 : io_pipe_phv_in_data_0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_23 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_1 : io_pipe_phv_in_data_1; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_24 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_2 : io_pipe_phv_in_data_2; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
@@ -3040,76 +2935,72 @@ module Parser(
   wire [7:0] _GEN_211 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_189 : io_pipe_phv_in_data_189; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_212 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_190 : io_pipe_phv_in_data_190; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_213 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_191 : io_pipe_phv_in_data_191; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_214 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_192 : io_pipe_phv_in_data_192; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_215 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_193 : io_pipe_phv_in_data_193; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_216 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_194 : io_pipe_phv_in_data_194; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_217 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_195 : io_pipe_phv_in_data_195; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_218 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_196 : io_pipe_phv_in_data_196; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_219 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_197 : io_pipe_phv_in_data_197; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_220 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_198 : io_pipe_phv_in_data_198; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_221 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_199 : io_pipe_phv_in_data_199; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_222 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_200 : io_pipe_phv_in_data_200; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_223 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_201 : io_pipe_phv_in_data_201; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_224 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_202 : io_pipe_phv_in_data_202; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_225 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_203 : io_pipe_phv_in_data_203; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_226 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_204 : io_pipe_phv_in_data_204; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_227 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_205 : io_pipe_phv_in_data_205; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_228 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_206 : io_pipe_phv_in_data_206; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_229 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_207 : io_pipe_phv_in_data_207; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_230 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_208 : io_pipe_phv_in_data_208; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_231 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_209 : io_pipe_phv_in_data_209; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_232 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_210 : io_pipe_phv_in_data_210; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_233 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_211 : io_pipe_phv_in_data_211; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_234 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_212 : io_pipe_phv_in_data_212; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_235 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_213 : io_pipe_phv_in_data_213; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_236 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_214 : io_pipe_phv_in_data_214; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_237 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_215 : io_pipe_phv_in_data_215; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_238 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_216 : io_pipe_phv_in_data_216; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_239 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_217 : io_pipe_phv_in_data_217; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_240 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_218 : io_pipe_phv_in_data_218; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_241 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_219 : io_pipe_phv_in_data_219; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_242 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_220 : io_pipe_phv_in_data_220; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_243 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_221 : io_pipe_phv_in_data_221; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_244 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_222 : io_pipe_phv_in_data_222; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_245 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_223 : io_pipe_phv_in_data_223; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_246 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_224 : io_pipe_phv_in_data_224; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_247 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_225 : io_pipe_phv_in_data_225; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_248 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_226 : io_pipe_phv_in_data_226; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_249 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_227 : io_pipe_phv_in_data_227; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_250 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_228 : io_pipe_phv_in_data_228; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_251 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_229 : io_pipe_phv_in_data_229; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_252 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_230 : io_pipe_phv_in_data_230; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_253 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_231 : io_pipe_phv_in_data_231; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_254 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_232 : io_pipe_phv_in_data_232; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_255 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_233 : io_pipe_phv_in_data_233; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_256 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_234 : io_pipe_phv_in_data_234; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_257 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_235 : io_pipe_phv_in_data_235; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_258 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_236 : io_pipe_phv_in_data_236; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_259 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_237 : io_pipe_phv_in_data_237; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_260 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_238 : io_pipe_phv_in_data_238; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_261 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_239 : io_pipe_phv_in_data_239; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_262 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_240 : io_pipe_phv_in_data_240; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_263 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_241 : io_pipe_phv_in_data_241; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_264 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_242 : io_pipe_phv_in_data_242; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_265 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_243 : io_pipe_phv_in_data_243; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_266 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_244 : io_pipe_phv_in_data_244; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_267 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_245 : io_pipe_phv_in_data_245; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_268 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_246 : io_pipe_phv_in_data_246; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_269 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_247 : io_pipe_phv_in_data_247; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_270 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_248 : io_pipe_phv_in_data_248; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_271 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_249 : io_pipe_phv_in_data_249; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_272 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_250 : io_pipe_phv_in_data_250; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_273 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_251 : io_pipe_phv_in_data_251; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_274 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_252 : io_pipe_phv_in_data_252; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_275 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_253 : io_pipe_phv_in_data_253; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_276 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_254 : io_pipe_phv_in_data_254; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [7:0] _GEN_277 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_255 : io_pipe_phv_in_data_255; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_214 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_192 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_215 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_193 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_216 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_194 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_217 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_195 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_218 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_196 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_219 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_197 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_220 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_198 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_221 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_199 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_222 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_200 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_223 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_201 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_224 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_202 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_225 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_203 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_226 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_204 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_227 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_205 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_228 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_206 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_229 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_207 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_230 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_208 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_231 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_209 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_232 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_210 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_233 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_211 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_234 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_212 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_235 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_213 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_236 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_214 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_237 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_215 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_238 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_216 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_239 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_217 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_240 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_218 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_241 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_219 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_242 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_220 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_243 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_221 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_244 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_222 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_245 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_223 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_246 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_224 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_247 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_225 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_248 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_226 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_249 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_227 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_250 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_228 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_251 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_229 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_252 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_230 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_253 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_231 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_254 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_232 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_255 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_233 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_256 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_234 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_257 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_235 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_258 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_236 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_259 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_237 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_260 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_238 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_261 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_239 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_262 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_240 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_263 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_241 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_264 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_242 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_265 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_243 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_266 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_244 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_267 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_245 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_268 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_246 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_269 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_247 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_270 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_248 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_271 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_249 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_272 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_250 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_273 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_251 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_274 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_252 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_275 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_253 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_276 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_254 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [7:0] _GEN_277 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_255 : 8'h0; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire  _GEN_278 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_is_valid_processor : _GEN_0; // @[parser.scala 33:62 parser.scala 34:35]
   wire  _GEN_279 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_next_config_id : _GEN_1; // @[parser.scala 33:62 parser.scala 34:35]
-  wire [3:0] _GEN_280 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_next_processor_id : _GEN_2; // @[parser.scala 33:62 parser.scala 34:35]
-  wire [15:0] _GEN_281 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_transition_field : _GEN_3; // @[parser.scala 33:62 parser.scala 34:35]
-  wire [7:0] _GEN_282 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_current_offset : _GEN_4; // @[parser.scala 33:62 parser.scala 34:35]
-  wire [7:0] _GEN_283 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_current_state : _GEN_5; // @[parser.scala 33:62 parser.scala 34:35]
   wire [15:0] _GEN_284 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_header_0 : _GEN_6; // @[parser.scala 33:62 parser.scala 34:35]
   wire [15:0] _GEN_285 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_header_1 : _GEN_7; // @[parser.scala 33:62 parser.scala 34:35]
   wire [15:0] _GEN_286 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_header_2 : _GEN_8; // @[parser.scala 33:62 parser.scala 34:35]
@@ -3663,7 +3554,6 @@ module Parser(
     .io_pipe_phv_in_parse_current_state(mau_0_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(mau_0_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(mau_0_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(mau_0_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(mau_0_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(mau_0_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(mau_0_io_pipe_phv_out_data_0),
@@ -3941,7 +3831,6 @@ module Parser(
     .io_pipe_phv_out_parse_current_state(mau_0_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(mau_0_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(mau_0_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(mau_0_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(mau_0_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(mau_0_io_pipe_phv_out_is_valid_processor),
     .io_mod_state_id_mod(mau_0_io_mod_state_id_mod),
@@ -4228,7 +4117,6 @@ module Parser(
     .io_pipe_phv_in_parse_current_state(mau_1_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(mau_1_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(mau_1_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(mau_1_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(mau_1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(mau_1_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(mau_1_io_pipe_phv_out_data_0),
@@ -4506,7 +4394,6 @@ module Parser(
     .io_pipe_phv_out_parse_current_state(mau_1_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(mau_1_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(mau_1_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(mau_1_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(mau_1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(mau_1_io_pipe_phv_out_is_valid_processor),
     .io_mod_state_id_mod(mau_1_io_mod_state_id_mod),
@@ -4793,7 +4680,6 @@ module Parser(
     .io_pipe_phv_in_parse_current_state(mau_2_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(mau_2_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(mau_2_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(mau_2_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(mau_2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(mau_2_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(mau_2_io_pipe_phv_out_data_0),
@@ -5071,7 +4957,6 @@ module Parser(
     .io_pipe_phv_out_parse_current_state(mau_2_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(mau_2_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(mau_2_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(mau_2_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(mau_2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(mau_2_io_pipe_phv_out_is_valid_processor),
     .io_mod_state_id_mod(mau_2_io_mod_state_id_mod),
@@ -5358,7 +5243,6 @@ module Parser(
     .io_pipe_phv_in_parse_current_state(mau_3_io_pipe_phv_in_parse_current_state),
     .io_pipe_phv_in_parse_current_offset(mau_3_io_pipe_phv_in_parse_current_offset),
     .io_pipe_phv_in_parse_transition_field(mau_3_io_pipe_phv_in_parse_transition_field),
-    .io_pipe_phv_in_next_processor_id(mau_3_io_pipe_phv_in_next_processor_id),
     .io_pipe_phv_in_next_config_id(mau_3_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(mau_3_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(mau_3_io_pipe_phv_out_data_0),
@@ -5636,7 +5520,6 @@ module Parser(
     .io_pipe_phv_out_parse_current_state(mau_3_io_pipe_phv_out_parse_current_state),
     .io_pipe_phv_out_parse_current_offset(mau_3_io_pipe_phv_out_parse_current_offset),
     .io_pipe_phv_out_parse_transition_field(mau_3_io_pipe_phv_out_parse_transition_field),
-    .io_pipe_phv_out_next_processor_id(mau_3_io_pipe_phv_out_next_processor_id),
     .io_pipe_phv_out_next_config_id(mau_3_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(mau_3_io_pipe_phv_out_is_valid_processor),
     .io_mod_state_id_mod(mau_3_io_mod_state_id_mod),
@@ -5918,13 +5801,6 @@ module Parser(
   assign io_pipe_phv_out_header_13 = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_header_13 : _GEN_297; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_header_14 = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_header_14 : _GEN_298; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_header_15 = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_header_15 : _GEN_299; // @[parser.scala 33:62 parser.scala 34:35]
-  assign io_pipe_phv_out_parse_current_state = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_parse_current_state :
-    _GEN_283; // @[parser.scala 33:62 parser.scala 34:35]
-  assign io_pipe_phv_out_parse_current_offset = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_parse_current_offset :
-    _GEN_282; // @[parser.scala 33:62 parser.scala 34:35]
-  assign io_pipe_phv_out_parse_transition_field = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_parse_transition_field :
-    _GEN_281; // @[parser.scala 33:62 parser.scala 34:35]
-  assign io_pipe_phv_out_next_processor_id = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_next_processor_id : _GEN_280; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_next_config_id = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_next_config_id : _GEN_279; // @[parser.scala 33:62 parser.scala 34:35]
   assign io_pipe_phv_out_is_valid_processor = 3'h3 == last_mau_id ? mau_3_io_pipe_phv_out_is_valid_processor : _GEN_278; // @[parser.scala 33:62 parser.scala 34:35]
   assign mau_0_clock = clock;
@@ -6120,92 +5996,91 @@ module Parser(
   assign mau_0_io_pipe_phv_in_data_189 = io_pipe_phv_in_data_189; // @[parser.scala 30:35]
   assign mau_0_io_pipe_phv_in_data_190 = io_pipe_phv_in_data_190; // @[parser.scala 30:35]
   assign mau_0_io_pipe_phv_in_data_191 = io_pipe_phv_in_data_191; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_192 = io_pipe_phv_in_data_192; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_193 = io_pipe_phv_in_data_193; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_194 = io_pipe_phv_in_data_194; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_195 = io_pipe_phv_in_data_195; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_196 = io_pipe_phv_in_data_196; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_197 = io_pipe_phv_in_data_197; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_198 = io_pipe_phv_in_data_198; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_199 = io_pipe_phv_in_data_199; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_200 = io_pipe_phv_in_data_200; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_201 = io_pipe_phv_in_data_201; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_202 = io_pipe_phv_in_data_202; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_203 = io_pipe_phv_in_data_203; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_204 = io_pipe_phv_in_data_204; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_205 = io_pipe_phv_in_data_205; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_206 = io_pipe_phv_in_data_206; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_207 = io_pipe_phv_in_data_207; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_208 = io_pipe_phv_in_data_208; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_209 = io_pipe_phv_in_data_209; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_210 = io_pipe_phv_in_data_210; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_211 = io_pipe_phv_in_data_211; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_212 = io_pipe_phv_in_data_212; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_213 = io_pipe_phv_in_data_213; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_214 = io_pipe_phv_in_data_214; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_215 = io_pipe_phv_in_data_215; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_216 = io_pipe_phv_in_data_216; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_217 = io_pipe_phv_in_data_217; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_218 = io_pipe_phv_in_data_218; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_219 = io_pipe_phv_in_data_219; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_220 = io_pipe_phv_in_data_220; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_221 = io_pipe_phv_in_data_221; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_222 = io_pipe_phv_in_data_222; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_223 = io_pipe_phv_in_data_223; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_224 = io_pipe_phv_in_data_224; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_225 = io_pipe_phv_in_data_225; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_226 = io_pipe_phv_in_data_226; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_227 = io_pipe_phv_in_data_227; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_228 = io_pipe_phv_in_data_228; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_229 = io_pipe_phv_in_data_229; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_230 = io_pipe_phv_in_data_230; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_231 = io_pipe_phv_in_data_231; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_232 = io_pipe_phv_in_data_232; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_233 = io_pipe_phv_in_data_233; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_234 = io_pipe_phv_in_data_234; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_235 = io_pipe_phv_in_data_235; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_236 = io_pipe_phv_in_data_236; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_237 = io_pipe_phv_in_data_237; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_238 = io_pipe_phv_in_data_238; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_239 = io_pipe_phv_in_data_239; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_240 = io_pipe_phv_in_data_240; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_241 = io_pipe_phv_in_data_241; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_242 = io_pipe_phv_in_data_242; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_243 = io_pipe_phv_in_data_243; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_244 = io_pipe_phv_in_data_244; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_245 = io_pipe_phv_in_data_245; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_246 = io_pipe_phv_in_data_246; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_247 = io_pipe_phv_in_data_247; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_248 = io_pipe_phv_in_data_248; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_249 = io_pipe_phv_in_data_249; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_250 = io_pipe_phv_in_data_250; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_251 = io_pipe_phv_in_data_251; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_252 = io_pipe_phv_in_data_252; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_253 = io_pipe_phv_in_data_253; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_254 = io_pipe_phv_in_data_254; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_data_255 = io_pipe_phv_in_data_255; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_0 = io_pipe_phv_in_header_0; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_1 = io_pipe_phv_in_header_1; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_2 = io_pipe_phv_in_header_2; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_3 = io_pipe_phv_in_header_3; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_4 = io_pipe_phv_in_header_4; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_5 = io_pipe_phv_in_header_5; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_6 = io_pipe_phv_in_header_6; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_7 = io_pipe_phv_in_header_7; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_8 = io_pipe_phv_in_header_8; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_9 = io_pipe_phv_in_header_9; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_10 = io_pipe_phv_in_header_10; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_11 = io_pipe_phv_in_header_11; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_12 = io_pipe_phv_in_header_12; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_13 = io_pipe_phv_in_header_13; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_14 = io_pipe_phv_in_header_14; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_header_15 = io_pipe_phv_in_header_15; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_parse_current_state = io_pipe_phv_in_parse_current_state; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_parse_current_offset = io_pipe_phv_in_parse_current_offset; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_parse_transition_field = io_pipe_phv_in_parse_transition_field; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_next_processor_id = io_pipe_phv_in_next_processor_id; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[parser.scala 30:35]
-  assign mau_0_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_192 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_193 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_194 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_195 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_196 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_197 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_198 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_199 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_200 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_201 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_202 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_203 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_204 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_205 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_206 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_207 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_208 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_209 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_210 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_211 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_212 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_213 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_214 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_215 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_216 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_217 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_218 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_219 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_220 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_221 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_222 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_223 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_224 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_225 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_226 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_227 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_228 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_229 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_230 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_231 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_232 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_233 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_234 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_235 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_236 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_237 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_238 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_239 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_240 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_241 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_242 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_243 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_244 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_245 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_246 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_247 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_248 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_249 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_250 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_251 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_252 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_253 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_254 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_data_255 = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_0 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_1 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_2 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_3 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_4 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_5 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_6 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_7 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_8 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_9 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_10 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_11 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_12 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_13 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_14 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_header_15 = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_parse_current_state = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_parse_current_offset = 8'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_parse_transition_field = 16'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_next_config_id = 1'h0; // @[parser.scala 30:35]
+  assign mau_0_io_pipe_phv_in_is_valid_processor = 1'h1; // @[parser.scala 30:35]
   assign mau_0_io_mod_state_id_mod = io_mod_en ? io_mod_module_mod_state_id_mod & mod_j : io_mod_module_mod_state_id_mod
     ; // @[parser.scala 41:22 parser.scala 48:40 parser.scala 37:23]
   assign mau_0_io_mod_state_id = io_mod_module_mod_state_id; // @[parser.scala 37:23]
@@ -6489,7 +6364,6 @@ module Parser(
   assign mau_1_io_pipe_phv_in_parse_current_state = mau_0_io_pipe_phv_out_parse_current_state; // @[parser.scala 32:35]
   assign mau_1_io_pipe_phv_in_parse_current_offset = mau_0_io_pipe_phv_out_parse_current_offset; // @[parser.scala 32:35]
   assign mau_1_io_pipe_phv_in_parse_transition_field = mau_0_io_pipe_phv_out_parse_transition_field; // @[parser.scala 32:35]
-  assign mau_1_io_pipe_phv_in_next_processor_id = mau_0_io_pipe_phv_out_next_processor_id; // @[parser.scala 32:35]
   assign mau_1_io_pipe_phv_in_next_config_id = mau_0_io_pipe_phv_out_next_config_id; // @[parser.scala 32:35]
   assign mau_1_io_pipe_phv_in_is_valid_processor = mau_0_io_pipe_phv_out_is_valid_processor; // @[parser.scala 32:35]
   assign mau_1_io_mod_state_id_mod = io_mod_en ? io_mod_module_mod_state_id_mod & mod_j_1 :
@@ -6775,7 +6649,6 @@ module Parser(
   assign mau_2_io_pipe_phv_in_parse_current_state = mau_1_io_pipe_phv_out_parse_current_state; // @[parser.scala 32:35]
   assign mau_2_io_pipe_phv_in_parse_current_offset = mau_1_io_pipe_phv_out_parse_current_offset; // @[parser.scala 32:35]
   assign mau_2_io_pipe_phv_in_parse_transition_field = mau_1_io_pipe_phv_out_parse_transition_field; // @[parser.scala 32:35]
-  assign mau_2_io_pipe_phv_in_next_processor_id = mau_1_io_pipe_phv_out_next_processor_id; // @[parser.scala 32:35]
   assign mau_2_io_pipe_phv_in_next_config_id = mau_1_io_pipe_phv_out_next_config_id; // @[parser.scala 32:35]
   assign mau_2_io_pipe_phv_in_is_valid_processor = mau_1_io_pipe_phv_out_is_valid_processor; // @[parser.scala 32:35]
   assign mau_2_io_mod_state_id_mod = io_mod_en ? io_mod_module_mod_state_id_mod & mod_j_2 :
@@ -7061,7 +6934,6 @@ module Parser(
   assign mau_3_io_pipe_phv_in_parse_current_state = mau_2_io_pipe_phv_out_parse_current_state; // @[parser.scala 32:35]
   assign mau_3_io_pipe_phv_in_parse_current_offset = mau_2_io_pipe_phv_out_parse_current_offset; // @[parser.scala 32:35]
   assign mau_3_io_pipe_phv_in_parse_transition_field = mau_2_io_pipe_phv_out_parse_transition_field; // @[parser.scala 32:35]
-  assign mau_3_io_pipe_phv_in_next_processor_id = mau_2_io_pipe_phv_out_next_processor_id; // @[parser.scala 32:35]
   assign mau_3_io_pipe_phv_in_next_config_id = mau_2_io_pipe_phv_out_next_config_id; // @[parser.scala 32:35]
   assign mau_3_io_pipe_phv_in_is_valid_processor = mau_2_io_pipe_phv_out_is_valid_processor; // @[parser.scala 32:35]
   assign mau_3_io_mod_state_id_mod = io_mod_en ? io_mod_module_mod_state_id_mod & mod_j_3 :

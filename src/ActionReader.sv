@@ -272,11 +272,6 @@ module ActionReader(
   input  [15:0] io_pipe_phv_in_header_13,
   input  [15:0] io_pipe_phv_in_header_14,
   input  [15:0] io_pipe_phv_in_header_15,
-  input  [7:0]  io_pipe_phv_in_parse_current_state,
-  input  [7:0]  io_pipe_phv_in_parse_current_offset,
-  input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
-  input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
@@ -550,11 +545,6 @@ module ActionReader(
   output [15:0] io_pipe_phv_out_header_13,
   output [15:0] io_pipe_phv_out_header_14,
   output [15:0] io_pipe_phv_out_header_15,
-  output [7:0]  io_pipe_phv_out_parse_current_state,
-  output [7:0]  io_pipe_phv_out_parse_current_offset,
-  output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
-  output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input         io_hit,
   input  [63:0] io_match_value,
@@ -849,12 +839,7 @@ module ActionReader(
   reg [31:0] _RAND_270;
   reg [31:0] _RAND_271;
   reg [31:0] _RAND_272;
-  reg [31:0] _RAND_273;
-  reg [31:0] _RAND_274;
-  reg [31:0] _RAND_275;
-  reg [31:0] _RAND_276;
-  reg [31:0] _RAND_277;
-  reg [63:0] _RAND_278;
+  reg [63:0] _RAND_273;
 `endif // RANDOMIZE_REG_INIT
   wire  sram_0_clock; // @[executor.scala 44:29]
   wire  sram_0_io_w_en; // @[executor.scala 44:29]
@@ -1142,11 +1127,6 @@ module ActionReader(
   reg [15:0] phv_header_13; // @[executor.scala 28:22]
   reg [15:0] phv_header_14; // @[executor.scala 28:22]
   reg [15:0] phv_header_15; // @[executor.scala 28:22]
-  reg [7:0] phv_parse_current_state; // @[executor.scala 28:22]
-  reg [7:0] phv_parse_current_offset; // @[executor.scala 28:22]
-  reg [15:0] phv_parse_transition_field; // @[executor.scala 28:22]
-  reg [3:0] phv_next_processor_id; // @[executor.scala 28:22]
-  reg  phv_next_config_id; // @[executor.scala 28:22]
   reg  phv_is_valid_processor; // @[executor.scala 28:22]
   reg [55:0] args; // @[executor.scala 33:23]
   SRAM sram_0 ( // @[executor.scala 44:29]
@@ -1439,11 +1419,6 @@ module ActionReader(
   assign io_pipe_phv_out_header_13 = phv_header_13; // @[executor.scala 30:25]
   assign io_pipe_phv_out_header_14 = phv_header_14; // @[executor.scala 30:25]
   assign io_pipe_phv_out_header_15 = phv_header_15; // @[executor.scala 30:25]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[executor.scala 30:25]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[executor.scala 30:25]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor.scala 30:25]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 30:25]
-  assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 30:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 30:25]
   assign io_args_out_0 = phv_is_valid_processor ? args[55:48] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
   assign io_args_out_1 = phv_is_valid_processor ? args[47:40] : 8'h0; // @[executor.scala 36:43 executor.scala 37:32 executor.scala 39:32]
@@ -1741,11 +1716,6 @@ module ActionReader(
     phv_header_13 <= io_pipe_phv_in_header_13; // @[executor.scala 29:13]
     phv_header_14 <= io_pipe_phv_in_header_14; // @[executor.scala 29:13]
     phv_header_15 <= io_pipe_phv_in_header_15; // @[executor.scala 29:13]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[executor.scala 29:13]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[executor.scala 29:13]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[executor.scala 29:13]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 29:13]
-    phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 29:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 29:13]
     args <= io_match_value[55:0]; // @[executor.scala 34:31]
   end
@@ -2330,19 +2300,9 @@ initial begin
   _RAND_271 = {1{`RANDOM}};
   phv_header_15 = _RAND_271[15:0];
   _RAND_272 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_272[7:0];
-  _RAND_273 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_273[7:0];
-  _RAND_274 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_274[15:0];
-  _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[3:0];
-  _RAND_276 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_276[0:0];
-  _RAND_277 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_277[0:0];
-  _RAND_278 = {2{`RANDOM}};
-  args = _RAND_278[55:0];
+  phv_is_valid_processor = _RAND_272[0:0];
+  _RAND_273 = {2{`RANDOM}};
+  args = _RAND_273[55:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

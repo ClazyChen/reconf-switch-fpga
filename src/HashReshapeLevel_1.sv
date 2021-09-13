@@ -272,10 +272,6 @@ module HashReshapeLevel_1(
   input  [15:0]  io_pipe_phv_in_header_13,
   input  [15:0]  io_pipe_phv_in_header_14,
   input  [15:0]  io_pipe_phv_in_header_15,
-  input  [7:0]   io_pipe_phv_in_parse_current_state,
-  input  [7:0]   io_pipe_phv_in_parse_current_offset,
-  input  [15:0]  io_pipe_phv_in_parse_transition_field,
-  input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
   output [7:0]   io_pipe_phv_out_data_0,
@@ -550,10 +546,6 @@ module HashReshapeLevel_1(
   output [15:0]  io_pipe_phv_out_header_13,
   output [15:0]  io_pipe_phv_out_header_14,
   output [15:0]  io_pipe_phv_out_header_15,
-  output [7:0]   io_pipe_phv_out_parse_current_state,
-  output [7:0]   io_pipe_phv_out_parse_current_offset,
-  output [15:0]  io_pipe_phv_out_parse_transition_field,
-  output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
   input  [5:0]   io_hash_depth_0,
@@ -840,14 +832,10 @@ module HashReshapeLevel_1(
   reg [31:0] _RAND_271;
   reg [31:0] _RAND_272;
   reg [31:0] _RAND_273;
-  reg [31:0] _RAND_274;
+  reg [191:0] _RAND_274;
   reg [31:0] _RAND_275;
   reg [31:0] _RAND_276;
   reg [31:0] _RAND_277;
-  reg [191:0] _RAND_278;
-  reg [31:0] _RAND_279;
-  reg [31:0] _RAND_280;
-  reg [31:0] _RAND_281;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[hash.scala 94:22]
   reg [7:0] phv_data_1; // @[hash.scala 94:22]
@@ -1121,10 +1109,6 @@ module HashReshapeLevel_1(
   reg [15:0] phv_header_13; // @[hash.scala 94:22]
   reg [15:0] phv_header_14; // @[hash.scala 94:22]
   reg [15:0] phv_header_15; // @[hash.scala 94:22]
-  reg [7:0] phv_parse_current_state; // @[hash.scala 94:22]
-  reg [7:0] phv_parse_current_offset; // @[hash.scala 94:22]
-  reg [15:0] phv_parse_transition_field; // @[hash.scala 94:22]
-  reg [3:0] phv_next_processor_id; // @[hash.scala 94:22]
   reg  phv_next_config_id; // @[hash.scala 94:22]
   reg  phv_is_valid_processor; // @[hash.scala 94:22]
   reg [191:0] key; // @[hash.scala 98:22]
@@ -1407,10 +1391,6 @@ module HashReshapeLevel_1(
   assign io_pipe_phv_out_header_13 = phv_header_13; // @[hash.scala 96:25]
   assign io_pipe_phv_out_header_14 = phv_header_14; // @[hash.scala 96:25]
   assign io_pipe_phv_out_header_15 = phv_header_15; // @[hash.scala 96:25]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[hash.scala 96:25]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[hash.scala 96:25]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[hash.scala 96:25]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[hash.scala 96:25]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[hash.scala 96:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[hash.scala 96:25]
   assign io_key_out = key; // @[hash.scala 100:20]
@@ -1689,10 +1669,6 @@ module HashReshapeLevel_1(
     phv_header_13 <= io_pipe_phv_in_header_13; // @[hash.scala 95:13]
     phv_header_14 <= io_pipe_phv_in_header_14; // @[hash.scala 95:13]
     phv_header_15 <= io_pipe_phv_in_header_15; // @[hash.scala 95:13]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[hash.scala 95:13]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[hash.scala 95:13]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[hash.scala 95:13]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[hash.scala 95:13]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[hash.scala 95:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[hash.scala 95:13]
     key <= io_key_in; // @[hash.scala 99:13]
@@ -2285,25 +2261,17 @@ initial begin
   _RAND_271 = {1{`RANDOM}};
   phv_header_15 = _RAND_271[15:0];
   _RAND_272 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_272[7:0];
+  phv_next_config_id = _RAND_272[0:0];
   _RAND_273 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_273[7:0];
-  _RAND_274 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_274[15:0];
+  phv_is_valid_processor = _RAND_273[0:0];
+  _RAND_274 = {6{`RANDOM}};
+  key = _RAND_274[191:0];
   _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[3:0];
+  sum = _RAND_275[15:0];
   _RAND_276 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_276[0:0];
+  hash_depth = _RAND_276[5:0];
   _RAND_277 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_277[0:0];
-  _RAND_278 = {6{`RANDOM}};
-  key = _RAND_278[191:0];
-  _RAND_279 = {1{`RANDOM}};
-  sum = _RAND_279[15:0];
-  _RAND_280 = {1{`RANDOM}};
-  hash_depth = _RAND_280[5:0];
-  _RAND_281 = {1{`RANDOM}};
-  hash_val = _RAND_281[15:0];
+  hash_val = _RAND_277[15:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

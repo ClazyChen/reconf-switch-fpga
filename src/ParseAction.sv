@@ -275,7 +275,6 @@ module ParseAction(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -553,7 +552,6 @@ module ParseAction(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input  [63:0] io_rdata,
@@ -837,7 +835,6 @@ module ParseAction(
   reg [31:0] _RAND_274;
   reg [31:0] _RAND_275;
   reg [31:0] _RAND_276;
-  reg [31:0] _RAND_277;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[parse_module.scala 50:20]
   reg [7:0] phv_data_1; // @[parse_module.scala 50:20]
@@ -1114,7 +1111,6 @@ module ParseAction(
   reg [7:0] phv_parse_current_state; // @[parse_module.scala 50:20]
   reg [7:0] phv_parse_current_offset; // @[parse_module.scala 50:20]
   reg [15:0] phv_parse_transition_field; // @[parse_module.scala 50:20]
-  reg [3:0] phv_next_processor_id; // @[parse_module.scala 50:20]
   reg  phv_next_config_id; // @[parse_module.scala 50:20]
   reg  phv_is_valid_processor; // @[parse_module.scala 50:20]
   wire  is_valid = io_valid & io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 54:29]
@@ -1932,7 +1928,6 @@ module ParseAction(
   assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[parse_module.scala 52:21]
   assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[parse_module.scala 52:21]
   assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[parse_module.scala 52:21]
-  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[parse_module.scala 52:21]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[parse_module.scala 52:21]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[parse_module.scala 52:21]
   always @(posedge clock) begin
@@ -2351,7 +2346,6 @@ module ParseAction(
     end else begin
       phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[parse_module.scala 51:9]
     end
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[parse_module.scala 51:9]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[parse_module.scala 51:9]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[parse_module.scala 51:9]
   end
@@ -2942,11 +2936,9 @@ initial begin
   _RAND_274 = {1{`RANDOM}};
   phv_parse_transition_field = _RAND_274[15:0];
   _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[3:0];
+  phv_next_config_id = _RAND_275[0:0];
   _RAND_276 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_276[0:0];
-  _RAND_277 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_277[0:0];
+  phv_is_valid_processor = _RAND_276[0:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

@@ -206,7 +206,7 @@ class Matcher extends Module {
                     val cs0 = cs
                     val cs1 = Mux(depth(0), cs0 + depth, cs0)
                     val cs2 = Mux(depth(1), cs1 + Cat(depth, 0.U(1.W)), cs1)
-                    io.cs_vec_out(cs2) := true.B
+                    io.cs_vec_out(config.sram_id_table(cs2)) := true.B
                 }
             }
         }

@@ -256,27 +256,6 @@ module PrimitiveWriteBack(
   input  [7:0]  io_pipe_phv_in_data_253,
   input  [7:0]  io_pipe_phv_in_data_254,
   input  [7:0]  io_pipe_phv_in_data_255,
-  input  [15:0] io_pipe_phv_in_header_0,
-  input  [15:0] io_pipe_phv_in_header_1,
-  input  [15:0] io_pipe_phv_in_header_2,
-  input  [15:0] io_pipe_phv_in_header_3,
-  input  [15:0] io_pipe_phv_in_header_4,
-  input  [15:0] io_pipe_phv_in_header_5,
-  input  [15:0] io_pipe_phv_in_header_6,
-  input  [15:0] io_pipe_phv_in_header_7,
-  input  [15:0] io_pipe_phv_in_header_8,
-  input  [15:0] io_pipe_phv_in_header_9,
-  input  [15:0] io_pipe_phv_in_header_10,
-  input  [15:0] io_pipe_phv_in_header_11,
-  input  [15:0] io_pipe_phv_in_header_12,
-  input  [15:0] io_pipe_phv_in_header_13,
-  input  [15:0] io_pipe_phv_in_header_14,
-  input  [15:0] io_pipe_phv_in_header_15,
-  input  [7:0]  io_pipe_phv_in_parse_current_state,
-  input  [7:0]  io_pipe_phv_in_parse_current_offset,
-  input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
-  input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
@@ -534,28 +513,6 @@ module PrimitiveWriteBack(
   output [7:0]  io_pipe_phv_out_data_253,
   output [7:0]  io_pipe_phv_out_data_254,
   output [7:0]  io_pipe_phv_out_data_255,
-  output [15:0] io_pipe_phv_out_header_0,
-  output [15:0] io_pipe_phv_out_header_1,
-  output [15:0] io_pipe_phv_out_header_2,
-  output [15:0] io_pipe_phv_out_header_3,
-  output [15:0] io_pipe_phv_out_header_4,
-  output [15:0] io_pipe_phv_out_header_5,
-  output [15:0] io_pipe_phv_out_header_6,
-  output [15:0] io_pipe_phv_out_header_7,
-  output [15:0] io_pipe_phv_out_header_8,
-  output [15:0] io_pipe_phv_out_header_9,
-  output [15:0] io_pipe_phv_out_header_10,
-  output [15:0] io_pipe_phv_out_header_11,
-  output [15:0] io_pipe_phv_out_header_12,
-  output [15:0] io_pipe_phv_out_header_13,
-  output [15:0] io_pipe_phv_out_header_14,
-  output [15:0] io_pipe_phv_out_header_15,
-  output [7:0]  io_pipe_phv_out_parse_current_state,
-  output [7:0]  io_pipe_phv_out_parse_current_offset,
-  output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
-  output        io_pipe_phv_out_next_config_id,
-  output        io_pipe_phv_out_is_valid_processor,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
   input  [31:0] io_vliw_in_2,
@@ -847,27 +804,6 @@ module PrimitiveWriteBack(
   reg [31:0] _RAND_270;
   reg [31:0] _RAND_271;
   reg [31:0] _RAND_272;
-  reg [31:0] _RAND_273;
-  reg [31:0] _RAND_274;
-  reg [31:0] _RAND_275;
-  reg [31:0] _RAND_276;
-  reg [31:0] _RAND_277;
-  reg [31:0] _RAND_278;
-  reg [31:0] _RAND_279;
-  reg [31:0] _RAND_280;
-  reg [31:0] _RAND_281;
-  reg [31:0] _RAND_282;
-  reg [31:0] _RAND_283;
-  reg [31:0] _RAND_284;
-  reg [31:0] _RAND_285;
-  reg [31:0] _RAND_286;
-  reg [31:0] _RAND_287;
-  reg [31:0] _RAND_288;
-  reg [31:0] _RAND_289;
-  reg [31:0] _RAND_290;
-  reg [31:0] _RAND_291;
-  reg [31:0] _RAND_292;
-  reg [31:0] _RAND_293;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor.scala 448:22]
   reg [7:0] phv_data_1; // @[executor.scala 448:22]
@@ -1125,27 +1061,6 @@ module PrimitiveWriteBack(
   reg [7:0] phv_data_253; // @[executor.scala 448:22]
   reg [7:0] phv_data_254; // @[executor.scala 448:22]
   reg [7:0] phv_data_255; // @[executor.scala 448:22]
-  reg [15:0] phv_header_0; // @[executor.scala 448:22]
-  reg [15:0] phv_header_1; // @[executor.scala 448:22]
-  reg [15:0] phv_header_2; // @[executor.scala 448:22]
-  reg [15:0] phv_header_3; // @[executor.scala 448:22]
-  reg [15:0] phv_header_4; // @[executor.scala 448:22]
-  reg [15:0] phv_header_5; // @[executor.scala 448:22]
-  reg [15:0] phv_header_6; // @[executor.scala 448:22]
-  reg [15:0] phv_header_7; // @[executor.scala 448:22]
-  reg [15:0] phv_header_8; // @[executor.scala 448:22]
-  reg [15:0] phv_header_9; // @[executor.scala 448:22]
-  reg [15:0] phv_header_10; // @[executor.scala 448:22]
-  reg [15:0] phv_header_11; // @[executor.scala 448:22]
-  reg [15:0] phv_header_12; // @[executor.scala 448:22]
-  reg [15:0] phv_header_13; // @[executor.scala 448:22]
-  reg [15:0] phv_header_14; // @[executor.scala 448:22]
-  reg [15:0] phv_header_15; // @[executor.scala 448:22]
-  reg [7:0] phv_parse_current_state; // @[executor.scala 448:22]
-  reg [7:0] phv_parse_current_offset; // @[executor.scala 448:22]
-  reg [15:0] phv_parse_transition_field; // @[executor.scala 448:22]
-  reg [3:0] phv_next_processor_id; // @[executor.scala 448:22]
-  reg  phv_next_config_id; // @[executor.scala 448:22]
   reg  phv_is_valid_processor; // @[executor.scala 448:22]
   reg [31:0] vliw_0; // @[executor.scala 452:23]
   reg [31:0] vliw_1; // @[executor.scala 452:23]
@@ -1164,7 +1079,6 @@ module PrimitiveWriteBack(
   reg [5:0] dst_offset_2; // @[executor.scala 458:29]
   reg [5:0] dst_offset_3; // @[executor.scala 458:29]
   wire [3:0] opcode = vliw_0[31:28]; // @[primitive.scala 9:44]
-  wire [13:0] parameter_2 = vliw_0[13:0]; // @[primitive.scala 11:44]
   wire [7:0] _GEN_4362 = {{2'd0}, dst_offset_0}; // @[executor.scala 473:49]
   wire [7:0] byte_ = field_0[7:0]; // @[executor.scala 475:56]
   wire [7:0] _GEN_0 = mask_0[0] ? byte_ : phv_data_3; // @[executor.scala 476:55 executor.scala 477:71 executor.scala 450:25]
@@ -1938,8 +1852,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_765 = opcode != 4'h0 ? _GEN_509 : phv_data_254; // @[executor.scala 470:55 executor.scala 450:25]
   wire [7:0] _GEN_766 = opcode != 4'h0 ? _GEN_510 : phv_data_253; // @[executor.scala 470:55 executor.scala 450:25]
   wire [7:0] _GEN_767 = opcode != 4'h0 ? _GEN_511 : phv_data_252; // @[executor.scala 470:55 executor.scala 450:25]
-  wire [3:0] _GEN_768 = opcode == 4'hf ? parameter_2[13:10] : phv_next_processor_id; // @[executor.scala 466:52 executor.scala 467:55 executor.scala 450:25]
-  wire  _GEN_769 = opcode == 4'hf ? parameter_2[0] : phv_next_config_id; // @[executor.scala 466:52 executor.scala 468:55 executor.scala 450:25]
   wire [7:0] _GEN_770 = opcode == 4'hf ? phv_data_3 : _GEN_512; // @[executor.scala 466:52 executor.scala 450:25]
   wire [7:0] _GEN_771 = opcode == 4'hf ? phv_data_2 : _GEN_513; // @[executor.scala 466:52 executor.scala 450:25]
   wire [7:0] _GEN_772 = opcode == 4'hf ? phv_data_1 : _GEN_514; // @[executor.scala 466:52 executor.scala 450:25]
@@ -2197,7 +2109,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_1024 = opcode == 4'hf ? phv_data_253 : _GEN_766; // @[executor.scala 466:52 executor.scala 450:25]
   wire [7:0] _GEN_1025 = opcode == 4'hf ? phv_data_252 : _GEN_767; // @[executor.scala 466:52 executor.scala 450:25]
   wire [3:0] opcode_1 = vliw_1[31:28]; // @[primitive.scala 9:44]
-  wire [13:0] parameter_2_1 = vliw_1[13:0]; // @[primitive.scala 11:44]
   wire [7:0] _GEN_4426 = {{2'd0}, dst_offset_1}; // @[executor.scala 473:49]
   wire [7:0] byte_256 = field_1[7:0]; // @[executor.scala 475:56]
   wire [7:0] _GEN_1026 = mask_1[0] ? byte_256 : _GEN_770; // @[executor.scala 476:55 executor.scala 477:71]
@@ -2971,8 +2882,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_1791 = opcode_1 != 4'h0 ? _GEN_1535 : _GEN_1023; // @[executor.scala 470:55]
   wire [7:0] _GEN_1792 = opcode_1 != 4'h0 ? _GEN_1536 : _GEN_1024; // @[executor.scala 470:55]
   wire [7:0] _GEN_1793 = opcode_1 != 4'h0 ? _GEN_1537 : _GEN_1025; // @[executor.scala 470:55]
-  wire [3:0] _GEN_1794 = opcode_1 == 4'hf ? parameter_2_1[13:10] : _GEN_768; // @[executor.scala 466:52 executor.scala 467:55]
-  wire  _GEN_1795 = opcode_1 == 4'hf ? parameter_2_1[0] : _GEN_769; // @[executor.scala 466:52 executor.scala 468:55]
   wire [7:0] _GEN_1796 = opcode_1 == 4'hf ? _GEN_770 : _GEN_1538; // @[executor.scala 466:52]
   wire [7:0] _GEN_1797 = opcode_1 == 4'hf ? _GEN_771 : _GEN_1539; // @[executor.scala 466:52]
   wire [7:0] _GEN_1798 = opcode_1 == 4'hf ? _GEN_772 : _GEN_1540; // @[executor.scala 466:52]
@@ -3230,7 +3139,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_2050 = opcode_1 == 4'hf ? _GEN_1024 : _GEN_1792; // @[executor.scala 466:52]
   wire [7:0] _GEN_2051 = opcode_1 == 4'hf ? _GEN_1025 : _GEN_1793; // @[executor.scala 466:52]
   wire [3:0] opcode_2 = vliw_2[31:28]; // @[primitive.scala 9:44]
-  wire [13:0] parameter_2_2 = vliw_2[13:0]; // @[primitive.scala 11:44]
   wire [7:0] _GEN_4490 = {{2'd0}, dst_offset_2}; // @[executor.scala 473:49]
   wire [7:0] byte_512 = field_2[7:0]; // @[executor.scala 475:56]
   wire [7:0] _GEN_2052 = mask_2[0] ? byte_512 : _GEN_1796; // @[executor.scala 476:55 executor.scala 477:71]
@@ -4004,8 +3912,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_2817 = opcode_2 != 4'h0 ? _GEN_2561 : _GEN_2049; // @[executor.scala 470:55]
   wire [7:0] _GEN_2818 = opcode_2 != 4'h0 ? _GEN_2562 : _GEN_2050; // @[executor.scala 470:55]
   wire [7:0] _GEN_2819 = opcode_2 != 4'h0 ? _GEN_2563 : _GEN_2051; // @[executor.scala 470:55]
-  wire [3:0] _GEN_2820 = opcode_2 == 4'hf ? parameter_2_2[13:10] : _GEN_1794; // @[executor.scala 466:52 executor.scala 467:55]
-  wire  _GEN_2821 = opcode_2 == 4'hf ? parameter_2_2[0] : _GEN_1795; // @[executor.scala 466:52 executor.scala 468:55]
   wire [7:0] _GEN_2822 = opcode_2 == 4'hf ? _GEN_1796 : _GEN_2564; // @[executor.scala 466:52]
   wire [7:0] _GEN_2823 = opcode_2 == 4'hf ? _GEN_1797 : _GEN_2565; // @[executor.scala 466:52]
   wire [7:0] _GEN_2824 = opcode_2 == 4'hf ? _GEN_1798 : _GEN_2566; // @[executor.scala 466:52]
@@ -4263,7 +4169,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_3076 = opcode_2 == 4'hf ? _GEN_2050 : _GEN_2818; // @[executor.scala 466:52]
   wire [7:0] _GEN_3077 = opcode_2 == 4'hf ? _GEN_2051 : _GEN_2819; // @[executor.scala 466:52]
   wire [3:0] opcode_3 = vliw_3[31:28]; // @[primitive.scala 9:44]
-  wire [13:0] parameter_2_3 = vliw_3[13:0]; // @[primitive.scala 11:44]
   wire [7:0] _GEN_4554 = {{2'd0}, dst_offset_3}; // @[executor.scala 473:49]
   wire [7:0] byte_768 = field_3[7:0]; // @[executor.scala 475:56]
   wire [7:0] _GEN_3078 = mask_3[0] ? byte_768 : _GEN_2822; // @[executor.scala 476:55 executor.scala 477:71]
@@ -5037,8 +4942,6 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_3843 = opcode_3 != 4'h0 ? _GEN_3587 : _GEN_3075; // @[executor.scala 470:55]
   wire [7:0] _GEN_3844 = opcode_3 != 4'h0 ? _GEN_3588 : _GEN_3076; // @[executor.scala 470:55]
   wire [7:0] _GEN_3845 = opcode_3 != 4'h0 ? _GEN_3589 : _GEN_3077; // @[executor.scala 470:55]
-  wire [3:0] _GEN_3846 = opcode_3 == 4'hf ? parameter_2_3[13:10] : _GEN_2820; // @[executor.scala 466:52 executor.scala 467:55]
-  wire  _GEN_3847 = opcode_3 == 4'hf ? parameter_2_3[0] : _GEN_2821; // @[executor.scala 466:52 executor.scala 468:55]
   wire [7:0] _GEN_3848 = opcode_3 == 4'hf ? _GEN_2822 : _GEN_3590; // @[executor.scala 466:52]
   wire [7:0] _GEN_3849 = opcode_3 == 4'hf ? _GEN_2823 : _GEN_3591; // @[executor.scala 466:52]
   wire [7:0] _GEN_3850 = opcode_3 == 4'hf ? _GEN_2824 : _GEN_3592; // @[executor.scala 466:52]
@@ -5551,28 +5454,6 @@ module PrimitiveWriteBack(
   assign io_pipe_phv_out_data_253 = phv_is_valid_processor ? _GEN_4102 : phv_data_253; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_data_254 = phv_is_valid_processor ? _GEN_4101 : phv_data_254; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_data_255 = phv_is_valid_processor ? _GEN_4100 : phv_data_255; // @[executor.scala 461:39 executor.scala 450:25]
-  assign io_pipe_phv_out_header_0 = phv_header_0; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_1 = phv_header_1; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_2 = phv_header_2; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_3 = phv_header_3; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_4 = phv_header_4; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_5 = phv_header_5; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_6 = phv_header_6; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_7 = phv_header_7; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_8 = phv_header_8; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_9 = phv_header_9; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_10 = phv_header_10; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_11 = phv_header_11; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_12 = phv_header_12; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_13 = phv_header_13; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_14 = phv_header_14; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_header_15 = phv_header_15; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_next_processor_id = phv_is_valid_processor ? _GEN_3846 : phv_next_processor_id; // @[executor.scala 461:39 executor.scala 450:25]
-  assign io_pipe_phv_out_next_config_id = phv_is_valid_processor ? _GEN_3847 : phv_next_config_id; // @[executor.scala 461:39 executor.scala 450:25]
-  assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 450:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[executor.scala 449:13]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[executor.scala 449:13]
@@ -5830,27 +5711,6 @@ module PrimitiveWriteBack(
     phv_data_253 <= io_pipe_phv_in_data_253; // @[executor.scala 449:13]
     phv_data_254 <= io_pipe_phv_in_data_254; // @[executor.scala 449:13]
     phv_data_255 <= io_pipe_phv_in_data_255; // @[executor.scala 449:13]
-    phv_header_0 <= io_pipe_phv_in_header_0; // @[executor.scala 449:13]
-    phv_header_1 <= io_pipe_phv_in_header_1; // @[executor.scala 449:13]
-    phv_header_2 <= io_pipe_phv_in_header_2; // @[executor.scala 449:13]
-    phv_header_3 <= io_pipe_phv_in_header_3; // @[executor.scala 449:13]
-    phv_header_4 <= io_pipe_phv_in_header_4; // @[executor.scala 449:13]
-    phv_header_5 <= io_pipe_phv_in_header_5; // @[executor.scala 449:13]
-    phv_header_6 <= io_pipe_phv_in_header_6; // @[executor.scala 449:13]
-    phv_header_7 <= io_pipe_phv_in_header_7; // @[executor.scala 449:13]
-    phv_header_8 <= io_pipe_phv_in_header_8; // @[executor.scala 449:13]
-    phv_header_9 <= io_pipe_phv_in_header_9; // @[executor.scala 449:13]
-    phv_header_10 <= io_pipe_phv_in_header_10; // @[executor.scala 449:13]
-    phv_header_11 <= io_pipe_phv_in_header_11; // @[executor.scala 449:13]
-    phv_header_12 <= io_pipe_phv_in_header_12; // @[executor.scala 449:13]
-    phv_header_13 <= io_pipe_phv_in_header_13; // @[executor.scala 449:13]
-    phv_header_14 <= io_pipe_phv_in_header_14; // @[executor.scala 449:13]
-    phv_header_15 <= io_pipe_phv_in_header_15; // @[executor.scala 449:13]
-    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[executor.scala 449:13]
-    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[executor.scala 449:13]
-    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[executor.scala 449:13]
-    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 449:13]
-    phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 449:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 449:13]
     vliw_0 <= io_vliw_in_0; // @[executor.scala 453:14]
     vliw_1 <= io_vliw_in_1; // @[executor.scala 453:14]
@@ -6418,81 +6278,39 @@ initial begin
   _RAND_255 = {1{`RANDOM}};
   phv_data_255 = _RAND_255[7:0];
   _RAND_256 = {1{`RANDOM}};
-  phv_header_0 = _RAND_256[15:0];
+  phv_is_valid_processor = _RAND_256[0:0];
   _RAND_257 = {1{`RANDOM}};
-  phv_header_1 = _RAND_257[15:0];
+  vliw_0 = _RAND_257[31:0];
   _RAND_258 = {1{`RANDOM}};
-  phv_header_2 = _RAND_258[15:0];
+  vliw_1 = _RAND_258[31:0];
   _RAND_259 = {1{`RANDOM}};
-  phv_header_3 = _RAND_259[15:0];
+  vliw_2 = _RAND_259[31:0];
   _RAND_260 = {1{`RANDOM}};
-  phv_header_4 = _RAND_260[15:0];
+  vliw_3 = _RAND_260[31:0];
   _RAND_261 = {1{`RANDOM}};
-  phv_header_5 = _RAND_261[15:0];
+  field_0 = _RAND_261[31:0];
   _RAND_262 = {1{`RANDOM}};
-  phv_header_6 = _RAND_262[15:0];
+  field_1 = _RAND_262[31:0];
   _RAND_263 = {1{`RANDOM}};
-  phv_header_7 = _RAND_263[15:0];
+  field_2 = _RAND_263[31:0];
   _RAND_264 = {1{`RANDOM}};
-  phv_header_8 = _RAND_264[15:0];
+  field_3 = _RAND_264[31:0];
   _RAND_265 = {1{`RANDOM}};
-  phv_header_9 = _RAND_265[15:0];
+  mask_0 = _RAND_265[3:0];
   _RAND_266 = {1{`RANDOM}};
-  phv_header_10 = _RAND_266[15:0];
+  mask_1 = _RAND_266[3:0];
   _RAND_267 = {1{`RANDOM}};
-  phv_header_11 = _RAND_267[15:0];
+  mask_2 = _RAND_267[3:0];
   _RAND_268 = {1{`RANDOM}};
-  phv_header_12 = _RAND_268[15:0];
+  mask_3 = _RAND_268[3:0];
   _RAND_269 = {1{`RANDOM}};
-  phv_header_13 = _RAND_269[15:0];
+  dst_offset_0 = _RAND_269[5:0];
   _RAND_270 = {1{`RANDOM}};
-  phv_header_14 = _RAND_270[15:0];
+  dst_offset_1 = _RAND_270[5:0];
   _RAND_271 = {1{`RANDOM}};
-  phv_header_15 = _RAND_271[15:0];
+  dst_offset_2 = _RAND_271[5:0];
   _RAND_272 = {1{`RANDOM}};
-  phv_parse_current_state = _RAND_272[7:0];
-  _RAND_273 = {1{`RANDOM}};
-  phv_parse_current_offset = _RAND_273[7:0];
-  _RAND_274 = {1{`RANDOM}};
-  phv_parse_transition_field = _RAND_274[15:0];
-  _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[3:0];
-  _RAND_276 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_276[0:0];
-  _RAND_277 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_277[0:0];
-  _RAND_278 = {1{`RANDOM}};
-  vliw_0 = _RAND_278[31:0];
-  _RAND_279 = {1{`RANDOM}};
-  vliw_1 = _RAND_279[31:0];
-  _RAND_280 = {1{`RANDOM}};
-  vliw_2 = _RAND_280[31:0];
-  _RAND_281 = {1{`RANDOM}};
-  vliw_3 = _RAND_281[31:0];
-  _RAND_282 = {1{`RANDOM}};
-  field_0 = _RAND_282[31:0];
-  _RAND_283 = {1{`RANDOM}};
-  field_1 = _RAND_283[31:0];
-  _RAND_284 = {1{`RANDOM}};
-  field_2 = _RAND_284[31:0];
-  _RAND_285 = {1{`RANDOM}};
-  field_3 = _RAND_285[31:0];
-  _RAND_286 = {1{`RANDOM}};
-  mask_0 = _RAND_286[3:0];
-  _RAND_287 = {1{`RANDOM}};
-  mask_1 = _RAND_287[3:0];
-  _RAND_288 = {1{`RANDOM}};
-  mask_2 = _RAND_288[3:0];
-  _RAND_289 = {1{`RANDOM}};
-  mask_3 = _RAND_289[3:0];
-  _RAND_290 = {1{`RANDOM}};
-  dst_offset_0 = _RAND_290[5:0];
-  _RAND_291 = {1{`RANDOM}};
-  dst_offset_1 = _RAND_291[5:0];
-  _RAND_292 = {1{`RANDOM}};
-  dst_offset_2 = _RAND_292[5:0];
-  _RAND_293 = {1{`RANDOM}};
-  dst_offset_3 = _RAND_293[5:0];
+  dst_offset_3 = _RAND_272[5:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial
