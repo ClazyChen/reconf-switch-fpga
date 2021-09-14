@@ -275,7 +275,7 @@ module InterProcessorTransfer(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
+  input  [1:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
@@ -552,11 +552,11 @@ module InterProcessorTransfer(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
+  output [1:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input         io_next_proc_exist,
-  input  [3:0]  io_next_proc_id
+  input  [1:0]  io_next_proc_id
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -1112,7 +1112,7 @@ module InterProcessorTransfer(
   reg [7:0] phv_parse_current_state; // @[ipsa.scala 27:18]
   reg [7:0] phv_parse_current_offset; // @[ipsa.scala 27:18]
   reg [15:0] phv_parse_transition_field; // @[ipsa.scala 27:18]
-  reg [3:0] phv_next_processor_id; // @[ipsa.scala 27:18]
+  reg [1:0] phv_next_processor_id; // @[ipsa.scala 27:18]
   reg  phv_next_config_id; // @[ipsa.scala 27:18]
   assign io_pipe_phv_out_data_0 = phv_data_0; // @[ipsa.scala 29:21]
   assign io_pipe_phv_out_data_1 = phv_data_1; // @[ipsa.scala 29:21]
@@ -2258,7 +2258,7 @@ initial begin
   _RAND_274 = {1{`RANDOM}};
   phv_parse_transition_field = _RAND_274[15:0];
   _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[3:0];
+  phv_next_processor_id = _RAND_275[1:0];
   _RAND_276 = {1{`RANDOM}};
   phv_next_config_id = _RAND_276[0:0];
 `endif // RANDOMIZE_REG_INIT
