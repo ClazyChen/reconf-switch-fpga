@@ -275,7 +275,7 @@ module Parser(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [3:0]  io_pipe_phv_in_next_processor_id,
+  input  [1:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -553,7 +553,7 @@ module Parser(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [3:0]  io_pipe_phv_out_next_processor_id,
+  output [1:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input         io_mod_en,
@@ -846,7 +846,7 @@ module Parser(
   wire [7:0] mau_0_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_0_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_0_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_0_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -1124,7 +1124,7 @@ module Parser(
   wire [7:0] mau_0_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_0_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_0_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_0_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_0_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_0_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_0_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -1409,7 +1409,7 @@ module Parser(
   wire [7:0] mau_1_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_1_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_1_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_1_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -1687,7 +1687,7 @@ module Parser(
   wire [7:0] mau_1_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_1_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_1_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_1_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_1_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_1_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_1_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -1972,7 +1972,7 @@ module Parser(
   wire [7:0] mau_2_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_2_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_2_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_2_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -2250,7 +2250,7 @@ module Parser(
   wire [7:0] mau_2_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_2_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_2_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_2_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_2_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_2_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_2_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -2535,7 +2535,7 @@ module Parser(
   wire [7:0] mau_3_io_pipe_phv_in_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_in_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_3_io_pipe_phv_in_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_3_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_3_io_pipe_phv_in_next_processor_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_in_next_config_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_in_is_valid_processor; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_out_data_0; // @[parser.scala 21:25]
@@ -2813,7 +2813,7 @@ module Parser(
   wire [7:0] mau_3_io_pipe_phv_out_parse_current_state; // @[parser.scala 21:25]
   wire [7:0] mau_3_io_pipe_phv_out_parse_current_offset; // @[parser.scala 21:25]
   wire [15:0] mau_3_io_pipe_phv_out_parse_transition_field; // @[parser.scala 21:25]
-  wire [3:0] mau_3_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
+  wire [1:0] mau_3_io_pipe_phv_out_next_processor_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_out_next_config_id; // @[parser.scala 21:25]
   wire  mau_3_io_pipe_phv_out_is_valid_processor; // @[parser.scala 21:25]
   wire  mau_3_io_mod_state_id_mod; // @[parser.scala 21:25]
@@ -2825,7 +2825,7 @@ module Parser(
   reg [2:0] last_mau_id; // @[parser.scala 14:26]
   wire  _GEN_0 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_is_valid_processor : io_pipe_phv_in_is_valid_processor; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire  _GEN_1 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_next_config_id : io_pipe_phv_in_next_config_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
-  wire [3:0] _GEN_2 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_next_processor_id : io_pipe_phv_in_next_processor_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
+  wire [1:0] _GEN_2 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_next_processor_id : io_pipe_phv_in_next_processor_id; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [15:0] _GEN_3 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_parse_transition_field :
     io_pipe_phv_in_parse_transition_field; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire [7:0] _GEN_4 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_parse_current_offset :
@@ -3106,7 +3106,7 @@ module Parser(
   wire [7:0] _GEN_277 = 3'h1 == last_mau_id ? mau_1_io_pipe_phv_out_data_255 : io_pipe_phv_in_data_255; // @[parser.scala 33:62 parser.scala 34:35 parser.scala 26:21]
   wire  _GEN_278 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_is_valid_processor : _GEN_0; // @[parser.scala 33:62 parser.scala 34:35]
   wire  _GEN_279 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_next_config_id : _GEN_1; // @[parser.scala 33:62 parser.scala 34:35]
-  wire [3:0] _GEN_280 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_next_processor_id : _GEN_2; // @[parser.scala 33:62 parser.scala 34:35]
+  wire [1:0] _GEN_280 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_next_processor_id : _GEN_2; // @[parser.scala 33:62 parser.scala 34:35]
   wire [15:0] _GEN_281 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_transition_field : _GEN_3; // @[parser.scala 33:62 parser.scala 34:35]
   wire [7:0] _GEN_282 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_current_offset : _GEN_4; // @[parser.scala 33:62 parser.scala 34:35]
   wire [7:0] _GEN_283 = 3'h2 == last_mau_id ? mau_2_io_pipe_phv_out_parse_current_state : _GEN_5; // @[parser.scala 33:62 parser.scala 34:35]

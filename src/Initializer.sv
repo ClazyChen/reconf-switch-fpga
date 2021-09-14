@@ -384,8 +384,8 @@ module Initializer(
   output [7:0] io_pipe_phv_out_data_189,
   output [7:0] io_pipe_phv_out_data_190,
   output [7:0] io_pipe_phv_out_data_191,
-  output [3:0] io_pipe_phv_out_next_processor_id,
-  input  [3:0] io_first_proc_id
+  output [1:0] io_pipe_phv_out_next_processor_id,
+  input  [1:0] io_first_proc_id
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
