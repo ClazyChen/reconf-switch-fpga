@@ -1516,10 +1516,6 @@ module IPSAPCIE(
   wire  ipsa_io_w_2_w_en; // @[ipsa_pcie.scala 13:22]
   wire [7:0] ipsa_io_w_2_w_addr; // @[ipsa_pcie.scala 13:22]
   wire [63:0] ipsa_io_w_2_w_data; // @[ipsa_pcie.scala 13:22]
-  wire [5:0] ipsa_io_w_3_wcs; // @[ipsa_pcie.scala 13:22]
-  wire  ipsa_io_w_3_w_en; // @[ipsa_pcie.scala 13:22]
-  wire [7:0] ipsa_io_w_3_w_addr; // @[ipsa_pcie.scala 13:22]
-  wire [63:0] ipsa_io_w_3_w_data; // @[ipsa_pcie.scala 13:22]
   wire  pcie_clock; // @[ipsa_pcie.scala 14:22]
   wire  pcie_io_pcie_r_en; // @[ipsa_pcie.scala 14:22]
   wire [19:0] pcie_io_pcie_r_addr; // @[ipsa_pcie.scala 14:22]
@@ -2590,10 +2586,6 @@ module IPSAPCIE(
   wire  pcie_io_w_2_w_en; // @[ipsa_pcie.scala 14:22]
   wire [7:0] pcie_io_w_2_w_addr; // @[ipsa_pcie.scala 14:22]
   wire [63:0] pcie_io_w_2_w_data; // @[ipsa_pcie.scala 14:22]
-  wire [5:0] pcie_io_w_3_wcs; // @[ipsa_pcie.scala 14:22]
-  wire  pcie_io_w_3_w_en; // @[ipsa_pcie.scala 14:22]
-  wire [7:0] pcie_io_w_3_w_addr; // @[ipsa_pcie.scala 14:22]
-  wire [63:0] pcie_io_w_3_w_data; // @[ipsa_pcie.scala 14:22]
   wire  outp_clock; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_0; // @[ipsa_pcie.scala 15:22]
   wire [7:0] outp_io_phv_in_data_1; // @[ipsa_pcie.scala 15:22]
@@ -4557,11 +4549,7 @@ module IPSAPCIE(
     .io_w_2_wcs(ipsa_io_w_2_wcs),
     .io_w_2_w_en(ipsa_io_w_2_w_en),
     .io_w_2_w_addr(ipsa_io_w_2_w_addr),
-    .io_w_2_w_data(ipsa_io_w_2_w_data),
-    .io_w_3_wcs(ipsa_io_w_3_wcs),
-    .io_w_3_w_en(ipsa_io_w_3_w_en),
-    .io_w_3_w_addr(ipsa_io_w_3_w_addr),
-    .io_w_3_w_data(ipsa_io_w_3_w_data)
+    .io_w_2_w_data(ipsa_io_w_2_w_data)
   );
   PCIEInterface pcie ( // @[ipsa_pcie.scala 14:22]
     .clock(pcie_clock),
@@ -5633,11 +5621,7 @@ module IPSAPCIE(
     .io_w_2_wcs(pcie_io_w_2_wcs),
     .io_w_2_w_en(pcie_io_w_2_w_en),
     .io_w_2_w_addr(pcie_io_w_2_w_addr),
-    .io_w_2_w_data(pcie_io_w_2_w_data),
-    .io_w_3_wcs(pcie_io_w_3_wcs),
-    .io_w_3_w_en(pcie_io_w_3_w_en),
-    .io_w_3_w_addr(pcie_io_w_3_w_addr),
-    .io_w_3_w_data(pcie_io_w_3_w_data)
+    .io_w_2_w_data(pcie_io_w_2_w_data)
   );
   OutPort outp ( // @[ipsa_pcie.scala 15:22]
     .clock(outp_clock),
@@ -8147,10 +8131,6 @@ module IPSAPCIE(
   assign ipsa_io_w_2_w_en = pcie_io_w_2_w_en; // @[ipsa_pcie.scala 23:20]
   assign ipsa_io_w_2_w_addr = pcie_io_w_2_w_addr; // @[ipsa_pcie.scala 23:20]
   assign ipsa_io_w_2_w_data = pcie_io_w_2_w_data; // @[ipsa_pcie.scala 23:20]
-  assign ipsa_io_w_3_wcs = pcie_io_w_3_wcs; // @[ipsa_pcie.scala 23:20]
-  assign ipsa_io_w_3_w_en = pcie_io_w_3_w_en; // @[ipsa_pcie.scala 23:20]
-  assign ipsa_io_w_3_w_addr = pcie_io_w_3_w_addr; // @[ipsa_pcie.scala 23:20]
-  assign ipsa_io_w_3_w_data = pcie_io_w_3_w_data; // @[ipsa_pcie.scala 23:20]
   assign pcie_clock = clock;
   assign pcie_io_pcie_r_en = io_pcie_r_en; // @[ipsa_pcie.scala 20:20]
   assign pcie_io_pcie_r_addr = io_pcie_r_addr; // @[ipsa_pcie.scala 20:20]

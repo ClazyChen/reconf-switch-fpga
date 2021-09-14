@@ -1068,11 +1068,7 @@ module PCIEInterface(
   output [5:0]  io_w_2_wcs,
   output        io_w_2_w_en,
   output [7:0]  io_w_2_w_addr,
-  output [63:0] io_w_2_w_data,
-  output [5:0]  io_w_3_wcs,
-  output        io_w_3_w_en,
-  output [7:0]  io_w_3_w_addr,
-  output [63:0] io_w_3_w_data
+  output [63:0] io_w_2_w_data
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -5513,10 +5509,6 @@ module PCIEInterface(
   assign io_w_2_w_en = cluster_id_field[3:2] == 2'h2 & sram_resource_pool; // @[pcie_interface.scala 97:66]
   assign io_w_2_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
   assign io_w_2_w_data = io_pcie_w_data; // @[pcie_interface.scala 99:28]
-  assign io_w_3_wcs = {{5'd0}, _GEN_3916 == sram_id_field}; // @[pcie_interface.scala 96:57]
-  assign io_w_3_w_en = cluster_id_field[3:2] == 2'h3 & sram_resource_pool; // @[pcie_interface.scala 97:66]
-  assign io_w_3_w_addr = io_pcie_w_addr[7:0]; // @[pcie_interface.scala 85:35]
-  assign io_w_3_w_data = io_pcie_w_data; // @[pcie_interface.scala 99:28]
   always @(posedge clock) begin
     last_mau_id <= _GEN_3807[1:0];
     state_id <= _GEN_3808[7:0];
