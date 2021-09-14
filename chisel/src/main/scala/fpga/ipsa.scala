@@ -90,10 +90,6 @@ class IPSA extends Module {
     }
 
     io.pipe.phv_out := io.pipe.phv_in
-    for (j <- 0 until const.processor_number) {
-        recv(j) := init.io.pipe.phv_out
-        recv(j).is_valid_processor :=  j.U(const.processor_id_width.W) === first_proc_id
-    }
 
     for (j <- 0 until const.processor_number) {
         // proc(j) -> proc(next_proc_id(j))
@@ -102,12 +98,63 @@ class IPSA extends Module {
         }
     }
 
+    // processor_number = 4
+    // using 2x2 2x2 instead of 4x4
+    val amplifier = Reg(Vec(2, Vec(4, new PHV)))
+    val next_proc_id_buf = Reg(Vec(2, Vec(4, UInt(2.W))))
+
+    for (j <- List(Seq(0,1), Seq(2,3))) {
+        val x = j(0)
+        val y = j(1)
+        amplifier(0)(x) := Mux(
+            trans(y).io.next_proc_id_out === x.U,
+            trans(y).io.pipe.phv_out, trans(x).io.pipe.phv_out
+        )
+        next_proc_id_buf(0)(x) := Mux(
+            trans(y).io.next_proc_id_out === x.U, x.U, trans(x).io.next_proc_id_out
+        )
+        amplifier(0)(y) := Mux(
+            trans(x).io.next_proc_id_out === y.U,
+            trans(x).io.pipe.phv_out, trans(y).io.pipe.phv_out
+        )
+        next_proc_id_buf(0)(y) := Mux(
+            trans(x).io.next_proc_id_out === y.U, y.U, trans(y).io.next_proc_id_out
+        )
+    }
+
     for (j <- 0 until const.processor_number) {
-        for (k <- 0 until const.processor_number) {
-            when (k.U(const.processor_id_width.W) === trans(j).io.next_proc_id_out) {
-                recv(k) := trans(j).io.pipe.phv_out
-            }
+        when (first_proc_id === j.U) {
+            amplifier(0)(j)        := init.io.pipe.phv_out
+            next_proc_id_buf(0)(j) := j.U
         }
+    }
+
+    for (j <- List(Seq(0,2), Seq(1,3))) {
+        val x = j(0)
+        val y = j(1)
+        amplifier(1)(x) := Mux(
+            next_proc_id_buf(0)(y) === x.U, amplifier(0)(y), amplifier(0)(x)
+        )
+        next_proc_id_buf(1)(x) := Mux(
+            next_proc_id_buf(0)(y) === x.U, x.U, next_proc_id_buf(0)(x)
+        )
+        amplifier(1)(y) := Mux(
+            next_proc_id_buf(0)(x) === y.U, amplifier(0)(x), amplifier(0)(y)
+        )
+        next_proc_id_buf(1)(y) := Mux(
+            next_proc_id_buf(0)(x) === y.U, y.U, next_proc_id_buf(0)(y)
+        )
+    }
+
+    for (j <- List(Seq(0,3), Seq(1,2))) {
+        val x = j(0)
+        val y = j(1)
+        recv(x) := Mux(
+            next_proc_id_buf(1)(y) === x.U, amplifier(1)(y), amplifier(1)(x)
+        )
+        recv(y) := Mux(
+            next_proc_id_buf(1)(x) === y.U, amplifier(1)(x), amplifier(1)(y)
+        )
     }
 
     for (j <- 0 until const.processor_number) {
