@@ -21,14 +21,19 @@ class InterProcessorTransfer extends Module {
     val io = IO(new Bundle {
         val pipe          = new Pipeline
         val next_proc_exist = Input(Bool())
-        val next_proc_id  = Input(UInt(const.processor_id_width.W))
+        val next_proc_id_in  = Input(UInt(const.processor_id_width.W))
+        val next_proc_id_out = Output(UInt(const.processor_id_width.W))
     })
 
     val phv = Reg(new PHV)
     phv := io.pipe.phv_in
     io.pipe.phv_out := phv
 
-    io.pipe.phv_out.is_valid_processor := io.next_proc_exist && io.next_proc_id === phv.next_processor_id
+    val next_proc_id = Reg(UInt(const.processor_id_width.W))
+    next_proc_id := io.next_proc_id_in
+    io.next_proc_id_out := next_proc_id
+
+    io.pipe.phv_out.is_valid_processor := io.next_proc_exist && next_proc_id === phv.next_processor_id
 }
 
 // The total IPSA switch
@@ -52,6 +57,7 @@ class IPSA extends Module {
         }
     }
 
+    val recv = Reg(Vec(const.processor_number, new PHV))
     val proc = for (j <- 0 until const.processor_number) yield {
         val exe = Module(new Processor)
         exe.io.mod <> io.mod.proc_mod(j)
@@ -78,28 +84,34 @@ class IPSA extends Module {
     val trans = for (j <- 0 until const.processor_number) yield {
         val exe = Module(new InterProcessorTransfer)
         exe.io.next_proc_exist := last_proc_id =/= j.U(const.processor_id_width.W)
-        exe.io.next_proc_id    := next_proc_id(j)
+        exe.io.next_proc_id_in := next_proc_id(j)
         exe.io.pipe.phv_in     <> proc(j).io.pipe.phv_out
         exe
     }
 
     io.pipe.phv_out := io.pipe.phv_in
     for (j <- 0 until const.processor_number) {
-        proc(j).io.pipe.phv_in := init.io.pipe.phv_out
-        proc(j).io.pipe.phv_in.is_valid_processor := j.U(const.processor_id_width.W) === first_proc_id
+        recv(j) := init.io.pipe.phv_out
+        recv(j).is_valid_processor :=  j.U(const.processor_id_width.W) === first_proc_id
     }
 
     for (j <- 0 until const.processor_number) {
         // proc(j) -> proc(next_proc_id(j))
-        when (j.U(const.processor_id_width.W) =/= last_proc_id) {
-            for (k <- 0 until const.processor_number) {
-                when (k.U(const.processor_id_width.W) === next_proc_id(j)) {
-                    proc(k).io.pipe.phv_in := trans(j).io.pipe.phv_out
-                }
-            }
-        } .otherwise {
+        when (j.U(const.processor_id_width.W) === last_proc_id) {
             io.pipe.phv_out := trans(j).io.pipe.phv_out
         }
+    }
+
+    for (j <- 0 until const.processor_number) {
+        for (k <- 0 until const.processor_number) {
+            when (k.U(const.processor_id_width.W) === trans(j).io.next_proc_id_out) {
+                recv(k) := trans(j).io.pipe.phv_out
+            }
+        }
+    }
+
+    for (j <- 0 until const.processor_number) {
+        proc(j).io.pipe.phv_in := recv(j)
     }
 }
 

@@ -272,6 +272,11 @@ module PrimitiveShiftSource(
   input  [15:0] io_pipe_phv_in_header_13,
   input  [15:0] io_pipe_phv_in_header_14,
   input  [15:0] io_pipe_phv_in_header_15,
+  input  [7:0]  io_pipe_phv_in_parse_current_state,
+  input  [7:0]  io_pipe_phv_in_parse_current_offset,
+  input  [15:0] io_pipe_phv_in_parse_transition_field,
+  input  [3:0]  io_pipe_phv_in_next_processor_id,
+  input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
@@ -529,6 +534,27 @@ module PrimitiveShiftSource(
   output [7:0]  io_pipe_phv_out_data_253,
   output [7:0]  io_pipe_phv_out_data_254,
   output [7:0]  io_pipe_phv_out_data_255,
+  output [15:0] io_pipe_phv_out_header_0,
+  output [15:0] io_pipe_phv_out_header_1,
+  output [15:0] io_pipe_phv_out_header_2,
+  output [15:0] io_pipe_phv_out_header_3,
+  output [15:0] io_pipe_phv_out_header_4,
+  output [15:0] io_pipe_phv_out_header_5,
+  output [15:0] io_pipe_phv_out_header_6,
+  output [15:0] io_pipe_phv_out_header_7,
+  output [15:0] io_pipe_phv_out_header_8,
+  output [15:0] io_pipe_phv_out_header_9,
+  output [15:0] io_pipe_phv_out_header_10,
+  output [15:0] io_pipe_phv_out_header_11,
+  output [15:0] io_pipe_phv_out_header_12,
+  output [15:0] io_pipe_phv_out_header_13,
+  output [15:0] io_pipe_phv_out_header_14,
+  output [15:0] io_pipe_phv_out_header_15,
+  output [7:0]  io_pipe_phv_out_parse_current_state,
+  output [7:0]  io_pipe_phv_out_parse_current_offset,
+  output [15:0] io_pipe_phv_out_parse_transition_field,
+  output [3:0]  io_pipe_phv_out_next_processor_id,
+  output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
@@ -857,6 +883,11 @@ module PrimitiveShiftSource(
   reg [31:0] _RAND_286;
   reg [31:0] _RAND_287;
   reg [31:0] _RAND_288;
+  reg [31:0] _RAND_289;
+  reg [31:0] _RAND_290;
+  reg [31:0] _RAND_291;
+  reg [31:0] _RAND_292;
+  reg [31:0] _RAND_293;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[executor.scala 260:22]
   reg [7:0] phv_data_1; // @[executor.scala 260:22]
@@ -1130,6 +1161,11 @@ module PrimitiveShiftSource(
   reg [15:0] phv_header_13; // @[executor.scala 260:22]
   reg [15:0] phv_header_14; // @[executor.scala 260:22]
   reg [15:0] phv_header_15; // @[executor.scala 260:22]
+  reg [7:0] phv_parse_current_state; // @[executor.scala 260:22]
+  reg [7:0] phv_parse_current_offset; // @[executor.scala 260:22]
+  reg [15:0] phv_parse_transition_field; // @[executor.scala 260:22]
+  reg [3:0] phv_next_processor_id; // @[executor.scala 260:22]
+  reg  phv_next_config_id; // @[executor.scala 260:22]
   reg  phv_is_valid_processor; // @[executor.scala 260:22]
   reg [31:0] vliw_0; // @[executor.scala 264:23]
   reg [31:0] vliw_1; // @[executor.scala 264:23]
@@ -1651,6 +1687,27 @@ module PrimitiveShiftSource(
   assign io_pipe_phv_out_data_253 = phv_data_253; // @[executor.scala 262:25]
   assign io_pipe_phv_out_data_254 = phv_data_254; // @[executor.scala 262:25]
   assign io_pipe_phv_out_data_255 = phv_data_255; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_0 = phv_header_0; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_1 = phv_header_1; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_2 = phv_header_2; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_3 = phv_header_3; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_4 = phv_header_4; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_5 = phv_header_5; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_6 = phv_header_6; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_7 = phv_header_7; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_8 = phv_header_8; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_9 = phv_header_9; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_10 = phv_header_10; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_11 = phv_header_11; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_12 = phv_header_12; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_13 = phv_header_13; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_14 = phv_header_14; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_header_15 = phv_header_15; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[executor.scala 262:25]
+  assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[executor.scala 262:25]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[executor.scala 262:25]
   assign io_vliw_out_0 = vliw_0; // @[executor.scala 266:21]
   assign io_vliw_out_1 = vliw_1; // @[executor.scala 266:21]
@@ -1945,6 +2002,11 @@ module PrimitiveShiftSource(
     phv_header_13 <= io_pipe_phv_in_header_13; // @[executor.scala 261:13]
     phv_header_14 <= io_pipe_phv_in_header_14; // @[executor.scala 261:13]
     phv_header_15 <= io_pipe_phv_in_header_15; // @[executor.scala 261:13]
+    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[executor.scala 261:13]
+    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[executor.scala 261:13]
+    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[executor.scala 261:13]
+    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[executor.scala 261:13]
+    phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[executor.scala 261:13]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[executor.scala 261:13]
     vliw_0 <= io_vliw_in_0; // @[executor.scala 265:14]
     vliw_1 <= io_vliw_in_1; // @[executor.scala 265:14]
@@ -2544,39 +2606,49 @@ initial begin
   _RAND_271 = {1{`RANDOM}};
   phv_header_15 = _RAND_271[15:0];
   _RAND_272 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_272[0:0];
+  phv_parse_current_state = _RAND_272[7:0];
   _RAND_273 = {1{`RANDOM}};
-  vliw_0 = _RAND_273[31:0];
+  phv_parse_current_offset = _RAND_273[7:0];
   _RAND_274 = {1{`RANDOM}};
-  vliw_1 = _RAND_274[31:0];
+  phv_parse_transition_field = _RAND_274[15:0];
   _RAND_275 = {1{`RANDOM}};
-  vliw_2 = _RAND_275[31:0];
+  phv_next_processor_id = _RAND_275[3:0];
   _RAND_276 = {1{`RANDOM}};
-  vliw_3 = _RAND_276[31:0];
+  phv_next_config_id = _RAND_276[0:0];
   _RAND_277 = {1{`RANDOM}};
-  field_0 = _RAND_277[31:0];
+  phv_is_valid_processor = _RAND_277[0:0];
   _RAND_278 = {1{`RANDOM}};
-  field_1 = _RAND_278[31:0];
+  vliw_0 = _RAND_278[31:0];
   _RAND_279 = {1{`RANDOM}};
-  field_2 = _RAND_279[31:0];
+  vliw_1 = _RAND_279[31:0];
   _RAND_280 = {1{`RANDOM}};
-  field_3 = _RAND_280[31:0];
+  vliw_2 = _RAND_280[31:0];
   _RAND_281 = {1{`RANDOM}};
-  mask_0 = _RAND_281[3:0];
+  vliw_3 = _RAND_281[31:0];
   _RAND_282 = {1{`RANDOM}};
-  mask_1 = _RAND_282[3:0];
+  field_0 = _RAND_282[31:0];
   _RAND_283 = {1{`RANDOM}};
-  mask_2 = _RAND_283[3:0];
+  field_1 = _RAND_283[31:0];
   _RAND_284 = {1{`RANDOM}};
-  mask_3 = _RAND_284[3:0];
+  field_2 = _RAND_284[31:0];
   _RAND_285 = {1{`RANDOM}};
-  bias_0 = _RAND_285[1:0];
+  field_3 = _RAND_285[31:0];
   _RAND_286 = {1{`RANDOM}};
-  bias_1 = _RAND_286[1:0];
+  mask_0 = _RAND_286[3:0];
   _RAND_287 = {1{`RANDOM}};
-  bias_2 = _RAND_287[1:0];
+  mask_1 = _RAND_287[3:0];
   _RAND_288 = {1{`RANDOM}};
-  bias_3 = _RAND_288[1:0];
+  mask_2 = _RAND_288[3:0];
+  _RAND_289 = {1{`RANDOM}};
+  mask_3 = _RAND_289[3:0];
+  _RAND_290 = {1{`RANDOM}};
+  bias_0 = _RAND_290[1:0];
+  _RAND_291 = {1{`RANDOM}};
+  bias_1 = _RAND_291[1:0];
+  _RAND_292 = {1{`RANDOM}};
+  bias_2 = _RAND_292[1:0];
+  _RAND_293 = {1{`RANDOM}};
+  bias_3 = _RAND_293[1:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

@@ -272,6 +272,10 @@ module MatchGetKeyShifting(
   input  [15:0]  io_pipe_phv_in_header_13,
   input  [15:0]  io_pipe_phv_in_header_14,
   input  [15:0]  io_pipe_phv_in_header_15,
+  input  [7:0]   io_pipe_phv_in_parse_current_state,
+  input  [7:0]   io_pipe_phv_in_parse_current_offset,
+  input  [15:0]  io_pipe_phv_in_parse_transition_field,
+  input  [3:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
   output [7:0]   io_pipe_phv_out_data_0,
@@ -546,6 +550,10 @@ module MatchGetKeyShifting(
   output [15:0]  io_pipe_phv_out_header_13,
   output [15:0]  io_pipe_phv_out_header_14,
   output [15:0]  io_pipe_phv_out_header_15,
+  output [7:0]   io_pipe_phv_out_parse_current_state,
+  output [7:0]   io_pipe_phv_out_parse_current_offset,
+  output [15:0]  io_pipe_phv_out_parse_transition_field,
+  output [3:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
   input  [1:0]   io_bias_in,
@@ -875,6 +883,10 @@ module MatchGetKeyShifting(
   reg [31:0] _RAND_296;
   reg [31:0] _RAND_297;
   reg [31:0] _RAND_298;
+  reg [31:0] _RAND_299;
+  reg [31:0] _RAND_300;
+  reg [31:0] _RAND_301;
+  reg [31:0] _RAND_302;
 `endif // RANDOMIZE_REG_INIT
   reg [7:0] phv_data_0; // @[matcher.scala 118:26]
   reg [7:0] phv_data_1; // @[matcher.scala 118:26]
@@ -1148,6 +1160,10 @@ module MatchGetKeyShifting(
   reg [15:0] phv_header_13; // @[matcher.scala 118:26]
   reg [15:0] phv_header_14; // @[matcher.scala 118:26]
   reg [15:0] phv_header_15; // @[matcher.scala 118:26]
+  reg [7:0] phv_parse_current_state; // @[matcher.scala 118:26]
+  reg [7:0] phv_parse_current_offset; // @[matcher.scala 118:26]
+  reg [15:0] phv_parse_transition_field; // @[matcher.scala 118:26]
+  reg [3:0] phv_next_processor_id; // @[matcher.scala 118:26]
   reg  phv_next_config_id; // @[matcher.scala 118:26]
   reg  phv_is_valid_processor; // @[matcher.scala 118:26]
   reg [1:0] bias; // @[matcher.scala 122:27]
@@ -1521,6 +1537,10 @@ module MatchGetKeyShifting(
   assign io_pipe_phv_out_header_13 = phv_header_13; // @[matcher.scala 120:29]
   assign io_pipe_phv_out_header_14 = phv_header_14; // @[matcher.scala 120:29]
   assign io_pipe_phv_out_header_15 = phv_header_15; // @[matcher.scala 120:29]
+  assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[matcher.scala 120:29]
+  assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[matcher.scala 120:29]
+  assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[matcher.scala 120:29]
+  assign io_pipe_phv_out_next_processor_id = phv_next_processor_id; // @[matcher.scala 120:29]
   assign io_pipe_phv_out_next_config_id = phv_next_config_id; // @[matcher.scala 120:29]
   assign io_pipe_phv_out_is_valid_processor = phv_is_valid_processor; // @[matcher.scala 120:29]
   assign io_match_key = phv_is_valid_processor ? _io_match_key_T : 192'h0; // @[matcher.scala 131:43 matcher.scala 141:30 matcher.scala 143:30]
@@ -1797,6 +1817,10 @@ module MatchGetKeyShifting(
     phv_header_13 <= io_pipe_phv_in_header_13; // @[matcher.scala 119:17]
     phv_header_14 <= io_pipe_phv_in_header_14; // @[matcher.scala 119:17]
     phv_header_15 <= io_pipe_phv_in_header_15; // @[matcher.scala 119:17]
+    phv_parse_current_state <= io_pipe_phv_in_parse_current_state; // @[matcher.scala 119:17]
+    phv_parse_current_offset <= io_pipe_phv_in_parse_current_offset; // @[matcher.scala 119:17]
+    phv_parse_transition_field <= io_pipe_phv_in_parse_transition_field; // @[matcher.scala 119:17]
+    phv_next_processor_id <= io_pipe_phv_in_next_processor_id; // @[matcher.scala 119:17]
     phv_next_config_id <= io_pipe_phv_in_next_config_id; // @[matcher.scala 119:17]
     phv_is_valid_processor <= io_pipe_phv_in_is_valid_processor; // @[matcher.scala 119:17]
     bias <= io_bias_in; // @[matcher.scala 123:18]
@@ -2406,59 +2430,67 @@ initial begin
   _RAND_271 = {1{`RANDOM}};
   phv_header_15 = _RAND_271[15:0];
   _RAND_272 = {1{`RANDOM}};
-  phv_next_config_id = _RAND_272[0:0];
+  phv_parse_current_state = _RAND_272[7:0];
   _RAND_273 = {1{`RANDOM}};
-  phv_is_valid_processor = _RAND_273[0:0];
+  phv_parse_current_offset = _RAND_273[7:0];
   _RAND_274 = {1{`RANDOM}};
-  bias = _RAND_274[1:0];
+  phv_parse_transition_field = _RAND_274[15:0];
   _RAND_275 = {1{`RANDOM}};
-  match_key_bytes_0 = _RAND_275[7:0];
+  phv_next_processor_id = _RAND_275[3:0];
   _RAND_276 = {1{`RANDOM}};
-  match_key_bytes_1 = _RAND_276[7:0];
+  phv_next_config_id = _RAND_276[0:0];
   _RAND_277 = {1{`RANDOM}};
-  match_key_bytes_2 = _RAND_277[7:0];
+  phv_is_valid_processor = _RAND_277[0:0];
   _RAND_278 = {1{`RANDOM}};
-  match_key_bytes_3 = _RAND_278[7:0];
+  bias = _RAND_278[1:0];
   _RAND_279 = {1{`RANDOM}};
-  match_key_bytes_4 = _RAND_279[7:0];
+  match_key_bytes_0 = _RAND_279[7:0];
   _RAND_280 = {1{`RANDOM}};
-  match_key_bytes_5 = _RAND_280[7:0];
+  match_key_bytes_1 = _RAND_280[7:0];
   _RAND_281 = {1{`RANDOM}};
-  match_key_bytes_6 = _RAND_281[7:0];
+  match_key_bytes_2 = _RAND_281[7:0];
   _RAND_282 = {1{`RANDOM}};
-  match_key_bytes_7 = _RAND_282[7:0];
+  match_key_bytes_3 = _RAND_282[7:0];
   _RAND_283 = {1{`RANDOM}};
-  match_key_bytes_8 = _RAND_283[7:0];
+  match_key_bytes_4 = _RAND_283[7:0];
   _RAND_284 = {1{`RANDOM}};
-  match_key_bytes_9 = _RAND_284[7:0];
+  match_key_bytes_5 = _RAND_284[7:0];
   _RAND_285 = {1{`RANDOM}};
-  match_key_bytes_10 = _RAND_285[7:0];
+  match_key_bytes_6 = _RAND_285[7:0];
   _RAND_286 = {1{`RANDOM}};
-  match_key_bytes_11 = _RAND_286[7:0];
+  match_key_bytes_7 = _RAND_286[7:0];
   _RAND_287 = {1{`RANDOM}};
-  match_key_bytes_12 = _RAND_287[7:0];
+  match_key_bytes_8 = _RAND_287[7:0];
   _RAND_288 = {1{`RANDOM}};
-  match_key_bytes_13 = _RAND_288[7:0];
+  match_key_bytes_9 = _RAND_288[7:0];
   _RAND_289 = {1{`RANDOM}};
-  match_key_bytes_14 = _RAND_289[7:0];
+  match_key_bytes_10 = _RAND_289[7:0];
   _RAND_290 = {1{`RANDOM}};
-  match_key_bytes_15 = _RAND_290[7:0];
+  match_key_bytes_11 = _RAND_290[7:0];
   _RAND_291 = {1{`RANDOM}};
-  match_key_bytes_16 = _RAND_291[7:0];
+  match_key_bytes_12 = _RAND_291[7:0];
   _RAND_292 = {1{`RANDOM}};
-  match_key_bytes_17 = _RAND_292[7:0];
+  match_key_bytes_13 = _RAND_292[7:0];
   _RAND_293 = {1{`RANDOM}};
-  match_key_bytes_18 = _RAND_293[7:0];
+  match_key_bytes_14 = _RAND_293[7:0];
   _RAND_294 = {1{`RANDOM}};
-  match_key_bytes_19 = _RAND_294[7:0];
+  match_key_bytes_15 = _RAND_294[7:0];
   _RAND_295 = {1{`RANDOM}};
-  match_key_bytes_20 = _RAND_295[7:0];
+  match_key_bytes_16 = _RAND_295[7:0];
   _RAND_296 = {1{`RANDOM}};
-  match_key_bytes_21 = _RAND_296[7:0];
+  match_key_bytes_17 = _RAND_296[7:0];
   _RAND_297 = {1{`RANDOM}};
-  match_key_bytes_22 = _RAND_297[7:0];
+  match_key_bytes_18 = _RAND_297[7:0];
   _RAND_298 = {1{`RANDOM}};
-  match_key_bytes_23 = _RAND_298[7:0];
+  match_key_bytes_19 = _RAND_298[7:0];
+  _RAND_299 = {1{`RANDOM}};
+  match_key_bytes_20 = _RAND_299[7:0];
+  _RAND_300 = {1{`RANDOM}};
+  match_key_bytes_21 = _RAND_300[7:0];
+  _RAND_301 = {1{`RANDOM}};
+  match_key_bytes_22 = _RAND_301[7:0];
+  _RAND_302 = {1{`RANDOM}};
+  match_key_bytes_23 = _RAND_302[7:0];
 `endif // RANDOMIZE_REG_INIT
   `endif // RANDOMIZE
 end // initial

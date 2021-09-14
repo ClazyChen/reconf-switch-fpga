@@ -272,6 +272,11 @@ module Executor(
   input  [15:0] io_pipe_phv_in_header_13,
   input  [15:0] io_pipe_phv_in_header_14,
   input  [15:0] io_pipe_phv_in_header_15,
+  input  [7:0]  io_pipe_phv_in_parse_current_state,
+  input  [7:0]  io_pipe_phv_in_parse_current_offset,
+  input  [15:0] io_pipe_phv_in_parse_transition_field,
+  input  [3:0]  io_pipe_phv_in_next_processor_id,
+  input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
   output [7:0]  io_pipe_phv_out_data_1,
@@ -529,6 +534,27 @@ module Executor(
   output [7:0]  io_pipe_phv_out_data_253,
   output [7:0]  io_pipe_phv_out_data_254,
   output [7:0]  io_pipe_phv_out_data_255,
+  output [15:0] io_pipe_phv_out_header_0,
+  output [15:0] io_pipe_phv_out_header_1,
+  output [15:0] io_pipe_phv_out_header_2,
+  output [15:0] io_pipe_phv_out_header_3,
+  output [15:0] io_pipe_phv_out_header_4,
+  output [15:0] io_pipe_phv_out_header_5,
+  output [15:0] io_pipe_phv_out_header_6,
+  output [15:0] io_pipe_phv_out_header_7,
+  output [15:0] io_pipe_phv_out_header_8,
+  output [15:0] io_pipe_phv_out_header_9,
+  output [15:0] io_pipe_phv_out_header_10,
+  output [15:0] io_pipe_phv_out_header_11,
+  output [15:0] io_pipe_phv_out_header_12,
+  output [15:0] io_pipe_phv_out_header_13,
+  output [15:0] io_pipe_phv_out_header_14,
+  output [15:0] io_pipe_phv_out_header_15,
+  output [7:0]  io_pipe_phv_out_parse_current_state,
+  output [7:0]  io_pipe_phv_out_parse_current_offset,
+  output [15:0] io_pipe_phv_out_parse_transition_field,
+  output [3:0]  io_pipe_phv_out_next_processor_id,
+  output        io_pipe_phv_out_next_config_id,
   input         io_hit,
   input  [63:0] io_match_value,
   input         io_action_mod_en_0,
@@ -810,6 +836,11 @@ module Executor(
   wire [15:0] pipe1_io_pipe_phv_in_header_13; // @[executor.scala 489:23]
   wire [15:0] pipe1_io_pipe_phv_in_header_14; // @[executor.scala 489:23]
   wire [15:0] pipe1_io_pipe_phv_in_header_15; // @[executor.scala 489:23]
+  wire [7:0] pipe1_io_pipe_phv_in_parse_current_state; // @[executor.scala 489:23]
+  wire [7:0] pipe1_io_pipe_phv_in_parse_current_offset; // @[executor.scala 489:23]
+  wire [15:0] pipe1_io_pipe_phv_in_parse_transition_field; // @[executor.scala 489:23]
+  wire [3:0] pipe1_io_pipe_phv_in_next_processor_id; // @[executor.scala 489:23]
+  wire  pipe1_io_pipe_phv_in_next_config_id; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[executor.scala 489:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_1; // @[executor.scala 489:23]
@@ -1083,6 +1114,11 @@ module Executor(
   wire [15:0] pipe1_io_pipe_phv_out_header_13; // @[executor.scala 489:23]
   wire [15:0] pipe1_io_pipe_phv_out_header_14; // @[executor.scala 489:23]
   wire [15:0] pipe1_io_pipe_phv_out_header_15; // @[executor.scala 489:23]
+  wire [7:0] pipe1_io_pipe_phv_out_parse_current_state; // @[executor.scala 489:23]
+  wire [7:0] pipe1_io_pipe_phv_out_parse_current_offset; // @[executor.scala 489:23]
+  wire [15:0] pipe1_io_pipe_phv_out_parse_transition_field; // @[executor.scala 489:23]
+  wire [3:0] pipe1_io_pipe_phv_out_next_processor_id; // @[executor.scala 489:23]
+  wire  pipe1_io_pipe_phv_out_next_config_id; // @[executor.scala 489:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[executor.scala 489:23]
   wire  pipe1_io_hit; // @[executor.scala 489:23]
   wire [63:0] pipe1_io_match_value; // @[executor.scala 489:23]
@@ -1375,6 +1411,11 @@ module Executor(
   wire [15:0] pipe2_io_pipe_phv_in_header_13; // @[executor.scala 490:23]
   wire [15:0] pipe2_io_pipe_phv_in_header_14; // @[executor.scala 490:23]
   wire [15:0] pipe2_io_pipe_phv_in_header_15; // @[executor.scala 490:23]
+  wire [7:0] pipe2_io_pipe_phv_in_parse_current_state; // @[executor.scala 490:23]
+  wire [7:0] pipe2_io_pipe_phv_in_parse_current_offset; // @[executor.scala 490:23]
+  wire [15:0] pipe2_io_pipe_phv_in_parse_transition_field; // @[executor.scala 490:23]
+  wire [3:0] pipe2_io_pipe_phv_in_next_processor_id; // @[executor.scala 490:23]
+  wire  pipe2_io_pipe_phv_in_next_config_id; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_1; // @[executor.scala 490:23]
@@ -1648,6 +1689,11 @@ module Executor(
   wire [15:0] pipe2_io_pipe_phv_out_header_13; // @[executor.scala 490:23]
   wire [15:0] pipe2_io_pipe_phv_out_header_14; // @[executor.scala 490:23]
   wire [15:0] pipe2_io_pipe_phv_out_header_15; // @[executor.scala 490:23]
+  wire [7:0] pipe2_io_pipe_phv_out_parse_current_state; // @[executor.scala 490:23]
+  wire [7:0] pipe2_io_pipe_phv_out_parse_current_offset; // @[executor.scala 490:23]
+  wire [15:0] pipe2_io_pipe_phv_out_parse_transition_field; // @[executor.scala 490:23]
+  wire [3:0] pipe2_io_pipe_phv_out_next_processor_id; // @[executor.scala 490:23]
+  wire  pipe2_io_pipe_phv_out_next_config_id; // @[executor.scala 490:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_args_in_0; // @[executor.scala 490:23]
   wire [7:0] pipe2_io_args_in_1; // @[executor.scala 490:23]
@@ -1952,6 +1998,11 @@ module Executor(
   wire [15:0] pipe3_io_pipe_phv_in_header_13; // @[executor.scala 491:23]
   wire [15:0] pipe3_io_pipe_phv_in_header_14; // @[executor.scala 491:23]
   wire [15:0] pipe3_io_pipe_phv_in_header_15; // @[executor.scala 491:23]
+  wire [7:0] pipe3_io_pipe_phv_in_parse_current_state; // @[executor.scala 491:23]
+  wire [7:0] pipe3_io_pipe_phv_in_parse_current_offset; // @[executor.scala 491:23]
+  wire [15:0] pipe3_io_pipe_phv_in_parse_transition_field; // @[executor.scala 491:23]
+  wire [3:0] pipe3_io_pipe_phv_in_next_processor_id; // @[executor.scala 491:23]
+  wire  pipe3_io_pipe_phv_in_next_config_id; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_in_is_valid_processor; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_0; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_1; // @[executor.scala 491:23]
@@ -2225,6 +2276,11 @@ module Executor(
   wire [15:0] pipe3_io_pipe_phv_out_header_13; // @[executor.scala 491:23]
   wire [15:0] pipe3_io_pipe_phv_out_header_14; // @[executor.scala 491:23]
   wire [15:0] pipe3_io_pipe_phv_out_header_15; // @[executor.scala 491:23]
+  wire [7:0] pipe3_io_pipe_phv_out_parse_current_state; // @[executor.scala 491:23]
+  wire [7:0] pipe3_io_pipe_phv_out_parse_current_offset; // @[executor.scala 491:23]
+  wire [15:0] pipe3_io_pipe_phv_out_parse_transition_field; // @[executor.scala 491:23]
+  wire [3:0] pipe3_io_pipe_phv_out_next_processor_id; // @[executor.scala 491:23]
+  wire  pipe3_io_pipe_phv_out_next_config_id; // @[executor.scala 491:23]
   wire  pipe3_io_pipe_phv_out_is_valid_processor; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_args_in_0; // @[executor.scala 491:23]
   wire [7:0] pipe3_io_args_in_1; // @[executor.scala 491:23]
@@ -2534,6 +2590,11 @@ module Executor(
   wire [15:0] pipe4_io_pipe_phv_in_header_13; // @[executor.scala 492:23]
   wire [15:0] pipe4_io_pipe_phv_in_header_14; // @[executor.scala 492:23]
   wire [15:0] pipe4_io_pipe_phv_in_header_15; // @[executor.scala 492:23]
+  wire [7:0] pipe4_io_pipe_phv_in_parse_current_state; // @[executor.scala 492:23]
+  wire [7:0] pipe4_io_pipe_phv_in_parse_current_offset; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_in_parse_transition_field; // @[executor.scala 492:23]
+  wire [3:0] pipe4_io_pipe_phv_in_next_processor_id; // @[executor.scala 492:23]
+  wire  pipe4_io_pipe_phv_in_next_config_id; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_in_is_valid_processor; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_0; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_1; // @[executor.scala 492:23]
@@ -2791,6 +2852,27 @@ module Executor(
   wire [7:0] pipe4_io_pipe_phv_out_data_253; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_254; // @[executor.scala 492:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_255; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_0; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_1; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_2; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_3; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_4; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_5; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_6; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_7; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_8; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_9; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_10; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_11; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_12; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_13; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_14; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_header_15; // @[executor.scala 492:23]
+  wire [7:0] pipe4_io_pipe_phv_out_parse_current_state; // @[executor.scala 492:23]
+  wire [7:0] pipe4_io_pipe_phv_out_parse_current_offset; // @[executor.scala 492:23]
+  wire [15:0] pipe4_io_pipe_phv_out_parse_transition_field; // @[executor.scala 492:23]
+  wire [3:0] pipe4_io_pipe_phv_out_next_processor_id; // @[executor.scala 492:23]
+  wire  pipe4_io_pipe_phv_out_next_config_id; // @[executor.scala 492:23]
   wire  pipe4_io_pipe_phv_out_is_valid_processor; // @[executor.scala 492:23]
   wire [31:0] pipe4_io_vliw_in_0; // @[executor.scala 492:23]
   wire [31:0] pipe4_io_vliw_in_1; // @[executor.scala 492:23]
@@ -3085,6 +3167,27 @@ module Executor(
   wire [7:0] pipe5_io_pipe_phv_in_data_253; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_in_data_254; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_in_data_255; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_0; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_1; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_2; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_3; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_4; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_5; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_6; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_7; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_8; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_9; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_10; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_11; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_12; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_13; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_14; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_header_15; // @[executor.scala 493:23]
+  wire [7:0] pipe5_io_pipe_phv_in_parse_current_state; // @[executor.scala 493:23]
+  wire [7:0] pipe5_io_pipe_phv_in_parse_current_offset; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_in_parse_transition_field; // @[executor.scala 493:23]
+  wire [3:0] pipe5_io_pipe_phv_in_next_processor_id; // @[executor.scala 493:23]
+  wire  pipe5_io_pipe_phv_in_next_config_id; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_in_is_valid_processor; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_0; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_1; // @[executor.scala 493:23]
@@ -3342,6 +3445,27 @@ module Executor(
   wire [7:0] pipe5_io_pipe_phv_out_data_253; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_254; // @[executor.scala 493:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_255; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_0; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_1; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_2; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_3; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_4; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_5; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_6; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_7; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_8; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_9; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_10; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_11; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_12; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_13; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_14; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_header_15; // @[executor.scala 493:23]
+  wire [7:0] pipe5_io_pipe_phv_out_parse_current_state; // @[executor.scala 493:23]
+  wire [7:0] pipe5_io_pipe_phv_out_parse_current_offset; // @[executor.scala 493:23]
+  wire [15:0] pipe5_io_pipe_phv_out_parse_transition_field; // @[executor.scala 493:23]
+  wire [3:0] pipe5_io_pipe_phv_out_next_processor_id; // @[executor.scala 493:23]
+  wire  pipe5_io_pipe_phv_out_next_config_id; // @[executor.scala 493:23]
   wire  pipe5_io_pipe_phv_out_is_valid_processor; // @[executor.scala 493:23]
   wire [31:0] pipe5_io_vliw_in_0; // @[executor.scala 493:23]
   wire [31:0] pipe5_io_vliw_in_1; // @[executor.scala 493:23]
@@ -3636,6 +3760,27 @@ module Executor(
   wire [7:0] pipe6_io_pipe_phv_in_data_253; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_in_data_254; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_in_data_255; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_0; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_1; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_2; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_3; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_4; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_5; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_6; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_7; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_8; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_9; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_10; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_11; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_12; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_13; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_14; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_header_15; // @[executor.scala 494:23]
+  wire [7:0] pipe6_io_pipe_phv_in_parse_current_state; // @[executor.scala 494:23]
+  wire [7:0] pipe6_io_pipe_phv_in_parse_current_offset; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_in_parse_transition_field; // @[executor.scala 494:23]
+  wire [3:0] pipe6_io_pipe_phv_in_next_processor_id; // @[executor.scala 494:23]
+  wire  pipe6_io_pipe_phv_in_next_config_id; // @[executor.scala 494:23]
   wire  pipe6_io_pipe_phv_in_is_valid_processor; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_0; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_1; // @[executor.scala 494:23]
@@ -3893,6 +4038,27 @@ module Executor(
   wire [7:0] pipe6_io_pipe_phv_out_data_253; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_254; // @[executor.scala 494:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_255; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_0; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_1; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_2; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_3; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_4; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_5; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_6; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_7; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_8; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_9; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_10; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_11; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_12; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_13; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_14; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_header_15; // @[executor.scala 494:23]
+  wire [7:0] pipe6_io_pipe_phv_out_parse_current_state; // @[executor.scala 494:23]
+  wire [7:0] pipe6_io_pipe_phv_out_parse_current_offset; // @[executor.scala 494:23]
+  wire [15:0] pipe6_io_pipe_phv_out_parse_transition_field; // @[executor.scala 494:23]
+  wire [3:0] pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 494:23]
+  wire  pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_0; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_1; // @[executor.scala 494:23]
   wire [31:0] pipe6_io_vliw_in_2; // @[executor.scala 494:23]
@@ -4183,6 +4349,11 @@ module Executor(
     .io_pipe_phv_in_header_13(pipe1_io_pipe_phv_in_header_13),
     .io_pipe_phv_in_header_14(pipe1_io_pipe_phv_in_header_14),
     .io_pipe_phv_in_header_15(pipe1_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe1_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe1_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe1_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe1_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe1_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe1_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe1_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe1_io_pipe_phv_out_data_1),
@@ -4456,6 +4627,11 @@ module Executor(
     .io_pipe_phv_out_header_13(pipe1_io_pipe_phv_out_header_13),
     .io_pipe_phv_out_header_14(pipe1_io_pipe_phv_out_header_14),
     .io_pipe_phv_out_header_15(pipe1_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe1_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe1_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe1_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe1_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe1_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe1_io_pipe_phv_out_is_valid_processor),
     .io_hit(pipe1_io_hit),
     .io_match_value(pipe1_io_match_value),
@@ -4750,6 +4926,11 @@ module Executor(
     .io_pipe_phv_in_header_13(pipe2_io_pipe_phv_in_header_13),
     .io_pipe_phv_in_header_14(pipe2_io_pipe_phv_in_header_14),
     .io_pipe_phv_in_header_15(pipe2_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe2_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe2_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe2_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe2_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe2_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe2_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe2_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe2_io_pipe_phv_out_data_1),
@@ -5023,6 +5204,11 @@ module Executor(
     .io_pipe_phv_out_header_13(pipe2_io_pipe_phv_out_header_13),
     .io_pipe_phv_out_header_14(pipe2_io_pipe_phv_out_header_14),
     .io_pipe_phv_out_header_15(pipe2_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe2_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe2_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe2_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe2_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe2_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe2_io_pipe_phv_out_is_valid_processor),
     .io_args_in_0(pipe2_io_args_in_0),
     .io_args_in_1(pipe2_io_args_in_1),
@@ -5329,6 +5515,11 @@ module Executor(
     .io_pipe_phv_in_header_13(pipe3_io_pipe_phv_in_header_13),
     .io_pipe_phv_in_header_14(pipe3_io_pipe_phv_in_header_14),
     .io_pipe_phv_in_header_15(pipe3_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe3_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe3_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe3_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe3_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe3_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe3_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe3_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe3_io_pipe_phv_out_data_1),
@@ -5602,6 +5793,11 @@ module Executor(
     .io_pipe_phv_out_header_13(pipe3_io_pipe_phv_out_header_13),
     .io_pipe_phv_out_header_14(pipe3_io_pipe_phv_out_header_14),
     .io_pipe_phv_out_header_15(pipe3_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe3_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe3_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe3_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe3_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe3_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe3_io_pipe_phv_out_is_valid_processor),
     .io_args_in_0(pipe3_io_args_in_0),
     .io_args_in_1(pipe3_io_args_in_1),
@@ -5913,6 +6109,11 @@ module Executor(
     .io_pipe_phv_in_header_13(pipe4_io_pipe_phv_in_header_13),
     .io_pipe_phv_in_header_14(pipe4_io_pipe_phv_in_header_14),
     .io_pipe_phv_in_header_15(pipe4_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe4_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe4_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe4_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe4_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe4_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe4_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe4_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe4_io_pipe_phv_out_data_1),
@@ -6170,6 +6371,27 @@ module Executor(
     .io_pipe_phv_out_data_253(pipe4_io_pipe_phv_out_data_253),
     .io_pipe_phv_out_data_254(pipe4_io_pipe_phv_out_data_254),
     .io_pipe_phv_out_data_255(pipe4_io_pipe_phv_out_data_255),
+    .io_pipe_phv_out_header_0(pipe4_io_pipe_phv_out_header_0),
+    .io_pipe_phv_out_header_1(pipe4_io_pipe_phv_out_header_1),
+    .io_pipe_phv_out_header_2(pipe4_io_pipe_phv_out_header_2),
+    .io_pipe_phv_out_header_3(pipe4_io_pipe_phv_out_header_3),
+    .io_pipe_phv_out_header_4(pipe4_io_pipe_phv_out_header_4),
+    .io_pipe_phv_out_header_5(pipe4_io_pipe_phv_out_header_5),
+    .io_pipe_phv_out_header_6(pipe4_io_pipe_phv_out_header_6),
+    .io_pipe_phv_out_header_7(pipe4_io_pipe_phv_out_header_7),
+    .io_pipe_phv_out_header_8(pipe4_io_pipe_phv_out_header_8),
+    .io_pipe_phv_out_header_9(pipe4_io_pipe_phv_out_header_9),
+    .io_pipe_phv_out_header_10(pipe4_io_pipe_phv_out_header_10),
+    .io_pipe_phv_out_header_11(pipe4_io_pipe_phv_out_header_11),
+    .io_pipe_phv_out_header_12(pipe4_io_pipe_phv_out_header_12),
+    .io_pipe_phv_out_header_13(pipe4_io_pipe_phv_out_header_13),
+    .io_pipe_phv_out_header_14(pipe4_io_pipe_phv_out_header_14),
+    .io_pipe_phv_out_header_15(pipe4_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe4_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe4_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe4_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe4_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe4_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe4_io_pipe_phv_out_is_valid_processor),
     .io_vliw_in_0(pipe4_io_vliw_in_0),
     .io_vliw_in_1(pipe4_io_vliw_in_1),
@@ -6466,6 +6688,27 @@ module Executor(
     .io_pipe_phv_in_data_253(pipe5_io_pipe_phv_in_data_253),
     .io_pipe_phv_in_data_254(pipe5_io_pipe_phv_in_data_254),
     .io_pipe_phv_in_data_255(pipe5_io_pipe_phv_in_data_255),
+    .io_pipe_phv_in_header_0(pipe5_io_pipe_phv_in_header_0),
+    .io_pipe_phv_in_header_1(pipe5_io_pipe_phv_in_header_1),
+    .io_pipe_phv_in_header_2(pipe5_io_pipe_phv_in_header_2),
+    .io_pipe_phv_in_header_3(pipe5_io_pipe_phv_in_header_3),
+    .io_pipe_phv_in_header_4(pipe5_io_pipe_phv_in_header_4),
+    .io_pipe_phv_in_header_5(pipe5_io_pipe_phv_in_header_5),
+    .io_pipe_phv_in_header_6(pipe5_io_pipe_phv_in_header_6),
+    .io_pipe_phv_in_header_7(pipe5_io_pipe_phv_in_header_7),
+    .io_pipe_phv_in_header_8(pipe5_io_pipe_phv_in_header_8),
+    .io_pipe_phv_in_header_9(pipe5_io_pipe_phv_in_header_9),
+    .io_pipe_phv_in_header_10(pipe5_io_pipe_phv_in_header_10),
+    .io_pipe_phv_in_header_11(pipe5_io_pipe_phv_in_header_11),
+    .io_pipe_phv_in_header_12(pipe5_io_pipe_phv_in_header_12),
+    .io_pipe_phv_in_header_13(pipe5_io_pipe_phv_in_header_13),
+    .io_pipe_phv_in_header_14(pipe5_io_pipe_phv_in_header_14),
+    .io_pipe_phv_in_header_15(pipe5_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe5_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe5_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe5_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe5_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe5_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe5_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe5_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe5_io_pipe_phv_out_data_1),
@@ -6723,6 +6966,27 @@ module Executor(
     .io_pipe_phv_out_data_253(pipe5_io_pipe_phv_out_data_253),
     .io_pipe_phv_out_data_254(pipe5_io_pipe_phv_out_data_254),
     .io_pipe_phv_out_data_255(pipe5_io_pipe_phv_out_data_255),
+    .io_pipe_phv_out_header_0(pipe5_io_pipe_phv_out_header_0),
+    .io_pipe_phv_out_header_1(pipe5_io_pipe_phv_out_header_1),
+    .io_pipe_phv_out_header_2(pipe5_io_pipe_phv_out_header_2),
+    .io_pipe_phv_out_header_3(pipe5_io_pipe_phv_out_header_3),
+    .io_pipe_phv_out_header_4(pipe5_io_pipe_phv_out_header_4),
+    .io_pipe_phv_out_header_5(pipe5_io_pipe_phv_out_header_5),
+    .io_pipe_phv_out_header_6(pipe5_io_pipe_phv_out_header_6),
+    .io_pipe_phv_out_header_7(pipe5_io_pipe_phv_out_header_7),
+    .io_pipe_phv_out_header_8(pipe5_io_pipe_phv_out_header_8),
+    .io_pipe_phv_out_header_9(pipe5_io_pipe_phv_out_header_9),
+    .io_pipe_phv_out_header_10(pipe5_io_pipe_phv_out_header_10),
+    .io_pipe_phv_out_header_11(pipe5_io_pipe_phv_out_header_11),
+    .io_pipe_phv_out_header_12(pipe5_io_pipe_phv_out_header_12),
+    .io_pipe_phv_out_header_13(pipe5_io_pipe_phv_out_header_13),
+    .io_pipe_phv_out_header_14(pipe5_io_pipe_phv_out_header_14),
+    .io_pipe_phv_out_header_15(pipe5_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe5_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe5_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe5_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe5_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe5_io_pipe_phv_out_next_config_id),
     .io_pipe_phv_out_is_valid_processor(pipe5_io_pipe_phv_out_is_valid_processor),
     .io_vliw_in_0(pipe5_io_vliw_in_0),
     .io_vliw_in_1(pipe5_io_vliw_in_1),
@@ -7019,6 +7283,27 @@ module Executor(
     .io_pipe_phv_in_data_253(pipe6_io_pipe_phv_in_data_253),
     .io_pipe_phv_in_data_254(pipe6_io_pipe_phv_in_data_254),
     .io_pipe_phv_in_data_255(pipe6_io_pipe_phv_in_data_255),
+    .io_pipe_phv_in_header_0(pipe6_io_pipe_phv_in_header_0),
+    .io_pipe_phv_in_header_1(pipe6_io_pipe_phv_in_header_1),
+    .io_pipe_phv_in_header_2(pipe6_io_pipe_phv_in_header_2),
+    .io_pipe_phv_in_header_3(pipe6_io_pipe_phv_in_header_3),
+    .io_pipe_phv_in_header_4(pipe6_io_pipe_phv_in_header_4),
+    .io_pipe_phv_in_header_5(pipe6_io_pipe_phv_in_header_5),
+    .io_pipe_phv_in_header_6(pipe6_io_pipe_phv_in_header_6),
+    .io_pipe_phv_in_header_7(pipe6_io_pipe_phv_in_header_7),
+    .io_pipe_phv_in_header_8(pipe6_io_pipe_phv_in_header_8),
+    .io_pipe_phv_in_header_9(pipe6_io_pipe_phv_in_header_9),
+    .io_pipe_phv_in_header_10(pipe6_io_pipe_phv_in_header_10),
+    .io_pipe_phv_in_header_11(pipe6_io_pipe_phv_in_header_11),
+    .io_pipe_phv_in_header_12(pipe6_io_pipe_phv_in_header_12),
+    .io_pipe_phv_in_header_13(pipe6_io_pipe_phv_in_header_13),
+    .io_pipe_phv_in_header_14(pipe6_io_pipe_phv_in_header_14),
+    .io_pipe_phv_in_header_15(pipe6_io_pipe_phv_in_header_15),
+    .io_pipe_phv_in_parse_current_state(pipe6_io_pipe_phv_in_parse_current_state),
+    .io_pipe_phv_in_parse_current_offset(pipe6_io_pipe_phv_in_parse_current_offset),
+    .io_pipe_phv_in_parse_transition_field(pipe6_io_pipe_phv_in_parse_transition_field),
+    .io_pipe_phv_in_next_processor_id(pipe6_io_pipe_phv_in_next_processor_id),
+    .io_pipe_phv_in_next_config_id(pipe6_io_pipe_phv_in_next_config_id),
     .io_pipe_phv_in_is_valid_processor(pipe6_io_pipe_phv_in_is_valid_processor),
     .io_pipe_phv_out_data_0(pipe6_io_pipe_phv_out_data_0),
     .io_pipe_phv_out_data_1(pipe6_io_pipe_phv_out_data_1),
@@ -7276,6 +7561,27 @@ module Executor(
     .io_pipe_phv_out_data_253(pipe6_io_pipe_phv_out_data_253),
     .io_pipe_phv_out_data_254(pipe6_io_pipe_phv_out_data_254),
     .io_pipe_phv_out_data_255(pipe6_io_pipe_phv_out_data_255),
+    .io_pipe_phv_out_header_0(pipe6_io_pipe_phv_out_header_0),
+    .io_pipe_phv_out_header_1(pipe6_io_pipe_phv_out_header_1),
+    .io_pipe_phv_out_header_2(pipe6_io_pipe_phv_out_header_2),
+    .io_pipe_phv_out_header_3(pipe6_io_pipe_phv_out_header_3),
+    .io_pipe_phv_out_header_4(pipe6_io_pipe_phv_out_header_4),
+    .io_pipe_phv_out_header_5(pipe6_io_pipe_phv_out_header_5),
+    .io_pipe_phv_out_header_6(pipe6_io_pipe_phv_out_header_6),
+    .io_pipe_phv_out_header_7(pipe6_io_pipe_phv_out_header_7),
+    .io_pipe_phv_out_header_8(pipe6_io_pipe_phv_out_header_8),
+    .io_pipe_phv_out_header_9(pipe6_io_pipe_phv_out_header_9),
+    .io_pipe_phv_out_header_10(pipe6_io_pipe_phv_out_header_10),
+    .io_pipe_phv_out_header_11(pipe6_io_pipe_phv_out_header_11),
+    .io_pipe_phv_out_header_12(pipe6_io_pipe_phv_out_header_12),
+    .io_pipe_phv_out_header_13(pipe6_io_pipe_phv_out_header_13),
+    .io_pipe_phv_out_header_14(pipe6_io_pipe_phv_out_header_14),
+    .io_pipe_phv_out_header_15(pipe6_io_pipe_phv_out_header_15),
+    .io_pipe_phv_out_parse_current_state(pipe6_io_pipe_phv_out_parse_current_state),
+    .io_pipe_phv_out_parse_current_offset(pipe6_io_pipe_phv_out_parse_current_offset),
+    .io_pipe_phv_out_parse_transition_field(pipe6_io_pipe_phv_out_parse_transition_field),
+    .io_pipe_phv_out_next_processor_id(pipe6_io_pipe_phv_out_next_processor_id),
+    .io_pipe_phv_out_next_config_id(pipe6_io_pipe_phv_out_next_config_id),
     .io_vliw_in_0(pipe6_io_vliw_in_0),
     .io_vliw_in_1(pipe6_io_vliw_in_1),
     .io_vliw_in_2(pipe6_io_vliw_in_2),
@@ -7549,6 +7855,27 @@ module Executor(
   assign io_pipe_phv_out_data_253 = pipe6_io_pipe_phv_out_data_253; // @[executor.scala 530:27]
   assign io_pipe_phv_out_data_254 = pipe6_io_pipe_phv_out_data_254; // @[executor.scala 530:27]
   assign io_pipe_phv_out_data_255 = pipe6_io_pipe_phv_out_data_255; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_0 = pipe6_io_pipe_phv_out_header_0; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_1 = pipe6_io_pipe_phv_out_header_1; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_2 = pipe6_io_pipe_phv_out_header_2; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_3 = pipe6_io_pipe_phv_out_header_3; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_4 = pipe6_io_pipe_phv_out_header_4; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_5 = pipe6_io_pipe_phv_out_header_5; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_6 = pipe6_io_pipe_phv_out_header_6; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_7 = pipe6_io_pipe_phv_out_header_7; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_8 = pipe6_io_pipe_phv_out_header_8; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_9 = pipe6_io_pipe_phv_out_header_9; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_10 = pipe6_io_pipe_phv_out_header_10; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_11 = pipe6_io_pipe_phv_out_header_11; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_12 = pipe6_io_pipe_phv_out_header_12; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_13 = pipe6_io_pipe_phv_out_header_13; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_14 = pipe6_io_pipe_phv_out_header_14; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_header_15 = pipe6_io_pipe_phv_out_header_15; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_parse_current_state = pipe6_io_pipe_phv_out_parse_current_state; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_parse_current_offset = pipe6_io_pipe_phv_out_parse_current_offset; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_parse_transition_field = pipe6_io_pipe_phv_out_parse_transition_field; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_next_processor_id = pipe6_io_pipe_phv_out_next_processor_id; // @[executor.scala 530:27]
+  assign io_pipe_phv_out_next_config_id = pipe6_io_pipe_phv_out_next_config_id; // @[executor.scala 530:27]
   assign pipe1_clock = clock;
   assign pipe1_io_pipe_phv_in_data_0 = io_pipe_phv_in_data_0; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_data_1 = io_pipe_phv_in_data_1; // @[executor.scala 496:26]
@@ -7822,6 +8149,11 @@ module Executor(
   assign pipe1_io_pipe_phv_in_header_13 = io_pipe_phv_in_header_13; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_header_14 = io_pipe_phv_in_header_14; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_header_15 = io_pipe_phv_in_header_15; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_parse_current_state = io_pipe_phv_in_parse_current_state; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_parse_current_offset = io_pipe_phv_in_parse_current_offset; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_parse_transition_field = io_pipe_phv_in_parse_transition_field; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_next_processor_id = io_pipe_phv_in_next_processor_id; // @[executor.scala 496:26]
+  assign pipe1_io_pipe_phv_in_next_config_id = io_pipe_phv_in_next_config_id; // @[executor.scala 496:26]
   assign pipe1_io_pipe_phv_in_is_valid_processor = io_pipe_phv_in_is_valid_processor; // @[executor.scala 496:26]
   assign pipe1_io_hit = io_hit; // @[executor.scala 497:26]
   assign pipe1_io_match_value = io_match_value; // @[executor.scala 498:26]
@@ -8103,6 +8435,11 @@ module Executor(
   assign pipe2_io_pipe_phv_in_header_13 = pipe1_io_pipe_phv_out_header_13; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_header_14 = pipe1_io_pipe_phv_out_header_14; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_header_15 = pipe1_io_pipe_phv_out_header_15; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_parse_current_state = pipe1_io_pipe_phv_out_parse_current_state; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_parse_current_offset = pipe1_io_pipe_phv_out_parse_current_offset; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_parse_transition_field = pipe1_io_pipe_phv_out_parse_transition_field; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_next_processor_id = pipe1_io_pipe_phv_out_next_processor_id; // @[executor.scala 501:26]
+  assign pipe2_io_pipe_phv_in_next_config_id = pipe1_io_pipe_phv_out_next_config_id; // @[executor.scala 501:26]
   assign pipe2_io_pipe_phv_in_is_valid_processor = pipe1_io_pipe_phv_out_is_valid_processor; // @[executor.scala 501:26]
   assign pipe2_io_args_in_0 = pipe1_io_args_out_0; // @[executor.scala 502:26]
   assign pipe2_io_args_in_1 = pipe1_io_args_out_1; // @[executor.scala 502:26]
@@ -8388,6 +8725,11 @@ module Executor(
   assign pipe3_io_pipe_phv_in_header_13 = pipe2_io_pipe_phv_out_header_13; // @[executor.scala 505:26]
   assign pipe3_io_pipe_phv_in_header_14 = pipe2_io_pipe_phv_out_header_14; // @[executor.scala 505:26]
   assign pipe3_io_pipe_phv_in_header_15 = pipe2_io_pipe_phv_out_header_15; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_parse_current_state = pipe2_io_pipe_phv_out_parse_current_state; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_parse_current_offset = pipe2_io_pipe_phv_out_parse_current_offset; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_parse_transition_field = pipe2_io_pipe_phv_out_parse_transition_field; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_next_processor_id = pipe2_io_pipe_phv_out_next_processor_id; // @[executor.scala 505:26]
+  assign pipe3_io_pipe_phv_in_next_config_id = pipe2_io_pipe_phv_out_next_config_id; // @[executor.scala 505:26]
   assign pipe3_io_pipe_phv_in_is_valid_processor = pipe2_io_pipe_phv_out_is_valid_processor; // @[executor.scala 505:26]
   assign pipe3_io_args_in_0 = pipe2_io_args_out_0; // @[executor.scala 506:26]
   assign pipe3_io_args_in_1 = pipe2_io_args_out_1; // @[executor.scala 506:26]
@@ -8681,6 +9023,11 @@ module Executor(
   assign pipe4_io_pipe_phv_in_header_13 = pipe3_io_pipe_phv_out_header_13; // @[executor.scala 511:27]
   assign pipe4_io_pipe_phv_in_header_14 = pipe3_io_pipe_phv_out_header_14; // @[executor.scala 511:27]
   assign pipe4_io_pipe_phv_in_header_15 = pipe3_io_pipe_phv_out_header_15; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_parse_current_state = pipe3_io_pipe_phv_out_parse_current_state; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_parse_current_offset = pipe3_io_pipe_phv_out_parse_current_offset; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_parse_transition_field = pipe3_io_pipe_phv_out_parse_transition_field; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_next_processor_id = pipe3_io_pipe_phv_out_next_processor_id; // @[executor.scala 511:27]
+  assign pipe4_io_pipe_phv_in_next_config_id = pipe3_io_pipe_phv_out_next_config_id; // @[executor.scala 511:27]
   assign pipe4_io_pipe_phv_in_is_valid_processor = pipe3_io_pipe_phv_out_is_valid_processor; // @[executor.scala 511:27]
   assign pipe4_io_vliw_in_0 = pipe3_io_vliw_out_0; // @[executor.scala 512:27]
   assign pipe4_io_vliw_in_1 = pipe3_io_vliw_out_1; // @[executor.scala 512:27]
@@ -8955,6 +9302,27 @@ module Executor(
   assign pipe5_io_pipe_phv_in_data_253 = pipe4_io_pipe_phv_out_data_253; // @[executor.scala 517:26]
   assign pipe5_io_pipe_phv_in_data_254 = pipe4_io_pipe_phv_out_data_254; // @[executor.scala 517:26]
   assign pipe5_io_pipe_phv_in_data_255 = pipe4_io_pipe_phv_out_data_255; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_0 = pipe4_io_pipe_phv_out_header_0; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_1 = pipe4_io_pipe_phv_out_header_1; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_2 = pipe4_io_pipe_phv_out_header_2; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_3 = pipe4_io_pipe_phv_out_header_3; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_4 = pipe4_io_pipe_phv_out_header_4; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_5 = pipe4_io_pipe_phv_out_header_5; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_6 = pipe4_io_pipe_phv_out_header_6; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_7 = pipe4_io_pipe_phv_out_header_7; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_8 = pipe4_io_pipe_phv_out_header_8; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_9 = pipe4_io_pipe_phv_out_header_9; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_10 = pipe4_io_pipe_phv_out_header_10; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_11 = pipe4_io_pipe_phv_out_header_11; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_12 = pipe4_io_pipe_phv_out_header_12; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_13 = pipe4_io_pipe_phv_out_header_13; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_14 = pipe4_io_pipe_phv_out_header_14; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_header_15 = pipe4_io_pipe_phv_out_header_15; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_parse_current_state = pipe4_io_pipe_phv_out_parse_current_state; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_parse_current_offset = pipe4_io_pipe_phv_out_parse_current_offset; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_parse_transition_field = pipe4_io_pipe_phv_out_parse_transition_field; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_next_processor_id = pipe4_io_pipe_phv_out_next_processor_id; // @[executor.scala 517:26]
+  assign pipe5_io_pipe_phv_in_next_config_id = pipe4_io_pipe_phv_out_next_config_id; // @[executor.scala 517:26]
   assign pipe5_io_pipe_phv_in_is_valid_processor = pipe4_io_pipe_phv_out_is_valid_processor; // @[executor.scala 517:26]
   assign pipe5_io_vliw_in_0 = pipe4_io_vliw_out_0; // @[executor.scala 518:26]
   assign pipe5_io_vliw_in_1 = pipe4_io_vliw_out_1; // @[executor.scala 518:26]
@@ -9233,6 +9601,27 @@ module Executor(
   assign pipe6_io_pipe_phv_in_data_253 = pipe5_io_pipe_phv_out_data_253; // @[executor.scala 524:26]
   assign pipe6_io_pipe_phv_in_data_254 = pipe5_io_pipe_phv_out_data_254; // @[executor.scala 524:26]
   assign pipe6_io_pipe_phv_in_data_255 = pipe5_io_pipe_phv_out_data_255; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_0 = pipe5_io_pipe_phv_out_header_0; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_1 = pipe5_io_pipe_phv_out_header_1; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_2 = pipe5_io_pipe_phv_out_header_2; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_3 = pipe5_io_pipe_phv_out_header_3; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_4 = pipe5_io_pipe_phv_out_header_4; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_5 = pipe5_io_pipe_phv_out_header_5; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_6 = pipe5_io_pipe_phv_out_header_6; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_7 = pipe5_io_pipe_phv_out_header_7; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_8 = pipe5_io_pipe_phv_out_header_8; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_9 = pipe5_io_pipe_phv_out_header_9; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_10 = pipe5_io_pipe_phv_out_header_10; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_11 = pipe5_io_pipe_phv_out_header_11; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_12 = pipe5_io_pipe_phv_out_header_12; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_13 = pipe5_io_pipe_phv_out_header_13; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_14 = pipe5_io_pipe_phv_out_header_14; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_header_15 = pipe5_io_pipe_phv_out_header_15; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_parse_current_state = pipe5_io_pipe_phv_out_parse_current_state; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_parse_current_offset = pipe5_io_pipe_phv_out_parse_current_offset; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_parse_transition_field = pipe5_io_pipe_phv_out_parse_transition_field; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_next_processor_id = pipe5_io_pipe_phv_out_next_processor_id; // @[executor.scala 524:26]
+  assign pipe6_io_pipe_phv_in_next_config_id = pipe5_io_pipe_phv_out_next_config_id; // @[executor.scala 524:26]
   assign pipe6_io_pipe_phv_in_is_valid_processor = pipe5_io_pipe_phv_out_is_valid_processor; // @[executor.scala 524:26]
   assign pipe6_io_vliw_in_0 = pipe5_io_vliw_out_0; // @[executor.scala 525:26]
   assign pipe6_io_vliw_in_1 = pipe5_io_vliw_out_1; // @[executor.scala 525:26]

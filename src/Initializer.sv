@@ -383,7 +383,9 @@ module Initializer(
   output [7:0] io_pipe_phv_out_data_188,
   output [7:0] io_pipe_phv_out_data_189,
   output [7:0] io_pipe_phv_out_data_190,
-  output [7:0] io_pipe_phv_out_data_191
+  output [7:0] io_pipe_phv_out_data_191,
+  output [3:0] io_pipe_phv_out_next_processor_id,
+  input  [3:0] io_first_proc_id
 );
 `ifdef RANDOMIZE_REG_INIT
   reg [31:0] _RAND_0;
@@ -963,6 +965,7 @@ module Initializer(
   assign io_pipe_phv_out_data_189 = phv_data_189; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_190 = phv_data_190; // @[ipsa.scala 14:21]
   assign io_pipe_phv_out_data_191 = phv_data_191; // @[ipsa.scala 14:21]
+  assign io_pipe_phv_out_next_processor_id = io_first_proc_id; // @[ipsa.scala 16:39]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[ipsa.scala 13:9]
     phv_data_1 <= io_pipe_phv_in_data_1; // @[ipsa.scala 13:9]
