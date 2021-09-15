@@ -100,61 +100,54 @@ class IPSA extends Module {
 
     // processor_number = 4
     // using 2x2 2x2 instead of 4x4
-    val amplifier = Reg(Vec(2, Vec(4, new PHV)))
-    val next_proc_id_buf = Reg(Vec(2, Vec(4, UInt(2.W))))
+    val amplifier = Reg(Vec(5, Vec(const.processor_number, new PHV)))
+    val next_proc_id_buf = Reg(Vec(5, Vec(const.processor_number, UInt(const.processor_id_width.W))))
 
-    for (j <- List(Seq(0,1), Seq(2,3))) {
-        val x = j(0)
-        val y = j(1)
-        amplifier(0)(x) := Mux(
-            trans(y).io.next_proc_id_out === x.U,
-            trans(y).io.pipe.phv_out, trans(x).io.pipe.phv_out
-        )
-        next_proc_id_buf(0)(x) := Mux(
-            trans(y).io.next_proc_id_out === x.U, x.U, trans(x).io.next_proc_id_out
-        )
-        amplifier(0)(y) := Mux(
-            trans(x).io.next_proc_id_out === y.U,
-            trans(x).io.pipe.phv_out, trans(y).io.pipe.phv_out
-        )
-        next_proc_id_buf(0)(y) := Mux(
-            trans(x).io.next_proc_id_out === y.U, y.U, trans(y).io.next_proc_id_out
-        )
-    }
+    val complex_xbar = List(
+        List(Seq(0,1), Seq(2,3), Seq(4,5)),
+        List(Seq(0,2), Seq(1,5), Seq(3,4)),
+        List(Seq(0,3), Seq(1,4), Seq(2,5)), 
+        List(Seq(0,4), Seq(1,2), Seq(3,5)),
+        List(Seq(0,5), Seq(1,3), Seq(2,4))
+    )
 
+    // first level
     for (j <- 0 until const.processor_number) {
-        when (first_proc_id === j.U) {
-            amplifier(0)(j)        := init.io.pipe.phv_out
-            next_proc_id_buf(0)(j) := j.U
+        when (last_proc_id === j.U) {
+            amplifier(0)(j) := init.io.pipe.phv_out
+            next_proc_id_buf(0)(j) := first_proc_id
+        } .otherwise {
+            amplifier(0)(j) := trans(j).io.pipe.phv_out
+            next_proc_id_buf(0)(j) := trans(j).io.next_proc_id_out
         }
     }
 
-    for (j <- List(Seq(0,2), Seq(1,3))) {
-        val x = j(0)
-        val y = j(1)
-        amplifier(1)(x) := Mux(
-            next_proc_id_buf(0)(y) === x.U, amplifier(0)(y), amplifier(0)(x)
-        )
-        next_proc_id_buf(1)(x) := Mux(
-            next_proc_id_buf(0)(y) === x.U, x.U, next_proc_id_buf(0)(x)
-        )
-        amplifier(1)(y) := Mux(
-            next_proc_id_buf(0)(x) === y.U, amplifier(0)(x), amplifier(0)(y)
-        )
-        next_proc_id_buf(1)(y) := Mux(
-            next_proc_id_buf(0)(x) === y.U, y.U, next_proc_id_buf(0)(y)
-        )
-    }
-
-    for (j <- List(Seq(0,3), Seq(1,2))) {
-        val x = j(0)
-        val y = j(1)
-        recv(x) := Mux(
-            next_proc_id_buf(1)(y) === x.U, amplifier(1)(y), amplifier(1)(x)
-        )
-        recv(y) := Mux(
-            next_proc_id_buf(1)(x) === y.U, amplifier(1)(x), amplifier(1)(y)
-        )
+    for (l <- 0 until 5) {
+        for (j <- complex_xbar(l)) {
+            val x = j(0)
+            val y = j(1)
+            if (l < 4) {
+                amplifier(l+1)(x) := Mux(
+                    next_proc_id_buf(l)(y) === x.U, amplifier(l)(y), amplifier(l)(x)
+                )
+                amplifier(l+1)(y) := Mux(
+                    next_proc_id_buf(l)(x) === y.U, amplifier(l)(x), amplifier(l)(y)
+                )
+                next_proc_id_buf(l+1)(x) := Mux(
+                    next_proc_id_buf(l)(y) === x.U, x.U, next_proc_id_buf(l)(x)
+                )
+                next_proc_id_buf(l+1)(y) := Mux(
+                    next_proc_id_buf(l)(x) === y.U, y.U, next_proc_id_buf(l)(y)
+                )
+            } else {
+                recv(x) := Mux(
+                    next_proc_id_buf(l)(y) === x.U, amplifier(l)(y), amplifier(l)(x)
+                )
+                recv(y) := Mux(
+                    next_proc_id_buf(l)(x) === y.U, amplifier(l)(x), amplifier(l)(y)
+                )
+            }
+        }
     }
 
     for (j <- 0 until const.processor_number) {

@@ -275,7 +275,7 @@ module Matcher(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [1:0]  io_pipe_phv_in_next_processor_id,
+  input  [2:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -553,7 +553,7 @@ module Matcher(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [1:0]  io_pipe_phv_out_next_processor_id,
+  output [2:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   output        io_pipe_phv_out_is_valid_processor,
   input         io_mod_en,
@@ -1238,7 +1238,7 @@ module Matcher(
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_state; // @[matcher.scala 343:23]
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 343:23]
   wire [15:0] pipe1_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 343:23]
-  wire [1:0] pipe1_io_pipe_phv_in_next_processor_id; // @[matcher.scala 343:23]
+  wire [2:0] pipe1_io_pipe_phv_in_next_processor_id; // @[matcher.scala 343:23]
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[matcher.scala 343:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 343:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[matcher.scala 343:23]
@@ -1516,7 +1516,7 @@ module Matcher(
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_state; // @[matcher.scala 343:23]
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 343:23]
   wire [15:0] pipe1_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 343:23]
-  wire [1:0] pipe1_io_pipe_phv_out_next_processor_id; // @[matcher.scala 343:23]
+  wire [2:0] pipe1_io_pipe_phv_out_next_processor_id; // @[matcher.scala 343:23]
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[matcher.scala 343:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 343:23]
   wire [7:0] pipe1_io_key_config_0_header_id; // @[matcher.scala 343:23]
@@ -1800,7 +1800,7 @@ module Matcher(
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_state; // @[matcher.scala 344:23]
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 344:23]
   wire [15:0] pipe2_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 344:23]
-  wire [1:0] pipe2_io_pipe_phv_in_next_processor_id; // @[matcher.scala 344:23]
+  wire [2:0] pipe2_io_pipe_phv_in_next_processor_id; // @[matcher.scala 344:23]
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[matcher.scala 344:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 344:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[matcher.scala 344:23]
@@ -2078,7 +2078,7 @@ module Matcher(
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_state; // @[matcher.scala 344:23]
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 344:23]
   wire [15:0] pipe2_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 344:23]
-  wire [1:0] pipe2_io_pipe_phv_out_next_processor_id; // @[matcher.scala 344:23]
+  wire [2:0] pipe2_io_pipe_phv_out_next_processor_id; // @[matcher.scala 344:23]
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[matcher.scala 344:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 344:23]
   wire [7:0] pipe2_io_key_config_0_key_length; // @[matcher.scala 344:23]
@@ -2361,7 +2361,7 @@ module Matcher(
   wire [7:0] pipe3to8_io_pipe_phv_in_parse_current_state; // @[matcher.scala 345:26]
   wire [7:0] pipe3to8_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 345:26]
   wire [15:0] pipe3to8_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 345:26]
-  wire [1:0] pipe3to8_io_pipe_phv_in_next_processor_id; // @[matcher.scala 345:26]
+  wire [2:0] pipe3to8_io_pipe_phv_in_next_processor_id; // @[matcher.scala 345:26]
   wire  pipe3to8_io_pipe_phv_in_next_config_id; // @[matcher.scala 345:26]
   wire  pipe3to8_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 345:26]
   wire [7:0] pipe3to8_io_pipe_phv_out_data_0; // @[matcher.scala 345:26]
@@ -2639,7 +2639,7 @@ module Matcher(
   wire [7:0] pipe3to8_io_pipe_phv_out_parse_current_state; // @[matcher.scala 345:26]
   wire [7:0] pipe3to8_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 345:26]
   wire [15:0] pipe3to8_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 345:26]
-  wire [1:0] pipe3to8_io_pipe_phv_out_next_processor_id; // @[matcher.scala 345:26]
+  wire [2:0] pipe3to8_io_pipe_phv_out_next_processor_id; // @[matcher.scala 345:26]
   wire  pipe3to8_io_pipe_phv_out_next_config_id; // @[matcher.scala 345:26]
   wire  pipe3to8_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 345:26]
   wire  pipe3to8_io_mod_hash_depth_mod; // @[matcher.scala 345:26]
@@ -2925,7 +2925,7 @@ module Matcher(
   wire [7:0] pipe9_io_pipe_phv_in_parse_current_state; // @[matcher.scala 346:23]
   wire [7:0] pipe9_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 346:23]
   wire [15:0] pipe9_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 346:23]
-  wire [1:0] pipe9_io_pipe_phv_in_next_processor_id; // @[matcher.scala 346:23]
+  wire [2:0] pipe9_io_pipe_phv_in_next_processor_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_in_next_config_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 346:23]
   wire [7:0] pipe9_io_pipe_phv_out_data_0; // @[matcher.scala 346:23]
@@ -3203,7 +3203,7 @@ module Matcher(
   wire [7:0] pipe9_io_pipe_phv_out_parse_current_state; // @[matcher.scala 346:23]
   wire [7:0] pipe9_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 346:23]
   wire [15:0] pipe9_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 346:23]
-  wire [1:0] pipe9_io_pipe_phv_out_next_processor_id; // @[matcher.scala 346:23]
+  wire [2:0] pipe9_io_pipe_phv_out_next_processor_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_out_next_config_id; // @[matcher.scala 346:23]
   wire  pipe9_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 346:23]
   wire [5:0] pipe9_io_table_config_0_sram_id_table_0; // @[matcher.scala 346:23]
@@ -3684,7 +3684,7 @@ module Matcher(
   wire [7:0] pipe10_io_pipe_phv_in_parse_current_state; // @[matcher.scala 347:24]
   wire [7:0] pipe10_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 347:24]
   wire [15:0] pipe10_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 347:24]
-  wire [1:0] pipe10_io_pipe_phv_in_next_processor_id; // @[matcher.scala 347:24]
+  wire [2:0] pipe10_io_pipe_phv_in_next_processor_id; // @[matcher.scala 347:24]
   wire  pipe10_io_pipe_phv_in_next_config_id; // @[matcher.scala 347:24]
   wire  pipe10_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 347:24]
   wire [7:0] pipe10_io_pipe_phv_out_data_0; // @[matcher.scala 347:24]
@@ -3962,7 +3962,7 @@ module Matcher(
   wire [7:0] pipe10_io_pipe_phv_out_parse_current_state; // @[matcher.scala 347:24]
   wire [7:0] pipe10_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 347:24]
   wire [15:0] pipe10_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 347:24]
-  wire [1:0] pipe10_io_pipe_phv_out_next_processor_id; // @[matcher.scala 347:24]
+  wire [2:0] pipe10_io_pipe_phv_out_next_processor_id; // @[matcher.scala 347:24]
   wire  pipe10_io_pipe_phv_out_next_config_id; // @[matcher.scala 347:24]
   wire  pipe10_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 347:24]
   wire [191:0] pipe10_io_key_in; // @[matcher.scala 347:24]
@@ -4566,7 +4566,7 @@ module Matcher(
   wire [7:0] pipe11_io_pipe_phv_in_parse_current_state; // @[matcher.scala 348:24]
   wire [7:0] pipe11_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 348:24]
   wire [15:0] pipe11_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 348:24]
-  wire [1:0] pipe11_io_pipe_phv_in_next_processor_id; // @[matcher.scala 348:24]
+  wire [2:0] pipe11_io_pipe_phv_in_next_processor_id; // @[matcher.scala 348:24]
   wire  pipe11_io_pipe_phv_in_next_config_id; // @[matcher.scala 348:24]
   wire  pipe11_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 348:24]
   wire [7:0] pipe11_io_pipe_phv_out_data_0; // @[matcher.scala 348:24]
@@ -4844,7 +4844,7 @@ module Matcher(
   wire [7:0] pipe11_io_pipe_phv_out_parse_current_state; // @[matcher.scala 348:24]
   wire [7:0] pipe11_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 348:24]
   wire [15:0] pipe11_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 348:24]
-  wire [1:0] pipe11_io_pipe_phv_out_next_processor_id; // @[matcher.scala 348:24]
+  wire [2:0] pipe11_io_pipe_phv_out_next_processor_id; // @[matcher.scala 348:24]
   wire  pipe11_io_pipe_phv_out_next_config_id; // @[matcher.scala 348:24]
   wire  pipe11_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 348:24]
   wire [6:0] pipe11_io_table_config_0_table_width; // @[matcher.scala 348:24]
@@ -5195,7 +5195,7 @@ module Matcher(
   wire [7:0] pipe12_io_pipe_phv_in_parse_current_state; // @[matcher.scala 349:24]
   wire [7:0] pipe12_io_pipe_phv_in_parse_current_offset; // @[matcher.scala 349:24]
   wire [15:0] pipe12_io_pipe_phv_in_parse_transition_field; // @[matcher.scala 349:24]
-  wire [1:0] pipe12_io_pipe_phv_in_next_processor_id; // @[matcher.scala 349:24]
+  wire [2:0] pipe12_io_pipe_phv_in_next_processor_id; // @[matcher.scala 349:24]
   wire  pipe12_io_pipe_phv_in_next_config_id; // @[matcher.scala 349:24]
   wire  pipe12_io_pipe_phv_in_is_valid_processor; // @[matcher.scala 349:24]
   wire [7:0] pipe12_io_pipe_phv_out_data_0; // @[matcher.scala 349:24]
@@ -5473,7 +5473,7 @@ module Matcher(
   wire [7:0] pipe12_io_pipe_phv_out_parse_current_state; // @[matcher.scala 349:24]
   wire [7:0] pipe12_io_pipe_phv_out_parse_current_offset; // @[matcher.scala 349:24]
   wire [15:0] pipe12_io_pipe_phv_out_parse_transition_field; // @[matcher.scala 349:24]
-  wire [1:0] pipe12_io_pipe_phv_out_next_processor_id; // @[matcher.scala 349:24]
+  wire [2:0] pipe12_io_pipe_phv_out_next_processor_id; // @[matcher.scala 349:24]
   wire  pipe12_io_pipe_phv_out_next_config_id; // @[matcher.scala 349:24]
   wire  pipe12_io_pipe_phv_out_is_valid_processor; // @[matcher.scala 349:24]
   wire [7:0] pipe12_io_key_config_0_key_length; // @[matcher.scala 349:24]

@@ -275,7 +275,7 @@ module Hash(
   input  [7:0]   io_pipe_phv_in_parse_current_state,
   input  [7:0]   io_pipe_phv_in_parse_current_offset,
   input  [15:0]  io_pipe_phv_in_parse_transition_field,
-  input  [1:0]   io_pipe_phv_in_next_processor_id,
+  input  [2:0]   io_pipe_phv_in_next_processor_id,
   input          io_pipe_phv_in_next_config_id,
   input          io_pipe_phv_in_is_valid_processor,
   output [7:0]   io_pipe_phv_out_data_0,
@@ -553,7 +553,7 @@ module Hash(
   output [7:0]   io_pipe_phv_out_parse_current_state,
   output [7:0]   io_pipe_phv_out_parse_current_offset,
   output [15:0]  io_pipe_phv_out_parse_transition_field,
-  output [1:0]   io_pipe_phv_out_next_processor_id,
+  output [2:0]   io_pipe_phv_out_next_processor_id,
   output         io_pipe_phv_out_next_config_id,
   output         io_pipe_phv_out_is_valid_processor,
   input          io_mod_hash_depth_mod,
@@ -844,7 +844,7 @@ module Hash(
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_state; // @[hash.scala 127:23]
   wire [7:0] pipe1_io_pipe_phv_in_parse_current_offset; // @[hash.scala 127:23]
   wire [15:0] pipe1_io_pipe_phv_in_parse_transition_field; // @[hash.scala 127:23]
-  wire [1:0] pipe1_io_pipe_phv_in_next_processor_id; // @[hash.scala 127:23]
+  wire [2:0] pipe1_io_pipe_phv_in_next_processor_id; // @[hash.scala 127:23]
   wire  pipe1_io_pipe_phv_in_next_config_id; // @[hash.scala 127:23]
   wire  pipe1_io_pipe_phv_in_is_valid_processor; // @[hash.scala 127:23]
   wire [7:0] pipe1_io_pipe_phv_out_data_0; // @[hash.scala 127:23]
@@ -1122,7 +1122,7 @@ module Hash(
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_state; // @[hash.scala 127:23]
   wire [7:0] pipe1_io_pipe_phv_out_parse_current_offset; // @[hash.scala 127:23]
   wire [15:0] pipe1_io_pipe_phv_out_parse_transition_field; // @[hash.scala 127:23]
-  wire [1:0] pipe1_io_pipe_phv_out_next_processor_id; // @[hash.scala 127:23]
+  wire [2:0] pipe1_io_pipe_phv_out_next_processor_id; // @[hash.scala 127:23]
   wire  pipe1_io_pipe_phv_out_next_config_id; // @[hash.scala 127:23]
   wire  pipe1_io_pipe_phv_out_is_valid_processor; // @[hash.scala 127:23]
   wire [191:0] pipe1_io_key_in; // @[hash.scala 127:23]
@@ -1405,7 +1405,7 @@ module Hash(
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_state; // @[hash.scala 128:23]
   wire [7:0] pipe2_io_pipe_phv_in_parse_current_offset; // @[hash.scala 128:23]
   wire [15:0] pipe2_io_pipe_phv_in_parse_transition_field; // @[hash.scala 128:23]
-  wire [1:0] pipe2_io_pipe_phv_in_next_processor_id; // @[hash.scala 128:23]
+  wire [2:0] pipe2_io_pipe_phv_in_next_processor_id; // @[hash.scala 128:23]
   wire  pipe2_io_pipe_phv_in_next_config_id; // @[hash.scala 128:23]
   wire  pipe2_io_pipe_phv_in_is_valid_processor; // @[hash.scala 128:23]
   wire [7:0] pipe2_io_pipe_phv_out_data_0; // @[hash.scala 128:23]
@@ -1683,7 +1683,7 @@ module Hash(
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_state; // @[hash.scala 128:23]
   wire [7:0] pipe2_io_pipe_phv_out_parse_current_offset; // @[hash.scala 128:23]
   wire [15:0] pipe2_io_pipe_phv_out_parse_transition_field; // @[hash.scala 128:23]
-  wire [1:0] pipe2_io_pipe_phv_out_next_processor_id; // @[hash.scala 128:23]
+  wire [2:0] pipe2_io_pipe_phv_out_next_processor_id; // @[hash.scala 128:23]
   wire  pipe2_io_pipe_phv_out_next_config_id; // @[hash.scala 128:23]
   wire  pipe2_io_pipe_phv_out_is_valid_processor; // @[hash.scala 128:23]
   wire [191:0] pipe2_io_key_in; // @[hash.scala 128:23]
@@ -1966,7 +1966,7 @@ module Hash(
   wire [7:0] pipe3_io_pipe_phv_in_parse_current_state; // @[hash.scala 129:23]
   wire [7:0] pipe3_io_pipe_phv_in_parse_current_offset; // @[hash.scala 129:23]
   wire [15:0] pipe3_io_pipe_phv_in_parse_transition_field; // @[hash.scala 129:23]
-  wire [1:0] pipe3_io_pipe_phv_in_next_processor_id; // @[hash.scala 129:23]
+  wire [2:0] pipe3_io_pipe_phv_in_next_processor_id; // @[hash.scala 129:23]
   wire  pipe3_io_pipe_phv_in_next_config_id; // @[hash.scala 129:23]
   wire  pipe3_io_pipe_phv_in_is_valid_processor; // @[hash.scala 129:23]
   wire [7:0] pipe3_io_pipe_phv_out_data_0; // @[hash.scala 129:23]
@@ -2244,7 +2244,7 @@ module Hash(
   wire [7:0] pipe3_io_pipe_phv_out_parse_current_state; // @[hash.scala 129:23]
   wire [7:0] pipe3_io_pipe_phv_out_parse_current_offset; // @[hash.scala 129:23]
   wire [15:0] pipe3_io_pipe_phv_out_parse_transition_field; // @[hash.scala 129:23]
-  wire [1:0] pipe3_io_pipe_phv_out_next_processor_id; // @[hash.scala 129:23]
+  wire [2:0] pipe3_io_pipe_phv_out_next_processor_id; // @[hash.scala 129:23]
   wire  pipe3_io_pipe_phv_out_next_config_id; // @[hash.scala 129:23]
   wire  pipe3_io_pipe_phv_out_is_valid_processor; // @[hash.scala 129:23]
   wire [191:0] pipe3_io_key_in; // @[hash.scala 129:23]
@@ -2527,7 +2527,7 @@ module Hash(
   wire [7:0] pipe4_io_pipe_phv_in_parse_current_state; // @[hash.scala 130:23]
   wire [7:0] pipe4_io_pipe_phv_in_parse_current_offset; // @[hash.scala 130:23]
   wire [15:0] pipe4_io_pipe_phv_in_parse_transition_field; // @[hash.scala 130:23]
-  wire [1:0] pipe4_io_pipe_phv_in_next_processor_id; // @[hash.scala 130:23]
+  wire [2:0] pipe4_io_pipe_phv_in_next_processor_id; // @[hash.scala 130:23]
   wire  pipe4_io_pipe_phv_in_next_config_id; // @[hash.scala 130:23]
   wire  pipe4_io_pipe_phv_in_is_valid_processor; // @[hash.scala 130:23]
   wire [7:0] pipe4_io_pipe_phv_out_data_0; // @[hash.scala 130:23]
@@ -2805,7 +2805,7 @@ module Hash(
   wire [7:0] pipe4_io_pipe_phv_out_parse_current_state; // @[hash.scala 130:23]
   wire [7:0] pipe4_io_pipe_phv_out_parse_current_offset; // @[hash.scala 130:23]
   wire [15:0] pipe4_io_pipe_phv_out_parse_transition_field; // @[hash.scala 130:23]
-  wire [1:0] pipe4_io_pipe_phv_out_next_processor_id; // @[hash.scala 130:23]
+  wire [2:0] pipe4_io_pipe_phv_out_next_processor_id; // @[hash.scala 130:23]
   wire  pipe4_io_pipe_phv_out_next_config_id; // @[hash.scala 130:23]
   wire  pipe4_io_pipe_phv_out_is_valid_processor; // @[hash.scala 130:23]
   wire [191:0] pipe4_io_key_in; // @[hash.scala 130:23]
@@ -3088,7 +3088,7 @@ module Hash(
   wire [7:0] pipe5_io_pipe_phv_in_parse_current_state; // @[hash.scala 131:23]
   wire [7:0] pipe5_io_pipe_phv_in_parse_current_offset; // @[hash.scala 131:23]
   wire [15:0] pipe5_io_pipe_phv_in_parse_transition_field; // @[hash.scala 131:23]
-  wire [1:0] pipe5_io_pipe_phv_in_next_processor_id; // @[hash.scala 131:23]
+  wire [2:0] pipe5_io_pipe_phv_in_next_processor_id; // @[hash.scala 131:23]
   wire  pipe5_io_pipe_phv_in_next_config_id; // @[hash.scala 131:23]
   wire  pipe5_io_pipe_phv_in_is_valid_processor; // @[hash.scala 131:23]
   wire [7:0] pipe5_io_pipe_phv_out_data_0; // @[hash.scala 131:23]
@@ -3366,7 +3366,7 @@ module Hash(
   wire [7:0] pipe5_io_pipe_phv_out_parse_current_state; // @[hash.scala 131:23]
   wire [7:0] pipe5_io_pipe_phv_out_parse_current_offset; // @[hash.scala 131:23]
   wire [15:0] pipe5_io_pipe_phv_out_parse_transition_field; // @[hash.scala 131:23]
-  wire [1:0] pipe5_io_pipe_phv_out_next_processor_id; // @[hash.scala 131:23]
+  wire [2:0] pipe5_io_pipe_phv_out_next_processor_id; // @[hash.scala 131:23]
   wire  pipe5_io_pipe_phv_out_next_config_id; // @[hash.scala 131:23]
   wire  pipe5_io_pipe_phv_out_is_valid_processor; // @[hash.scala 131:23]
   wire [5:0] pipe5_io_hash_depth_0; // @[hash.scala 131:23]
@@ -3652,7 +3652,7 @@ module Hash(
   wire [7:0] pipe6_io_pipe_phv_in_parse_current_state; // @[hash.scala 132:23]
   wire [7:0] pipe6_io_pipe_phv_in_parse_current_offset; // @[hash.scala 132:23]
   wire [15:0] pipe6_io_pipe_phv_in_parse_transition_field; // @[hash.scala 132:23]
-  wire [1:0] pipe6_io_pipe_phv_in_next_processor_id; // @[hash.scala 132:23]
+  wire [2:0] pipe6_io_pipe_phv_in_next_processor_id; // @[hash.scala 132:23]
   wire  pipe6_io_pipe_phv_in_next_config_id; // @[hash.scala 132:23]
   wire  pipe6_io_pipe_phv_in_is_valid_processor; // @[hash.scala 132:23]
   wire [7:0] pipe6_io_pipe_phv_out_data_0; // @[hash.scala 132:23]
@@ -3930,7 +3930,7 @@ module Hash(
   wire [7:0] pipe6_io_pipe_phv_out_parse_current_state; // @[hash.scala 132:23]
   wire [7:0] pipe6_io_pipe_phv_out_parse_current_offset; // @[hash.scala 132:23]
   wire [15:0] pipe6_io_pipe_phv_out_parse_transition_field; // @[hash.scala 132:23]
-  wire [1:0] pipe6_io_pipe_phv_out_next_processor_id; // @[hash.scala 132:23]
+  wire [2:0] pipe6_io_pipe_phv_out_next_processor_id; // @[hash.scala 132:23]
   wire  pipe6_io_pipe_phv_out_next_config_id; // @[hash.scala 132:23]
   wire  pipe6_io_pipe_phv_out_is_valid_processor; // @[hash.scala 132:23]
   wire [5:0] pipe6_io_hash_depth_0; // @[hash.scala 132:23]
@@ -4217,7 +4217,7 @@ module Hash(
   wire [7:0] pipe7_io_pipe_phv_in_parse_current_state; // @[hash.scala 133:23]
   wire [7:0] pipe7_io_pipe_phv_in_parse_current_offset; // @[hash.scala 133:23]
   wire [15:0] pipe7_io_pipe_phv_in_parse_transition_field; // @[hash.scala 133:23]
-  wire [1:0] pipe7_io_pipe_phv_in_next_processor_id; // @[hash.scala 133:23]
+  wire [2:0] pipe7_io_pipe_phv_in_next_processor_id; // @[hash.scala 133:23]
   wire  pipe7_io_pipe_phv_in_next_config_id; // @[hash.scala 133:23]
   wire  pipe7_io_pipe_phv_in_is_valid_processor; // @[hash.scala 133:23]
   wire [7:0] pipe7_io_pipe_phv_out_data_0; // @[hash.scala 133:23]
@@ -4495,7 +4495,7 @@ module Hash(
   wire [7:0] pipe7_io_pipe_phv_out_parse_current_state; // @[hash.scala 133:23]
   wire [7:0] pipe7_io_pipe_phv_out_parse_current_offset; // @[hash.scala 133:23]
   wire [15:0] pipe7_io_pipe_phv_out_parse_transition_field; // @[hash.scala 133:23]
-  wire [1:0] pipe7_io_pipe_phv_out_next_processor_id; // @[hash.scala 133:23]
+  wire [2:0] pipe7_io_pipe_phv_out_next_processor_id; // @[hash.scala 133:23]
   wire  pipe7_io_pipe_phv_out_next_config_id; // @[hash.scala 133:23]
   wire  pipe7_io_pipe_phv_out_is_valid_processor; // @[hash.scala 133:23]
   wire [5:0] pipe7_io_hash_depth_0; // @[hash.scala 133:23]
@@ -4782,7 +4782,7 @@ module Hash(
   wire [7:0] pipe8_io_pipe_phv_in_parse_current_state; // @[hash.scala 134:23]
   wire [7:0] pipe8_io_pipe_phv_in_parse_current_offset; // @[hash.scala 134:23]
   wire [15:0] pipe8_io_pipe_phv_in_parse_transition_field; // @[hash.scala 134:23]
-  wire [1:0] pipe8_io_pipe_phv_in_next_processor_id; // @[hash.scala 134:23]
+  wire [2:0] pipe8_io_pipe_phv_in_next_processor_id; // @[hash.scala 134:23]
   wire  pipe8_io_pipe_phv_in_next_config_id; // @[hash.scala 134:23]
   wire  pipe8_io_pipe_phv_in_is_valid_processor; // @[hash.scala 134:23]
   wire [7:0] pipe8_io_pipe_phv_out_data_0; // @[hash.scala 134:23]
@@ -5060,7 +5060,7 @@ module Hash(
   wire [7:0] pipe8_io_pipe_phv_out_parse_current_state; // @[hash.scala 134:23]
   wire [7:0] pipe8_io_pipe_phv_out_parse_current_offset; // @[hash.scala 134:23]
   wire [15:0] pipe8_io_pipe_phv_out_parse_transition_field; // @[hash.scala 134:23]
-  wire [1:0] pipe8_io_pipe_phv_out_next_processor_id; // @[hash.scala 134:23]
+  wire [2:0] pipe8_io_pipe_phv_out_next_processor_id; // @[hash.scala 134:23]
   wire  pipe8_io_pipe_phv_out_next_config_id; // @[hash.scala 134:23]
   wire  pipe8_io_pipe_phv_out_is_valid_processor; // @[hash.scala 134:23]
   wire [5:0] pipe8_io_hash_depth_0; // @[hash.scala 134:23]

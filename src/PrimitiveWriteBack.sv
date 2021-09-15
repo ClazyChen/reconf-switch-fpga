@@ -275,7 +275,7 @@ module PrimitiveWriteBack(
   input  [7:0]  io_pipe_phv_in_parse_current_state,
   input  [7:0]  io_pipe_phv_in_parse_current_offset,
   input  [15:0] io_pipe_phv_in_parse_transition_field,
-  input  [1:0]  io_pipe_phv_in_next_processor_id,
+  input  [2:0]  io_pipe_phv_in_next_processor_id,
   input         io_pipe_phv_in_next_config_id,
   input         io_pipe_phv_in_is_valid_processor,
   output [7:0]  io_pipe_phv_out_data_0,
@@ -553,7 +553,7 @@ module PrimitiveWriteBack(
   output [7:0]  io_pipe_phv_out_parse_current_state,
   output [7:0]  io_pipe_phv_out_parse_current_offset,
   output [15:0] io_pipe_phv_out_parse_transition_field,
-  output [1:0]  io_pipe_phv_out_next_processor_id,
+  output [2:0]  io_pipe_phv_out_next_processor_id,
   output        io_pipe_phv_out_next_config_id,
   input  [31:0] io_vliw_in_0,
   input  [31:0] io_vliw_in_1,
@@ -1143,7 +1143,7 @@ module PrimitiveWriteBack(
   reg [7:0] phv_parse_current_state; // @[executor.scala 448:22]
   reg [7:0] phv_parse_current_offset; // @[executor.scala 448:22]
   reg [15:0] phv_parse_transition_field; // @[executor.scala 448:22]
-  reg [1:0] phv_next_processor_id; // @[executor.scala 448:22]
+  reg [2:0] phv_next_processor_id; // @[executor.scala 448:22]
   reg  phv_next_config_id; // @[executor.scala 448:22]
   reg  phv_is_valid_processor; // @[executor.scala 448:22]
   reg [31:0] vliw_0; // @[executor.scala 452:23]
@@ -1937,7 +1937,7 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_765 = opcode != 4'h0 ? _GEN_509 : phv_data_254; // @[executor.scala 470:55 executor.scala 450:25]
   wire [7:0] _GEN_766 = opcode != 4'h0 ? _GEN_510 : phv_data_253; // @[executor.scala 470:55 executor.scala 450:25]
   wire [7:0] _GEN_767 = opcode != 4'h0 ? _GEN_511 : phv_data_252; // @[executor.scala 470:55 executor.scala 450:25]
-  wire [3:0] _GEN_768 = opcode == 4'hf ? parameter_2[13:10] : {{2'd0}, phv_next_processor_id}; // @[executor.scala 466:52 executor.scala 467:55 executor.scala 450:25]
+  wire [3:0] _GEN_768 = opcode == 4'hf ? parameter_2[13:10] : {{1'd0}, phv_next_processor_id}; // @[executor.scala 466:52 executor.scala 467:55 executor.scala 450:25]
   wire  _GEN_769 = opcode == 4'hf ? parameter_2[0] : phv_next_config_id; // @[executor.scala 466:52 executor.scala 468:55 executor.scala 450:25]
   wire [7:0] _GEN_770 = opcode == 4'hf ? phv_data_3 : _GEN_512; // @[executor.scala 466:52 executor.scala 450:25]
   wire [7:0] _GEN_771 = opcode == 4'hf ? phv_data_2 : _GEN_513; // @[executor.scala 466:52 executor.scala 450:25]
@@ -5294,7 +5294,7 @@ module PrimitiveWriteBack(
   wire [7:0] _GEN_4101 = opcode_3 == 4'hf ? _GEN_3075 : _GEN_3843; // @[executor.scala 466:52]
   wire [7:0] _GEN_4102 = opcode_3 == 4'hf ? _GEN_3076 : _GEN_3844; // @[executor.scala 466:52]
   wire [7:0] _GEN_4103 = opcode_3 == 4'hf ? _GEN_3077 : _GEN_3845; // @[executor.scala 466:52]
-  wire [3:0] _GEN_4104 = phv_is_valid_processor ? _GEN_3846 : {{2'd0}, phv_next_processor_id}; // @[executor.scala 461:39 executor.scala 450:25]
+  wire [3:0] _GEN_4104 = phv_is_valid_processor ? _GEN_3846 : {{1'd0}, phv_next_processor_id}; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_data_0 = phv_is_valid_processor ? _GEN_3851 : phv_data_0; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_data_1 = phv_is_valid_processor ? _GEN_3850 : phv_data_1; // @[executor.scala 461:39 executor.scala 450:25]
   assign io_pipe_phv_out_data_2 = phv_is_valid_processor ? _GEN_3849 : phv_data_2; // @[executor.scala 461:39 executor.scala 450:25]
@@ -5570,7 +5570,7 @@ module PrimitiveWriteBack(
   assign io_pipe_phv_out_parse_current_state = phv_parse_current_state; // @[executor.scala 450:25]
   assign io_pipe_phv_out_parse_current_offset = phv_parse_current_offset; // @[executor.scala 450:25]
   assign io_pipe_phv_out_parse_transition_field = phv_parse_transition_field; // @[executor.scala 450:25]
-  assign io_pipe_phv_out_next_processor_id = _GEN_4104[1:0];
+  assign io_pipe_phv_out_next_processor_id = _GEN_4104[2:0];
   assign io_pipe_phv_out_next_config_id = phv_is_valid_processor ? _GEN_3847 : phv_next_config_id; // @[executor.scala 461:39 executor.scala 450:25]
   always @(posedge clock) begin
     phv_data_0 <= io_pipe_phv_in_data_0; // @[executor.scala 449:13]
@@ -6455,7 +6455,7 @@ initial begin
   _RAND_274 = {1{`RANDOM}};
   phv_parse_transition_field = _RAND_274[15:0];
   _RAND_275 = {1{`RANDOM}};
-  phv_next_processor_id = _RAND_275[1:0];
+  phv_next_processor_id = _RAND_275[2:0];
   _RAND_276 = {1{`RANDOM}};
   phv_next_config_id = _RAND_276[0:0];
   _RAND_277 = {1{`RANDOM}};
